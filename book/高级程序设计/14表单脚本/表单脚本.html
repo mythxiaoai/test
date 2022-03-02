@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<form name="form1">
+			<input name="name1" placeholder="请输入姓名" />
+			<input name="name2" placeholder="请输入姓名" />
+			<input type="reset" value="重置">
+			<input type="button" onclick="reset()" value="重置2">
+			<input type="image" src="../../img/statistics/data.png">
+			
+			<textarea name="textarea" rows="" cols="">0123456789</textarea>
+			<input type="button" name="btn" value="复制" />
+			<textarea name="textarea2" rows="" cols="">0123456789</textarea>
+			<input type="text" name="number" pattern="\d+" placeholder="我只能输入数字哦" />
+			<input type="submit" name="" value="提交" />
+		</form>
+		<script>
+			let formDom = document.forms[0];//document.forms.form1
+			/*console.log(formDom.acceptCharset);//服务器能够处理的字符集
+			console.log(formDom.action);//请求的url
+			console.log(formDom.elements);//所以控件的集合
+			console.log(formDom.enctype);//请求的编码类型
+			console.log(formDom.length);//控件的长度
+			console.log(formDom.method);//请求的方式
+			console.log(formDom.name);//form表单的名字  如果有表单元素叫name=name  那么就取表单控件
+			console.log(formDom.reset);//重置方法
+			console.log(formDom.submit);//提交方法
+			console.log(formDom.target);//接收响应的窗口名称
+			console.log(formDom.name1.setAttribute("value","456"));
+			console.log(formDom.textarea.setAttribute("value","456"));
+			formDom.textarea.onselect=function(e){
+				console.log(e)
+				console.log(this.selectionStart)
+				console.log(this.selectionEnd)
+			};
+			console.log(this.selectionStart)
+			console.log(this.selectionEnd)*/
+			/*formDom.textarea.setSelectionRange(0,5)
+			formDom.textarea.focus();
+			console.log(document.activeElement)*/
+			/*formDom.textarea.onkeypress=function(e){
+				formDom.textarea.onkeyup=function(e){
+					console.log(this.value)
+					this.value="0"
+				}
+				if(!/\d/.test(String.fromCharCode(e.keyCode))&&e.keyCode>9){
+					e.preventDefault();
+				}
+			}*/
+			/*formDom.textarea.onpaste=function(e){
+				var clipboardData = (e.clipboardData || window.clipboardData);
+				clipboardData.setData("text/plain","设置值给粘贴板");
+				var text = clipboardData.getData("text");
+				console.log(text);
+			}*/
+			/*formDom.texteare.setSelectionRange(0,5);
+			formDom.texteare.focus();*/
+			
+			let text =formDom.textarea.value;
+			formDom.textarea.onselect=function(e){
+				let clipboardData = (e.clipboardData || window.clipboardData);
+				text=formDom.textarea.value.substring(e.selectionStart,e.selectionEnd);
+				clipboardData.setData("text/plain",text);
+				alert("复制成功");
+			}
+			formDom.btn.onclick=function(e){
+				formDom.textarea.onselect();
+			}
+			
+		</script>
+	</body>
+</html>

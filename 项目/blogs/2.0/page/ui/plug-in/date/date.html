@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="zh-CN">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+		<title>兴国充电桩运营管理系统</title>
+		<meta name="Keywords" content="关键词,关键词,关键词">
+		<meta name="description" content="">
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<!--网页宽度默认等于屏幕宽度（width=device-width），原始缩放比例（initial-scale=1）为1.0，即网页初始大小占屏幕面积的100%。-->
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0">
+		<!--bootshrapCSS-->
+		<link rel="stylesheet" href="../../../../js/bootstrap/bootstrap.css" />
+		<!--时间插件-->
+		<link rel="stylesheet" href="../../../../js/bootstrapDatetimepicker/bootstrap-datetimepicker.min.css" />
+		<link rel="stylesheet" href="../../../../css/common.css"/>
+		<!--字体图标-->
+		<!--jQery加载-->
+		<script src="../../../../js/jquery.js"></script>
+		<!--bootshrap基础JS-->
+		<script src="../../../../js/bootstrap/bootstrap.js"></script>
+		<!--时间插件-->
+		<script type="text/javascript" src="../../../../js/bootstrapDatetimepicker/moment-with-locales.js" ></script>
+		<script type="text/javascript" src="../../../../js/bootstrapDatetimepicker/bootstrap-datetimepicker.min.js" ></script>
+	</head>
+	<body class="gray-bg">
+		<div class="container ">
+      	 <h1 class="page-header">bootstrap时间插件</h1>
+            <div class="form-group">
+                <div class='input-group date' id='datetimepicker1'>
+                    <input id="dateInput" type='text' class="form-control" />
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                </div>
+            </div>
+		</div>
+	 <script type="text/javascript">
+        $(function () {
+            $('.date').datetimepicker({
+            	showClear: true,
+            	format: 'YYYY-MM-DD HH:mm:ss',
+				locale: 'zh-CN',
+            });
+        });
+    </script>
+	</body>
+	
+</html>

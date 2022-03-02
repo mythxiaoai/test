@@ -1,0 +1,575 @@
+[ 52, 90 ]
+[
+  { name: '$', no: 36, sex: 'male', gift: 'B', luck: false },
+  { name: 'I', no: 73, sex: 'male', gift: 'B', luck: false },
+  { name: '3', no: 51, sex: 'male', gift: 'B', luck: false },
+  { name: 'O', no: 79, sex: 'male', gift: 'B', luck: false },
+  { name: '^', no: 94, sex: 'male', gift: 'A', luck: false },
+  { name: '\x0E', no: 14, sex: 'male', gift: 'B', luck: false },
+  { name: '\x01', no: 1, sex: 'male', gift: 'B', luck: false },
+  { name: '\x04', no: 4, sex: 'male', gift: 'B', luck: false },
+  { name: 'N', no: 78, sex: 'male', gift: 'B', luck: false },
+  { name: ';', no: 59, sex: 'male', gift: 'B', luck: false },
+  { name: '_', no: 95, sex: 'male', gift: 'B', luck: false },
+  { name: 'K', no: 75, sex: 'male', gift: 'B', luck: false },
+  { name: ']', no: 93, sex: 'male', gift: 'B', luck: false },
+  { name: 'C', no: 67, sex: 'male', gift: 'B', luck: false },
+  { name: '\x18', no: 24, sex: 'male', gift: 'B', luck: false },
+  { name: '\x14', no: 20, sex: 'male', gift: 'B', luck: false },
+  { name: '\x10', no: 16, sex: 'male', gift: 'A', luck: false },
+  { name: '\x1C', no: 28, sex: 'male', gift: 'B', luck: false },
+  { name: 'V', no: 86, sex: 'male', gift: 'B', luck: false },
+  { name: '\x05', no: 5, sex: 'male', gift: 'A', luck: false },
+  { name: '\x0F', no: 15, sex: 'male', gift: 'A', luck: false },
+  { name: '+', no: 43, sex: 'male', gift: 'B', luck: false },
+  { name: 'Y', no: 89, sex: 'male', gift: 'A', luck: false },
+  { name: '5', no: 53, sex: 'male', gift: 'A', luck: false },
+  { name: '@', no: 64, sex: 'male', gift: 'A', luck: false },
+  { name: '<', no: 60, sex: 'male', gift: 'A', luck: false },
+  { name: '`', no: 96, sex: 'male', gift: 'B', luck: false },
+  { name: ',', no: 44, sex: 'male', gift: 'B', luck: false },
+  { name: '!', no: 33, sex: 'male', gift: 'A', luck: false },
+  { name: 'c', no: 99, sex: 'male', gift: 'A', luck: false },
+  { name: '8', no: 56, sex: 'male', gift: 'B', luck: false },
+  { name: 'T', no: 84, sex: 'male', gift: 'B', luck: false },
+  { name: 'E', no: 69, sex: 'male', gift: 'A', luck: false },
+  { name: 'G', no: 71, sex: 'male', gift: 'A', luck: false },
+  { name: '*', no: 42, sex: 'male', gift: 'B', luck: false },
+  { name: '\x16', no: 22, sex: 'male', gift: 'B', luck: false },
+  { name: 'F', no: 70, sex: 'male', gift: 'A', luck: false },
+  { name: 'X', no: 88, sex: 'male', gift: 'A', luck: false },
+  { name: 'D', no: 68, sex: 'male', gift: 'A', luck: false },
+  { name: '9', no: 57, sex: 'male', gift: 'B', luck: false },
+  { name: '\x06', no: 6, sex: 'male', gift: 'B', luck: false },
+  { name: '\f', no: 12, sex: 'male', gift: 'B', luck: false },
+  { name: '\r', no: 13, sex: 'male', gift: 'B', luck: false },
+  { name: '\x03', no: 3, sex: 'male', gift: 'B', luck: false },
+  { name: '\x1F', no: 31, sex: 'male', gift: 'A', luck: false },
+  { name: '2', no: 50, sex: 'male', gift: 'B', luck: false },
+  { name: 'H', no: 72, sex: 'male', gift: 'A', luck: false },
+  { name: ' ', no: 32, sex: 'male', gift: 'A', luck: false },
+  { name: '[', no: 91, sex: 'male', gift: 'B', luck: false },
+  { name: '\x12', no: 18, sex: 'male', gift: 'A', luck: false },
+  { name: 'B', no: 66, sex: 'female', gift: 'A', luck: false },
+  { name: '>', no: 62, sex: 'female', gift: 'B', luck: false },
+  { name: 'U', no: 85, sex: 'female', gift: 'B', luck: false },
+  { name: '?', no: 63, sex: 'female', gift: 'A', luck: false },
+  { name: 'R', no: 82, sex: 'female', gift: 'A', luck: false },
+  { name: '\x1A', no: 26, sex: 'female', gift: 'B', luck: false },
+  { name: '\x15', no: 21, sex: 'female', gift: 'A', luck: false },
+  { name: '"', no: 34, sex: 'female', gift: 'B', luck: false },
+  { name: '&', no: 38, sex: 'female', gift: 'A', luck: false },
+  { name: '\x1B', no: 27, sex: 'female', gift: 'A', luck: false },
+  { name: '\x0B', no: 11, sex: 'female', gift: 'B', luck: false },
+  { name: '\t', no: 9, sex: 'female', gift: 'A', luck: false },
+  { name: '%', no: 37, sex: 'female', gift: 'A', luck: false },
+  { name: '\n', no: 10, sex: 'female', gift: 'A', luck: false },
+  { name: 'Q', no: 81, sex: 'female', gift: 'A', luck: false },
+  { name: '\x00', no: 0, sex: 'female', gift: 'A', luck: false },
+  { name: '\x07', no: 7, sex: 'female', gift: 'A', luck: false },
+  { name: '\x17', no: 23, sex: 'female', gift: 'B', luck: false },
+  { name: 'b', no: 98, sex: 'female', gift: 'A', luck: false },
+  { name: 'S', no: 83, sex: 'female', gift: 'B', luck: false },
+  { name: '#', no: 35, sex: 'female', gift: 'B', luck: false },
+  { name: '\x11', no: 17, sex: 'female', gift: 'B', luck: false },
+  { name: '\b', no: 8, sex: 'female', gift: 'B', luck: false },
+  { name: "'", no: 39, sex: 'female', gift: 'B', luck: false },
+  { name: '\x02', no: 2, sex: 'female', gift: 'B', luck: false },
+  { name: '0', no: 48, sex: 'female', gift: 'B', luck: false },
+  { name: '=', no: 61, sex: 'female', gift: 'B', luck: false },
+  { name: ':', no: 58, sex: 'female', gift: 'A', luck: false },
+  { name: 'M', no: 77, sex: 'female', gift: 'A', luck: false },
+  { name: 'P', no: 80, sex: 'female', gift: 'A', luck: false },
+  { name: '\x1E', no: 30, sex: 'female', gift: 'A', luck: false },
+  { name: '.', no: 46, sex: 'female', gift: 'B', luck: false },
+  { name: '\\', no: 92, sex: 'female', gift: 'A', luck: false },
+  { name: '7', no: 55, sex: 'female', gift: 'A', luck: false },
+  { name: ')', no: 41, sex: 'female', gift: 'B', luck: false },
+  { name: 'A', no: 65, sex: 'female', gift: 'B', luck: false },
+  { name: '\x1D', no: 29, sex: 'female', gift: 'A', luck: false },
+  { name: '-', no: 45, sex: 'female', gift: 'B', luck: false },
+  { name: 'L', no: 76, sex: 'female', gift: 'B', luck: false },
+  { name: 'a', no: 97, sex: 'female', gift: 'B', luck: false },
+  { name: '/', no: 47, sex: 'female', gift: 'B', luck: false },
+  { name: '(', no: 40, sex: 'female', gift: 'A', luck: false },
+  { name: '\x19', no: 25, sex: 'female', gift: 'A', luck: false },
+  { name: 'J', no: 74, sex: 'female', gift: 'B', luck: false },
+  { name: '\x13', no: 19, sex: 'female', gift: 'B', luck: false },
+  { name: '6', no: 54, sex: 'female', gift: 'B', luck: false },
+  { name: '1', no: 49, sex: 'female', gift: 'A', luck: false },
+  { name: 'W', no: 87, sex: 'female', gift: 'A', luck: false },
+  { name: 'Johnson', sex: 'male', gift: 'E', luck: false, no: 52 },
+  { name: 'Marry', gift: 'E', sex: 'female', luck: false, no: 90 }
+]
+100
+result [
+   8, 68, 44, 12, 57, 76, 86, 63, 28, 18, 70,  3,
+  71, 67, 69, 49, 93, 84, 54, 85, 20, 21, 77, 17,
+  80, 53, 98, 19, 65, 82, 94, 74, 95, 36, 34, 83,
+   2, 33, 25, 35, 11, 78, 10, 39, 46, 90, 31, 97,
+  81,  9, 99, 50, 24, 61, 66, 37, 23, 52, 30, 87,
+  29, 92, 62, 51, 59, 43, 22, 16, 55, 89, 88, 27,
+  40, 75, 64, 58, 96, 38,  1, 14, 72,  7, 79, 45,
+  41, 56,  0,  6, 48, 15, 73, 47, 91,  5, 13, 42,
+   4, 26, 60, 32
+]
+result 100
+I am No.36.My lottery number is 8
+I am a male,and I am luck yoday!
+I am No.73.My lottery number is 68
+I am a male,and I am luck yoday!
+I am No.51.My lottery number is 44
+I am a male,and I am luck yoday!
+I am No.95.My lottery number is 70
+I am a male,and I am luck yoday!
+I am No.93.My lottery number is 71
+I am a male,and I am luck yoday!
+I am No.67.My lottery number is 67
+I am a male,and I am luck yoday!
+I am No.20.My lottery number is 49
+I am a male,and I am luck yoday!
+I am No.15.My lottery number is 20
+I am a male,and I am luck yoday!
+I am No.43.My lottery number is 21
+I am a male,and I am luck yoday!
+I am No.89.My lottery number is 77
+I am a male,and I am luck yoday!
+I am No.64.My lottery number is 80
+I am a male,and I am luck yoday!
+I am No.60.My lottery number is 53
+I am a male,and I am luck yoday!
+I am No.96.My lottery number is 98
+I am a male,and I am luck yoday!
+I am No.44.My lottery number is 19
+I am a male,and I am luck yoday!
+I am No.99.My lottery number is 82
+I am a male,and I am luck yoday!
+I am No.84.My lottery number is 74
+I am a male,and I am luck yoday!
+I am No.69.My lottery number is 95
+I am a male,and I am luck yoday!
+I am No.42.My lottery number is 34
+I am a male,and I am luck yoday!
+I am No.57.My lottery number is 35
+I am a male,and I am luck yoday!
+I am No.6.My lottery number is 11
+I am a male,and I am luck yoday!
+I am No.13.My lottery number is 10
+I am a male,and I am luck yoday!
+I am No.31.My lottery number is 46
+I am a male,and I am luck yoday!
+I am No.91.My lottery number is 81
+I am a male,and I am luck yoday!
+I am No.18.My lottery number is 9
+I am a male,and I am luck yoday!
+I am No.62.My lottery number is 50
+I am a female,and I am luck yoday!
+I am No.63.My lottery number is 61
+I am a female,and I am luck yoday!
+I am No.82.My lottery number is 66
+I am a female,and I am luck yoday!
+I am No.26.My lottery number is 37
+I am a female,and I am luck yoday!
+I am No.21.My lottery number is 23
+I am a female,and I am luck yoday!
+I am No.34.My lottery number is 52
+I am a female,and I am luck yoday!
+I am No.38.My lottery number is 30
+I am a female,and I am luck yoday!
+I am No.11.My lottery number is 29
+I am a female,and I am luck yoday!
+I am No.37.My lottery number is 62
+I am a female,and I am luck yoday!
+I am No.81.My lottery number is 59
+I am a female,and I am luck yoday!
+I am No.7.My lottery number is 22
+I am a female,and I am luck yoday!
+I am No.23.My lottery number is 16
+I am a female,and I am luck yoday!
+I am No.83.My lottery number is 89
+I am a female,and I am luck yoday!
+I am No.17.My lottery number is 27
+I am a female,and I am luck yoday!
+I am No.48.My lottery number is 58
+I am a female,and I am luck yoday!
+I am No.58.My lottery number is 38
+I am a female,and I am luck yoday!
+I am No.92.My lottery number is 79
+I am a female,and I am luck yoday!
+I am No.55.My lottery number is 45
+I am a female,and I am luck yoday!
+I am No.41.My lottery number is 41
+I am a female,and I am luck yoday!
+I am No.65.My lottery number is 56
+I am a female,and I am luck yoday!
+I am No.29.My lottery number is 0
+I am a female,and I am luck yoday!
+I am No.76.My lottery number is 48
+I am a female,and I am luck yoday!
+I am No.47.My lottery number is 73
+I am a female,and I am luck yoday!
+I am No.40.My lottery number is 47
+I am a female,and I am luck yoday!
+I am No.19.My lottery number is 13
+I am a female,and I am luck yoday!
+I am No.54.My lottery number is 42
+I am a female,and I am luck yoday!
+I am No.52.My lottery number is 60
+I am a male,and I am luck yoday!
+people [
+  { name: '$', no: 36, sex: 'male', gift: 'B', luck: true },
+  { name: 'I', no: 73, sex: 'male', gift: 'B', luck: true },
+  { name: '3', no: 51, sex: 'male', gift: 'B', luck: true },
+  { name: 'O', no: 79, sex: 'male', gift: 'B', luck: false },
+  { name: '^', no: 94, sex: 'male', gift: 'A', luck: false },
+  { name: '\x0E', no: 14, sex: 'male', gift: 'B', luck: false },
+  { name: '\x01', no: 1, sex: 'male', gift: 'B', luck: false },
+  { name: '\x04', no: 4, sex: 'male', gift: 'B', luck: false },
+  { name: 'N', no: 78, sex: 'male', gift: 'B', luck: false },
+  { name: ';', no: 59, sex: 'male', gift: 'B', luck: false },
+  { name: '_', no: 95, sex: 'male', gift: 'B', luck: true },
+  { name: 'K', no: 75, sex: 'male', gift: 'B', luck: false },
+  { name: ']', no: 93, sex: 'male', gift: 'B', luck: true },
+  { name: 'C', no: 67, sex: 'male', gift: 'B', luck: true },
+  { name: '\x18', no: 24, sex: 'male', gift: 'B', luck: false },
+  { name: '\x14', no: 20, sex: 'male', gift: 'B', luck: true },
+  { name: '\x10', no: 16, sex: 'male', gift: 'A', luck: false },
+  { name: '\x1C', no: 28, sex: 'male', gift: 'B', luck: false },
+  { name: 'V', no: 86, sex: 'male', gift: 'B', luck: false },
+  { name: '\x05', no: 5, sex: 'male', gift: 'A', luck: false },
+  { name: '\x0F', no: 15, sex: 'male', gift: 'A', luck: true },
+  { name: '+', no: 43, sex: 'male', gift: 'B', luck: true },
+  { name: 'Y', no: 89, sex: 'male', gift: 'A', luck: true },
+  { name: '5', no: 53, sex: 'male', gift: 'A', luck: false },
+  { name: '@', no: 64, sex: 'male', gift: 'A', luck: true },
+  { name: '<', no: 60, sex: 'male', gift: 'A', luck: true },
+  { name: '`', no: 96, sex: 'male', gift: 'B', luck: true },
+  { name: ',', no: 44, sex: 'male', gift: 'B', luck: true },
+  { name: '!', no: 33, sex: 'male', gift: 'A', luck: false },
+  { name: 'c', no: 99, sex: 'male', gift: 'A', luck: true },
+  { name: '8', no: 56, sex: 'male', gift: 'B', luck: false },
+  { name: 'T', no: 84, sex: 'male', gift: 'B', luck: true },
+  { name: 'E', no: 69, sex: 'male', gift: 'A', luck: true },
+  { name: 'G', no: 71, sex: 'male', gift: 'A', luck: false },
+  { name: '*', no: 42, sex: 'male', gift: 'B', luck: true },
+  { name: '\x16', no: 22, sex: 'male', gift: 'B', luck: false },
+  { name: 'F', no: 70, sex: 'male', gift: 'A', luck: false },
+  { name: 'X', no: 88, sex: 'male', gift: 'A', luck: false },
+  { name: 'D', no: 68, sex: 'male', gift: 'A', luck: false },
+  { name: '9', no: 57, sex: 'male', gift: 'B', luck: true },
+  { name: '\x06', no: 6, sex: 'male', gift: 'B', luck: true },
+  { name: '\f', no: 12, sex: 'male', gift: 'B', luck: false },
+  { name: '\r', no: 13, sex: 'male', gift: 'B', luck: true },
+  { name: '\x03', no: 3, sex: 'male', gift: 'B', luck: false },
+  { name: '\x1F', no: 31, sex: 'male', gift: 'A', luck: true },
+  { name: '2', no: 50, sex: 'male', gift: 'B', luck: false },
+  { name: 'H', no: 72, sex: 'male', gift: 'A', luck: false },
+  { name: ' ', no: 32, sex: 'male', gift: 'A', luck: false },
+  { name: '[', no: 91, sex: 'male', gift: 'B', luck: true },
+  { name: '\x12', no: 18, sex: 'male', gift: 'A', luck: true },
+  { name: 'B', no: 66, sex: 'female', gift: 'A', luck: false },
+  { name: '>', no: 62, sex: 'female', gift: 'B', luck: true },
+  { name: 'U', no: 85, sex: 'female', gift: 'B', luck: false },
+  { name: '?', no: 63, sex: 'female', gift: 'A', luck: true },
+  { name: 'R', no: 82, sex: 'female', gift: 'A', luck: true },
+  { name: '\x1A', no: 26, sex: 'female', gift: 'B', luck: true },
+  { name: '\x15', no: 21, sex: 'female', gift: 'A', luck: true },
+  { name: '"', no: 34, sex: 'female', gift: 'B', luck: true },
+  { name: '&', no: 38, sex: 'female', gift: 'A', luck: true },
+  { name: '\x1B', no: 27, sex: 'female', gift: 'A', luck: false },
+  { name: '\x0B', no: 11, sex: 'female', gift: 'B', luck: true },
+  { name: '\t', no: 9, sex: 'female', gift: 'A', luck: false },
+  { name: '%', no: 37, sex: 'female', gift: 'A', luck: true },
+  { name: '\n', no: 10, sex: 'female', gift: 'A', luck: false },
+  { name: 'Q', no: 81, sex: 'female', gift: 'A', luck: true },
+  { name: '\x00', no: 0, sex: 'female', gift: 'A', luck: false },
+  { name: '\x07', no: 7, sex: 'female', gift: 'A', luck: true },
+  { name: '\x17', no: 23, sex: 'female', gift: 'B', luck: true },
+  { name: 'b', no: 98, sex: 'female', gift: 'A', luck: false },
+  { name: 'S', no: 83, sex: 'female', gift: 'B', luck: true },
+  { name: '#', no: 35, sex: 'female', gift: 'B', luck: false },
+  { name: '\x11', no: 17, sex: 'female', gift: 'B', luck: true },
+  { name: '\b', no: 8, sex: 'female', gift: 'B', luck: false },
+  { name: "'", no: 39, sex: 'female', gift: 'B', luck: false },
+  { name: '\x02', no: 2, sex: 'female', gift: 'B', luck: false },
+  { name: '0', no: 48, sex: 'female', gift: 'B', luck: true },
+  { name: '=', no: 61, sex: 'female', gift: 'B', luck: false },
+  { name: ':', no: 58, sex: 'female', gift: 'A', luck: true },
+  { name: 'M', no: 77, sex: 'female', gift: 'A', luck: false },
+  { name: 'P', no: 80, sex: 'female', gift: 'A', luck: false },
+  { name: '\x1E', no: 30, sex: 'female', gift: 'A', luck: false },
+  { name: '.', no: 46, sex: 'female', gift: 'B', luck: false },
+  { name: '\\', no: 92, sex: 'female', gift: 'A', luck: true },
+  { name: '7', no: 55, sex: 'female', gift: 'A', luck: true },
+  { name: ')', no: 41, sex: 'female', gift: 'B', luck: true },
+  { name: 'A', no: 65, sex: 'female', gift: 'B', luck: true },
+  { name: '\x1D', no: 29, sex: 'female', gift: 'A', luck: true },
+  { name: '-', no: 45, sex: 'female', gift: 'B', luck: false },
+  { name: 'L', no: 76, sex: 'female', gift: 'B', luck: true },
+  { name: 'a', no: 97, sex: 'female', gift: 'B', luck: false },
+  { name: '/', no: 47, sex: 'female', gift: 'B', luck: true },
+  { name: '(', no: 40, sex: 'female', gift: 'A', luck: true },
+  { name: '\x19', no: 25, sex: 'female', gift: 'A', luck: false },
+  { name: 'J', no: 74, sex: 'female', gift: 'B', luck: false },
+  { name: '\x13', no: 19, sex: 'female', gift: 'B', luck: true },
+  { name: '6', no: 54, sex: 'female', gift: 'B', luck: true },
+  { name: '1', no: 49, sex: 'female', gift: 'A', luck: false },
+  { name: 'W', no: 87, sex: 'female', gift: 'A', luck: false },
+  { name: 'Johnson', sex: 'male', gift: 'E', luck: true, no: 52 },
+  { name: 'Marry', gift: 'E', sex: 'female', luck: false, no: 90 }
+]
+�����н�������25
+Ů���н�����:26
+people:sort [
+  { name: '\x00', no: 0, sex: 'female', gift: 'A', luck: false },
+  { name: '\x01', no: 1, sex: 'male', gift: 'B', luck: false },
+  { name: '\x02', no: 2, sex: 'female', gift: 'B', luck: false },
+  { name: '\x03', no: 3, sex: 'male', gift: 'B', luck: false },
+  { name: '\x04', no: 4, sex: 'male', gift: 'B', luck: false },
+  { name: '\x05', no: 5, sex: 'male', gift: 'A', luck: false },
+  { name: '\x06', no: 6, sex: 'male', gift: 'B', luck: true },
+  { name: '\x07', no: 7, sex: 'female', gift: 'A', luck: true },
+  { name: '\b', no: 8, sex: 'female', gift: 'B', luck: false },
+  { name: '\t', no: 9, sex: 'female', gift: 'A', luck: false },
+  { name: '\n', no: 10, sex: 'female', gift: 'A', luck: false },
+  { name: '\x0B', no: 11, sex: 'female', gift: 'B', luck: true },
+  { name: '\f', no: 12, sex: 'male', gift: 'B', luck: false },
+  { name: '\r', no: 13, sex: 'male', gift: 'B', luck: true },
+  { name: '\x0E', no: 14, sex: 'male', gift: 'B', luck: false },
+  { name: '\x0F', no: 15, sex: 'male', gift: 'A', luck: true },
+  { name: '\x10', no: 16, sex: 'male', gift: 'A', luck: false },
+  { name: '\x11', no: 17, sex: 'female', gift: 'B', luck: true },
+  { name: '\x12', no: 18, sex: 'male', gift: 'A', luck: true },
+  { name: '\x13', no: 19, sex: 'female', gift: 'B', luck: true },
+  { name: '\x14', no: 20, sex: 'male', gift: 'B', luck: true },
+  { name: '\x15', no: 21, sex: 'female', gift: 'A', luck: true },
+  { name: '\x16', no: 22, sex: 'male', gift: 'B', luck: false },
+  { name: '\x17', no: 23, sex: 'female', gift: 'B', luck: true },
+  { name: '\x18', no: 24, sex: 'male', gift: 'B', luck: false },
+  { name: '\x19', no: 25, sex: 'female', gift: 'A', luck: false },
+  { name: '\x1A', no: 26, sex: 'female', gift: 'B', luck: true },
+  { name: '\x1B', no: 27, sex: 'female', gift: 'A', luck: false },
+  { name: '\x1C', no: 28, sex: 'male', gift: 'B', luck: false },
+  { name: '\x1D', no: 29, sex: 'female', gift: 'A', luck: true },
+  { name: '\x1E', no: 30, sex: 'female', gift: 'A', luck: false },
+  { name: '\x1F', no: 31, sex: 'male', gift: 'A', luck: true },
+  { name: ' ', no: 32, sex: 'male', gift: 'A', luck: false },
+  { name: '!', no: 33, sex: 'male', gift: 'A', luck: false },
+  { name: '"', no: 34, sex: 'female', gift: 'B', luck: true },
+  { name: '#', no: 35, sex: 'female', gift: 'B', luck: false },
+  { name: '$', no: 36, sex: 'male', gift: 'B', luck: true },
+  { name: '%', no: 37, sex: 'female', gift: 'A', luck: true },
+  { name: '&', no: 38, sex: 'female', gift: 'A', luck: true },
+  { name: "'", no: 39, sex: 'female', gift: 'B', luck: false },
+  { name: '(', no: 40, sex: 'female', gift: 'A', luck: true },
+  { name: ')', no: 41, sex: 'female', gift: 'B', luck: true },
+  { name: '*', no: 42, sex: 'male', gift: 'B', luck: true },
+  { name: '+', no: 43, sex: 'male', gift: 'B', luck: true },
+  { name: ',', no: 44, sex: 'male', gift: 'B', luck: true },
+  { name: '-', no: 45, sex: 'female', gift: 'B', luck: false },
+  { name: '.', no: 46, sex: 'female', gift: 'B', luck: false },
+  { name: '/', no: 47, sex: 'female', gift: 'B', luck: true },
+  { name: '0', no: 48, sex: 'female', gift: 'B', luck: true },
+  { name: '1', no: 49, sex: 'female', gift: 'A', luck: false },
+  { name: '2', no: 50, sex: 'male', gift: 'B', luck: false },
+  { name: '3', no: 51, sex: 'male', gift: 'B', luck: true },
+  { name: 'Johnson', sex: 'male', gift: 'E', luck: true, no: 52 },
+  { name: '5', no: 53, sex: 'male', gift: 'A', luck: false },
+  { name: '6', no: 54, sex: 'female', gift: 'B', luck: true },
+  { name: '7', no: 55, sex: 'female', gift: 'A', luck: true },
+  { name: '8', no: 56, sex: 'male', gift: 'B', luck: false },
+  { name: '9', no: 57, sex: 'male', gift: 'B', luck: true },
+  { name: ':', no: 58, sex: 'female', gift: 'A', luck: true },
+  { name: ';', no: 59, sex: 'male', gift: 'B', luck: false },
+  { name: '<', no: 60, sex: 'male', gift: 'A', luck: true },
+  { name: '=', no: 61, sex: 'female', gift: 'B', luck: false },
+  { name: '>', no: 62, sex: 'female', gift: 'B', luck: true },
+  { name: '?', no: 63, sex: 'female', gift: 'A', luck: true },
+  { name: '@', no: 64, sex: 'male', gift: 'A', luck: true },
+  { name: 'A', no: 65, sex: 'female', gift: 'B', luck: true },
+  { name: 'B', no: 66, sex: 'female', gift: 'A', luck: false },
+  { name: 'C', no: 67, sex: 'male', gift: 'B', luck: true },
+  { name: 'D', no: 68, sex: 'male', gift: 'A', luck: false },
+  { name: 'E', no: 69, sex: 'male', gift: 'A', luck: true },
+  { name: 'F', no: 70, sex: 'male', gift: 'A', luck: false },
+  { name: 'G', no: 71, sex: 'male', gift: 'A', luck: false },
+  { name: 'H', no: 72, sex: 'male', gift: 'A', luck: false },
+  { name: 'I', no: 73, sex: 'male', gift: 'B', luck: true },
+  { name: 'J', no: 74, sex: 'female', gift: 'B', luck: false },
+  { name: 'K', no: 75, sex: 'male', gift: 'B', luck: false },
+  { name: 'L', no: 76, sex: 'female', gift: 'B', luck: true },
+  { name: 'M', no: 77, sex: 'female', gift: 'A', luck: false },
+  { name: 'N', no: 78, sex: 'male', gift: 'B', luck: false },
+  { name: 'O', no: 79, sex: 'male', gift: 'B', luck: false },
+  { name: 'P', no: 80, sex: 'female', gift: 'A', luck: false },
+  { name: 'Q', no: 81, sex: 'female', gift: 'A', luck: true },
+  { name: 'R', no: 82, sex: 'female', gift: 'A', luck: true },
+  { name: 'S', no: 83, sex: 'female', gift: 'B', luck: true },
+  { name: 'T', no: 84, sex: 'male', gift: 'B', luck: true },
+  { name: 'U', no: 85, sex: 'female', gift: 'B', luck: false },
+  { name: 'V', no: 86, sex: 'male', gift: 'B', luck: false },
+  { name: 'W', no: 87, sex: 'female', gift: 'A', luck: false },
+  { name: 'X', no: 88, sex: 'male', gift: 'A', luck: false },
+  { name: 'Y', no: 89, sex: 'male', gift: 'A', luck: true },
+  { name: 'Marry', gift: 'E', sex: 'female', luck: false, no: 90 },
+  { name: '[', no: 91, sex: 'male', gift: 'B', luck: true },
+  { name: '\\', no: 92, sex: 'female', gift: 'A', luck: true },
+  { name: ']', no: 93, sex: 'male', gift: 'B', luck: true },
+  { name: '^', no: 94, sex: 'male', gift: 'A', luck: false },
+  { name: '_', no: 95, sex: 'male', gift: 'B', luck: true },
+  { name: '`', no: 96, sex: 'male', gift: 'B', luck: true },
+  { name: 'a', no: 97, sex: 'female', gift: 'B', luck: false },
+  { name: 'b', no: 98, sex: 'female', gift: 'A', luck: false },
+  { name: 'c', no: 99, sex: 'male', gift: 'A', luck: true }
+]
+today is not aluck day for female No.0
+today is not aluck day for male No.1
+today is not aluck day for female No.2
+today is not aluck day for male No.3
+today is not aluck day for male No.4
+today is not aluck day for male No.5
+present B is given to Gentleman No.6
+present B is given to Gentleman No.6
+present A is given to Gentleman No.7
+present A is given to Gentleman No.7
+today is not aluck day for female No.8
+today is not aluck day for female No.9
+today is not aluck day for female No.10
+present B is given to Gentleman No.11
+present B is given to Gentleman No.11
+today is not aluck day for male No.12
+present B is given to Gentleman No.13
+present B is given to Gentleman No.13
+today is not aluck day for male No.14
+present A is given to Gentleman No.15
+present A is given to Gentleman No.15
+today is not aluck day for male No.16
+present B is given to Gentleman No.17
+present B is given to Gentleman No.17
+present A is given to Gentleman No.18
+present A is given to Gentleman No.18
+present B is given to Gentleman No.19
+present B is given to Gentleman No.19
+present B is given to Gentleman No.20
+present B is given to Gentleman No.20
+present A is given to Gentleman No.21
+present A is given to Gentleman No.21
+today is not aluck day for male No.22
+present B is given to Gentleman No.23
+present B is given to Gentleman No.23
+today is not aluck day for male No.24
+today is not aluck day for female No.25
+present B is given to Gentleman No.26
+present B is given to Gentleman No.26
+today is not aluck day for female No.27
+today is not aluck day for male No.28
+present A is given to Gentleman No.29
+present A is given to Gentleman No.29
+today is not aluck day for female No.30
+present A is given to Gentleman No.31
+present A is given to Gentleman No.31
+today is not aluck day for male No.32
+today is not aluck day for male No.33
+present B is given to Gentleman No.34
+present B is given to Gentleman No.34
+today is not aluck day for female No.35
+present B is given to Gentleman No.36
+present B is given to Gentleman No.36
+present A is given to Gentleman No.37
+present A is given to Gentleman No.37
+present A is given to Gentleman No.38
+present A is given to Gentleman No.38
+today is not aluck day for female No.39
+present A is given to Gentleman No.40
+present A is given to Gentleman No.40
+present B is given to Gentleman No.41
+present B is given to Gentleman No.41
+present B is given to Gentleman No.42
+present B is given to Gentleman No.42
+present B is given to Gentleman No.43
+present B is given to Gentleman No.43
+present B is given to Gentleman No.44
+present B is given to Gentleman No.44
+today is not aluck day for female No.45
+today is not aluck day for female No.46
+present B is given to Gentleman No.47
+present B is given to Gentleman No.47
+present B is given to Gentleman No.48
+present B is given to Gentleman No.48
+today is not aluck day for female No.49
+today is not aluck day for male No.50
+present B is given to Gentleman No.51
+present B is given to Gentleman No.51
+present E is give to luckyJohnson
+present E is given to Gentleman No.52
+today is not aluck day for male No.53
+present B is given to Gentleman No.54
+present B is given to Gentleman No.54
+present A is given to Gentleman No.55
+present A is given to Gentleman No.55
+today is not aluck day for male No.56
+present B is given to Gentleman No.57
+present B is given to Gentleman No.57
+present A is given to Gentleman No.58
+present A is given to Gentleman No.58
+today is not aluck day for male No.59
+present A is given to Gentleman No.60
+present A is given to Gentleman No.60
+today is not aluck day for female No.61
+present B is given to Gentleman No.62
+present B is given to Gentleman No.62
+present A is given to Gentleman No.63
+present A is given to Gentleman No.63
+present A is given to Gentleman No.64
+present A is given to Gentleman No.64
+present B is given to Gentleman No.65
+present B is given to Gentleman No.65
+today is not aluck day for female No.66
+present B is given to Gentleman No.67
+present B is given to Gentleman No.67
+today is not aluck day for male No.68
+present A is given to Gentleman No.69
+present A is given to Gentleman No.69
+today is not aluck day for male No.70
+today is not aluck day for male No.71
+today is not aluck day for male No.72
+present B is given to Gentleman No.73
+present B is given to Gentleman No.73
+today is not aluck day for female No.74
+today is not aluck day for male No.75
+present B is given to Gentleman No.76
+present B is given to Gentleman No.76
+today is not aluck day for female No.77
+today is not aluck day for male No.78
+today is not aluck day for male No.79
+today is not aluck day for female No.80
+present A is given to Gentleman No.81
+present A is given to Gentleman No.81
+present A is given to Gentleman No.82
+present A is given to Gentleman No.82
+present B is given to Gentleman No.83
+present B is given to Gentleman No.83
+present B is given to Gentleman No.84
+present B is given to Gentleman No.84
+today is not aluck day for female No.85
+today is not aluck day for male No.86
+today is not aluck day for female No.87
+today is not aluck day for male No.88
+present A is given to Gentleman No.89
+present A is given to Gentleman No.89
+today is not aluck day for female No.90
+present B is given to Gentleman No.91
+present B is given to Gentleman No.91
+present A is given to Gentleman No.92
+present A is given to Gentleman No.92
+present B is given to Gentleman No.93
+present B is given to Gentleman No.93
+today is not aluck day for male No.94
+present B is given to Gentleman No.95
+present B is given to Gentleman No.95
+present B is given to Gentleman No.96
+present B is given to Gentleman No.96
+today is not aluck day for female No.97
+today is not aluck day for female No.98
+present A is given to Gentleman No.99
+present A is given to Gentleman No.99

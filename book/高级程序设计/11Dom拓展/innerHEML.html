@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=7">
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style>
+		div:nth-child(1){background-color: red;}
+	</style>
+	<body>
+		<div>1</div>
+		<div>2</div>
+		<div>3</div>
+		<div>4</div>
+		<div>5</div>
+		<button id="btnTest" type="button">我是个按钮</button>
+		<script>
+			console.log(document.compatMode)
+			document.querySelector("div:nth-child(1)").innerHTML="&lt;b&gt哈哈&lt;/b&gt";
+			document.querySelector("div:nth-child(2)").innerHTML="<b>哈哈</b>";
+			document.querySelector("div:nth-child(3)").innerHTML="_<script defer>alert('hi');<\/script>";
+			document.querySelector("div:nth-child(4)").innerHTML="<div>&nbsp</div><script defer>alert('hi');<\/script>";
+			document.querySelector("div:nth-child(5)").innerHTML="<input type='hidden'></input><script defer>alert('hi');<\/script>";
+		</script>
+	</body>
+</html>

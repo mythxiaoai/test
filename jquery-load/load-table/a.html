@@ -1,0 +1,120 @@
+
+1
+<div id="table1">1</div>
+
+<script>
+  
+  setTimeout(()=>{
+    initTbale();
+  },1000);
+  
+  function initTbale(){
+     rj.table.init({
+      id: "#table1",
+      toolbar: false,
+      url:'http://192.168.130.106:8099/demo/s1',
+      sortName: "replyTime",
+      queryParams:function(params) {
+          //将查询格式化
+        return{
+              pageSize:params.limit,
+              pageNum:(params.offset+params.limit)/params.limit,
+              //pageNum : params.offset,
+              pageNo : params.offset, // 页码
+              sortName:params.sort,//这里是读取sortName配置选项
+              sortOrder:params.order,//默认是desc
+              deptId:$("#project").val(),
+              replyTime:$("#replyTime").val(),
+          }
+      },
+      onLoadSuccess(res){
+        console.log(111)
+        return res
+      },
+      columns: [
+          {checkbox: true },
+          {
+              field: 'replyName',
+              title: '回复工单任务名称',
+              sortable:true,
+          },
+          {
+              field: 'workNum',
+              title: '工单数量',
+              sortable:true,
+          },
+          {
+              field: 'successReply',
+              title: '回复成功数量',
+              sortable:true,
+              formatter: function(value,row,index){
+                  return `<a onclick="receipt.openInfo('${row.id}','tab1','${row.replyStatus}','${row.replyName}')">${value}</a>`
+              }
+          },
+          {
+              field: 'failReply',
+              title: '回复失败数量',
+              sortable:true,
+              formatter: function(value,row,index){
+                  return `<a onclick="receipt.openInfo('${row.id}','tab2','${row.replyStatus}','${row.replyName}')">${value}</a>`
+              }
+          },
+          {
+              field: 'notFoundWork',
+              title: '无法找到工单数量',
+              sortable:true,
+              formatter: function(value,row,index){
+                  return `<a onclick="receipt.openInfo('${row.id}','tab3','${row.replyStatus}','${row.replyName}')">${value}</a>`
+              }
+          },
+          {
+              field: 'replyUser',
+              title: '用户',
+          },
+          {
+              field: 'replyTime',
+              title: '回复时间',
+              sortable:true,
+              order:"desc",
+              formatter: function(value,row,index){
+              }
+          },
+          {
+              field: 'replyStatus',
+              title: '回复状态',
+              formatter:function(value,row,index){
+                  if(value=="已完成"){
+                      return `<span class='text-success'>${value}</span>`;
+                  }else if(value=="失败"){
+                      return `<span class='text-danger'>${value}</span>`;
+                  }else {
+                      return `<span class='text-info js_tooltip' title='回复成功数:${row.successReply} 回复失败数:${row.failReply} 无法找到工单数:${row.notFoundWork}'>${value}</span>`;
+                  }
+              }
+          },
+          {
+              field: 'remark',
+              title: '回单任务失败原因',
+              formatter:function(value,row,index){
+                  if(value==""){
+                      return "";
+                  }else{
+                      return value;
+                  }
+              }
+          },
+          {
+              title: '操作',
+              formatter: function(value, row, index) {
+                  return `
+            <div style="width:160px">
+               <a class="btn btn-info btn-xs" onclick="receipt.openInfo('${row.id}','tab1','${row.replyStatus}','${row.replyName}')">查看详情</a>
+               <a class="btn btn-danger btn-xs" onclick="receipt.delOne('${row.id}')">删除</a>
+            <div/>`
+              }
+          }
+      ],
+  })
+  }
+   
+</script>

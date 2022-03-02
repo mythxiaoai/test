@@ -1,0 +1,56 @@
+<html>
+<head>
+	    <meta charset="utf-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0">
+		<meta name="Keywords" content="">
+		<meta name="description" content="">
+		<title>百度地图尺子</title>
+		<style>
+			*{padding: 0;margin: 0;}
+			a{text-decoration: none;}
+			#allmap{
+				position: absolute;
+				height: 100%;
+				width: 100%;
+			}
+			.rulercss{
+				position: absolute;
+				top: 20px;
+				left: 50px;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<!--工具条-->
+		<div id="allmap"></div>
+		<button type="button" class="rulercss js_mapRuler">点击我调用尺子</button>
+		<!--jQuery-->
+		<script type="text/javascript" src="../js/jquery.js" ></script>
+		<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=7fzTXy36zH9TRuuh7X2mSIRGzMu0R1Xh"></script>
+		<script type="text/javascript" src="../js/mapRulerTool.js" ></script>
+		<!--业务通用js-->
+		<script>
+			/**
+			 *注意  调用标尺工具  需要提前取消所有点击事件  结束后在绑定 
+			 */
+			//enableMapClick   默认地图上的一些标注不可点击
+			var mp = new BMap.Map($("#allmap")[0],{enableMapClick: false});
+			mp.centerAndZoom(new BMap.Point(116.3964,39.9093),15);  // 设置地图显示的城市和显示的级别
+			mp.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
+			$(".js_mapRuler").click(function(){
+				//禁止地图其他点击事件
+				//关闭信息框
+				mp.closeInfoWindow();
+				//禁止拖拽
+				mp.disableDragging();
+				//调用插件
+				mapRulerTool(mp,"../img/ruler.cur",function(){
+					//启动拖拽
+					mp.enableDragging()
+				});
+			})
+		</script>
+	</body>
+</html>

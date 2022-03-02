@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://cdn.bootcdn.net/ajax/libs/ant-design-vue/2.2.2/antd.css" rel="stylesheet">
+</head>
+
+<body>
+  <div id="app">
+    <a-range-picker>
+      <template v-if="false"></template>
+    </a-range-picker>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0/moment.js"></script>
+  <script src="https://cdn.bootcdn.net/ajax/libs/vue/3.1.2/vue.global.js"></script>
+  <script src="https://cdn.bootcdn.net/ajax/libs/ant-design-vue/2.2.2/antd-with-locales.min.js"></script>
+  <script>
+    let { ref, computed } = Vue;
+    let vm = Vue.createApp({
+      setup(props) {
+        let test = computed({
+          get() { return "333" },
+          set(val) {
+            console.log("修改", val);
+          }
+        });
+        return { test1:props.test1, test }
+      }
+    }, { test1: "666" })
+
+    vm.use(antd)
+
+    vm.mount('#app')
+
+  </script>
+</body>
+
+</html>

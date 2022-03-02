@@ -1,0 +1,141 @@
+<!doctype html>
+<html>
+	<head>
+	    <!--声明当前页面的编码集：中文编码（gbk/gb2312）,国际编码（utf-8）-->
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+		<!--页面三要素-->
+		<title>国际标准模板</title><!--小于等于31 大小写不区分-->
+		<meta name="Keywords" content="关键词,关键词,关键词"><!--<=76个字-->
+		<meta name="description" content=""><!--<=80个字-->
+		<!--js/css-->
+		<style type="text/css">
+		@charset "UTF-8";
+		* {word-wrap: break-word;;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;}
+		html {-webkit-text-size-adjust: none;overflow-x:hidden}
+		body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td,span{padding:0;margin:0;}
+		body{font:normal 0.75em/1.5em "微软雅黑","冬青黑体简体中文 w3","宋体"; }
+		fieldset,img,html,body,iframe{border:0;}
+		/** 重置表格元素 **/
+		table{border-collapse:collapse;border-spacing:0;}
+		ol,ul{list-style:none;}
+		address,caption,cite,code,dfn,em,strong,th,var{font-weight:normal;font-style:normal;}
+		caption,th{text-align:left;}
+		em,i,small,caption,th{font-weight:normal;font-style:normal;font-size:100%;}
+		h1,h2,h3,h4,h5,h6,em,strong,b{font-weight:400;font-size:100%;}
+		q:before,q:after{content:'';}
+		.clearfix{*zoom:1;}
+		.clearfix:after{content:"."; display:block;clear:both;visibility:hidden;line-height:0;height:0;}
+		a {color: #9D9C9C;text-decoration: none;}
+		a img {border: none;border:0;}
+		a,button{ outline:none; border:0;}
+		input,select{border:1px solid #ccc;}
+		button::-moz-focus-inner{border:0;padding:0;margin:0;}
+		textarea,input,button,select{outline:0;font-size:inherit;line-height:inherit;color:inherit;font-family:inherit;}
+		textarea{overflow:auto;resize:none;}
+		.hide,.none{display: none}
+		.hidden{visibility: hidden;}
+		.show,.block{display: block;}
+		img{ vertical-align:middle;}
+		input:disabled,select:disabled,textarea:disabled{background:#ccc;}
+		.fl{float: left;}
+		.fr{float: right;}
+		.red{color:red;}
+		.green{color:green;}
+		#box{width:560px;margin:100px auto;position:relative;}
+		#box li{height:40px;width:100%;padding:0 15px;line-height:40px;background:#aaa;border-radius:3px;text-shadow:1px 1px  #ccc;font-size:14px;color:#fff;position:absolute;}
+		#box li a{float:right;margin-left:10px;background:#ccc;width:40px;text-align:center;border-radius:50%;box-shadow:-1px -1px 2px #333}
+		</style>
+	</head>  
+	<body>
+		<ul id="box">
+			<li>元素1
+				<a href="javascript:;" class="up">上</a>
+				<a href="javascript:;" class="down">下</a>
+			</li>
+			<li>元素2
+				<a href="javascript:;" class="up">上</a>
+				<a href="javascript:;" class="down">下</a>
+			</li>
+			<li>元素3
+				<a href="javascript:;" class="up">上</a>
+				<a href="javascript:;" class="down">下</a>
+			</li>
+			<li>元素4
+				<a href="javascript:;" class="up">上</a>
+				<a href="javascript:;" class="down">下</a>
+			</li>
+			<li>元素5
+				<a href="javascript:;" class="up">上</a>
+				<a href="javascript:;" class="down">下</a>
+			</li>
+		</ul>
+		<script src="js/jquery-1.11.2.min.js"></script>
+		<script>
+			//获取元素  绑定事件
+			//思路：
+			//动画位置top值和元素排序都做了。
+			var updoms = box.getElementsByClassName("up");
+			var downdoms = box.getElementsByClassName("down");
+			var lidoms = box.getElementsByTagName("li");
+			var marginBottom=15;
+			for(var i = 0 ;i<lidoms.length;i++){
+				//初始化位置
+				lidoms[i].style.top=i*(lidoms[i].offsetHeight+marginBottom)+"px";
+				//把需要的位置信息记录在每个元素的属性上 index可以不需要 如果要传入后台可以用到
+				lidoms[i].index=i;
+				lidoms[i].top=i*(lidoms[i].offsetHeight+marginBottom);
+				console.log(lidoms[i].top)
+				updoms[i].onclick=function(){
+					changesLiDom(this.parentElement,"up");
+				};
+				downdoms[i].onclick=function(){
+					changesLiDom(this.parentElement,"down");
+				};
+			};
+			//添加点颜色看的明显
+			for(var i=0;i<lidoms.length;i++){
+				lidoms[i].style.backgroundColor="rgb("+Math.ceil(Math.random()*255)+","+Math.ceil(Math.random()*255)+","+Math.ceil(Math.random()*255)+")";
+			}
+
+			//改变li的顺序
+			function changesLiDom(dom,updown){
+				if(updown=="up"){
+					var preDom=dom.previousElementSibling;
+					if(preDom){
+						//元素交换
+						dom.parentElement.insertBefore(dom,preDom);
+						//动画
+						$(dom).animate({top:preDom.top},300);
+						$(preDom).animate({top:dom.top},300);
+						//交换属性
+						var temp =dom.index;
+						dom.index=preDom.index;
+						preDom.index=temp;
+						temp=dom.top;
+						dom.top=preDom.top;
+						preDom.top=temp;
+					}else{
+						alert("到顶了~");
+					}
+				}else if(updown=="down"){
+					var nextDom=dom.nextElementSibling;
+					if(nextDom){
+					dom.parentElement.insertBefore(nextDom,dom);
+					$(dom).animate({top:nextDom.top},300);
+					$(nextDom).animate({top:dom.top},300);
+					//交换属性
+					var temp =dom.index;
+					dom.index=nextDom.index;
+					nextDom.index=temp;
+					temp=dom.top;
+					dom.top=nextDom.top;
+					nextDom.top=temp;
+
+					}else{
+						alert("到顶了~");
+					}
+				}
+				}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,241 @@
+﻿<!doctype html>
+<html>
+	<head>
+	    <!--声明当前页面的编码集：中文编码（gbk/gb2312）,国际编码（utf-8）-->
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+		<!--页面三要素-->
+		<title>QQ空间留言时光轴-小艾同学</title><!--小于等于31 大小写不区分-->
+		<meta name="Keywords" content="关键词,关键词,关键词"><!--<=76个字-->
+		<meta name="description" content=""><!--<=80个字-->
+		<!--js/css-->
+		<style type="text/css">
+			/*公用样式*/
+			*{padding:0;margin:0;}
+			img{border:none}
+			.fl{float:left;}
+			.fr{float:right;}
+			/*body的背景图片*/
+			body{background:url("images/1.jpg") no-repeat bottom center fixed;background-size:cover;font-size:12px;color:#666;font-family:"微软雅黑"}
+			/*timeLine Start 线的样式*/
+			.timeLine{height:500px;padding:63px 0 0 166px;position:relative;}
+			.timeLine .t_line{width:5px;background:linear-gradient(to top,#f03 0% ,#99f 30%,#ff3 80%); height:960px;position:absolute;top:130px;left:200px;box-shadow:1px 0px 2px #ff3;}
+			/*end timeLine*/
+
+			/*t_send start 消息框*/
+			.timeLine .t_send{height:200px;width:700px;}/*图片中间=200-33+2   图片离时光轴偏左1px；*/
+			.timeLine .t_send .t_head{height:66px;width:66px;}
+			.timeLine .t_send .t_head img{border-radius:50%;}
+			.timeLine .t_send .t_icon{display:inline-block;border:15px solid rgba(0,0,0,0);border-right:15px solid #fff;margin: 14px 0 0 0px;}
+			.timeLine .t_send .t_box{height:165px;width:600px;border-radius:5px;background:#fff;position:relative;}
+			.timeLine .t_send .t_box .t_tittle{padding: 15px 0 10px 15px;font-size:14px;}
+			.timeLine .t_send .t_box .t_message{height:55px;width:540px;border:1px solid #ccc;font-size:14px;line-height:16px;overflow:auto;padding:10px;margin-left: 15px;}
+			.timeLine .t_send .t_box .t_message img{vertical-align: middle;margin:2px;}
+			.timeLine .t_send .t_box .t_option{height:40px;padding:6px 0 0 15px;}
+			.timeLine .t_send .t_box .t_option .t_gif {display:inline-block;border:1px solid #fff;padding-top: 5px;}
+			.timeLine .t_send .t_box .t_option .t_gif a{text-decoration:none;color:#fff;}
+			.timeLine .t_send .t_box .t_option .t_gif:hover{border:1px solid #ccc;}
+			.timeLine .t_send .t_box .t_option .t_btn{display:block;height:32px;width:100px;background:#5caae6;color:#fff;text-align:center;line-height:32px;margin-right:30px;box-shadow:10px;text-decoration:none;border-radius:3px;}
+			.timeLine .t_send .t_box .t_option .t_btn:hover{background:#09f}
+			/*end t_send 消息框结束*/
+
+			/*t_facebox start 表情包*/
+			.timeLine .t_facebox{background:#fff;width:365px;background:#fff;position:absolute;top:149px;left:29px;z-index:1; border-radius:1px;box-shadow:1px 3px 10px 2px;display:none;}
+			.timeLine .t_facebox .t_faceul{padding:1px;overflow:hidden;border:1px solid #ccc;}
+			.timeLine .t_facebox .t_faceul li{list-style:none;float:left;border:1px solid #fff;padding:3px;cursor:pointer;}
+			.timeLine .t_facebox .t_faceul li:hover{border:1px solid #999;}
+			/*end t_facebox*/
+
+			/*list start 列表*/
+			.timeLine .t_all .t_list{margin:30px 0 30px 0px;}
+			.timeLine .t_all .t_list:after{content:"";display:block;clear: both;}
+			.timeLine .t_all .t_head{height:66px;width:66px;}
+			.timeLine .t_all .t_head img{border-radius:50%;}
+			.timeLine .t_all .t_icon{display:inline-block;border:15px solid rgba(0,0,0,0);border-right:15px solid #fff;margin: 14px 0 0 0px;}
+			.timeLine .t_all .t_msg{width:500px;background:#fff;border-radius:5px;padding:20px;font-size:14px;}
+			.timeLine .t_all .t_msg img{vertical-align: middle;margin:2px;}
+			/*end start*/
+		</style>
+		<link type="text/css" rel="stylesheet" href="css/animate.css"></link>
+	</head>  
+		
+	<body>
+	<div class="head">
+	</div>
+		<div class="timeLine">
+		<!--line start-->
+			<div class="t_line"></div>
+		<!--end line-->
+
+		<!--t_send start-->
+			<div class="t_send">
+				<div class="t_head fl"><img  src="images\me.png" alt="帅帅的小艾" width="66" height="66"><img></div>
+				<div class="t_icon fl"></div>
+				<div class="t_box fl">
+					<p class="t_tittle">想说点什么？</p>
+					<div class="t_message" contenteditable="true" ></div>
+					<p class="t_option">
+					<a class="t_gif" href="#"><img  src="images\face\bba_thumb.gif" alt="表情包触发按钮" width="22" height="22" ></img></a>
+					<a class="t_btn fr" href="#">发表</a>
+					</p>
+
+					<!--t_facebox start-->
+					<div class="t_facebox ">
+						<ul class="t_faceul">
+							<li><img src="images/face/zz2_thumb.gif" title="[织]" width="22" height="22"></li>
+							<li><img src="images/face/horse2_thumb.gif" title="[神马]"></li>
+							<li><img src="images/face/fuyun_thumb.gif" title="[浮云]"></li>
+							<li><img src="images/face/geili_thumb.gif" title="[给力]"></li>
+							<li><img src="images/face/wg_thumb.gif" title="[围观]"></li>
+							<li><img src="images/face/vw_thumb.gif" title="[威武]"></li>
+							<li><img src="images/face/panda_thumb.gif" title="[熊猫]"></li>
+							<li><img src="images/face/rabbit_thumb.gif" title="[兔子]"></li>
+							<li><img src="images/face/otm_thumb.gif" title="[奥特曼]"></li>
+							<li><img src="images/face/j_thumb.gif" title="[囧]"></li>
+							<li><img src="images/face/hufen_thumb.gif" title="[互粉]"></li>
+							<li><img src="images/face/liwu_thumb.gif" title="[礼物]"></li>
+							<li><img src="images/face/smilea_thumb.gif" title="[呵呵]"></li>
+							<li><img src="images/face/tootha_thumb.gif" title="[嘻嘻]"></li>
+							<li><img src="images/face/laugh.gif" title="[哈哈]"></li>
+							<li><img src="images/face/tza_thumb.gif" title="[可爱]"></li>
+							<li><img src="images/face/kl_thumb.gif" title="[可怜]"></li>
+							<li><img src="images/face/kbsa_thumb.gif" title="[挖鼻屎]"></li>
+							<li><img src="images/face/cj_thumb.gif" title="[吃惊]"></li>
+							<li><img src="images/face/shamea_thumb.gif" title="[害羞]"></li>
+							<li><img src="images/face/zy_thumb.gif" title="[挤眼]"></li>
+							<li><img src="images/face/bz_thumb.gif" title="[闭嘴]"></li>
+							<li><img src="images/face/bs2_thumb.gif" title="[鄙视]"></li>
+							<li><img src="images/face/lovea_thumb.gif" title="[爱你]"></li>
+							<li><img src="images/face/sada_thumb.gif" title="[泪]"></li>
+							<li><img src="images/face/heia_thumb.gif" title="[偷笑]"></li>
+							<li><img src="images/face/qq_thumb.gif" title="[亲亲]"></li>
+							<li><img src="images/face/sb_thumb.gif" title="[生病]"></li>
+							<li><img src="images/face/mb_thumb.gif" title="[太开心]"></li>
+							<li><img src="images/face/ldln_thumb.gif" title="[懒得理你]"></li>
+							<li><img src="images/face/yhh_thumb.gif" title="[右哼哼]"></li>
+							<li><img src="images/face/zhh_thumb.gif" title="[左哼哼]"></li>
+							<li><img src="images/face/x_thumb.gif" title="[嘘]"></li>
+							<li><img src="images/face/cry.gif" title="[衰]"></li>
+							<li><img src="images/face/wq_thumb.gif" title="[委屈]"></li>
+							<li><img src="images/face/t_thumb.gif" title="[吐]"></li>
+							<li><img src="images/face/k_thumb.gif" title="[打哈气]"></li>
+							<li><img src="images/face/bba_thumb.gif" title="[抱抱]"></li>
+							<li><img src="images/face/angrya_thumb.gif" title="[怒]"></li>
+							<li><img src="images/face/yw_thumb.gif" title="[疑问]"></li>
+							<li><img src="images/face/cza_thumb.gif" title="[馋嘴]"></li>
+							<li><img src="images/face/88_thumb.gif" title="[拜拜]"></li>
+							<li><img src="images/face/sk_thumb.gif" title="[思考]"></li>
+							<li><img src="images/face/sweata_thumb.gif" title="[汗]"></li>
+							<li><img src="images/face/sleepya_thumb.gif" title="[困]"></li>
+							<li><img src="images/face/sleepa_thumb.gif" title="[睡觉]"></li>
+							<li><img src="images/face/money_thumb.gif" title="[钱]"></li>
+							<li><img src="images/face/sw_thumb.gif" title="[失望]"></li>
+							<li><img src="images/face/cool_thumb.gif" title="[酷]"></li>
+							<li><img src="images/face/hsa_thumb.gif" title="[花心]"></li>
+							<li><img src="images/face/hatea_thumb.gif" title="[哼]"></li>
+							<li><img src="images/face/gza_thumb.gif" title="[鼓掌]"></li>
+							<li><img src="images/face/dizzya_thumb.gif" title="[晕]"></li>
+							<li><img src="images/face/bs_thumb.gif" title="[悲伤]"></li>
+							<li><img src="images/face/crazya_thumb.gif" title="[抓狂]"></li>
+							<li><img src="images/face/h_thumb.gif" title="[黑线]"></li>
+							<li><img src="images/face/yx_thumb.gif" title="[阴险]"></li>
+							<li><img src="images/face/nm_thumb.gif" title="[怒骂]"></li>
+							<li><img src="images/face/hearta_thumb.gif" title="[心]"></li>
+							<li><img src="images/face/unheart.gif" title="[伤心]"></li>
+							<li><img src="images/face/pig.gif" title="[猪头]"></li>
+							<li><img src="images/face/ok_thumb.gif" title="[ok]"></li>
+							<li><img src="images/face/ye_thumb.gif" title="[耶]"></li>
+							<li><img src="images/face/good_thumb.gif" title="[good]"></li>
+							<li><img src="images/face/no_thumb.gif" title="[不要]"></li>
+							<li><img src="images/face/z2_thumb.gif" title="[赞]"></li>
+							<li><img src="images/face/come_thumb.gif" title="[来]"></li>
+							<li><img src="images/face/sad_thumb.gif" title="[弱]"></li>
+							<li><img src="images/face/lazu_thumb.gif" title="[蜡烛]"></li>
+							<li><img src="images/face/clock_thumb.gif" title="[钟]"></li>
+							<li><img src="images/face/cake.gif" title="[蛋糕]"></li>
+							<li><img src="images/face/m_thumb.gif" title="[话筒]"></li>
+							<li><img src="images/face/weijin_thumb.gif" title="[围脖]"></li>
+							<li><img src="images/face/lxhzhuanfa_thumb.gif" title="[转发]"></li>
+							<li><img src="images/face/lxhluguo_thumb.gif" title="[路过这儿]"></li>
+							<li><img src="images/face/bofubianlian_thumb.gif" title="[bofu变脸]"></li>
+							<li><img src="images/face/gbzkun_thumb.gif" title="[gbz困]"></li>
+							<li><img src="images/face/boboshengmenqi_thumb.gif" title="[生闷气]"></li>
+							<li><img src="images/face/chn_buyaoya_thumb.gif" title="[不要啊]"></li>
+							<li><img src="images/face/daxiongleibenxiong_thumb.gif" title="[dx泪奔]"></li>
+							<li><img src="images/face/cat_yunqizhong_thumb.gif" title="[运气中]"></li>
+							<li><img src="images/face/youqian_thumb.gif" title="[有钱]"></li>
+							<li><img src="images/face/cf_thumb.gif" title="[冲锋]"></li>
+							<li><img src="images/face/camera_thumb.gif" title="[照相机]"></li>	
+						</ul>
+					</div>
+					<!--end t_facebox-->
+				</div>
+			</div>
+			<!--end t_send-->
+
+			<!--start t_all-->
+			<div class="t_all">
+			<!--<div class="t_list animated bounceIn ">
+					<div class="t_head fl"><img  src="images\me.png" alt="帅帅的小艾" width="66" height="66"><img></div>
+					<div class="t_icon fl"></div>
+					<div class="t_msg fl">dasdsa</div>
+				</div>-->
+				
+			</div>
+			<!--end t_all-->
+		</div>
+		
+<!--操作上面元素动态效果-->
+<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+	//获取页面session
+	if(sessionStorage){
+	var myth_session = sessionStorage.getItem("myth_session");
+	//var myth_session = localStorage.getItem("myth_session");
+	}
+	if(myth_session){
+		$(".t_all").html(myth_session);
+	}
+
+	//图片加载到输入框
+		//1.点击触发表情包显示和隐藏
+	$(".t_gif").click(function(){
+		$(".t_facebox").toggle(500);
+	});
+
+		//2.点击加载到文本框
+	$(".t_faceul li").click(function(){
+		var img=$(this).html();
+		$(".t_message").append(img);
+		$(".t_facebox").hide(500);
+	});
+
+	//点击发表的动态的过程
+		//1.点击发表判断是否为空
+		$(".t_btn").click(function(){
+			var content=$(".t_message").text().trim()!=""?true:false;
+			var img=$(".t_message").find("img").html()!=null?true:false;
+			if(content||img){
+		//2.不为空才发表  下面的t_all添加标签,并清楚当前编辑内容
+				$(".t_all").prepend(
+				"<div class='t_list animated bounceIn '>"+
+				"<div class='t_head fl'><img  src='images\\me.png' alt='帅帅的小艾' width='66' height='66'><img></div>"+
+				"<div class='t_icon fl'></div>"+
+				"<div class='t_msg fl'>"+$(".t_message").html()+"</div>"+
+				"</div>");
+				$(".t_message").text("");
+		//3.操作玩后将回话保存到session中本地化 
+		// sessionStorage会话结束才消失是html5本地化的新的会话机制
+			sessionStorage.setItem("myth_session",$(".t_all").html());
+		// localStorage 存到本地，浏览器关闭时，任然存在
+			//localStorage.setItem("myth_session",$(".t_all").html());
+			}else{
+				alert("不能为空或空串哦^_^!请重新输入~");
+				$(".t_message").focus();
+				return;
+			}
+		});
+	});
+</script>
+	</body>
+</html>

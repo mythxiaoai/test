@@ -1,0 +1,125 @@
+<!doctype html>
+<html>
+	<head>
+	    <!--声明当前页面的编码集：中文编码（gbk/gb2312）,国际编码（utf-8）-->
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+		<!--页面三要素-->
+		<title>国际标准模板</title><!--小于等于31 大小写不区分-->
+		<meta name="Keywords" content="关键词,关键词,关键词"><!--<=76个字-->
+		<meta name="description" content=""><!--<=80个字-->
+		<!--js/css-->
+		<style type="text/css">
+		@charset "UTF-8";
+		* {word-wrap: break-word;;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;}
+		html {-webkit-text-size-adjust: none;overflow-x:hidden}
+		body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td,span{padding:0;margin:0;}
+		body{font:normal 0.75em/1.5em "微软雅黑","冬青黑体简体中文 w3","宋体"; }
+		fieldset,img,html,body,iframe{border:0;}
+		/** 重置表格元素 **/
+		table{border-collapse:collapse;border-spacing:0;}
+		ol,ul{list-style:none;}
+		address,caption,cite,code,dfn,em,strong,th,var{font-weight:normal;font-style:normal;}
+		caption,th{text-align:left;}
+		em,i,small,caption,th{font-weight:normal;font-style:normal;font-size:100%;}
+		h1,h2,h3,h4,h5,h6,em,strong,b{font-weight:400;font-size:100%;}
+		q:before,q:after{content:'';}
+		.clearfix{*zoom:1;}
+		.clearfix:after{content:"."; display:block;clear:both;visibility:hidden;line-height:0;height:0;}
+		a {color: #9D9C9C;text-decoration: none;}
+		a img {border: none;border:0;}
+		a,button{ outline:none; border:0;}
+		input,select{border:1px solid #ccc;}
+		button::-moz-focus-inner{border:0;padding:0;margin:0;}
+		textarea,input,button,select{outline:0;font-size:inherit;line-height:inherit;color:inherit;font-family:inherit;}
+		textarea{overflow:auto;resize:none;}
+		.hide,.none{display: none}
+		.hidden{visibility: hidden;}
+		.show,.block{display: block;}
+		img{ vertical-align:middle;}
+		input:disabled,select:disabled,textarea:disabled{background:#ccc;}
+		.fl{float: left;}
+		.fr{float: right;}
+		.red{color:red;}
+		.green{color:green;}
+
+		</style>
+	</head>  
+	<body>
+		<canvas id="canvas"  style="background:#111"></canvas>
+		<script src="js/jquery-1.11.1.min.js"></script>
+		<script>
+			var canvas =document.getElementById("canvas");
+			var context = canvas.getContext("2d");
+			canvas.width=window.innerWidth;
+			canvas.height=window.innerHeight;
+			var canvasHeight = canvas.height;//为了固定小球的位置
+			var canvasWidth = canvas.width;//为了固定小球的位置
+			var ballNum = 500;
+			var balls=[];
+			var ballRadious=5;
+			var addHeight=20;
+			var addwidth=2;
+
+			//创建单位小球对象
+			function Ball(){
+			Ball.prototype.x=0;
+			Ball.prototype.y=0;
+			Ball.prototype.radius=5;
+			Ball.prototype.color="red";
+			Ball.prototype.draw=function(context){
+				context.beginPath();
+				context.fillStyle= this.color;	
+				context.arc(this.x,this.y,this.radius,0,Math.PI*2);
+				context.fill();
+				}
+			}
+			function run1(xWidth,yHeight){
+				for(var i = 0 ; i<ballNum ; i ++){
+					var ball = new Ball();
+					ball.xWidth=xWidth;//初始化初始化
+					ball.yHeight=yHeight;//方便初始化
+					ball.x=canvasHeight;
+					ball.y=yHeight;
+					ball.stepy=Math.random()*-60;
+					ball.stepx=Math.random()*10-1;
+					ball.radius=Math.random()*ballRadious.toFixed(0)+1;
+					ball.color="rgba("+Math.floor(Math.random()*226)+","+Math.floor(Math.random()*226)+","+Math.floor(Math.random()*226)+",1)";
+					ball.draw(context);
+					balls.push(ball);
+				}
+			}
+			run1(canvasWidth/4,canvasHeight);//左边烟花
+			run1(canvasWidth/2,canvasHeight);//中间烟花
+			run1(canvasWidth/1.33,canvasHeight);//右边烟花
+			
+			function level(ball){
+				ball.stepy+=0.4;//用速度控制方向
+				ball.x += ball.stepx;
+				ball.y += ball.stepy;
+				//边界判断  消失了再来
+				if(ball.y-ball.radius > canvasHeight ||
+					ball.y+ball.radius<0 || 
+					ball.x-ball.radius > canvasWidth ||
+					ball.x+ball.radius<0
+				){
+					//从新初始化
+					ball.x =ball.xWidth;
+					ball.y = ball.yHeight;
+					ball.stepy = Math.random()*-10-10; 
+					ball.stepx = Math.random()*2-1; 
+				}
+
+				ball.draw(context);
+			}
+
+			setInterval(function(){
+				//从新清除画布
+				context.clearRect(0,0,canvasWidth,canvasHeight);
+				for(var i in balls){
+					level(balls[i]);
+				}
+			},30)
+			
+		</script>
+	</body>
+</html>

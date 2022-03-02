@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		我是B页面
+	</body>
+	<script>
+		window.onmessage=function(e){
+				console.log(e.data);
+				processMessage(e.data);
+				e.source.postMessage("Received!","*");
+		}
+	</script>
+</html>

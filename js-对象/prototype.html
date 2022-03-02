@@ -1,0 +1,28 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function Str() {
+        Str.prototype.age = 18;
+      }
+      Str.prototype = {
+        constructor: Str,
+        toString: function () {
+          console.log(this.arr);
+        },
+        haha: "haha2222",
+        arr:[]
+        //age:14
+      };
+      var obj = new Str();
+      var obj2 = new Str();
+      obj2.arr.push(1);
+      console.log(obj.arr);
+      console.log(Str.prototype.__proto__ === Object.prototype);
+    </script>
+  </body>
+</html>

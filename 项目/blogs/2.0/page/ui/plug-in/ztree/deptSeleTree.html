@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<HTML>
+<HEAD>
+	<TITLE> ZTREE DEMO - select menu</TITLE>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<link rel="stylesheet" href="css/demo.css" type="text/css">
+	<link rel="stylesheet" href="css/zTreeStyle/zTreeStyle.css" type="text/css">
+	<script type="text/javascript" src="js/jquery-1.4.4.min.js"></script>
+	<script type="text/javascript" src="js/jquery.ztree.core.js"></script>
+	<script type="text/javascript" src="js/jquery.ztree.excheck.js"></script>
+	<style>
+	</style>
+	<SCRIPT type="text/javascript">
+		$(function(){
+			var setting = {
+				view: {
+					dblClickExpand: false,
+					showLine: false,
+					showIcon:false
+				},
+				data: {
+					simpleData: {
+						enable: true
+					}
+				},
+				check:{
+					enable:true,
+					chkStyle: "radio",
+					radioType: "all",
+				},
+				callback: {
+					/*beforeClick: function(treeId,treeNode){
+						if(treeNode.isParent){
+							$("#"+treeNode.tId+"_switch").trigger("click");
+							return false;
+						}
+					},*/
+					onClick:function(e, treeId, treeNode){
+						if(treeNode.isParent){
+							$("#"+treeNode.tId+"_switch").trigger("click");
+						}
+					},
+					onCheck: function(e, treeId, treeNode){
+						$("#citySel").attr("value", treeNode.name);
+						//$("#citySel").data("id", treeNode.id);
+						$("#menuContent").fadeOut("fast");
+					}
+				}
+			};
+			var zNodes =[
+				{id:1, pId:0, name:"北京"},
+				{id:2, pId:0, name:"天津"},
+				{id:3, pId:0, name:"上海"},
+				{id:6, pId:0, name:"重庆"},
+				{id:4, pId:0, name:"河北省", open:true},
+				{id:41, pId:4, name:"石家庄"},
+				{id:42, pId:4, name:"保定"},
+				{id:43, pId:4, name:"邯郸"},
+				{id:44, pId:4, name:"承德"},
+				{id:5, pId:0, name:"广东省", open:true},
+				{id:51, pId:5, name:"广州"},
+				{id:52, pId:5, name:"深圳"},
+				{id:53, pId:5, name:"东莞"},
+				{id:54, pId:5, name:"佛山"},
+				{id:6, pId:0, name:"福建省", open:true},
+				{id:61, pId:6, name:"福州"},
+				{id:62, pId:6, name:"厦门"},
+				{id:63, pId:6, name:"泉州"},
+				{id:64, pId:6, name:"三明"}
+			 ];
+			$("#citySel").click(function(e){
+				$("html").click(hideMenu);
+				var cityObj = $("#citySel");
+				var cityOffset = $("#citySel").offset();
+				$("#menuContent").css({left:cityOffset.left, top:cityOffset.top + cityObj.outerHeight(),width:cityObj.width()}).slideDown("fast");
+			});
+			
+			function hideMenu(event) {
+				if (!(event.target.id == "citySel" || event.target.id == "menuContent" || $(event.target).parents("#menuContent").length>0)) {
+					$("#menuContent").fadeOut("fast");
+					$("html").unbind("click", hideMenu);
+				}
+			}
+
+			$.fn.zTree.init($("#treeDemo"), setting, zNodes);
+		});
+	</SCRIPT>
+	<style type="text/css">
+	</style>
+ </HEAD>
+
+<BODY>
+<h1>下拉菜单</h1>
+<h6>[ 文件路径: super/select_menu.html ]</h6>
+<input id="citySel" type="text" readonly value=""/>
+
+<div id="menuContent" class="menuContent" style="display:none;position: absolute;background: #fff;border: 1px solid #ccc;">
+	<ul id="treeDemo" class="ztree" style="margin-top:0; width:160px;"></ul>
+</div>
+
+</BODY>
+</HTML>

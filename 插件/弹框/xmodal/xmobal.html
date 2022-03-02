@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!--字体图标 fa fa-*-->
+		<link rel="stylesheet" href="../../fonts/font-awesome.min.css" />
+		<!--bootstrap-->
+		<link rel="stylesheet" href="../../js/bootstrap/bootstrap.css" />
+		<!--bootstrap过滤样式-->
+		<link rel="stylesheet" href="../../js/bootstrap/bootstrapfiller.css" />
+		<!--checkbox/radio修饰-->
+		<link rel="stylesheet" href="../../js/icheck/skins/all.css" />
+		<!--loading加载动画-->
+		<link rel="stylesheet" href="../../js/loading/loading.css" />
+		<!--sweetalert弹框提示-->
+		<link rel="stylesheet" href="../../js/sweetalert/sweetalert.css" />
+		<!--通用动画样式-->
+		<link rel="stylesheet" href="../../css/common/animate.css" />
+		<!--ztree树插件-->
+		<link rel="stylesheet" href="../../js/ztree/css/awesomeStyle/awesome.css" type="text/css">
+		<link rel="stylesheet" href="../../js/ztree/css/zTreeStyle/zTreeStyle.css" />
+		<!--基础样式文件-->
+		<link rel="stylesheet" href="../../css/common.css" />
+	</head>
+	<body class="panel-body p-md">
+		<h2 class="page-header">url标准弹框</h2>
+		<a href="javscript:;" type="button" id="btn" class="btn btn-danger m-b" >弹层</a>
+		<pre>$("#btn").xmodal({url:"../bootstrapTable/bootstrapTable.html",title:"我是标题1",});</pre>
+		
+		<h2 class="page-header">普通弹窗</h2>
+		<a href="javscript:;" type="button" id="btn2" class="btn btn-danger m-b" >弹层1</a>
+		<pre>$("#btn2").xmodal({title:"警告",content:"确定删除这条记录吗？",size:"modal-sm"});</pre>
+				<h2 class="page-header">其他可配置项</h2>
+		<pre>
+		backdrop: true,//点击其他地方关闭
+		keyboard: true,//键盘esc关闭
+		show: true,//立即显示
+		size:"",//modal-sm|modal-lg//尺寸大小调整
+		title:"标题",//标题
+		url:null,//加载内容的请求地址
+		surebtn:true,//显示确认按钮
+		surebtnText:"确定",//显示确认按钮
+		cancelbtn:true,//显示取消按钮
+		cancelbtnText:"取消",//显示确认按钮
+		content:false,//弹层的内容  可以是html
+		loadback:null,//加载完成或运行的回调
+		sureback:null,//点击确定的回调
+		cancelback:null,//取消运行的回调</pre>
+		<!--<div class="modal fade" id="modalView">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+						<h4 class="modal-title">modal-title</h4>
+					</div>
+					<div class="modal-body">
+						
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						<button type="button" class="btn btn-danger">save</button>
+					</div>
+				</div>
+			</div>
+		</div>-->
+		
+		<!--jQuery-->
+		<script type="text/javascript" src="../../js/jquery.js" ></script>
+		<!--bootstrap-->
+		<script type="text/javascript" src="../../js/bootstrap/bootstrap.js" ></script>
+		<!--checkbox/radio修饰-->
+		<script type="text/javascript" src="../../js/icheck/icheck.js" ></script>
+		<!--loading加载-->
+		<script type="text/javascript" src="../../js/loading/loading.js" ></script>
+		<!--layer弹框-->
+		<script type="text/javascript" src="../../js/xmodal/xmodal.js" ></script>
+		<script type="text/javascript" src="../../js/ztree/js/jquery.ztree.core.js" ></script>
+		<script type="text/javascript" src="../../js/ztree/js/jquery.ztree.exedit.js" ></script>
+		<script type="text/javascript" src="../../js/ztree/js/jquery.ztree.excheck.js" ></script>
+		<script type="text/javascript" src="../../js/ztree/js/jquery.ztree.exhide.js" ></script>
+		<script type="text/javascript" src="../../js/ztree/js/ztree.search.js" ></script>
+		<!--sweetalert提示框-->
+		<script type="text/javascript" src="../../js/sweetalert/sweetalert-dev.js" ></script>
+		<!--tip 错误操作提示框-->
+		<script type="text/javascript" src="../../js/tip.js" ></script>
+		<!--工具js-->
+		<script type="text/javascript" src="../../js/util.js" ></script>
+		<!--业务通用js-->
+		<script type="text/javascript" src="../../js/common.js" ></script>
+		<script type="text/javascript" src="../../js/rjtx.js" ></script>
+		<script>
+			$("#btn").xmodal({url:"./form.html",title:"我是标题1",});
+			$("#btn2").xmodal({title:"警告",content:"确定删除这条记录吗？"});
+		</script>
+	</body>
+</html>

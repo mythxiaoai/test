@@ -1,0 +1,12 @@
+.xaui-tip{display:inline-block;background:#111;color:#fff;padding:10px;position:fixed;top:10px;left:10px;border-radius:4px;}
+		.xaui-tip .xaui-tip-cron{display:inline-block;
+			border-top:10px solid #111;
+			border-right:10px solid transparent;
+			border-bottom:10px solid transparent;
+			border-left:10px solid transparent;
+			position:absolute;
+			top:50%;
+			left:50%;
+			margin-top:16px;
+			margin-left:-10px;
+		}

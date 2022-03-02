@@ -1,0 +1,40 @@
+﻿<!doctype html>
+<html>
+	<head>
+	    <!--声明当前页面的编码集：中文编码（gbk/gb2312）,国际编码（utf-8）-->
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+		<!--页面三要素-->
+		<title>根据时间切换背景颜色</title><!--小于等于31 大小写不区分-->
+		<meta name="Keywords" content="关键词,关键词,关键词"><!--<=76个字-->
+		<meta name="description" content=""><!--<=80个字-->
+		<!--js/css-->
+		<style type="text/css">
+			*{margin:0;padding:0;}
+			body{color:#fff;font-family:"微软雅黑"}
+			.bg{width:100%;height:100%;background:#ccc;position:absolute;z-index:-1;}
+			.bg .time_show{font-size:48px;position:relative;height:48px;line-height:48px;width:200px;margin:0 auto;top:50%;margin-top:-24px;text-align:center;text-shadow: -1px -1px rgba(197, 223, 248,0.8),-2px -2px rgba(197, 223, 248,0.8),-3px -3px rgba(197, 223, 248,0.8)}
+		</style>
+	</head>  
+	<body>
+		<div class="bg">
+			<div class="time_show"></div>
+		</div>
+
+		<script>
+			var obg = document.getElementsByClassName("bg")[0];
+			var otime = document.getElementsByClassName("time_show")[0];
+			function run(){
+				var date = new Date();
+				var h = date.getHours();
+				var m = date.getMinutes();
+				var s = date.getSeconds();
+				var time = (h<10?"0"+h:h)+":"+(m<10?"0"+m:m)+":"+(s<10?"0"+s:s);
+				var color ="#"+(h<10?"0"+h:h)+(m<10?"0"+m:m)+(s<10?"0"+s:s);
+				obg.style.backgroundColor=color;
+				otime.innerHTML=time;
+			}
+			setInterval(run,1000);
+		
+		</script>
+	</body>
+</html>

@@ -1,0 +1,174 @@
+<!doctype html>
+<html>
+	<head>
+	    <!--声明当前页面的编码集：中文编码（gbk/gb2312）,国际编码（utf-8）-->
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+		<!--页面三要素-->
+		<title>国际标准模板</title><!--小于等于31 大小写不区分-->
+		<meta name="Keywords" content="关键词,关键词,关键词"><!--<=76个字-->
+		<meta name="description" content=""><!--<=80个字-->
+		<!--js/css-->
+		<style type="text/css">
+		@charset "UTF-8";
+		* {word-wrap: break-word;;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;}
+		html {-webkit-text-size-adjust: none;overflow-x:hidden}
+		body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td,span{padding:0;margin:0;}
+		body{font:normal 0.75em/1.5em "微软雅黑","冬青黑体简体中文 w3","宋体"; }
+		fieldset,img,html,body,iframe{border:0;}
+		/** 重置表格元素 **/
+		table{border-collapse:collapse;border-spacing:0;}
+		ol,ul{list-style:none;}
+		address,caption,cite,code,dfn,em,strong,th,var{font-weight:normal;font-style:normal;}
+		caption,th{text-align:left;}
+		em,i,small,caption,th{font-weight:normal;font-style:normal;font-size:100%;}
+		h1,h2,h3,h4,h5,h6,em,strong,b{font-weight:400;font-size:100%;}
+		q:before,q:after{content:'';}
+		.clearfix{*zoom:1;}
+		.clearfix:after{content:"."; display:block;clear:both;visibility:hidden;line-height:0;height:0;}
+		a {color: #9D9C9C;text-decoration: none;}
+		a img {border: none;border:0;}
+		a,button{ outline:none; border:0;}
+		input,select{border:1px solid #ccc;}
+		button::-moz-focus-inner{border:0;padding:0;margin:0;}
+		textarea,input,button,select{outline:0;font-size:inherit;line-height:inherit;color:inherit;font-family:inherit;}
+		textarea{overflow:auto;resize:none;}
+		.hide,.none{display: none}
+		.hidden{visibility: hidden;}
+		.show,.block{display: block;}
+		img{ vertical-align:middle;}
+		input:disabled,select:disabled,textarea:disabled{background:#ccc;}
+		.fl{float: left;}
+		.fr{float: right;}
+		.red{color:red;}
+		.green{color:green;}
+		body{background:#333}
+		.timeshow{width:300px;height:50px;margin:100px auto 0px;text-align:center;font-size:32px;line-height:50px;color:#fff;text-shadow:-1px -1px #bbb,-2px -2px #bbb,-3px -3px #bbb;}
+		/*box start */
+		.box {width:300px;height:300px;border-radius:50%;margin:0 auto;background:#fff;overflow:hidden;}
+		.box .time{position:relative;}
+		.box .time .mark {width:300px;height:300px;background:url("images/1.jpg") no-repeat -305px -873px;}
+		.box .time  .pointer{width:230px;height:230px;position:absolute;top:0;left:0;bottom:0;right:0;margin:auto;border-radius:50%;}
+		.box .time .pointer .panel{
+			position:absolute;top:0;left:0;bottom:0;right:0;margin:auto;
+		}
+			/*spanel start*/
+		.box .time .pointer .spanel{width:230px;height:230px;}
+		.box .time .pointer .spanel .simgpanel{width:230px;height:230px;}
+		.box .time .pointer .spanel .img{width:10px;height:230px;background:url("images/s.png") no-repeat;position:absolute;left:-2px;right:0;margin:auto;top:-49px;}
+			/*end spanel*/
+			/*mpanel start*/
+		.box .time .pointer .mpanel{width:212px;height:212px;}
+		.box .time .pointer .mpanel .mimgpanel{width:10px;height:210px;}
+		.box .time .pointer .mpanel .img{width:10px;height:210px;background:url("images/m.png") no-repeat;position:absolute;left:-7px;right:0;margin:auto;top:-72px;}
+			/*end mpanel*/
+			/*hpanel start*/
+		.box .time .pointer .hpanel{width:140px;height:140px;}
+		.box .time .pointer .hpanel .himgpanel{width:140px;height:140px;}
+		.box .time .pointer .hpanel .img{width:10px;height:140px;background: url("images/m.png") no-repeat;position:absolute;left:-7px;right:0;margin:auto;top:-70px;}
+			/*end hpanel*/
+		.box .time .pointer .h{position:absolute;width:1px;height:1px;border:2px solid rgba(0,0,0,0.2);background-color:#666;border-radius:50%;}
+		.box .time .pointer .m{position:absolute;width:1px;height:1px;border:2px solid rgba(0,0,0,0.2);background-color:#666;border-radius:50%;}
+		.box .time .pointer .spanel .s{position:absolute;width:1px;height:1px;border:2px solid rgba(0,0,0,0.2);background-color:#666;border-radius:50%;}
+		</style>
+	</head>  
+	<body>
+		<div class="timeshow"></div>
+		<div class="box">
+			<div class="time">
+				<div class="mark"></div>
+				<div class="pointer">
+					<div class="panel spanel">
+						<div class="panel simgpanel">
+							<div class="img"></div>
+						</div>
+						<div class="s"></div>
+					</div>
+					<div class="panel mpanel">
+						<div class="panel mimgpanel">
+							<div class="img"></div>
+						</div>
+						<div class="m"></div>
+					</div>
+					<div class="panel hpanel">
+						<div class="panel himgpanel">
+						<div class="img"></div>
+						</div>
+						<div class="h"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script>
+			var timeshowDom=getClassDom("timeshow");
+
+			var sDom=getClassDom("s");
+			var mDom=getClassDom("m");
+			var hDom=getClassDom("h");
+			var simgpanelDom = getClassDom("simgpanel");
+			var mimgpanelDom = getClassDom("mimgpanel");
+			var himgpanelDom = getClassDom("himgpanel");
+			var steps=sDom.parentNode.offsetWidth/2;
+			var stepm=mDom.parentNode.offsetWidth/2;
+			var steph=hDom.parentNode.offsetWidth/2;
+			runTime();
+			function runTime(){
+			var today = new Date();
+			var h=today.getHours();
+			var m=today.getMinutes();
+			var s=today.getSeconds();
+			/*
+				数学知识——>公式推导
+				sin 0 90 180 270 360 deg  ——>  0  1  0  -1  0   
+				cos 0 90 180 270 360 deg  ——>  1  0  -1  0  1
+				想一想起始位置的值得变化
+				因为我这里是时钟所以 r-表示半径
+				一个圆的距离变化  也是  X  Y的距离
+				top: 0  r  2r  r  0
+				left: r  2r  r  0  r
+				与sin  cos 之间的关系  i-角度变化的值
+				top:cos top :r-i*r
+				left:sin left :r+i*r
+
+				下面公式解释
+				秒:60格  1-60  60的时候为0  1.2.3.4.5. 1-5中间只有4个点  但是如果是圈起来5到1 就有5个点  同理 1-60 有60个空格
+				S
+				每秒的度数  360/60=6deg
+				180=Math.PI  --180deg= π
+				2*Math.PI/360  --算出 1度的值
+				2*Math.PI/360*6*s --算出每秒刻度的角度值乘以已经走过的秒数
+				M
+				每分的度数  360/60=6deg
+				180=Math.PI  --180deg= π
+				2*Math.PI/360  --算出1度的值
+				2*Math.PI/360*6*m --算出每分钟刻度的角度值乘以已经走过的分钟数
+				H
+				每小时的度数  360/12=30deg
+				180=Math.PI  --180deg= π
+				2*Math.PI/360  --算出 1度的值
+				2*Math.PI/360*30*h --算出每小时刻度的角度值乘以已经走过的小时数
+			*/
+			sDom.style.top=steps-Math.cos(2*Math.PI/360*6*s)*steps+"px";
+			sDom.style.left=steps+Math.sin(2*Math.PI/360*6*s)*steps+"px";
+			simgpanelDom.style.transform="rotate("+6*s+"deg)";
+
+			mDom.style.top=stepm-Math.cos(2*Math.PI/360*6*m)*stepm+"px";
+			mDom.style.left=stepm+Math.sin(2*Math.PI/360*6*m)*stepm+"px";
+
+			mimgpanelDom.style.transform="rotate("+6*m+"deg)";
+
+			hDom.style.top=steph-Math.cos(2*Math.PI/360*30*h)*steph+"px";
+			hDom.style.left=steph+Math.sin(2*Math.PI/360*30*h)*steph+"px";
+
+			himgpanelDom.style.transform="rotate("+30*h+"deg)";
+			//这个顺带把电子时间也加入
+			timeshowDom.innerHTML=today.toLocaleTimeString();
+			}
+			setInterval(runTime,1000);
+			
+
+			function getClassDom(className){
+				return document.getElementsByClassName(className)[0];
+			}
+		</script>
+	</body>
+</html>

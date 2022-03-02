@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{margin:0;padding:0}
+			.anchorBL{display: none;}
+			#allmap{position:absolute;width: 600px;height: 300px;margin: 5px;}
+			#jx{position: absolute;left:610px;top: 300px;}
+			#showjw{position: absolute;top: 600px;width: 100%;}
+			#showjw .jw{padding-right: 100px;}
+		</style>
+		<link rel="stylesheet" href="css/bootstrap.css" />
+	</head>
+	<body>
+		<h3 class="page-header">获取经纬度</h3>
+		<select name="province" id="province">
+			<option selected="selected">广东省</option>
+		</select>
+		<select name="city" id="city">
+			<option selected="selected">广州市</option>
+		</select>
+		<select name="area" id="area">
+			<option selected="selected">天河区</option>
+		</select>
+		<div>
+			详细信息:<input type="text" name="infoadd" id="infoadd" value="光谱西路3号" />
+		</div>
+		
+		<div id="allmap"></div>
+		<div id="jx" class="btn btn-danger">解析</div>
+		<div id="showjw"><span class="jw js_j">经度:</span><span class="jw js_w">纬度:</span></div>
+		<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=nCjk0B8jGtbLiGfUoYgS9HHjTzAYxBDW"></script>
+		<script type="text/javascript" src="http://api.map.baidu.com/library/InfoBox/1.2/src/InfoBox_min.js "></script>
+		<!--标注点data测试数据-->
+		<script type="text/javascript" src="../js/jquery.js" ></script>
+		<script>
+		$(function(){
+		/**业务**/
+		
+		/**交互**/
+			// 百度地图API功能
+			var map = new BMap.Map("allmap",{minZoom:4});
+			map.enableScrollWheelZoom(true);//允许拖放
+			// 创建地址解析器实例
+			var localPv =getLocalPosition();//
+			map.centerAndZoom(new BMap.Point(106.478927,38.565005),1)
+			$("#jx").click(function(){
+				if(!$("#province").val()){
+					alert("请选择省份~");
+					return;
+				}else if(!$("#city").val()){
+					alert("请选择城市~");
+					return;
+				}else if(!$("#area").val()){
+					alert("请选择地区~");
+					return;
+				}
+				var addstr=$("#province").val()+$("#city").val()+$("#area").val()+($("#infoadd").val()||"");
+				//写锚点的同时 清除下;
+				map.clearOverlays();
+				//获取解析器
+				var myGeo = new BMap.Geocoder();
+				myGeo.getPoint(addstr, function(point){
+				if (point) {
+					//1.zoom层级的缩放
+					//2.移动到point点
+					//3.添加覆盖物
+					//4.在页面上显示金纬度坐标
+					//5.为覆盖物添加拖拽
+					map.setZoom(19); 
+					map.panTo(point);
+					var mark =new BMap.Marker(point);
+					map.addOverlay(mark);
+					$(".js_j").text("经度:"+point.lng);
+					$(".js_w").text("经度:"+point.lat);
+					mark.enableDragging();
+					var opts = {
+					  width : 200,     // 信息窗口宽度
+					  height: 100,     // 信息窗口高度
+					  title : "海底捞王府井店" , // 信息窗口标题
+					  offset:new BMap.Size(0,-20)
+					}
+					mark.setAnimation(BMAP_ANIMATION_DROP);
+					mark.addEventListener("dragend",function(e){
+						//event{type, target, pixel, point}
+						myGeo.getLocation(e.point,function(rs){
+							//1.改变值和上面的输入框
+							//addComp.province + ", " + addComp.city + ", " + addComp.district + ", " + addComp.street + ", " + addComp.streetNumber
+							var addComp = rs.addressComponents;
+							if(addComp.province){
+								$("#province").val(addComp.province);
+							}
+							if(addComp.city){
+								$("#city").val(addComp.city);
+							}
+							if(addComp.district){
+								$("#area").val(addComp.district);
+							}
+							if(addComp.street){
+								$("#infoadd").val(addComp.street+addComp.streetNumber);
+							}
+							//alert(addComp.province + ", " + addComp.city + ", " + addComp.district + ", " + addComp.street + ", " + addComp.streetNumber);
+						});
+						$(".js_j").text("经度:"+e.point.lng);
+						$(".js_w").text("经度:"+e.point.lat);
+						
+					});
+					
+				}else{
+					alert("您选择地址没有解析到结果!");
+				}
+				});
+			});
+			/*
+			// 将地址解析结果显示在地图上,并调整地图视野
+			getPoint(map,myGeo,"广州市萝岗区光谱西路3号","广州市");
+			function getPoint(map,myGeo,addinfo,city){
+				myGeo.getPoint(addinfo, function(point){
+				if (point) {
+					map.panTo(point);
+					map.addOverlay(new BMap.Marker(point));
+				}else{
+					alert("您选择地址没有解析到结果!");
+				}
+				}, city);
+			}
+			getLocation(point:Point, callback:function[, options: LocationOptions])
+			function getLocation(point,myGeo){
+				myGeo.getLocation(point,function(rs){
+					return rs.addressComponents;
+				});
+			}
+			function getPoint(map,myGeo,addinfo,city){
+				myGeo.getPoint(addinfo, function(point){
+				if (point) {
+					map.panTo(point);
+					map.addOverlay(new BMap.Marker(point));
+				}else{
+					alert("您选择地址没有解析到结果!");
+				}
+				}, city);
+			}
+			*/
+			
+			
+			function getLocalPosition(){
+				var json ={};
+				/**
+				 * json.country="国家";
+				 * */
+				json.country="中国";
+				/**
+				 * json.province="省";
+				 * */
+                json.province="广东";
+                /**
+				 * json.city="市";
+				 * */
+                json.city="广州";
+				 $.getScript('http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=js', function(_result) {
+		            if (remote_ip_info.ret == '1') {
+		               //alert(JSON.stringify(remote_ip_info));
+		                json.country=remote_ip_info.country;
+		                json.province=remote_ip_info.province;
+		                json.city=remote_ip_info.city;
+		            } else {
+		               	xalert("获取当前地理位置失败~已跳转默认地址");
+		            }
+	       		 });
+       			return json;
+				}
+		});
+		</script>
+	</body>
+</html>

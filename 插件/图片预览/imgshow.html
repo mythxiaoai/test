@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="zh-CN">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+		<title>兴国充电桩运营管理系统</title>
+		<meta name="Keywords" content="关键词,关键词,关键词">
+		<meta name="description" content="">
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<!--网页宽度默认等于屏幕宽度（width=device-width），原始缩放比例（initial-scale=1）为1.0，即网页初始大小占屏幕面积的100%。-->
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0">
+		<!--bootshrapCSS-->
+		<link rel="stylesheet" href="css/bootstrap.css" />
+		<link rel="stylesheet" href="css/common/bootstrapfilter.css" />
+		<link rel="stylesheet" href="css/common/common.css"/>
+		<!--发布模式-->
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" href="css/sganimate.css" type="text/css"/>
+		<script type="text/javascript" src="js/jquery.min.js" ></script>
+		<script type="text/javascript" src="js/bootstrap.min.js" ></script>
+		<script src="js/mkui.js"></script>
+		<script src="js/common.js"></script>
+		<style>
+			li{width: 50px;height: 50px;outline: 1px solid #ccc; float: left;}
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li><img src="img/login.jpg" data-view='true' alt="" class="img-responsive" /></li>
+			<li><img class="img-responsive" data-view='true' src="img/logo.png" /></li>
+			<li><img class="img-responsive" data-view='true' src="img/monitor/piece_jl11.png" /></li>
+			<li><img class="img-responsive" data-view='true' src="img/map/zd_01.png" /></li>
+			<li><img class="img-responsive" data-view='true' src="img/monitor/piece_zl1.png" /></li>
+		</ul>
+	</body> 
+	<script>
+		(function(win){
+			var preview={
+				init:function(){
+					var $this = this;
+					$("body").on("click","img[data-view='true']",function(){
+						$this.getmain(this);
+					});
+				},
+				getmain:function(dom){
+					var imgbox = $("<div>");
+					var img = $("<img>").attr("src",$(dom).attr("src"));
+					var closebtn=$("<div>");
+					imgbox[0].style.cssText="display:none;position: fixed;width: 100%; height: 100%; left:0;top:0;background: rgba(0,0,0,0.5); z-index: 999;";
+					closebtn[0].style.cssText="position: absolute;right:5px;top:8px;cursor:pointer;width: 36px;height:36px;background-color:#393A3C;transition:background-color 0.3s linear;border-radius: 50%;font-size: 22px;line-height: 36px;color: #fff;text-align: center;";
+					closebtn.addClass("glyphicon glyphicon-remove").attr("title","关闭");
+					img[0].style.cssText="position: absolute;left:0;top:0;cursor:pointer;max-height:100%;max-width:100%;";
+					closebtn.hover(function(){
+						$(this).css("background-color","#D43F27");
+					},function(){
+						$(this).css("background-color","#393A3C");
+					})
+					imgbox.append(img);
+					imgbox.append(closebtn);
+					$("body").append(imgbox);
+					imgbox.fadeIn();
+					//居中
+					this._center(img[0]);
+					//移动窗口居中
+					this._reize(img[0]);
+					//点击关闭
+					this._close(imgbox);
+				},
+				_center:function(dom,str){
+					dom.style.left=document.documentElement.clientWidth/2-dom.offsetWidth/2+"px";
+					if(str!="top"){
+						dom.style.top=document.documentElement.clientHeight/2-dom.offsetHeight/2+"px";
+					}else{
+						dom.style.top=(document.documentElement.clientHeight-dom.offsetHeight)/3+"px";
+					}
+				},
+				_reize:function(dom){
+					var $this = this;
+					$(window).resize(function(){
+						$this._center(dom);
+					});
+				},
+				_close:function(dom){
+					dom.click(function(e){
+						console.log(e.target.tagName)
+						if(e.target.tagName!="IMG"){
+							$(this).fadeOut(function(){
+								$(this).remove();
+							});
+						}
+					});
+				}
+			}
+			window.ximgshow=function(){
+				preview.init();
+			};
+		})(window);
+		ximgshow();
+	</script>
+</html>

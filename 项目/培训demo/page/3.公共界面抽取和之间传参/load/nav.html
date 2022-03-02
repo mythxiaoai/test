@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>left</title>
+    <style>
+      .nav{width:220px;background:red;position: absolute;top: 200px;}
+      .nav a{display:block;}
+      .nav .active{background:blue}
+    </style>
+	</head>
+	<body>
+		<ul class="nav">
+			<li><a href="#a" data-url="a.html">A</a></li>
+			<li><a href="#b" data-url="b.html">B</a></li>
+			<li><a href="#c" data-url="c.html">C</a></li>
+		</ul>
+		
+		<div class="cont"></div>
+		<script type="text/javascript" src="./../../../js/jquery.js" ></script>
+    <script>
+      $(function(){
+        $(".nav > li").click(function(){
+          //alert($(this).find("a").data("url"));
+          $(this).find("a").addClass("active").end().siblings().find("a").removeClass("active");
+          $(".cont").load($(this).find("a").data("url"),function(a,b,c){
+            console.log(a)//html类容
+            console.log(b)//状态
+            console.log(c)//XHLresponse
+          });
+        });
+        console.log(window.onpopstate)
+        window.onpopstate = function(){
+          console.log(window.history.length)
+          console.log("执行")
+        }
+      });
+    </script>
+	</body>
+</html>

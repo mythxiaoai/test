@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="https://cdn.jsdelivr.net/npm/animate.css@3.5.1" rel="stylesheet" type="text/css">
+  </head>
+  <style>
+    
+  </style>
+  <body>
+    <div id="app">
+      <input type="button" @click="show=!show" value="click"></input></br>
+      <transition 
+        enter-active-class="animated fadeInRight"
+        leave-active-class="animated fadeOutRight"
+      >
+        <p v-show="show">hello</p>
+      </transition>
+    </div>
+  </body>
+  <script src="https://cdn.bootcss.com/vue/2.5.16/vue.js"></script>
+  <script>
+    var vm = new Vue({
+      el:"#app",
+      computed:{
+       
+      },
+      data: {
+            show:false,
+          },
+      methods:{
+    
+      },
+    });
+  </script>
+</html>

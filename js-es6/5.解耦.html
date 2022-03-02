@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	
+	<script>
+let log =(a)=>{console.log(a)};
+/*let c = {a:5,b:3};
+const {a,b} = c;
+log(a);*/
+let arr = [1, [2,3], 3]
+//解构前2个元素
+//解构中间的元素
+const [, [,b],] = arr
+console.log(b) // 3
+	</script>
+	</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--取-->
+		<input id="box1" data-name='aaa'/>
+		<input id="box2" data-name='[1,2]'/>
+		<input id="box3" data-name='["a",2]'/>
+		<input id="box4" data-name='{"a":1}'/>
+		<!--存-->
+		<input id="box11"/>
+		<input id="box12"/>
+		<input id="box13"/>
+		<input id="box14"/>
+	</body>
+	<script src="./../js/jquery.js"></script>
+	<script>
+		console.info("box1:",$("#box1").data("name"));//box1: aaa   
+		console.info("box2:",$("#box2").data("name"));//box2: (2) [1, 2]  对象
+		console.info("box3:",$("#box3").data("name"));//box3: (2) ["a", 2]  对象
+		console.info("box4:",$("#box4").data("name"));//box4: {a: 1}  对象
+		console.info("box11存:",$("#box1").data("name","哈哈"));//box11存: jQuery.fn.init [input#box1]
+		console.info("box11取:",$("#box1").data("name"));//box11取: 哈哈
+		console.info("box12存:",$("#box2").data({name1:"哈哈",name2:"赫赫"}));//box12存: jQuery.fn.init [input#box2]0: input#box2
+		console.info("box12取:",$("#box2").data("name1"));//box12取: 哈哈
+		console.info("box12取:",$("#box2").data("name2"));//box12取: 赫赫
+	</script>
+</html>

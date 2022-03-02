@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+	</head>
+	<body>
+		<div id="app">
+				<input type="number" v-model.number="age">{{age}}
+		</div>
+			 <!-- import Vue before Element -->
+		  <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.js"></script>
+		  <script src="https://cdn.bootcss.com/vuex/3.0.1/vuex.js"></script>
+		  <!-- import JavaScript -->
+		  <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+	</body>
+	<script>
+		var vm = new Vue({
+			el:"#app",
+			created(){
+				
+			},
+			data:{
+				age:0,
+			},
+			methods:{
+				
+			}
+		});
+	</script>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="js/bootstrap/bootstrap.css"/>
+		<link rel="stylesheet" type="text/css" href="css/common/common.css"/>
+		<style>
+      *{padding: 0;margin: 0;box-sizing: border-box;}
+      li{list-style: none;}
+		body{background:#ccc}
+			.menu{height:92px;position: relative;}
+			 .menu .ullist{margin-left:335px ;}/*92*6=552*/
+			 .menu .ullist > li{height:92px;line-height:92px;float:left;padding:0px 34px;}
+			 .menu .ullist > li > .itemp{width: 92px;height: 92px;text-align:center;font-size:22px;display:inline-block;padding:0px 34px;color:#fff;transition:all .2s ease-in-out;position: relative;}/*92-10-40*/
+			 .menu .ullist > li > .itemp:hover{color:#FF2531;position:relative;top:-2px;border-bottom: 2px solid #fff;}
+			 .menu .ullist > li .des{position: absolute;font-size:14px;bottom: 10px;left: 0px;width:92px;height:14px;line-height: 14px;}
+			 .menu .ullist > li .itemp .glyphicon{top:-7px;line-height: inherit;}
+			 .menu .ullist > li > .active {color:#FF2531;border-bottom: 1px solid #fff;}
+			 .menu .ullist > li > .active .glyphicon{text-shadow: 0 0 20px #aaa;}
+			 .menu .ullist > li:hover .submenu{visibility:visible;left:0;right:0;border-radius: 0;}
+			 .menu  .submenu {position: absolute;background-color: rgba(46,54,68,0.8);top: 92px;bottom:-50px;left: 50%;right: 50%;transition: all 1.2s cubic-bezier(0.68, -0.55, 0.27, 1.55);overflow: hidden;border-radius: 50px;}
+			 .menu .ullist >li .submenu .item:first-child{padding-left: 355px;}
+			 .menu  .submenu .item{float:left;height:50px;line-height:50px;margin-right: 32px;}
+			 .menu  .submenu .item .itemA{display: block;height:50px;padding-left: 15px;font-size: 14px;color: #96A3BB;}
+			 .menu  .submenu .item .itemA:hover{color: #FF2531;}
+		</style>
+	</head>
+	<body>
+		<div class="menu">
+				<ul class="ullist" id="menu">
+					<li id="home"><a class="itemp"  href="javascript:;"  ><span class="des">首页</span><span class="glyphicon glyphicon-home"></span></a>
+						<ul class="submenu">
+							<li class="item">
+								<a class="itemA" href="javascript:;" ><span class="glyphicon glyphicon-map-marker mr10"></span>地图模式</a>
+							</li>
+							<li class="item" >
+								<a class="itemA" href="javascript:;" ><span class="glyphicon glyphicon-signal mr10"></span>数据模式</a>
+							</li>
+						</ul>
+					</li>
+					<li><a class="itemp" href="javascript:;" ><span class="des" >充电桩监控</span><span class="glyphicon glyphicon-object-align-bottom"></span></a>
+						<ul class="submenu">
+							<li class="item">
+								<a class="itemA" href="javascript:;" ><span class="glyphicon glyphicon-bell mr10"></span>实时告警</a>
+							</li>
+							<li class="item" >
+								<a class="itemA" href="javascript:;" ><span class="glyphicon glyphicon-list-alt mr10"></span>执行维修工单</a>
+							</li>
+							<li class="item" >
+								<a class="itemA" href="javascript:;" ><span class="glyphicon glyphicon-bookmark mr10"></span>历史警告</a>
+							</li>
+							<li class="item" >
+								<a class="itemA" href="javascript:;" ><span class="glyphicon glyphicon-search mr10"></span>运维查询</a>
+							</li>
+							<li class="item" >
+								<a class="itemA" href="javascript:;" ><span class="glyphicon glyphicon-user mr10"></span>运维工程人员</a>
+							</li>
+						</ul>
+					</li>
+					<li><a class="itemp" href="javascript:;" ><span class="des">营销管理</span><span class="glyphicon glyphicon-usd"></span></a>
+						<ul class="submenu">
+							<li class="item">
+								<a class="itemA" href="javascript:;"><span class="glyphicon glyphicon-usd mr10"></span>台账管理</a>
+							</li>
+							<li class="item" >
+								<a class="itemA" href="javascript:;"><span class="glyphicon glyphicon-import mr10"></span>规则导入</a>
+							</li>
+							<li class="item" >
+								<a class="itemA" href="javascript:;"><span class="glyphicon glyphicon-wrench mr10"></span>计费设置</a>
+							</li>
+							<li class="item" >
+								<a class="itemA" href="javascript:;"><span class="glyphicon glyphicon-user mr10"></span>会员中心</a>
+							</li>
+							<li class="item" >
+								<a class="itemA" href="javascript:;"><span class="glyphicon glyphicon-search mr10"></span>会员消费查询</a>
+							</li>
+						</ul>
+					</li>
+					<li><a class="itemp" href="javascript:;"><span class="des">运维管理</span><span class="glyphicon glyphicon-signal"></span></a>
+						<ul class="submenu">
+							<li class="item">
+								<a class="itemA" href="javascript:;"><span class="glyphicon glyphicon-bell mr10"></span>实时告警</a>
+							</li>
+							<li class="item" >
+								<a class="itemA" href="javascript:;"><span class="glyphicon glyphicon-list-alt mr10"></span>执行维修工单</a>
+							</li>
+							<li class="item" >
+								<a class="itemA" href="javascript:;"><span class="glyphicon glyphicon-bookmark mr10"></span>历史警告</a>
+							</li>
+							<li class="item" >
+								<a class="itemA" href="javascript:;" ><span class="glyphicon glyphicon-search mr10"></span>运维查询</a>
+							</li>
+							<li class="item" >
+								<a class="itemA" href="javascript:;"><span class="glyphicon glyphicon-user mr10"></span>运维工程人员</a>
+							</li>
+						</ul>
+					</li>
+					<li><a class="itemp" href="javascript:;" ><span class="des">APP运营管理</span><span class="glyphicon glyphicon-phone"></span></a>
+						<ul class="submenu">
+							<li class="item">
+								<a class="itemA" href="javascript:;" ><span class="glyphicon glyphicon-bell mr10"></span>实时告警</a>
+							</li>
+							<li class="item" >
+								<a class="itemA" href="javascript:;" ><span class="glyphicon glyphicon-list-alt mr10"></span>执行维修工单</a>
+							</li>
+							<li class="item" >
+								<a class="itemA" href="javascript:;" ><span class="glyphicon glyphicon-bookmark mr10"></span>历史警告</a>
+							</li>
+							<li class="item" >
+								<a class="itemA" href="javascript:;"><span class="glyphicon glyphicon-search mr10"></span>运维查询</a>
+							</li>
+							<li class="item" >
+								<a class="itemA" href="javascript:;"><span class="glyphicon glyphicon-user mr10"></span>运维工程人员</a>
+							</li>
+						</ul>
+					</li>
+					<li><a class="itemp" href="javascript:;" ><span class="des">系统管理</span><span class="glyphicon glyphicon-cog"></span></a>
+						<ul class="submenu">
+							<li class="item">
+								<a class="itemA" href="javascript:;"><span class="glyphicon glyphicon-bell mr10"></span>实时告警</a>
+							</li>
+							<li class="item" >
+								<a class="itemA" href="javascript:;"><span class="glyphicon glyphicon-list-alt mr10"></span>执行维修工单</a>
+							</li>
+							<li class="item" >
+								<a class="itemA" href="javascript:;"><span class="glyphicon glyphicon-bookmark mr10"></span>历史警告</a>
+							</li>
+							<li class="item" >
+								<a class="itemA" href="javascript:;"><span class="glyphicon glyphicon-search mr10"></span>运维查询</a>
+							</li>
+							<li class="item" >
+								<a class="itemA" href="javascript:;"><span class="glyphicon glyphicon-user mr10"></span>运维工程人员</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+	</body>
+</html>

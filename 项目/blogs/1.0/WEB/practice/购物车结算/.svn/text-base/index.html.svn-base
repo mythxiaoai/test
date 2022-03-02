@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>购物车</title>
+  <link href="fontsome/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+  <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+  <style>
+	@charset "UTF-8";*{word-wrap:break-word;;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;}
+	html{-webkit-text-size-adjust:none;overflow-x:hidden}
+	body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td,span{padding:0;margin:0;}
+	body{font:normal 0.75em/1.5em "微软雅黑","冬青黑体简体中文 w3","宋体";}
+	fieldset,img,html,body,iframe{border:0;}
+	/** 重置表格元素 **/
+	table{border-collapse:collapse;border-spacing:0;}
+	ol,ul{list-style:none;}
+	address,caption,cite,code,dfn,em,strong,th,var{font-weight:normal;font-style:normal;}
+	caption,th{text-align:left;}
+	em,i,small,caption,th{font-weight:normal;font-style:normal;font-size:100%;}
+	h1,h2,h3,h4,h5,h6,em,strong,b{font-weight:400;font-size:100%;}
+	q:before,q:after{content:'';}
+	.clearfix{*zoom:1;}
+	.clearfix:after{content:".";display:block;clear:both;visibility:hidden;line-height:0;height:0;}
+	a{color:#9D9C9C;text-decoration:none;}
+	a img{border:none;border:0;}
+	a,button{outline:none;border:0;}
+	input,select{border:1px solid #ccc;}
+	button::-moz-focus-inner{border:0;padding:0;margin:0;}
+	textarea,input,button,select{outline:0;font-size:inherit;line-height:inherit;color:inherit;font-family:inherit;}
+	textarea{overflow:auto;resize:none;}
+	.hide,.none{display:none}
+	.hidden{visibility:hidden;}
+	.show,.block{display:block;}
+	img{vertical-align:middle;}
+	input:disabled,select:disabled,textarea:disabled{background:#ccc;}
+	.fl{float:left;}
+	.fr{float:right;}
+	.red{color:red;}
+	.green{color:green;}
+	.col3{color:#1D9E74}
+	.shop-header{height:100px;border-bottom:2px solid #1D9E74;background:#fff;}
+	.shop-header .wrap{margin:0 auto;width:1240px;height:100px;line-height:100px;}
+	.shop-header .wrap .header-title h2{font-size:28px;font-weight:normal;color:#424242;}
+	.shop_info{padding-top:38px;padding-bottom:38px;}
+	.shop_info .wrap{width:1240px;margin:0 auto;}
+	.shop_goods_list{background-color:#fff}
+	.shop_goods_list .list-head{height:70px;line-height:70px;padding-right:26px;color:#424242}
+	.shop_goods_list .list-head .col{float:left}
+	.shop_goods_list .list-head .col-img{width:120px}
+	.shop_goods_list .list-head .col-name{width:380px}
+	.shop_goods_list .list-head .icon-checkbox{margin-right:15px}
+	.shop_goods_list .col-check{width:110px}
+	.shop_goods_list .col-check .icon-checkbox{display:inline-block;*zoom:1;*display:inline;width:18px;height:18px;line-height:18px;border:1px solid #e0e0e0;margin-left:24px;background-color:#fff;color:#fff;font-size:20px;text-align:center;vertical-align:middle;position:relative;top:-1px;cursor:pointer}
+	.shop_goods_list .col-check .icon-checkbox:hover{color:#757575}
+	.shop_goods_list .col-check .icon-checkbox-selected{color:#fff;border-color:#1D9E74;background-color:#1D9E74}
+	.shop_goods_list .col-check .icon-checkbox-selected:hover{color:#fff}
+	.shop_goods_list .col-check .icon-checkbox-show{color:#1D9E74;border:none;cursor:default}
+	.shop_goods_list .col-check .icon-checkbox-show:hover{color:#1D9E74}
+	.shop_goods_list .col-name{width:380px}
+	.shop_goods_list .col-name .name,.shop_goods_list .col-name .desc{width:380px;margin:0}
+	.shop_goods_list .col-name .name a,.shop_goods_list .col-name .desc a{color:#1D9E74}
+	.shop_goods_list .col-name .name{line-height:1;margin-top:8px;margin-bottom:8px;font-size:18px;font-weight:normal;text-overflow:ellipsis;white-space:nowrap;overflow:hidden;_zoom:1}
+	.shop_goods_list .col-name .name a{color:#424242}
+	.shop_goods_list .col-name .desc{color:#757575;font-size:12px}
+	.shop_goods_list .col-price{width:75px;padding-right:84px;text-align:right;color:#424242}
+	.shop_goods_list .col-num{width:150px;text-align:center;color:#424242}
+	.shop_goods_list .col-total{width:120px;padding-right:81px;text-align:right}
+	.shop_goods_list .col-action{width:80px;text-align:center}
+	.shop_goods_list .item-box .col-total,.shop_goods_list .item-sub-box .col-total{color:#1D9E74;font-size:16px}
+	.shop_goods_list .item-box .col-num,.shop_goods_list .item-sub-box .col-num{font-size:16px}
+	.shop_goods_list .item-box .col-price,.shop_goods_list .item-sub-box .col-price{font-size:16px}
+	.shop_goods_list .item-box .col-action .del,.shop_goods_list .item-sub-box .col-action .del{display:inline-block;*zoom:1;*display:inline;width:24px;height:24px;line-height:24px;text-align:center;border-radius:12px;color:#757575;font-size:16px;-webkit-transition:all 0.3s;transition:all 0.3s}
+	.shop_goods_list .item-box .col-action .del:hover,.shop_goods_list .item-sub-box .col-action .del:hover{color:#fff;background-color:#e53935}
+	.shop_goods_list .item-box .tags,.shop_goods_list .item-sub-box .tags{margin-bottom:6px}
+	.shop_goods_list .item-box .tag,.shop_goods_list .item-sub-box .tag{display:inline-block;*zoom:1;*display:inline;width:60px;height:18px;line-height:18px;text-align:center;color:#fff;font-size:12px;vertical-align:top}
+	.shop_goods_list .item-box .tag-orange,.shop_goods_list .item-sub-box .tag-orange{background-color:#1D9E74}
+	.shop_goods_list .item-box .tag-blue,.shop_goods_list .item-sub-box .tag-blue{background-color:#2196f3}
+	.shop_goods_list .item-box .tag-red,.shop_goods_list .item-sub-box .tag-red{background-color:#e53935}
+	.shop_goods_list .item-box .tag-green,.shop_goods_list .item-sub-box .tag-green{background-color:#83c44e}
+	.shop_goods_list .item-box .tag-openbuy,.shop_goods_list .item-sub-box .tag-openbuy{width:auto;padding:0 10px}
+	.shop_goods_list .item-table{display:table;border-collapse:collapse;border-spacing:0}
+	.shop_goods_list .item-table .item-row{display:table-row;*zoom:1}
+	.shop_goods_list .item-table .col{display:table-cell;vertical-align:middle;*float:left}
+	.shop_goods_list .item-box{padding:15px 26px 15px 0;border-top:1px solid #e0e0e0}
+	.shop_goods_list .item-box .col-img{width:80px;height:80px;padding-right:40px;overflow:hidden;_zoom:1}
+	.shop_goods_list .item-box .pre-info{margin:0;font-size:12px;color:#b0b0b0}
+	.shop_goods_list .item-box .extend-buy{height:48px;line-height:48px;border:1px solid #e0e0e0;padding-left:20px;margin-bottom:-1px;color:#424242;-webkit-transition:all 0.4s;transition:all 0.4s;cursor:pointer}
+	.shop_goods_list .item-box .extend-buy:hover{background-color:#fafafa}
+	.shop_goods_list .item-box .extend-buy .price{color:#1D9E74}
+	.shop_goods_list .item-box .extend-buy .icon-plus{margin-right:15px}
+	.shop_goods_list .item-sub-box{padding-top:15px;margin-bottom:-2px;margin-left:100px;position:relative}
+	.shop_goods_list .item-sub-box .arrow{position:absolute;top:5px;left:39px;width:0;height:0;_font-size:0;_line-height:1;border-width:0 11px 10px;border-style:dashed dashed solid;border-color:transparent transparent #f5f5f5;overflow:hidden;_zoom:1}
+	.shop_goods_list .item-sub-box .item-table{background-color:#f5f5f5}
+	.shop_goods_list .item-sub-box .col{padding-top:15px;padding-bottom:15px;border-bottom:2px solid #fff}
+	.shop_goods_list .item-sub-box .col-img{width:60px;height:60px;padding-right:52px;padding-left:20px}
+	.shop_goods_list .item-sub-box .col-name .name{font-size:16px}
+	.shop_goods_list .item-sub-box .col-name .price{color:#1D9E74}
+	.shop_goods_list .item-sub-box .icon-activity-reduction{width:60px;height:60px;background-position:-10px -170px}
+	.shop_goods_list .item-disable-box{background-color:#fafafa;overflow:hidden;_zoom:1}
+	.shop_goods_list .item-disable-box .item-box{padding-left:0;margin-top:-1px;border-color:#eee}
+	.shop_goods_list .item-disable-box .col{opacity:0.4;filter:alpha(opacity=40)\9}
+	.shop_goods_list .item-disable-box .col-check{width:60px}
+	.shop_goods_list .item-disable-box .col-status{width:50px;text-align:center;color:#757575}
+	.shop_goods_list .item-disable-box .col-name .name,.shop_goods_list .item-disable-box .col-name .desc{width:351px}
+	.shop_goods_list .item-disable-box .col-price{*padding-right:50px;}
+	.shop_goods_list #sort{cursor:pointer}
+	.shop_goods_list .item-disable-box .col-total{width:70px;color:#424242;padding-right:36px}
+	.shop_goods_list .item-disable-box .col-links{width:95px;opacity:1;filter:alpha(opacity=100)\9}
+	.shop_goods_list .item-disable-box .col-links a{color:#616161}
+	.shop_goods_list .item-disable-box .col-links a:hover{color:#1D9E74}
+	.shop_goods_list .item-disable-box .col-links .iconfont{font-size:24px;vertical-align:middle}
+	.shop_goods_list .item-disable-box .col-links .solid{display:none}
+	.shop_goods_list .item-disable-box .col-links .is-favorite{color:#616161}
+	.shop_goods_list .item-disable-box .col-links .is-favorite .solid{display:inline;color:#e53935}
+	.shop_goods_list .item-disable-box .col-links .is-favorite .hollow{display:none}
+	.shop_goods_list .item-disable-box .col-action{opacity:1;filter:alpha(opacity=100)\9}
+	.shop_info .cart-bar{height:50px;text-align:right;background-color:#fff;-webkit-transition:background 0.3s ease,top 0.3s ease;transition:background 0.3s ease,top 0.3s ease;position:relative;line-height:50px;margin-top:20px;}
+	.btn-primary{background:#1D9E74;border-color:#1D9E74;color:#fff;}
+	.shop_info .cart-bar .btn{width:200px;height:48px;line-height:48px;font-size:18px;vertical-align:top;display:inline-block;text-align:center;}
+	.shop_info .cart-bar a{-webkit-transition:color 0.3s;transition:color 0.3s}
+	.shop_info .cart-bar i{font-style:normal}
+	.shop_info .cart-bar .section-left{float:left}
+	.shop_info .cart-bar .back-shopping{line-height:50px;margin-left:32px}
+	.shop_info .cart-bar .cart-total{margin-left:16px;padding-left:16px;border-left:1px solid #eee;color:#757575}
+	.shop_info .cart-bar .cart-coudan a{margin-left:3px;color:#1D9E74}
+	.shop_info .cart-bar .activity-money{padding:0 13px;border-right:1px solid #eee;color:#757575}
+	.shop_info .cart-bar .total-price{padding-left:13px;color:#1D9E74}
+	.shop_info .cart-bar .total-price em{font-style:normal;font-size:30px}
+	.shop_info .cart-bar .btn{width:200px;height:48px;line-height:48px;font-size:18px;margin-left:50px;vertical-align:top}
+	.shop_info .cart-bar .no-select-tip{width:200px;height:48px;line-height:48px;position:absolute;top:-58px;right:0;background-color:#fff;border:1px solid #1D9E74;color:#1D9E74;text-align:center}
+	.shop_info .cart-bar .no-select-tip .arrow{display:block;width:0;height:0;border-style:solid dashed dashed;overflow:hidden;_zoom:1;position:absolute;left:50%}
+	.shop_info .cart-bar .no-select-tip .arrow-a{bottom:-8px;margin-left:-10px;border-width:8px 10px 0;border-color:#1D9E74 transparent transparent;z-index:1}
+	.shop_info .cart-bar .no-select-tip .arrow-b{bottom:-7px;margin-left:-8px;border-width:7px 8px 0;border-color:#fff transparent transparent;z-index:2}
+	.shop_info .cart-bar-fixed{width:1226px;position:fixed;left:50%;margin-left:-613px;bottom:0;z-index:20;background-color:#fafafa;-webkit-box-shadow:0 -3px 6px rgba(0,0,0,0.1);box-shadow:0 -3px 6px rgba(0,0,0,0.1)}
+	.shop_info .change-goods-num{width:148px;height:38px;border:1px solid #e0e0e0;text-align:center;background-color:#fff;position:relative;zoom:1;overflow:hidden;}
+	.shop_info .change-goods-num a{float:left;width:38px;height:38px;line-height:38px;color:#757575;font-size:12px;-webkit-transition:all 0.3s;transition:all 0.3s;}
+	.shop_info .change-goods-num input{float:left;width:72px;height:38px;line-height:38px;padding:0;border-width:0;color:#424242;font-size:16px;text-align:center;}
+	.shop_info .s-num{position:absolute;top:38px;left:0;width:100%;height:38px;line-height:38px;font-size:32px;font-weight:bold;}
+  </style>
+ </head>
+ <body style="background:#f1f1f1">
+	
+	<div class="shop-header">
+		<div class="wrap">
+			<div class="header-logo fl"></div>
+			<div class="header-title fl">
+				<h2>我的购物车</h2>
+			</div>
+			<div class="userinfo fr"><i class="fa fa-user"></i>&nbsp;myth小艾</div>
+		</div>
+	</div>
+
+	<div class="shop_info">
+		<div class="wrap">
+			<div class="shop_goods_list ">
+                <div class="list-head clearfix">
+                    <div class="col col-check"><i class="iconfont icon-checkbox icon-checkbox-selected" id="K_selectAll">√</i>全选</div>
+                    <div class="col col-img">&nbsp;</div>
+                    <div class="col col-name">商品名称</div>
+                    <div class="col col-price" id="sort">单价</div>
+                    <div class="col col-num">数量</div>
+                    <div class="col col-total">小计</div>
+                    <div class="col col-action">操作</div>
+                </div>
+                <div class="list-body" id="K_cartListBody">  
+					<div class="item-box"> 
+						<div class="item-table K_cartGoods"> 
+							<div class="item-row clearfix"> 
+								<div class="col col-check">  
+									<i class=" icon-checkbox icon-checkbox-selected">√</i>  
+								</div> 
+								<div class="col col-img">  
+									<a href="http://item.mi.com/1134900527.html" target="_blank"> 
+										<img alt="" src="http://i1.mifile.cn/a1/T1sRhTBsYT1RXrhCrK!80x80.jpg" width="80" height="80"> 
+									</a>  
+								</div> 
+								<div class="col col-name">  
+									<div class="tags"> </div>  
+									<h3 class="name">  
+										<a href="http://item.mi.com/1134900527.html" target="_blank"> SanDisk 16GB存储卡（Class4） 黑色 </a>  
+									</h3>   
+									<p class="desc"> <span>适配机型：</span> 小米平板 / 1 / 1S, 红米1S/红米, 红米Note/增强版, 红米手机2, 红米手机2A </p>
+								</div> 
+								<div class="col col-price"><i class="fa fa-cny"></i>3元 </div> 
+								<div class="col col-num">  
+									<div class="change-goods-num clearfix K_changeGoodsNum"> 
+										<a href="javascript:void(0)" class="K_minus fl"><i class="fa fa-minus"></i></a> 
+										<input tyep="text" name="2134900590_0_buy" value="1"  autocomplete="off" class="goods-num K_goodsNum fl"> 
+										<span class="s-num">1</span>
+										<a href="javascript:void(0)" class="K_plus fr"><i class="fa fa-plus"></i></a>  
+									</div>  
+								</div> 
+								<div class="col col-total"> <i class="fa fa-cny"></i>
+								<span class="t_price">35.9</span>元 <p class="pre-info">  </p> </div> 
+								<div class="col col-action"> 
+									<a id="2134900590_0_buy" data-msg="确定删除吗？" href="javascript:void(0);" title="删除" class="del K_delGoods">
+										<i class="fa fa-remove"></i>
+									</a> 
+								</div> 
+							</div> 
+						</div>
+					</div>
+					<div class="item-box"> 
+						<div class="item-table K_cartGoods"> 
+							<div class="item-row clearfix"> 
+								<div class="col col-check">  
+									<i class=" icon-checkbox icon-checkbox-selected">√</i>  
+								</div> 
+								<div class="col col-img">  
+									<a href="http://item.mi.com/1134900527.html" target="_blank"> 
+										<img alt="" src="http://i1.mifile.cn/a1/T1sRhTBsYT1RXrhCrK!80x80.jpg" width="80" height="80"> 
+									</a>  
+								</div> 
+								<div class="col col-name">  
+									<div class="tags"> </div>  
+									<h3 class="name">  
+										<a href="http://item.mi.com/1134900527.html" target="_blank"> SanDisk 16GB存储卡（Class4） 黑色 </a>  
+									</h3>   
+									<p class="desc"> <span>适配机型：</span> 小米平板 / 1 / 1S, 红米1S/红米, 红米Note/增强版, 红米手机2, 红米手机2A </p>
+								</div> 
+								<div class="col col-price"><i class="fa fa-cny"></i>2元 </div> 
+								<div class="col col-num">  
+									<div class="change-goods-num clearfix K_changeGoodsNum"> 
+										<a href="javascript:void(0)" class="K_minus fl"><i class="fa fa-minus"></i></a> 
+										<input tyep="text" name="2134900590_0_buy" value="1"  autocomplete="off" class="goods-num K_goodsNum fl"> 
+										<span class="s-num">1</span>
+										<a href="javascript:void(0)" class="K_plus fr"><i class="fa fa-plus"></i></a>  
+									</div>  
+								</div> 
+								<div class="col col-total"> <i class="fa fa-cny"></i><span class="t_price">35.9</span>元 <p class="pre-info">  </p> </div> 
+								<div class="col col-action"> 
+									<a id="2134900590_0_buy" data-msg="确定删除吗？" href="javascript:void(0);" title="删除" class="del K_delGoods">
+										<i class="fa fa-remove"></i>
+									</a> 
+								</div> 
+							</div> 
+						</div>
+					</div>
+				</div>  
+            </div>
+			<div class="cart-bar clearfix" id="K_cartBar">
+					<div class="section-left">
+						<a href="http://list.mi.com/0" class="back-shopping K_goShoping" data-stat-id="3d1e5bdd191768c8" onclick="_msq.push(['trackEvent', '08fae3d5cb3abaaf-3d1e5bdd191768c8', '#', 'pcpid']);">继续购物</a>
+						<span class="cart-total">共 <i id="K_cartTotalNum">8</i> 件商品，已选择 <i id="K_selTotalNum">8</i> 件</span>
+						<span class="cart-coudan hide" id="K_coudanTip">
+							，还需 <i id="K_postFreeBalance"></i> 元即可免邮费  <a href="javascript:void(0);" id="K_showCoudan" data-stat-id="69b06f1a9d2d512c" onclick="_msq.push(['trackEvent', '08fae3d5cb3abaaf-69b06f1a9d2d512c', 'javascript:void(0);', 'pcpid']);">立即凑单</a>
+						</span>
+					</div>
+					<span class="activity-money hide">
+						活动优惠：减 <i id="K_cartActivityMoney">0</i> 元
+					</span>
+					<span class="total-price">
+						合计（不含运费）：<em id="K_cartTotalPrice">375.80</em>元
+					</span>
+					<a href="javascript:void(0);" class="btn btn-a btn-primary" id="K_goCheckout" >去结算</a>
+
+					<div class="no-select-tip hide" id="K_noSelectTip">
+						请勾选需要结算的商品
+						<i class="arrow arrow-a"></i>
+						<i class="arrow arrow-b"></i>
+					</div>
+				</div>
+		</div>
+	</div>
+	<script>
+		$(function(){
+			/*
+				1:数字累加和递减
+				2:总金额的计算
+				3:选择控制金额，删除控制金额
+				4:表头金额和数量的排序
+				5:按单价排序
+			*/
+			//减号事件
+			$(".K_minus").on("click",function(){
+				var $input =  $(this).next();
+				var val = $input.val() * 1;
+				var $span = $(this).next().next();
+				if(val<=1)return;
+				$span.text(--val).stop(true,true).animate({top:-38},480,function(){
+					$input.val(val);
+					$(this).css("top",38);
+					//点击计算
+					getTotal();
+				});
+			});
+
+			//加号事件
+			$(".K_plus").on("click",function(){
+				var $input =  $(this).prev().prev();
+				var val = $input.val() * 1;
+				var $span = $(this).prev();
+				$span.text(++val).stop(true,true).animate({top:-38},480,function(){
+					$input.val(val);
+					$(this).css("top",38);
+					//点击计算
+					getTotal();
+				});
+			});
+
+			//删除事件
+			$("#K_cartListBody").find(".fa-remove").on("click",function(){
+				var $parents = $(this).parents(".item-box");
+				$parents.fadeOut("slow",function(){
+					$(this).remove();
+					getTotal();
+				});
+			});
+			
+			//选择事件
+			$("#K_cartListBody").find(".icon-checkbox").on("click",function(){
+				$(this).toggleClass("icon-checkbox-selected");
+				getTotal();
+			});
+
+			//第一次计算
+			getTotal();
+		});
+
+			//排序
+			var mark = true;
+			$("#sort").on("click",function(){
+				var dom =$(".item-box");
+				//将元素变成数组进行排序
+				var arrdom = Array.prototype.slice.call(dom);
+				arrdom.sort(function(a,b){
+					if(mark){
+					return parseFloat($(a).find(".col-price").text())-parseFloat($(b).find(".col-price").text());
+					}else{
+					return parseFloat($(b).find(".col-price").text())-parseFloat($(a).find(".col-price").text());
+					}
+				});
+				$("#K_cartListBody").append(arrdom);
+				mark=!mark;
+			})
+
+		function countPrice(){
+			//拿到盒子对象
+			var $itemsbox = $("#K_cartListBody").children();
+			//总金额的累加
+			var total = 0;
+			//循环所有的盒子
+			$itemsbox.each(function(){
+				//判断一个元素是否包含某一个className,如果包含返回true否则false
+				var mark = $(this).find(".icon-checkbox").hasClass("icon-checkbox-selected");
+				if(mark){
+					//拿到盒子数量
+					var val = $(this).find(".K_goodsNum").val();
+					//拿到盒子的金额
+					var price = parseFloat($(this).find(".col-price").text());
+					//计算金额
+					var cp = val * price;
+					//小计计算
+					$(this).find(".t_price").text(cp);
+					//总金额的累加
+					total = total + cp;
+				}
+			});
+
+			//返回cpu计算的总金额=====执行函数是cpu去执行的。
+			return total;
+		};
+
+			
+		//计算总金额==当一种代码两次以上写封装起来.
+		//不要为了封装而封装---刚不要考虑封装
+		function getTotal(){
+			//获取计算总金额
+			var total = countPrice();
+			//赋予目标盒子
+			$("#K_cartTotalPrice").text("￥"+total);
+		};
+
+	</script>
+ </body>
+</html>

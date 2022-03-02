@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="../css/base.css" />
+	</head>
+	<body>
+		<style>
+			.box{position: relative;top:100px;background: #EAEAEA;height: 56px;}
+			.cover{
+				position:absolute;
+				width: 224px;
+				left:0;top:0;
+				background: linear-gradient(to right,rgb(63,233,225) 0px,rgb(63,233,225) 28px,rgb(10,96,135) 28px,rgb(10,96,135) 56px,rgb(255,148,201) 56px,rgb(255,148,201) 84px,rgb(154,57,102) 84px,rgb(154,57,102) 112px,rgb(120,95,163) 112px,rgb(120,95,163) 140px,rgb(215,1,157) 140px,rgb(215,1,157) 168px,rgb(30,11,82) 168px,rgb(30,11,82) 196px,rgb(220,134,159) 196px,rgb(220,134,159) 224px);
+				-webkit-background-clip: text;
+				background-repeat: repeat;
+				background-position: 0 0;
+				animation:move 3s linear infinite
+				}
+			.font{position:absolute:left:0;top:0;color:transparent;font-size: 28px;font-weight: 700;width:224px;height: 56px;line-height: 56px;}
+			@keyframes move{
+				0%{background-position: 0px 0;}
+				12.5% {background-position: 28px 0;}
+				25% {background-position: 56px 0;}
+				37.5% {background-position: 84px 0;}
+				50% {background-position: 112px 0;}
+				62.5% {background-position: 140px 0;}
+				75% {background-position: 168px 0;}
+				87.5% {background-position: 196px 0;}
+				100% {background-position: 224px 0;}
+			}
+		
+		
+		</style>
+		<div class="box">
+			<div class="cover">
+				<div class="font">我是一个七彩文字</div>
+			</div>
+		</div>
+		<script>
+			//颜色带代码生成器
+			/*
+			 fz:字体的宽度   就是font-size；number
+			 color:颜色数组  array    可以是   red   #十六进制颜色  色相 rgba(0,0,0,0)
+			 * */
+			var color=["red","yellow","blue","green","pink","purple"]
+			function getColorcode(fz,color){
+				var code ="";
+				color.forEach(function(item,i){
+					if(i==color.length-1){
+						code+= item+" "+i*fz+"px,"+item+" "+(i+1)*fz+"px"
+					}else{
+						code+= item+" "+i*fz+"px,"+item+" "+(i+1)*fz+"px,"
+					}
+				});
+				console.log(code);
+				return code;
+			}
+			/**
+			 *获取随机颜色
+			 * param:
+			 * 	number n:要随机颜色的数量
+			 * 	rgba a：  透明度  可选
+			 * return arr
+			 */
+			function getRandomColorArr(n,a){
+				var arr=[];
+				if(a!=undefined){
+					for(var i = 0 ;i < n ;i++){
+						var r=Math.floor(Math.random()*256);
+						var g=Math.floor(Math.random()*256);
+						var b=Math.floor(Math.random()*256);
+						arr.push("rgba("+r+","+g+","+b+","+a+")");
+					}
+				}else{
+					for(var i = 0 ;i < n ;i++){
+						var r=Math.floor(Math.random()*256);
+						var g=Math.floor(Math.random()*256);
+						var b=Math.floor(Math.random()*256);
+						arr.push("rgb("+r+","+g+","+b+")");
+					}
+				}
+				
+				console.log(arr);
+				return arr;
+			}
+			color =getRandomColorArr(8);
+			getColorcode(28,color);
+		</script>
+	</body>
+</html>

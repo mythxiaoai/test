@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	  <script src="js/transformationLonLat.js"></script>
+	  <script>
+	    //wgs84转百度
+	       let temp =coordtransform.wgs84togcj02(arr[i].lng, arr[i].lat);
+          temp = coordtransform.gcj02tobd09(temp[0],temp[1]);
+	  </script>
+	</body>
+</html>

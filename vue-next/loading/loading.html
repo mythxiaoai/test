@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.bootcdn.net/ajax/libs/ant-design-vue/2.2.0-rc.1/antd.css" rel="stylesheet">
+    <style>
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+        }
+
+        #app {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <button @click="handleClick">按钮</button>
+        <teleport to="body">
+            <!-- <a-spin :spinning="true"></a-spin> -->
+            <loading></loading>
+        </teleport>
+        </template>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0/moment.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/3.1.2/vue.global.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/ant-design-vue/2.2.0-rc.1/antd-with-locales.min.js"></script>
+    <script type="module">
+        let { onMounted, ref, toRefs, computed, reactive, unref, onUpdated, h, render, resolveComponent,Teleport ,createElementBlock,capitalize,camelize} = Vue;
+        let { Spin } = antd;
+        console.log(Spin);
+        import loading from "./loading.js";
+        let vm = Vue.createApp({
+            components:{
+                loading
+            },
+            setup(props, ctx) {
+                // console.log(Spin.setDefaultIndicator({
+                //     indicator: h('i', { class: 'anticon anticon-loading anticon-spin ant-spin-dot' }),
+                //     }));
+                // return Spin.setDefaultIndicator({
+                //     indicator: h('i', { class: 'anticon anticon-loading anticon-spin ant-spin-dot' }),
+                //     });
+                // return Spin.render()
+                //     return h("div",{class:"ant-spin ant-spin-spinning"},[
+                //        h("span",{class:"ant-spin-dot ant-spin-dot-spin"},[
+                //            [1,2,3,4].map(v=>h("i",{class:"ant-spin-dot-item"}))
+                //        ])
+                //    ])
+                // const teleport = resolveComponent('teleport')
+                // console.log(teleport);
+                //     console.log(Spin);
+                //可以直接访问页面的组件 解析组件并返回
+                //    return ()=>h("teleport",{},[h(Spin)])
+               
+            },
+
+            // <div class="ant-spin ant-spin-spinning">
+            //     <span class="ant-spin-dot ant-spin-dot-spin">
+            //         <i class="ant-spin-dot-item"></i>
+            //         <i class="ant-spin-dot-item"></i>
+            //         <i class="ant-spin-dot-item"></i>
+            //         <i class="ant-spin-dot-item"></i>
+            //         </span>
+            // </div>
+
+            // render() {
+            //     return h
+            // }
+        })
+
+        vm.use(antd)
+
+        vm.mount('#app')
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="js/bootstrap-3.3.7-dist/css/bootstrap.min.css"></link>
+    <link rel="stylesheet" href="js/bootstrapDatetimepicker/bootstrap-datetimepicker.css">
+    <!-- 引入jquery  (bootstrap 的js 插件需要引入jquery) -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="./js/echarts.js"></script>
+    <script src="js/bootstrapDatetimepicker/moment-with-locales.js"></script>
+    <script src="js/bootstrapDatetimepicker/bootstrap-datetimepicker.min.js"></script>
+
+    <style>
+        body{
+            background-color: #e2e2e2;
+        }
+        .m-t{margin-top: 10px;}
+        .p-m{padding: 15px;}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="cow ">
+            <div class="col-md-6 m-t">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Panel heading without title</div>
+                    <div class="panel-body">
+                        <form class="form-inline">
+                            <div class="form-group">
+                                <label for="timer">时间</label>
+                                <input type="text" class="form-control js_timer" id="timer" placeholder="2019-02">
+                            </div>
+                            <div class="form-group">
+                                <ul class="nav nav-pills js_ul">
+                                    <li><a href="#" onclick="test.echarts('option1','axis','bar')">折线</a></li>
+                                    <li><a href="#" onclick="test.echarts('option1','axis','line')">柱状</a></li>
+                                    <li><a href="#" onclick="test.echarts('option2')">饼图</a></li>
+                                    <li><a href="#" onclick="test.echarts('option3')">雷达</a></li>
+                                </ul>
+                            </div>
+                        </form>
+                        <div class="js_echarts" style="height: 325px"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var test = {
+            init(){
+                this.timer();
+                this.echarts('option1','axis','bar');
+            },
+            timer(){
+                $(".js_timer").datetimepicker({
+                    showClear: true,
+                    format: 'YYYY-MM',
+                    locale: 'zh-CN',
+                    viewMode: 'days'
+                });
+
+            },
+            echarts(option,opt,type){
+                echarts.dispose($(".js_echarts")[0]);
+                var myChart = echarts.init($(".js_echarts")[0]);
+                var option1 = {
+                    // 提示框
+                    tooltip: {
+                        trigger: opt,
+                        //指示器类型
+                        axisPointer: {
+                            type: 'shadow'//阴影指示器
+                        },
+                    },
+                    grid: {
+                        left: '3%',
+                        right: '8%',
+                        bottom: '3%',
+                        containLabel: true
+                    },
+                    yAxis: {
+                        type: 'value',
+                        name: '数量',
+                    },
+                    xAxis: {
+                        type: 'category',
+                        name: '状态',
+                        data: [ '已发布','已完成','已领取','待审核','待评审','已超时'],
+                        axisLabel:{
+                            interval:0,
+                            alignWithLabel: true
+                        },
+                        axisTick: {
+                            alignWithLabel: true
+                        }
+                    },
+                    series: [
+                        {
+                            type: type,
+                            data: [
+                                '55','12','13','99','200','100'
+                            ],
+                            barCategoryGap:"30%",
+                            barGap:"10%",
+                            barWidth: 25,
+                            label: {
+                                show: true,
+                                position: 'top'
+                            },
+                        }
+                    ]
+                    
+                };
+                var option2 = {
+                        tooltip : {
+                            trigger: 'item',
+                            formatter: "{a} <br/>{b} : {c} ({d}%)"
+                        },
+                        legend: {
+                            orient: 'vertical',
+                            left: 'left',
+                            data: [ '已发布','已完成','已领取','待审核','待评审','已超时']
+                        },
+                        series : [
+                            {
+                                name: '访问来源',
+                                type: 'pie',
+                                radius : '55%',
+                                center: ['50%', '60%'],
+                                data:[
+                                    {value:55, name:'已发布'},
+                                    {value:12, name:'已完成'},
+                                    {value:13, name:'已领取'},
+                                    {value:99, name:'待审核'},
+                                    {value:200, name:'待评审'},
+                                    {value:100, name:'已超时'}
+                                ],
+                                itemStyle: {
+                                    emphasis: {
+                                        shadowBlur: 10,
+                                        shadowOffsetX: 0,
+                                        shadowColor: 'rgba(0, 0, 0, 0.5)'
+                                    }
+                                }
+                            }
+                        ]
+                    };
+                var option3 = {
+                    tooltip: {},
+                    legend: {
+                        data: ['预算分配（Allocated Budget）']
+                    },
+                    radar: {
+                        // shape: 'circle',
+                        name: {
+                            textStyle: {
+                                color: '#fff',
+                                backgroundColor: '#999',
+                                borderRadius: 3,
+                                padding: [3, 5]
+                        }
+                        },
+                        indicator: [
+                        { name: '已发布', max: 200},
+                        { name: '已完成', max: 200},
+                        { name: '已领取', max: 200},
+                        { name: '待审核', max: 200},
+                        { name: '待评审', max: 200},
+                        { name: '已超时', max: 200}
+                        ]
+                    },
+                    series: [{
+                        name: '任务情况分析',
+                        type: 'radar',
+                        data : [
+                            {
+                                value : ['55','12','13','99','200','100'],
+                                name : '任务情况分析'
+                            }
+                        ]
+                    }]
+                };
+                if(option == "option1"){
+                    myChart.setOption(option1);
+                }else if(option == "option2"){
+                    myChart.setOption(option2);
+                }else if(option == "option3") {
+                    myChart.setOption(option3);
+                }
+                $(window).resize(function(){myChart.resize();});
+            }
+        
+        };
+        test.init();
+    </script>
+</body>
+</html>

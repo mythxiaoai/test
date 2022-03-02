@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script>
+		//let和const都能够声明块级作用域，用法和var是类似的，let的特点是不会变量提升，而是被锁在当前块中。
+		/* function test() {
+        if(true) {
+          console.log(b)//TDZ，俗称临时死区，用来描述变量不提升的现象   undefined   var存在变量提示
+          console.log(a)//编译报错  因为   let不会做变量提升
+	          let a = 1;
+	          var b=2;
+	        }
+	    }*/
+		//const  
+	    /*const type = "哈哈"
+		   type = "2" //没有直接修改type的值，而是修改type.a的属性值，这是允许的。
+		    console.log(type) // {a: 2}
+		    */
+		/*
+		 **相同点：**const和let都是在当前块内有效，执行到块外会被销毁，也不存在变量提升（TDZ），不能重复声明。
+	
+		**不同点：**const不能再赋值，let声明的变量可以重复赋值。
+		 * */
+		  //将var改成let之后
+		/* var i=0
+	    for(; i < 5; i++) {
+	      setTimeout(() => {
+	        console.log(i) // 0,1,2,3,4
+	      },100)
+	      console.log(i+"====")
+	    }
+	    console.log(i)//i is not defined i无法污染外部函数*/
+		/*
+		for (var _i = 0; _i < 5; _i++) {
+		     setTimeout(function() {
+		        console.log('2：', _i);
+		    }, 1000);
+		}
+	   function loop(_i) {
+		   
+		};
+		
+		console.log(i);*/
+		/*let a =1;
+		window.a=2;
+		console.log(a);  //1   优先是调用let的~   这里是覆盖  不是替换~
+		console.log(window.a);  //2*/
+		
+		//表示常量  不可更改  但是如果是Object引用型的变量的时候  是允许改值的并且也能增加和减少值（delete type.b type.c="嘎嘎"都OK的）   但是不能更改内存值   1.比如不能把json的数据结果改成数组的  2.在来个{}重新赋值
+		const type = {a:"哈哈",b:"赫赫"}
+		type = [];
+		console.log(type)
+	</script>
+</html>

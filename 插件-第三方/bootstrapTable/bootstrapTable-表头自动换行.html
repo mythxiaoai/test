@@ -1,0 +1,162 @@
+<html>
+<head>
+  	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0">
+	<meta name="Keywords" content="">
+	<meta name="description" content="">
+	<title>bootstrapTable测试</title>
+	<link rel="stylesheet" href="../../fonts/font-awesome.min.css" />
+	<!--bootstrap-->
+	<link rel="stylesheet" href="../../js/bootstrap/bootstrap.css" />
+	<!--bootstrap过滤样式-->
+	<link rel="stylesheet" href="../../js/bootstrap/bootstrapfiller.css" />
+	<!--sweetalert弹框提示-->
+	<link rel="stylesheet" href="../../js/sweetalert/sweetalert.css" />
+	<!--时间插件-->
+	<link rel="stylesheet" href="../../js/bootstrapDatetimepicker/bootstrap-datetimepicker.css" />
+	<!--bootstrap表格-->
+	<link rel="stylesheet" href="../../js/bootstrapTable/bootstrap-table.css" />
+	<!--基础样式文件-->
+	<link rel="stylesheet" href="../../css/common.css" />
+	<style>
+	  .fixed-table-container thead th .th-inner, .fixed-table-container tbody td .th-inner{
+	    white-space:normal;
+	  }
+	</style>
+	</head>
+	<body class="bg-gray">
+		<div class="p-md animated fadeInRight">
+			<div class="panel panel-white panel-slide">
+				<div class="panel-heading">
+					<div class="panel-title">
+						<h5>bootstrapTable测试</h5>
+                	</div>
+					<div class="panel-tools">
+                        <a class="collapse-link" data-toggle="collapse"  href="#panelBody">
+                            <i class="fa fa-chevron-up"></i>
+                        </a>
+                        <a class="close-link" href="javascript:;" data-dismiss="panel">
+                            <i class="fa fa-times"></i>
+                        </a>
+                    </div>
+				</div>
+				<div class="panel-body  collapsed in" id="panelBody">
+					<div class="content-box col-sm-12 js_rightContent">
+						<table id="table"></table></div>
+					</div>
+				</div>
+			</div>
+		</div>		
+<!--jQuery-->
+<script type="text/javascript" src="../../js/jquery.js" ></script>
+<!--bootstrap-->
+<script type="text/javascript" src="../../js/bootstrap/bootstrap.js" ></script>
+<!--checkbox/radio修饰-->
+<script type="text/javascript" src="../../js/icheck/icheck.js" ></script>
+<!--sweetalert提示框-->
+<script type="text/javascript" src="../../js/sweetalert/sweetalert-dev.js" ></script>
+<!--tip 错误操作提示框-->
+<script type="text/javascript" src="../../js/tip.js" ></script>
+<script type="text/javascript" src="../../js/util.js" ></script>
+<!--下拉框美化-->
+<script type="text/javascript" src="../../js/chosen/chosen.jquery.js" ></script>
+
+<!--bootstrap表格-->
+<script type="text/javascript" src="../../js/bootstrapTable/bootstrap-table.js" ></script>
+<script type="text/javascript" src="../../js/bootstrapTable/bootstrap-table-zh-CN.js" ></script>
+<!--业务通用js-->
+<script type="text/javascript" src="../../js/common.js" ></script>
+<script>
+	$.fn.bootstrapTable.columnDefaults.formatter=function(value,row,index){
+		if(typeof row[0] =="boolean"){
+	   			return null;
+	   		}
+			if(value==undefined||value=="undefined"||value==null||value.length==0){
+				return null;
+			}
+		var divDom = $("<div style='white-space: nowrap;display:inline-block;overflow: hidden;word-break: break-all;word-wrap: break-word;text-overflow: ellipsis;font-size: 1.2rem;' title='"+value+"'>"+value+"</div>")
+		var width =divDom.appendTo(document.body).width();
+		if(width>=250){
+			divDom.css("max-width","250px").addClass("js_tooltip");
+		}
+		var html=divDom[0].outerHTML;
+		divDom.remove();
+		return html;
+	}
+	var reseach={
+		init:function(){
+			this.tableinit();
+		},
+		tableinit:function(){
+			xtable.init({
+				id:"#table",
+				toolbar:"#toolbar",
+				data:[
+            {
+                "id": 0,
+                "name": "Item 0阿杜撒打算打算打",
+                "name2": "Item 0阿杜撒打算打算打算大苏打发送发神经打扫打扫打扫打扫打扫法萨达萨达萨法是否打算打算发送到",
+                "price": "$0"
+            },
+            {
+                "id": 1,
+                "name": "Item 1",
+                "price": "$1"
+            },
+            {
+                "id": 2,
+                "name": "Item 2",
+                "price": "$2"
+            },
+            {
+                "id": 3,
+                "name": "Item 3",
+                "price": "$3"
+            },
+            {
+                "id": 4,
+                "name": "Item 4",
+                "price": "$4"
+            },
+            {
+                "id": 5,
+                "name": "Item 5",
+                "price": "$5"
+            }
+        ],
+				toolbarAlign:"right",
+				columns:[{
+					checkbox: true
+					}, {
+						field: 'id',
+						title: 'id'
+					}, {
+						field: 'name',
+						title: '名称阿凡达斯范德萨范德萨范德萨分大夫所得税法大赛阿德法大赛方达斯范德萨范德萨范德萨范德萨'
+					},{
+						field: 'name2',
+						title: '名称2'
+					},{
+            field: 'name2',
+            title: '名称2'
+          },{
+            field: 'name2',
+            title: '名称2'
+          },{
+            field: 'name2',
+            title: '名称2'
+          },{
+            field: 'name2',
+            title: '名称2'
+          }, {
+						field: 'price',
+						title: '价格'
+					}],
+			});
+		}
+	};
+	reseach.init();
+</script>
+	</body>
+</html>

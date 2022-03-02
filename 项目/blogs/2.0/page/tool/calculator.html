@@ -1,0 +1,146 @@
+﻿<!doctype html>
+<html>
+	<head>
+	    <!--声明当前页面的编码集：中文编码（gbk/gb2312）,国际编码（utf-8）-->
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+		<!--页面三要素-->
+		<title>计算器</title><!--小于等于31 大小写不区分-->
+		<meta name="Keywords" content="关键词,关键词,关键词"><!--<=76个字-->
+		<meta name="description" content=""><!--<=80个字-->
+		<!--js/css-->
+		<style type="text/css">
+			*{margin:0;padding:0;}
+			body{font-size:12px;color:#333;font-family:"微软雅黑";background:#EDEFF0}
+			.fl{float:left;}
+			.fr{float:right;}
+			a{text-decoration:none;}
+			ul{list-style:none;}
+			/*calculator start*/
+				#calculator{width:300px;background:#fff;margin:100px auto;border-radius:15px;overflow:hidden;box-shadow:1px 1px 5px #000}
+				#calculator .c_screen{height:50px;background:#C6C6AD;margin:20px 15px;font-size:26px;color:#fff;text-align:right;line-height:50px;box-shadow:-1px -1px 5px #000;overflow: hidden;}
+				#calculator .c_btns {position:relative;overflow: hidden;}
+				#calculator .c_btns ul{padding-left:15px;}
+				#calculator .c_btns ul li{display:inline-block;width:58px;height:43px;background:#E8E3E0;float:left;margin-right:10px;margin-bottom:10px;text-align:center;line-height:45px;font-size:22px;color:#B2A1A1;box-shadow:1px 1px 5px #000;cursor:pointer;
+				border:1px solid #E8E3E0;border-radius:5px;}
+				#calculator .c_btns ul li.eq{height:100px;line-height:100px;}
+				#calculator .c_btns ul .lastLine{position:absolute;bottom:0px;left:0px;}
+				#calculator .c_btns ul li:active{border:1px solid #B2A1A1}
+			/*end calculator*/
+		</style>
+	</head>  
+	<body>
+		<div id="calculator">
+			<div class="c_screen">0</div>
+			<div class="c_btns">
+				<ul>
+					<li class="operator" >C</li>
+					<li class="operator">/</li>
+					<li class="operator">*</li>
+					<li class="operator">←</li>
+					<li>7</li>
+					<li>8</li>
+					<li>9</li>
+					<li class="operator">-</li>
+					<li>4</li>
+					<li>5</li>
+					<li>6</li>
+					<li class="operator">+</li>
+					<li>1</li>
+					<li>2</li>
+					<li>3</li>
+					<li class="operator eq">＝</li>
+					<ul class="lastLine">
+						<li >0</li>
+						<li >00</li>
+						<li>.</li>
+					</ul>
+				<ul>
+			</div>
+		</div>
+		<script>
+			var arrlis = document.getElementsByTagName("li");
+			var screen = document.getElementsByClassName("c_screen")[0];
+			var showContent;//显示内容变量
+			var showCArray;//显示内容的数组变量
+			var mathoperator = ["+","-","*","/"];
+			var num = "00123456789";
+			var clear=false;//是否继续做运算
+			var point=0;//对点的控制
+			//循环一遍后把所有值赋予相应点击功能
+				for(i in arrlis){
+					//C的功能
+					if(arrlis[i].innerHTML=="C"){
+						arrlis[i].onclick=function(){
+						screen.innerHTML="0";
+						}
+					}
+					//删除1个的功能
+					if(arrlis[i].innerHTML=="←"){
+						arrlis[i].onclick=function(){
+							if(screen.innerHTML){
+								showCArray=screen.innerHTML.split("");
+								showCArray.pop();
+								screen.innerHTML=showCArray.join("");
+							}
+						}
+					}
+					//对点的控制
+					if(arrlis[i].innerHTML=="."){
+						arrlis[i].onclick=function(){
+							showCArray=screen.innerHTML.split("");
+							//它最后一位是不是+-*/  是true   不是false
+							var flang=mathoperator.join("").indexOf(showCArray[showCArray.length-1])==-1?false:true;
+							if((!showCArray[showCArray.length-1])||flang){
+								screen.innerHTML+="0."
+								point++;
+							}else if(!point){
+								screen.innerHTML+="."
+								point++;
+							}
+
+						}
+					}
+					//四则运算  当遇到+ - * /时的点击规则
+					for(j in mathoperator){
+						if(mathoperator[j]==arrlis[i].innerHTML){
+							arrlis[i].onclick=function(){
+								showContent=screen.innerHTML;
+								showCArray=showContent.split("");
+								if(showCArray[0]){
+									//做优化显示的数值
+									//如果最后一位是运算符 则替换
+									if(mathoperator.join("").indexOf(showCArray[showCArray.length-1])!=-1){
+										showCArray[showCArray.length-1]=this.innerHTML;
+										showContent=showCArray.join("");
+									}else{
+										showContent+=this.innerHTML;
+									}
+									screen.innerHTML=showContent;
+									clear=false;
+									point=0;
+								}
+							}
+							
+						}
+					}
+					//等于运算
+					if(arrlis[i].innerHTML=="＝"){
+						arrlis[i].onclick=function(){
+							screen.innerHTML = eval(screen.innerHTML);
+							clear=true;
+						}
+					}
+					//剩余都是数字了
+					if(num.indexOf(arrlis[i].innerHTML)!=-1){
+							arrlis[i].onclick=function(){
+							if(screen.innerHTML=="0"||clear){
+								screen.innerHTML="";
+								clear=false;
+							}
+							screen.innerHTML+=this.innerHTML;
+							}
+				}
+			}
+		</script>
+	</body>
+</html>

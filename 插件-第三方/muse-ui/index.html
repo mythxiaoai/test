@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <script src="https://cdn.bootcss.com/vue/2.6.8/vue.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/muse-ui/dist/muse-ui.css">
+    <script src="https://unpkg.com/muse-ui/dist/muse-ui.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/material-design-icons/3.0.1/iconfont/material-icons.css">
+  </head>
+  <body>
+    <div id="app">
+      <mu-container class="button-wrapper">
+  <mu-button color="primary">Primary</mu-button>
+  <mu-button color="secondary">Secondary</mu-button>
+  <mu-button color="success">Success</mu-button>
+  <mu-button color="warning">Warning</mu-button>
+  <mu-button color="info">Info</mu-button>
+  <mu-button color="error">Error</mu-button>
+  <mu-button disabled>disabled</mu-button>
+<mu-container>
+    </div>
+    <script>
+      Vue.use(MuseUI);
+      let app = new Vue({
+        
+      }).$mount("#app");
+      
+      
+    </script>
+  </body>
+</html>

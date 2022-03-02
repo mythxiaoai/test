@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="https://cdn.bootcdn.net/ajax/libs/ant-design-vue/1.6.4/antd.min.css" rel="stylesheet" />
+  </head>
+  <body>
+    <style>
+      .ant-table td {
+        white-space: nowrap;
+      }
+      .ant-table th {
+        white-space: nowrap;
+      }
+
+    </style>
+    <div id="app">
+      <div>
+        <a-table :columns="columns" :data-source="data" class="components-table-demo-nested">
+          <span slot="operation" slot-scope="text, record">
+            <template>
+              <a @click="handleUpdate(record)">修改</a>
+              <a-divider type="vertical" />
+              <a @click="handleDel(record)">删除</a>
+            </template>
+          </span>
+
+          <a-table slot="expandedRowRender" slot-scope="text" :columns="innerColumns" :data-source="innerData" :pagination="false">
+            <span slot="status" slot-scope="text"> <a-badge status="success" />Finished </span>
+          </a-table>
+        </a-table>
+        <Updatemodel ref="modelForm"></Updatemodel>
+      </div>
+    </div>
+
+    <div id="model">
+      <a-model :title="title" :width="800" :visible="visible" :confirmLoading="confirmLoading" @ok="handleOk" @cancel="handleCancel" cancelText="关闭">
+        <a-spin :spinning="confirmLoading">
+          <a-form :form="form">
+            <a-form-item :labelCol="labelCol" :wrapperCol="wrapperCol" label="姓名" hasFeedback>
+              <a-input placeholder="请输入姓名" v-decorator="['name', {}]" />
+            </a-form-item>
+            <a-form-item :labelCol="labelCol" :wrapperCol="wrapperCol" label="关键词" hasFeedback>
+              <a-input placeholder="请输入关键词" v-decorator="['keyWord']" />
+            </a-form-item>
+            <a-form-item :labelCol="labelCol" :wrapperCol="wrapperCol" label="打卡时间" hasFeedback>
+              <a-date-picker showTime format="YYYY-MM-DD HH:mm:ss" v-decorator="[ 'punchTime', {}]" />
+            </a-form-item>
+            <a-form-item :labelCol="labelCol" :wrapperCol="wrapperCol" label="性别">
+              <a-select v-decorator="['sex', {initialValue:'2'}]" placeholder="请选择性别">
+            <a-select-option value="">请选择</a-select-option>
+            <a-select-option value="1">男</a-select-option>
+            <a-select-option value="2">女</a-select-option>
+          </a-select>
+              <j-dict-select-tag type="radio" v-decorator="['sex', {}]" :trigger-change="true" dictCode="sex" />
+            </a-form-item>
+            <a-form-item :labelCol="labelCol" :wrapperCol="wrapperCol" label="年龄" hasFeedback>
+              <a-input placeholder="请输入年龄" v-decorator="['age', {}]" />
+            </a-form-item>
+            <a-form-item :labelCol="labelCol" :wrapperCol="wrapperCol" label="生日" hasFeedback>
+              <a-date-picker v-decorator="[ 'birthday', {}]" />
+            </a-form-item>
+            <a-form-item :labelCol="labelCol" :wrapperCol="wrapperCol" label="邮箱" hasFeedback>
+              <a-input placeholder="请输入邮箱" v-decorator="['email', {}]" />
+            </a-form-item>
+            <a-form-item :labelCol="labelCol" :wrapperCol="wrapperCol" label="个人简介" hasFeedback>
+              <a-input placeholder="请输入个人简介" v-decorator="['content', {}]" />
+            </a-form-item>
+          </a-form>
+        </a-spin>
+      </a-model>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0/moment.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.min.js" integrity="sha256-ngFW3UnAN0Tnm76mDuu7uUtYEcG3G5H1+zioJw3t+68=" crossorigin="anonymous"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/ant-design-vue/1.6.4/antd.min.js"></script>
+    <script type="module">
+      import Updatemodel from "./Updatemodel.js";
+
+      window.antd.Table.props.scroll.default = { x: true };
+
+      const columns = [
+        { title: "序号", dataIndex: "name", key: "name" },
+        { title: "字典名称", dataIndex: "platform", key: "platform" },
+        { title: "字典编号", dataIndex: "version", key: "version" },
+        { title: "备注", dataIndex: "upgradeNum", key: "upgradeNum" },
+        { title: "操作", key: "operation", scopedSlots: { customRender: "operation" }, ellipsis: true },
+      ];
+      const data = [];
+      for (let i = 0; i < 50; ++i) {
+        data.push({
+          key: i,
+          name: "agfdsafdsafdsafdskfjdskfjdissafdsafsadsafdsafdsafasfasdsadsadsa",
+          platform: "bbb",
+          version: "10.3.4.5654",
+          upgradeNum: 500,
+          creator: "Jack",
+          createdAt: "2014-12-24 23:12:00",
+        });
+      }
+
+      const innerColumns = [
+        { title: "键", dataIndex: "date", key: "date" },
+        { title: "值", dataIndex: "name", key: "name" },
+      ];
+
+      const innerData = [];
+      for (let i = 0; i < 3; ++i) {
+        innerData.push({
+          key: i,
+          date: "2014-12-24 23:12:00",
+          name: "This is production name",
+        });
+      }
+
+      var vm = new Vue({
+        components: { Updatemodel },
+        el: "#app",
+        data: {
+          data,
+          columns,
+          innerColumns,
+          innerData,
+          modelText: "Content of the model",
+          visible: false,
+          confirmLoading: false,
+        },
+        mounted() {},
+        methods: {
+          handleUpdate(record) {
+            this.$refs.modelForm.update(record);
+          },
+          handleOk(e) {
+            this.modelText = "The model will be closed after two seconds";
+            this.confirmLoading = true;
+            setTimeout(() => {
+              this.visible = false;
+              this.confirmLoading = false;
+            }, 2000);
+          },
+          handleCancel(e) {
+            console.log("Clicked cancel button");
+            this.visible = false;
+          },
+        },
+        watch: {},
+      });
+    </script>
+  </body>
+</html>

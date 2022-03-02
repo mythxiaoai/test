@@ -1,0 +1,414 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width">
+		<title>艾氏族谱</title>
+		<link rel="stylesheet" href="css/bootstrap.css" />
+		<link rel="stylesheet" href="css/common.css" />
+		<link rel="shortcut icon" href="img/ai.ico" type="image/x-icon"/>
+		<style>
+			@font-face {
+				font-family:pedigree;
+				src: url(./fonts/方正行楷.ttf);
+			}
+			body{
+				font-family: pedigree;
+				color: #101010;
+				background-color: #ECC58E;
+				background-image: url(img/牛皮纸.jpg);
+				background-repeat: no-repeat;
+				background-position: center;
+				background-size:cover;
+				background-attachment: fixed;
+				position: absolute;
+				width: 100%;
+			}
+			body{
+				font-size: 0;
+			}
+			.all{
+				color: #111;
+				text-align: center;
+			}
+			.itemP{
+				font-size: 24px;
+				display: inline-block;
+				width: 30px;
+				height: 110px;
+				line-height: 24px;
+				border: 1px solid #03A9F4;
+				border-radius: 3px;
+				position: fixed;
+				left: 0;
+				top: 0;
+			}
+			.itemP.lady{
+				border-color:#FF5722;
+			}
+			
+		/*	.itemP.lady:before{
+				content: "";
+				position: absolute;
+				width: 10px;
+				height: 100px;
+				top: 60px;
+				right: -1px;
+				transform: translateX(100%);
+				border-top: 1px solid #FF5722;
+				border-right: 1px solid #BDBDBD;
+			}
+			.itemP.lady:after{
+				content: "";
+				position: absolute;
+				width: 11px;
+				height: 120px;
+				top: 60px;
+				right: 1px;
+				transform: translateX(200%);
+				border-top: 1px solid #03A9F4;
+			}*/
+			
+			.itemP > i {
+				display: inline-block;
+				font-size: 12px;
+				background-color: #B3E5FC;
+				border-radius: 50%;
+				color: #fff;
+				width: 24px;
+				height: 24px;
+				line-height: 24px;
+				margin-bottom: 5px;
+			}
+			.itemP.lady > i{
+				background-color:#ffccbc;
+			}
+			
+			/*直角*/
+			.itemP:before{
+				/*content: "";
+				position: absolute;
+				width: 21.2px;
+				height: 21.2px;
+				top: -10px;
+    			left: 0;
+    			right: 0;
+    			margin: 0 auto;
+    			border-radius: 2px;
+				transform: rotate(45deg);
+				border:1px solid #03A9F4;
+				border-bottom-color: transparent;
+				border-right-color: transparent;*/
+			}
+			
+		/*	.item-row:first-child{
+				top: 100px;
+				left: 0;
+				right: 0;
+				margin: 0 auto;
+				position: absolute;
+			}
+			.item-row:not(:first-child){
+				position: absolute;
+				left: 0;
+				right: 0;
+				margin: 0 auto;
+				margin-top: 40px;
+			}*/
+			
+		</style>
+	</head>
+	<body >
+		<div id="app">
+			<div class="all">
+				<sub-item :children="dealData" ></sub-item>
+			</div>
+		</div>
+		
+		<script type="text/javascript" src="js/jquery.js" ></script>
+		<script type="text/javascript" src="js/vue.js" ></script>
+		<script>
+			 let log  = a=>console.log(a);
+			
+			
+			Vue.component('sub-item', {
+				props: ['children'],
+			    template: `
+				   		<div class="item-row js_parent">
+				   			<div :title="item.name" :class="item.sex=='0'?'itemP':'itemP lady'" v-for="(item,index) in children">
+								<i>{{item.nameA}}</i>
+								{{item.name | dealName}}
+								<sub-item v-if="item.children.length>0"  :children="item.children" ></sub-item>
+							</div>
+						</div>
+			    `,
+			    filters:{
+    				dealName(val){
+    					if(val.length>=4){
+    						return val.slice(0,3);
+    					}else{
+    						return val;
+    					}
+    				}
+    			}
+			});
+			let vm = new Vue({
+				el:"#app",
+				created(){
+					this.datainit();
+				},
+				mounted(){
+					
+					let box =$(".js_parent").eq(0);
+					let dom =$(".itemP").eq(0);
+					
+					let width =$(".itemP").eq(0).outerWidth();
+					let winWidth = $("html").innerWidth()
+					
+					let rowHeight = 100;
+					let spaceLeft = 30;
+					let spaceHeight = 40;
+					
+					let Preposition = winWidth/2+width/2;
+					cssInit(box,Preposition,rowHeight);
+					function cssInit(box,Preposition,rowHeight){
+						let doms = box.find(">.itemP").toArray();
+						let len = doms.length;
+						for(let index in doms){
+						/*css----position*/
+							//奇数
+							if(len%2){
+								if(index<(len/2|0)){
+									//左侧每个距离中线的距离
+									let leftReduce = (width+spaceLeft)*((len/2|0)-index)+(width/2);
+									$(doms[index]).css({left:Preposition-leftReduce,top:rowHeight})
+								}else if(index>(len/2|0)){
+									//右侧每个距离中线的距离
+									let leftReduce = (width+spaceLeft)*(index-(len/2|0))+(width/2)-width;
+									$(doms[index]).css({left:Preposition+leftReduce,top:rowHeight})
+								}else{
+									//中间那个
+									$(doms[index]).css({left:Preposition-(width/2),top:rowHeight})
+								}
+							//偶数
+							}else{
+								if(index<(len/2)){
+									//左侧每个距离中线的距离
+									let leftReduce = (width+spaceLeft)*(len/2-index)-(spaceLeft/2);
+									$(doms[index]).css({left:Preposition-leftReduce,top:rowHeight})
+								}else{
+									//右侧每个距离中线的距离
+									let leftReduce = (width+spaceLeft)*(index-len/2)+(spaceLeft/2);
+									$(doms[index]).css({left:Preposition+leftReduce,top:rowHeight})
+								}
+							}
+						/*左右位置*/	
+							if(index==0){
+								let firstDom = $(doms[index]);
+								let siblingsLastDom = firstDom.parent(".js_parent").parent(".itemP").siblings(".itemP").find(">.js_parent>.itemP:last").toArray();
+								if(siblingsLastDom.length>0){
+										for(let dom of siblingsLastDom){
+											let firstLeft  = firstDom.offset().left;
+											let lastLeft  =$(dom).offset().left+width;
+											console.log(firstDom)
+											console.log(firstLeft)
+											log("---------------")
+											console.log(dom)
+											console.log($(dom).css("left"))
+											console.log(lastLeft)
+											//log(firstLeft+"----"+lastLeft)
+											if(firstLeft>lastLeft){
+												let addleft = firstLeft-lastLeft+spaceLeft;
+												//log(firstDom.closest(".itemP")[0])
+												firstDom.parent(".js_parent").parent(".itemP").css("left",firstDom.closest(".itemP").css("left")+addleft);
+											}
+										}
+								}
+								
+								
+								$(doms[index]).css({background:"red"})
+								if($(doms[index]).closest(".itemP").length>0){
+									$(doms[index]).closest(".itemP").siblings(".itemP").find(" >.js_parent>.itemP:last").css({background:"blue"})
+								}
+							}
+							
+						/*递归条件*/	
+							//有孩子
+							if($(doms[index]).find(">.js_parent").length>0){
+								//重新定义防止下轮循环改变局部变量
+								let nextLevelbox = $(doms[index]).find(">.js_parent");
+								let nextLevelPreposition = $(doms[index]).offset().left-spaceLeft/2;
+								let nextLevelrowHeight = rowHeight+ $(doms[index]).outerHeight()+spaceHeight;
+								cssInit(nextLevelbox,nextLevelPreposition,nextLevelrowHeight);
+							}
+						}
+					}
+					
+					
+					/*function dealsort(arr){
+						arr=arr.sort((a,b)=>new Date(b.bornTime)-new Date(a.bornTime));
+						for(let v of arr){
+							if(v.children.length>0){
+								dealsort(v.children);
+							}
+						}
+					}*/
+					
+				},
+				data:{
+					/**
+					 {
+					 	name:"本人名称",
+					 	sex:"性别"
+					 	bornTime:"出生时间",
+					 	overTime:"仙逝时间",
+					 	wife:"妻子名称",
+					 	--后期--
+					 	电话
+					 	地址
+					 	辈分
+					 	世代关系
+					 	事迹
+					 }
+					 *
+					 *
+					 */
+					nameA:{
+						hanzi:["长子","次子","三儿","四儿","五儿","六儿","七儿","八儿","九儿"],
+						meizi:["长女","二女","三女","四女","五女","六女","七女","八女","九女"]
+					},
+					data:[
+						{id:"0",name:"爷爷",sex:0,bornTime:"2051-06-13",overTime:"",wife:"奶奶",pid:""},
+						{id:"1",name:"大伯",sex:0,bornTime:"1969-03-17",overTime:"",wife:"大伯妈",pid:"0"},
+						{id:"2",name:"爸爸",sex:0,bornTime:"1971-01-27",overTime:"",wife:"妈妈",pid:"0"},
+						{id:"3",name:"大姑",sex:1,bornTime:"1965-05-17",overTime:"",wife:"",pid:"0"},
+						{id:"4",name:"二姑",sex:1,bornTime:"1966-05-17",overTime:"",wife:"",pid:"0"},
+						{id:"5",name:"三姑",sex:1,bornTime:"1967-05-17",overTime:"",wife:"",pid:"0"},
+						{id:"6",name:"四姑",sex:1,bornTime:"1970-05-17",overTime:"",wife:"",pid:"0"},
+						{id:"7",name:"我",sex:0,bornTime:"1993-05-20",overTime:"",wife:"灵",pid:"2"},
+						{id:"8",name:"珊",sex:1,bornTime:"1995-06-29",overTime:"",wife:"",pid:"2"},
+						{id:"9",name:"贝哥",sex:0,bornTime:"1990-05-17",overTime:"",wife:"倩",pid:"1"},
+						{id:"10",name:"念姐",sex:1,bornTime:"1989-05-17",overTime:"",wife:"",pid:"1"},
+						{id:"11",name:"测试",sex:1,bornTime:"2018-05-20",overTime:"",wife:"",pid:"7"},
+						{id:"12",name:"大儿子",sex:0,bornTime:"1539-05-20",overTime:"",wife:"彩霞",pid:"0"},
+						{id:"13",name:"二儿子",sex:0,bornTime:"1539-05-20",overTime:"",wife:"小云",pid:"0"},
+						{id:"14",name:"12子1",sex:0,bornTime:"1539-05-20",overTime:"",wife:"",pid:"12"},
+						{id:"15",name:"12子2",sex:0,bornTime:"1539-05-20",overTime:"",wife:"",pid:"12"},
+						{id:"16",name:"13子1",sex:0,bornTime:"1539-05-20",overTime:"",wife:"",pid:"13"},
+						{id:"17",name:"13子2",sex:0,bornTime:"1539-05-20",overTime:"",wife:"",pid:"13"},
+						{id:"18",name:"13子3",sex:0,bornTime:"1539-05-20",overTime:"",wife:"",pid:"13"},
+						{id:"18",name:"12-3",sex:0,bornTime:"1539-05-20",overTime:"",wife:"",pid:"12"},
+					],
+					dealData:[],
+				},
+				methods:{
+					datainit(){
+						let $this = this;
+						let data = JSON.parse(JSON.stringify(this.data));
+						let temp=[];
+						for(let i in data){
+							data[i].children = [];
+						}
+						let index = 0;
+						//数据处理变  children
+						function arrpush(arr){
+							let markinto=true;
+							for(let i=0;i<data.length;i++){
+								for(let k=0;k<arr.length;k++){
+									if(data.length>0){
+										if(arr[k].id==data[i].pid){
+											arr[k].children.push(data[i]);
+											data.splice(i,1);
+											i--;
+											markinto = false;
+											break;
+										}
+									}
+									if(arr[k].children.length>0&&markinto){
+										arrpush(arr[k].children);
+									}
+								}
+							}
+						}
+						while(data.length>0){
+							index = index%data.length;
+							if(data[index].pid==""){
+								temp.push(data[index]);
+								data.splice(index,1);
+								index--;
+							}else{
+								arrpush(temp);
+							}
+							index++;
+						}
+						//数据处理  长右  妻左
+						function dealsort(arr){
+							arr=arr.sort((a,b)=>new Date(b.bornTime)-new Date(a.bornTime));
+							for(let v of arr){
+								if(v.children.length>0){
+									dealsort(v.children);
+								}
+							}
+						}
+						dealsort(temp);
+						//称呼
+						function dealnameA(arr){
+							for(let v of arr){
+								if(v.sex==0){
+									let hanzi=arr.filter((val)=>val.sex==0)
+									let lastIndex = hanzi.length-1;
+									for(let i in hanzi){
+										if(hanzi[i].id ==v.id){
+											v.nameA = $this.nameA.hanzi[lastIndex-i];
+										}
+									}
+								}
+								
+								if(v.sex==1){
+									let meizi=arr.filter((val)=>val.sex==1)
+									let lastIndex = meizi.length-1;
+									for(let i in meizi){
+										if(meizi[i].id ==v.id){
+											v.nameA =$this.nameA.meizi[lastIndex-i];
+										}
+									}
+								}
+								if(v.children.length>0){
+									dealnameA(v.children);
+								}
+							}
+						}
+						//" ".trim()
+						dealnameA(temp);
+						//添加妻子对象
+						function addwife(arr){
+							for(let i=0;i<arr.length;i++){
+								if(arr[i].wife!=""){
+									let wife ={id:new Date().getTime(),wife:"",nameA:"妻",name:arr[i].wife,sex:1,bornTime:"",overTime:"",pid:arr[i].pid,gid:arr[i].id,children:[]}
+									arr[i].wife="";
+									arr.splice(i,0,wife);
+									i++;
+								}
+								if(arr[i].children.length>0){
+									addwife(arr[i].children);
+								}
+							}
+						}
+						addwife(temp);
+						
+						this.dealData = temp;
+					}
+				},
+				computed:{
+					
+				},
+				components: {
+    				
+    			}
+    			
+			})
+			
+		</script>
+	</body>
+</html>

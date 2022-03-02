@@ -1,0 +1,22 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+        //try  catch  遵循块级作用域
+        //e 只声明在块级作用域中有效
+
+      try {
+        console.log(a); // undefined
+        aa.c;
+      } catch (e) {
+        var a = 1;
+      }
+      console.log(a); // 1
+      console.log(e); // Uncaught ReferenceError: e is not defined
+    </script>
+  </body>
+</html>

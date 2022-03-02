@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/bootstrap.css" />
+		<link rel="stylesheet" href="css/common/common.css" />
+		<script type="text/javascript" src="js/jquery.min.js" ></script>
+	</head>
+	<body>
+	</body>
+	<script>
+/*//$("#container").addClass("animated pulse"); //放大跳动一下
+//$("#container").addClass("animated bounce");//上下跳动
+//$("#container").addClass("animated tada");//放大晃动一下整体
+//$("#container").addClass("animated swing");//放大晃动一下 原点是上方
+//$("#container").addClass("animated wobble");//左右晃动
+//$("#container").addClass("animated flip");//翻转1转 伴随放大
+
+//$("#container").addClass("animated flipInX");//X轴翻转显示
+//$("#container").addClass("animated flipOutX");//X轴翻转隐藏
+//$("#container").addClass("animated flipInY");//Y轴翻转显示
+//$("#container").addClass("animated flipOutY");//Y轴翻转隐藏
+//$("#container").addClass("animated fadeIn");//跟jqery一样的淡入显示
+//$("#container").addClass("animated fadeInUp");//向上偏移显示
+//$("#container").addClass("animated fadeInDown");//向下偏移显示
+//$("#container").addClass("animated fadeInLeft");//向左偏移显示
+//$("#container").addClass("animated fadeInRight");//向右偏移显示
+//$("#container").addClass("animated fadeInUpBig");//向上滑出显示
+//$("#container").addClass("animated fadeInDownBig");//向下滑出显示
+//$("#container").addClass("animated fadeInLeftBig");//向左滑出显示
+//$("#container").addClass("animated fadeInRightBig");//向右滑出显示
+//$("#container").addClass("animated fadeOut");//跟jqery一样的淡出隐藏
+//$("#container").addClass("animated fadeOutUp");//向上偏移隐藏
+//$("#container").addClass("animated fadeOutDown");//向下偏移隐藏
+//$("#container").addClass("animated fadeOutLeft");//向左偏移隐藏
+//$("#container").addClass("animated fadeOutRight");//向右偏移隐藏
+//$("#container").addClass("animated fadeOutUpBig");//向上滑出隐藏
+//$("#container").addClass("animated fadeOutDownBig");//向下滑出隐藏
+//$("#container").addClass("animated fadeOutLeftBig");//向左滑出隐藏
+//$("#container").addClass("animated fadeOutRightBig");//向右滑出隐藏
+//$("#container").addClass("animated bounceIn");//果冻显示
+//$("#container").addClass("animated bounceInUp");//果冻向上滑动显示
+//$("#container").addClass("animated bounceInDown");//果冻向下滑动显示
+//$("#container").addClass("animated bounceInLeft");//果冻向左滑动显示
+//$("#container").addClass("animated bounceInRight");//果冻向右滑动显示
+//$("#container").addClass("animated bounceOut");//果冻淡出隐藏
+//$("#container").addClass("animated bounceOutUp");//果冻向上淡出隐藏
+//$("#container").addClass("animated bounceOutDown");//果冻向下淡出隐藏
+//$("#container").addClass("animated bounceOutLeft");//果冻向左滑动隐藏
+//$("#container").addClass("animated bounceOutRight");//果冻向右滑动隐藏
+//$("#container").addClass("animated rotateIn");//中心旋转一周淡入显示
+//$("#container").addClass("animated rotateInUpLeft");//左下为中心点从下到上旋转抬起淡入显示
+//$("#container").addClass("animated rotateInDownLeft");//左下中心点从右到左旋转归正淡入显示
+//$("#container").addClass("animated rotateInUpRight");//右下中心点从下到上旋转抬起淡入显示
+//$("#container").addClass("animated rotateInDownRight");//右下中心点从右到左旋转归正淡入显示
+//$("#container").addClass("animated rotateOut");//中心旋转一周淡出隐藏
+//$("#container").addClass("animated rotateOutUpLeft");//左下为中心点从下到上旋转抬起淡出隐藏
+//$("#container").addClass("animated rotateOutDownLeft");//左下中心点从右到左旋转归正淡出隐藏
+//$("#container").addClass("animated rotateOutDownRight");//右下中心点从下到上旋转抬起淡出隐藏
+//$("#container").addClass("animated hinge");//右下中心点从右到左旋转归正淡出隐藏
+//$("#container").addClass("animated rollIn");//从左往右滚入淡入显示
+//$("#container").addClass("animated rollOut");//从左往右滚入淡出隐藏*/
+	
+(function(win){
+	var tip = {
+		//图标数据
+		//默认参数
+		defaults:{
+			time:"3s",
+			content:"哎呀，没传弹出内容  于是我出现了",
+			fontSize:12
+		},
+		amtArray:[
+		["animated flipInX","animated flipOutX"],
+		["animated flipInY","animated flipOutY"],
+		["animated fadeIn","animated fadeOut"],
+		["animated fadeInUp","animated fadeOutUp"],
+		["animated fadeInDown","animated fadeOutDown"],
+		["animated fadeInLeft","animated fadeOutLeft"],
+		["animated fadeInRight","animated fadeOutRight"],
+		["animated fadeInUpBig","animated fadeOutUpBig"],
+		["animated fadeInDownBig","animated fadeOutUpBig"],
+		["animated fadeInLeftBig","animated fadeOutLeftBig"],
+		["animated fadeInRightBig","animated fadeOutRightBig"],
+		["animated bounceIn","animated bounceOut"],
+		["animated bounceInUp","animated bounceOutUp"],
+		["animated bounceInDown","animated bounceOutDown"],
+		["animated bounceInLeft","animated bounceOutLeft"],
+		["animated bounceInRight","animated bounceOutRight"],
+		["animated rotateIn","animated rotateOut"],
+		["animated rotateInUpLeft","animated rotateOutUpLeft"],
+		["animated rotateInDownLeft","animated rotateOutDownLeft"],
+		["animated rotateInUpRight","animated rotateOutUpRight"],
+		["animated rotateInDownRight","animated rotateOutDownRight"],
+		["animated rollIn","animated rollOut"]],
+		animationCurr:0,
+		timeOut:null,
+		init:function(options){
+			var opts = this.methods._mix(this.methods,this.defaults,options);
+			this.animationCurr=Math.floor(Math.random()*this.amtArray.length);
+			console.log(this.animationCurr)
+			var tipDom = opts.template(opts);
+			opts._center(tipDom);
+			opts._resize(tipDom);
+			opts._onclick(tipDom);
+			opts._timeClear(opts,tipDom);
+		},
+		tip:function(options){
+			this.init(options);
+		}
+	};
+	//扩展事件	
+	tip.methods = {
+		//模板可拓展
+		template:function(opts){
+			var tipDom = document.getElementById("xatip");
+			if(tipDom){
+				document.body.removeChild(tipDom)
+			}else{
+				tipDom = document.createElement("div");
+			}
+			var html="<div id='xatip' style='cursor: pointer;padding:12px 19.5px;background:#111;color:#fff;display:inline-block;position:fixed;border-radius:4px;box-shadow: 1px 1px 1em #111;'>"+opts.content+"</div>";
+			tipDom.innerHTML=html;
+			tipDom=tipDom.children[0];
+			tipDom.className=tip.amtArray[tip.animationCurr][0];
+			if(opts.fontSize){
+				tipDom.style.fontSize=opts.fontSize+"px"
+				tipDom.style.padding=opts.fontSize+"px "+opts.fontSize*1.625+"px"
+			}
+			document.body.appendChild(tipDom);
+			return tipDom;
+		},
+		_center:function(tipDom){//居中dialog
+			var nl = (window.innerWidth - tipDom.offsetWidth)/2;
+			var nt = (window.innerHeight - tipDom.offsetHeight)/3;
+			tipDom.style.top = nt+"px";
+			tipDom.style.left = nl+"px";
+		},
+		_resize :function(tipDom){
+			var obj = this;
+			window.onresize = function(){
+				obj._center(tipDom);
+			};
+		},
+		_onclick:function(tipDom){
+			$(tipDom).click(function(){
+				$(this).removeClass(tip.amtArray[tip.animationCurr][0]).addClass(tip.amtArray[tip.animationCurr][1]).animate({"class":null},1000,function(){
+					$(this).remove();
+				});
+				clearTimeout(tip.timeOut);
+			});
+		},
+		_timeClear:function(opts,tipDom){
+			tip.timeOut&&clearTimeout(tip.timeOut);
+			tip.timeOut=setTimeout(function(){
+				$(tipDom).trigger("click");
+			},opts._getTime(opts.time));
+		},
+		_mix:function(target,datajson){
+			var args = Array.prototype.slice.call(arguments);
+			if(args.length==1)return args[0];
+			var i = 1 ;
+			while(args[i]){//这里做为判断条件 取不到就返回false
+				var temp =args[i];
+				for(var j in temp){
+					if(temp.hasOwnProperty(j)){
+						target[j]=temp[j];
+					}
+				}
+				i++;
+			}
+				return target;
+		},
+		/*一个接地气的方法   5s 5秒的意思   代表返回5000毫秒*/
+		_getTime:function(time){
+			if(time<=0)return time;
+			var str1=time.substring(0,time.length-1)*1;
+			var str2=time.charAt(time.length-1);
+			if (str2=="s"){
+			    return str1*1000;
+			}else if (str2=="m"){
+				return str1*60*1000;
+			}else if (str2=="h"){
+				return str1*60*60*1000;
+			}else if (str2=="d"){
+			    return str1*24*60*60*1000;
+			}else{
+				alert("格式错误,调用格式为1s 2m 2h 返回单位为毫秒");
+			}
+		}
+	};
+	win.xtip=function(str){
+		tip.init({content:str});
+	}
+})(window);
+	xtip("密码输出错误1");
+	</script>
+</html>

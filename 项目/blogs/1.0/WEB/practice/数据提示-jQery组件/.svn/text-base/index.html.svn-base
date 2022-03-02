@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en" ng-app="myapp">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <style>
+		*{padding:0;margin:0}
+		body{font-size:12px;font-family:"微软雅黑";}
+		ul li{list-style:none}
+		a{text-decoration:none;color:#333}
+		#box,#box2{margin:100px auto;width:600px;background:#eee}
+		#box2 div,#box div{height:36px;line-height:36px;background:#111;color:#fff;margin-top:2px;padding-left:6px}
+		
+		.keui-tip{display:inline-block;background:#111;color:#fff;padding:10px;position:fixed;top:10px;left:10px;border-radius:4px;}
+		.keui-tip .keui-tip-cron{display:inline-block;
+			border-top:10px solid #111;
+			border-right:10px solid transparent;
+			border-bottom:10px solid transparent;
+			border-left:10px solid transparent;
+			position:absolute;
+			top:50%;
+			left:50%;
+			margin-top:16px;
+			margin-left:-10px;
+		}
+  </style>
+  <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+  <script src="js/xa_tip.js"></script>
+ </head>
+ <body>
+
+	<div id="box">
+		<div class="tip" tip="我的优先我的优先我的优先我的优先我的优先我的优先我的优先"  flag="false">我是一条数据1</div>
+		<div class="tip" title="2">我是一条数据2</div>
+		<div class="tip" title="3">我是一条数据3</div>
+		<div class="tip">我是一条数据</div>
+		<div class="tip">我是一条数据</div>
+		<div class="tip">我是一条数据</div>
+		<div class="tip">我是一条数据</div>
+		<div class="tip">我是一条数据</div>
+	</div>
+
+	<div id="box2">
+		<div class="tip" tip="4">我是一条数据4</div>
+		<div class="tip" tip="5">我是一条数据5</div>
+		<div class="tip" tip="6">我是一条数据6</div>
+		<div class="tip" tip="7">我是一条数据7</div>
+		<div class="tip">我是一条数据</div>
+		<div class="tip">我是一条数据</div>
+		<div class="tip">我是一条数据</div>
+		<div class="tip">我是一条数据</div>
+	</div>
+
+
+	<a class="tip" tip="士大夫似的发士大夫士大夫">我是一条数据4</a>
+		<a class="tip" bgcolor="red" tip="23423 ">我是一条数据5</a>
+		<a class="tip" tip="2015-15-12">我是一条数据6</a>
+		<a class="tip" tip="提示：我很爱你!">我是一条数据7</a>
+		<span class="tip">我是一条数据</span>
+	<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+	
+	<script>
+		$(function(){
+			$(".tip").xaTip();
+		})
+	</script>
+</body>
+</html>

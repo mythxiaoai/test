@@ -1,0 +1,39 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+
+function ajax(str,boo, time) {
+  return new Promise((reslove, reject) => {
+    setTimeout(() => {
+      boo?reslove(str + "返回结果成功"):reject(str + "返回结果失败")
+    }, time || 1000);
+  });
+}
+
+// (async ()=>{
+//     //结论是  当不写catch错误处理  async 会直接向上抛错误 会导致await后面的方法不执行，需要在catch下
+//     await ajax("ajax",false).catch(res=>{
+//         console.log(res);
+//     })
+//     console.log(3);
+    
+// })()
+(async ()=>{
+    //结论是  当不写catch错误处理  async 会直接向上抛错误 会导致await后面的方法不执行，需要在catch下
+    await ajax("ajax",false).catch(res=>{
+        console.log(res);
+    })
+    console.log(3);
+    
+})()
+
+    </script>
+</body>
+</html>

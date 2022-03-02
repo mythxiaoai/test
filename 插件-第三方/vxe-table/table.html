@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title></title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vxe-table@next/lib/style.css">
+
+</head>
+
+<body>
+  <div id="app">
+    {{dataCom}}
+    <vxe-table :data="dataCom" row="id">
+      <vxe-column type="seq" title="Seq" width="60"></vxe-column>
+      <vxe-column field="name" title="Name"></vxe-column>
+      <vxe-column field="role" title="Role"></vxe-column>
+
+      <vxe-colgroup>
+        <vxe-column field="sex" title="Sex"></vxe-column>
+        <vxe-column field="address" title="Address">
+        </vxe-column>
+    </vxe-table>
+    <button @click = "add">Add</button>
+  </div>
+  <!-- 引入脚本 -->
+  <script src="https://cdn.bootcdn.net/ajax/libs/vue/3.1.2/vue.global.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/xe-utils"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vxe-table@next"></script>
+</body>
+<script>
+  let { createApp } = Vue
+  console.log(window);
+
+  var vm = Vue.createApp({
+    created() { },
+    data: () => ({
+      tableData: [{ id: 10001, name: "Test1", role: "Develop", sex: "Man", address: "Shenzhen" },
+      { id: 10002, name: "Test2", role: "Test", sex: "Man", address: "Guangzhou" },
+      { id: 10003, name: "Test3", role: "PM", sex: "Man", address: "Shanghai" }],
+    }),
+    methods: {
+      add(){
+        this.tableData.push( { id: 10004, name: "666", role: "PM", sex: "Man", address: "Shanghai" })
+        this.tableData = this.tableData
+        console.log(this.tableData);
+      }
+    },
+    computed:{
+      dataCom(){
+        return this.tableData
+      }
+    }
+  });
+  vm.use((app) => {
+    app.use(VXETable)
+  })
+  vm.mount('#app')
+</script>
+
+</html>

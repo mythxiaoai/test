@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title></title>
+  </head>
+  <body>
+    <script>
+      const log = (a) => {
+        console.log(a);
+      };
+      //作用域快   只进不出
+      (function () {
+        console.log("我是作用域块：");
+        console.log(log);
+      })();
+
+      //循环
+      let num = 0;
+      for (var i = 0; i <= 5; i++) {
+        function a(i) {
+          num = i;
+          log(num);
+        }
+        a(i);
+      }
+
+      //对象闭包
+      let obj = {
+        name: "myth",
+        getName() {
+          return function () {
+            return this.name;
+          };
+        },
+      };
+      log(obj.getName()());
+      //闭包作用域链
+      function getarr1() {
+        let arr = new Array();
+        for (var i = 0; i < 10; i++) {
+          arr[i] = function () {
+            return i;
+          };
+        }
+        return arr;
+      }
+      log(getarr1()[1]()); //11
+
+      function getarr2() {
+        let arr = new Array();
+        for (var i = 0; i < 10; i++) {
+          arr[i] = (function (num) {
+            return function () {
+              return num;
+            };
+          })(i);
+        }
+        return arr;
+      }
+      log(getarr2()[1]()); //1
+
+      //闭包继基础
+      let a = function f(num) {
+        log("执行多少次" + num);
+        if (num <= 1) {
+          return 1; //相当于返回true，，返回true代表返回当前参数 num
+        } else {
+          return num * f(num - 1);
+        }
+      };
+      log(a(5));
+
+      //基础
+      function nimeitadie() {
+        let a = "哈哈";
+        return function () {
+          return a;
+        };
+      }
+      let nimei = nimeitadie();
+      log(nimei.name); //方法的名称
+      log(nimei.length); //方法希望接收到的参数长度
+      log(nimei.Scope); //方法希望接收到的参数长度
+    </script>
+  </body>
+</html>

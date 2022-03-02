@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+    //常规写法
+    var user ={
+      init:function(){
+        this.list();
+        this.addOrUpdate();
+        this.del();
+      },
+      list:function(){
+        console.log("list")
+      },
+      addOrUpdate:function(){
+        console.log("addOrUpdate")
+      },
+      del:function(){
+        console.log("del")
+      }
+    }
+    //user.init();
+    //简化写法
+    var user ={
+      init(){
+        this.list();
+        this.addOrUpdate();
+        this.del();
+      },
+      list(){
+        console.log("list")
+      },
+      addOrUpdate(){
+        console.log("addOrUpdate")
+      },
+      del(){
+        console.log("del")
+      }
+    }
+    user.init();
+		</script>
+	</body>
+</html>

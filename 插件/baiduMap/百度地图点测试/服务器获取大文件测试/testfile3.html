@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title></title>
+  </head>
+  <body>
+    123
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+      //这个demo得出的结论  大文件  用ajax  get请求  会直接把内置的服务器崩坏，，，，
+      $.ajax({
+        url:"./../测试文件/test.txt",
+        success:function(data){
+          document.write(data)
+        }
+      });
+    </script>
+  </body>
+</html>

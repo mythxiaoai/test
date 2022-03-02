@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title></title>
+  </head>
+  <body></body>
+  <script>
+		let res = [];
+      function ajax(time=1,mark) {
+        return new Promise(function(resolve, reject) {
+          setTimeout(function() {
+			  if(mark=="ajax3"){
+				  res="success"
+			  }
+			  if(mark=="ajax1"){
+			  }
+            console.log(mark);
+            resolve();
+          }, time * 1000);
+        });
+	  }
+	  
+	  async function run(){
+		  
+		  await Promise.all([ajax(2,"ajax1"),ajax(1,"ajax2"),ajax(3,"ajax3")]);
+
+		  return Promise.resolve(res);
+	  }
+
+	  (async ()=>{
+		let res = await run();
+		console.log(res);
+	  })()
+	  
+
+  </script>
+</html>

@@ -1,0 +1,40 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*  0.77ms*/
+        /* div:nth-child(3){
+            background:red
+        } */
+        /* 0.6ms*/
+        /* .box{
+            background:red
+        } */
+        .box1{
+            height:100px;
+            width: 100px;
+            border: 1px solid #ccc;
+            margin: 100px auto;
+            position: relative;
+            z-index: absolute;
+        }
+        .box2{
+            height:100px;
+            width: 100px;
+            border: 1px solid #ccc;
+            margin: 300px auto;
+            position: absolute;
+            z-index: 2;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div></div>
+</body>
+</html>

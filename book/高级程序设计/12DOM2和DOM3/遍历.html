@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.div{background: red;}
+			.div:after{content: ">";}
+			div{background: green;}
+			
+		</style>
+	</head>
+	<body>
+<div style="height: 500px;">1</div>
+<div class="div" id="div1" style="height: 500px;position: relative;">
+	<div id="div2" style="position: absolute;top: 50px;left: 300px;width: 1px;height: 1px;background-color: #fff;"></div>
+</div>
+<div style="height: 500px;">3</div>
+<div style="height: 500px;">4</div>
+<div style="height: 500px;">5</div>
+<style>
+	*{margin: 0;padding: 0;}
+</style>
+<script>
+	let divDom =document.getElementById("div2")
+	console.log(!!0)
+	console.log(!!null)
+	console.log(!!undefined)
+	console.log(!!false)
+	console.log(!!"")
+</script>
+	</body>
+</html>

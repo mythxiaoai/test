@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/base.css" />
+	</head>
+	<body>
+		<style>
+			.a{width:100px;height:100px;
+			transition:top .5s cubic-bezier(.37,-0.58,.92,.73) , left .5s linear;
+			background: blue;
+			border-radius: 50%;
+			position:absolute;
+			top: 100px;
+			left: 100px;
+			}
+			.a.go{
+			   top: 600px;
+         left: 600px;
+			}
+		</style>
+			<div class="a" id="ball"></div>
+			<script>
+			  ball.onclick = function(){
+			    if(ball.mark){
+			      ball.mark = false;
+			      this.classList ="a"
+			    }else{
+			      ball.mark = true;
+			      this.classList ="a go"
+			    }
+			    
+			  }
+			</script>
+	</body>
+</html>

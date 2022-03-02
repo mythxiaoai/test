@@ -1,0 +1,14746 @@
+[{
+  "id": 380,
+  "name": "昂昂溪区",
+  "pid": 236,
+  "letter": "AAXQ"
+}, {
+  "id": 381,
+  "name": "阿巴嘎旗",
+  "pid": 314,
+  "letter": "ABGQ"
+}, {
+  "id": 382,
+  "name": "阿坝县",
+  "pid": 35,
+  "letter": "ABX"
+}, {
+  "id": 383,
+  "name": "安次区",
+  "pid": 184,
+  "letter": "ACQ"
+}, {
+  "id": 384,
+  "name": "阿城区",
+  "pid": 124,
+  "letter": "ACQ"
+}, {
+  "id": 385,
+  "name": "安定区",
+  "pid": 90,
+  "letter": "ADQ"
+}, {
+  "id": 386,
+  "name": "安达市",
+  "pid": 248,
+  "letter": "ADS"
+}, {
+  "id": 387,
+  "name": "安多县",
+  "pid": 220,
+  "letter": "ADX"
+}, {
+  "id": 388,
+  "name": "阿尔山市",
+  "pid": 307,
+  "letter": "AESS"
+}, {
+  "id": 389,
+  "name": "安福县",
+  "pid": 152,
+  "letter": "AFX"
+}, {
+  "id": 390,
+  "name": "安国市",
+  "pid": 48,
+  "letter": "AGS"
+}, {
+  "id": 391,
+  "name": "阿合奇县",
+  "pid": 177,
+  "letter": "AHQX"
+}, {
+  "id": 392,
+  "name": "敖汉旗",
+  "pid": 70,
+  "letter": "AHQ"
+}, {
+  "id": 393,
+  "name": "爱辉区",
+  "pid": 131,
+  "letter": "AHQ"
+}, {
+  "id": 394,
+  "name": "安化县",
+  "pid": 351,
+  "letter": "AHX"
+}, {
+  "id": 395,
+  "name": "安居区",
+  "pid": 255,
+  "letter": "AJQ"
+}, {
+  "id": 396,
+  "name": "安吉县",
+  "pid": 151,
+  "letter": "AJX"
+}, {
+  "id": 397,
+  "name": "阿克塞哈萨克族自治县",
+  "pid": 164,
+  "letter": "AKSHSKZZZX"
+}, {
+  "id": 398,
+  "name": "阿克苏市",
+  "pid": 36,
+  "letter": "AKSS"
+}, {
+  "id": 399,
+  "name": "阿克陶县",
+  "pid": 177,
+  "letter": "AKTX"
+}, {
+  "id": 400,
+  "name": "阿鲁科尔沁旗",
+  "pid": 70,
+  "letter": "ALKEQQ"
+}, {
+  "id": 401,
+  "name": "阿莲区",
+  "pid": 110,
+  "letter": "ALQ"
+}, {
+  "id": 402,
+  "name": "阿拉山口市",
+  "pid": 49,
+  "letter": "ALSKS"
+}, {
+  "id": 403,
+  "name": "阿拉善右旗",
+  "pid": 39,
+  "letter": "ALSYQ"
+}, {
+  "id": 404,
+  "name": "阿拉善左旗",
+  "pid": 39,
+  "letter": "ALSZQ"
+}, {
+  "id": 405,
+  "name": "安陆市",
+  "pid": 312,
+  "letter": "ALS"
+}, {
+  "id": 406,
+  "name": "阿勒泰市",
+  "pid": 40,
+  "letter": "ALTS"
+}, {
+  "id": 407,
+  "name": "安龙县",
+  "pid": 238,
+  "letter": "ALX"
+}, {
+  "id": 408,
+  "name": "爱民区",
+  "pid": 206,
+  "letter": "AMQ"
+}, {
+  "id": 409,
+  "name": "澳门特别行政区直辖",
+  "pid": 41,
+  "letter": "AMTBHZQZX"
+}, {
+  "id": 410,
+  "name": "安宁区",
+  "pid": 202,
+  "letter": "ANQ"
+}, {
+  "id": 411,
+  "name": "安南区",
+  "pid": 284,
+  "letter": "ANQ"
+}, {
+  "id": 412,
+  "name": "安宁市",
+  "pid": 175,
+  "letter": "ANS"
+}, {
+  "id": 413,
+  "name": "安平区",
+  "pid": 284,
+  "letter": "APQ"
+}, {
+  "id": 414,
+  "name": "安平县",
+  "pid": 140,
+  "letter": "APX"
+}, {
+  "id": 415,
+  "name": "安丘市",
+  "pid": 293,
+  "letter": "AQS"
+}, {
+  "id": 416,
+  "name": "阿荣旗",
+  "pid": 133,
+  "letter": "ARQ"
+}, {
+  "id": 417,
+  "name": "昂仁县",
+  "pid": 244,
+  "letter": "ARX"
+}, {
+  "id": 418,
+  "name": "安仁县",
+  "pid": 75,
+  "letter": "ARX"
+}, {
+  "id": 419,
+  "name": "安塞区",
+  "pid": 331,
+  "letter": "ASQ"
+}, {
+  "id": 420,
+  "name": "阿图什市",
+  "pid": 177,
+  "letter": "ATSS"
+}, {
+  "id": 421,
+  "name": "安图县",
+  "pid": 332,
+  "letter": "ATX"
+}, {
+  "id": 422,
+  "name": "阿瓦提县",
+  "pid": 36,
+  "letter": "AWTX"
+}, {
+  "id": 423,
+  "name": "安乡县",
+  "pid": 68,
+  "letter": "AXX"
+}, {
+  "id": 424,
+  "name": "安新县",
+  "pid": 48,
+  "letter": "AXX"
+}, {
+  "id": 425,
+  "name": "安溪县",
+  "pid": 242,
+  "letter": "AXX"
+}, {
+  "id": 426,
+  "name": "安源区",
+  "pid": 228,
+  "letter": "AYQ"
+}, {
+  "id": 427,
+  "name": "安岳县",
+  "pid": 373,
+  "letter": "AYX"
+}, {
+  "id": 428,
+  "name": "安阳县",
+  "pid": 45,
+  "letter": "AYX"
+}, {
+  "id": 429,
+  "name": "安远县",
+  "pid": 116,
+  "letter": "AYX"
+}, {
+  "id": 430,
+  "name": "安义县",
+  "pid": 213,
+  "letter": "AYX"
+}, {
+  "id": 431,
+  "name": "安州区",
+  "pid": 209,
+  "letter": "AZQ"
+}, {
+  "id": 432,
+  "name": "安泽县",
+  "pid": 183,
+  "letter": "AZX"
+}, {
+  "id": 433,
+  "name": "宝安区",
+  "pid": 272,
+  "letter": "BAQ"
+}, {
+  "id": 434,
+  "name": "北安市",
+  "pid": 131,
+  "letter": "BAS"
+}, {
+  "id": 435,
+  "name": "博爱县",
+  "pid": 171,
+  "letter": "BAX"
+}, {
+  "id": 436,
+  "name": "北碚区",
+  "pid": 365,
+  "letter": "BBQ"
+}, {
+  "id": 437,
+  "name": "八步区",
+  "pid": 147,
+  "letter": "BBQ"
+}, {
+  "id": 438,
+  "name": "边坝县",
+  "pid": 66,
+  "letter": "BBX"
+}, {
+  "id": 439,
+  "name": "博白县",
+  "pid": 345,
+  "letter": "BBX"
+}, {
+  "id": 440,
+  "name": "北川羌族自治县",
+  "pid": 209,
+  "letter": "BCQZZZX"
+}, {
+  "id": 441,
+  "name": "北辰区",
+  "pid": 279,
+  "letter": "BCQ"
+}, {
+  "id": 442,
+  "name": "滨城区",
+  "pid": 65,
+  "letter": "BCQ"
+}, {
+  "id": 443,
+  "name": "巴楚县",
+  "pid": 176,
+  "letter": "BCX"
+}, {
+  "id": 444,
+  "name": "拜城县",
+  "pid": 36,
+  "letter": "BCX"
+}, {
+  "id": 445,
+  "name": "宾川县",
+  "pid": 84,
+  "letter": "BCX"
+}, {
+  "id": 446,
+  "name": "北戴河区",
+  "pid": 233,
+  "letter": "BDHQ"
+}, {
+  "id": 447,
+  "name": "宝坻区",
+  "pid": 279,
+  "letter": "BDQ"
+}, {
+  "id": 448,
+  "name": "八德市",
+  "pid": 289,
+  "letter": "BDS"
+}, {
+  "id": 449,
+  "name": "巴东县",
+  "pid": 97,
+  "letter": "BDX"
+}, {
+  "id": 450,
+  "name": "保德县",
+  "pid": 327,
+  "letter": "BDX"
+}, {
+  "id": 451,
+  "name": "布尔津县",
+  "pid": 40,
+  "letter": "BEJX"
+}, {
+  "id": 452,
+  "name": "宝丰县",
+  "pid": 223,
+  "letter": "BFX"
+}, {
+  "id": 453,
+  "name": "北关区",
+  "pid": 45,
+  "letter": "BGQ"
+}, {
+  "id": 454,
+  "name": "八公山区",
+  "pid": 138,
+  "letter": "BGSQ"
+}, {
+  "id": 455,
+  "name": "班戈县",
+  "pid": 220,
+  "letter": "BGX"
+}, {
+  "id": 456,
+  "name": "佛冈县",
+  "pid": 240,
+  "letter": "BGX"
+}, {
+  "id": 457,
+  "name": "北湖区",
+  "pid": 75,
+  "letter": "BHQ"
+}, {
+  "id": 458,
+  "name": "包河区",
+  "pid": 125,
+  "letter": "BHQ"
+}, {
+  "id": 459,
+  "name": "滨湖区",
+  "pid": 303,
+  "letter": "BHQ"
+}, {
+  "id": 460,
+  "name": "白河区",
+  "pid": 284,
+  "letter": "BHQ"
+}, {
+  "id": 461,
+  "name": "博湖县",
+  "pid": 60,
+  "letter": "BHX"
+}, {
+  "id": 462,
+  "name": "白河县",
+  "pid": 37,
+  "letter": "BHX"
+}, {
+  "id": 463,
+  "name": "滨海新区",
+  "pid": 279,
+  "letter": "BHXQ"
+}, {
+  "id": 464,
+  "name": "滨海县",
+  "pid": 338,
+  "letter": "BHX"
+}, {
+  "id": 465,
+  "name": "碧江区",
+  "pid": 285,
+  "letter": "BJQ"
+}, {
+  "id": 466,
+  "name": "滨江区",
+  "pid": 150,
+  "letter": "BJQ"
+}, {
+  "id": 467,
+  "name": "白碱滩区",
+  "pid": 174,
+  "letter": "BJTQ"
+}, {
+  "id": 468,
+  "name": "保靖县",
+  "pid": 322,
+  "letter": "BJX"
+}, {
+  "id": 469,
+  "name": "保康县",
+  "pid": 324,
+  "letter": "BKX"
+}, {
+  "id": 470,
+  "name": "巴里坤哈萨克自治县",
+  "pid": 135,
+  "letter": "BLKHSKZZX"
+}, {
+  "id": 471,
+  "name": "碑林区",
+  "pid": 308,
+  "letter": "BLQ"
+}, {
+  "id": 472,
+  "name": "八里区",
+  "pid": 309,
+  "letter": "BLQ"
+}, {
+  "id": 473,
+  "name": "北仑区",
+  "pid": 211,
+  "letter": "BLQ"
+}, {
+  "id": 474,
+  "name": "北林区",
+  "pid": 248,
+  "letter": "BLQ"
+}, {
+  "id": 475,
+  "name": "博乐市",
+  "pid": 49,
+  "letter": "BLS"
+}, {
+  "id": 476,
+  "name": "北流市",
+  "pid": 345,
+  "letter": "BLS"
+}, {
+  "id": 477,
+  "name": "白朗县",
+  "pid": 244,
+  "letter": "BLX"
+}, {
+  "id": 478,
+  "name": "博罗县",
+  "pid": 148,
+  "letter": "BLX"
+}, {
+  "id": 479,
+  "name": "勃利县",
+  "pid": 237,
+  "letter": "BLX"
+}, {
+  "id": 480,
+  "name": "巴林右旗",
+  "pid": 70,
+  "letter": "BLYQ"
+}, {
+  "id": 481,
+  "name": "巴林左旗",
+  "pid": 70,
+  "letter": "BLZQ"
+}, {
+  "id": 482,
+  "name": "北门区",
+  "pid": 284,
+  "letter": "BMQ"
+}, {
+  "id": 483,
+  "name": "波密县",
+  "pid": 201,
+  "letter": "BMX"
+}, {
+  "id": 484,
+  "name": "班玛县",
+  "pid": 107,
+  "letter": "BMX"
+}, {
+  "id": 485,
+  "name": "巴马瑶族自治县",
+  "pid": 121,
+  "letter": "BMYZZZX"
+}, {
+  "id": 486,
+  "name": "巴南区",
+  "pid": 365,
+  "letter": "BNQ"
+}, {
+  "id": 487,
+  "name": "北票市",
+  "pid": 73,
+  "letter": "BPS"
+}, {
+  "id": 488,
+  "name": "佛坪县",
+  "pid": 146,
+  "letter": "BPX"
+}, {
+  "id": 489,
+  "name": "灞桥区",
+  "pid": 308,
+  "letter": "BQQ"
+}, {
+  "id": 490,
+  "name": "北区",
+  "pid": 313,
+  "letter": "BQ"
+}, {
+  "id": 491,
+  "name": "板桥区",
+  "pid": 309,
+  "letter": "BQQ"
+}, {
+  "id": 492,
+  "name": "巴青县",
+  "pid": 220,
+  "letter": "BQX"
+}, {
+  "id": 493,
+  "name": "拜泉县",
+  "pid": 236,
+  "letter": "BQX"
+}, {
+  "id": 494,
+  "name": "宝清县",
+  "pid": 268,
+  "letter": "BQX"
+}, {
+  "id": 495,
+  "name": "比如县",
+  "pid": 220,
+  "letter": "BRX"
+}, {
+  "id": 496,
+  "name": "璧山区",
+  "pid": 365,
+  "letter": "BSQ"
+}, {
+  "id": 497,
+  "name": "蚌山区",
+  "pid": 46,
+  "letter": "BSQ"
+}, {
+  "id": 498,
+  "name": "博山区",
+  "pid": 355,
+  "letter": "BSQ"
+}, {
+  "id": 499,
+  "name": "宝山区",
+  "pid": 247,
+  "letter": "BSQ"
+}, {
+  "id": 500,
+  "name": "白水县",
+  "pid": 300,
+  "letter": "BSX"
+}, {
+  "id": 501,
+  "name": "宝塔区",
+  "pid": 331,
+  "letter": "BTQ"
+}, {
+  "id": 502,
+  "name": "北塔区",
+  "pid": 265,
+  "letter": "BTQ"
+}, {
+  "id": 503,
+  "name": "北屯区",
+  "pid": 292,
+  "letter": "BTQ"
+}, {
+  "id": 504,
+  "name": "北投区",
+  "pid": 275,
+  "letter": "BTQ"
+}, {
+  "id": 505,
+  "name": "白塔区",
+  "pid": 199,
+  "letter": "BTQ"
+}, {
+  "id": 506,
+  "name": "泊头市",
+  "pid": 76,
+  "letter": "BTS"
+}, {
+  "id": 507,
+  "name": "巴塘县",
+  "pid": 114,
+  "letter": "BTX"
+}, {
+  "id": 508,
+  "name": "布拖县",
+  "pid": 193,
+  "letter": "BTX"
+}, {
+  "id": 509,
+  "name": "博望区",
+  "pid": 205,
+  "letter": "BWQ"
+}, {
+  "id": 510,
+  "name": "本溪满族自治县",
+  "pid": 59,
+  "letter": "BXMZZZX"
+}, {
+  "id": 511,
+  "name": "八宿县",
+  "pid": 66,
+  "letter": "BXX"
+}, {
+  "id": 512,
+  "name": "宝兴县",
+  "pid": 330,
+  "letter": "BXX"
+}, {
+  "id": 513,
+  "name": "柏乡县",
+  "pid": 320,
+  "letter": "BXX"
+}, {
+  "id": 514,
+  "name": "博兴县",
+  "pid": 65,
+  "letter": "BXX"
+}, {
+  "id": 515,
+  "name": "宾县",
+  "pid": 124,
+  "letter": "BX"
+}, {
+  "id": 516,
+  "name": "白云鄂博矿区",
+  "pid": 58,
+  "letter": "BYEBKQ"
+}, {
+  "id": 517,
+  "name": "巴宜区",
+  "pid": 201,
+  "letter": "BYQ"
+}, {
+  "id": 518,
+  "name": "白银区",
+  "pid": 62,
+  "letter": "BYQ"
+}, {
+  "id": 519,
+  "name": "白云区",
+  "pid": 113,
+  "letter": "BYQ"
+}, {
+  "id": 520,
+  "name": "鲅鱼圈区",
+  "pid": 342,
+  "letter": "BYQQ"
+}, {
+  "id": 521,
+  "name": "白玉县",
+  "pid": 114,
+  "letter": "BYX"
+}, {
+  "id": 522,
+  "name": "宾阳县",
+  "pid": 218,
+  "letter": "BYX"
+}, {
+  "id": 523,
+  "name": "博野县",
+  "pid": 48,
+  "letter": "BYX"
+}, {
+  "id": 524,
+  "name": "宝应县",
+  "pid": 354,
+  "letter": "BYX"
+}, {
+  "id": 525,
+  "name": "巴彦县",
+  "pid": 124,
+  "letter": "BYX"
+}, {
+  "id": 526,
+  "name": "播州区",
+  "pid": 374,
+  "letter": "BZQ"
+}, {
+  "id": 527,
+  "name": "巴州区",
+  "pid": 63,
+  "letter": "BZQ"
+}, {
+  "id": 528,
+  "name": "彬州市",
+  "pid": 323,
+  "letter": "BZS"
+}, {
+  "id": 529,
+  "name": "霸州市",
+  "pid": 184,
+  "letter": "BZS"
+}, {
+  "id": 530,
+  "name": "北镇市",
+  "pid": 172,
+  "letter": "BZS"
+}, {
+  "id": 531,
+  "name": "潮安区",
+  "pid": 77,
+  "letter": "CAQ"
+}, {
+  "id": 532,
+  "name": "成安县",
+  "pid": 123,
+  "letter": "CAX"
+}, {
+  "id": 533,
+  "name": "淳安县",
+  "pid": 150,
+  "letter": "CAX"
+}, {
+  "id": 534,
+  "name": "察布查尔锡伯自治县",
+  "pid": 343,
+  "letter": "CBCEXBZZX"
+}, {
+  "id": 535,
+  "name": "陈巴尔虎旗",
+  "pid": 133,
+  "letter": "CBEHQ"
+}, {
+  "id": 536,
+  "name": "城步苗族自治县",
+  "pid": 265,
+  "letter": "CBMZZZX"
+}, {
+  "id": 537,
+  "name": "城北区",
+  "pid": 315,
+  "letter": "CBQ"
+}, {
+  "id": 538,
+  "name": "赤壁市",
+  "pid": 316,
+  "letter": "CBS"
+}, {
+  "id": 539,
+  "name": "陈仓区",
+  "pid": 52,
+  "letter": "CCQ"
+}, {
+  "id": 540,
+  "name": "禅城区",
+  "pid": 56,
+  "letter": "CCQ"
+}, {
+  "id": 541,
+  "name": "崇川区",
+  "pid": 221,
+  "letter": "CCQ"
+}, {
+  "id": 542,
+  "name": "澄城县",
+  "pid": 300,
+  "letter": "CCX"
+}, {
+  "id": 543,
+  "name": "赤城县",
+  "pid": 360,
+  "letter": "CCX"
+}, {
+  "id": 544,
+  "name": "城东区",
+  "pid": 315,
+  "letter": "CDQ"
+}, {
+  "id": 545,
+  "name": "曾都区",
+  "pid": 271,
+  "letter": "CDQ"
+}, {
+  "id": 546,
+  "name": "蔡甸区",
+  "pid": 295,
+  "letter": "CDQ"
+}, {
+  "id": 547,
+  "name": "称多县",
+  "pid": 347,
+  "letter": "CDX"
+}, {
+  "id": 548,
+  "name": "承德县",
+  "pid": 69,
+  "letter": "CDX"
+}, {
+  "id": 549,
+  "name": "曹妃甸区",
+  "pid": 287,
+  "letter": "CFDQ"
+}, {
+  "id": 550,
+  "name": "城关区",
+  "pid": 190,
+  "letter": "CGQ"
+}, {
+  "id": 551,
+  "name": "呈贡区",
+  "pid": 175,
+  "letter": "CGQ"
+}, {
+  "id": 552,
+  "name": "城固县",
+  "pid": 146,
+  "letter": "CGX"
+}, {
+  "id": 553,
+  "name": "岑巩县",
+  "pid": 231,
+  "letter": "CGX"
+}, {
+  "id": 554,
+  "name": "察哈尔右翼后旗",
+  "pid": 298,
+  "letter": "CHEYYHQ"
+}, {
+  "id": 555,
+  "name": "察哈尔右翼前旗",
+  "pid": 298,
+  "letter": "CHEYYQQ"
+}, {
+  "id": 556,
+  "name": "察哈尔右翼中旗",
+  "pid": 298,
+  "letter": "CHEYYZQ"
+}, {
+  "id": 557,
+  "name": "瀍河回族区",
+  "pid": 196,
+  "letter": "CHHZQ"
+}, {
+  "id": 558,
+  "name": "成华区",
+  "pid": 67,
+  "letter": "CHQ"
+}, {
+  "id": 559,
+  "name": "从化区",
+  "pid": 115,
+  "letter": "CHQ"
+}, {
+  "id": 560,
+  "name": "川汇区",
+  "pid": 363,
+  "letter": "CHQ"
+}, {
+  "id": 561,
+  "name": "澄海区",
+  "pid": 260,
+  "letter": "CHQ"
+}, {
+  "id": 562,
+  "name": "巢湖市",
+  "pid": 125,
+  "letter": "CHS"
+}, {
+  "id": 563,
+  "name": "册亨县",
+  "pid": 238,
+  "letter": "CHX"
+}, {
+  "id": 564,
+  "name": "淳化县",
+  "pid": 323,
+  "letter": "CHX"
+}, {
+  "id": 565,
+  "name": "昌江区",
+  "pid": 155,
+  "letter": "CJQ"
+}, {
+  "id": 566,
+  "name": "昌吉市",
+  "pid": 71,
+  "letter": "CJS"
+}, {
+  "id": 567,
+  "name": "澄江县",
+  "pid": 350,
+  "letter": "CJX"
+}, {
+  "id": 568,
+  "name": "从江县",
+  "pid": 231,
+  "letter": "CJX"
+}, {
+  "id": 569,
+  "name": "赤坎区",
+  "pid": 361,
+  "letter": "CKQ"
+}, {
+  "id": 570,
+  "name": "城口县",
+  "pid": 365,
+  "letter": "CKX"
+}, {
+  "id": 571,
+  "name": "崇礼区",
+  "pid": 360,
+  "letter": "CLQ"
+}, {
+  "id": 572,
+  "name": "翠峦区",
+  "pid": 339,
+  "letter": "CLQ"
+}, {
+  "id": 573,
+  "name": "策勒县",
+  "pid": 142,
+  "letter": "CLX"
+}, {
+  "id": 574,
+  "name": "慈利县",
+  "pid": 359,
+  "letter": "CLX"
+}, {
+  "id": 575,
+  "name": "茶陵县",
+  "pid": 377,
+  "letter": "CLX"
+}, {
+  "id": 576,
+  "name": "昌乐县",
+  "pid": 293,
+  "letter": "CLX"
+}, {
+  "id": 577,
+  "name": "昌黎县",
+  "pid": 233,
+  "letter": "CLX"
+}, {
+  "id": 578,
+  "name": "崇明区",
+  "pid": 247,
+  "letter": "CMQ"
+}, {
+  "id": 579,
+  "name": "措美县",
+  "pid": 254,
+  "letter": "CMX"
+}, {
+  "id": 580,
+  "name": "潮南区",
+  "pid": 260,
+  "letter": "CNQ"
+}, {
+  "id": 581,
+  "name": "常宁市",
+  "pid": 144,
+  "letter": "CNS"
+}, {
+  "id": 582,
+  "name": "错那县",
+  "pid": 254,
+  "letter": "CNX"
+}, {
+  "id": 583,
+  "name": "昌宁县",
+  "pid": 54,
+  "letter": "CNX"
+}, {
+  "id": 584,
+  "name": "苍南县",
+  "pid": 306,
+  "letter": "CNX"
+}, {
+  "id": 585,
+  "name": "翠屏区",
+  "pid": 333,
+  "letter": "CPQ"
+}, {
+  "id": 586,
+  "name": "昌平区",
+  "pid": 53,
+  "letter": "CPQ"
+}, {
+  "id": 587,
+  "name": "茌平区",
+  "pid": 181,
+  "letter": "CPQ"
+}, {
+  "id": 588,
+  "name": "措勤县",
+  "pid": 38,
+  "letter": "CQX"
+}, {
+  "id": 589,
+  "name": "城区",
+  "pid": 154,
+  "letter": "CQ"
+}, {
+  "id": 590,
+  "name": "崇仁县",
+  "pid": 103,
+  "letter": "CRX"
+}, {
+  "id": 591,
+  "name": "船山区",
+  "pid": 255,
+  "letter": "CSQ"
+}, {
+  "id": 592,
+  "name": "柴桑区",
+  "pid": 157,
+  "letter": "CSQ"
+}, {
+  "id": 593,
+  "name": "仓山区",
+  "pid": 104,
+  "letter": "CSQ"
+}, {
+  "id": 594,
+  "name": "赤水市",
+  "pid": 374,
+  "letter": "CSS"
+}, {
+  "id": 595,
+  "name": "常熟市",
+  "pid": 273,
+  "letter": "CSS"
+}, {
+  "id": 596,
+  "name": "常山县",
+  "pid": 243,
+  "letter": "CSX"
+}, {
+  "id": 597,
+  "name": "朝天区",
+  "pid": 111,
+  "letter": "CTQ"
+}, {
+  "id": 598,
+  "name": "丛台区",
+  "pid": 123,
+  "letter": "CTQ"
+}, {
+  "id": 599,
+  "name": "昌图县",
+  "pid": 283,
+  "letter": "CTX"
+}, {
+  "id": 600,
+  "name": "苍梧县",
+  "pid": 305,
+  "letter": "CWX"
+}, {
+  "id": 601,
+  "name": "成武县",
+  "pid": 149,
+  "letter": "CWX"
+}, {
+  "id": 602,
+  "name": "城西区",
+  "pid": 315,
+  "letter": "CXQ"
+}, {
+  "id": 603,
+  "name": "楚雄市",
+  "pid": 72,
+  "letter": "CXS"
+}, {
+  "id": 604,
+  "name": "成县",
+  "pid": 188,
+  "letter": "CX"
+}, {
+  "id": 605,
+  "name": "磁县",
+  "pid": 123,
+  "letter": "CX"
+}, {
+  "id": 606,
+  "name": "曹县",
+  "pid": 149,
+  "letter": "CX"
+}, {
+  "id": 607,
+  "name": "沧县",
+  "pid": 76,
+  "letter": "CX"
+}, {
+  "id": 608,
+  "name": "城厢区",
+  "pid": 227,
+  "letter": "CXQ"
+}, {
+  "id": 609,
+  "name": "岑溪市",
+  "pid": 305,
+  "letter": "CXS"
+}, {
+  "id": 610,
+  "name": "慈溪市",
+  "pid": 211,
+  "letter": "CXS"
+}, {
+  "id": 611,
+  "name": "苍溪县",
+  "pid": 111,
+  "letter": "CXX"
+}, {
+  "id": 612,
+  "name": "崇信县",
+  "pid": 226,
+  "letter": "CXX"
+}, {
+  "id": 613,
+  "name": "辰溪县",
+  "pid": 130,
+  "letter": "CXX"
+}, {
+  "id": 614,
+  "name": "潮阳区",
+  "pid": 260,
+  "letter": "CYQ"
+}, {
+  "id": 615,
+  "name": "朝阳区",
+  "pid": 53,
+  "letter": "CYQ"
+}, {
+  "id": 616,
+  "name": "城阳区",
+  "pid": 232,
+  "letter": "CYQ"
+}, {
+  "id": 617,
+  "name": "昌邑区",
+  "pid": 158,
+  "letter": "CYQ"
+}, {
+  "id": 618,
+  "name": "船营区",
+  "pid": 158,
+  "letter": "CYQ"
+}, {
+  "id": 619,
+  "name": "昌邑市",
+  "pid": 293,
+  "letter": "CYS"
+}, {
+  "id": 620,
+  "name": "沧源佤族自治县",
+  "pid": 180,
+  "letter": "CYWZZZX"
+}, {
+  "id": 621,
+  "name": "察隅县",
+  "pid": 201,
+  "letter": "CYX"
+}, {
+  "id": 622,
+  "name": "察雅县",
+  "pid": 66,
+  "letter": "CYX"
+}, {
+  "id": 623,
+  "name": "崇阳县",
+  "pid": 316,
+  "letter": "CYX"
+}, {
+  "id": 624,
+  "name": "崇义县",
+  "pid": 116,
+  "letter": "CYX"
+}, {
+  "id": 625,
+  "name": "枞阳县",
+  "pid": 281,
+  "letter": "CYX"
+}, {
+  "id": 626,
+  "name": "朝阳县",
+  "pid": 73,
+  "letter": "CYX"
+}, {
+  "id": 627,
+  "name": "城子河区",
+  "pid": 166,
+  "letter": "CZHQ"
+}, {
+  "id": 628,
+  "name": "城中区",
+  "pid": 315,
+  "letter": "CZQ"
+}, {
+  "id": 629,
+  "name": "崇州市",
+  "pid": 67,
+  "letter": "CZS"
+}, {
+  "id": 630,
+  "name": "大安区",
+  "pid": 357,
+  "letter": "DAQ"
+}, {
+  "id": 631,
+  "name": "东安区",
+  "pid": 206,
+  "letter": "DAQ"
+}, {
+  "id": 632,
+  "name": "大安市",
+  "pid": 47,
+  "letter": "DAS"
+}, {
+  "id": 633,
+  "name": "东安县",
+  "pid": 353,
+  "letter": "DAX"
+}, {
+  "id": 634,
+  "name": "德安县",
+  "pid": 157,
+  "letter": "DAX"
+}, {
+  "id": 635,
+  "name": "东阿县",
+  "pid": 181,
+  "letter": "DAX"
+}, {
+  "id": 636,
+  "name": "都安瑶族自治县",
+  "pid": 121,
+  "letter": "DAYZZZX"
+}, {
+  "id": 637,
+  "name": "达坂城区",
+  "pid": 299,
+  "letter": "DBCQ"
+}, {
+  "id": 638,
+  "name": "电白区",
+  "pid": 207,
+  "letter": "DBQ"
+}, {
+  "id": 639,
+  "name": "东宝区",
+  "pid": 159,
+  "letter": "DBQ"
+}, {
+  "id": 640,
+  "name": "丹巴县",
+  "pid": 114,
+  "letter": "DBX"
+}, {
+  "id": 641,
+  "name": "迭部县",
+  "pid": 109,
+  "letter": "DBX"
+}, {
+  "id": 642,
+  "name": "德保县",
+  "pid": 55,
+  "letter": "DBX"
+}, {
+  "id": 643,
+  "name": "定边县",
+  "pid": 344,
+  "letter": "DBX"
+}, {
+  "id": 644,
+  "name": "东昌府区",
+  "pid": 181,
+  "letter": "DCFQ"
+}, {
+  "id": 645,
+  "name": "大厂回族自治县",
+  "pid": 184,
+  "letter": "DCHZZZX"
+}, {
+  "id": 646,
+  "name": "东川区",
+  "pid": 175,
+  "letter": "DCQ"
+}, {
+  "id": 647,
+  "name": "达川区",
+  "pid": 93,
+  "letter": "DCQ"
+}, {
+  "id": 648,
+  "name": "叠彩区",
+  "pid": 108,
+  "letter": "DCQ"
+}, {
+  "id": 649,
+  "name": "鼎城区",
+  "pid": 68,
+  "letter": "DCQ"
+}, {
+  "id": 650,
+  "name": "德城区",
+  "pid": 95,
+  "letter": "DCQ"
+}, {
+  "id": 651,
+  "name": "东城区",
+  "pid": 53,
+  "letter": "DCQ"
+}, {
+  "id": 652,
+  "name": "东昌区",
+  "pid": 278,
+  "letter": "DCQ"
+}, {
+  "id": 653,
+  "name": "稻城县",
+  "pid": 114,
+  "letter": "DCX"
+}, {
+  "id": 654,
+  "name": "德昌县",
+  "pid": 193,
+  "letter": "DCX"
+}, {
+  "id": 655,
+  "name": "宕昌县",
+  "pid": 188,
+  "letter": "DCX"
+}, {
+  "id": 656,
+  "name": "郸城县",
+  "pid": 363,
+  "letter": "DCX"
+}, {
+  "id": 657,
+  "name": "都昌县",
+  "pid": 157,
+  "letter": "DCX"
+}, {
+  "id": 658,
+  "name": "大城县",
+  "pid": 184,
+  "letter": "DCX"
+}, {
+  "id": 659,
+  "name": "大渡口区",
+  "pid": 365,
+  "letter": "DDKQ"
+}, {
+  "id": 660,
+  "name": "掇刀区",
+  "pid": 159,
+  "letter": "DDQ"
+}, {
+  "id": 661,
+  "name": "大肚区",
+  "pid": 292,
+  "letter": "DDQ"
+}, {
+  "id": 662,
+  "name": "大东区",
+  "pid": 266,
+  "letter": "DDQ"
+}, {
+  "id": 663,
+  "name": "滴道区",
+  "pid": 166,
+  "letter": "DDQ"
+}, {
+  "id": 664,
+  "name": "杜尔伯特蒙古族自治县",
+  "pid": 87,
+  "letter": "DEBTMGZZZX"
+}, {
+  "id": 665,
+  "name": "达尔罕茂明安联合旗",
+  "pid": 58,
+  "letter": "DEHMMALHQ"
+}, {
+  "id": 666,
+  "name": "大丰区",
+  "pid": 338,
+  "letter": "DFQ"
+}, {
+  "id": 667,
+  "name": "东风区",
+  "pid": 161,
+  "letter": "DFQ"
+}, {
+  "id": 668,
+  "name": "登封市",
+  "pid": 376,
+  "letter": "DFS"
+}, {
+  "id": 669,
+  "name": "道孚县",
+  "pid": 114,
+  "letter": "DFX"
+}, {
+  "id": 670,
+  "name": "大方县",
+  "pid": 51,
+  "letter": "DFX"
+}, {
+  "id": 671,
+  "name": "丹凤县",
+  "pid": 250,
+  "letter": "DFX"
+}, {
+  "id": 672,
+  "name": "东丰县",
+  "pid": 200,
+  "letter": "DFX"
+}, {
+  "id": 673,
+  "name": "大观区",
+  "pid": 42,
+  "letter": "DGQ"
+}, {
+  "id": 674,
+  "name": "东港区",
+  "pid": 245,
+  "letter": "DGQ"
+}, {
+  "id": 675,
+  "name": "东港市",
+  "pid": 81,
+  "letter": "DGS"
+}, {
+  "id": 676,
+  "name": "德格县",
+  "pid": 114,
+  "letter": "DGX"
+}, {
+  "id": 677,
+  "name": "大关县",
+  "pid": 370,
+  "letter": "DGX"
+}, {
+  "id": 678,
+  "name": "东光县",
+  "pid": 76,
+  "letter": "DGX"
+}, {
+  "id": 679,
+  "name": "东河区",
+  "pid": 58,
+  "letter": "DHQ"
+}, {
+  "id": 680,
+  "name": "鼎湖区",
+  "pid": 366,
+  "letter": "DHQ"
+}, {
+  "id": 681,
+  "name": "东湖区",
+  "pid": 213,
+  "letter": "DHQ"
+}, {
+  "id": 682,
+  "name": "定海区",
+  "pid": 369,
+  "letter": "DHQ"
+}, {
+  "id": 683,
+  "name": "敦煌市",
+  "pid": 164,
+  "letter": "DHS"
+}, {
+  "id": 684,
+  "name": "德惠市",
+  "pid": 356,
+  "letter": "DHS"
+}, {
+  "id": 685,
+  "name": "敦化市",
+  "pid": 332,
+  "letter": "DHS"
+}, {
+  "id": 686,
+  "name": "德化县",
+  "pid": 242,
+  "letter": "DHX"
+}, {
+  "id": 687,
+  "name": "东海县",
+  "pid": 195,
+  "letter": "DHX"
+}, {
+  "id": 688,
+  "name": "大化瑶族自治县",
+  "pid": 121,
+  "letter": "DHYZZZX"
+}, {
+  "id": 689,
+  "name": "丹江口市",
+  "pid": 264,
+  "letter": "DJKS"
+}, {
+  "id": 690,
+  "name": "点军区",
+  "pid": 336,
+  "letter": "DJQ"
+}, {
+  "id": 691,
+  "name": "杜集区",
+  "pid": 120,
+  "letter": "DJQ"
+}, {
+  "id": 692,
+  "name": "大甲区",
+  "pid": 292,
+  "letter": "DJQ"
+}, {
+  "id": 693,
+  "name": "定结县",
+  "pid": 244,
+  "letter": "DJX"
+}, {
+  "id": 694,
+  "name": "垫江县",
+  "pid": 365,
+  "letter": "DJX"
+}, {
+  "id": 695,
+  "name": "德江县",
+  "pid": 285,
+  "letter": "DJX"
+}, {
+  "id": 696,
+  "name": "都江堰市",
+  "pid": 67,
+  "letter": "DJYS"
+}, {
+  "id": 697,
+  "name": "磴口县",
+  "pid": 61,
+  "letter": "DKX"
+}, {
+  "id": 698,
+  "name": "洞口县",
+  "pid": 265,
+  "letter": "DKX"
+}, {
+  "id": 699,
+  "name": "堆龙德庆区",
+  "pid": 190,
+  "letter": "DLDQQ"
+}, {
+  "id": 700,
+  "name": "德令哈市",
+  "pid": 143,
+  "letter": "DLHS"
+}, {
+  "id": 701,
+  "name": "东丽区",
+  "pid": 279,
+  "letter": "DLQ"
+}, {
+  "id": 702,
+  "name": "大寮区",
+  "pid": 110,
+  "letter": "DLQ"
+}, {
+  "id": 703,
+  "name": "大里区",
+  "pid": 292,
+  "letter": "DLQ"
+}, {
+  "id": 704,
+  "name": "道里区",
+  "pid": 124,
+  "letter": "DLQ"
+}, {
+  "id": 705,
+  "name": "带岭区",
+  "pid": 339,
+  "letter": "DLQ"
+}, {
+  "id": 706,
+  "name": "大理市",
+  "pid": 84,
+  "letter": "DLS"
+}, {
+  "id": 707,
+  "name": "达拉特旗",
+  "pid": 96,
+  "letter": "DLTQ"
+}, {
+  "id": 708,
+  "name": "都兰县",
+  "pid": 143,
+  "letter": "DLX"
+}, {
+  "id": 709,
+  "name": "丹棱县",
+  "pid": 208,
+  "letter": "DLX"
+}, {
+  "id": 710,
+  "name": "东兰县",
+  "pid": 121,
+  "letter": "DLX"
+}, {
+  "id": 711,
+  "name": "大荔县",
+  "pid": 300,
+  "letter": "DLX"
+}, {
+  "id": 712,
+  "name": "多伦县",
+  "pid": 314,
+  "letter": "DLX"
+}, {
+  "id": 713,
+  "name": "东辽县",
+  "pid": 200,
+  "letter": "DLX"
+}, {
+  "id": 714,
+  "name": "斗门区",
+  "pid": 358,
+  "letter": "DMQ"
+}, {
+  "id": 715,
+  "name": "东明县",
+  "pid": 149,
+  "letter": "DMX"
+}, {
+  "id": 716,
+  "name": "大名县",
+  "pid": 123,
+  "letter": "DMX"
+}, {
+  "id": 717,
+  "name": "大内区",
+  "pid": 284,
+  "letter": "DNQ"
+}, {
+  "id": 718,
+  "name": "东宁市",
+  "pid": 206,
+  "letter": "DNS"
+}, {
+  "id": 719,
+  "name": "大宁县",
+  "pid": 183,
+  "letter": "DNX"
+}, {
+  "id": 720,
+  "name": "定南县",
+  "pid": 116,
+  "letter": "DNX"
+}, {
+  "id": 721,
+  "name": "东坡区",
+  "pid": 208,
+  "letter": "DPQ"
+}, {
+  "id": 722,
+  "name": "大埔区",
+  "pid": 313,
+  "letter": "DPQ"
+}, {
+  "id": 723,
+  "name": "东平县",
+  "pid": 274,
+  "letter": "DPX"
+}, {
+  "id": 724,
+  "name": "大埔县",
+  "pid": 210,
+  "letter": "DPX"
+}, {
+  "id": 725,
+  "name": "丁青县",
+  "pid": 66,
+  "letter": "DQX"
+}, {
+  "id": 726,
+  "name": "德钦县",
+  "pid": 86,
+  "letter": "DQX"
+}, {
+  "id": 727,
+  "name": "东区",
+  "pid": 230,
+  "letter": "DQ"
+}, {
+  "id": 728,
+  "name": "德庆县",
+  "pid": 366,
+  "letter": "DQX"
+}, {
+  "id": 729,
+  "name": "德清县",
+  "pid": 151,
+  "letter": "DQX"
+}, {
+  "id": 730,
+  "name": "定日县",
+  "pid": 244,
+  "letter": "DRX"
+}, {
+  "id": 731,
+  "name": "达日县",
+  "pid": 107,
+  "letter": "DRX"
+}, {
+  "id": 732,
+  "name": "得荣县",
+  "pid": 114,
+  "letter": "DRX"
+}, {
+  "id": 733,
+  "name": "东胜区",
+  "pid": 96,
+  "letter": "DSQ"
+}, {
+  "id": 734,
+  "name": "大社区",
+  "pid": 110,
+  "letter": "DSQ"
+}, {
+  "id": 735,
+  "name": "东山区",
+  "pid": 284,
+  "letter": "DSQ"
+}, {
+  "id": 736,
+  "name": "大树区",
+  "pid": 110,
+  "letter": "DSQ"
+}, {
+  "id": 737,
+  "name": "东势区",
+  "pid": 292,
+  "letter": "DSQ"
+}, {
+  "id": 738,
+  "name": "淡水区",
+  "pid": 309,
+  "letter": "DSQ"
+}, {
+  "id": 739,
+  "name": "大石桥市",
+  "pid": 342,
+  "letter": "DSQS"
+}, {
+  "id": 740,
+  "name": "独山县",
+  "pid": 235,
+  "letter": "DSX"
+}, {
+  "id": 741,
+  "name": "砀山县",
+  "pid": 328,
+  "letter": "DSX"
+}, {
+  "id": 742,
+  "name": "东山县",
+  "pid": 379,
+  "letter": "DSX"
+}, {
+  "id": 743,
+  "name": "岱山县",
+  "pid": 369,
+  "letter": "DSX"
+}, {
+  "id": 744,
+  "name": "独山子区",
+  "pid": 174,
+  "letter": "DSZQ"
+}, {
+  "id": 745,
+  "name": "大通回族土族自治县",
+  "pid": 315,
+  "letter": "DTHZTZZZX"
+}, {
+  "id": 746,
+  "name": "大堂区",
+  "pid": 41,
+  "letter": "DTQ"
+}, {
+  "id": 747,
+  "name": "定陶区",
+  "pid": 149,
+  "letter": "DTQ"
+}, {
+  "id": 748,
+  "name": "大通区",
+  "pid": 138,
+  "letter": "DTQ"
+}, {
+  "id": 749,
+  "name": "丹徒区",
+  "pid": 362,
+  "letter": "DTQ"
+}, {
+  "id": 750,
+  "name": "洞头区",
+  "pid": 306,
+  "letter": "DTQ"
+}, {
+  "id": 751,
+  "name": "大同区",
+  "pid": 275,
+  "letter": "DTQ"
+}, {
+  "id": 752,
+  "name": "东台市",
+  "pid": 338,
+  "letter": "DTS"
+}, {
+  "id": 753,
+  "name": "灯塔市",
+  "pid": 199,
+  "letter": "DTS"
+}, {
+  "id": 754,
+  "name": "大田县",
+  "pid": 251,
+  "letter": "DTX"
+}, {
+  "id": 755,
+  "name": "当涂县",
+  "pid": 205,
+  "letter": "DTX"
+}, {
+  "id": 756,
+  "name": "大武口区",
+  "pid": 269,
+  "letter": "DWKQ"
+}, {
+  "id": 757,
+  "name": "大洼区",
+  "pid": 225,
+  "letter": "DWQ"
+}, {
+  "id": 758,
+  "name": "道外区",
+  "pid": 124,
+  "letter": "DWQ"
+}, {
+  "id": 759,
+  "name": "大悟县",
+  "pid": 312,
+  "letter": "DWX"
+}, {
+  "id": 760,
+  "name": "东乌珠穆沁旗",
+  "pid": 314,
+  "letter": "DWZMQQ"
+}, {
+  "id": 761,
+  "name": "东兴区",
+  "pid": 216,
+  "letter": "DXQ"
+}, {
+  "id": 762,
+  "name": "道县",
+  "pid": 353,
+  "letter": "DX"
+}, {
+  "id": 763,
+  "name": "大祥区",
+  "pid": 265,
+  "letter": "DXQ"
+}, {
+  "id": 764,
+  "name": "东兴市",
+  "pid": 99,
+  "letter": "DXS"
+}, {
+  "id": 765,
+  "name": "当雄县",
+  "pid": 190,
+  "letter": "DXX"
+}, {
+  "id": 766,
+  "name": "大新县",
+  "pid": 74,
+  "letter": "DXX"
+}, {
+  "id": 767,
+  "name": "代县",
+  "pid": 327,
+  "letter": "DX"
+}, {
+  "id": 768,
+  "name": "东西湖区",
+  "pid": 295,
+  "letter": "DXHQ"
+}, {
+  "id": 769,
+  "name": "大兴区",
+  "pid": 53,
+  "letter": "DXQ"
+}, {
+  "id": 770,
+  "name": "东乡区",
+  "pid": 103,
+  "letter": "DXQ"
+}, {
+  "id": 771,
+  "name": "德兴市",
+  "pid": 258,
+  "letter": "DXS"
+}, {
+  "id": 772,
+  "name": "定兴县",
+  "pid": 48,
+  "letter": "DXX"
+}, {
+  "id": 773,
+  "name": "单县",
+  "pid": 149,
+  "letter": "DX"
+}, {
+  "id": 774,
+  "name": "大兴安岭地区直辖",
+  "pid": 89,
+  "letter": "DXALDQZX"
+}, {
+  "id": 775,
+  "name": "定襄县",
+  "pid": 327,
+  "letter": "DXX"
+}, {
+  "id": 776,
+  "name": "东乡族自治县",
+  "pid": 194,
+  "letter": "DXZZZX"
+}, {
+  "id": 777,
+  "name": "大溪镇",
+  "pid": 289,
+  "letter": "DXZ"
+}, {
+  "id": 778,
+  "name": "岱岳区",
+  "pid": 274,
+  "letter": "DYQ"
+}, {
+  "id": 779,
+  "name": "东营区",
+  "pid": 92,
+  "letter": "DYQ"
+}, {
+  "id": 780,
+  "name": "大雅区",
+  "pid": 292,
+  "letter": "DYQ"
+}, {
+  "id": 781,
+  "name": "都匀市",
+  "pid": 235,
+  "letter": "DYS"
+}, {
+  "id": 782,
+  "name": "当阳市",
+  "pid": 336,
+  "letter": "DYS"
+}, {
+  "id": 783,
+  "name": "大冶市",
+  "pid": 139,
+  "letter": "DYS"
+}, {
+  "id": 784,
+  "name": "丹阳市",
+  "pid": 362,
+  "letter": "DYS"
+}, {
+  "id": 785,
+  "name": "东阳市",
+  "pid": 156,
+  "letter": "DYS"
+}, {
+  "id": 786,
+  "name": "大姚县",
+  "pid": 72,
+  "letter": "DYX"
+}, {
+  "id": 787,
+  "name": "大邑县",
+  "pid": 67,
+  "letter": "DYX"
+}, {
+  "id": 788,
+  "name": "大英县",
+  "pid": 255,
+  "letter": "DYX"
+}, {
+  "id": 789,
+  "name": "大余县",
+  "pid": 116,
+  "letter": "DYX"
+}, {
+  "id": 790,
+  "name": "东源县",
+  "pid": 145,
+  "letter": "DYX"
+}, {
+  "id": 791,
+  "name": "定远县",
+  "pid": 79,
+  "letter": "DYX"
+}, {
+  "id": 792,
+  "name": "大园乡",
+  "pid": 289,
+  "letter": "DYX"
+}, {
+  "id": 793,
+  "name": "达孜区",
+  "pid": 190,
+  "letter": "DZQ"
+}, {
+  "id": 794,
+  "name": "大足区",
+  "pid": 365,
+  "letter": "DZQ"
+}, {
+  "id": 795,
+  "name": "端州区",
+  "pid": 366,
+  "letter": "DZQ"
+}, {
+  "id": 796,
+  "name": "东洲区",
+  "pid": 100,
+  "letter": "DZQ"
+}, {
+  "id": 797,
+  "name": "邓州市",
+  "pid": 222,
+  "letter": "DZS"
+}, {
+  "id": 798,
+  "name": "定州市",
+  "pid": 48,
+  "letter": "DZS"
+}, {
+  "id": 799,
+  "name": "大竹县",
+  "pid": 93,
+  "letter": "DZX"
+}, {
+  "id": 800,
+  "name": "丹寨县",
+  "pid": 231,
+  "letter": "DZX"
+}, {
+  "id": 801,
+  "name": "东至县",
+  "pid": 78,
+  "letter": "DZX"
+}, {
+  "id": 802,
+  "name": "道真仡佬族苗族自治县",
+  "pid": 374,
+  "letter": "DZYLZMZZZX"
+}, {
+  "id": 803,
+  "name": "峨边彝族自治县",
+  "pid": 191,
+  "letter": "EBYZZZX"
+}, {
+  "id": 804,
+  "name": "鄂城区",
+  "pid": 98,
+  "letter": "ECQ"
+}, {
+  "id": 805,
+  "name": "二道江区",
+  "pid": 278,
+  "letter": "EDJQ"
+}, {
+  "id": 806,
+  "name": "二道区",
+  "pid": 356,
+  "letter": "EDQ"
+}, {
+  "id": 807,
+  "name": "额尔古纳市",
+  "pid": 133,
+  "letter": "EEGNS"
+}, {
+  "id": 808,
+  "name": "额济纳旗",
+  "pid": 39,
+  "letter": "EJNQ"
+}, {
+  "id": 809,
+  "name": "鄂伦春自治旗",
+  "pid": 133,
+  "letter": "ELCZZQ"
+}, {
+  "id": 810,
+  "name": "二连浩特市",
+  "pid": 314,
+  "letter": "ELHTS"
+}, {
+  "id": 811,
+  "name": "峨眉山市",
+  "pid": 191,
+  "letter": "EMSS"
+}, {
+  "id": 812,
+  "name": "额敏县",
+  "pid": 276,
+  "letter": "EMX"
+}, {
+  "id": 813,
+  "name": "恩平市",
+  "pid": 160,
+  "letter": "EPS"
+}, {
+  "id": 814,
+  "name": "二七区",
+  "pid": 376,
+  "letter": "EQQ"
+}, {
+  "id": 815,
+  "name": "恩施市",
+  "pid": 97,
+  "letter": "ESS"
+}, {
+  "id": 816,
+  "name": "峨山彝族自治县",
+  "pid": 350,
+  "letter": "ESYZZZX"
+}, {
+  "id": 817,
+  "name": "鄂托克前旗",
+  "pid": 96,
+  "letter": "ETKQQ"
+}, {
+  "id": 818,
+  "name": "鄂托克旗",
+  "pid": 96,
+  "letter": "ETKQ"
+}, {
+  "id": 819,
+  "name": "鄂温克族自治旗",
+  "pid": 133,
+  "letter": "EWKZZZQ"
+}, {
+  "id": 820,
+  "name": "恩阳区",
+  "pid": 63,
+  "letter": "EYQ"
+}, {
+  "id": 821,
+  "name": "洱源县",
+  "pid": 84,
+  "letter": "EYX"
+}, {
+  "id": 822,
+  "name": "福安市",
+  "pid": 214,
+  "letter": "FAS"
+}, {
+  "id": 823,
+  "name": "涪城区",
+  "pid": 209,
+  "letter": "FCQ"
+}, {
+  "id": 824,
+  "name": "防城区",
+  "pid": 99,
+  "letter": "FCQ"
+}, {
+  "id": 825,
+  "name": "樊城区",
+  "pid": 324,
+  "letter": "FCQ"
+}, {
+  "id": 826,
+  "name": "丰城市",
+  "pid": 337,
+  "letter": "FCS"
+}, {
+  "id": 827,
+  "name": "肥城市",
+  "pid": 274,
+  "letter": "FCS"
+}, {
+  "id": 828,
+  "name": "凤城市",
+  "pid": 81,
+  "letter": "FCS"
+}, {
+  "id": 829,
+  "name": "方城县",
+  "pid": 222,
+  "letter": "FCX"
+}, {
+  "id": 830,
+  "name": "阜城县",
+  "pid": 140,
+  "letter": "FCX"
+}, {
+  "id": 831,
+  "name": "繁昌县",
+  "pid": 296,
+  "letter": "FCX"
+}, {
+  "id": 832,
+  "name": "富川瑶族自治县",
+  "pid": 147,
+  "letter": "FCYZZZX"
+}, {
+  "id": 833,
+  "name": "福鼎市",
+  "pid": 214,
+  "letter": "FDS"
+}, {
+  "id": 834,
+  "name": "丰都县",
+  "pid": 365,
+  "letter": "FDX"
+}, {
+  "id": 835,
+  "name": "肥东县",
+  "pid": 125,
+  "letter": "FDX"
+}, {
+  "id": 836,
+  "name": "峰峰矿区",
+  "pid": 123,
+  "letter": "FFKQ"
+}, {
+  "id": 837,
+  "name": "扶风县",
+  "pid": 52,
+  "letter": "FFX"
+}, {
+  "id": 838,
+  "name": "福贡县",
+  "pid": 215,
+  "letter": "FGX"
+}, {
+  "id": 839,
+  "name": "凤冈县",
+  "pid": 374,
+  "letter": "FGX"
+}, {
+  "id": 840,
+  "name": "府谷县",
+  "pid": 344,
+  "letter": "FGX"
+}, {
+  "id": 841,
+  "name": "扶沟县",
+  "pid": 363,
+  "letter": "FGX"
+}, {
+  "id": 842,
+  "name": "奉化区",
+  "pid": 211,
+  "letter": "FHQ"
+}, {
+  "id": 843,
+  "name": "福海县",
+  "pid": 40,
+  "letter": "FHX"
+}, {
+  "id": 844,
+  "name": "凤凰县",
+  "pid": 322,
+  "letter": "FHX"
+}, {
+  "id": 845,
+  "name": "富锦市",
+  "pid": 161,
+  "letter": "FJS"
+}, {
+  "id": 846,
+  "name": "奉节县",
+  "pid": 365,
+  "letter": "FJX"
+}, {
+  "id": 847,
+  "name": "阜康市",
+  "pid": 71,
+  "letter": "FKS"
+}, {
+  "id": 848,
+  "name": "封开县",
+  "pid": 366,
+  "letter": "FKX"
+}, {
+  "id": 849,
+  "name": "法库县",
+  "pid": 266,
+  "letter": "FKX"
+}, {
+  "id": 850,
+  "name": "富拉尔基区",
+  "pid": 236,
+  "letter": "FLEJQ"
+}, {
+  "id": 851,
+  "name": "涪陵区",
+  "pid": 365,
+  "letter": "FLQ"
+}, {
+  "id": 852,
+  "name": "浮梁县",
+  "pid": 155,
+  "letter": "FLX"
+}, {
+  "id": 853,
+  "name": "福绵区",
+  "pid": 345,
+  "letter": "FMQ"
+}, {
+  "id": 854,
+  "name": "丰满区",
+  "pid": 158,
+  "letter": "FMQ"
+}, {
+  "id": 855,
+  "name": "富民县",
+  "pid": 175,
+  "letter": "FMX"
+}, {
+  "id": 856,
+  "name": "丰宁满族自治县",
+  "pid": 69,
+  "letter": "FNMZZZX"
+}, {
+  "id": 857,
+  "name": "丰南区",
+  "pid": 287,
+  "letter": "FNQ"
+}, {
+  "id": 858,
+  "name": "抚宁区",
+  "pid": 233,
+  "letter": "FNQ"
+}, {
+  "id": 859,
+  "name": "富宁县",
+  "pid": 301,
+  "letter": "FNX"
+}, {
+  "id": 860,
+  "name": "阜南县",
+  "pid": 102,
+  "letter": "FNX"
+}, {
+  "id": 861,
+  "name": "阜宁县",
+  "pid": 338,
+  "letter": "FNX"
+}, {
+  "id": 862,
+  "name": "富平县",
+  "pid": 300,
+  "letter": "FPX"
+}, {
+  "id": 863,
+  "name": "阜平县",
+  "pid": 48,
+  "letter": "FPX"
+}, {
+  "id": 864,
+  "name": "凤泉区",
+  "pid": 321,
+  "letter": "FQQ"
+}, {
+  "id": 865,
+  "name": "福泉市",
+  "pid": 235,
+  "letter": "FQS"
+}, {
+  "id": 866,
+  "name": "福清市",
+  "pid": 104,
+  "letter": "FQS"
+}, {
+  "id": 867,
+  "name": "凤庆县",
+  "pid": 180,
+  "letter": "FQX"
+}, {
+  "id": 868,
+  "name": "封丘县",
+  "pid": 321,
+  "letter": "FQX"
+}, {
+  "id": 869,
+  "name": "芙蓉区",
+  "pid": 367,
+  "letter": "FRQ"
+}, {
+  "id": 870,
+  "name": "丰润区",
+  "pid": 287,
+  "letter": "FRQ"
+}, {
+  "id": 871,
+  "name": "房山区",
+  "pid": 53,
+  "letter": "FSQ"
+}, {
+  "id": 872,
+  "name": "凤山区",
+  "pid": 110,
+  "letter": "FSQ"
+}, {
+  "id": 873,
+  "name": "福山区",
+  "pid": 349,
+  "letter": "FSQ"
+}, {
+  "id": 874,
+  "name": "富顺县",
+  "pid": 357,
+  "letter": "FSX"
+}, {
+  "id": 875,
+  "name": "凤山县",
+  "pid": 121,
+  "letter": "FSX"
+}, {
+  "id": 876,
+  "name": "扶绥县",
+  "pid": 74,
+  "letter": "FSX"
+}, {
+  "id": 877,
+  "name": "方山县",
+  "pid": 187,
+  "letter": "FSX"
+}, {
+  "id": 878,
+  "name": "浮山县",
+  "pid": 183,
+  "letter": "FSX"
+}, {
+  "id": 879,
+  "name": "丰顺县",
+  "pid": 210,
+  "letter": "FSX"
+}, {
+  "id": 880,
+  "name": "抚顺县",
+  "pid": 100,
+  "letter": "FSX"
+}, {
+  "id": 881,
+  "name": "抚松县",
+  "pid": 57,
+  "letter": "FSX"
+}, {
+  "id": 882,
+  "name": "福田区",
+  "pid": 272,
+  "letter": "FTQ"
+}, {
+  "id": 883,
+  "name": "丰台区",
+  "pid": 53,
+  "letter": "FTQ"
+}, {
+  "id": 884,
+  "name": "凤台县",
+  "pid": 138,
+  "letter": "FTX"
+}, {
+  "id": 885,
+  "name": "凤县",
+  "pid": 52,
+  "letter": "FX"
+}, {
+  "id": 886,
+  "name": "凤翔县",
+  "pid": 52,
+  "letter": "FXX"
+}, {
+  "id": 887,
+  "name": "富县",
+  "pid": 331,
+  "letter": "FX"
+}, {
+  "id": 888,
+  "name": "房县",
+  "pid": 264,
+  "letter": "FX"
+}, {
+  "id": 889,
+  "name": "复兴区",
+  "pid": 123,
+  "letter": "FXQ"
+}, {
+  "id": 890,
+  "name": "肥乡区",
+  "pid": 123,
+  "letter": "FXQ"
+}, {
+  "id": 891,
+  "name": "奉新县",
+  "pid": 337,
+  "letter": "FXX"
+}, {
+  "id": 892,
+  "name": "范县",
+  "pid": 229,
+  "letter": "FX"
+}, {
+  "id": 893,
+  "name": "丰县",
+  "pid": 329,
+  "letter": "FX"
+}, {
+  "id": 894,
+  "name": "肥西县",
+  "pid": 125,
+  "letter": "FXX"
+}, {
+  "id": 895,
+  "name": "费县",
+  "pid": 198,
+  "letter": "FX"
+}, {
+  "id": 896,
+  "name": "阜新蒙古族自治县",
+  "pid": 101,
+  "letter": "FXMGZZZX"
+}, {
+  "id": 897,
+  "name": "奉贤区",
+  "pid": 247,
+  "letter": "FXQ"
+}, {
+  "id": 898,
+  "name": "汾西县",
+  "pid": 183,
+  "letter": "FXX"
+}, {
+  "id": 899,
+  "name": "复兴乡",
+  "pid": 289,
+  "letter": "FXX"
+}, {
+  "id": 900,
+  "name": "番禺区",
+  "pid": 115,
+  "letter": "FYQ"
+}, {
+  "id": 901,
+  "name": "富阳区",
+  "pid": 150,
+  "letter": "FYQ"
+}, {
+  "id": 902,
+  "name": "丰原区",
+  "pid": 292,
+  "letter": "FYQ"
+}, {
+  "id": 903,
+  "name": "汾阳市",
+  "pid": 187,
+  "letter": "FYS"
+}, {
+  "id": 904,
+  "name": "扶余市",
+  "pid": 267,
+  "letter": "FYS"
+}, {
+  "id": 905,
+  "name": "抚远市",
+  "pid": 161,
+  "letter": "FYS"
+}, {
+  "id": 906,
+  "name": "富蕴县",
+  "pid": 40,
+  "letter": "FYX"
+}, {
+  "id": 907,
+  "name": "富源县",
+  "pid": 234,
+  "letter": "FYX"
+}, {
+  "id": 908,
+  "name": "分宜县",
+  "pid": 326,
+  "letter": "FYX"
+}, {
+  "id": 909,
+  "name": "凤阳县",
+  "pid": 79,
+  "letter": "FYX"
+}, {
+  "id": 910,
+  "name": "富裕县",
+  "pid": 236,
+  "letter": "FYX"
+}, {
+  "id": 911,
+  "name": "丰泽区",
+  "pid": 242,
+  "letter": "FZQ"
+}, {
+  "id": 912,
+  "name": "坊子区",
+  "pid": 293,
+  "letter": "FZQ"
+}, {
+  "id": 913,
+  "name": "丰镇市",
+  "pid": 298,
+  "letter": "FZS"
+}, {
+  "id": 914,
+  "name": "繁峙县",
+  "pid": 327,
+  "letter": "FZX"
+}, {
+  "id": 915,
+  "name": "方正县",
+  "pid": 124,
+  "letter": "FZX"
+}, {
+  "id": 916,
+  "name": "广安区",
+  "pid": 105,
+  "letter": "GAQ"
+}, {
+  "id": 917,
+  "name": "高安市",
+  "pid": 337,
+  "letter": "GAS"
+}, {
+  "id": 918,
+  "name": "公安县",
+  "pid": 169,
+  "letter": "GAX"
+}, {
+  "id": 919,
+  "name": "固安县",
+  "pid": 184,
+  "letter": "GAX"
+}, {
+  "id": 920,
+  "name": "高碑店市",
+  "pid": 48,
+  "letter": "GBDS"
+}, {
+  "id": 921,
+  "name": "工布江达县",
+  "pid": 201,
+  "letter": "GBJDX"
+}, {
+  "id": 922,
+  "name": "港北区",
+  "pid": 106,
+  "letter": "GBQ"
+}, {
+  "id": 923,
+  "name": "岗巴县",
+  "pid": 244,
+  "letter": "GBX"
+}, {
+  "id": 924,
+  "name": "管城回族区",
+  "pid": 376,
+  "letter": "GCHZQ"
+}, {
+  "id": 925,
+  "name": "高昌区",
+  "pid": 280,
+  "letter": "GCQ"
+}, {
+  "id": 926,
+  "name": "古城区",
+  "pid": 186,
+  "letter": "GCQ"
+}, {
+  "id": 927,
+  "name": "藁城区",
+  "pid": 249,
+  "letter": "GCQ"
+}, {
+  "id": 928,
+  "name": "贵池区",
+  "pid": 78,
+  "letter": "GCQ"
+}, {
+  "id": 929,
+  "name": "钢城区",
+  "pid": 163,
+  "letter": "GCQ"
+}, {
+  "id": 930,
+  "name": "高淳区",
+  "pid": 217,
+  "letter": "GCQ"
+}, {
+  "id": 931,
+  "name": "刚察县",
+  "pid": 118,
+  "letter": "GCX"
+}, {
+  "id": 932,
+  "name": "谷城县",
+  "pid": 324,
+  "letter": "GCX"
+}, {
+  "id": 933,
+  "name": "故城县",
+  "pid": 140,
+  "letter": "GCX"
+}, {
+  "id": 934,
+  "name": "广昌县",
+  "pid": 103,
+  "letter": "GCX"
+}, {
+  "id": 935,
+  "name": "恭城瑶族自治县",
+  "pid": 108,
+  "letter": "GCYZZZX"
+}, {
+  "id": 936,
+  "name": "官渡区",
+  "pid": 175,
+  "letter": "GDQ"
+}, {
+  "id": 937,
+  "name": "广德市",
+  "pid": 311,
+  "letter": "GDS"
+}, {
+  "id": 938,
+  "name": "甘德县",
+  "pid": 107,
+  "letter": "GDX"
+}, {
+  "id": 939,
+  "name": "贵德县",
+  "pid": 136,
+  "letter": "GDX"
+}, {
+  "id": 940,
+  "name": "贵定县",
+  "pid": 235,
+  "letter": "GDX"
+}, {
+  "id": 941,
+  "name": "桂东县",
+  "pid": 75,
+  "letter": "GDX"
+}, {
+  "id": 942,
+  "name": "格尔木市",
+  "pid": 143,
+  "letter": "GEMS"
+}, {
+  "id": 943,
+  "name": "噶尔县",
+  "pid": 38,
+  "letter": "GEX"
+}, {
+  "id": 944,
+  "name": "广丰区",
+  "pid": 258,
+  "letter": "GFQ"
+}, {
+  "id": 945,
+  "name": "高港区",
+  "pid": 290,
+  "letter": "GGQ"
+}, {
+  "id": 946,
+  "name": "贡嘎县",
+  "pid": 254,
+  "letter": "GGX"
+}, {
+  "id": 947,
+  "name": "甘谷县",
+  "pid": 286,
+  "letter": "GGX"
+}, {
+  "id": 948,
+  "name": "广汉市",
+  "pid": 91,
+  "letter": "GHS"
+}, {
+  "id": 949,
+  "name": "根河市",
+  "pid": 133,
+  "letter": "GHS"
+}, {
+  "id": 950,
+  "name": "共和县",
+  "pid": 136,
+  "letter": "GHX"
+}, {
+  "id": 951,
+  "name": "广河县",
+  "pid": 194,
+  "letter": "GHX"
+}, {
+  "id": 952,
+  "name": "贡井区",
+  "pid": 357,
+  "letter": "GJQ"
+}, {
+  "id": 953,
+  "name": "个旧市",
+  "pid": 128,
+  "letter": "GJS"
+}, {
+  "id": 954,
+  "name": "古交市",
+  "pid": 288,
+  "letter": "GJS"
+}, {
+  "id": 955,
+  "name": "革吉县",
+  "pid": 38,
+  "letter": "GJX"
+}, {
+  "id": 956,
+  "name": "贡觉县",
+  "pid": 66,
+  "letter": "GJX"
+}, {
+  "id": 957,
+  "name": "甘井子区",
+  "pid": 85,
+  "letter": "GJZQ"
+}, {
+  "id": 958,
+  "name": "港口区",
+  "pid": 99,
+  "letter": "GKQ"
+}, {
+  "id": 959,
+  "name": "关岭布依族苗族自治县",
+  "pid": 43,
+  "letter": "GLBYZMZZZX"
+}, {
+  "id": 960,
+  "name": "高陵区",
+  "pid": 308,
+  "letter": "GLQ"
+}, {
+  "id": 961,
+  "name": "鼓楼区",
+  "pid": 173,
+  "letter": "GLQ"
+}, {
+  "id": 962,
+  "name": "广陵区",
+  "pid": 354,
+  "letter": "GLQ"
+}, {
+  "id": 963,
+  "name": "贡寮区",
+  "pid": 309,
+  "letter": "GLQ"
+}, {
+  "id": 964,
+  "name": "巩留县",
+  "pid": 343,
+  "letter": "GLX"
+}, {
+  "id": 965,
+  "name": "甘洛县",
+  "pid": 193,
+  "letter": "GLX"
+}, {
+  "id": 966,
+  "name": "古浪县",
+  "pid": 302,
+  "letter": "GLX"
+}, {
+  "id": 967,
+  "name": "皋兰县",
+  "pid": 202,
+  "letter": "GLX"
+}, {
+  "id": 968,
+  "name": "古蔺县",
+  "pid": 203,
+  "letter": "GLX"
+}, {
+  "id": 969,
+  "name": "广灵县",
+  "pid": 88,
+  "letter": "GLX"
+}, {
+  "id": 970,
+  "name": "耿马傣族佤族自治县",
+  "pid": 180,
+  "letter": "GMDZWZZZX"
+}, {
+  "id": 971,
+  "name": "高明区",
+  "pid": 56,
+  "letter": "GMQ"
+}, {
+  "id": 972,
+  "name": "光明区",
+  "pid": 272,
+  "letter": "GMQ"
+}, {
+  "id": 973,
+  "name": "关庙区",
+  "pid": 284,
+  "letter": "GMQ"
+}, {
+  "id": 974,
+  "name": "高密市",
+  "pid": 293,
+  "letter": "GMS"
+}, {
+  "id": 975,
+  "name": "港南区",
+  "pid": 106,
+  "letter": "GNQ"
+}, {
+  "id": 976,
+  "name": "工农区",
+  "pid": 127,
+  "letter": "GNQ"
+}, {
+  "id": 977,
+  "name": "贵南县",
+  "pid": 136,
+  "letter": "GNX"
+}, {
+  "id": 978,
+  "name": "广南县",
+  "pid": 301,
+  "letter": "GNX"
+}, {
+  "id": 979,
+  "name": "广宁县",
+  "pid": 366,
+  "letter": "GNX"
+}, {
+  "id": 980,
+  "name": "灌南县",
+  "pid": 195,
+  "letter": "GNX"
+}, {
+  "id": 981,
+  "name": "甘南县",
+  "pid": 236,
+  "letter": "GNX"
+}, {
+  "id": 982,
+  "name": "高坪区",
+  "pid": 212,
+  "letter": "GPQ"
+}, {
+  "id": 983,
+  "name": "桂平市",
+  "pid": 106,
+  "letter": "GPS"
+}, {
+  "id": 984,
+  "name": "高平市",
+  "pid": 154,
+  "letter": "GPS"
+}, {
+  "id": 985,
+  "name": "广平县",
+  "pid": 123,
+  "letter": "GPX"
+}, {
+  "id": 986,
+  "name": "共青城市",
+  "pid": 157,
+  "letter": "GQCS"
+}, {
+  "id": 987,
+  "name": "甘泉县",
+  "pid": 331,
+  "letter": "GQX"
+}, {
+  "id": 988,
+  "name": "高青县",
+  "pid": 355,
+  "letter": "GQX"
+}, {
+  "id": 989,
+  "name": "归仁区",
+  "pid": 284,
+  "letter": "GRQ"
+}, {
+  "id": 990,
+  "name": "广饶县",
+  "pid": 92,
+  "letter": "GRX"
+}, {
+  "id": 991,
+  "name": "贡山独龙族怒族自治县",
+  "pid": 215,
+  "letter": "GSDLZNZZZX"
+}, {
+  "id": 992,
+  "name": "观山湖区",
+  "pid": 113,
+  "letter": "GSHQ"
+}, {
+  "id": 993,
+  "name": "拱墅区",
+  "pid": 150,
+  "letter": "GSQ"
+}, {
+  "id": 994,
+  "name": "冈山区",
+  "pid": 110,
+  "letter": "GSQ"
+}, {
+  "id": 995,
+  "name": "鼓山区",
+  "pid": 110,
+  "letter": "GSQ"
+}, {
+  "id": 996,
+  "name": "姑苏区",
+  "pid": 273,
+  "letter": "GSQ"
+}, {
+  "id": 997,
+  "name": "广水市",
+  "pid": 271,
+  "letter": "GSS"
+}, {
+  "id": 998,
+  "name": "伽师县",
+  "pid": 176,
+  "letter": "GSX"
+}, {
+  "id": 999,
+  "name": "光山县",
+  "pid": 325,
+  "letter": "GSX"
+}, {
+  "id": 1000,
+  "name": "固始县",
+  "pid": 325,
+  "letter": "GSX"
+}, {
+  "id": 1001,
+  "name": "龟山乡",
+  "pid": 289,
+  "letter": "GSX"
+}, {
+  "id": 1002,
+  "name": "观塘区",
+  "pid": 313,
+  "letter": "GTQ"
+}, {
+  "id": 1003,
+  "name": "官田区",
+  "pid": 284,
+  "letter": "GTQ"
+}, {
+  "id": 1004,
+  "name": "古塔区",
+  "pid": 172,
+  "letter": "GTQ"
+}, {
+  "id": 1005,
+  "name": "高台县",
+  "pid": 372,
+  "letter": "GTX"
+}, {
+  "id": 1006,
+  "name": "馆陶县",
+  "pid": 123,
+  "letter": "GTX"
+}, {
+  "id": 1007,
+  "name": "高唐县",
+  "pid": 181,
+  "letter": "GTX"
+}, {
+  "id": 1008,
+  "name": "古田县",
+  "pid": 214,
+  "letter": "GTX"
+}, {
+  "id": 1009,
+  "name": "高县",
+  "pid": 333,
+  "letter": "GX"
+}, {
+  "id": 1010,
+  "name": "珙县",
+  "pid": 333,
+  "letter": "GX"
+}, {
+  "id": 1011,
+  "name": "古县",
+  "pid": 183,
+  "letter": "GX"
+}, {
+  "id": 1012,
+  "name": "赣县区",
+  "pid": 116,
+  "letter": "GXQ"
+}, {
+  "id": 1013,
+  "name": "冠县",
+  "pid": 181,
+  "letter": "GX"
+}, {
+  "id": 1014,
+  "name": "广信区",
+  "pid": 258,
+  "letter": "GXQ"
+}, {
+  "id": 1015,
+  "name": "贵溪市",
+  "pid": 348,
+  "letter": "GXS"
+}, {
+  "id": 1016,
+  "name": "高要区",
+  "pid": 366,
+  "letter": "GYQ"
+}, {
+  "id": 1017,
+  "name": "广阳区",
+  "pid": 184,
+  "letter": "GYQ"
+}, {
+  "id": 1018,
+  "name": "古冶区",
+  "pid": 287,
+  "letter": "GYQ"
+}, {
+  "id": 1019,
+  "name": "赣榆区",
+  "pid": 195,
+  "letter": "GYQ"
+}, {
+  "id": 1020,
+  "name": "巩义市",
+  "pid": 376,
+  "letter": "GYS"
+}, {
+  "id": 1021,
+  "name": "高邮市",
+  "pid": 354,
+  "letter": "GYS"
+}, {
+  "id": 1022,
+  "name": "固阳县",
+  "pid": 58,
+  "letter": "GYX"
+}, {
+  "id": 1023,
+  "name": "灌阳县",
+  "pid": 108,
+  "letter": "GYX"
+}, {
+  "id": 1024,
+  "name": "桂阳县",
+  "pid": 75,
+  "letter": "GYX"
+}, {
+  "id": 1025,
+  "name": "高邑县",
+  "pid": 249,
+  "letter": "GYX"
+}, {
+  "id": 1026,
+  "name": "沽源县",
+  "pid": 360,
+  "letter": "GYX"
+}, {
+  "id": 1027,
+  "name": "高阳县",
+  "pid": 48,
+  "letter": "GYX"
+}, {
+  "id": 1028,
+  "name": "灌云县",
+  "pid": 195,
+  "letter": "GYX"
+}, {
+  "id": 1029,
+  "name": "观音乡",
+  "pid": 289,
+  "letter": "GYX"
+}, {
+  "id": 1030,
+  "name": "弓长岭区",
+  "pid": 199,
+  "letter": "GZLQ"
+}, {
+  "id": 1031,
+  "name": "公主岭市",
+  "pid": 256,
+  "letter": "GZLS"
+}, {
+  "id": 1032,
+  "name": "甘州区",
+  "pid": 372,
+  "letter": "GZQ"
+}, {
+  "id": 1033,
+  "name": "港闸区",
+  "pid": 221,
+  "letter": "GZQ"
+}, {
+  "id": 1034,
+  "name": "高州市",
+  "pid": 207,
+  "letter": "GZS"
+}, {
+  "id": 1035,
+  "name": "盖州市",
+  "pid": 342,
+  "letter": "GZS"
+}, {
+  "id": 1036,
+  "name": "改则县",
+  "pid": 38,
+  "letter": "GZX"
+}, {
+  "id": 1037,
+  "name": "瓜州县",
+  "pid": 164,
+  "letter": "GZX"
+}, {
+  "id": 1038,
+  "name": "甘孜县",
+  "pid": 114,
+  "letter": "GZX"
+}, {
+  "id": 1039,
+  "name": "古丈县",
+  "pid": 322,
+  "letter": "GZX"
+}, {
+  "id": 1040,
+  "name": "广宗县",
+  "pid": 320,
+  "letter": "GZX"
+}, {
+  "id": 1041,
+  "name": "光泽县",
+  "pid": 219,
+  "letter": "GZX"
+}, {
+  "id": 1042,
+  "name": "固镇县",
+  "pid": 46,
+  "letter": "GZX"
+}, {
+  "id": 1043,
+  "name": "淮安区",
+  "pid": 117,
+  "letter": "HAQ"
+}, {
+  "id": 1044,
+  "name": "海安市",
+  "pid": 221,
+  "letter": "HAS"
+}, {
+  "id": 1045,
+  "name": "怀安县",
+  "pid": 360,
+  "letter": "HAX"
+}, {
+  "id": 1046,
+  "name": "红安县",
+  "pid": 126,
+  "letter": "HAX"
+}, {
+  "id": 1047,
+  "name": "华安县",
+  "pid": 379,
+  "letter": "HAX"
+}, {
+  "id": 1048,
+  "name": "惠安县",
+  "pid": 242,
+  "letter": "HAX"
+}, {
+  "id": 1049,
+  "name": "哈巴河县",
+  "pid": 40,
+  "letter": "HBHX"
+}, {
+  "id": 1050,
+  "name": "和布克赛尔蒙古自治县",
+  "pid": 276,
+  "letter": "HBKSEMGZZX"
+}, {
+  "id": 1051,
+  "name": "汉滨区",
+  "pid": 37,
+  "letter": "HBQ"
+}, {
+  "id": 1052,
+  "name": "湖滨区",
+  "pid": 253,
+  "letter": "HBQ"
+}, {
+  "id": 1053,
+  "name": "黄陂区",
+  "pid": 295,
+  "letter": "HBQ"
+}, {
+  "id": 1054,
+  "name": "河北区",
+  "pid": 279,
+  "letter": "HBQ"
+}, {
+  "id": 1055,
+  "name": "后壁区",
+  "pid": 284,
+  "letter": "HBQ"
+}, {
+  "id": 1056,
+  "name": "海勃湾区",
+  "pid": 294,
+  "letter": "HBWQ"
+}, {
+  "id": 1057,
+  "name": "淮滨县",
+  "pid": 325,
+  "letter": "HBX"
+}, {
+  "id": 1058,
+  "name": "合川区",
+  "pid": 365,
+  "letter": "HCQ"
+}, {
+  "id": 1059,
+  "name": "汇川区",
+  "pid": 374,
+  "letter": "HCQ"
+}, {
+  "id": 1060,
+  "name": "海城区",
+  "pid": 50,
+  "letter": "HCQ"
+}, {
+  "id": 1061,
+  "name": "鹤城区",
+  "pid": 130,
+  "letter": "HCQ"
+}, {
+  "id": 1062,
+  "name": "惠城区",
+  "pid": 148,
+  "letter": "HCQ"
+}, {
+  "id": 1063,
+  "name": "海沧区",
+  "pid": 252,
+  "letter": "HCQ"
+}, {
+  "id": 1064,
+  "name": "环翠区",
+  "pid": 297,
+  "letter": "HCQ"
+}, {
+  "id": 1065,
+  "name": "韩城市",
+  "pid": 300,
+  "letter": "HCS"
+}, {
+  "id": 1066,
+  "name": "汉川市",
+  "pid": 312,
+  "letter": "HCS"
+}, {
+  "id": 1067,
+  "name": "海城市",
+  "pid": 44,
+  "letter": "HCS"
+}, {
+  "id": 1068,
+  "name": "珲春市",
+  "pid": 332,
+  "letter": "HCS"
+}, {
+  "id": 1069,
+  "name": "霍城县",
+  "pid": 343,
+  "letter": "HCX"
+}, {
+  "id": 1070,
+  "name": "华池县",
+  "pid": 239,
+  "letter": "HCX"
+}, {
+  "id": 1071,
+  "name": "潢川县",
+  "pid": 325,
+  "letter": "HCX"
+}, {
+  "id": 1072,
+  "name": "会昌县",
+  "pid": 116,
+  "letter": "HCX"
+}, {
+  "id": 1073,
+  "name": "桦川县",
+  "pid": 161,
+  "letter": "HCX"
+}, {
+  "id": 1074,
+  "name": "花地玛堂区",
+  "pid": 41,
+  "letter": "HDMTQ"
+}, {
+  "id": 1075,
+  "name": "花都区",
+  "pid": 115,
+  "letter": "HDQ"
+}, {
+  "id": 1076,
+  "name": "海淀区",
+  "pid": 53,
+  "letter": "HDQ"
+}, {
+  "id": 1077,
+  "name": "河东区",
+  "pid": 279,
+  "letter": "HDQ"
+}, {
+  "id": 1078,
+  "name": "黄岛区",
+  "pid": 232,
+  "letter": "HDQ"
+}, {
+  "id": 1079,
+  "name": "桦甸市",
+  "pid": 158,
+  "letter": "HDS"
+}, {
+  "id": 1080,
+  "name": "会东县",
+  "pid": 193,
+  "letter": "HDX"
+}, {
+  "id": 1081,
+  "name": "洪洞县",
+  "pid": 183,
+  "letter": "HDX"
+}, {
+  "id": 1082,
+  "name": "衡东县",
+  "pid": 144,
+  "letter": "HDX"
+}, {
+  "id": 1083,
+  "name": "化德县",
+  "pid": 298,
+  "letter": "HDX"
+}, {
+  "id": 1084,
+  "name": "黄大仙区",
+  "pid": 313,
+  "letter": "HDXQ"
+}, {
+  "id": 1085,
+  "name": "惠东县",
+  "pid": 148,
+  "letter": "HDX"
+}, {
+  "id": 1086,
+  "name": "霍尔果斯市",
+  "pid": 343,
+  "letter": "HEGSS"
+}, {
+  "id": 1087,
+  "name": "鹤峰县",
+  "pid": 97,
+  "letter": "HFX"
+}, {
+  "id": 1088,
+  "name": "海丰县",
+  "pid": 261,
+  "letter": "HFX"
+}, {
+  "id": 1089,
+  "name": "横峰县",
+  "pid": 258,
+  "letter": "HFX"
+}, {
+  "id": 1090,
+  "name": "红古区",
+  "pid": 202,
+  "letter": "HGQ"
+}, {
+  "id": 1091,
+  "name": "海港区",
+  "pid": 233,
+  "letter": "HGQ"
+}, {
+  "id": 1092,
+  "name": "皇姑区",
+  "pid": 266,
+  "letter": "HGQ"
+}, {
+  "id": 1093,
+  "name": "红岗区",
+  "pid": 87,
+  "letter": "HGQ"
+}, {
+  "id": 1094,
+  "name": "壶关县",
+  "pid": 375,
+  "letter": "HGX"
+}, {
+  "id": 1095,
+  "name": "红花岗区",
+  "pid": 374,
+  "letter": "HHGQ"
+}, {
+  "id": 1096,
+  "name": "洪湖市",
+  "pid": 169,
+  "letter": "HHS"
+}, {
+  "id": 1097,
+  "name": "黄骅市",
+  "pid": 76,
+  "letter": "HHS"
+}, {
+  "id": 1098,
+  "name": "红河县",
+  "pid": 128,
+  "letter": "HHX"
+}, {
+  "id": 1099,
+  "name": "杭锦后旗",
+  "pid": 61,
+  "letter": "HJHQ"
+}, {
+  "id": 1100,
+  "name": "环江毛南族自治县",
+  "pid": 121,
+  "letter": "HJMNZZZX"
+}, {
+  "id": 1101,
+  "name": "杭锦旗",
+  "pid": 96,
+  "letter": "HJQ"
+}, {
+  "id": 1102,
+  "name": "惠济区",
+  "pid": 376,
+  "letter": "HJQ"
+}, {
+  "id": 1103,
+  "name": "濠江区",
+  "pid": 260,
+  "letter": "HJQ"
+}, {
+  "id": 1104,
+  "name": "涵江区",
+  "pid": 227,
+  "letter": "HJQ"
+}, {
+  "id": 1105,
+  "name": "邗江区",
+  "pid": 354,
+  "letter": "HJQ"
+}, {
+  "id": 1106,
+  "name": "浑江区",
+  "pid": 57,
+  "letter": "HJQ"
+}, {
+  "id": 1107,
+  "name": "洪江市",
+  "pid": 130,
+  "letter": "HJS"
+}, {
+  "id": 1108,
+  "name": "河津市",
+  "pid": 335,
+  "letter": "HJS"
+}, {
+  "id": 1109,
+  "name": "河间市",
+  "pid": 76,
+  "letter": "HJS"
+}, {
+  "id": 1110,
+  "name": "和静县",
+  "pid": 60,
+  "letter": "HJX"
+}, {
+  "id": 1111,
+  "name": "合江县",
+  "pid": 203,
+  "letter": "HJX"
+}, {
+  "id": 1112,
+  "name": "怀集县",
+  "pid": 366,
+  "letter": "HJX"
+}, {
+  "id": 1113,
+  "name": "获嘉县",
+  "pid": 321,
+  "letter": "HJX"
+}, {
+  "id": 1114,
+  "name": "河口区",
+  "pid": 92,
+  "letter": "HKQ"
+}, {
+  "id": 1115,
+  "name": "虹口区",
+  "pid": 247,
+  "letter": "HKQ"
+}, {
+  "id": 1116,
+  "name": "湖口县",
+  "pid": 157,
+  "letter": "HKX"
+}, {
+  "id": 1117,
+  "name": "河口瑶族自治县",
+  "pid": 128,
+  "letter": "HKYZZZX"
+}, {
+  "id": 1118,
+  "name": "海拉尔区",
+  "pid": 133,
+  "letter": "HLEQ"
+}, {
+  "id": 1119,
+  "name": "和林格尔县",
+  "pid": 129,
+  "letter": "HLGEX"
+}, {
+  "id": 1120,
+  "name": "霍林郭勒市",
+  "pid": 282,
+  "letter": "HLGLS"
+}, {
+  "id": 1121,
+  "name": "化隆回族自治县",
+  "pid": 122,
+  "letter": "HLHZZZX"
+}, {
+  "id": 1122,
+  "name": "华龙区",
+  "pid": 229,
+  "letter": "HLQ"
+}, {
+  "id": 1123,
+  "name": "湖里区",
+  "pid": 252,
+  "letter": "HLQ"
+}, {
+  "id": 1124,
+  "name": "海陵区",
+  "pid": 290,
+  "letter": "HLQ"
+}, {
+  "id": 1125,
+  "name": "后里区",
+  "pid": 292,
+  "letter": "HLQ"
+}, {
+  "id": 1126,
+  "name": "呼兰区",
+  "pid": 124,
+  "letter": "HLQ"
+}, {
+  "id": 1127,
+  "name": "海伦市",
+  "pid": 248,
+  "letter": "HLS"
+}, {
+  "id": 1128,
+  "name": "海林市",
+  "pid": 206,
+  "letter": "HLS"
+}, {
+  "id": 1129,
+  "name": "和龙市",
+  "pid": 332,
+  "letter": "HLS"
+}, {
+  "id": 1130,
+  "name": "虎林市",
+  "pid": 166,
+  "letter": "HLS"
+}, {
+  "id": 1131,
+  "name": "会理县",
+  "pid": 193,
+  "letter": "HLX"
+}, {
+  "id": 1132,
+  "name": "贺兰县",
+  "pid": 334,
+  "letter": "HLX"
+}, {
+  "id": 1133,
+  "name": "黄陵县",
+  "pid": 331,
+  "letter": "HLX"
+}, {
+  "id": 1134,
+  "name": "黄龙县",
+  "pid": 331,
+  "letter": "HLX"
+}, {
+  "id": 1135,
+  "name": "怀来县",
+  "pid": 360,
+  "letter": "HLX"
+}, {
+  "id": 1136,
+  "name": "惠来县",
+  "pid": 168,
+  "letter": "HLX"
+}, {
+  "id": 1137,
+  "name": "回民区",
+  "pid": 129,
+  "letter": "HMQ"
+}, {
+  "id": 1138,
+  "name": "侯马市",
+  "pid": 183,
+  "letter": "HMS"
+}, {
+  "id": 1139,
+  "name": "海门市",
+  "pid": 221,
+  "letter": "HMS"
+}, {
+  "id": 1140,
+  "name": "黄梅县",
+  "pid": 126,
+  "letter": "HMX"
+}, {
+  "id": 1141,
+  "name": "惠民县",
+  "pid": 65,
+  "letter": "HMX"
+}, {
+  "id": 1142,
+  "name": "呼玛县",
+  "pid": 89,
+  "letter": "HMX"
+}, {
+  "id": 1143,
+  "name": "河南蒙古族自治县",
+  "pid": 137,
+  "letter": "HNMGZZZX"
+}, {
+  "id": 1144,
+  "name": "惠农区",
+  "pid": 269,
+  "letter": "HNQ"
+}, {
+  "id": 1145,
+  "name": "海南区",
+  "pid": 294,
+  "letter": "HNQ"
+}, {
+  "id": 1146,
+  "name": "汉南区",
+  "pid": 295,
+  "letter": "HNQ"
+}, {
+  "id": 1147,
+  "name": "湖内区",
+  "pid": 110,
+  "letter": "HNQ"
+}, {
+  "id": 1148,
+  "name": "浑南区",
+  "pid": 266,
+  "letter": "HNQ"
+}, {
+  "id": 1149,
+  "name": "海宁市",
+  "pid": 165,
+  "letter": "HNS"
+}, {
+  "id": 1150,
+  "name": "华宁县",
+  "pid": 350,
+  "letter": "HNX"
+}, {
+  "id": 1151,
+  "name": "会宁县",
+  "pid": 62,
+  "letter": "HNX"
+}, {
+  "id": 1152,
+  "name": "衡南县",
+  "pid": 144,
+  "letter": "HNX"
+}, {
+  "id": 1153,
+  "name": "怀宁县",
+  "pid": 42,
+  "letter": "HNX"
+}, {
+  "id": 1154,
+  "name": "辉南县",
+  "pid": 278,
+  "letter": "HNX"
+}, {
+  "id": 1155,
+  "name": "桦南县",
+  "pid": 161,
+  "letter": "HNX"
+}, {
+  "id": 1156,
+  "name": "黄埔区",
+  "pid": 115,
+  "letter": "HPQ"
+}, {
+  "id": 1157,
+  "name": "和平区",
+  "pid": 279,
+  "letter": "HPQ"
+}, {
+  "id": 1158,
+  "name": "黄浦区",
+  "pid": 247,
+  "letter": "HPQ"
+}, {
+  "id": 1159,
+  "name": "华坪县",
+  "pid": 186,
+  "letter": "HPX"
+}, {
+  "id": 1160,
+  "name": "黄平县",
+  "pid": 231,
+  "letter": "HPX"
+}, {
+  "id": 1161,
+  "name": "合浦县",
+  "pid": 50,
+  "letter": "HPX"
+}, {
+  "id": 1162,
+  "name": "和平县",
+  "pid": 145,
+  "letter": "HPX"
+}, {
+  "id": 1163,
+  "name": "红旗区",
+  "pid": 321,
+  "letter": "HQQ"
+}, {
+  "id": 1164,
+  "name": "红桥区",
+  "pid": 279,
+  "letter": "HQQ"
+}, {
+  "id": 1165,
+  "name": "虎丘区",
+  "pid": 273,
+  "letter": "HQQ"
+}, {
+  "id": 1166,
+  "name": "鹤庆县",
+  "pid": 84,
+  "letter": "HQX"
+}, {
+  "id": 1167,
+  "name": "河曲县",
+  "pid": 327,
+  "letter": "HQX"
+}, {
+  "id": 1168,
+  "name": "霍邱县",
+  "pid": 178,
+  "letter": "HQX"
+}, {
+  "id": 1169,
+  "name": "桓仁满族自治县",
+  "pid": 59,
+  "letter": "HRMZZZX"
+}, {
+  "id": 1170,
+  "name": "华容区",
+  "pid": 98,
+  "letter": "HRQ"
+}, {
+  "id": 1171,
+  "name": "怀柔区",
+  "pid": 53,
+  "letter": "HRQ"
+}, {
+  "id": 1172,
+  "name": "怀仁市",
+  "pid": 270,
+  "letter": "HRS"
+}, {
+  "id": 1173,
+  "name": "华容县",
+  "pid": 352,
+  "letter": "HRX"
+}, {
+  "id": 1174,
+  "name": "红寺堡区",
+  "pid": 304,
+  "letter": "HSBQ"
+}, {
+  "id": 1175,
+  "name": "黄石港区",
+  "pid": 139,
+  "letter": "HSGQ"
+}, {
+  "id": 1176,
+  "name": "横山区",
+  "pid": 344,
+  "letter": "HSQ"
+}, {
+  "id": 1177,
+  "name": "赫山区",
+  "pid": 351,
+  "letter": "HSQ"
+}, {
+  "id": 1178,
+  "name": "鹤山区",
+  "pid": 119,
+  "letter": "HSQ"
+}, {
+  "id": 1179,
+  "name": "洪山区",
+  "pid": 295,
+  "letter": "HSQ"
+}, {
+  "id": 1180,
+  "name": "邯山区",
+  "pid": 123,
+  "letter": "HSQ"
+}, {
+  "id": 1181,
+  "name": "淮上区",
+  "pid": 46,
+  "letter": "HSQ"
+}, {
+  "id": 1182,
+  "name": "黄山区",
+  "pid": 141,
+  "letter": "HSQ"
+}, {
+  "id": 1183,
+  "name": "花山区",
+  "pid": 205,
+  "letter": "HSQ"
+}, {
+  "id": 1184,
+  "name": "红山区",
+  "pid": 70,
+  "letter": "HSQ"
+}, {
+  "id": 1185,
+  "name": "惠山区",
+  "pid": 303,
+  "letter": "HSQ"
+}, {
+  "id": 1186,
+  "name": "海曙区",
+  "pid": 211,
+  "letter": "HSQ"
+}, {
+  "id": 1187,
+  "name": "恒山区",
+  "pid": 166,
+  "letter": "HSQ"
+}, {
+  "id": 1188,
+  "name": "合山市",
+  "pid": 179,
+  "letter": "HSS"
+}, {
+  "id": 1189,
+  "name": "鹤山市",
+  "pid": 160,
+  "letter": "HSS"
+}, {
+  "id": 1190,
+  "name": "和硕县",
+  "pid": 60,
+  "letter": "HSX"
+}, {
+  "id": 1191,
+  "name": "黑水县",
+  "pid": 35,
+  "letter": "HSX"
+}, {
+  "id": 1192,
+  "name": "惠水县",
+  "pid": 235,
+  "letter": "HSX"
+}, {
+  "id": 1193,
+  "name": "合水县",
+  "pid": 239,
+  "letter": "HSX"
+}, {
+  "id": 1194,
+  "name": "汉寿县",
+  "pid": 68,
+  "letter": "HSX"
+}, {
+  "id": 1195,
+  "name": "衡山县",
+  "pid": 144,
+  "letter": "HSX"
+}, {
+  "id": 1196,
+  "name": "和顺县",
+  "pid": 170,
+  "letter": "HSX"
+}, {
+  "id": 1197,
+  "name": "霍山县",
+  "pid": 178,
+  "letter": "HSX"
+}, {
+  "id": 1198,
+  "name": "含山县",
+  "pid": 205,
+  "letter": "HSX"
+}, {
+  "id": 1199,
+  "name": "黑山县",
+  "pid": 172,
+  "letter": "HSX"
+}, {
+  "id": 1200,
+  "name": "呼图壁县",
+  "pid": 71,
+  "letter": "HTBX"
+}, {
+  "id": 1201,
+  "name": "红塔区",
+  "pid": 350,
+  "letter": "HTQ"
+}, {
+  "id": 1202,
+  "name": "汉台区",
+  "pid": 146,
+  "letter": "HTQ"
+}, {
+  "id": 1203,
+  "name": "海棠区",
+  "pid": 263,
+  "letter": "HTQ"
+}, {
+  "id": 1204,
+  "name": "荷塘区",
+  "pid": 377,
+  "letter": "HTQ"
+}, {
+  "id": 1205,
+  "name": "寒亭区",
+  "pid": 293,
+  "letter": "HTQ"
+}, {
+  "id": 1206,
+  "name": "和田市",
+  "pid": 142,
+  "letter": "HTS"
+}, {
+  "id": 1207,
+  "name": "华亭市",
+  "pid": 226,
+  "letter": "HTS"
+}, {
+  "id": 1208,
+  "name": "和田县",
+  "pid": 142,
+  "letter": "HTX"
+}, {
+  "id": 1209,
+  "name": "会同县",
+  "pid": 130,
+  "letter": "HTX"
+}, {
+  "id": 1210,
+  "name": "行唐县",
+  "pid": 249,
+  "letter": "HTX"
+}, {
+  "id": 1211,
+  "name": "桓台县",
+  "pid": 355,
+  "letter": "HTX"
+}, {
+  "id": 1212,
+  "name": "宏伟区",
+  "pid": 199,
+  "letter": "HWQ"
+}, {
+  "id": 1213,
+  "name": "海西蒙古族藏族自治州直辖",
+  "pid": 143,
+  "letter": "HXMGZCZZZZZX"
+}, {
+  "id": 1214,
+  "name": "徽县",
+  "pid": 188,
+  "letter": "HX"
+}, {
+  "id": 1215,
+  "name": "环县",
+  "pid": 239,
+  "letter": "HX"
+}, {
+  "id": 1216,
+  "name": "花溪区",
+  "pid": 113,
+  "letter": "HXQ"
+}, {
+  "id": 1217,
+  "name": "横县",
+  "pid": 218,
+  "letter": "HX"
+}, {
+  "id": 1218,
+  "name": "滑县",
+  "pid": 45,
+  "letter": "HX"
+}, {
+  "id": 1219,
+  "name": "河西区",
+  "pid": 279,
+  "letter": "HXQ"
+}, {
+  "id": 1220,
+  "name": "海兴县",
+  "pid": 76,
+  "letter": "HXX"
+}, {
+  "id": 1221,
+  "name": "和县",
+  "pid": 205,
+  "letter": "HX"
+}, {
+  "id": 1222,
+  "name": "红星区",
+  "pid": 339,
+  "letter": "HXQ"
+}, {
+  "id": 1223,
+  "name": "辉县市",
+  "pid": 321,
+  "letter": "HXS"
+}, {
+  "id": 1224,
+  "name": "鄠邑区",
+  "pid": 308,
+  "letter": "HYQ"
+}, {
+  "id": 1225,
+  "name": "汉阳区",
+  "pid": 295,
+  "letter": "HYQ"
+}, {
+  "id": 1226,
+  "name": "惠阳区",
+  "pid": 148,
+  "letter": "HYQ"
+}, {
+  "id": 1227,
+  "name": "淮阳区",
+  "pid": 363,
+  "letter": "HYQ"
+}, {
+  "id": 1228,
+  "name": "槐荫区",
+  "pid": 163,
+  "letter": "HYQ"
+}, {
+  "id": 1229,
+  "name": "淮阴区",
+  "pid": 117,
+  "letter": "HYQ"
+}, {
+  "id": 1230,
+  "name": "黄岩区",
+  "pid": 291,
+  "letter": "HYQ"
+}, {
+  "id": 1231,
+  "name": "华蓥市",
+  "pid": 105,
+  "letter": "HYS"
+}, {
+  "id": 1232,
+  "name": "华阴市",
+  "pid": 300,
+  "letter": "HYS"
+}, {
+  "id": 1233,
+  "name": "海阳市",
+  "pid": 349,
+  "letter": "HYS"
+}, {
+  "id": 1234,
+  "name": "海晏县",
+  "pid": 118,
+  "letter": "HYX"
+}, {
+  "id": 1235,
+  "name": "湟源县",
+  "pid": 315,
+  "letter": "HYX"
+}, {
+  "id": 1236,
+  "name": "红原县",
+  "pid": 35,
+  "letter": "HYX"
+}, {
+  "id": 1237,
+  "name": "汉源县",
+  "pid": 330,
+  "letter": "HYX"
+}, {
+  "id": 1238,
+  "name": "洪雅县",
+  "pid": 208,
+  "letter": "HYX"
+}, {
+  "id": 1239,
+  "name": "海原县",
+  "pid": 371,
+  "letter": "HYX"
+}, {
+  "id": 1240,
+  "name": "汉阴县",
+  "pid": 37,
+  "letter": "HYX"
+}, {
+  "id": 1241,
+  "name": "花垣县",
+  "pid": 322,
+  "letter": "HYX"
+}, {
+  "id": 1242,
+  "name": "合阳县",
+  "pid": 300,
+  "letter": "HYX"
+}, {
+  "id": 1243,
+  "name": "衡阳县",
+  "pid": 144,
+  "letter": "HYX"
+}, {
+  "id": 1244,
+  "name": "浑源县",
+  "pid": 88,
+  "letter": "HYX"
+}, {
+  "id": 1245,
+  "name": "怀远县",
+  "pid": 46,
+  "letter": "HYX"
+}, {
+  "id": 1246,
+  "name": "海盐县",
+  "pid": 165,
+  "letter": "HYX"
+}, {
+  "id": 1247,
+  "name": "湟中区",
+  "pid": 315,
+  "letter": "HZQ"
+}, {
+  "id": 1248,
+  "name": "华州区",
+  "pid": 300,
+  "letter": "HZQ"
+}, {
+  "id": 1249,
+  "name": "海珠区",
+  "pid": 115,
+  "letter": "HZQ"
+}, {
+  "id": 1250,
+  "name": "黄州区",
+  "pid": 126,
+  "letter": "HZQ"
+}, {
+  "id": 1251,
+  "name": "徽州区",
+  "pid": 141,
+  "letter": "HZQ"
+}, {
+  "id": 1252,
+  "name": "洪泽区",
+  "pid": 117,
+  "letter": "HZQ"
+}, {
+  "id": 1253,
+  "name": "海州区",
+  "pid": 195,
+  "letter": "HZQ"
+}, {
+  "id": 1254,
+  "name": "合作市",
+  "pid": 109,
+  "letter": "HZS"
+}, {
+  "id": 1255,
+  "name": "化州市",
+  "pid": 207,
+  "letter": "HZS"
+}, {
+  "id": 1256,
+  "name": "霍州市",
+  "pid": 183,
+  "letter": "HZS"
+}, {
+  "id": 1257,
+  "name": "互助土族自治县",
+  "pid": 122,
+  "letter": "HZTZZZX"
+}, {
+  "id": 1258,
+  "name": "会泽县",
+  "pid": 234,
+  "letter": "HZX"
+}, {
+  "id": 1259,
+  "name": "和政县",
+  "pid": 194,
+  "letter": "HZX"
+}, {
+  "id": 1260,
+  "name": "赫章县",
+  "pid": 51,
+  "letter": "HZX"
+}, {
+  "id": 1261,
+  "name": "建安区",
+  "pid": 310,
+  "letter": "JAQ"
+}, {
+  "id": 1262,
+  "name": "江岸区",
+  "pid": 295,
+  "letter": "JAQ"
+}, {
+  "id": 1263,
+  "name": "金安区",
+  "pid": 178,
+  "letter": "JAQ"
+}, {
+  "id": 1264,
+  "name": "晋安区",
+  "pid": 104,
+  "letter": "JAQ"
+}, {
+  "id": 1265,
+  "name": "静安区",
+  "pid": 247,
+  "letter": "JAQ"
+}, {
+  "id": 1266,
+  "name": "集安市",
+  "pid": 278,
+  "letter": "JAS"
+}, {
+  "id": 1267,
+  "name": "江安县",
+  "pid": 333,
+  "letter": "JAX"
+}, {
+  "id": 1268,
+  "name": "吉安县",
+  "pid": 152,
+  "letter": "JAX"
+}, {
+  "id": 1269,
+  "name": "靖安县",
+  "pid": 337,
+  "letter": "JAX"
+}, {
+  "id": 1270,
+  "name": "江北区",
+  "pid": 365,
+  "letter": "JBQ"
+}, {
+  "id": 1271,
+  "name": "靖边县",
+  "pid": 344,
+  "letter": "JBX"
+}, {
+  "id": 1272,
+  "name": "江城哈尼族彝族自治县",
+  "pid": 224,
+  "letter": "JCHNZYZZZX"
+}, {
+  "id": 1273,
+  "name": "金城江区",
+  "pid": 121,
+  "letter": "JCJQ"
+}, {
+  "id": 1274,
+  "name": "尖草坪区",
+  "pid": 288,
+  "letter": "JCPQ"
+}, {
+  "id": 1275,
+  "name": "金川区",
+  "pid": 153,
+  "letter": "JCQ"
+}, {
+  "id": 1276,
+  "name": "江川区",
+  "pid": 350,
+  "letter": "JCQ"
+}, {
+  "id": 1277,
+  "name": "江城区",
+  "pid": 341,
+  "letter": "JCQ"
+}, {
+  "id": 1278,
+  "name": "蕉城区",
+  "pid": 214,
+  "letter": "JCQ"
+}, {
+  "id": 1279,
+  "name": "加查县",
+  "pid": 254,
+  "letter": "JCX"
+}, {
+  "id": 1280,
+  "name": "剑川县",
+  "pid": 84,
+  "letter": "JCX"
+}, {
+  "id": 1281,
+  "name": "金川县",
+  "pid": 35,
+  "letter": "JCX"
+}, {
+  "id": 1282,
+  "name": "泾川县",
+  "pid": 226,
+  "letter": "JCX"
+}, {
+  "id": 1283,
+  "name": "交城县",
+  "pid": 187,
+  "letter": "JCX"
+}, {
+  "id": 1284,
+  "name": "鄄城县",
+  "pid": 149,
+  "letter": "JCX"
+}, {
+  "id": 1285,
+  "name": "建昌县",
+  "pid": 134,
+  "letter": "JCX"
+}, {
+  "id": 1286,
+  "name": "揭东区",
+  "pid": 168,
+  "letter": "JDQ"
+}, {
+  "id": 1287,
+  "name": "江都区",
+  "pid": 354,
+  "letter": "JDQ"
+}, {
+  "id": 1288,
+  "name": "金东区",
+  "pid": 156,
+  "letter": "JDQ"
+}, {
+  "id": 1289,
+  "name": "嘉定区",
+  "pid": 247,
+  "letter": "JDQ"
+}, {
+  "id": 1290,
+  "name": "建德市",
+  "pid": 150,
+  "letter": "JDS"
+}, {
+  "id": 1291,
+  "name": "江达县",
+  "pid": 66,
+  "letter": "JDX"
+}, {
+  "id": 1292,
+  "name": "旌德县",
+  "pid": 311,
+  "letter": "JDX"
+}, {
+  "id": 1293,
+  "name": "鸡东县",
+  "pid": 166,
+  "letter": "JDX"
+}, {
+  "id": 1294,
+  "name": "景东彝族自治县",
+  "pid": 224,
+  "letter": "JDYZZZX"
+}, {
+  "id": 1295,
+  "name": "金凤区",
+  "pid": 334,
+  "letter": "JFQ"
+}, {
+  "id": 1296,
+  "name": "解放区",
+  "pid": 171,
+  "letter": "JFQ"
+}, {
+  "id": 1297,
+  "name": "加格达奇区",
+  "pid": 89,
+  "letter": "JGDQQ"
+}, {
+  "id": 1298,
+  "name": "景谷傣族彝族自治县",
+  "pid": 224,
+  "letter": "JGDZYZZZX"
+}, {
+  "id": 1299,
+  "name": "江干区",
+  "pid": 150,
+  "letter": "JGQ"
+}, {
+  "id": 1300,
+  "name": "鸡冠区",
+  "pid": 166,
+  "letter": "JGQ"
+}, {
+  "id": 1301,
+  "name": "井冈山市",
+  "pid": 152,
+  "letter": "JGSS"
+}, {
+  "id": 1302,
+  "name": "剑阁县",
+  "pid": 111,
+  "letter": "JGX"
+}, {
+  "id": 1303,
+  "name": "江海区",
+  "pid": 160,
+  "letter": "JHQ"
+}, {
+  "id": 1304,
+  "name": "江汉区",
+  "pid": 295,
+  "letter": "JHQ"
+}, {
+  "id": 1305,
+  "name": "静海区",
+  "pid": 279,
+  "letter": "JHQ"
+}, {
+  "id": 1306,
+  "name": "镜湖区",
+  "pid": 296,
+  "letter": "JHQ"
+}, {
+  "id": 1307,
+  "name": "建华区",
+  "pid": 236,
+  "letter": "JHQ"
+}, {
+  "id": 1308,
+  "name": "景洪市",
+  "pid": 318,
+  "letter": "JHS"
+}, {
+  "id": 1309,
+  "name": "蛟河市",
+  "pid": 158,
+  "letter": "JHS"
+}, {
+  "id": 1310,
+  "name": "精河县",
+  "pid": 49,
+  "letter": "JHX"
+}, {
+  "id": 1311,
+  "name": "剑河县",
+  "pid": 231,
+  "letter": "JHX"
+}, {
+  "id": 1312,
+  "name": "嘉禾县",
+  "pid": 75,
+  "letter": "JHX"
+}, {
+  "id": 1313,
+  "name": "金湖县",
+  "pid": 117,
+  "letter": "JHX"
+}, {
+  "id": 1314,
+  "name": "建湖县",
+  "pid": 338,
+  "letter": "JHX"
+}, {
+  "id": 1315,
+  "name": "江华瑶族自治县",
+  "pid": 353,
+  "letter": "JHYZZZX"
+}, {
+  "id": 1316,
+  "name": "锦江区",
+  "pid": 67,
+  "letter": "JJQ"
+}, {
+  "id": 1317,
+  "name": "江津区",
+  "pid": 365,
+  "letter": "JJQ"
+}, {
+  "id": 1318,
+  "name": "鸠江区",
+  "pid": 296,
+  "letter": "JJQ"
+}, {
+  "id": 1319,
+  "name": "将军区",
+  "pid": 284,
+  "letter": "JJQ"
+}, {
+  "id": 1320,
+  "name": "椒江区",
+  "pid": 291,
+  "letter": "JJQ"
+}, {
+  "id": 1321,
+  "name": "晋江市",
+  "pid": 242,
+  "letter": "JJS"
+}, {
+  "id": 1322,
+  "name": "靖江市",
+  "pid": 290,
+  "letter": "JJS"
+}, {
+  "id": 1323,
+  "name": "夹江县",
+  "pid": 191,
+  "letter": "JJX"
+}, {
+  "id": 1324,
+  "name": "金口河区",
+  "pid": 191,
+  "letter": "JKHQ"
+}, {
+  "id": 1325,
+  "name": "京口区",
+  "pid": 362,
+  "letter": "JKQ"
+}, {
+  "id": 1326,
+  "name": "江口县",
+  "pid": 285,
+  "letter": "JKX"
+}, {
+  "id": 1327,
+  "name": "交口县",
+  "pid": 187,
+  "letter": "JKX"
+}, {
+  "id": 1328,
+  "name": "九龙城区",
+  "pid": 313,
+  "letter": "JLCQ"
+}, {
+  "id": 1329,
+  "name": "九龙坡区",
+  "pid": 365,
+  "letter": "JLPQ"
+}, {
+  "id": 1330,
+  "name": "嘉陵区",
+  "pid": 212,
+  "letter": "JLQ"
+}, {
+  "id": 1331,
+  "name": "吉利区",
+  "pid": 196,
+  "letter": "JLQ"
+}, {
+  "id": 1332,
+  "name": "佳里区",
+  "pid": 284,
+  "letter": "JLQ"
+}, {
+  "id": 1333,
+  "name": "吉隆县",
+  "pid": 244,
+  "letter": "JLX"
+}, {
+  "id": 1334,
+  "name": "嘉黎县",
+  "pid": 220,
+  "letter": "JLX"
+}, {
+  "id": 1335,
+  "name": "九龙县",
+  "pid": 114,
+  "letter": "JLX"
+}, {
+  "id": 1336,
+  "name": "筠连县",
+  "pid": 333,
+  "letter": "JLX"
+}, {
+  "id": 1337,
+  "name": "静乐县",
+  "pid": 327,
+  "letter": "JLX"
+}, {
+  "id": 1338,
+  "name": "江陵县",
+  "pid": 169,
+  "letter": "JLX"
+}, {
+  "id": 1339,
+  "name": "监利县",
+  "pid": 169,
+  "letter": "JLX"
+}, {
+  "id": 1340,
+  "name": "巨鹿县",
+  "pid": 320,
+  "letter": "JLX"
+}, {
+  "id": 1341,
+  "name": "蕉岭县",
+  "pid": 210,
+  "letter": "JLX"
+}, {
+  "id": 1342,
+  "name": "将乐县",
+  "pid": 251,
+  "letter": "JLX"
+}, {
+  "id": 1343,
+  "name": "吉木乃县",
+  "pid": 40,
+  "letter": "JMNX"
+}, {
+  "id": 1344,
+  "name": "集美区",
+  "pid": 252,
+  "letter": "JMQ"
+}, {
+  "id": 1345,
+  "name": "即墨区",
+  "pid": 232,
+  "letter": "JMQ"
+}, {
+  "id": 1346,
+  "name": "吉木萨尔县",
+  "pid": 71,
+  "letter": "JMSEX"
+}, {
+  "id": 1347,
+  "name": "嘉模堂区",
+  "pid": 41,
+  "letter": "JMTQ"
+}, {
+  "id": 1348,
+  "name": "金门县",
+  "pid": 242,
+  "letter": "JMX"
+}, {
+  "id": 1349,
+  "name": "晋宁区",
+  "pid": 175,
+  "letter": "JNQ"
+}, {
+  "id": 1350,
+  "name": "金牛区",
+  "pid": 67,
+  "letter": "JNQ"
+}, {
+  "id": 1351,
+  "name": "江南区",
+  "pid": 218,
+  "letter": "JNQ"
+}, {
+  "id": 1352,
+  "name": "集宁区",
+  "pid": 298,
+  "letter": "JNQ"
+}, {
+  "id": 1353,
+  "name": "津南区",
+  "pid": 279,
+  "letter": "JNQ"
+}, {
+  "id": 1354,
+  "name": "江宁区",
+  "pid": 217,
+  "letter": "JNQ"
+}, {
+  "id": 1355,
+  "name": "景宁畲族自治县",
+  "pid": 192,
+  "letter": "JNSZZZX"
+}, {
+  "id": 1356,
+  "name": "静宁县",
+  "pid": 226,
+  "letter": "JNX"
+}, {
+  "id": 1357,
+  "name": "建宁县",
+  "pid": 251,
+  "letter": "JNX"
+}, {
+  "id": 1358,
+  "name": "莒南县",
+  "pid": 198,
+  "letter": "JNX"
+}, {
+  "id": 1359,
+  "name": "建瓯市",
+  "pid": 219,
+  "letter": "JOS"
+}, {
+  "id": 1360,
+  "name": "金平苗族瑶族傣族自治县",
+  "pid": 128,
+  "letter": "JPMZYZDZZZX"
+}, {
+  "id": 1361,
+  "name": "金平区",
+  "pid": 260,
+  "letter": "JPQ"
+}, {
+  "id": 1362,
+  "name": "锦屏县",
+  "pid": 231,
+  "letter": "JPX"
+}, {
+  "id": 1363,
+  "name": "建平县",
+  "pid": 73,
+  "letter": "JPX"
+}, {
+  "id": 1364,
+  "name": "郊区",
+  "pid": 346,
+  "letter": "JQ"
+}, {
+  "id": 1365,
+  "name": "句容市",
+  "pid": 362,
+  "letter": "JRS"
+}, {
+  "id": 1366,
+  "name": "君山区",
+  "pid": 352,
+  "letter": "JSQ"
+}, {
+  "id": 1367,
+  "name": "金水区",
+  "pid": 376,
+  "letter": "JSQ"
+}, {
+  "id": 1368,
+  "name": "金山区",
+  "pid": 247,
+  "letter": "JSQ"
+}, {
+  "id": 1369,
+  "name": "尖山区",
+  "pid": 268,
+  "letter": "JSQ"
+}, {
+  "id": 1370,
+  "name": "积石山保安族东乡族撒拉族自治县",
+  "pid": 194,
+  "letter": "JSSBAZDXZSLZZZX"
+}, {
+  "id": 1371,
+  "name": "吉首市",
+  "pid": 322,
+  "letter": "JSS"
+}, {
+  "id": 1372,
+  "name": "津市市",
+  "pid": 68,
+  "letter": "JSS"
+}, {
+  "id": 1373,
+  "name": "京山市",
+  "pid": 159,
+  "letter": "JSS"
+}, {
+  "id": 1374,
+  "name": "界首市",
+  "pid": 102,
+  "letter": "JSS"
+}, {
+  "id": 1375,
+  "name": "江山市",
+  "pid": 243,
+  "letter": "JSS"
+}, {
+  "id": 1376,
+  "name": "金山屯区",
+  "pid": 339,
+  "letter": "JSTQ"
+}, {
+  "id": 1377,
+  "name": "建水县",
+  "pid": 128,
+  "letter": "JSX"
+}, {
+  "id": 1378,
+  "name": "金沙县",
+  "pid": 51,
+  "letter": "JSX"
+}, {
+  "id": 1379,
+  "name": "建始县",
+  "pid": 97,
+  "letter": "JSX"
+}, {
+  "id": 1380,
+  "name": "稷山县",
+  "pid": 335,
+  "letter": "JSX"
+}, {
+  "id": 1381,
+  "name": "吉水县",
+  "pid": 152,
+  "letter": "JSX"
+}, {
+  "id": 1382,
+  "name": "嘉善县",
+  "pid": 165,
+  "letter": "JSX"
+}, {
+  "id": 1383,
+  "name": "金台区",
+  "pid": 52,
+  "letter": "JTQ"
+}, {
+  "id": 1384,
+  "name": "金坛区",
+  "pid": 80,
+  "letter": "JTQ"
+}, {
+  "id": 1385,
+  "name": "九台区",
+  "pid": 356,
+  "letter": "JTQ"
+}, {
+  "id": 1386,
+  "name": "金塔县",
+  "pid": 164,
+  "letter": "JTX"
+}, {
+  "id": 1387,
+  "name": "景泰县",
+  "pid": 62,
+  "letter": "JTX"
+}, {
+  "id": 1388,
+  "name": "金堂县",
+  "pid": 67,
+  "letter": "JTX"
+}, {
+  "id": 1389,
+  "name": "金湾区",
+  "pid": 358,
+  "letter": "JWQ"
+}, {
+  "id": 1390,
+  "name": "贾汪区",
+  "pid": 329,
+  "letter": "JWQ"
+}, {
+  "id": 1391,
+  "name": "犍为县",
+  "pid": 191,
+  "letter": "JWX"
+}, {
+  "id": 1392,
+  "name": "金秀瑶族自治县",
+  "pid": 179,
+  "letter": "JXYZZZX"
+}, {
+  "id": 1393,
+  "name": "佳县",
+  "pid": 344,
+  "letter": "JX"
+}, {
+  "id": 1394,
+  "name": "吉县",
+  "pid": 183,
+  "letter": "JX"
+}, {
+  "id": 1395,
+  "name": "绛县",
+  "pid": 335,
+  "letter": "JX"
+}, {
+  "id": 1396,
+  "name": "涧西区",
+  "pid": 196,
+  "letter": "JXQ"
+}, {
+  "id": 1397,
+  "name": "靖西市",
+  "pid": 55,
+  "letter": "JXS"
+}, {
+  "id": 1398,
+  "name": "介休市",
+  "pid": 170,
+  "letter": "JXS"
+}, {
+  "id": 1399,
+  "name": "郏县",
+  "pid": 223,
+  "letter": "JX"
+}, {
+  "id": 1400,
+  "name": "井陉矿区",
+  "pid": 249,
+  "letter": "JXKQ"
+}, {
+  "id": 1401,
+  "name": "江夏区",
+  "pid": 295,
+  "letter": "JXQ"
+}, {
+  "id": 1402,
+  "name": "竞秀区",
+  "pid": 48,
+  "letter": "JXQ"
+}, {
+  "id": 1403,
+  "name": "井陉县",
+  "pid": 249,
+  "letter": "JXX"
+}, {
+  "id": 1404,
+  "name": "浚县",
+  "pid": 119,
+  "letter": "JX"
+}, {
+  "id": 1405,
+  "name": "揭西县",
+  "pid": 168,
+  "letter": "JXX"
+}, {
+  "id": 1406,
+  "name": "景县",
+  "pid": 140,
+  "letter": "JX"
+}, {
+  "id": 1407,
+  "name": "进贤县",
+  "pid": 213,
+  "letter": "JXX"
+}, {
+  "id": 1408,
+  "name": "嘉祥县",
+  "pid": 162,
+  "letter": "JXX"
+}, {
+  "id": 1409,
+  "name": "金乡县",
+  "pid": 162,
+  "letter": "JXX"
+}, {
+  "id": 1410,
+  "name": "金溪县",
+  "pid": 103,
+  "letter": "JXX"
+}, {
+  "id": 1411,
+  "name": "泾县",
+  "pid": 311,
+  "letter": "JX"
+}, {
+  "id": 1412,
+  "name": "莒县",
+  "pid": 245,
+  "letter": "JX"
+}, {
+  "id": 1413,
+  "name": "甲仙区",
+  "pid": 110,
+  "letter": "JXQ"
+}, {
+  "id": 1414,
+  "name": "绩溪县",
+  "pid": 311,
+  "letter": "JXX"
+}, {
+  "id": 1415,
+  "name": "集贤县",
+  "pid": 268,
+  "letter": "JXX"
+}, {
+  "id": 1416,
+  "name": "旌阳区",
+  "pid": 91,
+  "letter": "JYQ"
+}, {
+  "id": 1417,
+  "name": "江阳区",
+  "pid": 203,
+  "letter": "JYQ"
+}, {
+  "id": 1418,
+  "name": "九原区",
+  "pid": 58,
+  "letter": "JYQ"
+}, {
+  "id": 1419,
+  "name": "吉阳区",
+  "pid": 263,
+  "letter": "JYQ"
+}, {
+  "id": 1420,
+  "name": "晋源区",
+  "pid": 288,
+  "letter": "JYQ"
+}, {
+  "id": 1421,
+  "name": "济阳区",
+  "pid": 163,
+  "letter": "JYQ"
+}, {
+  "id": 1422,
+  "name": "建阳区",
+  "pid": 219,
+  "letter": "JYQ"
+}, {
+  "id": 1423,
+  "name": "建邺区",
+  "pid": 217,
+  "letter": "JYQ"
+}, {
+  "id": 1424,
+  "name": "姜堰区",
+  "pid": 290,
+  "letter": "JYQ"
+}, {
+  "id": 1425,
+  "name": "江源区",
+  "pid": 57,
+  "letter": "JYQ"
+}, {
+  "id": 1426,
+  "name": "简阳市",
+  "pid": 67,
+  "letter": "JYS"
+}, {
+  "id": 1427,
+  "name": "江油市",
+  "pid": 209,
+  "letter": "JYS"
+}, {
+  "id": 1428,
+  "name": "江阴市",
+  "pid": 303,
+  "letter": "JYS"
+}, {
+  "id": 1429,
+  "name": "金阳县",
+  "pid": 193,
+  "letter": "JYX"
+}, {
+  "id": 1430,
+  "name": "井研县",
+  "pid": 191,
+  "letter": "JYX"
+}, {
+  "id": 1431,
+  "name": "靖远县",
+  "pid": 62,
+  "letter": "JYX"
+}, {
+  "id": 1432,
+  "name": "泾源县",
+  "pid": 112,
+  "letter": "JYX"
+}, {
+  "id": 1433,
+  "name": "泾阳县",
+  "pid": 323,
+  "letter": "JYX"
+}, {
+  "id": 1434,
+  "name": "江永县",
+  "pid": 353,
+  "letter": "JYX"
+}, {
+  "id": 1435,
+  "name": "嘉鱼县",
+  "pid": 316,
+  "letter": "JYX"
+}, {
+  "id": 1436,
+  "name": "巨野县",
+  "pid": 149,
+  "letter": "JYX"
+}, {
+  "id": 1437,
+  "name": "缙云县",
+  "pid": 192,
+  "letter": "JYX"
+}, {
+  "id": 1438,
+  "name": "靖宇县",
+  "pid": 57,
+  "letter": "JYX"
+}, {
+  "id": 1439,
+  "name": "嘉荫县",
+  "pid": 339,
+  "letter": "JYX"
+}, {
+  "id": 1440,
+  "name": "九寨沟县",
+  "pid": 35,
+  "letter": "JZGX"
+}, {
+  "id": 1441,
+  "name": "靖州苗族侗族自治县",
+  "pid": 130,
+  "letter": "JZMZDZZZX"
+}, {
+  "id": 1442,
+  "name": "江州区",
+  "pid": 74,
+  "letter": "JZQ"
+}, {
+  "id": 1443,
+  "name": "荆州区",
+  "pid": 169,
+  "letter": "JZQ"
+}, {
+  "id": 1444,
+  "name": "吉州区",
+  "pid": 152,
+  "letter": "JZQ"
+}, {
+  "id": 1445,
+  "name": "冀州区",
+  "pid": 140,
+  "letter": "JZQ"
+}, {
+  "id": 1446,
+  "name": "蓟州区",
+  "pid": 279,
+  "letter": "JZQ"
+}, {
+  "id": 1447,
+  "name": "金州区",
+  "pid": 85,
+  "letter": "JZQ"
+}, {
+  "id": 1448,
+  "name": "晋州市",
+  "pid": 249,
+  "letter": "JZS"
+}, {
+  "id": 1449,
+  "name": "胶州市",
+  "pid": 232,
+  "letter": "JZS"
+}, {
+  "id": 1450,
+  "name": "江孜县",
+  "pid": 244,
+  "letter": "JZX"
+}, {
+  "id": 1451,
+  "name": "久治县",
+  "pid": 107,
+  "letter": "JZX"
+}, {
+  "id": 1452,
+  "name": "尖扎县",
+  "pid": 137,
+  "letter": "JZX"
+}, {
+  "id": 1453,
+  "name": "鸡泽县",
+  "pid": 123,
+  "letter": "JZX"
+}, {
+  "id": 1454,
+  "name": "金寨县",
+  "pid": 178,
+  "letter": "JZX"
+}, {
+  "id": 1455,
+  "name": "康巴什区",
+  "pid": 96,
+  "letter": "KBSQ"
+}, {
+  "id": 1456,
+  "name": "康保县",
+  "pid": 360,
+  "letter": "KBX"
+}, {
+  "id": 1457,
+  "name": "宽城满族自治县",
+  "pid": 69,
+  "letter": "KCMZZZX"
+}, {
+  "id": 1458,
+  "name": "柯城区",
+  "pid": 243,
+  "letter": "KCQ"
+}, {
+  "id": 1459,
+  "name": "宽城区",
+  "pid": 356,
+  "letter": "KCQ"
+}, {
+  "id": 1460,
+  "name": "库车县",
+  "pid": 36,
+  "letter": "KCX"
+}, {
+  "id": 1461,
+  "name": "昆都仑区",
+  "pid": 58,
+  "letter": "KDLQ"
+}, {
+  "id": 1462,
+  "name": "宽甸满族自治县",
+  "pid": 81,
+  "letter": "KDMZZZX"
+}, {
+  "id": 1463,
+  "name": "崆峒区",
+  "pid": 226,
+  "letter": "KDQ"
+}, {
+  "id": 1464,
+  "name": "康定市",
+  "pid": 114,
+  "letter": "KDS"
+}, {
+  "id": 1465,
+  "name": "克东县",
+  "pid": 236,
+  "letter": "KDX"
+}, {
+  "id": 1466,
+  "name": "库尔勒市",
+  "pid": 60,
+  "letter": "KELS"
+}, {
+  "id": 1467,
+  "name": "科尔沁区",
+  "pid": 282,
+  "letter": "KEQQ"
+}, {
+  "id": 1468,
+  "name": "科尔沁右翼前旗",
+  "pid": 307,
+  "letter": "KEQYYQQ"
+}, {
+  "id": 1469,
+  "name": "科尔沁右翼中旗",
+  "pid": 307,
+  "letter": "KEQYYZQ"
+}, {
+  "id": 1470,
+  "name": "科尔沁左翼后旗",
+  "pid": 282,
+  "letter": "KEQZYHQ"
+}, {
+  "id": 1471,
+  "name": "科尔沁左翼中旗",
+  "pid": 282,
+  "letter": "KEQZYZQ"
+}, {
+  "id": 1472,
+  "name": "开福区",
+  "pid": 367,
+  "letter": "KFQ"
+}, {
+  "id": 1473,
+  "name": "开化县",
+  "pid": 243,
+  "letter": "KHX"
+}, {
+  "id": 1474,
+  "name": "开江县",
+  "pid": 93,
+  "letter": "KJX"
+}, {
+  "id": 1475,
+  "name": "克拉玛依区",
+  "pid": 174,
+  "letter": "KLMYQ"
+}, {
+  "id": 1476,
+  "name": "喀喇沁旗",
+  "pid": 70,
+  "letter": "KLQQ"
+}, {
+  "id": 1477,
+  "name": "垦利区",
+  "pid": 92,
+  "letter": "KLQ"
+}, {
+  "id": 1478,
+  "name": "喀喇沁左翼蒙古族自治县",
+  "pid": 73,
+  "letter": "KLQZYMGZZZX"
+}, {
+  "id": 1479,
+  "name": "库伦旗",
+  "pid": 282,
+  "letter": "KLQ"
+}, {
+  "id": 1480,
+  "name": "凯里市",
+  "pid": 231,
+  "letter": "KLS"
+}, {
+  "id": 1481,
+  "name": "康乐县",
+  "pid": 194,
+  "letter": "KLX"
+}, {
+  "id": 1482,
+  "name": "岢岚县",
+  "pid": 327,
+  "letter": "KLX"
+}, {
+  "id": 1483,
+  "name": "开鲁县",
+  "pid": 282,
+  "letter": "KLX"
+}, {
+  "id": 1484,
+  "name": "康马县",
+  "pid": 244,
+  "letter": "KMX"
+}, {
+  "id": 1485,
+  "name": "开平区",
+  "pid": 287,
+  "letter": "KPQ"
+}, {
+  "id": 1486,
+  "name": "开平市",
+  "pid": 160,
+  "letter": "KPS"
+}, {
+  "id": 1487,
+  "name": "柯坪县",
+  "pid": 36,
+  "letter": "KPX"
+}, {
+  "id": 1488,
+  "name": "康平县",
+  "pid": 266,
+  "letter": "KPX"
+}, {
+  "id": 1489,
+  "name": "矿区",
+  "pid": 346,
+  "letter": "KQ"
+}, {
+  "id": 1490,
+  "name": "葵青区",
+  "pid": 313,
+  "letter": "KQQ"
+}, {
+  "id": 1491,
+  "name": "柯桥区",
+  "pid": 262,
+  "letter": "KQQ"
+}, {
+  "id": 1492,
+  "name": "卡若区",
+  "pid": 66,
+  "letter": "KRQ"
+}, {
+  "id": 1493,
+  "name": "克什克腾旗",
+  "pid": 70,
+  "letter": "KSKTQ"
+}, {
+  "id": 1494,
+  "name": "喀什市",
+  "pid": 176,
+  "letter": "KSS"
+}, {
+  "id": 1495,
+  "name": "昆山市",
+  "pid": 273,
+  "letter": "KSS"
+}, {
+  "id": 1496,
+  "name": "克山县",
+  "pid": 236,
+  "letter": "KSX"
+}, {
+  "id": 1497,
+  "name": "奎屯市",
+  "pid": 343,
+  "letter": "KTS"
+}, {
+  "id": 1498,
+  "name": "奎文区",
+  "pid": 293,
+  "letter": "KWQ"
+}, {
+  "id": 1499,
+  "name": "康县",
+  "pid": 188,
+  "letter": "KX"
+}, {
+  "id": 1500,
+  "name": "开远市",
+  "pid": 128,
+  "letter": "KYS"
+}, {
+  "id": 1501,
+  "name": "开原市",
+  "pid": 283,
+  "letter": "KYS"
+}, {
+  "id": 1502,
+  "name": "开阳县",
+  "pid": 113,
+  "letter": "KYX"
+}, {
+  "id": 1503,
+  "name": "开州区",
+  "pid": 365,
+  "letter": "KZQ"
+}, {
+  "id": 1504,
+  "name": "龙安区",
+  "pid": 45,
+  "letter": "LAQ"
+}, {
+  "id": 1505,
+  "name": "临安区",
+  "pid": 150,
+  "letter": "LAQ"
+}, {
+  "id": 1506,
+  "name": "隆安县",
+  "pid": 218,
+  "letter": "LAX"
+}, {
+  "id": 1507,
+  "name": "乐安县",
+  "pid": 103,
+  "letter": "LAX"
+}, {
+  "id": 1508,
+  "name": "来安县",
+  "pid": 79,
+  "letter": "LAX"
+}, {
+  "id": 1509,
+  "name": "柳北区",
+  "pid": 204,
+  "letter": "LBQ"
+}, {
+  "id": 1510,
+  "name": "路北区",
+  "pid": 287,
+  "letter": "LBQ"
+}, {
+  "id": 1511,
+  "name": "老边区",
+  "pid": 342,
+  "letter": "LBQ"
+}, {
+  "id": 1512,
+  "name": "灵宝市",
+  "pid": 253,
+  "letter": "LBS"
+}, {
+  "id": 1513,
+  "name": "雷波县",
+  "pid": 193,
+  "letter": "LBX"
+}, {
+  "id": 1514,
+  "name": "留坝县",
+  "pid": 146,
+  "letter": "LBX"
+}, {
+  "id": 1515,
+  "name": "荔波县",
+  "pid": 235,
+  "letter": "LBX"
+}, {
+  "id": 1516,
+  "name": "灵璧县",
+  "pid": 328,
+  "letter": "LBX"
+}, {
+  "id": 1517,
+  "name": "萝北县",
+  "pid": 127,
+  "letter": "LBX"
+}, {
+  "id": 1518,
+  "name": "澜沧拉祜族自治县",
+  "pid": 224,
+  "letter": "LCLHZZZX"
+}, {
+  "id": 1519,
+  "name": "罗城仫佬族自治县",
+  "pid": 121,
+  "letter": "LCMLZZZX"
+}, {
+  "id": 1520,
+  "name": "老城区",
+  "pid": 196,
+  "letter": "LCQ"
+}, {
+  "id": 1521,
+  "name": "潞城区",
+  "pid": 375,
+  "letter": "LCQ"
+}, {
+  "id": 1522,
+  "name": "栾城区",
+  "pid": 249,
+  "letter": "LCQ"
+}, {
+  "id": 1523,
+  "name": "莲池区",
+  "pid": 48,
+  "letter": "LCQ"
+}, {
+  "id": 1524,
+  "name": "临川区",
+  "pid": 103,
+  "letter": "LCQ"
+}, {
+  "id": 1525,
+  "name": "陵城区",
+  "pid": 95,
+  "letter": "LCQ"
+}, {
+  "id": 1526,
+  "name": "历城区",
+  "pid": 163,
+  "letter": "LCQ"
+}, {
+  "id": 1527,
+  "name": "鲤城区",
+  "pid": 242,
+  "letter": "LCQ"
+}, {
+  "id": 1528,
+  "name": "荔城区",
+  "pid": 227,
+  "letter": "LCQ"
+}, {
+  "id": 1529,
+  "name": "龙城区",
+  "pid": 73,
+  "letter": "LCQ"
+}, {
+  "id": 1530,
+  "name": "李沧区",
+  "pid": 232,
+  "letter": "LCQ"
+}, {
+  "id": 1531,
+  "name": "鹿城区",
+  "pid": 306,
+  "letter": "LCQ"
+}, {
+  "id": 1532,
+  "name": "隆昌市",
+  "pid": 216,
+  "letter": "LCS"
+}, {
+  "id": 1533,
+  "name": "利川市",
+  "pid": 97,
+  "letter": "LCS"
+}, {
+  "id": 1534,
+  "name": "乐昌市",
+  "pid": 246,
+  "letter": "LCS"
+}, {
+  "id": 1535,
+  "name": "陇川县",
+  "pid": 83,
+  "letter": "LCX"
+}, {
+  "id": 1536,
+  "name": "绿春县",
+  "pid": 128,
+  "letter": "LCX"
+}, {
+  "id": 1537,
+  "name": "柳城县",
+  "pid": 204,
+  "letter": "LCX"
+}, {
+  "id": 1538,
+  "name": "洛川县",
+  "pid": 331,
+  "letter": "LCX"
+}, {
+  "id": 1539,
+  "name": "灵川县",
+  "pid": 108,
+  "letter": "LCX"
+}, {
+  "id": 1540,
+  "name": "陆川县",
+  "pid": 345,
+  "letter": "LCX"
+}, {
+  "id": 1541,
+  "name": "栾川县",
+  "pid": 196,
+  "letter": "LCX"
+}, {
+  "id": 1542,
+  "name": "凉城县",
+  "pid": 298,
+  "letter": "LCX"
+}, {
+  "id": 1543,
+  "name": "陵川县",
+  "pid": 154,
+  "letter": "LCX"
+}, {
+  "id": 1544,
+  "name": "黎城县",
+  "pid": 375,
+  "letter": "LCX"
+}, {
+  "id": 1545,
+  "name": "临城县",
+  "pid": 320,
+  "letter": "LCX"
+}, {
+  "id": 1546,
+  "name": "龙川县",
+  "pid": 145,
+  "letter": "LCX"
+}, {
+  "id": 1547,
+  "name": "连城县",
+  "pid": 197,
+  "letter": "LCX"
+}, {
+  "id": 1548,
+  "name": "黎川县",
+  "pid": 103,
+  "letter": "LCX"
+}, {
+  "id": 1549,
+  "name": "乐都区",
+  "pid": 122,
+  "letter": "LDQ"
+}, {
+  "id": 1550,
+  "name": "离岛区",
+  "pid": 313,
+  "letter": "LDQ"
+}, {
+  "id": 1551,
+  "name": "莲都区",
+  "pid": 192,
+  "letter": "LDQ"
+}, {
+  "id": 1552,
+  "name": "岭东区",
+  "pid": 268,
+  "letter": "LDQ"
+}, {
+  "id": 1553,
+  "name": "罗定市",
+  "pid": 340,
+  "letter": "LDS"
+}, {
+  "id": 1554,
+  "name": "路氹填海区",
+  "pid": 41,
+  "letter": "LDTHQ"
+}, {
+  "id": 1555,
+  "name": "泸定县",
+  "pid": 114,
+  "letter": "LDX"
+}, {
+  "id": 1556,
+  "name": "鲁甸县",
+  "pid": 370,
+  "letter": "LDX"
+}, {
+  "id": 1557,
+  "name": "隆德县",
+  "pid": 112,
+  "letter": "LDX"
+}, {
+  "id": 1558,
+  "name": "两当县",
+  "pid": 188,
+  "letter": "LDX"
+}, {
+  "id": 1559,
+  "name": "罗甸县",
+  "pid": 235,
+  "letter": "LDX"
+}, {
+  "id": 1560,
+  "name": "林甸县",
+  "pid": 87,
+  "letter": "LDX"
+}, {
+  "id": 1561,
+  "name": "龙凤区",
+  "pid": 87,
+  "letter": "LFQ"
+}, {
+  "id": 1562,
+  "name": "陆丰市",
+  "pid": 261,
+  "letter": "LFS"
+}, {
+  "id": 1563,
+  "name": "禄丰县",
+  "pid": 72,
+  "letter": "LFX"
+}, {
+  "id": 1564,
+  "name": "来凤县",
+  "pid": 97,
+  "letter": "LFX"
+}, {
+  "id": 1565,
+  "name": "娄烦县",
+  "pid": 288,
+  "letter": "LFX"
+}, {
+  "id": 1566,
+  "name": "临桂区",
+  "pid": 108,
+  "letter": "LGQ"
+}, {
+  "id": 1567,
+  "name": "龙岗区",
+  "pid": 272,
+  "letter": "LGQ"
+}, {
+  "id": 1568,
+  "name": "六龟区",
+  "pid": 110,
+  "letter": "LGQ"
+}, {
+  "id": 1569,
+  "name": "龙港区",
+  "pid": 134,
+  "letter": "LGQ"
+}, {
+  "id": 1570,
+  "name": "龙港市",
+  "pid": 306,
+  "letter": "LGS"
+}, {
+  "id": 1571,
+  "name": "岚皋县",
+  "pid": 37,
+  "letter": "LGX"
+}, {
+  "id": 1572,
+  "name": "老河口市",
+  "pid": 324,
+  "letter": "LHKS"
+}, {
+  "id": 1573,
+  "name": "临河区",
+  "pid": 61,
+  "letter": "LHQ"
+}, {
+  "id": 1574,
+  "name": "莲湖区",
+  "pid": 308,
+  "letter": "LHQ"
+}, {
+  "id": 1575,
+  "name": "龙华区",
+  "pid": 132,
+  "letter": "LHQ"
+}, {
+  "id": 1576,
+  "name": "罗湖区",
+  "pid": 272,
+  "letter": "LHQ"
+}, {
+  "id": 1577,
+  "name": "龙湖区",
+  "pid": 260,
+  "letter": "LHQ"
+}, {
+  "id": 1578,
+  "name": "六合区",
+  "pid": 217,
+  "letter": "LHQ"
+}, {
+  "id": 1579,
+  "name": "凌河区",
+  "pid": 172,
+  "letter": "LHQ"
+}, {
+  "id": 1580,
+  "name": "龙海市",
+  "pid": 379,
+  "letter": "LHS"
+}, {
+  "id": 1581,
+  "name": "凌海市",
+  "pid": 172,
+  "letter": "LHS"
+}, {
+  "id": 1582,
+  "name": "临海市",
+  "pid": 291,
+  "letter": "LHS"
+}, {
+  "id": 1583,
+  "name": "梁河县",
+  "pid": 83,
+  "letter": "LHX"
+}, {
+  "id": 1584,
+  "name": "炉霍县",
+  "pid": 114,
+  "letter": "LHX"
+}, {
+  "id": 1585,
+  "name": "隆回县",
+  "pid": 265,
+  "letter": "LHX"
+}, {
+  "id": 1586,
+  "name": "莲花县",
+  "pid": 228,
+  "letter": "LHX"
+}, {
+  "id": 1587,
+  "name": "陆河县",
+  "pid": 261,
+  "letter": "LHX"
+}, {
+  "id": 1588,
+  "name": "隆化县",
+  "pid": 69,
+  "letter": "LHX"
+}, {
+  "id": 1589,
+  "name": "柳河县",
+  "pid": 278,
+  "letter": "LHX"
+}, {
+  "id": 1590,
+  "name": "罗江区",
+  "pid": 91,
+  "letter": "LJQ"
+}, {
+  "id": 1591,
+  "name": "柳江区",
+  "pid": 204,
+  "letter": "LJQ"
+}, {
+  "id": 1592,
+  "name": "洛江区",
+  "pid": 242,
+  "letter": "LJQ"
+}, {
+  "id": 1593,
+  "name": "六甲区",
+  "pid": 284,
+  "letter": "LJQ"
+}, {
+  "id": 1594,
+  "name": "龙井区",
+  "pid": 292,
+  "letter": "LJQ"
+}, {
+  "id": 1595,
+  "name": "廉江市",
+  "pid": 361,
+  "letter": "LJS"
+}, {
+  "id": 1596,
+  "name": "临江市",
+  "pid": 57,
+  "letter": "LJS"
+}, {
+  "id": 1597,
+  "name": "龙井市",
+  "pid": 332,
+  "letter": "LJS"
+}, {
+  "id": 1598,
+  "name": "庐江县",
+  "pid": 125,
+  "letter": "LJX"
+}, {
+  "id": 1599,
+  "name": "利津县",
+  "pid": 92,
+  "letter": "LJX"
+}, {
+  "id": 1600,
+  "name": "连江县",
+  "pid": 104,
+  "letter": "LJX"
+}, {
+  "id": 1601,
+  "name": "龙江县",
+  "pid": 236,
+  "letter": "LJX"
+}, {
+  "id": 1602,
+  "name": "渌口区",
+  "pid": 377,
+  "letter": "LKQ"
+}, {
+  "id": 1603,
+  "name": "林口区",
+  "pid": 309,
+  "letter": "LKQ"
+}, {
+  "id": 1604,
+  "name": "龙口市",
+  "pid": 349,
+  "letter": "LKS"
+}, {
+  "id": 1605,
+  "name": "兰考县",
+  "pid": 173,
+  "letter": "LKX"
+}, {
+  "id": 1606,
+  "name": "林口县",
+  "pid": 206,
+  "letter": "LKX"
+}, {
+  "id": 1607,
+  "name": "浪卡子县",
+  "pid": 254,
+  "letter": "LKZX"
+}, {
+  "id": 1608,
+  "name": "隆林各族自治县",
+  "pid": 55,
+  "letter": "LLGZZZX"
+}, {
+  "id": 1609,
+  "name": "零陵区",
+  "pid": 353,
+  "letter": "LLQ"
+}, {
+  "id": 1610,
+  "name": "洛龙区",
+  "pid": 196,
+  "letter": "LLQ"
+}, {
+  "id": 1611,
+  "name": "醴陵市",
+  "pid": 377,
+  "letter": "LLS"
+}, {
+  "id": 1612,
+  "name": "乐陵市",
+  "pid": 95,
+  "letter": "LLS"
+}, {
+  "id": 1613,
+  "name": "洛隆县",
+  "pid": 66,
+  "letter": "LLX"
+}, {
+  "id": 1614,
+  "name": "龙陵县",
+  "pid": 54,
+  "letter": "LLX"
+}, {
+  "id": 1615,
+  "name": "陆良县",
+  "pid": 234,
+  "letter": "LLX"
+}, {
+  "id": 1616,
+  "name": "龙里县",
+  "pid": 235,
+  "letter": "LLX"
+}, {
+  "id": 1617,
+  "name": "柳林县",
+  "pid": 187,
+  "letter": "LLX"
+}, {
+  "id": 1618,
+  "name": "临澧县",
+  "pid": 68,
+  "letter": "LLX"
+}, {
+  "id": 1619,
+  "name": "兰陵县",
+  "pid": 198,
+  "letter": "LLX"
+}, {
+  "id": 1620,
+  "name": "卢龙县",
+  "pid": 233,
+  "letter": "LLX"
+}, {
+  "id": 1621,
+  "name": "龙马潭区",
+  "pid": 203,
+  "letter": "LMTQ"
+}, {
+  "id": 1622,
+  "name": "龙门县",
+  "pid": 148,
+  "letter": "LMX"
+}, {
+  "id": 1623,
+  "name": "柳南区",
+  "pid": 204,
+  "letter": "LNQ"
+}, {
+  "id": 1624,
+  "name": "路南区",
+  "pid": 287,
+  "letter": "LNQ"
+}, {
+  "id": 1625,
+  "name": "洛南县",
+  "pid": 250,
+  "letter": "LNX"
+}, {
+  "id": 1626,
+  "name": "洛宁县",
+  "pid": 196,
+  "letter": "LNX"
+}, {
+  "id": 1627,
+  "name": "龙南县",
+  "pid": 116,
+  "letter": "LNX"
+}, {
+  "id": 1628,
+  "name": "滦南县",
+  "pid": 287,
+  "letter": "LNX"
+}, {
+  "id": 1629,
+  "name": "连南瑶族自治县",
+  "pid": 240,
+  "letter": "LNYZZZX"
+}, {
+  "id": 1630,
+  "name": "兰坪白族普米族自治县",
+  "pid": 215,
+  "letter": "LPBZPMZZZX"
+}, {
+  "id": 1631,
+  "name": "梁平区",
+  "pid": 365,
+  "letter": "LPQ"
+}, {
+  "id": 1632,
+  "name": "荔浦市",
+  "pid": 108,
+  "letter": "LPS"
+}, {
+  "id": 1633,
+  "name": "乐平市",
+  "pid": 155,
+  "letter": "LPS"
+}, {
+  "id": 1634,
+  "name": "洛浦县",
+  "pid": 142,
+  "letter": "LPX"
+}, {
+  "id": 1635,
+  "name": "罗平县",
+  "pid": 234,
+  "letter": "LPX"
+}, {
+  "id": 1636,
+  "name": "黎平县",
+  "pid": 231,
+  "letter": "LPX"
+}, {
+  "id": 1637,
+  "name": "连平县",
+  "pid": 145,
+  "letter": "LPX"
+}, {
+  "id": 1638,
+  "name": "滦平县",
+  "pid": 69,
+  "letter": "LPX"
+}, {
+  "id": 1639,
+  "name": "良庆区",
+  "pid": 218,
+  "letter": "LQQ"
+}, {
+  "id": 1640,
+  "name": "鹿泉区",
+  "pid": 249,
+  "letter": "LQQ"
+}, {
+  "id": 1641,
+  "name": "龙崎区",
+  "pid": 284,
+  "letter": "LQQ"
+}, {
+  "id": 1642,
+  "name": "路桥区",
+  "pid": 291,
+  "letter": "LQQ"
+}, {
+  "id": 1643,
+  "name": "临清市",
+  "pid": 181,
+  "letter": "LQS"
+}, {
+  "id": 1644,
+  "name": "龙泉市",
+  "pid": 192,
+  "letter": "LQS"
+}, {
+  "id": 1645,
+  "name": "乐清市",
+  "pid": 306,
+  "letter": "LQS"
+}, {
+  "id": 1646,
+  "name": "碌曲县",
+  "pid": 109,
+  "letter": "LQX"
+}, {
+  "id": 1647,
+  "name": "礼泉县",
+  "pid": 323,
+  "letter": "LQX"
+}, {
+  "id": 1648,
+  "name": "灵丘县",
+  "pid": 88,
+  "letter": "LQX"
+}, {
+  "id": 1649,
+  "name": "临泉县",
+  "pid": 102,
+  "letter": "LQX"
+}, {
+  "id": 1650,
+  "name": "临朐县",
+  "pid": 293,
+  "letter": "LQX"
+}, {
+  "id": 1651,
+  "name": "龙泉驿区",
+  "pid": 67,
+  "letter": "LQYQ"
+}, {
+  "id": 1652,
+  "name": "禄劝彝族苗族自治县",
+  "pid": 175,
+  "letter": "LQYZMZZZX"
+}, {
+  "id": 1653,
+  "name": "龙胜各族自治县",
+  "pid": 108,
+  "letter": "LSGZZZX"
+}, {
+  "id": 1654,
+  "name": "冷水江市",
+  "pid": 182,
+  "letter": "LSJS"
+}, {
+  "id": 1655,
+  "name": "旅顺口区",
+  "pid": 85,
+  "letter": "LSKQ"
+}, {
+  "id": 1656,
+  "name": "离石区",
+  "pid": 187,
+  "letter": "LSQ"
+}, {
+  "id": 1657,
+  "name": "芦淞区",
+  "pid": 377,
+  "letter": "LSQ"
+}, {
+  "id": 1658,
+  "name": "烈山区",
+  "pid": 120,
+  "letter": "LSQ"
+}, {
+  "id": 1659,
+  "name": "兰山区",
+  "pid": 198,
+  "letter": "LSQ"
+}, {
+  "id": 1660,
+  "name": "溧水区",
+  "pid": 217,
+  "letter": "LSQ"
+}, {
+  "id": 1661,
+  "name": "岚山区",
+  "pid": 245,
+  "letter": "LSQ"
+}, {
+  "id": 1662,
+  "name": "连山区",
+  "pid": 134,
+  "letter": "LSQ"
+}, {
+  "id": 1663,
+  "name": "崂山区",
+  "pid": 232,
+  "letter": "LSQ"
+}, {
+  "id": 1664,
+  "name": "莱山区",
+  "pid": 349,
+  "letter": "LSQ"
+}, {
+  "id": 1665,
+  "name": "立山区",
+  "pid": 44,
+  "letter": "LSQ"
+}, {
+  "id": 1666,
+  "name": "龙沙区",
+  "pid": 236,
+  "letter": "LSQ"
+}, {
+  "id": 1667,
+  "name": "龙山区",
+  "pid": 200,
+  "letter": "LSQ"
+}, {
+  "id": 1668,
+  "name": "梨树区",
+  "pid": 166,
+  "letter": "LSQ"
+}, {
+  "id": 1669,
+  "name": "泸水市",
+  "pid": 215,
+  "letter": "LSS"
+}, {
+  "id": 1670,
+  "name": "庐山市",
+  "pid": 157,
+  "letter": "LSS"
+}, {
+  "id": 1671,
+  "name": "冷水滩区",
+  "pid": 353,
+  "letter": "LSTQ"
+}, {
+  "id": 1672,
+  "name": "芦山县",
+  "pid": 330,
+  "letter": "LSX"
+}, {
+  "id": 1673,
+  "name": "邻水县",
+  "pid": 105,
+  "letter": "LSX"
+}, {
+  "id": 1674,
+  "name": "雷山县",
+  "pid": 231,
+  "letter": "LSX"
+}, {
+  "id": 1675,
+  "name": "灵山县",
+  "pid": 241,
+  "letter": "LSX"
+}, {
+  "id": 1676,
+  "name": "龙山县",
+  "pid": 322,
+  "letter": "LSX"
+}, {
+  "id": 1677,
+  "name": "卢氏县",
+  "pid": 253,
+  "letter": "LSX"
+}, {
+  "id": 1678,
+  "name": "灵石县",
+  "pid": 170,
+  "letter": "LSX"
+}, {
+  "id": 1679,
+  "name": "蓝山县",
+  "pid": 353,
+  "letter": "LSX"
+}, {
+  "id": 1680,
+  "name": "鲁山县",
+  "pid": 223,
+  "letter": "LSX"
+}, {
+  "id": 1681,
+  "name": "灵寿县",
+  "pid": 249,
+  "letter": "LSX"
+}, {
+  "id": 1682,
+  "name": "罗山县",
+  "pid": 325,
+  "letter": "LSX"
+}, {
+  "id": 1683,
+  "name": "涞水县",
+  "pid": 48,
+  "letter": "LSX"
+}, {
+  "id": 1684,
+  "name": "梁山县",
+  "pid": 162,
+  "letter": "LSX"
+}, {
+  "id": 1685,
+  "name": "临沭县",
+  "pid": 198,
+  "letter": "LSX"
+}, {
+  "id": 1686,
+  "name": "涟水县",
+  "pid": 117,
+  "letter": "LSX"
+}, {
+  "id": 1687,
+  "name": "梨树县",
+  "pid": 256,
+  "letter": "LSX"
+}, {
+  "id": 1688,
+  "name": "连山壮族瑶族自治县",
+  "pid": 240,
+  "letter": "LSZZYZZZX"
+}, {
+  "id": 1689,
+  "name": "利通区",
+  "pid": 304,
+  "letter": "LTQ"
+}, {
+  "id": 1690,
+  "name": "临潼区",
+  "pid": 308,
+  "letter": "LTQ"
+}, {
+  "id": 1691,
+  "name": "龙亭区",
+  "pid": 173,
+  "letter": "LTQ"
+}, {
+  "id": 1692,
+  "name": "龙潭区",
+  "pid": 158,
+  "letter": "LTQ"
+}, {
+  "id": 1693,
+  "name": "轮台县",
+  "pid": 60,
+  "letter": "LTX"
+}, {
+  "id": 1694,
+  "name": "理塘县",
+  "pid": 114,
+  "letter": "LTX"
+}, {
+  "id": 1695,
+  "name": "临潭县",
+  "pid": 109,
+  "letter": "LTX"
+}, {
+  "id": 1696,
+  "name": "临洮县",
+  "pid": 90,
+  "letter": "LTX"
+}, {
+  "id": 1697,
+  "name": "灵台县",
+  "pid": 226,
+  "letter": "LTX"
+}, {
+  "id": 1698,
+  "name": "蓝田县",
+  "pid": 308,
+  "letter": "LTX"
+}, {
+  "id": 1699,
+  "name": "罗田县",
+  "pid": 126,
+  "letter": "LTX"
+}, {
+  "id": 1700,
+  "name": "乐亭县",
+  "pid": 287,
+  "letter": "LTX"
+}, {
+  "id": 1701,
+  "name": "龙潭乡",
+  "pid": 289,
+  "letter": "LTX"
+}, {
+  "id": 1702,
+  "name": "类乌齐县",
+  "pid": 66,
+  "letter": "LWQX"
+}, {
+  "id": 1703,
+  "name": "临渭区",
+  "pid": 300,
+  "letter": "LWQ"
+}, {
+  "id": 1704,
+  "name": "荔湾区",
+  "pid": 115,
+  "letter": "LWQ"
+}, {
+  "id": 1705,
+  "name": "莱芜区",
+  "pid": 163,
+  "letter": "LWQ"
+}, {
+  "id": 1706,
+  "name": "龙文区",
+  "pid": 379,
+  "letter": "LWQ"
+}, {
+  "id": 1707,
+  "name": "龙湾区",
+  "pid": 306,
+  "letter": "LWQ"
+}, {
+  "id": 1708,
+  "name": "灵武市",
+  "pid": 334,
+  "letter": "LWS"
+}, {
+  "id": 1709,
+  "name": "临武县",
+  "pid": 75,
+  "letter": "LWX"
+}, {
+  "id": 1710,
+  "name": "朗县",
+  "pid": 201,
+  "letter": "LX"
+}, {
+  "id": 1711,
+  "name": "临翔区",
+  "pid": 180,
+  "letter": "LXQ"
+}, {
+  "id": 1712,
+  "name": "理县",
+  "pid": 35,
+  "letter": "LX"
+}, {
+  "id": 1713,
+  "name": "临夏市",
+  "pid": 194,
+  "letter": "LXS"
+}, {
+  "id": 1714,
+  "name": "临夏县",
+  "pid": 194,
+  "letter": "LXX"
+}, {
+  "id": 1715,
+  "name": "泸西县",
+  "pid": 128,
+  "letter": "LXX"
+}, {
+  "id": 1716,
+  "name": "陇西县",
+  "pid": 90,
+  "letter": "LXX"
+}, {
+  "id": 1717,
+  "name": "礼县",
+  "pid": 188,
+  "letter": "LX"
+}, {
+  "id": 1718,
+  "name": "泸县",
+  "pid": 203,
+  "letter": "LX"
+}, {
+  "id": 1719,
+  "name": "陇县",
+  "pid": 52,
+  "letter": "LX"
+}, {
+  "id": 1720,
+  "name": "泸溪县",
+  "pid": 322,
+  "letter": "LXX"
+}, {
+  "id": 1721,
+  "name": "临县",
+  "pid": 187,
+  "letter": "LX"
+}, {
+  "id": 1722,
+  "name": "龙圩区",
+  "pid": 305,
+  "letter": "LXQ"
+}, {
+  "id": 1723,
+  "name": "澧县",
+  "pid": 68,
+  "letter": "LX"
+}, {
+  "id": 1724,
+  "name": "岚县",
+  "pid": 187,
+  "letter": "LX"
+}, {
+  "id": 1725,
+  "name": "娄星区",
+  "pid": 182,
+  "letter": "LXQ"
+}, {
+  "id": 1726,
+  "name": "历下区",
+  "pid": 163,
+  "letter": "LXQ"
+}, {
+  "id": 1727,
+  "name": "芦溪县",
+  "pid": 228,
+  "letter": "LXX"
+}, {
+  "id": 1728,
+  "name": "临西县",
+  "pid": 320,
+  "letter": "LXX"
+}, {
+  "id": 1729,
+  "name": "蠡县",
+  "pid": 48,
+  "letter": "LX"
+}, {
+  "id": 1730,
+  "name": "濂溪区",
+  "pid": 157,
+  "letter": "LXQ"
+}, {
+  "id": 1731,
+  "name": "梁溪区",
+  "pid": 303,
+  "letter": "LXQ"
+}, {
+  "id": 1732,
+  "name": "临湘市",
+  "pid": 352,
+  "letter": "LXS"
+}, {
+  "id": 1733,
+  "name": "兰溪市",
+  "pid": 156,
+  "letter": "LXS"
+}, {
+  "id": 1734,
+  "name": "莱西市",
+  "pid": 232,
+  "letter": "LXS"
+}, {
+  "id": 1735,
+  "name": "利辛县",
+  "pid": 64,
+  "letter": "LXX"
+}, {
+  "id": 1736,
+  "name": "林西县",
+  "pid": 70,
+  "letter": "LXX"
+}, {
+  "id": 1737,
+  "name": "郎溪县",
+  "pid": 311,
+  "letter": "LXX"
+}, {
+  "id": 1738,
+  "name": "兰西县",
+  "pid": 248,
+  "letter": "LXX"
+}, {
+  "id": 1739,
+  "name": "隆阳区",
+  "pid": 54,
+  "letter": "LYQ"
+}, {
+  "id": 1740,
+  "name": "梁园区",
+  "pid": 257,
+  "letter": "LYQ"
+}, {
+  "id": 1741,
+  "name": "庐阳区",
+  "pid": 125,
+  "letter": "LYQ"
+}, {
+  "id": 1742,
+  "name": "琅琊区",
+  "pid": 79,
+  "letter": "LYQ"
+}, {
+  "id": 1743,
+  "name": "连云区",
+  "pid": 195,
+  "letter": "LYQ"
+}, {
+  "id": 1744,
+  "name": "柳营区",
+  "pid": 284,
+  "letter": "LYQ"
+}, {
+  "id": 1745,
+  "name": "苓雅区",
+  "pid": 110,
+  "letter": "LYQ"
+}, {
+  "id": 1746,
+  "name": "林园区",
+  "pid": 110,
+  "letter": "LYQ"
+}, {
+  "id": 1747,
+  "name": "绿园区",
+  "pid": 356,
+  "letter": "LYQ"
+}, {
+  "id": 1748,
+  "name": "涟源市",
+  "pid": 182,
+  "letter": "LYS"
+}, {
+  "id": 1749,
+  "name": "耒阳市",
+  "pid": 144,
+  "letter": "LYS"
+}, {
+  "id": 1750,
+  "name": "浏阳市",
+  "pid": 367,
+  "letter": "LYS"
+}, {
+  "id": 1751,
+  "name": "凌源市",
+  "pid": 73,
+  "letter": "LYS"
+}, {
+  "id": 1752,
+  "name": "溧阳市",
+  "pid": 80,
+  "letter": "LYS"
+}, {
+  "id": 1753,
+  "name": "莱阳市",
+  "pid": 349,
+  "letter": "LYS"
+}, {
+  "id": 1754,
+  "name": "略阳县",
+  "pid": 146,
+  "letter": "LYX"
+}, {
+  "id": 1755,
+  "name": "乐业县",
+  "pid": 55,
+  "letter": "LYX"
+}, {
+  "id": 1756,
+  "name": "凌云县",
+  "pid": 55,
+  "letter": "LYX"
+}, {
+  "id": 1757,
+  "name": "麟游县",
+  "pid": 52,
+  "letter": "LYX"
+}, {
+  "id": 1758,
+  "name": "临猗县",
+  "pid": 335,
+  "letter": "LYX"
+}, {
+  "id": 1759,
+  "name": "临颍县",
+  "pid": 185,
+  "letter": "LYX"
+}, {
+  "id": 1760,
+  "name": "涞源县",
+  "pid": 48,
+  "letter": "LYX"
+}, {
+  "id": 1761,
+  "name": "隆尧县",
+  "pid": 320,
+  "letter": "LYX"
+}, {
+  "id": 1762,
+  "name": "鹿邑县",
+  "pid": 363,
+  "letter": "LYX"
+}, {
+  "id": 1763,
+  "name": "临邑县",
+  "pid": 95,
+  "letter": "LYX"
+}, {
+  "id": 1764,
+  "name": "龙游县",
+  "pid": 243,
+  "letter": "LYX"
+}, {
+  "id": 1765,
+  "name": "罗源县",
+  "pid": 104,
+  "letter": "LYX"
+}, {
+  "id": 1766,
+  "name": "辽阳县",
+  "pid": 199,
+  "letter": "LYX"
+}, {
+  "id": 1767,
+  "name": "梁子湖区",
+  "pid": 98,
+  "letter": "LZHQ"
+}, {
+  "id": 1768,
+  "name": "龙子湖区",
+  "pid": 46,
+  "letter": "LZHQ"
+}, {
+  "id": 1769,
+  "name": "凉州区",
+  "pid": 302,
+  "letter": "LZQ"
+}, {
+  "id": 1770,
+  "name": "利州区",
+  "pid": 111,
+  "letter": "LZQ"
+}, {
+  "id": 1771,
+  "name": "潞州区",
+  "pid": 375,
+  "letter": "LZQ"
+}, {
+  "id": 1772,
+  "name": "临淄区",
+  "pid": 355,
+  "letter": "LZQ"
+}, {
+  "id": 1773,
+  "name": "罗庄区",
+  "pid": 198,
+  "letter": "LZQ"
+}, {
+  "id": 1774,
+  "name": "路竹区",
+  "pid": 110,
+  "letter": "LZQ"
+}, {
+  "id": 1775,
+  "name": "芦洲区",
+  "pid": 309,
+  "letter": "LZQ"
+}, {
+  "id": 1776,
+  "name": "辽中区",
+  "pid": 266,
+  "letter": "LZQ"
+}, {
+  "id": 1777,
+  "name": "阆中市",
+  "pid": 212,
+  "letter": "LZS"
+}, {
+  "id": 1778,
+  "name": "雷州市",
+  "pid": 361,
+  "letter": "LZS"
+}, {
+  "id": 1779,
+  "name": "连州市",
+  "pid": 240,
+  "letter": "LZS"
+}, {
+  "id": 1780,
+  "name": "林州市",
+  "pid": 45,
+  "letter": "LZS"
+}, {
+  "id": 1781,
+  "name": "滦州市",
+  "pid": 287,
+  "letter": "LZS"
+}, {
+  "id": 1782,
+  "name": "莱州市",
+  "pid": 349,
+  "letter": "LZS"
+}, {
+  "id": 1783,
+  "name": "六枝特区",
+  "pid": 189,
+  "letter": "LZTQ"
+}, {
+  "id": 1784,
+  "name": "拉孜县",
+  "pid": 244,
+  "letter": "LZX"
+}, {
+  "id": 1785,
+  "name": "洛扎县",
+  "pid": 254,
+  "letter": "LZX"
+}, {
+  "id": 1786,
+  "name": "林周县",
+  "pid": 190,
+  "letter": "LZX"
+}, {
+  "id": 1787,
+  "name": "隆子县",
+  "pid": 254,
+  "letter": "LZX"
+}, {
+  "id": 1788,
+  "name": "临泽县",
+  "pid": 372,
+  "letter": "LZX"
+}, {
+  "id": 1789,
+  "name": "乐至县",
+  "pid": 373,
+  "letter": "LZX"
+}, {
+  "id": 1790,
+  "name": "龙州县",
+  "pid": 74,
+  "letter": "LZX"
+}, {
+  "id": 1791,
+  "name": "鹿寨县",
+  "pid": 204,
+  "letter": "LZX"
+}, {
+  "id": 1792,
+  "name": "临漳县",
+  "pid": 123,
+  "letter": "LZX"
+}, {
+  "id": 1793,
+  "name": "芦竹乡",
+  "pid": 289,
+  "letter": "LZX"
+}, {
+  "id": 1794,
+  "name": "马边彝族自治县",
+  "pid": 191,
+  "letter": "MBYZZZX"
+}, {
+  "id": 1795,
+  "name": "孟村回族自治县",
+  "pid": 76,
+  "letter": "MCHZZZX"
+}, {
+  "id": 1796,
+  "name": "马村区",
+  "pid": 171,
+  "letter": "MCQ"
+}, {
+  "id": 1797,
+  "name": "满城区",
+  "pid": 48,
+  "letter": "MCQ"
+}, {
+  "id": 1798,
+  "name": "麻城市",
+  "pid": 126,
+  "letter": "MCS"
+}, {
+  "id": 1799,
+  "name": "沐川县",
+  "pid": 191,
+  "letter": "MCX"
+}, {
+  "id": 1800,
+  "name": "渑池县",
+  "pid": 253,
+  "letter": "MCX"
+}, {
+  "id": 1801,
+  "name": "蒙城县",
+  "pid": 64,
+  "letter": "MCX"
+}, {
+  "id": 1802,
+  "name": "米东区",
+  "pid": 299,
+  "letter": "MDQ"
+}, {
+  "id": 1803,
+  "name": "牡丹区",
+  "pid": 149,
+  "letter": "MDQ"
+}, {
+  "id": 1804,
+  "name": "麻豆区",
+  "pid": 284,
+  "letter": "MDQ"
+}, {
+  "id": 1805,
+  "name": "玛多县",
+  "pid": 107,
+  "letter": "MDX"
+}, {
+  "id": 1806,
+  "name": "弥渡县",
+  "pid": 84,
+  "letter": "MDX"
+}, {
+  "id": 1807,
+  "name": "牟定县",
+  "pid": 72,
+  "letter": "MDX"
+}, {
+  "id": 1808,
+  "name": "马尔康市",
+  "pid": 35,
+  "letter": "MEKS"
+}, {
+  "id": 1809,
+  "name": "民丰县",
+  "pid": 142,
+  "letter": "MFX"
+}, {
+  "id": 1810,
+  "name": "明光市",
+  "pid": 79,
+  "letter": "MGS"
+}, {
+  "id": 1811,
+  "name": "麦盖提县",
+  "pid": 176,
+  "letter": "MGTX"
+}, {
+  "id": 1812,
+  "name": "美姑县",
+  "pid": 193,
+  "letter": "MGX"
+}, {
+  "id": 1813,
+  "name": "马关县",
+  "pid": 301,
+  "letter": "MGX"
+}, {
+  "id": 1814,
+  "name": "民和回族土族自治县",
+  "pid": 122,
+  "letter": "MHHZTZZZX"
+}, {
+  "id": 1815,
+  "name": "梅河口市",
+  "pid": 278,
+  "letter": "MHKS"
+}, {
+  "id": 1816,
+  "name": "闵行区",
+  "pid": 247,
+  "letter": "MHQ"
+}, {
+  "id": 1817,
+  "name": "漠河市",
+  "pid": 89,
+  "letter": "MHS"
+}, {
+  "id": 1818,
+  "name": "勐海县",
+  "pid": 318,
+  "letter": "MHX"
+}, {
+  "id": 1819,
+  "name": "闽侯县",
+  "pid": 104,
+  "letter": "MHX"
+}, {
+  "id": 1820,
+  "name": "墨江哈尼族自治县",
+  "pid": 224,
+  "letter": "MJHNZZZX"
+}, {
+  "id": 1821,
+  "name": "麦积区",
+  "pid": 286,
+  "letter": "MJQ"
+}, {
+  "id": 1822,
+  "name": "茅箭区",
+  "pid": 264,
+  "letter": "MJQ"
+}, {
+  "id": 1823,
+  "name": "梅江区",
+  "pid": 210,
+  "letter": "MJQ"
+}, {
+  "id": 1824,
+  "name": "麻江县",
+  "pid": 231,
+  "letter": "MJX"
+}, {
+  "id": 1825,
+  "name": "孟津县",
+  "pid": 196,
+  "letter": "MJX"
+}, {
+  "id": 1826,
+  "name": "芒康县",
+  "pid": 66,
+  "letter": "MKX"
+}, {
+  "id": 1827,
+  "name": "木里藏族自治县",
+  "pid": 193,
+  "letter": "MLCZZZX"
+}, {
+  "id": 1828,
+  "name": "莫力达瓦达斡尔族自治旗",
+  "pid": 133,
+  "letter": "MLDWDWEZZZQ"
+}, {
+  "id": 1829,
+  "name": "孟连傣族拉祜族佤族自治县",
+  "pid": 224,
+  "letter": "MLDZLHZWZZZX"
+}, {
+  "id": 1830,
+  "name": "木垒哈萨克自治县",
+  "pid": 71,
+  "letter": "MLHSKZZX"
+}, {
+  "id": 1831,
+  "name": "麻栗坡县",
+  "pid": 301,
+  "letter": "MLPX"
+}, {
+  "id": 1832,
+  "name": "马龙区",
+  "pid": 234,
+  "letter": "MLQ"
+}, {
+  "id": 1833,
+  "name": "美兰区",
+  "pid": 132,
+  "letter": "MLQ"
+}, {
+  "id": 1834,
+  "name": "梅列区",
+  "pid": 251,
+  "letter": "MLQ"
+}, {
+  "id": 1835,
+  "name": "茂林区",
+  "pid": 110,
+  "letter": "MLQ"
+}, {
+  "id": 1836,
+  "name": "弥勒市",
+  "pid": 128,
+  "letter": "MLS"
+}, {
+  "id": 1837,
+  "name": "汨罗市",
+  "pid": 352,
+  "letter": "MLS"
+}, {
+  "id": 1838,
+  "name": "梅里斯达斡尔族区",
+  "pid": 236,
+  "letter": "MLSDWEZQ"
+}, {
+  "id": 1839,
+  "name": "穆棱市",
+  "pid": 206,
+  "letter": "MLS"
+}, {
+  "id": 1840,
+  "name": "米林县",
+  "pid": 201,
+  "letter": "MLX"
+}, {
+  "id": 1841,
+  "name": "民乐县",
+  "pid": 372,
+  "letter": "MLX"
+}, {
+  "id": 1842,
+  "name": "勐腊县",
+  "pid": 318,
+  "letter": "MLX"
+}, {
+  "id": 1843,
+  "name": "木兰县",
+  "pid": 124,
+  "letter": "MLX"
+}, {
+  "id": 1844,
+  "name": "茂南区",
+  "pid": 207,
+  "letter": "MNQ"
+}, {
+  "id": 1845,
+  "name": "美浓区",
+  "pid": 110,
+  "letter": "MNQ"
+}, {
+  "id": 1846,
+  "name": "玛纳斯县",
+  "pid": 71,
+  "letter": "MNSX"
+}, {
+  "id": 1847,
+  "name": "冕宁县",
+  "pid": 193,
+  "letter": "MNX"
+}, {
+  "id": 1848,
+  "name": "牟平区",
+  "pid": 349,
+  "letter": "MPQ"
+}, {
+  "id": 1849,
+  "name": "玛沁县",
+  "pid": 107,
+  "letter": "MQX"
+}, {
+  "id": 1850,
+  "name": "玛曲县",
+  "pid": 109,
+  "letter": "MQX"
+}, {
+  "id": 1851,
+  "name": "民勤县",
+  "pid": 302,
+  "letter": "MQX"
+}, {
+  "id": 1852,
+  "name": "民权县",
+  "pid": 257,
+  "letter": "MQX"
+}, {
+  "id": 1853,
+  "name": "闽清县",
+  "pid": 104,
+  "letter": "MQX"
+}, {
+  "id": 1854,
+  "name": "芒市",
+  "pid": 83,
+  "letter": "MS"
+}, {
+  "id": 1855,
+  "name": "名山区",
+  "pid": 330,
+  "letter": "MSQ"
+}, {
+  "id": 1856,
+  "name": "明山区",
+  "pid": 59,
+  "letter": "MSQ"
+}, {
+  "id": 1857,
+  "name": "麻山区",
+  "pid": 166,
+  "letter": "MSQ"
+}, {
+  "id": 1858,
+  "name": "密山市",
+  "pid": 166,
+  "letter": "MSS"
+}, {
+  "id": 1859,
+  "name": "马山县",
+  "pid": 218,
+  "letter": "MSX"
+}, {
+  "id": 1860,
+  "name": "蒙山县",
+  "pid": 305,
+  "letter": "MSX"
+}, {
+  "id": 1861,
+  "name": "明水县",
+  "pid": 248,
+  "letter": "MSX"
+}, {
+  "id": 1862,
+  "name": "门头沟区",
+  "pid": 53,
+  "letter": "MTGQ"
+}, {
+  "id": 1863,
+  "name": "弥陀区",
+  "pid": 110,
+  "letter": "MTQ"
+}, {
+  "id": 1864,
+  "name": "墨脱县",
+  "pid": 201,
+  "letter": "MTX"
+}, {
+  "id": 1865,
+  "name": "湄潭县",
+  "pid": 374,
+  "letter": "MTX"
+}, {
+  "id": 1866,
+  "name": "马尾区",
+  "pid": 104,
+  "letter": "MWQ"
+}, {
+  "id": 1867,
+  "name": "茂县",
+  "pid": 35,
+  "letter": "MX"
+}, {
+  "id": 1868,
+  "name": "岷县",
+  "pid": 90,
+  "letter": "MX"
+}, {
+  "id": 1869,
+  "name": "勉县",
+  "pid": 146,
+  "letter": "MX"
+}, {
+  "id": 1870,
+  "name": "眉县",
+  "pid": 52,
+  "letter": "MX"
+}, {
+  "id": 1871,
+  "name": "梅县区",
+  "pid": 210,
+  "letter": "MXQ"
+}, {
+  "id": 1872,
+  "name": "美溪区",
+  "pid": 339,
+  "letter": "MXQ"
+}, {
+  "id": 1873,
+  "name": "明溪县",
+  "pid": 251,
+  "letter": "MXX"
+}, {
+  "id": 1874,
+  "name": "门源回族自治县",
+  "pid": 118,
+  "letter": "MYHZZZX"
+}, {
+  "id": 1875,
+  "name": "麻阳苗族自治县",
+  "pid": 130,
+  "letter": "MYMZZZX"
+}, {
+  "id": 1876,
+  "name": "牧野区",
+  "pid": 321,
+  "letter": "MYQ"
+}, {
+  "id": 1877,
+  "name": "密云区",
+  "pid": 53,
+  "letter": "MYQ"
+}, {
+  "id": 1878,
+  "name": "茫崖市",
+  "pid": 143,
+  "letter": "MYS"
+}, {
+  "id": 1879,
+  "name": "墨玉县",
+  "pid": 142,
+  "letter": "MYX"
+}, {
+  "id": 1880,
+  "name": "米易县",
+  "pid": 230,
+  "letter": "MYX"
+}, {
+  "id": 1881,
+  "name": "泌阳县",
+  "pid": 364,
+  "letter": "MYX"
+}, {
+  "id": 1882,
+  "name": "蒙阴县",
+  "pid": 198,
+  "letter": "MYX"
+}, {
+  "id": 1883,
+  "name": "墨竹工卡县",
+  "pid": 190,
+  "letter": "MZGKX"
+}, {
+  "id": 1884,
+  "name": "满洲里市",
+  "pid": 133,
+  "letter": "MZLS"
+}, {
+  "id": 1885,
+  "name": "麻章区",
+  "pid": 361,
+  "letter": "MZQ"
+}, {
+  "id": 1886,
+  "name": "蒙自市",
+  "pid": 128,
+  "letter": "MZS"
+}, {
+  "id": 1887,
+  "name": "绵竹市",
+  "pid": 91,
+  "letter": "MZS"
+}, {
+  "id": 1888,
+  "name": "孟州市",
+  "pid": 171,
+  "letter": "MZS"
+}, {
+  "id": 1889,
+  "name": "米脂县",
+  "pid": 344,
+  "letter": "MZX"
+}, {
+  "id": 1890,
+  "name": "南岸区",
+  "pid": 365,
+  "letter": "NAQ"
+}, {
+  "id": 1891,
+  "name": "南安市",
+  "pid": 242,
+  "letter": "NAS"
+}, {
+  "id": 1892,
+  "name": "宁安市",
+  "pid": 206,
+  "letter": "NAS"
+}, {
+  "id": 1893,
+  "name": "南澳县",
+  "pid": 260,
+  "letter": "NAX"
+}, {
+  "id": 1894,
+  "name": "农安县",
+  "pid": 356,
+  "letter": "NAX"
+}, {
+  "id": 1895,
+  "name": "南部县",
+  "pid": 212,
+  "letter": "NBX"
+}, {
+  "id": 1896,
+  "name": "南川区",
+  "pid": 365,
+  "letter": "NCQ"
+}, {
+  "id": 1897,
+  "name": "南岔区",
+  "pid": 339,
+  "letter": "NCQ"
+}, {
+  "id": 1898,
+  "name": "南昌县",
+  "pid": 213,
+  "letter": "NCX"
+}, {
+  "id": 1899,
+  "name": "南城县",
+  "pid": 103,
+  "letter": "NCX"
+}, {
+  "id": 1900,
+  "name": "宁城县",
+  "pid": 70,
+  "letter": "NCX"
+}, {
+  "id": 1901,
+  "name": "乃东区",
+  "pid": 254,
+  "letter": "NDQ"
+}, {
+  "id": 1902,
+  "name": "南丹县",
+  "pid": 121,
+  "letter": "NDX"
+}, {
+  "id": 1903,
+  "name": "宁都县",
+  "pid": 116,
+  "letter": "NDX"
+}, {
+  "id": 1904,
+  "name": "宁洱哈尼族彝族自治县",
+  "pid": 224,
+  "letter": "NEHNZYZZZX"
+}, {
+  "id": 1905,
+  "name": "南芬区",
+  "pid": 59,
+  "letter": "NFQ"
+}, {
+  "id": 1906,
+  "name": "南丰县",
+  "pid": 103,
+  "letter": "NFX"
+}, {
+  "id": 1907,
+  "name": "南港区",
+  "pid": 275,
+  "letter": "NGQ"
+}, {
+  "id": 1908,
+  "name": "南关区",
+  "pid": 356,
+  "letter": "NGQ"
+}, {
+  "id": 1909,
+  "name": "南岗区",
+  "pid": 124,
+  "letter": "NGQ"
+}, {
+  "id": 1910,
+  "name": "南宫市",
+  "pid": 320,
+  "letter": "NGS"
+}, {
+  "id": 1911,
+  "name": "宁国市",
+  "pid": 311,
+  "letter": "NGS"
+}, {
+  "id": 1912,
+  "name": "南海区",
+  "pid": 56,
+  "letter": "NHQ"
+}, {
+  "id": 1913,
+  "name": "宁河区",
+  "pid": 279,
+  "letter": "NHQ"
+}, {
+  "id": 1914,
+  "name": "南化区",
+  "pid": 284,
+  "letter": "NHQ"
+}, {
+  "id": 1915,
+  "name": "南湖区",
+  "pid": 165,
+  "letter": "NHQ"
+}, {
+  "id": 1916,
+  "name": "内湖区",
+  "pid": 275,
+  "letter": "NHQ"
+}, {
+  "id": 1917,
+  "name": "讷河市",
+  "pid": 236,
+  "letter": "NHS"
+}, {
+  "id": 1918,
+  "name": "南华县",
+  "pid": 72,
+  "letter": "NHX"
+}, {
+  "id": 1919,
+  "name": "内黄县",
+  "pid": 45,
+  "letter": "NHX"
+}, {
+  "id": 1920,
+  "name": "南和县",
+  "pid": 320,
+  "letter": "NHX"
+}, {
+  "id": 1921,
+  "name": "宁化县",
+  "pid": 251,
+  "letter": "NHX"
+}, {
+  "id": 1922,
+  "name": "宁海县",
+  "pid": 211,
+  "letter": "NHX"
+}, {
+  "id": 1923,
+  "name": "宁江区",
+  "pid": 267,
+  "letter": "NJQ"
+}, {
+  "id": 1924,
+  "name": "嫩江市",
+  "pid": 131,
+  "letter": "NJS"
+}, {
+  "id": 1925,
+  "name": "南江县",
+  "pid": 63,
+  "letter": "NJX"
+}, {
+  "id": 1926,
+  "name": "宁晋县",
+  "pid": 320,
+  "letter": "NJX"
+}, {
+  "id": 1927,
+  "name": "宁津县",
+  "pid": 95,
+  "letter": "NJX"
+}, {
+  "id": 1928,
+  "name": "南靖县",
+  "pid": 379,
+  "letter": "NJX"
+}, {
+  "id": 1929,
+  "name": "南涧彝族自治县",
+  "pid": 84,
+  "letter": "NJYZZZX"
+}, {
+  "id": 1930,
+  "name": "南康区",
+  "pid": 116,
+  "letter": "NKQ"
+}, {
+  "id": 1931,
+  "name": "南开区",
+  "pid": 279,
+  "letter": "NKQ"
+}, {
+  "id": 1932,
+  "name": "尼勒克县",
+  "pid": 343,
+  "letter": "NLKX"
+}, {
+  "id": 1933,
+  "name": "聂拉木县",
+  "pid": 244,
+  "letter": "NLMX"
+}, {
+  "id": 1934,
+  "name": "南乐县",
+  "pid": 229,
+  "letter": "NLX"
+}, {
+  "id": 1935,
+  "name": "宁陵县",
+  "pid": 257,
+  "letter": "NLX"
+}, {
+  "id": 1936,
+  "name": "南陵县",
+  "pid": 296,
+  "letter": "NLX"
+}, {
+  "id": 1937,
+  "name": "宁蒗彝族自治县",
+  "pid": 186,
+  "letter": "NLYZZZX"
+}, {
+  "id": 1938,
+  "name": "南木林县",
+  "pid": 244,
+  "letter": "NMLX"
+}, {
+  "id": 1939,
+  "name": "南明区",
+  "pid": 113,
+  "letter": "NMQ"
+}, {
+  "id": 1940,
+  "name": "奈曼旗",
+  "pid": 282,
+  "letter": "NMQ"
+}, {
+  "id": 1941,
+  "name": "内门区",
+  "pid": 110,
+  "letter": "NMQ"
+}, {
+  "id": 1942,
+  "name": "尼玛县",
+  "pid": 220,
+  "letter": "NMX"
+}, {
+  "id": 1943,
+  "name": "尼木县",
+  "pid": 190,
+  "letter": "NMX"
+}, {
+  "id": 1944,
+  "name": "宁明县",
+  "pid": 74,
+  "letter": "NMX"
+}, {
+  "id": 1945,
+  "name": "那玛夏区",
+  "pid": 110,
+  "letter": "NMXQ"
+}, {
+  "id": 1946,
+  "name": "宁南县",
+  "pid": 193,
+  "letter": "NNX"
+}, {
+  "id": 1947,
+  "name": "南票区",
+  "pid": 134,
+  "letter": "NPQ"
+}, {
+  "id": 1948,
+  "name": "那坡县",
+  "pid": 55,
+  "letter": "NPX"
+}, {
+  "id": 1949,
+  "name": "南皮县",
+  "pid": 76,
+  "letter": "NPX"
+}, {
+  "id": 1950,
+  "name": "南谯区",
+  "pid": 79,
+  "letter": "NQQ"
+}, {
+  "id": 1951,
+  "name": "囊谦县",
+  "pid": 347,
+  "letter": "NQX"
+}, {
+  "id": 1952,
+  "name": "宁强县",
+  "pid": 146,
+  "letter": "NQX"
+}, {
+  "id": 1953,
+  "name": "内丘县",
+  "pid": 320,
+  "letter": "NQX"
+}, {
+  "id": 1954,
+  "name": "南区",
+  "pid": 313,
+  "letter": "NQ"
+}, {
+  "id": 1955,
+  "name": "聂荣县",
+  "pid": 220,
+  "letter": "NRX"
+}, {
+  "id": 1956,
+  "name": "南沙区",
+  "pid": 115,
+  "letter": "NSQ"
+}, {
+  "id": 1957,
+  "name": "南山区",
+  "pid": 272,
+  "letter": "NSQ"
+}, {
+  "id": 1958,
+  "name": "鸟松区",
+  "pid": 110,
+  "letter": "NSQ"
+}, {
+  "id": 1959,
+  "name": "宁陕县",
+  "pid": 37,
+  "letter": "NSX"
+}, {
+  "id": 1960,
+  "name": "南屯区",
+  "pid": 292,
+  "letter": "NTQ"
+}, {
+  "id": 1961,
+  "name": "宁武县",
+  "pid": 327,
+  "letter": "NWX"
+}, {
+  "id": 1962,
+  "name": "南溪区",
+  "pid": 333,
+  "letter": "NXQ"
+}, {
+  "id": 1963,
+  "name": "纳溪区",
+  "pid": 203,
+  "letter": "NXQ"
+}, {
+  "id": 1964,
+  "name": "宁县",
+  "pid": 239,
+  "letter": "NX"
+}, {
+  "id": 1965,
+  "name": "宁乡市",
+  "pid": 367,
+  "letter": "NXS"
+}, {
+  "id": 1966,
+  "name": "内乡县",
+  "pid": 222,
+  "letter": "NXX"
+}, {
+  "id": 1967,
+  "name": "南县",
+  "pid": 351,
+  "letter": "NX"
+}, {
+  "id": 1968,
+  "name": "南浔区",
+  "pid": 151,
+  "letter": "NXQ"
+}, {
+  "id": 1969,
+  "name": "楠西区",
+  "pid": 284,
+  "letter": "NXQ"
+}, {
+  "id": 1970,
+  "name": "南雄市",
+  "pid": 246,
+  "letter": "NXS"
+}, {
+  "id": 1971,
+  "name": "南岳区",
+  "pid": 144,
+  "letter": "NYQ"
+}, {
+  "id": 1972,
+  "name": "纳雍县",
+  "pid": 51,
+  "letter": "NYX"
+}, {
+  "id": 1973,
+  "name": "宁远县",
+  "pid": 353,
+  "letter": "NYX"
+}, {
+  "id": 1974,
+  "name": "宁阳县",
+  "pid": 274,
+  "letter": "NYX"
+}, {
+  "id": 1975,
+  "name": "南郑区",
+  "pid": 146,
+  "letter": "NZQ"
+}, {
+  "id": 1976,
+  "name": "楠梓区",
+  "pid": 110,
+  "letter": "NZQ"
+}, {
+  "id": 1977,
+  "name": "碾子山区",
+  "pid": 236,
+  "letter": "NZSQ"
+}, {
+  "id": 1978,
+  "name": "南漳县",
+  "pid": 324,
+  "letter": "NZX"
+}, {
+  "id": 1979,
+  "name": "南召县",
+  "pid": 222,
+  "letter": "NZX"
+}, {
+  "id": 1980,
+  "name": "瓯海区",
+  "pid": 306,
+  "letter": "OHQ"
+}, {
+  "id": 1981,
+  "name": "平安区",
+  "pid": 122,
+  "letter": "PAQ"
+}, {
+  "id": 1982,
+  "name": "普安县",
+  "pid": 238,
+  "letter": "PAX"
+}, {
+  "id": 1983,
+  "name": "蓬安县",
+  "pid": 212,
+  "letter": "PAX"
+}, {
+  "id": 1984,
+  "name": "磐安县",
+  "pid": 156,
+  "letter": "PAX"
+}, {
+  "id": 1985,
+  "name": "屏边苗族自治县",
+  "pid": 128,
+  "letter": "PBMZZZX"
+}, {
+  "id": 1986,
+  "name": "平坝区",
+  "pid": 43,
+  "letter": "PBQ"
+}, {
+  "id": 1987,
+  "name": "浦北县",
+  "pid": 241,
+  "letter": "PBX"
+}, {
+  "id": 1988,
+  "name": "平川区",
+  "pid": 62,
+  "letter": "PCQ"
+}, {
+  "id": 1989,
+  "name": "平城区",
+  "pid": 88,
+  "letter": "PCQ"
+}, {
+  "id": 1990,
+  "name": "平昌县",
+  "pid": 63,
+  "letter": "PCX"
+}, {
+  "id": 1991,
+  "name": "蒲城县",
+  "pid": 300,
+  "letter": "PCX"
+}, {
+  "id": 1992,
+  "name": "浦城县",
+  "pid": 219,
+  "letter": "PCX"
+}, {
+  "id": 1993,
+  "name": "郫都区",
+  "pid": 67,
+  "letter": "PDQ"
+}, {
+  "id": 1994,
+  "name": "平度市",
+  "pid": 232,
+  "letter": "PDS"
+}, {
+  "id": 1995,
+  "name": "普定县",
+  "pid": 43,
+  "letter": "PDX"
+}, {
+  "id": 1996,
+  "name": "平定县",
+  "pid": 346,
+  "letter": "PDX"
+}, {
+  "id": 1997,
+  "name": "浦东新区",
+  "pid": 247,
+  "letter": "PDXQ"
+}, {
+  "id": 1998,
+  "name": "平房区",
+  "pid": 124,
+  "letter": "PFQ"
+}, {
+  "id": 1999,
+  "name": "平桂区",
+  "pid": 147,
+  "letter": "PGQ"
+}, {
+  "id": 2000,
+  "name": "平谷区",
+  "pid": 53,
+  "letter": "PGQ"
+}, {
+  "id": 2001,
+  "name": "普格县",
+  "pid": 193,
+  "letter": "PGX"
+}, {
+  "id": 2002,
+  "name": "平果县",
+  "pid": 55,
+  "letter": "PGX"
+}, {
+  "id": 2003,
+  "name": "偏关县",
+  "pid": 327,
+  "letter": "PGX"
+}, {
+  "id": 2004,
+  "name": "平湖市",
+  "pid": 165,
+  "letter": "PHS"
+}, {
+  "id": 2005,
+  "name": "平和县",
+  "pid": 379,
+  "letter": "PHX"
+}, {
+  "id": 2006,
+  "name": "蓬江区",
+  "pid": 160,
+  "letter": "PJQ"
+}, {
+  "id": 2007,
+  "name": "潘集区",
+  "pid": 138,
+  "letter": "PJQ"
+}, {
+  "id": 2008,
+  "name": "蒲江县",
+  "pid": 67,
+  "letter": "PJX"
+}, {
+  "id": 2009,
+  "name": "平江县",
+  "pid": 352,
+  "letter": "PJX"
+}, {
+  "id": 2010,
+  "name": "浦江县",
+  "pid": 156,
+  "letter": "PJX"
+}, {
+  "id": 2011,
+  "name": "浦口区",
+  "pid": 217,
+  "letter": "PKQ"
+}, {
+  "id": 2012,
+  "name": "普兰店区",
+  "pid": 85,
+  "letter": "PLDQ"
+}, {
+  "id": 2013,
+  "name": "盘龙区",
+  "pid": 175,
+  "letter": "PLQ"
+}, {
+  "id": 2014,
+  "name": "平鲁区",
+  "pid": 270,
+  "letter": "PLQ"
+}, {
+  "id": 2015,
+  "name": "坪林区",
+  "pid": 309,
+  "letter": "PLQ"
+}, {
+  "id": 2016,
+  "name": "蓬莱市",
+  "pid": 349,
+  "letter": "PLS"
+}, {
+  "id": 2017,
+  "name": "普兰县",
+  "pid": 38,
+  "letter": "PLX"
+}, {
+  "id": 2018,
+  "name": "平罗县",
+  "pid": 269,
+  "letter": "PLX"
+}, {
+  "id": 2019,
+  "name": "平利县",
+  "pid": 37,
+  "letter": "PLX"
+}, {
+  "id": 2020,
+  "name": "平乐县",
+  "pid": 108,
+  "letter": "PLX"
+}, {
+  "id": 2021,
+  "name": "平陆县",
+  "pid": 335,
+  "letter": "PLX"
+}, {
+  "id": 2022,
+  "name": "普宁市",
+  "pid": 168,
+  "letter": "PNS"
+}, {
+  "id": 2023,
+  "name": "平南县",
+  "pid": 106,
+  "letter": "PNX"
+}, {
+  "id": 2024,
+  "name": "屏南县",
+  "pid": 214,
+  "letter": "PNX"
+}, {
+  "id": 2025,
+  "name": "平桥区",
+  "pid": 325,
+  "letter": "PQQ"
+}, {
+  "id": 2026,
+  "name": "平泉市",
+  "pid": 69,
+  "letter": "PQS"
+}, {
+  "id": 2027,
+  "name": "彭水苗族土家族自治县",
+  "pid": 365,
+  "letter": "PSMZTJZZZX"
+}, {
+  "id": 2028,
+  "name": "彭山区",
+  "pid": 208,
+  "letter": "PSQ"
+}, {
+  "id": 2029,
+  "name": "坪山区",
+  "pid": 272,
+  "letter": "PSQ"
+}, {
+  "id": 2030,
+  "name": "平山区",
+  "pid": 59,
+  "letter": "PSQ"
+}, {
+  "id": 2031,
+  "name": "磐石市",
+  "pid": 158,
+  "letter": "PSS"
+}, {
+  "id": 2032,
+  "name": "皮山县",
+  "pid": 142,
+  "letter": "PSX"
+}, {
+  "id": 2033,
+  "name": "屏山县",
+  "pid": 333,
+  "letter": "PSX"
+}, {
+  "id": 2034,
+  "name": "平顺县",
+  "pid": 375,
+  "letter": "PSX"
+}, {
+  "id": 2035,
+  "name": "平山县",
+  "pid": 249,
+  "letter": "PSX"
+}, {
+  "id": 2036,
+  "name": "盘山县",
+  "pid": 225,
+  "letter": "PSX"
+}, {
+  "id": 2037,
+  "name": "坡头区",
+  "pid": 361,
+  "letter": "PTQ"
+}, {
+  "id": 2038,
+  "name": "普陀区",
+  "pid": 247,
+  "letter": "PTQ"
+}, {
+  "id": 2039,
+  "name": "平塘县",
+  "pid": 235,
+  "letter": "PTX"
+}, {
+  "id": 2040,
+  "name": "平潭县",
+  "pid": 104,
+  "letter": "PTX"
+}, {
+  "id": 2041,
+  "name": "平武县",
+  "pid": 209,
+  "letter": "PWX"
+}, {
+  "id": 2042,
+  "name": "凭祥市",
+  "pid": 74,
+  "letter": "PXS"
+}, {
+  "id": 2043,
+  "name": "蓬溪县",
+  "pid": 255,
+  "letter": "PXX"
+}, {
+  "id": 2044,
+  "name": "蒲县",
+  "pid": 183,
+  "letter": "PX"
+}, {
+  "id": 2045,
+  "name": "平乡县",
+  "pid": 320,
+  "letter": "PXX"
+}, {
+  "id": 2046,
+  "name": "沛县",
+  "pid": 329,
+  "letter": "PX"
+}, {
+  "id": 2047,
+  "name": "平溪区",
+  "pid": 309,
+  "letter": "PXQ"
+}, {
+  "id": 2048,
+  "name": "彭阳县",
+  "pid": 112,
+  "letter": "PYX"
+}, {
+  "id": 2049,
+  "name": "平遥县",
+  "pid": 170,
+  "letter": "PYX"
+}, {
+  "id": 2050,
+  "name": "平舆县",
+  "pid": 364,
+  "letter": "PYX"
+}, {
+  "id": 2051,
+  "name": "濮阳县",
+  "pid": 229,
+  "letter": "PYX"
+}, {
+  "id": 2052,
+  "name": "平远县",
+  "pid": 210,
+  "letter": "PYX"
+}, {
+  "id": 2053,
+  "name": "平原县",
+  "pid": 95,
+  "letter": "PYX"
+}, {
+  "id": 2054,
+  "name": "平阴县",
+  "pid": 163,
+  "letter": "PYX"
+}, {
+  "id": 2055,
+  "name": "鄱阳县",
+  "pid": 258,
+  "letter": "PYX"
+}, {
+  "id": 2056,
+  "name": "平邑县",
+  "pid": 198,
+  "letter": "PYX"
+}, {
+  "id": 2057,
+  "name": "平阳县",
+  "pid": 306,
+  "letter": "PYX"
+}, {
+  "id": 2058,
+  "name": "彭州市",
+  "pid": 67,
+  "letter": "PZS"
+}, {
+  "id": 2059,
+  "name": "盘州市",
+  "pid": 189,
+  "letter": "PZS"
+}, {
+  "id": 2060,
+  "name": "邳州市",
+  "pid": 329,
+  "letter": "PZS"
+}, {
+  "id": 2061,
+  "name": "平镇市",
+  "pid": 289,
+  "letter": "PZS"
+}, {
+  "id": 2062,
+  "name": "彭泽县",
+  "pid": 157,
+  "letter": "PZX"
+}, {
+  "id": 2063,
+  "name": "迁安市",
+  "pid": 287,
+  "letter": "QAS"
+}, {
+  "id": 2064,
+  "name": "秦安县",
+  "pid": 286,
+  "letter": "QAX"
+}, {
+  "id": 2065,
+  "name": "乾安县",
+  "pid": 267,
+  "letter": "QAX"
+}, {
+  "id": 2066,
+  "name": "庆安县",
+  "pid": 248,
+  "letter": "QAX"
+}, {
+  "id": 2067,
+  "name": "青白江区",
+  "pid": 67,
+  "letter": "QBJQ"
+}, {
+  "id": 2068,
+  "name": "钦北区",
+  "pid": 241,
+  "letter": "QBQ"
+}, {
+  "id": 2069,
+  "name": "淇滨区",
+  "pid": 119,
+  "letter": "QBQ"
+}, {
+  "id": 2070,
+  "name": "丘北县",
+  "pid": 301,
+  "letter": "QBX"
+}, {
+  "id": 2071,
+  "name": "清城区",
+  "pid": 240,
+  "letter": "QCQ"
+}, {
+  "id": 2072,
+  "name": "谯城区",
+  "pid": 64,
+  "letter": "QCQ"
+}, {
+  "id": 2073,
+  "name": "青川县",
+  "pid": 111,
+  "letter": "QCX"
+}, {
+  "id": 2074,
+  "name": "庆城县",
+  "pid": 239,
+  "letter": "QCX"
+}, {
+  "id": 2075,
+  "name": "蕲春县",
+  "pid": 126,
+  "letter": "QCX"
+}, {
+  "id": 2076,
+  "name": "秦都区",
+  "pid": 323,
+  "letter": "QDQ"
+}, {
+  "id": 2077,
+  "name": "桥东区",
+  "pid": 320,
+  "letter": "QDQ"
+}, {
+  "id": 2078,
+  "name": "茄萣区",
+  "pid": 110,
+  "letter": "QDQ"
+}, {
+  "id": 2079,
+  "name": "启东市",
+  "pid": 221,
+  "letter": "QDS"
+}, {
+  "id": 2080,
+  "name": "祁东县",
+  "pid": 144,
+  "letter": "QDX"
+}, {
+  "id": 2081,
+  "name": "前锋区",
+  "pid": 105,
+  "letter": "QFQ"
+}, {
+  "id": 2082,
+  "name": "曲阜市",
+  "pid": 162,
+  "letter": "QFS"
+}, {
+  "id": 2083,
+  "name": "清丰县",
+  "pid": 229,
+  "letter": "QFX"
+}, {
+  "id": 2084,
+  "name": "前郭尔罗斯蒙古族自治县",
+  "pid": 267,
+  "letter": "QGELSMGZZZX"
+}, {
+  "id": 2085,
+  "name": "泉港区",
+  "pid": 242,
+  "letter": "QGQ"
+}, {
+  "id": 2086,
+  "name": "七股区",
+  "pid": 284,
+  "letter": "QGQ"
+}, {
+  "id": 2087,
+  "name": "青冈县",
+  "pid": 248,
+  "letter": "QGX"
+}, {
+  "id": 2088,
+  "name": "清河门区",
+  "pid": 101,
+  "letter": "QHMQ"
+}, {
+  "id": 2089,
+  "name": "秦淮区",
+  "pid": 217,
+  "letter": "QHQ"
+}, {
+  "id": 2090,
+  "name": "清河区",
+  "pid": 283,
+  "letter": "QHQ"
+}, {
+  "id": 2091,
+  "name": "青河县",
+  "pid": 40,
+  "letter": "QHX"
+}, {
+  "id": 2092,
+  "name": "清河县",
+  "pid": 320,
+  "letter": "QHX"
+}, {
+  "id": 2093,
+  "name": "齐河县",
+  "pid": 95,
+  "letter": "QHX"
+}, {
+  "id": 2094,
+  "name": "清江浦区",
+  "pid": 117,
+  "letter": "QJPQ"
+}, {
+  "id": 2095,
+  "name": "綦江区",
+  "pid": 365,
+  "letter": "QJQ"
+}, {
+  "id": 2096,
+  "name": "黔江区",
+  "pid": 365,
+  "letter": "QJQ"
+}, {
+  "id": 2097,
+  "name": "曲江区",
+  "pid": 246,
+  "letter": "QJQ"
+}, {
+  "id": 2098,
+  "name": "衢江区",
+  "pid": 243,
+  "letter": "QJQ"
+}, {
+  "id": 2099,
+  "name": "旗津区",
+  "pid": 110,
+  "letter": "QJQ"
+}, {
+  "id": 2100,
+  "name": "前金区",
+  "pid": 110,
+  "letter": "QJQ"
+}, {
+  "id": 2101,
+  "name": "前进区",
+  "pid": 161,
+  "letter": "QJQ"
+}, {
+  "id": 2102,
+  "name": "琼结县",
+  "pid": 254,
+  "letter": "QJX"
+}, {
+  "id": 2103,
+  "name": "巧家县",
+  "pid": 370,
+  "letter": "QJX"
+}, {
+  "id": 2104,
+  "name": "清涧县",
+  "pid": 344,
+  "letter": "QJX"
+}, {
+  "id": 2105,
+  "name": "全椒县",
+  "pid": 79,
+  "letter": "QJX"
+}, {
+  "id": 2106,
+  "name": "硚口区",
+  "pid": 295,
+  "letter": "QKQ"
+}, {
+  "id": 2107,
+  "name": "七里河区",
+  "pid": 202,
+  "letter": "QLHQ"
+}, {
+  "id": 2108,
+  "name": "青龙满族自治县",
+  "pid": 233,
+  "letter": "QLMZZZX"
+}, {
+  "id": 2109,
+  "name": "麒麟区",
+  "pid": 234,
+  "letter": "QLQ"
+}, {
+  "id": 2110,
+  "name": "邛崃市",
+  "pid": 67,
+  "letter": "QLS"
+}, {
+  "id": 2111,
+  "name": "祁连县",
+  "pid": 118,
+  "letter": "QLX"
+}, {
+  "id": 2112,
+  "name": "晴隆县",
+  "pid": 238,
+  "letter": "QLX"
+}, {
+  "id": 2113,
+  "name": "清流县",
+  "pid": 251,
+  "letter": "QLX"
+}, {
+  "id": 2114,
+  "name": "曲麻莱县",
+  "pid": 347,
+  "letter": "QMLX"
+}, {
+  "id": 2115,
+  "name": "且末县",
+  "pid": 60,
+  "letter": "QMX"
+}, {
+  "id": 2116,
+  "name": "祁门县",
+  "pid": 141,
+  "letter": "QMX"
+}, {
+  "id": 2117,
+  "name": "钦南区",
+  "pid": 241,
+  "letter": "QNQ"
+}, {
+  "id": 2118,
+  "name": "全南县",
+  "pid": 116,
+  "letter": "QNX"
+}, {
+  "id": 2119,
+  "name": "青浦区",
+  "pid": 247,
+  "letter": "QPQ"
+}, {
+  "id": 2120,
+  "name": "青山湖区",
+  "pid": 213,
+  "letter": "QSHQ"
+}, {
+  "id": 2121,
+  "name": "清水河县",
+  "pid": 129,
+  "letter": "QSHX"
+}, {
+  "id": 2122,
+  "name": "青山区",
+  "pid": 58,
+  "letter": "QSQ"
+}, {
+  "id": 2123,
+  "name": "琼山区",
+  "pid": 132,
+  "letter": "QSQ"
+}, {
+  "id": 2124,
+  "name": "泉山区",
+  "pid": 329,
+  "letter": "QSQ"
+}, {
+  "id": 2125,
+  "name": "旗山区",
+  "pid": 110,
+  "letter": "QSQ"
+}, {
+  "id": 2126,
+  "name": "清水区",
+  "pid": 292,
+  "letter": "QSQ"
+}, {
+  "id": 2127,
+  "name": "千山区",
+  "pid": 44,
+  "letter": "QSQ"
+}, {
+  "id": 2128,
+  "name": "潜山市",
+  "pid": 42,
+  "letter": "QSS"
+}, {
+  "id": 2129,
+  "name": "曲水县",
+  "pid": 190,
+  "letter": "QSX"
+}, {
+  "id": 2130,
+  "name": "曲松县",
+  "pid": 254,
+  "letter": "QSX"
+}, {
+  "id": 2131,
+  "name": "青神县",
+  "pid": 208,
+  "letter": "QSX"
+}, {
+  "id": 2132,
+  "name": "清水县",
+  "pid": 286,
+  "letter": "QSX"
+}, {
+  "id": 2133,
+  "name": "岐山县",
+  "pid": 52,
+  "letter": "QSX"
+}, {
+  "id": 2134,
+  "name": "沁水县",
+  "pid": 154,
+  "letter": "QSX"
+}, {
+  "id": 2135,
+  "name": "确山县",
+  "pid": 364,
+  "letter": "QSX"
+}, {
+  "id": 2136,
+  "name": "铅山县",
+  "pid": 258,
+  "letter": "QSX"
+}, {
+  "id": 2137,
+  "name": "桥头区",
+  "pid": 110,
+  "letter": "QTQ"
+}, {
+  "id": 2138,
+  "name": "奇台县",
+  "pid": 71,
+  "letter": "QTX"
+}, {
+  "id": 2139,
+  "name": "青铜峡市",
+  "pid": 304,
+  "letter": "QTXS"
+}, {
+  "id": 2140,
+  "name": "青田县",
+  "pid": 192,
+  "letter": "QTX"
+}, {
+  "id": 2141,
+  "name": "荃湾区",
+  "pid": 313,
+  "letter": "QWQ"
+}, {
+  "id": 2142,
+  "name": "曲沃县",
+  "pid": 183,
+  "letter": "QWX"
+}, {
+  "id": 2143,
+  "name": "七星关区",
+  "pid": 51,
+  "letter": "QXGQ"
+}, {
+  "id": 2144,
+  "name": "黔西县",
+  "pid": 51,
+  "letter": "QXX"
+}, {
+  "id": 2145,
+  "name": "渠县",
+  "pid": 93,
+  "letter": "QX"
+}, {
+  "id": 2146,
+  "name": "乾县",
+  "pid": 323,
+  "letter": "QX"
+}, {
+  "id": 2147,
+  "name": "青秀区",
+  "pid": 218,
+  "letter": "QXQ"
+}, {
+  "id": 2148,
+  "name": "七星区",
+  "pid": 108,
+  "letter": "QXQ"
+}, {
+  "id": 2149,
+  "name": "清新区",
+  "pid": 240,
+  "letter": "QXQ"
+}, {
+  "id": 2150,
+  "name": "清徐县",
+  "pid": 288,
+  "letter": "QXX"
+}, {
+  "id": 2151,
+  "name": "祁县",
+  "pid": 170,
+  "letter": "QX"
+}, {
+  "id": 2152,
+  "name": "沁县",
+  "pid": 375,
+  "letter": "QX"
+}, {
+  "id": 2153,
+  "name": "淇县",
+  "pid": 119,
+  "letter": "QX"
+}, {
+  "id": 2154,
+  "name": "桥西区",
+  "pid": 320,
+  "letter": "QXQ"
+}, {
+  "id": 2155,
+  "name": "杞县",
+  "pid": 173,
+  "letter": "QX"
+}, {
+  "id": 2156,
+  "name": "邱县",
+  "pid": 123,
+  "letter": "QX"
+}, {
+  "id": 2157,
+  "name": "青县",
+  "pid": 76,
+  "letter": "QX"
+}, {
+  "id": 2158,
+  "name": "栖霞区",
+  "pid": 217,
+  "letter": "QXQ"
+}, {
+  "id": 2159,
+  "name": "栖霞市",
+  "pid": 349,
+  "letter": "QXS"
+}, {
+  "id": 2160,
+  "name": "迁西县",
+  "pid": 287,
+  "letter": "QXX"
+}, {
+  "id": 2161,
+  "name": "清原满族自治县",
+  "pid": 100,
+  "letter": "QYMZZZX"
+}, {
+  "id": 2162,
+  "name": "青云谱区",
+  "pid": 213,
+  "letter": "QYPQ"
+}, {
+  "id": 2163,
+  "name": "青羊区",
+  "pid": 67,
+  "letter": "QYQ"
+}, {
+  "id": 2164,
+  "name": "青原区",
+  "pid": 152,
+  "letter": "QYQ"
+}, {
+  "id": 2165,
+  "name": "清苑区",
+  "pid": 48,
+  "letter": "QYQ"
+}, {
+  "id": 2166,
+  "name": "沁阳市",
+  "pid": 171,
+  "letter": "QYS"
+}, {
+  "id": 2167,
+  "name": "千阳县",
+  "pid": 52,
+  "letter": "QYX"
+}, {
+  "id": 2168,
+  "name": "祁阳县",
+  "pid": 353,
+  "letter": "QYX"
+}, {
+  "id": 2169,
+  "name": "沁源县",
+  "pid": 375,
+  "letter": "QYX"
+}, {
+  "id": 2170,
+  "name": "曲阳县",
+  "pid": 48,
+  "letter": "QYX"
+}, {
+  "id": 2171,
+  "name": "庆云县",
+  "pid": 95,
+  "letter": "QYX"
+}, {
+  "id": 2172,
+  "name": "青阳县",
+  "pid": 78,
+  "letter": "QYX"
+}, {
+  "id": 2173,
+  "name": "庆元县",
+  "pid": 192,
+  "letter": "QYX"
+}, {
+  "id": 2174,
+  "name": "茄子河区",
+  "pid": 237,
+  "letter": "QZHQ"
+}, {
+  "id": 2175,
+  "name": "秦州区",
+  "pid": 286,
+  "letter": "QZQ"
+}, {
+  "id": 2176,
+  "name": "前镇区",
+  "pid": 110,
+  "letter": "QZQ"
+}, {
+  "id": 2177,
+  "name": "清镇市",
+  "pid": 113,
+  "letter": "QZS"
+}, {
+  "id": 2178,
+  "name": "青州市",
+  "pid": 293,
+  "letter": "QZS"
+}, {
+  "id": 2179,
+  "name": "全州县",
+  "pid": 108,
+  "letter": "QZX"
+}, {
+  "id": 2180,
+  "name": "曲周县",
+  "pid": 123,
+  "letter": "QZX"
+}, {
+  "id": 2181,
+  "name": "瑞安市",
+  "pid": 306,
+  "letter": "RAS"
+}, {
+  "id": 2182,
+  "name": "融安县",
+  "pid": 204,
+  "letter": "RAX"
+}, {
+  "id": 2183,
+  "name": "仁布县",
+  "pid": 244,
+  "letter": "RBX"
+}, {
+  "id": 2184,
+  "name": "荣昌区",
+  "pid": 365,
+  "letter": "RCQ"
+}, {
+  "id": 2185,
+  "name": "榕城区",
+  "pid": 168,
+  "letter": "RCQ"
+}, {
+  "id": 2186,
+  "name": "任城区",
+  "pid": 162,
+  "letter": "RCQ"
+}, {
+  "id": 2187,
+  "name": "瑞昌市",
+  "pid": 157,
+  "letter": "RCS"
+}, {
+  "id": 2188,
+  "name": "荣成市",
+  "pid": 297,
+  "letter": "RCS"
+}, {
+  "id": 2189,
+  "name": "芮城县",
+  "pid": 335,
+  "letter": "RCX"
+}, {
+  "id": 2190,
+  "name": "汝城县",
+  "pid": 75,
+  "letter": "RCX"
+}, {
+  "id": 2191,
+  "name": "容城县",
+  "pid": 48,
+  "letter": "RCX"
+}, {
+  "id": 2192,
+  "name": "仁德区",
+  "pid": 284,
+  "letter": "RDQ"
+}, {
+  "id": 2193,
+  "name": "如东县",
+  "pid": 221,
+  "letter": "RDX"
+}, {
+  "id": 2194,
+  "name": "若尔盖县",
+  "pid": 35,
+  "letter": "REGX"
+}, {
+  "id": 2195,
+  "name": "瑞芳区",
+  "pid": 309,
+  "letter": "RFQ"
+}, {
+  "id": 2196,
+  "name": "如皋市",
+  "pid": 221,
+  "letter": "RGS"
+}, {
+  "id": 2197,
+  "name": "让胡路区",
+  "pid": 87,
+  "letter": "RHLQ"
+}, {
+  "id": 2198,
+  "name": "仁和区",
+  "pid": 230,
+  "letter": "RHQ"
+}, {
+  "id": 2199,
+  "name": "仁怀市",
+  "pid": 374,
+  "letter": "RHS"
+}, {
+  "id": 2200,
+  "name": "仁化县",
+  "pid": 246,
+  "letter": "RHX"
+}, {
+  "id": 2201,
+  "name": "饶河县",
+  "pid": 268,
+  "letter": "RHX"
+}, {
+  "id": 2202,
+  "name": "瑞金市",
+  "pid": 116,
+  "letter": "RJS"
+}, {
+  "id": 2203,
+  "name": "榕江县",
+  "pid": 231,
+  "letter": "RJX"
+}, {
+  "id": 2204,
+  "name": "瑞丽市",
+  "pid": 83,
+  "letter": "RLS"
+}, {
+  "id": 2205,
+  "name": "汝南县",
+  "pid": 364,
+  "letter": "RNX"
+}, {
+  "id": 2206,
+  "name": "饶平县",
+  "pid": 77,
+  "letter": "RPX"
+}, {
+  "id": 2207,
+  "name": "任丘市",
+  "pid": 76,
+  "letter": "RQS"
+}, {
+  "id": 2208,
+  "name": "若羌县",
+  "pid": 60,
+  "letter": "RQX"
+}, {
+  "id": 2209,
+  "name": "融水苗族自治县",
+  "pid": 204,
+  "letter": "RSMZZZX"
+}, {
+  "id": 2210,
+  "name": "乳山市",
+  "pid": 297,
+  "letter": "RSS"
+}, {
+  "id": 2211,
+  "name": "仁寿县",
+  "pid": 208,
+  "letter": "RSX"
+}, {
+  "id": 2212,
+  "name": "日土县",
+  "pid": 38,
+  "letter": "RTX"
+}, {
+  "id": 2213,
+  "name": "壤塘县",
+  "pid": 35,
+  "letter": "RTX"
+}, {
+  "id": 2214,
+  "name": "仁武区",
+  "pid": 110,
+  "letter": "RWQ"
+}, {
+  "id": 2215,
+  "name": "荣县",
+  "pid": 357,
+  "letter": "RX"
+}, {
+  "id": 2216,
+  "name": "容县",
+  "pid": 345,
+  "letter": "RX"
+}, {
+  "id": 2217,
+  "name": "任县",
+  "pid": 320,
+  "letter": "RX"
+}, {
+  "id": 2218,
+  "name": "汝阳县",
+  "pid": 196,
+  "letter": "RYX"
+}, {
+  "id": 2219,
+  "name": "饶阳县",
+  "pid": 140,
+  "letter": "RYX"
+}, {
+  "id": 2220,
+  "name": "乳源瑶族自治县",
+  "pid": 246,
+  "letter": "RYYZZZX"
+}, {
+  "id": 2221,
+  "name": "润州区",
+  "pid": 362,
+  "letter": "RZQ"
+}, {
+  "id": 2222,
+  "name": "汝州市",
+  "pid": 223,
+  "letter": "RZS"
+}, {
+  "id": 2223,
+  "name": "肃北蒙古族自治县",
+  "pid": 164,
+  "letter": "SBMGZZZX"
+}, {
+  "id": 2224,
+  "name": "市北区",
+  "pid": 232,
+  "letter": "SBQ"
+}, {
+  "id": 2225,
+  "name": "松北区",
+  "pid": 124,
+  "letter": "SBQ"
+}, {
+  "id": 2226,
+  "name": "双柏县",
+  "pid": 72,
+  "letter": "SBX"
+}, {
+  "id": 2227,
+  "name": "施秉县",
+  "pid": 231,
+  "letter": "SBX"
+}, {
+  "id": 2228,
+  "name": "沈北新区",
+  "pid": 266,
+  "letter": "SBXQ"
+}, {
+  "id": 2229,
+  "name": "绥滨县",
+  "pid": 127,
+  "letter": "SBX"
+}, {
+  "id": 2230,
+  "name": "朔城区",
+  "pid": 270,
+  "letter": "SCQ"
+}, {
+  "id": 2231,
+  "name": "山城区",
+  "pid": 119,
+  "letter": "SCQ"
+}, {
+  "id": 2232,
+  "name": "上城区",
+  "pid": 150,
+  "letter": "SCQ"
+}, {
+  "id": 2233,
+  "name": "顺城区",
+  "pid": 100,
+  "letter": "SCQ"
+}, {
+  "id": 2234,
+  "name": "双城区",
+  "pid": 124,
+  "letter": "SCQ"
+}, {
+  "id": 2235,
+  "name": "莎车县",
+  "pid": 176,
+  "letter": "SCX"
+}, {
+  "id": 2236,
+  "name": "水城县",
+  "pid": 189,
+  "letter": "SCX"
+}, {
+  "id": 2237,
+  "name": "神池县",
+  "pid": 327,
+  "letter": "SCX"
+}, {
+  "id": 2238,
+  "name": "遂川县",
+  "pid": 152,
+  "letter": "SCX"
+}, {
+  "id": 2239,
+  "name": "上蔡县",
+  "pid": 364,
+  "letter": "SCX"
+}, {
+  "id": 2240,
+  "name": "商城县",
+  "pid": 325,
+  "letter": "SCX"
+}, {
+  "id": 2241,
+  "name": "石城县",
+  "pid": 116,
+  "letter": "SCX"
+}, {
+  "id": 2242,
+  "name": "舒城县",
+  "pid": 178,
+  "letter": "SCX"
+}, {
+  "id": 2243,
+  "name": "顺昌县",
+  "pid": 219,
+  "letter": "SCX"
+}, {
+  "id": 2244,
+  "name": "遂昌县",
+  "pid": 192,
+  "letter": "SCX"
+}, {
+  "id": 2245,
+  "name": "上党区",
+  "pid": 375,
+  "letter": "SDQ"
+}, {
+  "id": 2246,
+  "name": "顺德区",
+  "pid": 56,
+  "letter": "SDQ"
+}, {
+  "id": 2247,
+  "name": "石碇区",
+  "pid": 309,
+  "letter": "SDQ"
+}, {
+  "id": 2248,
+  "name": "三都水族自治县",
+  "pid": 235,
+  "letter": "SDSZZZX"
+}, {
+  "id": 2249,
+  "name": "邵东市",
+  "pid": 265,
+  "letter": "SDS"
+}, {
+  "id": 2250,
+  "name": "施甸县",
+  "pid": 54,
+  "letter": "SDX"
+}, {
+  "id": 2251,
+  "name": "色达县",
+  "pid": 114,
+  "letter": "SDX"
+}, {
+  "id": 2252,
+  "name": "山丹县",
+  "pid": 372,
+  "letter": "SDX"
+}, {
+  "id": 2253,
+  "name": "绥德县",
+  "pid": 344,
+  "letter": "SDX"
+}, {
+  "id": 2254,
+  "name": "商都县",
+  "pid": 298,
+  "letter": "SDX"
+}, {
+  "id": 2255,
+  "name": "萨尔图区",
+  "pid": 87,
+  "letter": "SETQ"
+}, {
+  "id": 2256,
+  "name": "绥芬河市",
+  "pid": 206,
+  "letter": "SFHS"
+}, {
+  "id": 2257,
+  "name": "圣方济各堂区",
+  "pid": 41,
+  "letter": "SFJGTQ"
+}, {
+  "id": 2258,
+  "name": "石峰区",
+  "pid": 377,
+  "letter": "SFQ"
+}, {
+  "id": 2259,
+  "name": "什邡市",
+  "pid": 91,
+  "letter": "SFS"
+}, {
+  "id": 2260,
+  "name": "水富市",
+  "pid": 370,
+  "letter": "SFS"
+}, {
+  "id": 2261,
+  "name": "四方台区",
+  "pid": 268,
+  "letter": "SFTQ"
+}, {
+  "id": 2262,
+  "name": "疏附县",
+  "pid": 176,
+  "letter": "SFX"
+}, {
+  "id": 2263,
+  "name": "双峰县",
+  "pid": 182,
+  "letter": "SFX"
+}, {
+  "id": 2264,
+  "name": "上甘岭区",
+  "pid": 339,
+  "letter": "SGLQ"
+}, {
+  "id": 2265,
+  "name": "石拐区",
+  "pid": 58,
+  "letter": "SGQ"
+}, {
+  "id": 2266,
+  "name": "石鼓区",
+  "pid": 144,
+  "letter": "SGQ"
+}, {
+  "id": 2267,
+  "name": "神冈区",
+  "pid": 292,
+  "letter": "SGQ"
+}, {
+  "id": 2268,
+  "name": "石冈区",
+  "pid": 292,
+  "letter": "SGQ"
+}, {
+  "id": 2269,
+  "name": "寿光市",
+  "pid": 293,
+  "letter": "SGS"
+}, {
+  "id": 2270,
+  "name": "萨嘎县",
+  "pid": 244,
+  "letter": "SGX"
+}, {
+  "id": 2271,
+  "name": "上高县",
+  "pid": 337,
+  "letter": "SGX"
+}, {
+  "id": 2272,
+  "name": "山海关区",
+  "pid": 233,
+  "letter": "SHGQ"
+}, {
+  "id": 2273,
+  "name": "顺河回族区",
+  "pid": 173,
+  "letter": "SHHZQ"
+}, {
+  "id": 2274,
+  "name": "沙河口区",
+  "pid": 85,
+  "letter": "SHKQ"
+}, {
+  "id": 2275,
+  "name": "赛罕区",
+  "pid": 129,
+  "letter": "SHQ"
+}, {
+  "id": 2276,
+  "name": "浉河区",
+  "pid": 325,
+  "letter": "SHQ"
+}, {
+  "id": 2277,
+  "name": "善化区",
+  "pid": 284,
+  "letter": "SHQ"
+}, {
+  "id": 2278,
+  "name": "沈河区",
+  "pid": 266,
+  "letter": "SHQ"
+}, {
+  "id": 2279,
+  "name": "射洪市",
+  "pid": 255,
+  "letter": "SHS"
+}, {
+  "id": 2280,
+  "name": "四会市",
+  "pid": 366,
+  "letter": "SHS"
+}, {
+  "id": 2281,
+  "name": "沙河市",
+  "pid": 320,
+  "letter": "SHS"
+}, {
+  "id": 2282,
+  "name": "三河市",
+  "pid": 184,
+  "letter": "SHS"
+}, {
+  "id": 2283,
+  "name": "双湖县",
+  "pid": 220,
+  "letter": "SHX"
+}, {
+  "id": 2284,
+  "name": "上杭县",
+  "pid": 197,
+  "letter": "SHX"
+}, {
+  "id": 2285,
+  "name": "商河县",
+  "pid": 163,
+  "letter": "SHX"
+}, {
+  "id": 2286,
+  "name": "泗洪县",
+  "pid": 317,
+  "letter": "SHX"
+}, {
+  "id": 2287,
+  "name": "三江侗族自治县",
+  "pid": 204,
+  "letter": "SJDZZZX"
+}, {
+  "id": 2288,
+  "name": "双江拉祜族佤族布朗族傣族自治县",
+  "pid": 180,
+  "letter": "SJLHZWZBLZDZZZX"
+}, {
+  "id": 2289,
+  "name": "上街区",
+  "pid": 376,
+  "letter": "SJQ"
+}, {
+  "id": 2290,
+  "name": "松江区",
+  "pid": 247,
+  "letter": "SJQ"
+}, {
+  "id": 2291,
+  "name": "石景山区",
+  "pid": 53,
+  "letter": "SJSQ"
+}, {
+  "id": 2292,
+  "name": "苏家屯区",
+  "pid": 266,
+  "letter": "SJTQ"
+}, {
+  "id": 2293,
+  "name": "萨迦县",
+  "pid": 244,
+  "letter": "SJX"
+}, {
+  "id": 2294,
+  "name": "绥江县",
+  "pid": 370,
+  "letter": "SJX"
+}, {
+  "id": 2295,
+  "name": "深坑区",
+  "pid": 309,
+  "letter": "SKQ"
+}, {
+  "id": 2296,
+  "name": "双流区",
+  "pid": 67,
+  "letter": "SLQ"
+}, {
+  "id": 2297,
+  "name": "石龙区",
+  "pid": 223,
+  "letter": "SLQ"
+}, {
+  "id": 2298,
+  "name": "双滦区",
+  "pid": 69,
+  "letter": "SLQ"
+}, {
+  "id": 2299,
+  "name": "杉林区",
+  "pid": 110,
+  "letter": "SLQ"
+}, {
+  "id": 2300,
+  "name": "沙鹿区",
+  "pid": 292,
+  "letter": "SLQ"
+}, {
+  "id": 2301,
+  "name": "树林区",
+  "pid": 309,
+  "letter": "SLQ"
+}, {
+  "id": 2302,
+  "name": "士林区",
+  "pid": 275,
+  "letter": "SLQ"
+}, {
+  "id": 2303,
+  "name": "双辽市",
+  "pid": 256,
+  "letter": "SLS"
+}, {
+  "id": 2304,
+  "name": "舒兰市",
+  "pid": 158,
+  "letter": "SLS"
+}, {
+  "id": 2305,
+  "name": "疏勒县",
+  "pid": 176,
+  "letter": "SLX"
+}, {
+  "id": 2306,
+  "name": "上林县",
+  "pid": 218,
+  "letter": "SLX"
+}, {
+  "id": 2307,
+  "name": "石楼县",
+  "pid": 187,
+  "letter": "SLX"
+}, {
+  "id": 2308,
+  "name": "上栗县",
+  "pid": 228,
+  "letter": "SLX"
+}, {
+  "id": 2309,
+  "name": "绥棱县",
+  "pid": 248,
+  "letter": "SLX"
+}, {
+  "id": 2310,
+  "name": "石林彝族自治县",
+  "pid": 175,
+  "letter": "SLYZZZX"
+}, {
+  "id": 2311,
+  "name": "水磨沟区",
+  "pid": 299,
+  "letter": "SMGQ"
+}, {
+  "id": 2312,
+  "name": "思茅区",
+  "pid": 224,
+  "letter": "SMQ"
+}, {
+  "id": 2313,
+  "name": "思明区",
+  "pid": 252,
+  "letter": "SMQ"
+}, {
+  "id": 2314,
+  "name": "三民区",
+  "pid": 110,
+  "letter": "SMQ"
+}, {
+  "id": 2315,
+  "name": "石门区",
+  "pid": 309,
+  "letter": "SMQ"
+}, {
+  "id": 2316,
+  "name": "神木市",
+  "pid": 344,
+  "letter": "SMS"
+}, {
+  "id": 2317,
+  "name": "石棉县",
+  "pid": 330,
+  "letter": "SMX"
+}, {
+  "id": 2318,
+  "name": "嵩明县",
+  "pid": 175,
+  "letter": "SMX"
+}, {
+  "id": 2319,
+  "name": "石门县",
+  "pid": 68,
+  "letter": "SMX"
+}, {
+  "id": 2320,
+  "name": "三门县",
+  "pid": 291,
+  "letter": "SMX"
+}, {
+  "id": 2321,
+  "name": "色尼区",
+  "pid": 220,
+  "letter": "SNQ"
+}, {
+  "id": 2322,
+  "name": "市南区",
+  "pid": 232,
+  "letter": "SNQ"
+}, {
+  "id": 2323,
+  "name": "苏尼特右旗",
+  "pid": 314,
+  "letter": "SNTYQ"
+}, {
+  "id": 2324,
+  "name": "苏尼特左旗",
+  "pid": 314,
+  "letter": "SNTZQ"
+}, {
+  "id": 2325,
+  "name": "思南县",
+  "pid": 285,
+  "letter": "SNX"
+}, {
+  "id": 2326,
+  "name": "绥宁县",
+  "pid": 265,
+  "letter": "SNX"
+}, {
+  "id": 2327,
+  "name": "商南县",
+  "pid": 250,
+  "letter": "SNX"
+}, {
+  "id": 2328,
+  "name": "肃宁县",
+  "pid": 76,
+  "letter": "SNX"
+}, {
+  "id": 2329,
+  "name": "睢宁县",
+  "pid": 329,
+  "letter": "SNX"
+}, {
+  "id": 2330,
+  "name": "寿宁县",
+  "pid": 214,
+  "letter": "SNX"
+}, {
+  "id": 2331,
+  "name": "肃南裕固族自治县",
+  "pid": 372,
+  "letter": "SNYGZZZX"
+}, {
+  "id": 2332,
+  "name": "沙坪坝区",
+  "pid": 365,
+  "letter": "SPBQ"
+}, {
+  "id": 2333,
+  "name": "沙坡头区",
+  "pid": 371,
+  "letter": "SPTQ"
+}, {
+  "id": 2334,
+  "name": "石屏县",
+  "pid": 128,
+  "letter": "SPX"
+}, {
+  "id": 2335,
+  "name": "松潘县",
+  "pid": 35,
+  "letter": "SPX"
+}, {
+  "id": 2336,
+  "name": "双牌县",
+  "pid": 353,
+  "letter": "SPX"
+}, {
+  "id": 2337,
+  "name": "遂平县",
+  "pid": 364,
+  "letter": "SPX"
+}, {
+  "id": 2338,
+  "name": "顺平县",
+  "pid": 48,
+  "letter": "SPX"
+}, {
+  "id": 2339,
+  "name": "顺庆区",
+  "pid": 212,
+  "letter": "SQQ"
+}, {
+  "id": 2340,
+  "name": "双清区",
+  "pid": 265,
+  "letter": "SQQ"
+}, {
+  "id": 2341,
+  "name": "双桥区",
+  "pid": 69,
+  "letter": "SQQ"
+}, {
+  "id": 2342,
+  "name": "石渠县",
+  "pid": 114,
+  "letter": "SQX"
+}, {
+  "id": 2343,
+  "name": "石阡县",
+  "pid": 285,
+  "letter": "SQX"
+}, {
+  "id": 2344,
+  "name": "石泉县",
+  "pid": 37,
+  "letter": "SQX"
+}, {
+  "id": 2345,
+  "name": "社旗县",
+  "pid": 222,
+  "letter": "SQX"
+}, {
+  "id": 2346,
+  "name": "沈丘县",
+  "pid": 363,
+  "letter": "SQX"
+}, {
+  "id": 2347,
+  "name": "桑日县",
+  "pid": 254,
+  "letter": "SRX"
+}, {
+  "id": 2348,
+  "name": "深水埗区",
+  "pid": 313,
+  "letter": "SSBQ"
+}, {
+  "id": 2349,
+  "name": "沙市区",
+  "pid": 169,
+  "letter": "SSQ"
+}, {
+  "id": 2350,
+  "name": "三水区",
+  "pid": 56,
+  "letter": "SSQ"
+}, {
+  "id": 2351,
+  "name": "蜀山区",
+  "pid": 125,
+  "letter": "SSQ"
+}, {
+  "id": 2352,
+  "name": "松山区",
+  "pid": 70,
+  "letter": "SSQ"
+}, {
+  "id": 2353,
+  "name": "三山区",
+  "pid": 296,
+  "letter": "SSQ"
+}, {
+  "id": 2354,
+  "name": "山上区",
+  "pid": 284,
+  "letter": "SSQ"
+}, {
+  "id": 2355,
+  "name": "石首市",
+  "pid": 169,
+  "letter": "SSS"
+}, {
+  "id": 2356,
+  "name": "韶山市",
+  "pid": 319,
+  "letter": "SSS"
+}, {
+  "id": 2357,
+  "name": "石狮市",
+  "pid": 242,
+  "letter": "SSS"
+}, {
+  "id": 2358,
+  "name": "鄯善县",
+  "pid": 280,
+  "letter": "SSX"
+}, {
+  "id": 2359,
+  "name": "上思县",
+  "pid": 99,
+  "letter": "SSX"
+}, {
+  "id": 2360,
+  "name": "三穗县",
+  "pid": 231,
+  "letter": "SSX"
+}, {
+  "id": 2361,
+  "name": "商水县",
+  "pid": 363,
+  "letter": "SSX"
+}, {
+  "id": 2362,
+  "name": "泗水县",
+  "pid": 162,
+  "letter": "SSX"
+}, {
+  "id": 2363,
+  "name": "嵊泗县",
+  "pid": 369,
+  "letter": "SSX"
+}, {
+  "id": 2364,
+  "name": "松桃苗族自治县",
+  "pid": 285,
+  "letter": "STMZZZX"
+}, {
+  "id": 2365,
+  "name": "沙田区",
+  "pid": 313,
+  "letter": "STQ"
+}, {
+  "id": 2366,
+  "name": "山亭区",
+  "pid": 378,
+  "letter": "STQ"
+}, {
+  "id": 2367,
+  "name": "双塔区",
+  "pid": 73,
+  "letter": "STQ"
+}, {
+  "id": 2368,
+  "name": "三台县",
+  "pid": 209,
+  "letter": "STX"
+}, {
+  "id": 2369,
+  "name": "石台县",
+  "pid": 78,
+  "letter": "STX"
+}, {
+  "id": 2370,
+  "name": "双台子区",
+  "pid": 225,
+  "letter": "STZQ"
+}, {
+  "id": 2371,
+  "name": "沙湾区",
+  "pid": 191,
+  "letter": "SWQ"
+}, {
+  "id": 2372,
+  "name": "邵武市",
+  "pid": 219,
+  "letter": "SWS"
+}, {
+  "id": 2373,
+  "name": "沙湾县",
+  "pid": 276,
+  "letter": "SWX"
+}, {
+  "id": 2374,
+  "name": "孙吴县",
+  "pid": 131,
+  "letter": "SWX"
+}, {
+  "id": 2375,
+  "name": "索县",
+  "pid": 220,
+  "letter": "SX"
+}, {
+  "id": 2376,
+  "name": "嵩县",
+  "pid": 196,
+  "letter": "SX"
+}, {
+  "id": 2377,
+  "name": "随县",
+  "pid": 271,
+  "letter": "SX"
+}, {
+  "id": 2378,
+  "name": "苏仙区",
+  "pid": 75,
+  "letter": "SXQ"
+}, {
+  "id": 2379,
+  "name": "遂溪县",
+  "pid": 361,
+  "letter": "SXX"
+}, {
+  "id": 2380,
+  "name": "涉县",
+  "pid": 123,
+  "letter": "SX"
+}, {
+  "id": 2381,
+  "name": "始兴县",
+  "pid": 246,
+  "letter": "SXX"
+}, {
+  "id": 2382,
+  "name": "睢县",
+  "pid": 257,
+  "letter": "SX"
+}, {
+  "id": 2383,
+  "name": "莘县",
+  "pid": 181,
+  "letter": "SX"
+}, {
+  "id": 2384,
+  "name": "濉溪县",
+  "pid": 120,
+  "letter": "SXX"
+}, {
+  "id": 2385,
+  "name": "寿县",
+  "pid": 138,
+  "letter": "SX"
+}, {
+  "id": 2386,
+  "name": "沙县",
+  "pid": 251,
+  "letter": "SX"
+}, {
+  "id": 2387,
+  "name": "泗县",
+  "pid": 328,
+  "letter": "SX"
+}, {
+  "id": 2388,
+  "name": "三峡区",
+  "pid": 309,
+  "letter": "SXQ"
+}, {
+  "id": 2389,
+  "name": "双溪区",
+  "pid": 309,
+  "letter": "SXQ"
+}, {
+  "id": 2390,
+  "name": "松溪县",
+  "pid": 219,
+  "letter": "SXX"
+}, {
+  "id": 2391,
+  "name": "沙依巴克区",
+  "pid": 299,
+  "letter": "SYBKQ"
+}, {
+  "id": 2392,
+  "name": "山阳区",
+  "pid": 171,
+  "letter": "SYQ"
+}, {
+  "id": 2393,
+  "name": "睢阳区",
+  "pid": 257,
+  "letter": "SYQ"
+}, {
+  "id": 2394,
+  "name": "顺义区",
+  "pid": 53,
+  "letter": "SYQ"
+}, {
+  "id": 2395,
+  "name": "三元区",
+  "pid": 251,
+  "letter": "SYQ"
+}, {
+  "id": 2396,
+  "name": "上虞区",
+  "pid": 262,
+  "letter": "SYQ"
+}, {
+  "id": 2397,
+  "name": "双阳区",
+  "pid": 356,
+  "letter": "SYQ"
+}, {
+  "id": 2398,
+  "name": "沙雅县",
+  "pid": 36,
+  "letter": "SYX"
+}, {
+  "id": 2399,
+  "name": "绥阳县",
+  "pid": 374,
+  "letter": "SYX"
+}, {
+  "id": 2400,
+  "name": "三原县",
+  "pid": 323,
+  "letter": "SYX"
+}, {
+  "id": 2401,
+  "name": "山阳县",
+  "pid": 250,
+  "letter": "SYX"
+}, {
+  "id": 2402,
+  "name": "邵阳县",
+  "pid": 265,
+  "letter": "SYX"
+}, {
+  "id": 2403,
+  "name": "沙洋县",
+  "pid": 159,
+  "letter": "SYX"
+}, {
+  "id": 2404,
+  "name": "山阴县",
+  "pid": 270,
+  "letter": "SYX"
+}, {
+  "id": 2405,
+  "name": "寿阳县",
+  "pid": 170,
+  "letter": "SYX"
+}, {
+  "id": 2406,
+  "name": "尚义县",
+  "pid": 360,
+  "letter": "SYX"
+}, {
+  "id": 2407,
+  "name": "上犹县",
+  "pid": 116,
+  "letter": "SYX"
+}, {
+  "id": 2408,
+  "name": "沭阳县",
+  "pid": 317,
+  "letter": "SYX"
+}, {
+  "id": 2409,
+  "name": "泗阳县",
+  "pid": 317,
+  "letter": "SYX"
+}, {
+  "id": 2410,
+  "name": "松阳县",
+  "pid": 192,
+  "letter": "SYX"
+}, {
+  "id": 2411,
+  "name": "射阳县",
+  "pid": 338,
+  "letter": "SYX"
+}, {
+  "id": 2412,
+  "name": "苏州工业园区",
+  "pid": 273,
+  "letter": "SZGYYQ"
+}, {
+  "id": 2413,
+  "name": "肃州区",
+  "pid": 164,
+  "letter": "SZQ"
+}, {
+  "id": 2414,
+  "name": "市中区",
+  "pid": 191,
+  "letter": "SZQ"
+}, {
+  "id": 2415,
+  "name": "商州区",
+  "pid": 250,
+  "letter": "SZQ"
+}, {
+  "id": 2416,
+  "name": "陕州区",
+  "pid": 253,
+  "letter": "SZQ"
+}, {
+  "id": 2417,
+  "name": "三芝区",
+  "pid": 309,
+  "letter": "SZQ"
+}, {
+  "id": 2418,
+  "name": "三重区",
+  "pid": 309,
+  "letter": "SZQ"
+}, {
+  "id": 2419,
+  "name": "松滋市",
+  "pid": 169,
+  "letter": "SZS"
+}, {
+  "id": 2420,
+  "name": "深州市",
+  "pid": 140,
+  "letter": "SZS"
+}, {
+  "id": 2421,
+  "name": "嵊州市",
+  "pid": 262,
+  "letter": "SZS"
+}, {
+  "id": 2422,
+  "name": "尚志市",
+  "pid": 124,
+  "letter": "SZS"
+}, {
+  "id": 2423,
+  "name": "石柱土家族自治县",
+  "pid": 365,
+  "letter": "SZTJZZZX"
+}, {
+  "id": 2424,
+  "name": "四子王旗",
+  "pid": 298,
+  "letter": "SZWQ"
+}, {
+  "id": 2425,
+  "name": "申扎县",
+  "pid": 220,
+  "letter": "SZX"
+}, {
+  "id": 2426,
+  "name": "师宗县",
+  "pid": 234,
+  "letter": "SZX"
+}, {
+  "id": 2427,
+  "name": "桑植县",
+  "pid": 359,
+  "letter": "SZX"
+}, {
+  "id": 2428,
+  "name": "深泽县",
+  "pid": 249,
+  "letter": "SZX"
+}, {
+  "id": 2429,
+  "name": "绥中县",
+  "pid": 134,
+  "letter": "SZX"
+}, {
+  "id": 2430,
+  "name": "桑珠孜区",
+  "pid": 244,
+  "letter": "SZZQ"
+}, {
+  "id": 2431,
+  "name": "同安区",
+  "pid": 252,
+  "letter": "TAQ"
+}, {
+  "id": 2432,
+  "name": "台安县",
+  "pid": 44,
+  "letter": "TAX"
+}, {
+  "id": 2433,
+  "name": "洮北区",
+  "pid": 47,
+  "letter": "TBQ"
+}, {
+  "id": 2434,
+  "name": "调兵山市",
+  "pid": 283,
+  "letter": "TBSS"
+}, {
+  "id": 2435,
+  "name": "太白县",
+  "pid": 52,
+  "letter": "TBX"
+}, {
+  "id": 2436,
+  "name": "桐柏县",
+  "pid": 222,
+  "letter": "TBX"
+}, {
+  "id": 2437,
+  "name": "通川区",
+  "pid": 93,
+  "letter": "TCQ"
+}, {
+  "id": 2438,
+  "name": "桃城区",
+  "pid": 140,
+  "letter": "TCQ"
+}, {
+  "id": 2439,
+  "name": "土城区",
+  "pid": 309,
+  "letter": "TCQ"
+}, {
+  "id": 2440,
+  "name": "塔城市",
+  "pid": 276,
+  "letter": "TCS"
+}, {
+  "id": 2441,
+  "name": "腾冲市",
+  "pid": 54,
+  "letter": "TCS"
+}, {
+  "id": 2442,
+  "name": "桐城市",
+  "pid": 42,
+  "letter": "TCS"
+}, {
+  "id": 2443,
+  "name": "太仓市",
+  "pid": 273,
+  "letter": "TCS"
+}, {
+  "id": 2444,
+  "name": "通城县",
+  "pid": 316,
+  "letter": "TCX"
+}, {
+  "id": 2445,
+  "name": "郯城县",
+  "pid": 198,
+  "letter": "TCX"
+}, {
+  "id": 2446,
+  "name": "通道侗族自治县",
+  "pid": 130,
+  "letter": "TDDZZZX"
+}, {
+  "id": 2447,
+  "name": "铁东区",
+  "pid": 44,
+  "letter": "TDQ"
+}, {
+  "id": 2448,
+  "name": "同德县",
+  "pid": 136,
+  "letter": "TDX"
+}, {
+  "id": 2449,
+  "name": "天等县",
+  "pid": 74,
+  "letter": "TDX"
+}, {
+  "id": 2450,
+  "name": "田东县",
+  "pid": 55,
+  "letter": "TDX"
+}, {
+  "id": 2451,
+  "name": "天峨县",
+  "pid": 121,
+  "letter": "TEX"
+}, {
+  "id": 2452,
+  "name": "台儿庄区",
+  "pid": 378,
+  "letter": "TEZQ"
+}, {
+  "id": 2453,
+  "name": "铁锋区",
+  "pid": 236,
+  "letter": "TFQ"
+}, {
+  "id": 2454,
+  "name": "团风县",
+  "pid": 126,
+  "letter": "TFX"
+}, {
+  "id": 2455,
+  "name": "太谷区",
+  "pid": 170,
+  "letter": "TGQ"
+}, {
+  "id": 2456,
+  "name": "铜官区",
+  "pid": 281,
+  "letter": "TGQ"
+}, {
+  "id": 2457,
+  "name": "潼关县",
+  "pid": 300,
+  "letter": "TGX"
+}, {
+  "id": 2458,
+  "name": "铜鼓县",
+  "pid": 337,
+  "letter": "TGX"
+}, {
+  "id": 2459,
+  "name": "天河区",
+  "pid": 115,
+  "letter": "THQ"
+}, {
+  "id": 2460,
+  "name": "亭湖区",
+  "pid": 338,
+  "letter": "THQ"
+}, {
+  "id": 2461,
+  "name": "太和区",
+  "pid": 172,
+  "letter": "THQ"
+}, {
+  "id": 2462,
+  "name": "通海县",
+  "pid": 350,
+  "letter": "THX"
+}, {
+  "id": 2463,
+  "name": "唐河县",
+  "pid": 222,
+  "letter": "THX"
+}, {
+  "id": 2464,
+  "name": "泰和县",
+  "pid": 152,
+  "letter": "THX"
+}, {
+  "id": 2465,
+  "name": "太和县",
+  "pid": 102,
+  "letter": "THX"
+}, {
+  "id": 2466,
+  "name": "太湖县",
+  "pid": 42,
+  "letter": "THX"
+}, {
+  "id": 2467,
+  "name": "塔河县",
+  "pid": 89,
+  "letter": "THX"
+}, {
+  "id": 2468,
+  "name": "通化县",
+  "pid": 278,
+  "letter": "THX"
+}, {
+  "id": 2469,
+  "name": "通河县",
+  "pid": 124,
+  "letter": "THX"
+}, {
+  "id": 2470,
+  "name": "田家庵区",
+  "pid": 138,
+  "letter": "TJAQ"
+}, {
+  "id": 2471,
+  "name": "台江区",
+  "pid": 104,
+  "letter": "TJQ"
+}, {
+  "id": 2472,
+  "name": "同江市",
+  "pid": 161,
+  "letter": "TJS"
+}, {
+  "id": 2473,
+  "name": "天峻县",
+  "pid": 143,
+  "letter": "TJX"
+}, {
+  "id": 2474,
+  "name": "通江县",
+  "pid": 63,
+  "letter": "TJX"
+}, {
+  "id": 2475,
+  "name": "台江县",
+  "pid": 231,
+  "letter": "TJX"
+}, {
+  "id": 2476,
+  "name": "桃江县",
+  "pid": 351,
+  "letter": "TJX"
+}, {
+  "id": 2477,
+  "name": "特克斯县",
+  "pid": 343,
+  "letter": "TKSX"
+}, {
+  "id": 2478,
+  "name": "托克托县",
+  "pid": 129,
+  "letter": "TKTX"
+}, {
+  "id": 2479,
+  "name": "托克逊县",
+  "pid": 280,
+  "letter": "TKXX"
+}, {
+  "id": 2480,
+  "name": "太康县",
+  "pid": 363,
+  "letter": "TKX"
+}, {
+  "id": 2481,
+  "name": "铜梁区",
+  "pid": 365,
+  "letter": "TLQ"
+}, {
+  "id": 2482,
+  "name": "屯留区",
+  "pid": 375,
+  "letter": "TLQ"
+}, {
+  "id": 2483,
+  "name": "田寮区",
+  "pid": 110,
+  "letter": "TLQ"
+}, {
+  "id": 2484,
+  "name": "铁力市",
+  "pid": 339,
+  "letter": "TLS"
+}, {
+  "id": 2485,
+  "name": "托里县",
+  "pid": 276,
+  "letter": "TLX"
+}, {
+  "id": 2486,
+  "name": "田林县",
+  "pid": 55,
+  "letter": "TLX"
+}, {
+  "id": 2487,
+  "name": "桐庐县",
+  "pid": 150,
+  "letter": "TLX"
+}, {
+  "id": 2488,
+  "name": "泰来县",
+  "pid": 236,
+  "letter": "TLX"
+}, {
+  "id": 2489,
+  "name": "铁岭县",
+  "pid": 283,
+  "letter": "TLX"
+}, {
+  "id": 2490,
+  "name": "屯门区",
+  "pid": 313,
+  "letter": "TMQ"
+}, {
+  "id": 2491,
+  "name": "图们市",
+  "pid": 332,
+  "letter": "TMS"
+}, {
+  "id": 2492,
+  "name": "土默特右旗",
+  "pid": 58,
+  "letter": "TMTYQ"
+}, {
+  "id": 2493,
+  "name": "土默特左旗",
+  "pid": 129,
+  "letter": "TMTZQ"
+}, {
+  "id": 2494,
+  "name": "潼南区",
+  "pid": 365,
+  "letter": "TNQ"
+}, {
+  "id": 2495,
+  "name": "天宁区",
+  "pid": 80,
+  "letter": "TNQ"
+}, {
+  "id": 2496,
+  "name": "洮南市",
+  "pid": 47,
+  "letter": "TNS"
+}, {
+  "id": 2497,
+  "name": "泰宁县",
+  "pid": 251,
+  "letter": "TNX"
+}, {
+  "id": 2498,
+  "name": "太平区",
+  "pid": 292,
+  "letter": "TPQ"
+}, {
+  "id": 2499,
+  "name": "太仆寺旗",
+  "pid": 314,
+  "letter": "TPSQ"
+}, {
+  "id": 2500,
+  "name": "天桥区",
+  "pid": 163,
+  "letter": "TQQ"
+}, {
+  "id": 2501,
+  "name": "天全县",
+  "pid": 330,
+  "letter": "TQX"
+}, {
+  "id": 2502,
+  "name": "台前县",
+  "pid": 229,
+  "letter": "TQX"
+}, {
+  "id": 2503,
+  "name": "突泉县",
+  "pid": 307,
+  "letter": "TQX"
+}, {
+  "id": 2504,
+  "name": "同仁县",
+  "pid": 137,
+  "letter": "TRX"
+}, {
+  "id": 2505,
+  "name": "铁山港区",
+  "pid": 50,
+  "letter": "TSGQ"
+}, {
+  "id": 2506,
+  "name": "塔什库尔干塔吉克自治县",
+  "pid": 176,
+  "letter": "TSKEGTJKZZX"
+}, {
+  "id": 2507,
+  "name": "天山区",
+  "pid": 299,
+  "letter": "TSQ"
+}, {
+  "id": 2508,
+  "name": "铁山区",
+  "pid": 139,
+  "letter": "TSQ"
+}, {
+  "id": 2509,
+  "name": "铜山区",
+  "pid": 329,
+  "letter": "TSQ"
+}, {
+  "id": 2510,
+  "name": "泰山区",
+  "pid": 274,
+  "letter": "TSQ"
+}, {
+  "id": 2511,
+  "name": "桃山区",
+  "pid": 237,
+  "letter": "TSQ"
+}, {
+  "id": 2512,
+  "name": "台山市",
+  "pid": 160,
+  "letter": "TSS"
+}, {
+  "id": 2513,
+  "name": "通山县",
+  "pid": 316,
+  "letter": "TSX"
+}, {
+  "id": 2514,
+  "name": "泰顺县",
+  "pid": 306,
+  "letter": "TSX"
+}, {
+  "id": 2515,
+  "name": "头屯河区",
+  "pid": 299,
+  "letter": "TTHQ"
+}, {
+  "id": 2516,
+  "name": "覃塘区",
+  "pid": 106,
+  "letter": "TTQ"
+}, {
+  "id": 2517,
+  "name": "天台县",
+  "pid": 291,
+  "letter": "TTX"
+}, {
+  "id": 2518,
+  "name": "汤旺河区",
+  "pid": 339,
+  "letter": "TWHQ"
+}, {
+  "id": 2519,
+  "name": "通渭县",
+  "pid": 90,
+  "letter": "TWX"
+}, {
+  "id": 2520,
+  "name": "藤县",
+  "pid": 305,
+  "letter": "TX"
+}, {
+  "id": 2521,
+  "name": "天心区",
+  "pid": 367,
+  "letter": "TXQ"
+}, {
+  "id": 2522,
+  "name": "屯溪区",
+  "pid": 141,
+  "letter": "TXQ"
+}, {
+  "id": 2523,
+  "name": "通许县",
+  "pid": 173,
+  "letter": "TXX"
+}, {
+  "id": 2524,
+  "name": "唐县",
+  "pid": 48,
+  "letter": "TX"
+}, {
+  "id": 2525,
+  "name": "铁西区",
+  "pid": 44,
+  "letter": "TXQ"
+}, {
+  "id": 2526,
+  "name": "泰兴市",
+  "pid": 290,
+  "letter": "TXS"
+}, {
+  "id": 2527,
+  "name": "桐乡市",
+  "pid": 165,
+  "letter": "TXS"
+}, {
+  "id": 2528,
+  "name": "同心县",
+  "pid": 304,
+  "letter": "TXX"
+}, {
+  "id": 2529,
+  "name": "田阳区",
+  "pid": 55,
+  "letter": "TYQ"
+}, {
+  "id": 2530,
+  "name": "天涯区",
+  "pid": 263,
+  "letter": "TYQ"
+}, {
+  "id": 2531,
+  "name": "天元区",
+  "pid": 377,
+  "letter": "TYQ"
+}, {
+  "id": 2532,
+  "name": "桃源区",
+  "pid": 110,
+  "letter": "TYQ"
+}, {
+  "id": 2533,
+  "name": "桃园区",
+  "pid": 289,
+  "letter": "TYQ"
+}, {
+  "id": 2534,
+  "name": "桃源县",
+  "pid": 68,
+  "letter": "TYX"
+}, {
+  "id": 2535,
+  "name": "汤阴县",
+  "pid": 45,
+  "letter": "TYX"
+}, {
+  "id": 2536,
+  "name": "通榆县",
+  "pid": 47,
+  "letter": "TYX"
+}, {
+  "id": 2537,
+  "name": "汤原县",
+  "pid": 161,
+  "letter": "TYX"
+}, {
+  "id": 2538,
+  "name": "天祝藏族自治县",
+  "pid": 302,
+  "letter": "TZCZZZX"
+}, {
+  "id": 2539,
+  "name": "太子河区",
+  "pid": 199,
+  "letter": "TZHQ"
+}, {
+  "id": 2540,
+  "name": "通州区",
+  "pid": 53,
+  "letter": "TZQ"
+}, {
+  "id": 2541,
+  "name": "潭子区",
+  "pid": 292,
+  "letter": "TZQ"
+}, {
+  "id": 2542,
+  "name": "滕州市",
+  "pid": 378,
+  "letter": "TZS"
+}, {
+  "id": 2543,
+  "name": "天长市",
+  "pid": 79,
+  "letter": "TZS"
+}, {
+  "id": 2544,
+  "name": "桐梓县",
+  "pid": 374,
+  "letter": "TZX"
+}, {
+  "id": 2545,
+  "name": "天柱县",
+  "pid": 231,
+  "letter": "TZX"
+}, {
+  "id": 2546,
+  "name": "天镇县",
+  "pid": 88,
+  "letter": "TZX"
+}, {
+  "id": 2547,
+  "name": "武安市",
+  "pid": 123,
+  "letter": "WAS"
+}, {
+  "id": 2548,
+  "name": "瓮安县",
+  "pid": 235,
+  "letter": "WAX"
+}, {
+  "id": 2549,
+  "name": "万安县",
+  "pid": 152,
+  "letter": "WAX"
+}, {
+  "id": 2550,
+  "name": "文安县",
+  "pid": 184,
+  "letter": "WAX"
+}, {
+  "id": 2551,
+  "name": "万柏林区",
+  "pid": 288,
+  "letter": "WBLQ"
+}, {
+  "id": 2552,
+  "name": "渭滨区",
+  "pid": 52,
+  "letter": "WBQ"
+}, {
+  "id": 2553,
+  "name": "卫滨区",
+  "pid": 321,
+  "letter": "WBQ"
+}, {
+  "id": 2554,
+  "name": "吴堡县",
+  "pid": 344,
+  "letter": "WBX"
+}, {
+  "id": 2555,
+  "name": "围场满族蒙古族自治县",
+  "pid": 69,
+  "letter": "WCMZMGZZZX"
+}, {
+  "id": 2556,
+  "name": "渭城区",
+  "pid": 323,
+  "letter": "WCQ"
+}, {
+  "id": 2557,
+  "name": "宛城区",
+  "pid": 222,
+  "letter": "WCQ"
+}, {
+  "id": 2558,
+  "name": "望城区",
+  "pid": 367,
+  "letter": "WCQ"
+}, {
+  "id": 2559,
+  "name": "武昌区",
+  "pid": 295,
+  "letter": "WCQ"
+}, {
+  "id": 2560,
+  "name": "潍城区",
+  "pid": 293,
+  "letter": "WCQ"
+}, {
+  "id": 2561,
+  "name": "婺城区",
+  "pid": 156,
+  "letter": "WCQ"
+}, {
+  "id": 2562,
+  "name": "吴川市",
+  "pid": 361,
+  "letter": "WCS"
+}, {
+  "id": 2563,
+  "name": "五常市",
+  "pid": 124,
+  "letter": "WCS"
+}, {
+  "id": 2564,
+  "name": "汶川县",
+  "pid": 35,
+  "letter": "WCX"
+}, {
+  "id": 2565,
+  "name": "旺苍县",
+  "pid": 111,
+  "letter": "WCX"
+}, {
+  "id": 2566,
+  "name": "武川县",
+  "pid": 129,
+  "letter": "WCX"
+}, {
+  "id": 2567,
+  "name": "武城县",
+  "pid": 95,
+  "letter": "WCX"
+}, {
+  "id": 2568,
+  "name": "文成县",
+  "pid": 306,
+  "letter": "WCX"
+}, {
+  "id": 2569,
+  "name": "务川仡佬族苗族自治县",
+  "pid": 374,
+  "letter": "WCYLZMZZZX"
+}, {
+  "id": 2570,
+  "name": "五大连池市",
+  "pid": 131,
+  "letter": "WDLCS"
+}, {
+  "id": 2571,
+  "name": "武都区",
+  "pid": 188,
+  "letter": "WDQ"
+}, {
+  "id": 2572,
+  "name": "乌达区",
+  "pid": 294,
+  "letter": "WDQ"
+}, {
+  "id": 2573,
+  "name": "乌当区",
+  "pid": 113,
+  "letter": "WDQ"
+}, {
+  "id": 2574,
+  "name": "卫东区",
+  "pid": 223,
+  "letter": "WDQ"
+}, {
+  "id": 2575,
+  "name": "魏都区",
+  "pid": 310,
+  "letter": "WDQ"
+}, {
+  "id": 2576,
+  "name": "文登区",
+  "pid": 297,
+  "letter": "WDQ"
+}, {
+  "id": 2577,
+  "name": "武定县",
+  "pid": 72,
+  "letter": "WDX"
+}, {
+  "id": 2578,
+  "name": "望都县",
+  "pid": 48,
+  "letter": "WDX"
+}, {
+  "id": 2579,
+  "name": "无棣县",
+  "pid": 65,
+  "letter": "WDX"
+}, {
+  "id": 2580,
+  "name": "乌尔禾区",
+  "pid": 174,
+  "letter": "WEHQ"
+}, {
+  "id": 2581,
+  "name": "瓦房店市",
+  "pid": 85,
+  "letter": "WFDS"
+}, {
+  "id": 2582,
+  "name": "文峰区",
+  "pid": 45,
+  "letter": "WFQ"
+}, {
+  "id": 2583,
+  "name": "雾峰区",
+  "pid": 292,
+  "letter": "WFQ"
+}, {
+  "id": 2584,
+  "name": "五峰土家族自治县",
+  "pid": 336,
+  "letter": "WFTJZZZX"
+}, {
+  "id": 2585,
+  "name": "五股区",
+  "pid": 309,
+  "letter": "WGQ"
+}, {
+  "id": 2586,
+  "name": "武冈市",
+  "pid": 265,
+  "letter": "WGS"
+}, {
+  "id": 2587,
+  "name": "舞钢市",
+  "pid": 223,
+  "letter": "WGS"
+}, {
+  "id": 2588,
+  "name": "武功县",
+  "pid": 323,
+  "letter": "WGX"
+}, {
+  "id": 2589,
+  "name": "五华区",
+  "pid": 175,
+  "letter": "WHQ"
+}, {
+  "id": 2590,
+  "name": "武侯区",
+  "pid": 67,
+  "letter": "WHQ"
+}, {
+  "id": 2591,
+  "name": "万华区",
+  "pid": 275,
+  "letter": "WHQ"
+}, {
+  "id": 2592,
+  "name": "望花区",
+  "pid": 100,
+  "letter": "WHQ"
+}, {
+  "id": 2593,
+  "name": "卫辉市",
+  "pid": 321,
+  "letter": "WHS"
+}, {
+  "id": 2594,
+  "name": "五华县",
+  "pid": 210,
+  "letter": "WHX"
+}, {
+  "id": 2595,
+  "name": "五河县",
+  "pid": 46,
+  "letter": "WHX"
+}, {
+  "id": 2596,
+  "name": "芜湖县",
+  "pid": 296,
+  "letter": "WHX"
+}, {
+  "id": 2597,
+  "name": "伍家岗区",
+  "pid": 336,
+  "letter": "WJGQ"
+}, {
+  "id": 2598,
+  "name": "温江区",
+  "pid": 67,
+  "letter": "WJQ"
+}, {
+  "id": 2599,
+  "name": "武江区",
+  "pid": 246,
+  "letter": "WJQ"
+}, {
+  "id": 2600,
+  "name": "武进区",
+  "pid": 80,
+  "letter": "WJQ"
+}, {
+  "id": 2601,
+  "name": "吴江区",
+  "pid": 273,
+  "letter": "WJQ"
+}, {
+  "id": 2602,
+  "name": "无极县",
+  "pid": 249,
+  "letter": "WJX"
+}, {
+  "id": 2603,
+  "name": "望江县",
+  "pid": 42,
+  "letter": "WJX"
+}, {
+  "id": 2604,
+  "name": "望奎县",
+  "pid": 248,
+  "letter": "WKX"
+}, {
+  "id": 2605,
+  "name": "乌兰浩特市",
+  "pid": 307,
+  "letter": "WLHTS"
+}, {
+  "id": 2606,
+  "name": "乌鲁木齐县",
+  "pid": 299,
+  "letter": "WLMQX"
+}, {
+  "id": 2607,
+  "name": "武隆区",
+  "pid": 365,
+  "letter": "WLQ"
+}, {
+  "id": 2608,
+  "name": "武陵区",
+  "pid": 68,
+  "letter": "WLQ"
+}, {
+  "id": 2609,
+  "name": "卧龙区",
+  "pid": 222,
+  "letter": "WLQ"
+}, {
+  "id": 2610,
+  "name": "湾里区",
+  "pid": 213,
+  "letter": "WLQ"
+}, {
+  "id": 2611,
+  "name": "乌来区",
+  "pid": 309,
+  "letter": "WLQ"
+}, {
+  "id": 2612,
+  "name": "万里区",
+  "pid": 309,
+  "letter": "WLQ"
+}, {
+  "id": 2613,
+  "name": "温岭市",
+  "pid": 291,
+  "letter": "WLS"
+}, {
+  "id": 2614,
+  "name": "乌拉特后旗",
+  "pid": 61,
+  "letter": "WLTHQ"
+}, {
+  "id": 2615,
+  "name": "乌拉特前旗",
+  "pid": 61,
+  "letter": "WLTQQ"
+}, {
+  "id": 2616,
+  "name": "乌拉特中旗",
+  "pid": 61,
+  "letter": "WLTZQ"
+}, {
+  "id": 2617,
+  "name": "尉犁县",
+  "pid": 60,
+  "letter": "WLX"
+}, {
+  "id": 2618,
+  "name": "乌兰县",
+  "pid": 143,
+  "letter": "WLX"
+}, {
+  "id": 2619,
+  "name": "五莲县",
+  "pid": 245,
+  "letter": "WLX"
+}, {
+  "id": 2620,
+  "name": "武陵源区",
+  "pid": 359,
+  "letter": "WLYQ"
+}, {
+  "id": 2621,
+  "name": "乌马河区",
+  "pid": 339,
+  "letter": "WMHQ"
+}, {
+  "id": 2622,
+  "name": "武鸣区",
+  "pid": 218,
+  "letter": "WMQ"
+}, {
+  "id": 2623,
+  "name": "望谟县",
+  "pid": 238,
+  "letter": "WMX"
+}, {
+  "id": 2624,
+  "name": "翁牛特旗",
+  "pid": 70,
+  "letter": "WNTQ"
+}, {
+  "id": 2625,
+  "name": "武宁县",
+  "pid": 157,
+  "letter": "WNX"
+}, {
+  "id": 2626,
+  "name": "万年县",
+  "pid": 258,
+  "letter": "WNX"
+}, {
+  "id": 2627,
+  "name": "威宁彝族回族苗族自治县",
+  "pid": 51,
+  "letter": "WNYZHZMZZZX"
+}, {
+  "id": 2628,
+  "name": "外埔区",
+  "pid": 292,
+  "letter": "WPQ"
+}, {
+  "id": 2629,
+  "name": "武平县",
+  "pid": 197,
+  "letter": "WPX"
+}, {
+  "id": 2630,
+  "name": "万全区",
+  "pid": 360,
+  "letter": "WQQ"
+}, {
+  "id": 2631,
+  "name": "武清区",
+  "pid": 279,
+  "letter": "WQQ"
+}, {
+  "id": 2632,
+  "name": "梧栖区",
+  "pid": 292,
+  "letter": "WQQ"
+}, {
+  "id": 2633,
+  "name": "乌恰县",
+  "pid": 177,
+  "letter": "WQX"
+}, {
+  "id": 2634,
+  "name": "温泉县",
+  "pid": 49,
+  "letter": "WQX"
+}, {
+  "id": 2635,
+  "name": "吴起县",
+  "pid": 331,
+  "letter": "WQX"
+}, {
+  "id": 2636,
+  "name": "武强县",
+  "pid": 140,
+  "letter": "WQX"
+}, {
+  "id": 2637,
+  "name": "吴桥县",
+  "pid": 76,
+  "letter": "WQX"
+}, {
+  "id": 2638,
+  "name": "汪清县",
+  "pid": 332,
+  "letter": "WQX"
+}, {
+  "id": 2639,
+  "name": "乌日区",
+  "pid": 292,
+  "letter": "WRQ"
+}, {
+  "id": 2640,
+  "name": "万荣县",
+  "pid": 335,
+  "letter": "WRX"
+}, {
+  "id": 2641,
+  "name": "乌审旗",
+  "pid": 96,
+  "letter": "WSQ"
+}, {
+  "id": 2642,
+  "name": "万山区",
+  "pid": 285,
+  "letter": "WSQ"
+}, {
+  "id": 2643,
+  "name": "文山区",
+  "pid": 275,
+  "letter": "WSQ"
+}, {
+  "id": 2644,
+  "name": "文圣区",
+  "pid": 199,
+  "letter": "WSQ"
+}, {
+  "id": 2645,
+  "name": "乌苏市",
+  "pid": 276,
+  "letter": "WSS"
+}, {
+  "id": 2646,
+  "name": "文山市",
+  "pid": 301,
+  "letter": "WSS"
+}, {
+  "id": 2647,
+  "name": "乌什县",
+  "pid": 36,
+  "letter": "WSX"
+}, {
+  "id": 2648,
+  "name": "武山县",
+  "pid": 286,
+  "letter": "WSX"
+}, {
+  "id": 2649,
+  "name": "武胜县",
+  "pid": 105,
+  "letter": "WSX"
+}, {
+  "id": 2650,
+  "name": "巫山县",
+  "pid": 365,
+  "letter": "WSX"
+}, {
+  "id": 2651,
+  "name": "文水县",
+  "pid": 187,
+  "letter": "WSX"
+}, {
+  "id": 2652,
+  "name": "尉氏县",
+  "pid": 173,
+  "letter": "WSX"
+}, {
+  "id": 2653,
+  "name": "汶上县",
+  "pid": 162,
+  "letter": "WSX"
+}, {
+  "id": 2654,
+  "name": "微山县",
+  "pid": 162,
+  "letter": "WSX"
+}, {
+  "id": 2655,
+  "name": "巍山彝族回族自治县",
+  "pid": 84,
+  "letter": "WSYZHZZZX"
+}, {
+  "id": 2656,
+  "name": "五通桥区",
+  "pid": 191,
+  "letter": "WTQQ"
+}, {
+  "id": 2657,
+  "name": "五台县",
+  "pid": 327,
+  "letter": "WTX"
+}, {
+  "id": 2658,
+  "name": "无为县",
+  "pid": 296,
+  "letter": "WWX"
+}, {
+  "id": 2659,
+  "name": "维西傈僳族自治县",
+  "pid": 86,
+  "letter": "WXLSZZZX"
+}, {
+  "id": 2660,
+  "name": "温宿县",
+  "pid": 36,
+  "letter": "WXX"
+}, {
+  "id": 2661,
+  "name": "文县",
+  "pid": 188,
+  "letter": "WX"
+}, {
+  "id": 2662,
+  "name": "万秀区",
+  "pid": 305,
+  "letter": "WXQ"
+}, {
+  "id": 2663,
+  "name": "威信县",
+  "pid": 370,
+  "letter": "WXX"
+}, {
+  "id": 2664,
+  "name": "巫溪县",
+  "pid": 365,
+  "letter": "WXX"
+}, {
+  "id": 2665,
+  "name": "武宣县",
+  "pid": 179,
+  "letter": "WXX"
+}, {
+  "id": 2666,
+  "name": "闻喜县",
+  "pid": 335,
+  "letter": "WXX"
+}, {
+  "id": 2667,
+  "name": "武乡县",
+  "pid": 375,
+  "letter": "WXX"
+}, {
+  "id": 2668,
+  "name": "温县",
+  "pid": 171,
+  "letter": "WX"
+}, {
+  "id": 2669,
+  "name": "蔚县",
+  "pid": 360,
+  "letter": "WX"
+}, {
+  "id": 2670,
+  "name": "魏县",
+  "pid": 123,
+  "letter": "WX"
+}, {
+  "id": 2671,
+  "name": "威县",
+  "pid": 320,
+  "letter": "WX"
+}, {
+  "id": 2672,
+  "name": "吴兴区",
+  "pid": 151,
+  "letter": "WXQ"
+}, {
+  "id": 2673,
+  "name": "武穴市",
+  "pid": 126,
+  "letter": "WXS"
+}, {
+  "id": 2674,
+  "name": "乌伊岭区",
+  "pid": 339,
+  "letter": "WYLQ"
+}, {
+  "id": 2675,
+  "name": "未央区",
+  "pid": 308,
+  "letter": "WYQ"
+}, {
+  "id": 2676,
+  "name": "王益区",
+  "pid": 277,
+  "letter": "WYQ"
+}, {
+  "id": 2677,
+  "name": "五营区",
+  "pid": 339,
+  "letter": "WYQ"
+}, {
+  "id": 2678,
+  "name": "万源市",
+  "pid": 93,
+  "letter": "WYS"
+}, {
+  "id": 2679,
+  "name": "武夷山市",
+  "pid": 219,
+  "letter": "WYSS"
+}, {
+  "id": 2680,
+  "name": "渭源县",
+  "pid": 90,
+  "letter": "WYX"
+}, {
+  "id": 2681,
+  "name": "威远县",
+  "pid": 216,
+  "letter": "WYX"
+}, {
+  "id": 2682,
+  "name": "五原县",
+  "pid": 61,
+  "letter": "WYX"
+}, {
+  "id": 2683,
+  "name": "舞阳县",
+  "pid": 185,
+  "letter": "WYX"
+}, {
+  "id": 2684,
+  "name": "翁源县",
+  "pid": 246,
+  "letter": "WYX"
+}, {
+  "id": 2685,
+  "name": "武邑县",
+  "pid": 140,
+  "letter": "WYX"
+}, {
+  "id": 2686,
+  "name": "涡阳县",
+  "pid": 64,
+  "letter": "WYX"
+}, {
+  "id": 2687,
+  "name": "婺源县",
+  "pid": 258,
+  "letter": "WYX"
+}, {
+  "id": 2688,
+  "name": "武义县",
+  "pid": 156,
+  "letter": "WYX"
+}, {
+  "id": 2689,
+  "name": "万州区",
+  "pid": 365,
+  "letter": "WZQ"
+}, {
+  "id": 2690,
+  "name": "湾仔区",
+  "pid": 313,
+  "letter": "WZQ"
+}, {
+  "id": 2691,
+  "name": "吴中区",
+  "pid": 273,
+  "letter": "WZQ"
+}, {
+  "id": 2692,
+  "name": "五寨县",
+  "pid": 327,
+  "letter": "WZX"
+}, {
+  "id": 2693,
+  "name": "武陟县",
+  "pid": 171,
+  "letter": "WZX"
+}, {
+  "id": 2694,
+  "name": "万载县",
+  "pid": 337,
+  "letter": "WZX"
+}, {
+  "id": 2695,
+  "name": "咸安区",
+  "pid": 316,
+  "letter": "XAQ"
+}, {
+  "id": 2696,
+  "name": "翔安区",
+  "pid": 252,
+  "letter": "XAQ"
+}, {
+  "id": 2697,
+  "name": "西安区",
+  "pid": 200,
+  "letter": "XAQ"
+}, {
+  "id": 2698,
+  "name": "兴安区",
+  "pid": 127,
+  "letter": "XAQ"
+}, {
+  "id": 2699,
+  "name": "兴安县",
+  "pid": 108,
+  "letter": "XAX"
+}, {
+  "id": 2700,
+  "name": "新安县",
+  "pid": 196,
+  "letter": "XAX"
+}, {
+  "id": 2701,
+  "name": "新巴尔虎右旗",
+  "pid": 133,
+  "letter": "XBEHYQ"
+}, {
+  "id": 2702,
+  "name": "新巴尔虎左旗",
+  "pid": 133,
+  "letter": "XBEHZQ"
+}, {
+  "id": 2703,
+  "name": "新宾满族自治县",
+  "pid": 100,
+  "letter": "XBMZZZX"
+}, {
+  "id": 2704,
+  "name": "兴宾区",
+  "pid": 179,
+  "letter": "XBQ"
+}, {
+  "id": 2705,
+  "name": "新北区",
+  "pid": 80,
+  "letter": "XBQ"
+}, {
+  "id": 2706,
+  "name": "新城区",
+  "pid": 308,
+  "letter": "XCQ"
+}, {
+  "id": 2707,
+  "name": "襄城区",
+  "pid": 324,
+  "letter": "XCQ"
+}, {
+  "id": 2708,
+  "name": "西城区",
+  "pid": 53,
+  "letter": "XCQ"
+}, {
+  "id": 2709,
+  "name": "薛城区",
+  "pid": 378,
+  "letter": "XCQ"
+}, {
+  "id": 2710,
+  "name": "芗城区",
+  "pid": 379,
+  "letter": "XCQ"
+}, {
+  "id": 2711,
+  "name": "宿城区",
+  "pid": 317,
+  "letter": "XCQ"
+}, {
+  "id": 2712,
+  "name": "下城区",
+  "pid": 150,
+  "letter": "XCQ"
+}, {
+  "id": 2713,
+  "name": "相城区",
+  "pid": 273,
+  "letter": "XCQ"
+}, {
+  "id": 2714,
+  "name": "西昌市",
+  "pid": 193,
+  "letter": "XCS"
+}, {
+  "id": 2715,
+  "name": "项城市",
+  "pid": 363,
+  "letter": "XCS"
+}, {
+  "id": 2716,
+  "name": "兴城市",
+  "pid": 134,
+  "letter": "XCS"
+}, {
+  "id": 2717,
+  "name": "乡城县",
+  "pid": 114,
+  "letter": "XCX"
+}, {
+  "id": 2718,
+  "name": "西畴县",
+  "pid": 301,
+  "letter": "XCX"
+}, {
+  "id": 2719,
+  "name": "西充县",
+  "pid": 212,
+  "letter": "XCX"
+}, {
+  "id": 2720,
+  "name": "忻城县",
+  "pid": 179,
+  "letter": "XCX"
+}, {
+  "id": 2721,
+  "name": "淅川县",
+  "pid": 222,
+  "letter": "XCX"
+}, {
+  "id": 2722,
+  "name": "襄城县",
+  "pid": 310,
+  "letter": "XCX"
+}, {
+  "id": 2723,
+  "name": "孝昌县",
+  "pid": 312,
+  "letter": "XCX"
+}, {
+  "id": 2724,
+  "name": "新蔡县",
+  "pid": 364,
+  "letter": "XCX"
+}, {
+  "id": 2725,
+  "name": "新昌县",
+  "pid": 262,
+  "letter": "XCX"
+}, {
+  "id": 2726,
+  "name": "寻甸回族彝族自治县",
+  "pid": 175,
+  "letter": "XDHZYZZZX"
+}, {
+  "id": 2727,
+  "name": "新都区",
+  "pid": 67,
+  "letter": "XDQ"
+}, {
+  "id": 2728,
+  "name": "小店区",
+  "pid": 288,
+  "letter": "XDQ"
+}, {
+  "id": 2729,
+  "name": "湘东区",
+  "pid": 228,
+  "letter": "XDQ"
+}, {
+  "id": 2730,
+  "name": "新店区",
+  "pid": 309,
+  "letter": "XDQ"
+}, {
+  "id": 2731,
+  "name": "喜德县",
+  "pid": 193,
+  "letter": "XDX"
+}, {
+  "id": 2732,
+  "name": "宣恩县",
+  "pid": 97,
+  "letter": "XEX"
+}, {
+  "id": 2733,
+  "name": "西峰区",
+  "pid": 239,
+  "letter": "XFQ"
+}, {
+  "id": 2734,
+  "name": "秀峰区",
+  "pid": 108,
+  "letter": "XFQ"
+}, {
+  "id": 2735,
+  "name": "忻府区",
+  "pid": 327,
+  "letter": "XFQ"
+}, {
+  "id": 2736,
+  "name": "祥符区",
+  "pid": 173,
+  "letter": "XFQ"
+}, {
+  "id": 2737,
+  "name": "新抚区",
+  "pid": 100,
+  "letter": "XFQ"
+}, {
+  "id": 2738,
+  "name": "香坊区",
+  "pid": 124,
+  "letter": "XFQ"
+}, {
+  "id": 2739,
+  "name": "息烽县",
+  "pid": 113,
+  "letter": "XFX"
+}, {
+  "id": 2740,
+  "name": "咸丰县",
+  "pid": 97,
+  "letter": "XFX"
+}, {
+  "id": 2741,
+  "name": "襄汾县",
+  "pid": 183,
+  "letter": "XFX"
+}, {
+  "id": 2742,
+  "name": "新丰县",
+  "pid": 246,
+  "letter": "XFX"
+}, {
+  "id": 2743,
+  "name": "信丰县",
+  "pid": 116,
+  "letter": "XFX"
+}, {
+  "id": 2744,
+  "name": "西丰县",
+  "pid": 283,
+  "letter": "XFX"
+}, {
+  "id": 2745,
+  "name": "香格里拉市",
+  "pid": 86,
+  "letter": "XGLLS"
+}, {
+  "id": 2746,
+  "name": "西固区",
+  "pid": 202,
+  "letter": "XGQ"
+}, {
+  "id": 2747,
+  "name": "西工区",
+  "pid": 196,
+  "letter": "XGQ"
+}, {
+  "id": 2748,
+  "name": "西贡区",
+  "pid": 313,
+  "letter": "XGQ"
+}, {
+  "id": 2749,
+  "name": "西港区",
+  "pid": 284,
+  "letter": "XGQ"
+}, {
+  "id": 2750,
+  "name": "小港区",
+  "pid": 110,
+  "letter": "XGQ"
+}, {
+  "id": 2751,
+  "name": "西岗区",
+  "pid": 85,
+  "letter": "XGQ"
+}, {
+  "id": 2752,
+  "name": "兴国县",
+  "pid": 116,
+  "letter": "XGX"
+}, {
+  "id": 2753,
+  "name": "新干县",
+  "pid": 152,
+  "letter": "XGX"
+}, {
+  "id": 2754,
+  "name": "新晃侗族自治县",
+  "pid": 130,
+  "letter": "XHDZZZX"
+}, {
+  "id": 2755,
+  "name": "杏花岭区",
+  "pid": 288,
+  "letter": "XHLQ"
+}, {
+  "id": 2756,
+  "name": "新会区",
+  "pid": 160,
+  "letter": "XHQ"
+}, {
+  "id": 2757,
+  "name": "新华区",
+  "pid": 223,
+  "letter": "XHQ"
+}, {
+  "id": 2758,
+  "name": "镶黄旗",
+  "pid": 314,
+  "letter": "XHQ"
+}, {
+  "id": 2759,
+  "name": "宣化区",
+  "pid": 360,
+  "letter": "XHQ"
+}, {
+  "id": 2760,
+  "name": "西湖区",
+  "pid": 213,
+  "letter": "XHQ"
+}, {
+  "id": 2761,
+  "name": "新化区",
+  "pid": 284,
+  "letter": "XHQ"
+}, {
+  "id": 2762,
+  "name": "徐汇区",
+  "pid": 247,
+  "letter": "XHQ"
+}, {
+  "id": 2763,
+  "name": "细河区",
+  "pid": 101,
+  "letter": "XHQ"
+}, {
+  "id": 2764,
+  "name": "溪湖区",
+  "pid": 59,
+  "letter": "XHQ"
+}, {
+  "id": 2765,
+  "name": "循化撒拉族自治县",
+  "pid": 122,
+  "letter": "XHSLZZZX"
+}, {
+  "id": 2766,
+  "name": "兴化市",
+  "pid": 290,
+  "letter": "XHS"
+}, {
+  "id": 2767,
+  "name": "新和县",
+  "pid": 36,
+  "letter": "XHX"
+}, {
+  "id": 2768,
+  "name": "兴海县",
+  "pid": 136,
+  "letter": "XHX"
+}, {
+  "id": 2769,
+  "name": "夏河县",
+  "pid": 109,
+  "letter": "XHX"
+}, {
+  "id": 2770,
+  "name": "西和县",
+  "pid": 188,
+  "letter": "XHX"
+}, {
+  "id": 2771,
+  "name": "宣汉县",
+  "pid": 93,
+  "letter": "XHX"
+}, {
+  "id": 2772,
+  "name": "新化县",
+  "pid": 182,
+  "letter": "XHX"
+}, {
+  "id": 2773,
+  "name": "兴和县",
+  "pid": 298,
+  "letter": "XHX"
+}, {
+  "id": 2774,
+  "name": "西华县",
+  "pid": 363,
+  "letter": "XHX"
+}, {
+  "id": 2775,
+  "name": "新河县",
+  "pid": 320,
+  "letter": "XHX"
+}, {
+  "id": 2776,
+  "name": "香河县",
+  "pid": 184,
+  "letter": "XHX"
+}, {
+  "id": 2777,
+  "name": "下花园区",
+  "pid": 360,
+  "letter": "XHYQ"
+}, {
+  "id": 2778,
+  "name": "谢家集区",
+  "pid": 138,
+  "letter": "XJJQ"
+}, {
+  "id": 2779,
+  "name": "新建区",
+  "pid": 213,
+  "letter": "XJQ"
+}, {
+  "id": 2780,
+  "name": "学甲区",
+  "pid": 284,
+  "letter": "XJQ"
+}, {
+  "id": 2781,
+  "name": "辛集市",
+  "pid": 249,
+  "letter": "XJS"
+}, {
+  "id": 2782,
+  "name": "小金县",
+  "pid": 35,
+  "letter": "XJX"
+}, {
+  "id": 2783,
+  "name": "新津县",
+  "pid": 67,
+  "letter": "XJX"
+}, {
+  "id": 2784,
+  "name": "西吉县",
+  "pid": 112,
+  "letter": "XJX"
+}, {
+  "id": 2785,
+  "name": "新绛县",
+  "pid": 335,
+  "letter": "XJX"
+}, {
+  "id": 2786,
+  "name": "峡江县",
+  "pid": 152,
+  "letter": "XJX"
+}, {
+  "id": 2787,
+  "name": "夏津县",
+  "pid": 95,
+  "letter": "XJX"
+}, {
+  "id": 2788,
+  "name": "仙居县",
+  "pid": 291,
+  "letter": "XJX"
+}, {
+  "id": 2789,
+  "name": "逊克县",
+  "pid": 131,
+  "letter": "XKX"
+}, {
+  "id": 2790,
+  "name": "锡林浩特市",
+  "pid": 314,
+  "letter": "XLHTS"
+}, {
+  "id": 2791,
+  "name": "西陵区",
+  "pid": 336,
+  "letter": "XLQ"
+}, {
+  "id": 2792,
+  "name": "下陆区",
+  "pid": 139,
+  "letter": "XLQ"
+}, {
+  "id": 2793,
+  "name": "新罗区",
+  "pid": 197,
+  "letter": "XLQ"
+}, {
+  "id": 2794,
+  "name": "西林区",
+  "pid": 339,
+  "letter": "XLQ"
+}, {
+  "id": 2795,
+  "name": "新乐市",
+  "pid": 249,
+  "letter": "XLS"
+}, {
+  "id": 2796,
+  "name": "兴隆台区",
+  "pid": 225,
+  "letter": "XLTQ"
+}, {
+  "id": 2797,
+  "name": "新龙县",
+  "pid": 114,
+  "letter": "XLX"
+}, {
+  "id": 2798,
+  "name": "西林县",
+  "pid": 55,
+  "letter": "XLX"
+}, {
+  "id": 2799,
+  "name": "兴隆县",
+  "pid": 69,
+  "letter": "XLX"
+}, {
+  "id": 2800,
+  "name": "新密市",
+  "pid": 376,
+  "letter": "XMS"
+}, {
+  "id": 2801,
+  "name": "新民市",
+  "pid": 266,
+  "letter": "XMS"
+}, {
+  "id": 2802,
+  "name": "西盟佤族自治县",
+  "pid": 224,
+  "letter": "XMWZZZX"
+}, {
+  "id": 2803,
+  "name": "兴宁区",
+  "pid": 218,
+  "letter": "XNQ"
+}, {
+  "id": 2804,
+  "name": "孝南区",
+  "pid": 312,
+  "letter": "XNQ"
+}, {
+  "id": 2805,
+  "name": "兴宁市",
+  "pid": 210,
+  "letter": "XNS"
+}, {
+  "id": 2806,
+  "name": "新宁县",
+  "pid": 265,
+  "letter": "XNX"
+}, {
+  "id": 2807,
+  "name": "乡宁县",
+  "pid": 183,
+  "letter": "XNX"
+}, {
+  "id": 2808,
+  "name": "休宁县",
+  "pid": 141,
+  "letter": "XNX"
+}, {
+  "id": 2809,
+  "name": "兴平市",
+  "pid": 323,
+  "letter": "XPS"
+}, {
+  "id": 2810,
+  "name": "溆浦县",
+  "pid": 130,
+  "letter": "XPX"
+}, {
+  "id": 2811,
+  "name": "西平县",
+  "pid": 364,
+  "letter": "XPX"
+}, {
+  "id": 2812,
+  "name": "霞浦县",
+  "pid": 214,
+  "letter": "XPX"
+}, {
+  "id": 2813,
+  "name": "新平彝族傣族自治县",
+  "pid": 350,
+  "letter": "XPYZDZZZX"
+}, {
+  "id": 2814,
+  "name": "西区",
+  "pid": 230,
+  "letter": "XQ"
+}, {
+  "id": 2815,
+  "name": "兴庆区",
+  "pid": 334,
+  "letter": "XQQ"
+}, {
+  "id": 2816,
+  "name": "湘桥区",
+  "pid": 77,
+  "letter": "XQQ"
+}, {
+  "id": 2817,
+  "name": "西青区",
+  "pid": 279,
+  "letter": "XQQ"
+}, {
+  "id": 2818,
+  "name": "新邱区",
+  "pid": 101,
+  "letter": "XQQ"
+}, {
+  "id": 2819,
+  "name": "新青区",
+  "pid": 339,
+  "letter": "XQQ"
+}, {
+  "id": 2820,
+  "name": "新荣区",
+  "pid": 88,
+  "letter": "XRQ"
+}, {
+  "id": 2821,
+  "name": "兴仁市",
+  "pid": 238,
+  "letter": "XRS"
+}, {
+  "id": 2822,
+  "name": "新市区",
+  "pid": 299,
+  "letter": "XSQ"
+}, {
+  "id": 2823,
+  "name": "西山区",
+  "pid": 175,
+  "letter": "XSQ"
+}, {
+  "id": 2824,
+  "name": "象山区",
+  "pid": 108,
+  "letter": "XSQ"
+}, {
+  "id": 2825,
+  "name": "霞山区",
+  "pid": 361,
+  "letter": "XSQ"
+}, {
+  "id": 2826,
+  "name": "西沙群岛",
+  "pid": 259,
+  "letter": "XSQD"
+}, {
+  "id": 2827,
+  "name": "徐水区",
+  "pid": 48,
+  "letter": "XSQ"
+}, {
+  "id": 2828,
+  "name": "相山区",
+  "pid": 120,
+  "letter": "XSQ"
+}, {
+  "id": 2829,
+  "name": "萧山区",
+  "pid": 150,
+  "letter": "XSQ"
+}, {
+  "id": 2830,
+  "name": "锡山区",
+  "pid": 303,
+  "letter": "XSQ"
+}, {
+  "id": 2831,
+  "name": "新社区",
+  "pid": 292,
+  "letter": "XSQ"
+}, {
+  "id": 2832,
+  "name": "西市区",
+  "pid": 342,
+  "letter": "XSQ"
+}, {
+  "id": 2833,
+  "name": "兴山区",
+  "pid": 127,
+  "letter": "XSQ"
+}, {
+  "id": 2834,
+  "name": "西塞山区",
+  "pid": 139,
+  "letter": "XSSQ"
+}, {
+  "id": 2835,
+  "name": "秀山土家族苗族自治县",
+  "pid": 365,
+  "letter": "XSTJZMZZZX"
+}, {
+  "id": 2836,
+  "name": "习水县",
+  "pid": 374,
+  "letter": "XSX"
+}, {
+  "id": 2837,
+  "name": "兴山县",
+  "pid": 336,
+  "letter": "XSX"
+}, {
+  "id": 2838,
+  "name": "新邵县",
+  "pid": 265,
+  "letter": "XSX"
+}, {
+  "id": 2839,
+  "name": "修水县",
+  "pid": 157,
+  "letter": "XSX"
+}, {
+  "id": 2840,
+  "name": "浠水县",
+  "pid": 126,
+  "letter": "XSX"
+}, {
+  "id": 2841,
+  "name": "宿松县",
+  "pid": 42,
+  "letter": "XSX"
+}, {
+  "id": 2842,
+  "name": "响水县",
+  "pid": 338,
+  "letter": "XSX"
+}, {
+  "id": 2843,
+  "name": "象山县",
+  "pid": 211,
+  "letter": "XSX"
+}, {
+  "id": 2844,
+  "name": "谢通门县",
+  "pid": 244,
+  "letter": "XTMX"
+}, {
+  "id": 2845,
+  "name": "猇亭区",
+  "pid": 336,
+  "letter": "XTQ"
+}, {
+  "id": 2846,
+  "name": "西屯区",
+  "pid": 292,
+  "letter": "XTQ"
+}, {
+  "id": 2847,
+  "name": "新泰市",
+  "pid": 274,
+  "letter": "XTS"
+}, {
+  "id": 2848,
+  "name": "新田县",
+  "pid": 353,
+  "letter": "XTX"
+}, {
+  "id": 2849,
+  "name": "湘潭县",
+  "pid": 319,
+  "letter": "XTX"
+}, {
+  "id": 2850,
+  "name": "邢台县",
+  "pid": 320,
+  "letter": "XTX"
+}, {
+  "id": 2851,
+  "name": "玄武区",
+  "pid": 217,
+  "letter": "XWQ"
+}, {
+  "id": 2852,
+  "name": "新吴区",
+  "pid": 303,
+  "letter": "XWQ"
+}, {
+  "id": 2853,
+  "name": "宣威市",
+  "pid": 234,
+  "letter": "XWS"
+}, {
+  "id": 2854,
+  "name": "兴文县",
+  "pid": 333,
+  "letter": "XWX"
+}, {
+  "id": 2855,
+  "name": "修文县",
+  "pid": 113,
+  "letter": "XWX"
+}, {
+  "id": 2856,
+  "name": "徐闻县",
+  "pid": 361,
+  "letter": "XWX"
+}, {
+  "id": 2857,
+  "name": "修武县",
+  "pid": 171,
+  "letter": "XWX"
+}, {
+  "id": 2858,
+  "name": "寻乌县",
+  "pid": 116,
+  "letter": "XWX"
+}, {
+  "id": 2859,
+  "name": "新屋乡",
+  "pid": 289,
+  "letter": "XWX"
+}, {
+  "id": 2860,
+  "name": "西乌珠穆沁旗",
+  "pid": 314,
+  "letter": "XWZMQQ"
+}, {
+  "id": 2861,
+  "name": "西秀区",
+  "pid": 43,
+  "letter": "XXQ"
+}, {
+  "id": 2862,
+  "name": "西夏区",
+  "pid": 334,
+  "letter": "XXQ"
+}, {
+  "id": 2863,
+  "name": "西乡塘区",
+  "pid": 218,
+  "letter": "XXTQ"
+}, {
+  "id": 2864,
+  "name": "西乡县",
+  "pid": 146,
+  "letter": "XXX"
+}, {
+  "id": 2865,
+  "name": "兴县",
+  "pid": 187,
+  "letter": "XX"
+}, {
+  "id": 2866,
+  "name": "隰县",
+  "pid": 183,
+  "letter": "XX"
+}, {
+  "id": 2867,
+  "name": "西峡县",
+  "pid": 222,
+  "letter": "XXX"
+}, {
+  "id": 2868,
+  "name": "夏县",
+  "pid": 335,
+  "letter": "XX"
+}, {
+  "id": 2869,
+  "name": "新县",
+  "pid": 325,
+  "letter": "XX"
+}, {
+  "id": 2870,
+  "name": "息县",
+  "pid": 325,
+  "letter": "XX"
+}, {
+  "id": 2871,
+  "name": "献县",
+  "pid": 76,
+  "letter": "XX"
+}, {
+  "id": 2872,
+  "name": "雄县",
+  "pid": 48,
+  "letter": "XX"
+}, {
+  "id": 2873,
+  "name": "萧县",
+  "pid": 328,
+  "letter": "XX"
+}, {
+  "id": 2874,
+  "name": "歙县",
+  "pid": 141,
+  "letter": "XX"
+}, {
+  "id": 2875,
+  "name": "新兴区",
+  "pid": 237,
+  "letter": "XXQ"
+}, {
+  "id": 2876,
+  "name": "湘乡市",
+  "pid": 319,
+  "letter": "XXS"
+}, {
+  "id": 2877,
+  "name": "新兴县",
+  "pid": 340,
+  "letter": "XXX"
+}, {
+  "id": 2878,
+  "name": "新乡县",
+  "pid": 321,
+  "letter": "XXX"
+}, {
+  "id": 2879,
+  "name": "岫岩满族自治县",
+  "pid": 44,
+  "letter": "XYMZZZX"
+}, {
+  "id": 2880,
+  "name": "秀英区",
+  "pid": 132,
+  "letter": "XYQ"
+}, {
+  "id": 2881,
+  "name": "浔阳区",
+  "pid": 157,
+  "letter": "XYQ"
+}, {
+  "id": 2882,
+  "name": "宿豫区",
+  "pid": 317,
+  "letter": "XYQ"
+}, {
+  "id": 2883,
+  "name": "秀屿区",
+  "pid": 227,
+  "letter": "XYQ"
+}, {
+  "id": 2884,
+  "name": "下营区",
+  "pid": 284,
+  "letter": "XYQ"
+}, {
+  "id": 2885,
+  "name": "新营区",
+  "pid": 284,
+  "letter": "XYQ"
+}, {
+  "id": 2886,
+  "name": "信义区",
+  "pid": 275,
+  "letter": "XYQ"
+}, {
+  "id": 2887,
+  "name": "向阳区",
+  "pid": 127,
+  "letter": "XYQ"
+}, {
+  "id": 2888,
+  "name": "兴义市",
+  "pid": 238,
+  "letter": "XYS"
+}, {
+  "id": 2889,
+  "name": "信宜市",
+  "pid": 207,
+  "letter": "XYS"
+}, {
+  "id": 2890,
+  "name": "孝义市",
+  "pid": 187,
+  "letter": "XYS"
+}, {
+  "id": 2891,
+  "name": "新沂市",
+  "pid": 329,
+  "letter": "XYS"
+}, {
+  "id": 2892,
+  "name": "新源县",
+  "pid": 343,
+  "letter": "XYX"
+}, {
+  "id": 2893,
+  "name": "祥云县",
+  "pid": 84,
+  "letter": "XYX"
+}, {
+  "id": 2894,
+  "name": "叙永县",
+  "pid": 203,
+  "letter": "XYX"
+}, {
+  "id": 2895,
+  "name": "旬邑县",
+  "pid": 323,
+  "letter": "XYX"
+}, {
+  "id": 2896,
+  "name": "旬阳县",
+  "pid": 37,
+  "letter": "XYX"
+}, {
+  "id": 2897,
+  "name": "兴业县",
+  "pid": 345,
+  "letter": "XYX"
+}, {
+  "id": 2898,
+  "name": "新野县",
+  "pid": 222,
+  "letter": "XYX"
+}, {
+  "id": 2899,
+  "name": "湘阴县",
+  "pid": 352,
+  "letter": "XYX"
+}, {
+  "id": 2900,
+  "name": "襄垣县",
+  "pid": 375,
+  "letter": "XYX"
+}, {
+  "id": 2901,
+  "name": "昔阳县",
+  "pid": 170,
+  "letter": "XYX"
+}, {
+  "id": 2902,
+  "name": "夏邑县",
+  "pid": 257,
+  "letter": "XYX"
+}, {
+  "id": 2903,
+  "name": "盱眙县",
+  "pid": 117,
+  "letter": "XYX"
+}, {
+  "id": 2904,
+  "name": "仙游县",
+  "pid": 227,
+  "letter": "XYX"
+}, {
+  "id": 2905,
+  "name": "叙州区",
+  "pid": 333,
+  "letter": "XZQ"
+}, {
+  "id": 2906,
+  "name": "襄州区",
+  "pid": 324,
+  "letter": "XZQ"
+}, {
+  "id": 2907,
+  "name": "香洲区",
+  "pid": 358,
+  "letter": "XZQ"
+}, {
+  "id": 2908,
+  "name": "新洲区",
+  "pid": 295,
+  "letter": "XZQ"
+}, {
+  "id": 2909,
+  "name": "信州区",
+  "pid": 258,
+  "letter": "XZQ"
+}, {
+  "id": 2910,
+  "name": "宣州区",
+  "pid": 311,
+  "letter": "XZQ"
+}, {
+  "id": 2911,
+  "name": "秀洲区",
+  "pid": 165,
+  "letter": "XZQ"
+}, {
+  "id": 2912,
+  "name": "新庄区",
+  "pid": 309,
+  "letter": "XZQ"
+}, {
+  "id": 2913,
+  "name": "汐止区",
+  "pid": 309,
+  "letter": "XZQ"
+}, {
+  "id": 2914,
+  "name": "新郑市",
+  "pid": 376,
+  "letter": "XZS"
+}, {
+  "id": 2915,
+  "name": "象州县",
+  "pid": 179,
+  "letter": "XZX"
+}, {
+  "id": 2916,
+  "name": "云安区",
+  "pid": 340,
+  "letter": "YAQ"
+}, {
+  "id": 2917,
+  "name": "裕安区",
+  "pid": 178,
+  "letter": "YAQ"
+}, {
+  "id": 2918,
+  "name": "义安区",
+  "pid": 281,
+  "letter": "YAQ"
+}, {
+  "id": 2919,
+  "name": "永安区",
+  "pid": 110,
+  "letter": "YAQ"
+}, {
+  "id": 2920,
+  "name": "永安市",
+  "pid": 251,
+  "letter": "YAS"
+}, {
+  "id": 2921,
+  "name": "姚安县",
+  "pid": 72,
+  "letter": "YAX"
+}, {
+  "id": 2922,
+  "name": "远安县",
+  "pid": 336,
+  "letter": "YAX"
+}, {
+  "id": 2923,
+  "name": "依安县",
+  "pid": 236,
+  "letter": "YAX"
+}, {
+  "id": 2924,
+  "name": "渝北区",
+  "pid": 365,
+  "letter": "YBQ"
+}, {
+  "id": 2925,
+  "name": "元宝区",
+  "pid": 81,
+  "letter": "YBQ"
+}, {
+  "id": 2926,
+  "name": "元宝山区",
+  "pid": 70,
+  "letter": "YBSQ"
+}, {
+  "id": 2927,
+  "name": "盐边县",
+  "pid": 230,
+  "letter": "YBX"
+}, {
+  "id": 2928,
+  "name": "漾濞彝族自治县",
+  "pid": 84,
+  "letter": "YBYZZZX"
+}, {
+  "id": 2929,
+  "name": "雨城区",
+  "pid": 330,
+  "letter": "YCQ"
+}, {
+  "id": 2930,
+  "name": "永川区",
+  "pid": 365,
+  "letter": "YCQ"
+}, {
+  "id": 2931,
+  "name": "云城区",
+  "pid": 340,
+  "letter": "YCQ"
+}, {
+  "id": 2932,
+  "name": "榆次区",
+  "pid": 170,
+  "letter": "YCQ"
+}, {
+  "id": 2933,
+  "name": "驿城区",
+  "pid": 364,
+  "letter": "YCQ"
+}, {
+  "id": 2934,
+  "name": "郾城区",
+  "pid": 185,
+  "letter": "YCQ"
+}, {
+  "id": 2935,
+  "name": "源城区",
+  "pid": 145,
+  "letter": "YCQ"
+}, {
+  "id": 2936,
+  "name": "峄城区",
+  "pid": 378,
+  "letter": "YCQ"
+}, {
+  "id": 2937,
+  "name": "燕巢区",
+  "pid": 110,
+  "letter": "YCQ"
+}, {
+  "id": 2938,
+  "name": "越城区",
+  "pid": 262,
+  "letter": "YCQ"
+}, {
+  "id": 2939,
+  "name": "伊春区",
+  "pid": 339,
+  "letter": "YCQ"
+}, {
+  "id": 2940,
+  "name": "阳春市",
+  "pid": 341,
+  "letter": "YCS"
+}, {
+  "id": 2941,
+  "name": "宜城市",
+  "pid": 324,
+  "letter": "YCS"
+}, {
+  "id": 2942,
+  "name": "应城市",
+  "pid": 312,
+  "letter": "YCS"
+}, {
+  "id": 2943,
+  "name": "永城市",
+  "pid": 257,
+  "letter": "YCS"
+}, {
+  "id": 2944,
+  "name": "禹城市",
+  "pid": 95,
+  "letter": "YCS"
+}, {
+  "id": 2945,
+  "name": "叶城县",
+  "pid": 176,
+  "letter": "YCX"
+}, {
+  "id": 2946,
+  "name": "永昌县",
+  "pid": 153,
+  "letter": "YCX"
+}, {
+  "id": 2947,
+  "name": "岳池县",
+  "pid": 105,
+  "letter": "YCX"
+}, {
+  "id": 2948,
+  "name": "盐池县",
+  "pid": 304,
+  "letter": "YCX"
+}, {
+  "id": 2949,
+  "name": "延川县",
+  "pid": 331,
+  "letter": "YCX"
+}, {
+  "id": 2950,
+  "name": "宜川县",
+  "pid": 331,
+  "letter": "YCX"
+}, {
+  "id": 2951,
+  "name": "翼城县",
+  "pid": 183,
+  "letter": "YCX"
+}, {
+  "id": 2952,
+  "name": "阳城县",
+  "pid": 154,
+  "letter": "YCX"
+}, {
+  "id": 2953,
+  "name": "伊川县",
+  "pid": 196,
+  "letter": "YCX"
+}, {
+  "id": 2954,
+  "name": "郓城县",
+  "pid": 149,
+  "letter": "YCX"
+}, {
+  "id": 2955,
+  "name": "虞城县",
+  "pid": 257,
+  "letter": "YCX"
+}, {
+  "id": 2956,
+  "name": "永春县",
+  "pid": 242,
+  "letter": "YCX"
+}, {
+  "id": 2957,
+  "name": "永定区",
+  "pid": 359,
+  "letter": "YDQ"
+}, {
+  "id": 2958,
+  "name": "尧都区",
+  "pid": 183,
+  "letter": "YDQ"
+}, {
+  "id": 2959,
+  "name": "阳东区",
+  "pid": 341,
+  "letter": "YDQ"
+}, {
+  "id": 2960,
+  "name": "殷都区",
+  "pid": 45,
+  "letter": "YDQ"
+}, {
+  "id": 2961,
+  "name": "颍东区",
+  "pid": 102,
+  "letter": "YDQ"
+}, {
+  "id": 2962,
+  "name": "盐都区",
+  "pid": 338,
+  "letter": "YDQ"
+}, {
+  "id": 2963,
+  "name": "宜都市",
+  "pid": 336,
+  "letter": "YDS"
+}, {
+  "id": 2964,
+  "name": "英德市",
+  "pid": 240,
+  "letter": "YDS"
+}, {
+  "id": 2965,
+  "name": "亚东县",
+  "pid": 244,
+  "letter": "YDX"
+}, {
+  "id": 2966,
+  "name": "永德县",
+  "pid": 180,
+  "letter": "YDX"
+}, {
+  "id": 2967,
+  "name": "永登县",
+  "pid": 202,
+  "letter": "YDX"
+}, {
+  "id": 2968,
+  "name": "于都县",
+  "pid": 116,
+  "letter": "YDX"
+}, {
+  "id": 2969,
+  "name": "鱼峰区",
+  "pid": 204,
+  "letter": "YFQ"
+}, {
+  "id": 2970,
+  "name": "雁峰区",
+  "pid": 144,
+  "letter": "YFQ"
+}, {
+  "id": 2971,
+  "name": "永福县",
+  "pid": 108,
+  "letter": "YFX"
+}, {
+  "id": 2972,
+  "name": "宜丰县",
+  "pid": 337,
+  "letter": "YFX"
+}, {
+  "id": 2973,
+  "name": "永丰县",
+  "pid": 152,
+  "letter": "YFX"
+}, {
+  "id": 2974,
+  "name": "云冈区",
+  "pid": 88,
+  "letter": "YGQ"
+}, {
+  "id": 2975,
+  "name": "莺歌区",
+  "pid": 309,
+  "letter": "YGQ"
+}, {
+  "id": 2976,
+  "name": "阳高县",
+  "pid": 88,
+  "letter": "YGX"
+}, {
+  "id": 2977,
+  "name": "阳谷县",
+  "pid": 181,
+  "letter": "YGX"
+}, {
+  "id": 2978,
+  "name": "余干县",
+  "pid": 258,
+  "letter": "YGX"
+}, {
+  "id": 2979,
+  "name": "银海区",
+  "pid": 50,
+  "letter": "YHQ"
+}, {
+  "id": 2980,
+  "name": "盐湖区",
+  "pid": 335,
+  "letter": "YHQ"
+}, {
+  "id": 2981,
+  "name": "雨湖区",
+  "pid": 319,
+  "letter": "YHQ"
+}, {
+  "id": 2982,
+  "name": "雨花区",
+  "pid": 367,
+  "letter": "YHQ"
+}, {
+  "id": 2983,
+  "name": "源汇区",
+  "pid": 185,
+  "letter": "YHQ"
+}, {
+  "id": 2984,
+  "name": "裕华区",
+  "pid": 249,
+  "letter": "YHQ"
+}, {
+  "id": 2985,
+  "name": "运河区",
+  "pid": 76,
+  "letter": "YHQ"
+}, {
+  "id": 2986,
+  "name": "月湖区",
+  "pid": 348,
+  "letter": "YHQ"
+}, {
+  "id": 2987,
+  "name": "禹会区",
+  "pid": 46,
+  "letter": "YHQ"
+}, {
+  "id": 2988,
+  "name": "瑶海区",
+  "pid": 125,
+  "letter": "YHQ"
+}, {
+  "id": 2989,
+  "name": "余杭区",
+  "pid": 150,
+  "letter": "YHQ"
+}, {
+  "id": 2990,
+  "name": "永和区",
+  "pid": 309,
+  "letter": "YHQ"
+}, {
+  "id": 2991,
+  "name": "于洪区",
+  "pid": 266,
+  "letter": "YHQ"
+}, {
+  "id": 2992,
+  "name": "友好区",
+  "pid": 339,
+  "letter": "YHQ"
+}, {
+  "id": 2993,
+  "name": "玉环市",
+  "pid": 291,
+  "letter": "YHS"
+}, {
+  "id": 2994,
+  "name": "沿河土家族自治县",
+  "pid": 285,
+  "letter": "YHTJZZZX"
+}, {
+  "id": 2995,
+  "name": "雨花台区",
+  "pid": 217,
+  "letter": "YHTQ"
+}, {
+  "id": 2996,
+  "name": "永和县",
+  "pid": 183,
+  "letter": "YHX"
+}, {
+  "id": 2997,
+  "name": "宜黄县",
+  "pid": 103,
+  "letter": "YHX"
+}, {
+  "id": 2998,
+  "name": "云和县",
+  "pid": 192,
+  "letter": "YHX"
+}, {
+  "id": 2999,
+  "name": "伊金霍洛旗",
+  "pid": 96,
+  "letter": "YJHLQ"
+}, {
+  "id": 3000,
+  "name": "元江哈尼族彝族傣族自治县",
+  "pid": 350,
+  "letter": "YJHNZYZDZZZX"
+}, {
+  "id": 3001,
+  "name": "雁江区",
+  "pid": 373,
+  "letter": "YJQ"
+}, {
+  "id": 3002,
+  "name": "右江区",
+  "pid": 55,
+  "letter": "YJQ"
+}, {
+  "id": 3003,
+  "name": "叶集区",
+  "pid": 178,
+  "letter": "YJQ"
+}, {
+  "id": 3004,
+  "name": "余江区",
+  "pid": 348,
+  "letter": "YJQ"
+}, {
+  "id": 3005,
+  "name": "迎江区",
+  "pid": 42,
+  "letter": "YJQ"
+}, {
+  "id": 3006,
+  "name": "弋江区",
+  "pid": 296,
+  "letter": "YJQ"
+}, {
+  "id": 3007,
+  "name": "玉井区",
+  "pid": 284,
+  "letter": "YJQ"
+}, {
+  "id": 3008,
+  "name": "英吉沙县",
+  "pid": 176,
+  "letter": "YJSX"
+}, {
+  "id": 3009,
+  "name": "永济市",
+  "pid": 335,
+  "letter": "YJS"
+}, {
+  "id": 3010,
+  "name": "沅江市",
+  "pid": 351,
+  "letter": "YJS"
+}, {
+  "id": 3011,
+  "name": "延吉市",
+  "pid": 332,
+  "letter": "YJS"
+}, {
+  "id": 3012,
+  "name": "印江土家族苗族自治县",
+  "pid": 285,
+  "letter": "YJTJZMZZZX"
+}, {
+  "id": 3013,
+  "name": "油尖旺区",
+  "pid": 313,
+  "letter": "YJWQ"
+}, {
+  "id": 3014,
+  "name": "盈江县",
+  "pid": 83,
+  "letter": "YJX"
+}, {
+  "id": 3015,
+  "name": "雅江县",
+  "pid": 114,
+  "letter": "YJX"
+}, {
+  "id": 3016,
+  "name": "荥经县",
+  "pid": 330,
+  "letter": "YJX"
+}, {
+  "id": 3017,
+  "name": "永靖县",
+  "pid": 194,
+  "letter": "YJX"
+}, {
+  "id": 3018,
+  "name": "盐津县",
+  "pid": 370,
+  "letter": "YJX"
+}, {
+  "id": 3019,
+  "name": "宜君县",
+  "pid": 277,
+  "letter": "YJX"
+}, {
+  "id": 3020,
+  "name": "延津县",
+  "pid": 321,
+  "letter": "YJX"
+}, {
+  "id": 3021,
+  "name": "永嘉县",
+  "pid": 306,
+  "letter": "YJX"
+}, {
+  "id": 3022,
+  "name": "永吉县",
+  "pid": 158,
+  "letter": "YJX"
+}, {
+  "id": 3023,
+  "name": "永康区",
+  "pid": 284,
+  "letter": "YKQ"
+}, {
+  "id": 3024,
+  "name": "永康市",
+  "pid": 156,
+  "letter": "YKS"
+}, {
+  "id": 3025,
+  "name": "牙克石市",
+  "pid": 133,
+  "letter": "YKSS"
+}, {
+  "id": 3026,
+  "name": "玉龙纳西族自治县",
+  "pid": 186,
+  "letter": "YLNXZZZX"
+}, {
+  "id": 3027,
+  "name": "杨陵区",
+  "pid": 323,
+  "letter": "YLQ"
+}, {
+  "id": 3028,
+  "name": "阎良区",
+  "pid": 308,
+  "letter": "YLQ"
+}, {
+  "id": 3029,
+  "name": "夷陵区",
+  "pid": 336,
+  "letter": "YLQ"
+}, {
+  "id": 3030,
+  "name": "岳麓区",
+  "pid": 367,
+  "letter": "YLQ"
+}, {
+  "id": 3031,
+  "name": "元朗区",
+  "pid": 313,
+  "letter": "YLQ"
+}, {
+  "id": 3032,
+  "name": "云龙区",
+  "pid": 329,
+  "letter": "YLQ"
+}, {
+  "id": 3033,
+  "name": "云龙县",
+  "pid": 84,
+  "letter": "YLX"
+}, {
+  "id": 3034,
+  "name": "宜良县",
+  "pid": 175,
+  "letter": "YLX"
+}, {
+  "id": 3035,
+  "name": "彝良县",
+  "pid": 370,
+  "letter": "YLX"
+}, {
+  "id": 3036,
+  "name": "仪陇县",
+  "pid": 212,
+  "letter": "YLX"
+}, {
+  "id": 3037,
+  "name": "沅陵县",
+  "pid": 130,
+  "letter": "YLX"
+}, {
+  "id": 3038,
+  "name": "炎陵县",
+  "pid": 377,
+  "letter": "YLX"
+}, {
+  "id": 3039,
+  "name": "鄢陵县",
+  "pid": 310,
+  "letter": "YLX"
+}, {
+  "id": 3040,
+  "name": "依兰县",
+  "pid": 124,
+  "letter": "YLX"
+}, {
+  "id": 3041,
+  "name": "阳明区",
+  "pid": 206,
+  "letter": "YMQ"
+}, {
+  "id": 3042,
+  "name": "玉门市",
+  "pid": 164,
+  "letter": "YMS"
+}, {
+  "id": 3043,
+  "name": "义马市",
+  "pid": 253,
+  "letter": "YMS"
+}, {
+  "id": 3044,
+  "name": "杨梅市",
+  "pid": 289,
+  "letter": "YMS"
+}, {
+  "id": 3045,
+  "name": "裕民县",
+  "pid": 276,
+  "letter": "YMX"
+}, {
+  "id": 3046,
+  "name": "元谋县",
+  "pid": 72,
+  "letter": "YMX"
+}, {
+  "id": 3047,
+  "name": "易门县",
+  "pid": 350,
+  "letter": "YMX"
+}, {
+  "id": 3048,
+  "name": "云梦县",
+  "pid": 312,
+  "letter": "YMX"
+}, {
+  "id": 3049,
+  "name": "邕宁区",
+  "pid": 218,
+  "letter": "YNQ"
+}, {
+  "id": 3050,
+  "name": "永年区",
+  "pid": 123,
+  "letter": "YNQ"
+}, {
+  "id": 3051,
+  "name": "伊宁市",
+  "pid": 343,
+  "letter": "YNS"
+}, {
+  "id": 3052,
+  "name": "伊宁县",
+  "pid": 343,
+  "letter": "YNX"
+}, {
+  "id": 3053,
+  "name": "永宁县",
+  "pid": 334,
+  "letter": "YNX"
+}, {
+  "id": 3054,
+  "name": "郁南县",
+  "pid": 340,
+  "letter": "YNX"
+}, {
+  "id": 3055,
+  "name": "沂南县",
+  "pid": 198,
+  "letter": "YNX"
+}, {
+  "id": 3056,
+  "name": "玉屏侗族自治县",
+  "pid": 285,
+  "letter": "YPDZZZX"
+}, {
+  "id": 3057,
+  "name": "岳普湖县",
+  "pid": 176,
+  "letter": "YPHX"
+}, {
+  "id": 3058,
+  "name": "延平区",
+  "pid": 219,
+  "letter": "YPQ"
+}, {
+  "id": 3059,
+  "name": "杨浦区",
+  "pid": 247,
+  "letter": "YPQ"
+}, {
+  "id": 3060,
+  "name": "原平市",
+  "pid": 327,
+  "letter": "YPS"
+}, {
+  "id": 3061,
+  "name": "永平县",
+  "pid": 84,
+  "letter": "YPX"
+}, {
+  "id": 3062,
+  "name": "焉耆回族自治县",
+  "pid": 60,
+  "letter": "YQHZZZX"
+}, {
+  "id": 3063,
+  "name": "玉泉区",
+  "pid": 129,
+  "letter": "YQQ"
+}, {
+  "id": 3064,
+  "name": "颍泉区",
+  "pid": 102,
+  "letter": "YQQ"
+}, {
+  "id": 3065,
+  "name": "延庆区",
+  "pid": 53,
+  "letter": "YQQ"
+}, {
+  "id": 3066,
+  "name": "埇桥区",
+  "pid": 328,
+  "letter": "YQQ"
+}, {
+  "id": 3067,
+  "name": "余庆县",
+  "pid": 374,
+  "letter": "YQX"
+}, {
+  "id": 3068,
+  "name": "垣曲县",
+  "pid": 335,
+  "letter": "YQX"
+}, {
+  "id": 3069,
+  "name": "阳曲县",
+  "pid": 288,
+  "letter": "YQX"
+}, {
+  "id": 3070,
+  "name": "永清县",
+  "pid": 184,
+  "letter": "YQX"
+}, {
+  "id": 3071,
+  "name": "永仁县",
+  "pid": 72,
+  "letter": "YRX"
+}, {
+  "id": 3072,
+  "name": "雁山区",
+  "pid": 108,
+  "letter": "YSQ"
+}, {
+  "id": 3073,
+  "name": "渝水区",
+  "pid": 326,
+  "letter": "YSQ"
+}, {
+  "id": 3074,
+  "name": "雨山区",
+  "pid": 205,
+  "letter": "YSQ"
+}, {
+  "id": 3075,
+  "name": "盐水区",
+  "pid": 284,
+  "letter": "YSQ"
+}, {
+  "id": 3076,
+  "name": "玉树市",
+  "pid": 347,
+  "letter": "YSS"
+}, {
+  "id": 3077,
+  "name": "偃师市",
+  "pid": 196,
+  "letter": "YSS"
+}, {
+  "id": 3078,
+  "name": "榆树市",
+  "pid": 356,
+  "letter": "YSS"
+}, {
+  "id": 3079,
+  "name": "永胜县",
+  "pid": 186,
+  "letter": "YSX"
+}, {
+  "id": 3080,
+  "name": "永善县",
+  "pid": 370,
+  "letter": "YSX"
+}, {
+  "id": 3081,
+  "name": "砚山县",
+  "pid": 301,
+  "letter": "YSX"
+}, {
+  "id": 3082,
+  "name": "营山县",
+  "pid": 212,
+  "letter": "YSX"
+}, {
+  "id": 3083,
+  "name": "永寿县",
+  "pid": 323,
+  "letter": "YSX"
+}, {
+  "id": 3084,
+  "name": "永顺县",
+  "pid": 322,
+  "letter": "YSX"
+}, {
+  "id": 3085,
+  "name": "阳朔县",
+  "pid": 108,
+  "letter": "YSX"
+}, {
+  "id": 3086,
+  "name": "阳山县",
+  "pid": 240,
+  "letter": "YSX"
+}, {
+  "id": 3087,
+  "name": "榆社县",
+  "pid": 170,
+  "letter": "YSX"
+}, {
+  "id": 3088,
+  "name": "元氏县",
+  "pid": 249,
+  "letter": "YSX"
+}, {
+  "id": 3089,
+  "name": "英山县",
+  "pid": 126,
+  "letter": "YSX"
+}, {
+  "id": 3090,
+  "name": "颍上县",
+  "pid": 102,
+  "letter": "YSX"
+}, {
+  "id": 3091,
+  "name": "盐山县",
+  "pid": 76,
+  "letter": "YSX"
+}, {
+  "id": 3092,
+  "name": "玉山县",
+  "pid": 258,
+  "letter": "YSX"
+}, {
+  "id": 3093,
+  "name": "沂水县",
+  "pid": 198,
+  "letter": "YSX"
+}, {
+  "id": 3094,
+  "name": "延寿县",
+  "pid": 124,
+  "letter": "YSX"
+}, {
+  "id": 3095,
+  "name": "鹰手营子矿区",
+  "pid": 69,
+  "letter": "YSYZKQ"
+}, {
+  "id": 3096,
+  "name": "伊通满族自治县",
+  "pid": 256,
+  "letter": "YTMZZZX"
+}, {
+  "id": 3097,
+  "name": "沿滩区",
+  "pid": 357,
+  "letter": "YTQ"
+}, {
+  "id": 3098,
+  "name": "雁塔区",
+  "pid": 308,
+  "letter": "YTQ"
+}, {
+  "id": 3099,
+  "name": "印台区",
+  "pid": 277,
+  "letter": "YTQ"
+}, {
+  "id": 3100,
+  "name": "岳塘区",
+  "pid": 319,
+  "letter": "YTQ"
+}, {
+  "id": 3101,
+  "name": "盐田区",
+  "pid": 272,
+  "letter": "YTQ"
+}, {
+  "id": 3102,
+  "name": "于田县",
+  "pid": 142,
+  "letter": "YTX"
+}, {
+  "id": 3103,
+  "name": "盐亭县",
+  "pid": 209,
+  "letter": "YTX"
+}, {
+  "id": 3104,
+  "name": "鱼台县",
+  "pid": 162,
+  "letter": "YTX"
+}, {
+  "id": 3105,
+  "name": "玉田县",
+  "pid": 287,
+  "letter": "YTX"
+}, {
+  "id": 3106,
+  "name": "永泰县",
+  "pid": 104,
+  "letter": "YTX"
+}, {
+  "id": 3107,
+  "name": "义乌市",
+  "pid": 156,
+  "letter": "YWS"
+}, {
+  "id": 3108,
+  "name": "禹王台区",
+  "pid": 173,
+  "letter": "YWTQ"
+}, {
+  "id": 3109,
+  "name": "伊吾县",
+  "pid": 135,
+  "letter": "YWX"
+}, {
+  "id": 3110,
+  "name": "云县",
+  "pid": 180,
+  "letter": "YX"
+}, {
+  "id": 3111,
+  "name": "游仙区",
+  "pid": 209,
+  "letter": "YXQ"
+}, {
+  "id": 3112,
+  "name": "越西县",
+  "pid": 193,
+  "letter": "YXX"
+}, {
+  "id": 3113,
+  "name": "洋县",
+  "pid": 146,
+  "letter": "YX"
+}, {
+  "id": 3114,
+  "name": "云溪区",
+  "pid": 352,
+  "letter": "YXQ"
+}, {
+  "id": 3115,
+  "name": "阳西县",
+  "pid": 341,
+  "letter": "YXX"
+}, {
+  "id": 3116,
+  "name": "永兴县",
+  "pid": 75,
+  "letter": "YXX"
+}, {
+  "id": 3117,
+  "name": "盂县",
+  "pid": 346,
+  "letter": "YX"
+}, {
+  "id": 3118,
+  "name": "应县",
+  "pid": 270,
+  "letter": "YX"
+}, {
+  "id": 3119,
+  "name": "叶县",
+  "pid": 223,
+  "letter": "YX"
+}, {
+  "id": 3120,
+  "name": "攸县",
+  "pid": 377,
+  "letter": "YX"
+}, {
+  "id": 3121,
+  "name": "越秀区",
+  "pid": 115,
+  "letter": "YXQ"
+}, {
+  "id": 3122,
+  "name": "宜秀区",
+  "pid": 42,
+  "letter": "YXQ"
+}, {
+  "id": 3123,
+  "name": "永新县",
+  "pid": 152,
+  "letter": "YXX"
+}, {
+  "id": 3124,
+  "name": "阳新县",
+  "pid": 139,
+  "letter": "YXX"
+}, {
+  "id": 3125,
+  "name": "易县",
+  "pid": 48,
+  "letter": "YX"
+}, {
+  "id": 3126,
+  "name": "永修县",
+  "pid": 157,
+  "letter": "YXX"
+}, {
+  "id": 3127,
+  "name": "岳西县",
+  "pid": 42,
+  "letter": "YXX"
+}, {
+  "id": 3128,
+  "name": "云霄县",
+  "pid": 379,
+  "letter": "YXX"
+}, {
+  "id": 3129,
+  "name": "阳信县",
+  "pid": 65,
+  "letter": "YXX"
+}, {
+  "id": 3130,
+  "name": "黟县",
+  "pid": 141,
+  "letter": "YX"
+}, {
+  "id": 3131,
+  "name": "宜兴市",
+  "pid": 303,
+  "letter": "YXS"
+}, {
+  "id": 3132,
+  "name": "郧西县",
+  "pid": 264,
+  "letter": "YXX"
+}, {
+  "id": 3133,
+  "name": "尤溪县",
+  "pid": 251,
+  "letter": "YXX"
+}, {
+  "id": 3134,
+  "name": "义县",
+  "pid": 172,
+  "letter": "YX"
+}, {
+  "id": 3135,
+  "name": "岳阳楼区",
+  "pid": 352,
+  "letter": "YYLQ"
+}, {
+  "id": 3136,
+  "name": "云岩区",
+  "pid": 113,
+  "letter": "YYQ"
+}, {
+  "id": 3137,
+  "name": "榆阳区",
+  "pid": 344,
+  "letter": "YYQ"
+}, {
+  "id": 3138,
+  "name": "郧阳区",
+  "pid": 264,
+  "letter": "YYQ"
+}, {
+  "id": 3139,
+  "name": "荥阳市",
+  "pid": 376,
+  "letter": "YYS"
+}, {
+  "id": 3140,
+  "name": "余姚市",
+  "pid": 211,
+  "letter": "YYS"
+}, {
+  "id": 3141,
+  "name": "酉阳土家族苗族自治县",
+  "pid": 365,
+  "letter": "YYTJZMZZZX"
+}, {
+  "id": 3142,
+  "name": "盐源县",
+  "pid": 193,
+  "letter": "YYX"
+}, {
+  "id": 3143,
+  "name": "元阳县",
+  "pid": 128,
+  "letter": "YYX"
+}, {
+  "id": 3144,
+  "name": "云阳县",
+  "pid": 365,
+  "letter": "YYX"
+}, {
+  "id": 3145,
+  "name": "宜阳县",
+  "pid": 196,
+  "letter": "YYX"
+}, {
+  "id": 3146,
+  "name": "右玉县",
+  "pid": 270,
+  "letter": "YYX"
+}, {
+  "id": 3147,
+  "name": "岳阳县",
+  "pid": 352,
+  "letter": "YYX"
+}, {
+  "id": 3148,
+  "name": "原阳县",
+  "pid": 321,
+  "letter": "YYX"
+}, {
+  "id": 3149,
+  "name": "阳原县",
+  "pid": 360,
+  "letter": "YYX"
+}, {
+  "id": 3150,
+  "name": "弋阳县",
+  "pid": 258,
+  "letter": "YYX"
+}, {
+  "id": 3151,
+  "name": "沂源县",
+  "pid": 355,
+  "letter": "YYX"
+}, {
+  "id": 3152,
+  "name": "友谊县",
+  "pid": 268,
+  "letter": "YYX"
+}, {
+  "id": 3153,
+  "name": "伊州区",
+  "pid": 135,
+  "letter": "YZQ"
+}, {
+  "id": 3154,
+  "name": "原州区",
+  "pid": 112,
+  "letter": "YZQ"
+}, {
+  "id": 3155,
+  "name": "渝中区",
+  "pid": 365,
+  "letter": "YZQ"
+}, {
+  "id": 3156,
+  "name": "宜州区",
+  "pid": 121,
+  "letter": "YZQ"
+}, {
+  "id": 3157,
+  "name": "耀州区",
+  "pid": 277,
+  "letter": "YZQ"
+}, {
+  "id": 3158,
+  "name": "崖州区",
+  "pid": 263,
+  "letter": "YZQ"
+}, {
+  "id": 3159,
+  "name": "玉州区",
+  "pid": 345,
+  "letter": "YZQ"
+}, {
+  "id": 3160,
+  "name": "迎泽区",
+  "pid": 288,
+  "letter": "YZQ"
+}, {
+  "id": 3161,
+  "name": "云州区",
+  "pid": 88,
+  "letter": "YZQ"
+}, {
+  "id": 3162,
+  "name": "袁州区",
+  "pid": 337,
+  "letter": "YZQ"
+}, {
+  "id": 3163,
+  "name": "颍州区",
+  "pid": 102,
+  "letter": "YZQ"
+}, {
+  "id": 3164,
+  "name": "兖州区",
+  "pid": 162,
+  "letter": "YZQ"
+}, {
+  "id": 3165,
+  "name": "鄞州区",
+  "pid": 211,
+  "letter": "YZQ"
+}, {
+  "id": 3166,
+  "name": "银州区",
+  "pid": 283,
+  "letter": "YZQ"
+}, {
+  "id": 3167,
+  "name": "禹州市",
+  "pid": 310,
+  "letter": "YZS"
+}, {
+  "id": 3168,
+  "name": "仪征市",
+  "pid": 354,
+  "letter": "YZS"
+}, {
+  "id": 3169,
+  "name": "扬中市",
+  "pid": 362,
+  "letter": "YZS"
+}, {
+  "id": 3170,
+  "name": "榆中县",
+  "pid": 202,
+  "letter": "YZX"
+}, {
+  "id": 3171,
+  "name": "延长县",
+  "pid": 331,
+  "letter": "YZX"
+}, {
+  "id": 3172,
+  "name": "宜章县",
+  "pid": 75,
+  "letter": "YZX"
+}, {
+  "id": 3173,
+  "name": "长安区",
+  "pid": 308,
+  "letter": "ZAQ"
+}, {
+  "id": 3174,
+  "name": "振安区",
+  "pid": 81,
+  "letter": "ZAQ"
+}, {
+  "id": 3175,
+  "name": "正安县",
+  "pid": 374,
+  "letter": "ZAX"
+}, {
+  "id": 3176,
+  "name": "镇安县",
+  "pid": 250,
+  "letter": "ZAX"
+}, {
+  "id": 3177,
+  "name": "诏安县",
+  "pid": 379,
+  "letter": "ZAX"
+}, {
+  "id": 3178,
+  "name": "长白朝鲜族自治县",
+  "pid": 57,
+  "letter": "ZBCXZZZX"
+}, {
+  "id": 3179,
+  "name": "仲巴县",
+  "pid": 244,
+  "letter": "ZBX"
+}, {
+  "id": 3180,
+  "name": "镇巴县",
+  "pid": 146,
+  "letter": "ZBX"
+}, {
+  "id": 3181,
+  "name": "张北县",
+  "pid": 360,
+  "letter": "ZBX"
+}, {
+  "id": 3182,
+  "name": "增城区",
+  "pid": 115,
+  "letter": "ZCQ"
+}, {
+  "id": 3183,
+  "name": "周村区",
+  "pid": 355,
+  "letter": "ZCQ"
+}, {
+  "id": 3184,
+  "name": "淄川区",
+  "pid": 355,
+  "letter": "ZCQ"
+}, {
+  "id": 3185,
+  "name": "邹城市",
+  "pid": 162,
+  "letter": "ZCS"
+}, {
+  "id": 3186,
+  "name": "诸城市",
+  "pid": 293,
+  "letter": "ZCS"
+}, {
+  "id": 3187,
+  "name": "柘城县",
+  "pid": 257,
+  "letter": "ZCX"
+}, {
+  "id": 3188,
+  "name": "张店区",
+  "pid": 355,
+  "letter": "ZDQ"
+}, {
+  "id": 3189,
+  "name": "肇东市",
+  "pid": 248,
+  "letter": "ZDS"
+}, {
+  "id": 3190,
+  "name": "札达县",
+  "pid": 38,
+  "letter": "ZDX"
+}, {
+  "id": 3191,
+  "name": "治多县",
+  "pid": 347,
+  "letter": "ZDX"
+}, {
+  "id": 3192,
+  "name": "杂多县",
+  "pid": 347,
+  "letter": "ZDX"
+}, {
+  "id": 3193,
+  "name": "志丹县",
+  "pid": 331,
+  "letter": "ZDX"
+}, {
+  "id": 3194,
+  "name": "正定县",
+  "pid": 249,
+  "letter": "ZDX"
+}, {
+  "id": 3195,
+  "name": "长岛县",
+  "pid": 349,
+  "letter": "ZDX"
+}, {
+  "id": 3196,
+  "name": "芝罘区",
+  "pid": 349,
+  "letter": "ZFQ"
+}, {
+  "id": 3197,
+  "name": "贞丰县",
+  "pid": 238,
+  "letter": "ZFX"
+}, {
+  "id": 3198,
+  "name": "中方县",
+  "pid": 130,
+  "letter": "ZFX"
+}, {
+  "id": 3199,
+  "name": "长丰县",
+  "pid": 125,
+  "letter": "ZFX"
+}, {
+  "id": 3200,
+  "name": "准格尔旗",
+  "pid": 96,
+  "letter": "ZGEQ"
+}, {
+  "id": 3201,
+  "name": "章贡区",
+  "pid": 116,
+  "letter": "ZGQ"
+}, {
+  "id": 3202,
+  "name": "梓官区",
+  "pid": 110,
+  "letter": "ZGQ"
+}, {
+  "id": 3203,
+  "name": "长葛市",
+  "pid": 310,
+  "letter": "ZGS"
+}, {
+  "id": 3204,
+  "name": "左贡县",
+  "pid": 66,
+  "letter": "ZGX"
+}, {
+  "id": 3205,
+  "name": "秭归县",
+  "pid": 336,
+  "letter": "ZGX"
+}, {
+  "id": 3206,
+  "name": "昭化区",
+  "pid": 111,
+  "letter": "ZHQ"
+}, {
+  "id": 3207,
+  "name": "珠晖区",
+  "pid": 144,
+  "letter": "ZHQ"
+}, {
+  "id": 3208,
+  "name": "湛河区",
+  "pid": 223,
+  "letter": "ZHQ"
+}, {
+  "id": 3209,
+  "name": "沾化区",
+  "pid": 65,
+  "letter": "ZHQ"
+}, {
+  "id": 3210,
+  "name": "镇海区",
+  "pid": 211,
+  "letter": "ZHQ"
+}, {
+  "id": 3211,
+  "name": "中和区",
+  "pid": 309,
+  "letter": "ZHQ"
+}, {
+  "id": 3212,
+  "name": "遵化市",
+  "pid": 287,
+  "letter": "ZHS"
+}, {
+  "id": 3213,
+  "name": "庄河市",
+  "pid": 85,
+  "letter": "ZHS"
+}, {
+  "id": 3214,
+  "name": "赞皇县",
+  "pid": 249,
+  "letter": "ZHX"
+}, {
+  "id": 3215,
+  "name": "政和县",
+  "pid": 219,
+  "letter": "ZHX"
+}, {
+  "id": 3216,
+  "name": "长海县",
+  "pid": 85,
+  "letter": "ZHX"
+}, {
+  "id": 3217,
+  "name": "张家川回族自治县",
+  "pid": 286,
+  "letter": "ZJCHZZZX"
+}, {
+  "id": 3218,
+  "name": "芷江侗族自治县",
+  "pid": 130,
+  "letter": "ZJDZZZX"
+}, {
+  "id": 3219,
+  "name": "张家港市",
+  "pid": 273,
+  "letter": "ZJGS"
+}, {
+  "id": 3220,
+  "name": "浈江区",
+  "pid": 246,
+  "letter": "ZJQ"
+}, {
+  "id": 3221,
+  "name": "枝江市",
+  "pid": 336,
+  "letter": "ZJS"
+}, {
+  "id": 3222,
+  "name": "诸暨市",
+  "pid": 262,
+  "letter": "ZJS"
+}, {
+  "id": 3223,
+  "name": "昭觉县",
+  "pid": 193,
+  "letter": "ZJX"
+}, {
+  "id": 3224,
+  "name": "中江县",
+  "pid": 91,
+  "letter": "ZJX"
+}, {
+  "id": 3225,
+  "name": "织金县",
+  "pid": 51,
+  "letter": "ZJX"
+}, {
+  "id": 3226,
+  "name": "紫金县",
+  "pid": 145,
+  "letter": "ZJX"
+}, {
+  "id": 3227,
+  "name": "镇康县",
+  "pid": 180,
+  "letter": "ZKX"
+}, {
+  "id": 3228,
+  "name": "泽库县",
+  "pid": 137,
+  "letter": "ZKX"
+}, {
+  "id": 3229,
+  "name": "自流井区",
+  "pid": 357,
+  "letter": "ZLJQ"
+}, {
+  "id": 3230,
+  "name": "扎赉诺尔区",
+  "pid": 133,
+  "letter": "ZLNEQ"
+}, {
+  "id": 3231,
+  "name": "召陵区",
+  "pid": 185,
+  "letter": "ZLQ"
+}, {
+  "id": 3232,
+  "name": "正蓝旗",
+  "pid": 314,
+  "letter": "ZLQ"
+}, {
+  "id": 3233,
+  "name": "长乐区",
+  "pid": 104,
+  "letter": "ZLQ"
+}, {
+  "id": 3234,
+  "name": "钟楼区",
+  "pid": 80,
+  "letter": "ZLQ"
+}, {
+  "id": 3235,
+  "name": "中坜市",
+  "pid": 289,
+  "letter": "ZLS"
+}, {
+  "id": 3236,
+  "name": "扎鲁特旗",
+  "pid": 282,
+  "letter": "ZLTQ"
+}, {
+  "id": 3237,
+  "name": "扎赉特旗",
+  "pid": 307,
+  "letter": "ZLTQ"
+}, {
+  "id": 3238,
+  "name": "扎兰屯市",
+  "pid": 133,
+  "letter": "ZLTS"
+}, {
+  "id": 3239,
+  "name": "庄浪县",
+  "pid": 226,
+  "letter": "ZLX"
+}, {
+  "id": 3240,
+  "name": "涿鹿县",
+  "pid": 360,
+  "letter": "ZLX"
+}, {
+  "id": 3241,
+  "name": "镇赉县",
+  "pid": 47,
+  "letter": "ZLX"
+}, {
+  "id": 3242,
+  "name": "长岭县",
+  "pid": 267,
+  "letter": "ZLX"
+}, {
+  "id": 3243,
+  "name": "中牟县",
+  "pid": 376,
+  "letter": "ZMX"
+}, {
+  "id": 3244,
+  "name": "镇宁布依族苗族自治县",
+  "pid": 43,
+  "letter": "ZNBYZMZZZX"
+}, {
+  "id": 3245,
+  "name": "长宁区",
+  "pid": 247,
+  "letter": "ZNQ"
+}, {
+  "id": 3246,
+  "name": "扎囊县",
+  "pid": 254,
+  "letter": "ZNX"
+}, {
+  "id": 3247,
+  "name": "卓尼县",
+  "pid": 109,
+  "letter": "ZNX"
+}, {
+  "id": 3248,
+  "name": "长宁县",
+  "pid": 333,
+  "letter": "ZNX"
+}, {
+  "id": 3249,
+  "name": "中宁县",
+  "pid": 371,
+  "letter": "ZNX"
+}, {
+  "id": 3250,
+  "name": "正宁县",
+  "pid": 239,
+  "letter": "ZNX"
+}, {
+  "id": 3251,
+  "name": "周宁县",
+  "pid": 214,
+  "letter": "ZNX"
+}, {
+  "id": 3252,
+  "name": "漳平市",
+  "pid": 197,
+  "letter": "ZPS"
+}, {
+  "id": 3253,
+  "name": "邹平市",
+  "pid": 65,
+  "letter": "ZPS"
+}, {
+  "id": 3254,
+  "name": "泽普县",
+  "pid": 176,
+  "letter": "ZPX"
+}, {
+  "id": 3255,
+  "name": "镇坪县",
+  "pid": 37,
+  "letter": "ZPX"
+}, {
+  "id": 3256,
+  "name": "昭平县",
+  "pid": 147,
+  "letter": "ZPX"
+}, {
+  "id": 3257,
+  "name": "镇平县",
+  "pid": 222,
+  "letter": "ZPX"
+}, {
+  "id": 3258,
+  "name": "漳浦县",
+  "pid": 379,
+  "letter": "ZPX"
+}, {
+  "id": 3259,
+  "name": "长清区",
+  "pid": 163,
+  "letter": "ZQQ"
+}, {
+  "id": 3260,
+  "name": "章丘区",
+  "pid": 163,
+  "letter": "ZQQ"
+}, {
+  "id": 3261,
+  "name": "站前区",
+  "pid": 342,
+  "letter": "ZQQ"
+}, {
+  "id": 3262,
+  "name": "舟曲县",
+  "pid": 109,
+  "letter": "ZQX"
+}, {
+  "id": 3263,
+  "name": "左权县",
+  "pid": 170,
+  "letter": "ZQX"
+}, {
+  "id": 3264,
+  "name": "枣强县",
+  "pid": 140,
+  "letter": "ZQX"
+}, {
+  "id": 3265,
+  "name": "柘荣县",
+  "pid": 214,
+  "letter": "ZRX"
+}, {
+  "id": 3266,
+  "name": "钟山区",
+  "pid": 189,
+  "letter": "ZSQ"
+}, {
+  "id": 3267,
+  "name": "长寿区",
+  "pid": 365,
+  "letter": "ZSQ"
+}, {
+  "id": 3268,
+  "name": "中沙群岛",
+  "pid": 259,
+  "letter": "ZSQD"
+}, {
+  "id": 3269,
+  "name": "珠山区",
+  "pid": 155,
+  "letter": "ZSQ"
+}, {
+  "id": 3270,
+  "name": "中山区",
+  "pid": 275,
+  "letter": "ZSQ"
+}, {
+  "id": 3271,
+  "name": "樟树市",
+  "pid": 337,
+  "letter": "ZSS"
+}, {
+  "id": 3272,
+  "name": "昭苏县",
+  "pid": 343,
+  "letter": "ZSX"
+}, {
+  "id": 3273,
+  "name": "长顺县",
+  "pid": 235,
+  "letter": "ZSX"
+}, {
+  "id": 3274,
+  "name": "柞水县",
+  "pid": 250,
+  "letter": "ZSX"
+}, {
+  "id": 3275,
+  "name": "竹山县",
+  "pid": 264,
+  "letter": "ZSX"
+}, {
+  "id": 3276,
+  "name": "钟山县",
+  "pid": 147,
+  "letter": "ZSX"
+}, {
+  "id": 3277,
+  "name": "长沙县",
+  "pid": 367,
+  "letter": "ZSX"
+}, {
+  "id": 3278,
+  "name": "梓潼县",
+  "pid": 209,
+  "letter": "ZTX"
+}, {
+  "id": 3279,
+  "name": "长汀县",
+  "pid": 197,
+  "letter": "ZTX"
+}, {
+  "id": 3280,
+  "name": "长泰县",
+  "pid": 379,
+  "letter": "ZTX"
+}, {
+  "id": 3281,
+  "name": "张湾区",
+  "pid": 264,
+  "letter": "ZWQ"
+}, {
+  "id": 3282,
+  "name": "长武县",
+  "pid": 323,
+  "letter": "ZWX"
+}, {
+  "id": 3283,
+  "name": "彰武县",
+  "pid": 101,
+  "letter": "ZWX"
+}, {
+  "id": 3284,
+  "name": "漳县",
+  "pid": 90,
+  "letter": "ZX"
+}, {
+  "id": 3285,
+  "name": "忠县",
+  "pid": 365,
+  "letter": "ZX"
+}, {
+  "id": 3286,
+  "name": "正镶白旗",
+  "pid": 314,
+  "letter": "ZXBQ"
+}, {
+  "id": 3287,
+  "name": "蒸湘区",
+  "pid": 144,
+  "letter": "ZXQ"
+}, {
+  "id": 3288,
+  "name": "中西区",
+  "pid": 313,
+  "letter": "ZXQ"
+}, {
+  "id": 3289,
+  "name": "赵县",
+  "pid": 249,
+  "letter": "ZX"
+}, {
+  "id": 3290,
+  "name": "振兴区",
+  "pid": 81,
+  "letter": "ZXQ"
+}, {
+  "id": 3291,
+  "name": "钟祥市",
+  "pid": 159,
+  "letter": "ZXS"
+}, {
+  "id": 3292,
+  "name": "资兴市",
+  "pid": 75,
+  "letter": "ZXS"
+}, {
+  "id": 3293,
+  "name": "镇雄县",
+  "pid": 370,
+  "letter": "ZXX"
+}, {
+  "id": 3294,
+  "name": "竹溪县",
+  "pid": 264,
+  "letter": "ZXX"
+}, {
+  "id": 3295,
+  "name": "资溪县",
+  "pid": 103,
+  "letter": "ZXX"
+}, {
+  "id": 3296,
+  "name": "长兴县",
+  "pid": 151,
+  "letter": "ZXX"
+}, {
+  "id": 3297,
+  "name": "紫云苗族布依族自治县",
+  "pid": 43,
+  "letter": "ZYMZBYZZZX"
+}, {
+  "id": 3298,
+  "name": "昭阳区",
+  "pid": 370,
+  "letter": "ZYQ"
+}, {
+  "id": 3299,
+  "name": "沾益区",
+  "pid": 234,
+  "letter": "ZYQ"
+}, {
+  "id": 3300,
+  "name": "资阳区",
+  "pid": 351,
+  "letter": "ZYQ"
+}, {
+  "id": 3301,
+  "name": "中原区",
+  "pid": 376,
+  "letter": "ZYQ"
+}, {
+  "id": 3302,
+  "name": "左营区",
+  "pid": 110,
+  "letter": "ZYQ"
+}, {
+  "id": 3303,
+  "name": "枣阳市",
+  "pid": 324,
+  "letter": "ZYS"
+}, {
+  "id": 3304,
+  "name": "长垣市",
+  "pid": 321,
+  "letter": "ZYS"
+}, {
+  "id": 3305,
+  "name": "招远市",
+  "pid": 349,
+  "letter": "ZYS"
+}, {
+  "id": 3306,
+  "name": "长阳土家族自治县",
+  "pid": 336,
+  "letter": "ZYTJZZZX"
+}, {
+  "id": 3307,
+  "name": "镇原县",
+  "pid": 239,
+  "letter": "ZYX"
+}, {
+  "id": 3308,
+  "name": "紫阳县",
+  "pid": 37,
+  "letter": "ZYX"
+}, {
+  "id": 3309,
+  "name": "镇远县",
+  "pid": 231,
+  "letter": "ZYX"
+}, {
+  "id": 3310,
+  "name": "资源县",
+  "pid": 108,
+  "letter": "ZYX"
+}, {
+  "id": 3311,
+  "name": "中阳县",
+  "pid": 187,
+  "letter": "ZYX"
+}, {
+  "id": 3312,
+  "name": "左云县",
+  "pid": 88,
+  "letter": "ZYX"
+}, {
+  "id": 3313,
+  "name": "正阳县",
+  "pid": 364,
+  "letter": "ZYX"
+}, {
+  "id": 3314,
+  "name": "肇源县",
+  "pid": 87,
+  "letter": "ZYX"
+}, {
+  "id": 3315,
+  "name": "镇沅彝族哈尼族拉祜族自治县",
+  "pid": 224,
+  "letter": "ZYYZHNZLHZZZX"
+}, {
+  "id": 3316,
+  "name": "长洲区",
+  "pid": 305,
+  "letter": "ZZQ"
+}, {
+  "id": 3317,
+  "name": "中站区",
+  "pid": 171,
+  "letter": "ZZQ"
+}, {
+  "id": 3318,
+  "name": "左镇区",
+  "pid": 284,
+  "letter": "ZZQ"
+}, {
+  "id": 3319,
+  "name": "中正区",
+  "pid": 275,
+  "letter": "ZZQ"
+}, {
+  "id": 3320,
+  "name": "子长市",
+  "pid": 331,
+  "letter": "ZZS"
+}, {
+  "id": 3321,
+  "name": "涿州市",
+  "pid": 48,
+  "letter": "ZZS"
+}, {
+  "id": 3322,
+  "name": "资中县",
+  "pid": 216,
+  "letter": "ZZX"
+}, {
+  "id": 3323,
+  "name": "周至县",
+  "pid": 308,
+  "letter": "ZZX"
+}, {
+  "id": 3324,
+  "name": "子洲县",
+  "pid": 344,
+  "letter": "ZZX"
+}, {
+  "id": 3325,
+  "name": "卓资县",
+  "pid": 298,
+  "letter": "ZZX"
+}, {
+  "id": 3326,
+  "name": "长子县",
+  "pid": 375,
+  "letter": "ZZX"
+}, {
+  "id": 3327,
+  "name": "泽州县",
+  "pid": 154,
+  "letter": "ZZX"
+}, {
+  "id": 3328,
+  "name": "肇州县",
+  "pid": 87,
+  "letter": "ZZX"
+}]

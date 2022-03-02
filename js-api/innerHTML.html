@@ -1,0 +1,15 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app"></div>
+    
+    <script>
+        //并不会弹框  HTML5指定<script>插入的标签innerHTML 不执行 原文地址:https://developer.mozilla.org/en-US/docs/Web/API/Element/innerHTML
+        app.innerHTML =`<script>alert(1)<\/script>`;
+    </script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+	<head>
+	    <!--声明当前页面的编码集：中文编码（gbk/gb2312）,国际编码（utf-8）-->
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+		<!--页面三要素-->
+		<title>国际标准模板</title><!--小于等于31 大小写不区分-->
+		<meta name="Keywords" content="关键词,关键词,关键词"><!--<=76个字-->
+		<meta name="description" content=""><!--<=80个字-->
+		<!--js/css-->
+		<style type="text/css">
+		@charset "UTF-8";
+		* {word-wrap: break-word;;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;}
+		html {-webkit-text-size-adjust: none;overflow-x:hidden}
+		body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td,span{padding:0;margin:0;}
+		body{font:normal 0.75em/1.5em "微软雅黑","冬青黑体简体中文 w3","宋体"; }
+		fieldset,img,html,body,iframe{border:0;}
+		/** 重置表格元素 **/
+		table{border-collapse:collapse;border-spacing:0;}
+		ol,ul{list-style:none;}
+		address,caption,cite,code,dfn,em,strong,th,var{font-weight:normal;font-style:normal;}
+		caption,th{text-align:left;}
+		em,i,small,caption,th{font-weight:normal;font-style:normal;font-size:100%;}
+		h1,h2,h3,h4,h5,h6,em,strong,b{font-weight:400;font-size:100%;}
+		q:before,q:after{content:'';}
+		.clearfix{*zoom:1;}
+		.clearfix:after{content:"."; display:block;clear:both;visibility:hidden;line-height:0;height:0;}
+		a {color: #9D9C9C;text-decoration: none;}
+		a img {border: none;border:0;}
+		a,button{ outline:none; border:0;}
+		input,select{border:1px solid #ccc;}
+		button::-moz-focus-inner{border:0;padding:0;margin:0;}
+		textarea,input,button,select{outline:0;font-size:inherit;line-height:inherit;color:inherit;font-family:inherit;}
+		textarea{overflow:auto;resize:none;}
+		.hide,.none{display: none}
+		.hidden{visibility: hidden;}
+		.show,.block{display: block;}
+		img{ vertical-align:middle;}
+		input:disabled,select:disabled,textarea:disabled{background:#ccc;}
+		.fl{float: left;}
+		.fr{float: right;}
+		.box{width:100px;height:100px;background:red;position:absolute;top:0;left:0;color:#fff}
+		.relative{position:relative;height:500px;width:500px;margin:100px auto;background:yellow;}
+		</style>
+	</head>  
+	<body style="height:2000px;">
+
+		<div id="box" class="box" style="background:black">普通box</div>
+		<div id="box1" class="box" style="background:red">横向box1</div>
+		<div id="box2" class="box" style="background:green">纵向box2</div>
+		<div id="box3" class="box" style="background:pink"><h1 style="background:black">代理box3</h1></div>
+		<div class="relative">
+			<div id="box4" class="box" style="background:red">局域box4</div>
+			<div id="box5" class="box" style="background:green">镜像box5</div>
+		</div>
+		<script src="js/drag.js"></script>
+		<script>
+		function $(id){
+			return document.querySelector("#"+id);
+		}
+		window.onload=function(){
+			//随意拖
+			drag.init({dom:$("box")})
+			//横向拖
+			drag.init({dom:$("box1"),dir:"x"})
+			//纵向拖
+			drag.init({dom:$("box2"),dir:"y"})
+			//代理子类拖
+			drag.init({dom:$("box3"),proxyChild:0})
+			//盒子中拖
+			drag.init({dom:$("box4"),callbackDur:function(){
+				this.dom.style.background="#fff";
+				this.dom.style.color="#111";
+			},callbackEnd:function(){
+				this.dom.style.background="gray";
+			}})
+			//镜像盒子
+			drag.init({dom:$("box5"),ghost:true});
+		}
+	
+		</script>
+	</body>
+</html>

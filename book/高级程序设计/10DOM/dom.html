@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<a href="javascript:;" id="node1">哈哈1</a>
+		<a href="javascript:;" id="node2">哈哈2</a>
+	</body>
+	
+	<script>
+console.log(Node.ELEMENT_NODE)//1
+console.log(Node.ATTRIBUTE_NODE)//2
+console.log(Node.TEXT_NODE)//3
+console.log(Node.CDATA_SECTION_NODE)//4
+console.log(Node.ENTITY_REFERENCE_NODE)//5
+console.log(Node.ENTITY_NODE)//6
+console.log(Node.PROCESSING_INSTRUCTION_NODE)//7
+console.log(Node.COMMENT_NODE)//8
+console.log(Node.DOCUMENT_NODE)//9
+console.log(Node.DOCUMENT_TYPE_NODE)//10
+console.log(Node.DOCUMENT_FRAGMENT_NODE)//11
+console.log(Node.NOTATION_NODE)//12
+console.log(Node.DOCUMENT_POSITION_CONTAINED_BY)//16
+		console.log(document.body.childNodes)//(6) [text, a#node, text, a#node2, text, script]
+		console.log(document.body.children)//(3) [a#node, a#node2, script, node: a#node, node2: a#node2]
+		document.body.atest ="asdsadasdasdas";
+		let cloneTemp1 = document.body.cloneNode();
+		let cloneTemp2 = document.body.cloneNode(false);
+		let cloneTemp3 = document.body.cloneNode(true);
+		console.log(cloneTemp1)
+		console.log(JSON.stringify(document.body))
+		console.log(cloneTemp1.atest)
+		console.log(cloneTemp2)
+		console.log(cloneTemp3)
+		console.log(JSON.stringify(cloneTemp3))
+		console.log(document.doctype)
+		console.log(document.URL)//完整路径
+		console.log(document.domain)//服务器+端口
+		console.log(document.referrer)//上线
+	</script>
+</html>

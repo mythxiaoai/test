@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title></title>
+  </head>
+  <body></body>
+  <script>
+	  //promise 如果reject了 外层是asnyc/await会向上抛错误，如果外层没有try catch 那么 会抛给window 会终止线程
+	  //promise 如果reject了 外层需要catch才能捕获，否则会在reject报错抛向window
+    function ajax(time,mark) {
+      return new Promise(function(resolve, reject) {
+        setTimeout(function() {
+			  resolve(1)
+        }, time * 1000);
+      });
+	}
+	
+	(async ()=>{
+		console.log(1);
+		let res = await ajax(1,"测试");
+		console.log(res);
+		console.log(2);
+	})()
+
+	window.addEventListener("error",(e)=>{
+		console.error(e);
+	})
+	window.addEventListener("unhandledrejection",(e)=>{
+		console.error(e);
+	})
+
+  </script>
+</html>

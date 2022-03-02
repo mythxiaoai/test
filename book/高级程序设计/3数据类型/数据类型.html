@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			//undefined
+let log =(a)=>{console.log(a)};
+/*"use strict";
+//1
+let a;
+log(typeof a)//undefined
+log(typeof b)//undefined
+log(null==undefined)//true
+log(null===undefined)//false   Object undefined*/
+
+//number
+var hexa = 0xA;//10
+var hexa = 0x1f;//31
+console.log(hexa)
+//e
+var e = 5e5;//31
+log(e);//500000
+//bug
+var a =1.1;
+var b =0.2;
+log(a=-a)//0.30000000000000004
+/*log(parseInt("10",2))//2
+log(parseInt("10",8))//10
+log(parseInt("11",10))//11
+log(parseInt("ff",16))//255
+log(parseInt("255").toString(16))//ff
+log(String("255",16))//ff*/
+		</script>
+	</body>
+</html>

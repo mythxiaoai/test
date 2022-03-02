@@ -1,0 +1,1 @@
+# INSPINIA-Responsive_Admin_Theme

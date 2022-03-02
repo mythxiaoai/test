@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title></title>
+  <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css" />
+</head>
+
+<body>
+  <div id="app">
+    <div class="home">
+      {{query}}
+      <a href="javascript:;" @[eventName]="event">怎么触发好- {{eventName}}</a>
+      <p>
+        <button @click="eventName = 'click'">click</button>
+        <button @click="eventName = 'focus'">focus</button>
+        <button @click="eventName = 'mouseover'">mouseover</button>
+      </p>
+    </div>
+  </div>
+</body>
+<script type="module">
+  import Vue from 'https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.esm.browser.js'
+  //动态参数在这个vue的版本中不生效，，不知道什么情况
+  window.vm = new Vue({
+    el: "#app",
+    created() {
+      this.query = {
+        num:5,
+        get pageNo() { return this.num },
+        set pageNo(val) {
+          console.log(this);
+          this.num = val+1;
+         }
+    }
+    },
+    data() {
+      return {
+        eventName: "click",
+        attributeName: "href",
+        query: {},
+      };
+    },
+    methods: {
+      event() {
+        console.log(this.eventName);
+      },
+    },
+  });
+</script>
+
+</html>

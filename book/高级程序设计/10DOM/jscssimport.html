@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<link rel="stylesheet" href="../../css/common/common.css" />
+	<body class="bg-navy">
+		<script>
+function loadscript(url){
+	var script = document.createElement("script")
+	script.type="text/javascript";
+	script.src=url;
+	document.body.appendChild(script);
+}
+loadscript("client.js");
+function loadlink(url){
+	var link = document.createElement("link")
+	script.rel="stylesheet";
+	script.href=url;
+	document.getElementsByTagName("head")[0].appendChild(link);
+}
+loadscript("client.js");
+setTimeout(()=>{
+	console.log(client)
+},2000);
+loadlink("../../css/common/common.css");
+		</script>
+	</body>
+</html>

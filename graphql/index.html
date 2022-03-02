@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Graphiql - Mars</title>
+    <link href="https://unpkg.com/graphiql@1.0.6/graphiql.min.css" rel="stylesheet" />
+    <style>
+      html,
+      body {
+        margin: 0;
+        overflow: hidden;
+      }
+
+      #gql {
+        height: 100vh;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="gql"></div>
+    <script src="https://unpkg.com/react@17.0.1/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@17.0.1/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/graphiql@1.3.2/graphiql.min.js"></script>
+
+    <script src="https://cdn.bootcss.com/FileSaver.js/1.3.8/FileSaver.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/xlsx/0.16.8/xlsx.full.min.js"></script>
+
+    <script>
+      var params = new URLSearchParams(location.search.slice(1));
+      var auth = params.get("token") || "";
+      var url = params.get("url") || "http://localhost:8000/";
+      var name = "";
+      localStorage.removeItem("graphiql:query");
+      if (auth) {
+        var arr = auth.split(".");
+        if (arr.length == 3) {
+          try {
+            let json = JSON.parse(atob(arr[1]));
+            name = json.sub;
+          } catch {
+            name = "非法token";
+          }
+        }
+      }
+      var qs = "# 自定义服务器和jwt\n\n" + "# 在URL里添加?url=服务器&token=jwt\n\n" + "# 当前服务器： " + url + "\n" + "# 当前token的用户ID： " + name + "\n";
+      function fetcher(data, opts) {
+        var headers = {
+          "content-type": "application/json",
+        };
+        if (auth) headers.Authorization = "Bearer " + auth;
+        return fetch(url, {
+          method: "POST",
+          body: JSON.stringify(data),
+          headers: headers,
+        }).then(async (res) =>{
+          res = await res.json();
+          
+
+          let json = [];
+      res?.data?.factoryPurchaseOrders?.list.forEach(j=>{
+        if(!j.materials){
+          console.log(j);
+        }
+
+        j.materials?.forEach(k=>{
+          console.log(j.code);
+              json.push({
+                  "采购单号":j.code,
+                  "采购单状态":j.state=="SUCCESS"?"已完成":j.state=="SUBMIT"?"已提交":j.state=="PENDING"?"进行中":j.state,
+                  "物料编号(带色号)":k.material.material_code + "-" + k.material.color?.color_id,
+                  "物料名称":k.material.material_name,
+                  "需求数量":k.total,
+                  "采购单创建时间":formatTime(new Date(j.createTime),"yyyy-MM-dd HH:mm:ss")
+              })
+            })
+      })
+      let fields = ["采购单号", "采购单状态","物料编号(带色号)","物料名称","需求数量","采购单创建时间"];
+
+      xlsx(json, fields, "物料采购单导出");
+      function xlsx(json, fields, filename = ".xlsx") {
+        let sheetName = filename; //excel的文件名称
+        let wb = XLSX.utils.book_new(); //工作簿对象包含一SheetNames数组，以及一个表对象映射表名称到表对象。XLSX.utils.book_new实用函数创建一个新的工作簿对象。
+        let ws = XLSX.utils.json_to_sheet(json, { header: Object.values(fields) }); //将JS对象数组转换为工作表。
+        wb.SheetNames.push(sheetName);
+        wb.Sheets[sheetName] = ws;
+        const defaultCellStyle = { font: { name: "Verdana", sz: 65, color: "FF00FF88" }, fill: { fgColor: { rgb: "FFFFAA00" } } }; //设置表格的样式
+        let wopts = { bookType: "xlsx", bookSST: false, type: "binary", cellStyles: true, defaultCellStyle: defaultCellStyle, showGridLines: false }; //写入的样式
+        let wbout = XLSX.write(wb, wopts);
+        let blob = new Blob([s2ab(wbout)], { type: "application/octet-stream" });
+        saveAs(blob, filename + ".xlsx");
+      }
+
+      function s2ab(s) {
+        var buf;
+        if (typeof ArrayBuffer !== "undefined") {
+          buf = new ArrayBuffer(s.length);
+          var view = new Uint8Array(buf);
+          for (var i = 0; i != s.length; ++i) view[i] = s.charCodeAt(i) & 0xff;
+          return buf;
+        } else {
+          buf = new Array(s.length);
+          for (var i = 0; i != s.length; ++i) buf[i] = s.charCodeAt(i) & 0xff;
+          return buf;
+        }
+      }
+
+
+
+
+      /*时间格式化*/
+/**
+ * 对Date的扩展，将 Date 转化为指定格式的String 月(M)、日(d)、12小时(h)、24小时(H)、分(m)、秒(s)、周(E)、季度(q)
+ * 可以用 1-2 个占位符 年(y)可以用 1-4 个占位符，毫秒(S)只能用 1 个占位符(是 1-3 位的数字) eg: (new
+ * formatTime(time,"yyyy-MM-dd hh:mm:ss.S") ==> 2006-07-02 08:09:04.423 (new
+ * formatTime(time,"yyyy-MM-dd E HH:mm:ss") ==> 2009-03-10 二 20:09:04 (new
+ * formatTime(time,"yyyy-MM-dd EE hh:mm:ss") ==> 2009-03-10 周二 08:09:04 (new
+ * formatTime(time,"yyyy-MM-dd EEE hh:mm:ss") ==> 2009-03-10 星期二 08:09:04 (new
+ * formatTime(time,"yyyy-M-d h:m:s.S q ") ==> 2006-7-2 8:9:4.18
+ */
+function formatTime(time, fmt) {
+    if (!time) return
+
+    var o = {
+        'Y+': time.getFullYear(),
+        'M+': time.getMonth() + 1,
+        // 月份
+        'd+': time.getDate(),
+        // 日
+        'h+': time.getHours() % 12 == 0 ? 12 : time.getHours() % 12,
+        // 小时
+        'H+': time.getHours(),
+        // 小时
+        'm+': time.getMinutes(),
+        // 分
+        's+': time.getSeconds(),
+        // 秒
+        'q+': Math.floor((time.getMonth() + 3) / 3),
+        // 季度
+        'S': time.getMilliseconds()
+        // 毫秒
+    }
+    var week = {
+        '0': '日',
+        '1': '一',
+        '2': '二',
+        '3': '三',
+        '4': '四',
+        '5': '五',
+        '6': '六'
+    }
+    if (/(y+)/.test(fmt)) {
+        fmt = fmt.replace(RegExp.$1, (time.getFullYear() + '')
+            .substr(4 - RegExp.$1.length))
+    }
+    if (/(E+)/.test(fmt)) {
+        fmt = fmt
+            .replace(
+                RegExp.$1,
+                ((RegExp.$1.length > 1) ? (RegExp.$1.length > 2 ? '星期'
+                    : '周')
+                    : '')
+                + week[time.getDay() + ''])
+    }
+    for (var k in o) {
+        if (new RegExp('(' + k + ')').test(fmt)) {
+            fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k])
+                : (('00' + o[k]).substr(('' + o[k]).length)))
+        }
+    }
+    return fmt
+}
+
+
+          return res;
+        });
+      }
+      ReactDOM.render(
+        React.createElement(GraphiQL, {
+          fetcher,
+          defaultQuery: qs,
+        }),
+        document.getElementById("gql")
+      );
+    </script>
+  </body>
+</html>

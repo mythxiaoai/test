@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.bootcdn.net/ajax/libs/ant-design-vue/2.2.0-rc.1/antd.css" rel="stylesheet">
+</head>
+
+<body>
+    <div id="app">
+        <a-cascader v-model:value="value" :options="options" :show-search="{ filter }" placeholder="Please select" />
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0/moment.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/3.1.2/vue.global.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/ant-design-vue/2.2.0-rc.1/antd-with-locales.min.js"></script>
+    <script>
+        let { ref } = Vue;
+        const options = [
+            {
+                value: '1',
+                label: 'Zhejiang',
+                children: [
+                    {
+                        value: '2',
+                        label: 'Hangzhou',
+                        children: [
+                            {
+                                value: '3',
+                                label: 'West Lake',
+                            },
+                            {
+                                value: '4',
+                                label: 'Xia Sha',
+                                disabled: true,
+                            },
+                        ],
+                    },
+                ],
+            },
+            {
+                value: 'jiangsu',
+                label: 'Jiangsu',
+                children: [
+                    {
+                        value: 'nanjing',
+                        label: 'Nanjing',
+                        children: [
+                            {
+                                value: 'zhonghuamen',
+                                label: 'Zhong Hua men',
+                            },
+                        ],
+                    },
+                ],
+            },
+        ];
+        let vm = Vue.createApp({
+            setup(props, ctx) {
+                const filter = (inputValue, path) => {
+                    return path.some(option => option.label.toLowerCase().indexOf(inputValue.toLowerCase()) > -1);
+                };
+
+                return {
+                    value: ref([]),
+                    options,
+                    filter,
+                };
+            }
+        })
+
+        vm.use(antd)
+
+        vm.mount('#app')
+
+    </script>
+</body>
+
+</html>

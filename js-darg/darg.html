@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/common/common.css" />
+	</head>
+	<body>
+		<style>
+			.imgTarger{width:500px;height: 500px;border:1px dashed #333;}
+			.box{width:100px;height:100px;border:1px dashed #333;background: red;position: absolute;}
+			.box1{left: 500px;}
+			.box2{left: 1000px;}
+		</style>
+		
+		<div class="imgTarger" id="targ">
+			<div id="des">请将图片拖拽到此区域</div>
+		</div>
+		
+		<div class="box box1" id="box1" draggable="true"></div>
+		<div class="box box2" id="box2" draggable="true"></div>
+	</body>
+		<script type="text/javascript" src="../excelHelp/js/jquery.js" ></script>
+		<script>
+		
+		
+		window.onload=function(){
+			/*
+			 		ondragstart:开始拖放元素触发的事件 ,执行1次 对象：拖放的元素
+					ondrag:拖放过程中触发的事件，执行多次       对象：拖放的元素
+					ondragend：拖放元素结束触发的事件，执行1次      对象：拖放的元素
+
+					ondragenter：有拖放的元素进入目标元素时触发的事件，接触到超过的2/3时候触发   执行1次   对象：目标元素
+					ondragover:有拖放的元素在目标元素内移动触发的事件，接触到超过的2/3时候触发   执行多次   对象：目标元素
+					ondragleave：有拖放的元素离开目标元素触发的事件，离开到超过的2/3时候触发  对象：目标元素
+					
+					两个元素拖拽的顺序是 
+						A：ondragstart
+						A：ondrag
+						B：ondragenter
+						B：ondragover/ondrag 交替进行多次
+						B：ondragleave
+						A：ondragend
+			 * */
+			$("#box1")[0].ondragstart=function(){
+				console.log("ondragstart");
+			};
+			$("#box1")[0].ondrag=function(){
+				console.log("ondrag");
+			};
+			$("#box1")[0].ondragend=function(){
+				console.log("ondragend");
+			};
+			
+			$("#box2")[0].ondragenter=function(){
+				console.log("ondragenter");
+			};
+			$("#box2")[0].ondragover=function(){
+				console.log("ondragover");
+			};
+			$("#box2")[0].ondragleave=function(){
+				console.log("ondragleave");
+			};
+			
+			
+			
+			
+			/*targ.ondragover=function(e){
+				console.log("ondragover")
+				e.preventDefault();
+			}
+			targ.ondrop=function(e){
+				console.log("ondrop")
+				e.preventDefault();
+			}*/
+			targ.addEventListener("drop",function(e){
+				var $this = this;
+				console.log("drop");
+				$("#des").remove();
+				$.each(e.dataTransfer.files, function(index,file) {
+					var fr = new FileReader();
+					var img =$("<img>")
+					fr.readAsDataURL(file);
+					fr.onload = function(e){
+						img.attr("src",e.target.result);
+						$($this).append(img);
+					}
+				});
+				
+				e.preventDefault();
+			});
+			targ.addEventListener("dragover",function(e){
+				console.log("dragover");
+				e.preventDefault();
+			});
+			
+			/*targ.addEventListener("drop",function(e){
+				console.log("drop")
+				alert(e.dataTransfer.files.length)
+				e.stopPropagation();
+				e.preventDefault();
+			});
+			targ.addEventListener("dragend",function(e){
+				e.stopPropagation();
+				e.preventDefault();
+			});*/
+			
+			
+		}	
+			
+		</script>
+</html>

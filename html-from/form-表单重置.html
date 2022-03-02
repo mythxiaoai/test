@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset=utf-8>
+		<meta name=viewport content="width=device-width,initial-scale=1">
+		<title>davidvue</title>
+	</head>
+		
+	<body class=bg-gray>
+		<div id=app></div>
+		<script>
+			
+			
+			let test = {
+				name:"username",
+				array:[0,1,2,3],
+				num:3,
+				boolean:true,
+				ull:null,
+				unde:undefined,
+				fn:function(){console.log(1)},
+				Obj:{
+					name:"username2222222",
+					array:[0],
+					num:2,
+					boolean:false,
+					ull:null,
+					unde:undefined,
+					fn:function(){console.log(2)},
+				}
+			}
+		console.log("表单重置前:");
+		console.log(test);
+		console.log("表单重置后:");
+		setTimeout(()=>{console.log(fromReset(test))},2000)
+			
+function fromReset(val){
+	if(typeof val == "string"){
+		val = "";
+	}else if(typeof val == "object"){
+		if(Array.isArray(val)){
+			val = [];
+		}else if(val == null){
+			val = null;
+		}else{
+			for(var key in val){
+				if(val.hasOwnProperty(key)){
+					val[key] = fromReset(val[key])
+				}
+			}
+		}
+	}else if(typeof val == "boolean"){
+		val=false;
+	}else if(typeof val == "number"){
+		val = 0;
+	}else{
+		val = "";
+	}
+	return val
+}
+		</script>
+	</body>
+		
+</html>

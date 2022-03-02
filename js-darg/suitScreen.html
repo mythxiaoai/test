@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  	<head>
+	    <meta charset="utf-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0">
+		<meta name="Keywords" content="">
+		<meta name="description" content="">
+		<title>润建大数据平台系统-主页</title>
+		<!--字体图标 fa fa-*-->
+		<link rel="stylesheet" href="../fonts/font-awesome.min.css" />
+		<!--bootstrap-->
+		<link rel="stylesheet" href="../js/bootstrap/bootstrap.css" />
+		<!--bootstrap过滤样式-->
+		<link rel="stylesheet" href="../js/bootstrap/bootstrapfiller.css" />
+		<link rel="stylesheet" href="../css/common/csshake.css" />
+		<!--基础样式文件-->
+		<link rel="stylesheet" href="../css/common/common.css" />
+		<style>
+			/*颜色器*/
+			input.color{width:0px!important}
+			.ui-widget-content{right: 0;left: 0;margin: 0 auto;}
+			.evo-colorind, .evo-colorind-ie, .evo-colorind-ff{float: none;margin: 0 auto;}
+			.panel-drag-box{position:absolute;top:70px;left:20px;height:calc(100% - 70px);width:calc(100% - 20px);}
+			.panel-drag{border:1px solid #e7eaec;position:absolute;left:0;}
+			.panel-drag:hover .panel-heading .panel-tools{display:block;}
+			.panel-drag:hover .panel-heading{border-bottom:1px solid #e7eaec;cursor:move;}
+			.panel-drag .panel-heading{background-color:#fff;border-color:#e7eaec;line-height:20px;height:20px;padding:0 10px;}
+			.panel-drag .panel-heading .panel-title{font-weight:700;font-size:12px;width:50%;display:inline-block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+			.panel-drag .panel-heading .panel-tools{display:none;float:right;transition:all 0.75s;}
+			.panel-drag .panel-heading .panel-tools >a{display:inline-block;height:20px;padding: 0 5px;cursor:pointer;color:#c4c4c4;text-align: center;float: left;}
+			.panel-drag .panel-heading .panel-tools >a:hover{color:#7F7F7F}
+			
+			.panel-drag .panel-heading .panel-title{border-left-width: 0px;}
+		</style>
+	</head>
+	<body class="white-bg animated fadeInRight">
+		<nav class="navbar navbar-white navbar-fixed-top">
+			<div class="container-fluid">
+				<div class="navbar-header ">
+					<button type="button" class="navbar-toggle collapsed pull-left m-l-sm" data-toggle="collapse" data-target= "#bs-example-navbar-collapse-1" aria-expanded="false">
+				        <span class="icon-bar"></span>
+				        <span class="icon-bar"></span>
+				        <span class="icon-bar"></span>
+					</button>
+				</div>
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				 <a href="addOrUpdate.html" class="btn btn-default btn-sm navbar-btn navbar-btn navbar-left"><i class="fa fa-plus"></i> 新增</a>
+					<ul class="nav navbar-nav">
+						<li>
+							<a href="#" class="js_reset">
+								<i class="fa fa-cog"></i> 重置面板布局
+							</a>
+						</li>
+					</ul>
+					<form class="navbar-form navbar-left m-t-sm">
+						<div class="input-group input-group-sm">
+							<input class="form-control js_panelWidth" placeholder="默认为320" type="number"/>
+							<div class="input-group-btn">
+								<a href="#" class="btn btn-default js_initWidth">初始化面板宽度</a>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</nav>
+		<div class="panel-drag-box">
+			<div class="panel-drag">
+				<div class="panel-heading">
+					<div class="panel-title">
+						统计图
+					</div>
+					<div class="panel-tools dropdown">
+                        <a class="collapse-link dropdown-toggle"  data-toggle="dropdown" href="javascript:;">
+                            <i class="fa fa-cog"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-left">
+							<li><a href="javascript:;"><i class="fa fa-edit"></i> 编辑</a></li>
+							<li><a href="javascript:;"><i class="glyphicon glyphicon-export"></i> 导出</a></li>
+				    	</ul>
+                        <a class="close-link" href="javascript:;" >
+                            <i class="fa fa-times js_del"></i>
+                        </a>
+                    </div>
+				</div>
+				<div class="panel-body">
+					111111111
+				</div>
+			</div>
+			<div class="panel-drag">
+				<div class="panel-heading">
+					<div class="panel-title">
+						统计图
+					</div>
+					<div class="panel-tools dropdown">
+                        <a class="collapse-link dropdown-toggle"  data-toggle="dropdown" href="javascript:;">
+                            <i class="fa fa-cog"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-left">
+							<li><a href="javascript:;"><i class="fa fa-edit"></i> 编辑</a></li>
+							<li><a href="javascript:;"><i class="glyphicon glyphicon-export"></i> 导出</a></li>
+				    	</ul>
+                        <a class="close-link" href="javascript:;" >
+                            <i class="fa fa-times js_del"></i>
+                        </a>
+                    </div>
+				</div>
+				<div class="panel-body">
+					2222222
+				</div>
+				
+			</div>
+			<div class="panel-drag">
+				<div class="panel-heading">
+					<div class="panel-title">
+						统计图
+					</div>
+					<div class="panel-tools dropdown">
+                        <a class="collapse-link dropdown-toggle"  data-toggle="dropdown" href="javascript:;">
+                            <i class="fa fa-cog"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-left">
+							<li><a href="javascript:;"><i class="fa fa-edit"></i> 编辑</a></li>
+							<li><a href="javascript:;"><i class="glyphicon glyphicon-export"></i> 导出</a></li>
+				    	</ul>
+                        <a class="close-link" href="javascript:;" >
+                            <i class="fa fa-times js_del"></i>
+                        </a>
+                    </div>
+				</div>
+				<div class="panel-body">
+					33333
+				</div>
+			</div>
+			<div class="panel-drag">
+				<div class="panel-heading">
+					<div class="panel-title">
+						统计图
+					</div>
+					<div class="panel-tools dropdown">
+                        <a class="collapse-link dropdown-toggle"  data-toggle="dropdown" href="javascript:;">
+                            <i class="fa fa-cog"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-left">
+							<li><a href="javascript:;"><i class="fa fa-edit"></i> 编辑</a></li>
+							<li><a href="javascript:;"><i class="glyphicon glyphicon-export"></i> 导出</a></li>
+				    	</ul>
+                        <a class="close-link" href="javascript:;" >
+                            <i class="fa fa-times js_del"></i>
+                        </a>
+                    </div>
+				</div>
+				<div class="panel-body">
+					44444
+				</div>
+			</div>
+			<div class="panel-drag">
+				<div class="panel-heading">
+					<div class="panel-title">
+						统计图
+					</div>
+					<div class="panel-tools dropdown">
+                        <a class="collapse-link dropdown-toggle"  data-toggle="dropdown" href="javascript:;">
+                            <i class="fa fa-cog"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-left">
+							<li><a href="javascript:;"><i class="fa fa-edit"></i> 编辑</a></li>
+							<li><a href="javascript:;"><i class="glyphicon glyphicon-export"></i> 导出</a></li>
+				    	</ul>
+                        <a class="close-link" href="javascript:;" >
+                            <i class="fa fa-times js_del"></i>
+                        </a>
+                    </div>
+				</div>
+				<div class="panel-body">
+					5555
+				</div>
+			</div>
+			<div class="panel-drag">
+				<div class="panel-heading">
+					<div class="panel-title">
+						统计图
+					</div>
+					<div class="panel-tools dropdown">
+                        <a class="collapse-link dropdown-toggle"  data-toggle="dropdown" href="javascript:;">
+                            <i class="fa fa-cog"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-left">
+							<li><a href="javascript:;"><i class="fa fa-edit"></i> 编辑</a></li>
+							<li><a href="javascript:;"><i class="glyphicon glyphicon-export"></i> 导出</a></li>
+				    	</ul>
+                        <a class="close-link" href="javascript:;" >
+                            <i class="fa fa-times js_del"></i>
+                        </a>
+                    </div>
+				</div>
+				<div class="panel-body">
+					66666
+				</div>
+			</div>
+		</div>
+		<!--jQuery-->
+		<script type="text/javascript" src="../js/jquery.js" ></script>
+		<!--bootstrap-->
+		<script type="text/javascript" src="../js/bootstrap/bootstrap.js" ></script>
+		<script type="text/javascript" src="../js/drag/xdrag-1.1.js" ></script>
+		<script type="text/javascript" src="../js/drag/xresize-1.0.js" ></script>
+	</body>
+<script>
+	var suitScreen={
+		init:function(){
+			//初始化面板
+			this.initPanel();
+			//重置
+			this.reset();
+			//自定义
+			this.initWidth();
+			//删除
+			this.del();
+		},
+		initPanel:function(){
+			//拖拽
+			$(".panel-drag").xdrag({callbackEnd:function(json){
+					//ajax
+					console.log(json);
+				},
+				proxyChild:".panel-heading",
+				ghost:true,
+				moveOut:true,
+				hitClass:"shake-little shake-constant"
+			});
+			$(".panel-tools").children().on("mousedown",function(e){
+				e.stopPropagation();
+			});
+			//改变大小
+			$(".panel-drag").xresize(function(json){
+				//每次拖拽玩重置下面板的位置
+				$(".panel-drag").xdrag("resetPosition");
+				//ajax
+				console.log("xresize:=="+JSON.stringify(json));
+			});
+			//改变窗口重置位置
+			var timeOut=null;
+			$(window).on("resize",function(){
+				//怕 影响效率  来个时间坑
+				if(timeOut)clearTimeout(timeOut);
+				timeOut=setTimeout(function(){
+					$(".panel-drag").xdrag("resetPosition");
+				},200)
+			})
+		},
+		reset:function(){
+			$(".js_reset").click(function(){
+				$(".panel-drag").xresize("reset",function(json){
+					$(".panel-drag").xdrag("resetPosition");
+					//ajax
+					console.log("reset:=="+JSON.stringify(json));
+				});
+			});
+		},
+		initWidth:function(){
+			$(".js_initWidth").click(function(){
+				var width=$(".js_panelWidth").val()||320;
+				$(".panel-drag").xresize("setWH",[{width:width,height:(width*9/16).toFixed(0)}],function(json){
+					$(".panel-drag").xdrag("resetPosition");
+					//ajax
+					console.log("initWidth:=="+JSON.stringify(json));
+				});
+			});
+		},
+		del:function(){
+			$(".js_del").click(function(){
+				$(this).closest(".panel-drag").remove();
+				$(".panel-drag").xdrag("resetPosition");
+			});
+		}
+	}
+	suitScreen.init();
+	</script>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title></title>
+  </head>
+  <body>
+    <div id="app">
+      <x-table ref="xtable" v-bind="tableConfig" @current-change="currentChange"></x-table>
+      <model :show.async="true" title="哈哈"></model>
+      <test></test>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/element-ui/2.4.9/index.js"></script>
+    <script src="https://unpkg.com/http-vue-loader"></script>
+  </body>
+  <script>
+    Vue.use(httpVueLoader);
+
+    var vm = new Vue({
+      components: {
+        xtable: httpVueLoader("./XTable.vue"),
+        model: httpVueLoader("./XDialog.vue"),
+        test: httpVueLoader("./test.vue"),
+      },
+      el: "#app",
+      async created() {
+        //获取参数
+        //与直接去拿tableConfig.search不同的是 这里多了pageSize和current
+        this.getData = async (getParmas, next) => {
+          let params = getParmas();
+          //发送异步请求获取数据和总条数
+          let { total, records } = await (await fetch("./data/list.json")).json();
+          next(records, total);
+        };
+      },
+      data() {
+        return {
+          tableConfig: {
+            search: {
+              useCompanyId: "",
+              useOrgId: "",
+              keywords: "",
+            },
+            formItem: [
+              {
+                component: "el-select",
+                label: "单位",
+                prop: "useCompanyId",
+                "el-option": { label: "label", value: "id", data: [] },
+                on: {},
+              },
+              {
+                component: "el-select",
+                label: "部门",
+                prop: "useOrgId",
+                "el-option": { label: "label", value: "id", data: [] },
+              },
+              { component: "el-input", label: "关键词", prop: "keywords" },
+            ],
+            config: {
+              "el-table": {
+                bind: {
+                  size: "mini",
+                  "highlight-current-row": true,
+                },
+              },
+            },
+            getData: () => {
+              return [];
+            },
+            columns: [
+              { prop: "useCompanyName", label: "使用单位" },
+              { prop: "useOrgName", label: "使用部门" },
+              { prop: "useTypeName", label: "设备类别" },
+              { prop: "name", label: "设备名称" },
+              { prop: "equipCode", label: "单位自编号" },
+              { prop: "particularRegistrationCode", label: "设备编号" },
+            ],
+          },
+        };
+      },
+      methods: {
+        currentChange(row) {
+          console.log("单选", row);
+        },
+      },
+    });
+  </script>
+</html>

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{margin: 0px;padding: 0;}
+			#allmap{position:absolute;width: 100%;height: 100%;}
+		</style>
+	</head>
+	<body>
+		<canvas id="demo"></canvas>
+        <img src="demo.png" width="400" height="400"/>
+		<!-- <div id="allmap"></div> <div id="r-result"></div> <div id="gpsback"></div>-->
+		<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=hYCENCEx1nXO0Nt46ldexfG9oI49xBGh"></script>
+		<script type="text/javascript" src="js/jquery.js" ></script>
+		<!--标注点data测试数据-->
+		<script>
+	var canvasdom =document.getElementById("demo");
+	canvasdom.width=400;
+	canvasdom.height=400;
+	//canvasdom.style.backgroundColor="#333";
+	//2
+	var context =canvasdom.getContext("2d");
+    
+    //加载所需要的图片
+   (async function(){
+        let imgs = [
+            "irontower.png",
+            "self tower.png",
+            
+            
+            "accesscontrol.png",
+            "FSU.png",
+            "transmission.png",
+            
+            
+            "carryelectric.png",
+            "carrystandby.png",
+            "electric.png",
+            "standby.png",
+            "olt.png",
+            "level1.png",
+            "level2.png",
+            "level3.png",
+            "level4.png",
+            "level5.png",
+            "electric1.png",
+            "electric2.png",
+            "electric3.png",
+            "electric4.png",
+            "battery1.png",
+            "battery2.png",
+            "battery3.png",
+            "battery4.png",
+            "sopserving.png",
+        ]
+          window.imgs = [...imgs];
+        imgs = imgs.map(v=>`./img/${v}`);
+        imgs = imgs.map(v=>loadImg(v));
+        Promise.all(imgs).then(arr => {
+          imgs = arr; 
+          draw();
+        })
+        
+        function draw(){
+          let json = [
+            {
+              key:"vindicate_type",
+              value:["自维","独享","共享"],
+              src:["irontower.png","self tower.png","self tower.png"],
+              x:200,
+              y:42
+            },
+            {
+              key:"fsu_alarm",
+              value:["是"],
+              url:["FSU.png"],
+              x:200,
+              y:42,
+            },
+            {
+              key:"transmit_alarm",
+              value:["是"],
+              url:["transmission.png"],
+              x:200,
+              y:42,
+            },{
+              key:"entrance_guard_alarm",
+              value:["是"],
+              url:["accesscontrol.png"],
+              x:200,
+              y:42
+            },
+            
+            {
+              key:"self_starting_oil_machine",
+              value:["是"],
+              url:["standby.png"],
+              x:63,
+              y:364,
+            },
+            {
+              key:"portable_oil_machine",
+              value:["是"],
+              url:["standby.png"],
+              x:63,
+              y:364,
+            },
+            {
+              key:"oil_machine_state",
+              value:["待机","发电"],
+              url:["standby.png","electric.png"],
+              x:63,
+              y:364,
+            },
+            {
+              key:"comprehensive_protection_level",
+              value:["1级","2级","3级","4级","5级"],
+              url:["level1.png","level2.png","level3.png","level4.png","level5.png"],
+              x:155,
+              y:370,
+            },
+            {
+              key:"battery_state",
+              value:[
+                "正常","退服",
+                75,50,25,0,
+                ],
+              url:[
+                "battery1.png",
+                "sopserving.png",
+                "electric1.png",
+                "electric2.png",
+                "electric3.png",
+                "electric4.png",
+                ],
+              x:340,
+              y:375,
+            },
+          ]
+          console.log(JSON.stringify(json))
+          //铁塔
+          let x =200;
+          let y =200;
+          let scale = .8;
+          let w = 400*scale;
+          let h = 400*scale;
+          //drawImg(imgs[0], x/scale, y/scale,scale);
+          drawImg(imgs[0], x, y,scale);
+          //铁塔
+          //警告  200   138 247  -300
+           //1
+           drawImg(imgs[2],x,y-h/2+42*scale,scale);
+           
+           //2
+           //drawImg(imgs[2],(x-(32+15)*scale),(y-h/2+42*scale),scale);
+           //drawImg(imgs[2],(x+(32+15)*scale),(y-h/2+42*scale),scale);
+           //3
+           //drawImg(imgs[2], x, (y-h/2+42*scale),scale);
+           //drawImg(imgs[3], (x-(64+30)*scale), (y-h/2+42*scale),scale);
+           //drawImg(imgs[4], (x+(64+30)*scale), (y-h/2+42*scale),scale);
+           
+           //固定油机63 364  固定油机
+           //drawImg(imgs[8],x-imgs[8].width/2-88-10,x*2-imgs[8].height/2-2); 
+           
+           
+           drawImg(imgs[8],
+           (x-(88+imgs[8].width/2+10)*scale),
+           (y+h/2-imgs[8].height/2*scale-2*scale),scale); 
+           
+           /*//移动油机79 276
+           drawImg(imgs[6],200-imgs[8].width/2-88-4,400-imgs[8].height-imgs[6].height/2-15); */
+           
+           //维护等级155 370  
+           drawImg(imgs[13],
+           (x+(imgs[13].width/2+15-88)*scale),
+           (y+h/2-imgs[13].height/2*scale-2*scale),scale);
+           
+           //电池 340 375
+           drawImg(imgs[19],
+           (x+(imgs[19].width/2+15+88)*scale),
+          (y+h/2-imgs[13].height/2*scale-2*scale),scale);
+          
+          context.fillText("adsadsadsa", x-h/2+30*scale, y+h/2+30*scale);
+          
+        }
+         function translate(x,y){
+            context.save();
+            context.translate(x,y);
+            context.restore()
+        }
+        
+        function drawImg(img,x,y,scale=1){
+            let w = img.width;
+            let h = img.height;
+            context.save();
+            //context.scale(scale,scale);
+            context.translate(x,y);
+            context.drawImage(img,0,0,w,h,-w*scale/2,-h*scale/2,w*scale,h*scale);
+            context.restore()
+        }
+        
+        
+    })();
+    
+    
+    
+    
+    function loadImg(src){
+      return new Promise((reslove,reject)=>{
+        let img = new Image();
+          img.onload = function () {
+            reslove(img)
+          }
+          img.onerror = function () {
+            reject("图片"+src+"加载失败")
+          }
+        img.src = src;
+      });
+    }
+    
+    
+    
+	
+     
+ 	canvasdom.addEventListener('click', function(e){
+	  //$this.draw({x:e.pageX-$(map.Va).offset().left,y:e.pageY-$(map.Va).offset().top});
+	  var p={x:e.pageX,y:e.pageY};
+	  if(context.isPointInPath(p.x, p.y)){
+	  	alert(true)
+	  }
+	}, false);
+	</script>
+	</body>
+</html>

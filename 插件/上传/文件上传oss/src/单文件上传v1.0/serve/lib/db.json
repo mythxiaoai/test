@@ -1,0 +1,52 @@
+{
+    "files": [
+        {
+            "id": 1,
+            "createTime": "2021-06-08T11:05:10.205Z",
+            "updateTime": "2021-06-08T11:05:10.205Z",
+            "uploader": "我自己",
+            "url": "https://mars-view-test.companyP2.shop/WlZAMl6cdldR75OVqFuzCBj7cSwa20PL6JWCGtHc",
+            "osspath": "WlZAMl6cdldR75OVqFuzCBj7cSwa20PL6JWCGtHc",
+            "__typename": "File",
+            "name": "timg.jpg",
+            "type": "image/jpeg",
+            "hash": "WlZAMl6cdldR75OVqFuzCBj7cSwa20PL6JWCGtHc"
+        },
+        {
+            "id": 2,
+            "createTime": "2021-06-08T11:06:48.261Z",
+            "updateTime": "2021-06-08T11:06:48.261Z",
+            "uploader": "我自己",
+            "url": "https://mars-view-test.companyP2.shop/YjNTlIpgSAaf6X3QVyTceyRrIgIjY7hshekTZQaw",
+            "osspath": "YjNTlIpgSAaf6X3QVyTceyRrIgIjY7hshekTZQaw",
+            "__typename": "File",
+            "name": "b.jpg",
+            "type": "image/jpeg",
+            "hash": "YjNTlIpgSAaf6X3QVyTceyRrIgIjY7hshekTZQaw"
+        },
+        {
+            "id": 3,
+            "createTime": "2021-06-08T11:07:43.378Z",
+            "updateTime": "2021-06-08T11:07:43.378Z",
+            "uploader": "我自己",
+            "url": "https://mars-view-test.companyP2.shop/kEMMalmO3S93gSusFQe6YxA7CHlMHPJVYoiQoFmopk",
+            "osspath": "kEMMalmO3S93gSusFQe6YxA7CHlMHPJVYoiQoFmopk",
+            "__typename": "File",
+            "name": "ca8ac85f376bb2bf1b3ffa2166d014c4.jpg",
+            "type": "image/jpeg",
+            "hash": "kEMMalmO3S93gSusFQe6YxA7CHlMHPJVYoiQoFmopk"
+        },
+        {
+            "id": 4,
+            "createTime": "2021-06-09T02:55:24.757Z",
+            "updateTime": "2021-06-09T02:55:24.757Z",
+            "uploader": "我自己",
+            "url": "https://mars-view-test.companyP2.shop/sxKmh2GPL9voZkzm48jfcOQyK7uP7AOk7VlSMiw9iQ",
+            "osspath": "sxKmh2GPL9voZkzm48jfcOQyK7uP7AOk7VlSMiw9iQ",
+            "__typename": "File",
+            "name": "d.jpg",
+            "type": "image/jpeg",
+            "hash": "sxKmh2GPL9voZkzm48jfcOQyK7uP7AOk7VlSMiw9iQ"
+        }
+    ]
+}

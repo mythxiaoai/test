@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+	<!--
+    	作者：774813571@qq.com
+    	时间：2016-08-26
+    	描述：告诉IE浏览器用最新的引擎渲染这个页面
+    -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--
+    	作者：774813571@qq.com
+    	时间：2016-08-26
+    	为了确保适当的绘制和触屏缩放，需要在 <head> 之中添加 viewport 元数据标签。
+    -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>提示弹出</title>
+    <!-- Bootstrap -->
+    	<link rel="stylesheet" href="../../fonts/font-awesome.min.css" />
+	<!--bootstrap-->
+	<link rel="stylesheet" href="../../js/bootstrap/bootstrap.css" />
+	<!--bootstrap过滤样式-->
+	<link rel="stylesheet" href="../../js/bootstrap/bootstrapfiller.css" />
+	<!--sweetalert弹框提示-->
+	<link rel="stylesheet" href="../../js/sweetalert/sweetalert.css" />
+	<!--时间插件-->
+	<link rel="stylesheet" href="../../js/bootstrapDatetimepicker/bootstrap-datetimepicker.css" />
+	<!--bootstrap表格-->
+	<link rel="stylesheet" href="../../js/bootstrapTable/bootstrap-table.css" />
+	<!--基础样式文件-->
+	<link rel="stylesheet" href="../../css/common/common.css" />
+  	</head>
+ 	<body class="bg-warning">
+ 		<div class="container">
+ 			<h2 class="page-header">popover</h2>
+ 			<div class="panel panel-warning">
+ 				<div class="panel-heading" data-toggle="collapse" data-target="#pbody">
+ 					<span class="panel-title">popover</span>
+ 				</div>
+ 				<div class="panel-body collapse in" id="pbody" style="position: relative;">
+ 						<div class="btn-group-lg" role="group">
+ 							<button type="button" class="btn btn-danger js_pop">pop</button>
+ 							<button type="button" class="btn btn-danger js_btn">销毁重建</button>
+ 						</div>
+ 					</div>
+ 					</div>
+ 			</div>
+
+		</div>
+  
+<!--jQuery-->
+<script type="text/javascript" src="../../js/jquery.js" ></script>
+<!--bootstrap-->
+<script type="text/javascript" src="../../js/bootstrap/bootstrap.js" ></script>
+<!--checkbox/radio修饰-->
+<script type="text/javascript" src="../../js/icheck/icheck.js" ></script>
+<!--sweetalert提示框-->
+<script type="text/javascript" src="../../js/sweetalert/sweetalert-dev.js" ></script>
+<!--tip 错误操作提示框-->
+<script type="text/javascript" src="../../js/tip.js" ></script>
+<script type="text/javascript" src="../../js/util.js" ></script>
+<!--下拉框美化-->
+<script type="text/javascript" src="../../js/chosen/chosen.jquery.js" ></script>
+
+<!--bootstrap表格-->
+<script type="text/javascript" src="../../js/bootstrapTable/bootstrap-table.js" ></script>
+<script type="text/javascript" src="../../js/bootstrapTable/bootstrap-table-zh-CN.js" ></script>
+<!--业务通用js-->
+<script type="text/javascript" src="../../js/common.js" ></script>
+  	<script>
+  		  $(function () {
+  		  	
+  		  	opoInit();
+  		  	function opoInit(liDoms){
+  		  		 $('.js_pop').popover({
+					 	container:"body",
+					 	content:`<ul class="list-group" style="max-height:200px;overflow:auto;">
+							  <li class="list-group-item">${liDoms||"暂无数据"}</li>
+							</ul>`,
+					 	html:true,
+					 	placement:"bottom",
+					 });
+  		  	}
+					$(".js_btn").click(function(){
+						$('.js_pop').popover('destroy')
+							opoInit("我是数据")
+					});
+				})
+  	</script>
+	</body>
+</html>
+

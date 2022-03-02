@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <style type="text/css">
+        body, html,#allmap {width: 100%;height: 100%;overflow: hidden;margin:0;font-family:"微软雅黑";}
+    </style>
+    <script type="text/javascript" src="//api.map.baidu.com/api?v=2.0&ak=hYCENCEx1nXO0Nt46ldexfG9oI49xBGh"></script>
+    <title>城市列表控件</title>
+</head>
+<body>
+    <div id="allmap"></div>
+</body>
+</html>
+<script type="text/javascript">
+var mp = new BMap.Map("allmap");
+var point = new BMap.Point(116.404, 39.915);
+mp.centerAndZoom(point, 14);
+mp.enableScrollWheelZoom();
+mp.enableInertialDragging();
+mp.enableContinuousZoom();
+
+mp.addControl(new BMap.MapTypeControl({}));
+
+var size = new BMap.Size(10, 20);
+mp.addControl(new BMap.CityListControl({
+    anchor: BMAP_ANCHOR_TOP_LEFT,
+    offset: size,
+    // 切换城市之间事件
+     onChangeBefore: function(e){
+        console.log(e)
+     },
+    // 切换城市之后事件
+     onChangeAfter:function(e){
+       console.log(e)
+     },
+     // 切换城市成功响应事件
+      onChangeSuccess: function (e) {
+       console.log(e) // city: "合肥市",code:127,level:12,title:"合肥市",uid:"bcf1583a2e18d696f9f0cbf3"
+      }
+}));
+</script>

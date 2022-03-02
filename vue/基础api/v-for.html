@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<ul>
+				<li v-for="value,index of arr">
+					{{value}}----{{index}}
+				</li>
+			</ul>
+			<ul>
+				<li v-for="value,index in arr">
+					{{value}}----{{index}}
+				</li>
+			</ul>
+			<ul>
+				<li v-for="value,index in json">
+					{{value}}----{{index}}
+				</li>
+			</ul>
+			<ul>
+				<li v-for="value,key,index in obj">
+					{{value}}----{{key}}----{{index}}
+				</li>
+			</ul>
+			
+		</div>
+	</body>
+	<script src="https://cdn.bootcss.com/vue/2.5.16/vue.js"></script>
+	<script>
+	let vue =new Vue({
+	  el: '#app',
+	  methods:{
+	  },
+	  data:{
+	  	arr:[5,6,7,8,9],
+	  	json:[
+		  	{name:"myth",age:18},
+		  	{name:"mack",age:19},
+		  	{name:"jock",age:15},
+		  	],
+	  	obj:{
+	  		name:"小艾",
+	  		age:"18"
+	  	}
+	  }
+	})
+
+	</script>
+</html>

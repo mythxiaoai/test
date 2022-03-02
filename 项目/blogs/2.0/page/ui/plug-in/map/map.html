@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#allmap{position:absolute;width: 100%;height: 100%;}
+		</style>
+	</head>
+	<body>
+		<div id="allmap"></div>
+		<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=nCjk0B8jGtbLiGfUoYgS9HHjTzAYxBDW"></script>
+		<script type="text/javascript" src="http://api.map.baidu.com/library/InfoBox/1.2/src/InfoBox_min.js "></script>
+		<!--标注点data测试数据-->
+		<script src="js/data.js"></script>
+		<script type="text/javascript" src="js/jquery.js" ></script>
+		<style>
+			*{padding:0;margin:0}
+		</style>
+		<script>
+		$(function(){
+		/**业务**/
+		
+		/**交互**/
+		var xgmap ={
+				mapObj:null,
+				localPv:null,
+				pointCollection:null,
+			  	marker:null,
+			  	//地图初始化
+				init:function(idstr){
+					if(!document.getElementById(idstr))return;
+					this.mapObj = new BMap.Map(idstr,{minZoom:4});  // 创建Map实例，限制最大和最小级别
+					this.mapObj.centerAndZoom("广东",13);  // 设置地图显示的城市和显示的级别
+					this.mapObj.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
+					//this.mapObj.setMapStyle({"style":"dark"}); //设置皮肤
+					this.mapObj.addControl(new BMap.MapTypeControl()); //添加地图类型控件
+					this.mapObj.addControl(new BMap.PanoramaControl()); //添加地图类型控件
+					var mark = new BMap.Marker(new BMap.Point(113.381261,23.017685))
+					this.mapObj.addOverlay(mark);
+					//类用于获取用户的地址解析。
+					var geoc = new BMap.Geocoder();    
+					this.mapObj.addEventListener("click", function(e){        
+						var pt = e.point;
+						//对指定的坐标点进行反地址解析。如果解析成功，则回调函数的参数为GeocoderResult对象
+						geoc.getLocation(pt, function(rs){
+							console.log(rs);
+							console.log(rs.surroundingPois);
+							var addComp = rs.addressComponents;
+							alert(addComp.province + ", " + addComp.city + ", " + addComp.district + ", " + addComp.street + ", " + addComp.streetNumber);
+							console.log(addComp.province + ", " + addComp.city + ", " + addComp.district + ", " + addComp.street + ", " + addComp.streetNumber);
+						});        
+					});
+					
+				}
+				
+			};
+			xgmap.init("allmap");	
+		});
+		</script>
+	</body>
+</html>

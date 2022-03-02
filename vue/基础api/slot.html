@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+	</head>
+	<body>
+		<div id="app">
+			11
+      <v-a>
+		<template #a>3333</template>
+		<template slot="va"> </template>
+      </v-a>
+    </div>
+    
+
+    <script type="text/template" id="temp2">
+      <div>
+		<slot name="a"> </slot>
+        <slot name="va"><h1>Here might be a page title</h1></slot>
+       
+      </div>
+    </script>
+		 <!-- import Vue before Element -->
+		  <script src="https://cdn.bootcss.com/vue/2.6.11/vue.js"></script>
+		  <!-- import JavaScript -->
+		  <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+	</body>
+	<script>
+    let VA = {
+        template: document.getElementById("temp2")
+    }
+
+
+		var vm = new Vue({
+      components:{VA},
+			el:"#app",
+			created(){
+				this.$nextTick(()=>{
+					
+				})
+			},
+			data:{
+				a:"",
+			},
+			methods:{
+                
+            }
+		});
+	</script>
+</html>

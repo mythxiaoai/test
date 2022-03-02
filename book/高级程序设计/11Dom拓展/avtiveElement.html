@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<ul>
+			<li class="b a">1</li>
+			<li class="b">2</li>
+			<li class="a">3</li>
+			<li class="a">4</li>
+		</ul>
+		<button id="btnTest" type="button">我是个按钮</button>
+		<script>
+				console.log(document.activeElement)//body
+				console.log(document.hasFocus())//true  因为从上到下  页面加载完成后就是true
+				console.log(document.querySelector("#btnTest").focus())//按钮获取焦点  周围加了层蓝色边框(原生)
+				setTimeout(()=>{
+					console.log(document.hasFocus());//false 鼠标点击窗口至外
+				},2000);
+		</script>
+	</body>
+</html>

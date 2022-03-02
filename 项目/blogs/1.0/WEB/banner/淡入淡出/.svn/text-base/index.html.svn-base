@@ -1,0 +1,156 @@
+﻿<!doctype html>
+<html>
+	<head>
+	    <!--声明当前页面的编码集：中文编码（gbk/gb2312）,国际编码（utf-8）-->
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+		<!--页面三要素-->
+		<title>国际标准模板</title><!--小于等于31 大小写不区分-->
+		<meta name="Keywords" content="关键词,关键词,关键词"><!--<=76个字-->
+		<meta name="description" content=""><!--<=80个字-->
+		<!--js/css-->
+		<style type="text/css">
+			*{margin:0;padding:0;}
+			body{font-size:12px;color:#333;font-family:"微软雅黑";}
+			.fl{float:left;}
+			.fr{float:right;}
+			a{text-decoration:none;}
+			img{border:none;}
+			ul{list-style:none;}
+			/*focus statr*/
+			.focus{width:1226px;height:460px;margin:100px auto;position:relative;}
+			/*轮播操作样式*/
+			.focus .f_main .f_m_img .m_imgs .m_img{display:none;  transition:all 2s ease;-webkit-transition:all 2s ease;}
+			.focus .f_main .f_m_img .side .side_btn{position:absolute;width:41px;height:69px;top:0;bottom:0;margin:auto 0;text-align:center;line-height:69px;color:#D4CFC1;font-size:48px;}
+			.focus .f_main .f_m_img .side .side_btn:hover{background:rgba(0,0,0,0.5);color:#fff;}
+			.focus .f_main .f_m_img  .fa-angle-left{left:0px;border-radius:0 3px 3px 0;cursor:pointer;}
+			.focus .f_main .f_m_img  .fa-angle-right{right:0;border-radius:3px 0 0 3px;cursor:pointer;}
+			.focus .f_main .f_m_img  .banner_foot{position:absolute;width:400px;height:18px;bottom:20px; right:30px;}
+			.focus .f_main .f_m_img  .banner_foot .f_icon{width:6px;height:6px;margin:4px 5px 0 5px;display:inline-block;   background: rgba(0,0,0,0.4);transition:all 0.5s;float:left; border: 2px solid rgba(255,255,255,0.3);
+    border-radius:50%;}
+			.focus .f_main .f_m_img  .banner_foot .f_icon:hover{background: rgba(255,255,255,0.4);border-color:rgba(0,0,0,0.4);}
+			.focus .f_main .f_m_img  .banner_foot .f_checked{background: rgba(255,255,255,0.4);border-color:rgba(0,0,0,0.4);};
+			/*end focus*/
+		</style>
+			<link rel="stylesheet" href="css/font-awesome.min.css"/>
+	</head>  
+	<body>
+
+		<!--focus start-->
+		<div class="focus">
+			<div class="f_main">
+				<div class="f_m_img">
+					<ul class="m_imgs">
+						<li class="m_img m_checked" style="display:block;"><a href="javascript:void(0)"><img alt="小米推荐" height="460" width="1226" src="images/1.jpg"/></li>
+						<li class="m_img"><a href="javascript:void(0)"><img alt="小米推荐" height="460" width="1226" src="images/2.jpg"/></a></li>
+						<li class="m_img"><a href="javascript:void(0)"><img alt="小米推荐" height="460" width="1226" src="images/3.jpg"/></a></li>
+						<li class="m_img"><a href="javascript:void(0)"><img alt="小米推荐" height="460" width="1226" src="images/4.jpg"/></a></li>
+						<li class="m_img"><a href="javascript:void(0)"><img alt="小米推荐" height="460" width="1226" src="images/5.jpg"/></a></li>
+					</ul>
+					<div class="side">
+						<i class="side_btn fa fa-angle-left"></i>
+						<i class="side_btn fa fa-angle-right"></i>
+					</div>
+					<div class="banner_foot">
+						<ul class="banner_icons fr">
+							<li class="f_icon f_checked"></li>
+							<li class="f_icon"></li>
+							<li class="f_icon"></li>
+							<li class="f_icon"></li>
+							<li class="f_icon"></li>
+						<ul>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+		<!--end focus-->
+
+
+		<script>
+			
+		//轮播效果
+					var pageIndex=0;
+					var time =null;
+					var eprebtn =document.getElementsByClassName("fa-angle-left")[0];
+					var enextbtn =document.getElementsByClassName("fa-angle-right")[0];
+					var imgs=document.getElementsByClassName("m_img");
+					var icons=document.getElementsByClassName("f_icon");
+					var ef_m_img=document.getElementsByClassName("f_m_img")[0];
+					//两边的btn
+					enextbtn.onclick=function(){
+							clearOldCss();
+							pageIndex++;
+							if(pageIndex>=imgs.length){
+								pageIndex=0;
+							}
+							imgs[pageIndex].style.opacity="0";
+							imgs[pageIndex].style.display="block";
+							imgs[pageIndex].style.opacity="1";
+							icons[pageIndex].className+=" f_checked";
+					};
+					eprebtn.onclick=function(){
+							clearOldCss();
+							pageIndex--;
+							if(pageIndex<0){
+								pageIndex=imgs.length-1;
+							}
+							imgs[pageIndex].style.opacity="0";
+							imgs[pageIndex].style.display="block";
+							imgs[pageIndex].style.opacity="1";
+							icons[pageIndex].className+=" f_checked";
+					};
+
+					//下面icon的点击事件
+					for(var i = 0;i<icons.length;i++){
+						icons[i].index=i;
+						icons[i].onclick=function(){
+							clearOldCss();
+							pageIndex=this.index;
+							imgs[pageIndex].style.opacity="0";
+							imgs[pageIndex].style.display="block";
+							imgs[pageIndex].style.opacity="1";
+							icons[pageIndex].className+=" f_checked";
+						}
+					};
+					//定时轮播
+					statrRun();
+					//鼠标触摸暂停
+					ef_m_img.onmouseover=function(){
+						window.clearInterval(time);
+					};
+					//鼠标移出开始
+					ef_m_img.onmouseout=function(){
+						statrRun();
+					};
+
+					//清除原本的选中样式
+					function clearOldCss(){
+						for(var i = 0;i<imgs.length;i++){
+							imgs[i].style.display="none";
+							var arrtemp=icons[i].className.split(" ");
+							for(var j in arrtemp){
+								if(arrtemp[j]=="f_checked"){
+									arrtemp.splice(j,1);
+									break;
+								}
+							}
+							icons[i].className=arrtemp.join(" ");
+						}
+					};
+					//开始跑轮播
+					function statrRun(){
+						time =setInterval(function(){
+							clearOldCss();
+							pageIndex++;
+								if(pageIndex>=imgs.length){
+									pageIndex=0;
+								}
+								imgs[pageIndex].style.opacity="0";
+								imgs[pageIndex].style.display="block";
+								imgs[pageIndex].style.opacity="1";
+								icons[pageIndex].className+=" f_checked";
+						},2000);
+					};
+		</script>
+	</body>
+</html>

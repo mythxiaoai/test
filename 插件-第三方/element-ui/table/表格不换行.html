@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/element-ui/2.4.9/theme-chalk/index.css" rel="stylesheet">
+		<style>
+		  *{padding: 0;margin: 0;}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<el-table
+		    :data="tableData"
+		    border
+		    >
+			    <el-table-column
+                      prop="order_number"
+                      label="发电工单编号"
+                      >
+                    </el-table-column>
+                    <el-table-column
+                      prop="operational_action"
+                      label="派单类型的撒范德萨范德萨范德萨范德萨发"
+                      >
+                    </el-table-column>
+                    <el-table-column
+                      prop="electric_time"
+                      label="发电日期"
+                      >
+                    </el-table-column>
+                    <el-table-column
+                      prop="province"
+                      label="省份"
+                    </el-table-column>
+                    <el-table-column
+                      prop="city"
+                      label="地市"
+                      >
+                    </el-table-column>
+                    <el-table-column
+                      prop="area"
+                      label="区县">
+                    </el-table-column>
+                    <el-table-column
+                      prop="station_name"
+                      label="站址名称"
+                      >
+                    </el-table-column>
+                    <el-table-column
+                      prop="station_number"
+                      label="站址编码"
+                      >
+                    </el-table-column>
+                    
+                    <el-table-column
+                      prop="source_sys_number"
+                      
+                      label="资源系统编码">
+                    </el-table-column>
+                    <el-table-column
+                      prop="operator_name"
+                      
+                      label="运营商名称">
+                    </el-table-column>
+                    <el-table-column
+                      prop="start_electric_time"
+                      
+                      label="发电开始时间">
+                    </el-table-column>
+                    <el-table-column
+                      prop="end_electric_time"
+                      
+                      label="发电结束时间">
+                    </el-table-column>
+                    <el-table-column
+                      prop="off_electric_reason"
+                      
+                      label="停电原因">
+                    </el-table-column>
+                    <el-table-column
+                      prop="refuse_people"
+                      label="回单人">
+                    </el-table-column>
+                    <el-table-column
+                      prop="operator_discript"
+                      class="el-table cell"
+                      label="操作描述">
+                    </el-table-column>
+                    <el-table-column
+                      prop="order_source"
+                      label="工单来源">
+                    </el-table-column>
+                    <el-table-column
+                      prop="dw_company"
+                      label="代维公司名称">
+                    </el-table-column>
+                    <el-table-column
+                      prop="refuse_standard"
+                      label="反馈规范">
+                    </el-table-column>
+                    <el-table-column
+                      prop="deal_standard"
+                      label="处理动作规范">
+                    </el-table-column>
+                    <el-table-column
+                      prop="upload_pic_standard"
+                      label="上传照片规范">
+                    </el-table-column>
+                    <el-table-column
+                      prop="refuse_timely"
+                      label="回单及时性">
+                    </el-table-column>
+                    <el-table-column
+                      prop="start_time_truth"
+                      label="开始时间真实性">
+                    </el-table-column>
+                    <el-table-column
+                      prop="end_time_truth"
+                      label="结束时间真实性">
+                    </el-table-column>
+                    <el-table-column
+                      prop="recovery_electric_truth"
+                      label="外市电恢复时间真实性">
+                    </el-table-column>
+                    <el-table-column
+                      prop="advance_end_effective"
+                      label="正常收电">
+                    </el-table-column>
+                    <el-table-column
+                      prop="off_recovery_effective"
+                      label="发电后恢复断站">
+                    </el-table-column>
+                    <el-table-column
+                      prop="fsu_offline_effective"
+                      label="发电过程中断或FSU离线">
+                    </el-table-column>
+                    <el-table-column
+                      prop="electric_ontime"
+                      label="发电及时性">
+                    </el-table-column>
+                    <el-table-column
+                      prop="check_result"
+                      label="稽核结果">
+                    </el-table-column>
+                    <el-table-column
+                      prop="check_time"
+                      
+                      label="稽核时间">
+                    </el-table-column>
+                    <el-table-column
+                      prop="cost"
+                      label="扣款金额"
+                      >
+                    </el-table-column>
+
+		  </el-table>
+		</div>
+		  <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/element-ui/2.4.9/index.js"></script>
+      <script src="./data.js"></script>
+	</body>
+	<script>
+	 
+		var vm = new Vue({
+			el:"#app",
+			created(){
+			  //计算表格数据每一列的最大宽度，，这里没有算列头数据   如果需要 自己加在tableData里面计算
+			 //格式话formatter 设置默认宽度  但是会影响全局的Table组件  所以在路由跳转的时候置换回来
+          this.tableData = data;
+         this.widthJSON = this.jisuanWIdth(this.tableData);
+          ELEMENT.TableColumn.props.formatter = {type: Function,default:(row, column, cellValue, index)=>{
+           var dDom = $(`<div style="display:inline-block;">${column.label}</div>`);
+           var dwidth =dDom.appendTo(document.body).width();
+           dDom.remove();
+           column.minWidth = Math.max(this.widthJSON[column.property],dwidth);
+           column.minWidth = 500;
+           console.log(column)
+           return cellValue;
+          }};
+          
+       // ELEMENT.TableColumn.props.formatter = {type:Function,default:()=>"aaa"};
+			},
+			//路由跳转的时候置换回来  我这里没有路由模块  所以这个不生效  
+			beforeRouteLeave (to, from, next) {
+        ElementUI.TableColumn.props.formatter = Function;
+        next();
+      },
+			data:{
+			  widthJSON:{},
+        tableData: []
+			},
+			methods:{
+			  jisuanWIdth(data){
+			    let json = $.extend(true,{},data[0]);
+			    for(let key in json){
+			      json[key]=[];
+			    }
+			    data.forEach((value,index)=>{
+			      for(let key in value){
+			        var divDom = $(`<div style="display:inline-block;">${data[index][key]}</div>`);
+              var widthT =divDom.appendTo(document.body).width();
+              divDom.remove();
+              json[key].push(widthT);
+			      }
+			    })
+			   for(let key in json){
+            json[key]=(Math.max(...json[key])|0) +21;
+          }
+			    console.log(json)
+			    return json;
+			  }
+			},
+			computed:{
+			  
+			},
+		});
+	</script>
+</html>

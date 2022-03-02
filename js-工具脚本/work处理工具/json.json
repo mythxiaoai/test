@@ -1,0 +1,16 @@
+{
+  "document": "2021032901256202",
+  "supplier_id": 1234,
+  "type": "9999",
+  "logistics_provider": "9999",
+  "express_num": "9999",
+  "excepted_arrive_at": "测试数据",
+  "buyer_name": "测试数据",
+  "buyer_id": 123,
+  "pay_method": "buyer_prepaid",
+  "items": [{
+      "material_code":"1",
+      "quantity":12,
+      "unit":"件"
+  }]
+}

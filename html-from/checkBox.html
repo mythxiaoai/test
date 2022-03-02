@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+			<div class="checkbox-inline">
+				<label><input type="checkbox" class="icheck"  value="html" name="input4">html</label>
+			</div>
+			<div class="checkbox-inline">
+				<label><input type="checkbox" class="icheck" value="css" name="input4">css</label>
+			</div>
+			<div class="checkbox-inline">
+				<label><input type="checkbox" class="icheck"  checked="checked" value="js" name="input4">js</label>
+			</div>
+	</body>
+	<script src="./../js/jquery.js"></script>
+	<script>
+		alert($("[checked='checked']").val())
+	</script>
+</html>

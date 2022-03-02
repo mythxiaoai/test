@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			let log = a=>{console.log(a)};
+			/*let obj ={
+				name:"xiaoai"
+			}
+			log(obj.age)
+			if(obj.age){
+				log(obj.name)
+			}*/
+			
+			//var arr =[1,2,3]
+/*var newArr = arr.map(function(item,index,array){
+    return item*2;
+});
+console.log(newArr)//[2,4,6]*/
+			/*let dateD = new Date();
+			log(dateD.toUTCString())*/
+			
+			//RegExp
+		//匹配第一个bat或者cat 不区分大小写
+		//let bcat = /[bc]at/i;
+		/*let text1 = "cat,bat,sat,fat";
+		let bcat =new RegExp(".at","igm");
+		log(bcat.exec(text1))//["cat", index: 0, input: "cat,bat,sat,fat"]
+		log(bcat.exec(text1))//["bat", index: 4, input: "cat,bat,sat,fat"]
+		log(bcat.exec(text1))//["sat", index: 8, input: "cat,bat,sat,fat"]
+		log(bcat.exec(text1))//["fat", index: 12, input: "cat,bat,sat,fat"]
+		log(bcat.exec(text1))//null
+		//bcat.exec(text1)[0]返回匹配的值*/
+		/*let bcat =new RegExp("\.at","igm");
+		console.log(bcat);
+		console.log(bcat.test(".at,bat,sat,fat"));*/
+		
+		/*var arr =[
+			["useriD",1],
+			["userName","a"]
+		]
+		var json={};
+		var temp;
+		for (temp in arr) {
+			//temp 是数组下标
+			console.log()
+			json[arr[temp][0]]=arr[temp][1];
+		}
+		console.log(json)//{useriD: 1, userName: "a"}*/
+		
+		/*
+		var str = "userID=1; userName=abc";
+		var json={};
+		var temp =str.split(";");//得到键值对[userID=1,userName=abc]
+		temp.forEach(function(val,index){
+			var temp = val.trim().split("=");//去掉首位空格并得到键值;[userID,1]
+			json[temp[0]]=temp[1];
+		});
+		console.log(json)//{userID: "1", userName: "abc"}*/
+		
+/*var str ="abc";
+var str1 = str.substring(2);//在访问的过程中  执行的方法是 new() ==>调用 ===>销毁(str=null)
+console.log(str1);
+var str =new String("some text");
+var str1 = str.substring(2);
+str=nll;*/
+/*let str =`i use only getters and actions in my components so i never have any dilemma of what to use`;
+let index=str.indexOf("a"),arr=[];
+while(index>-1){
+	arr.push(index);
+	index = str.indexOf("a",index+1);
+}
+console.log(arr);//[19, 23, 60, 64, 74, 81]*/
+//let str =`cat,bat,sat,haha,fat`
+//console.log(str.replace(/(.at)/gi,"A$$"))//A$,A$,A$,A$,haha
+//console.log(str.replace(/(.at)/gi,"A$&"))//Acat,Abat,Asat,Afat,haha
+//  $'
+//console.log(str.replace(/(.at)/gi,"A$'\r\n"))
+/*
+ A,bat,sat,haha,fat
+,A,sat,haha,fat
+,A,haha,fat
+,haha,A
+ * */
+//  $`
+//console.log(str.replace(/(.at)/gi,"A$`\r\n"))
+/*
+ A,bat,sat,haha,fat
+,A,sat,haha,fat
+,A,haha,fat
+,haha,A
+ * */
+//console.log(str.replace(/(.at)/gi,"A$1"))//Acat,Abat,Asat,haha,Afat
+/*function pre(str){
+	return str.replace(/[<>"&]/g,function(val,index,allText){
+		switch(val){
+			case "<":
+				return "&lt;";
+			case ">":
+				return "&gt;";
+			case "\"":
+				return "&quot;";
+			case "&":
+				return "&amp;";
+		}
+	});
+}
+var html =pre(`<b></b>`);
+console.log(html)
+document.write(html);*/
+/*let str = "name,haha,xi--xi";
+log(str.split());//["name,haha,xi--xi"]
+log(str.split(","));//["name", "haha", "xi--xi"]
+log(str.split(",",2));//["name", "haha"]
+log(str.split(/[-,\\]+/));//碰到- \  一个或多个就做分割	["name", "haha", "xi", "xi"]
+log(str.split(/[^\,]+/));//专保留逗号 其他的都是分割判定,不是逗号的都是分割符!["", ",", ",", ""]*/
+let str1 ="act";
+let str2 ="zoo";
+let str3 ="act";
+log(str1.localeCompare(str2))
+log(str1.localeCompare(str3))
+log(str2.localeCompare(str3))
+let baidu =window.encodeURIComponent("https://www.baidu.com?userName='张三'")
+log(baidu)//https%3A%2F%2Fwww.baidu.com%2F
+log(decodeURIComponent(baidu));//https://www.baidu.com/
+		</script>
+	</body>
+</html>

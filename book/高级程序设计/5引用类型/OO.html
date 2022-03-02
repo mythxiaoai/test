@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+	/*function Person(){
+		this.name="xiaoai";
+	}
+	
+	let p = new Person();
+	alert(p.hasOwnProperty("name"))*/
+	//alert(/^\d{4}-\d{1,2}-\d{1,2}$/.test("2014-02-03"))
+	
+	/*let json ={
+		a:1,
+		b:2
+	}
+	console.log(json.keys())*/
+function Person(){
+	this.name="xiaoai";
+	this.age="123";
+}
+Person.prototype.age=16;
+let p = new Person();
+console.log(Object.getOwnPropertyNames(Person.prototype))//["constructor", "age"]
+console.log(Object.keys(p))//["name"]
+console.log(Object.keys(Person.prototype))//["age"]
+console.log(p.age)//["age"]
+for(var temp in p){
+	console.log(temp)//name age
+}
+if(!p.hasOwnProperty("age")&&"age" in p){
+	alert(true)
+}
+		</script>
+	</body>
+</html>

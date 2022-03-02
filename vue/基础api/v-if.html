@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+	</head>
+	<body>
+		<div id="app">
+				<button @click="click">拖放</button>
+				{{test}}
+				<div v-if="test">123</div>
+				<div v-else>456</div>
+		</div>
+		 <!-- import Vue before Element -->
+		  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+		  <!-- import JavaScript -->
+		  <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+	</body>
+	<script>
+		console.log(window)
+		var vm = new Vue({
+			el:"#app",
+			created(){
+			},
+			data:{
+				test:null
+			},
+			methods:{
+				click(){
+					this.test={};
+				}
+			}
+		});
+	</script>
+</html>

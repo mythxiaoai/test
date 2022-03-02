@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style>
+		.item{
+			float: left;
+			width: 100px;
+			height: 100px;
+			background: red;
+		}
+		.item:nth-child(-n+4){  
+			background: blue;
+		}
+		.text-shadow{
+			color: transparent;
+			text-shadow: 0 0 1px rgba(0,0,0,0.5);
+		}
+		.disabled{pointer-events: none;}
+	</style>
+	<body>
+			<ul>
+				<li class="item"></li>
+				<li class="item"></li>
+				<li class="item"></li>
+				<li class="item"></li>
+				<li class="item"></li>
+				<li class="item"></li>
+			</ul>
+			
+			<div class="text-shadow">我就是阴影</div>
+			
+			<a class="disabled" href="https:\\www.baidu.com"> 百度</a>
+	</body>
+</html>

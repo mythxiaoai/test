@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.bootcdn.net/ajax/libs/ant-design-vue/2.2.0-rc.1/antd.css" rel="stylesheet">
+</head>
+
+<body>
+    <div id="app">
+        <a-table :columns="columns" :data-source="dataSource" ref="tableRef">
+            <template #name>
+                ???
+            </template>
+            <template #ccc>
+                <span>{{test}}</span>
+            </template>
+            <template #value="{text}">
+                <div>{{text}}</div>
+            </template>
+        </a-table>
+        </template>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0/moment.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/3.1.2/vue.global.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/ant-design-vue/2.2.0-rc.1/antd-with-locales.min.js"></script>
+    <script>
+        let { onMounted,ref } = Vue;
+
+        let vm = Vue.createApp({
+            setup(props, ctx) {
+                let tableRef = ref()
+                onMounted((v) => {
+                    console.log("tableRef.value.$.slots.age()",tableRef.value.$.slots.ccc())
+                })
+                return {
+                    columns: [{
+                        dataIndex: "name",
+                        slots: {
+                            title: "name",
+                            customRender: "value"
+                        },
+                        a: `<div>1</div>`,
+                        b: () => { },
+                        format() {
+                            return `<div>1</div>`;
+                        }
+                    }],
+                    dataSource: [{
+                        id: 1,
+                        name: "哈6"
+                    }],
+                    test: 666,
+                    tableRef
+                }
+            }
+        })
+
+        vm.use(antd)
+
+        vm.mount('#app')
+
+    </script>
+</body>
+
+</html>

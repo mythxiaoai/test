@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <script src="https://cdn.bootcss.com/vue/2.6.8/vue.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/muse-ui/dist/muse-ui.css">
+    <script src="https://unpkg.com/muse-ui/dist/muse-ui.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/material-design-icons/3.0.1/iconfont/material-icons.css">
+  </head>
+  <body>
+    <div id="app">
+      <mu-container>
+        <mu-flex justify-content="center">
+          <mu-button @click="openBotttomSheet">OPEN Bottom Sheet</mu-button>
+        </mu-flex>
+        <div ></div>
+        <mu-bottom-sheet :open.sync="open" :append-body="true">
+          <mu-list @item-click="closeBottomSheet">
+            <mu-sub-header>Select One</mu-sub-header>
+            <mu-list-item button>
+              <mu-list-item-action>
+                <mu-icon value="grade" color="orange"></mu-icon>
+              </mu-list-item-action>
+              <mu-list-item-title>Star</mu-list-item-title>
+            </mu-list-item>
+            <mu-list-item button>
+              <mu-list-item-action>
+                <mu-icon value="inbox" color="blue"></mu-icon>
+              </mu-list-item-action>
+              <mu-list-item-title>Inbox</mu-list-item-title>
+            </mu-list-item>
+            <mu-list-item button>
+              <mu-list-item-action>
+                <mu-icon value="chat" color="green"></mu-icon>
+              </mu-list-item-action>
+              <mu-list-item-title>Chat</mu-list-item-title>
+            </mu-list-item>
+            <mu-list-item button>
+              <mu-list-item-action>
+                <mu-icon value="email" color="cyan"></mu-icon>
+              </mu-list-item-action>
+              <mu-list-item-title>Email</mu-list-item-title>
+            </mu-list-item>
+          </mu-list>
+        </mu-bottom-sheet>
+      </mu-container>
+    </div>
+    <script>
+      Vue.use(MuseUI);
+      let app = new Vue({
+         data () {
+            return {
+              open: true
+            }
+          },
+          methods: {
+            closeBottomSheet () {
+              this.open = false;
+            },
+            openBotttomSheet () {
+              this.open = true;
+            }
+          }
+      }).$mount("#app");
+      
+      
+    </script>
+  </body>
+</html>

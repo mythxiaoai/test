@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>别关我~省市区正在扒取中...</title>
+    <meta name="description" content="100%后自动下载zip压缩包" />
+  </head>
+  <body>
+    <style>
+      *{
+        margin: 0;
+        padding: 0;
+      }
+      html,body{
+        height: 100%;
+        height: 100%;
+      }
+      body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #8fe0f8;
+      }
+      .bg{
+        height: 100%;
+        width: 100%;
+        background-color: #4ecff7;
+        position: absolute;
+        z-index: -1;
+        left: 0;
+        transition: width .35s ease-in;
+      }
+      .progress{
+        color: #fff;
+        font-size: 50px;
+      }
+    </style>
+    <div id="progress" class="progress">0%</div>
+    <div id="bg" class="bg" style="width: 0%;"></div>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=hYCENCEx1nXO0Nt46ldexfG9oI49xBGh"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/lodash.js/4.17.12-pre/lodash.js"></script>
+    <script src="./pinyin.js"></script>
+    <script src="./util.js"></script>
+    <script src="https://cdn.bootcss.com/FileSaver.js/1.3.8/FileSaver.min.js"></script>
+    <script src="https://cdn.bootcss.com/jszip/3.2.2/jszip.min.js"></script>
+    <script>
+      //中国   5zoom   1px的经纬度的差为 0.07358918309859164   大约0.07的经度去做循环
+      //左上  右下的恒定点为
+      const step = 0.07 * 50;
+      //全国的框框
+      let lx = 71.818915;
+      let ly = 54.164576;
+      let rx = 135.69433;
+      let ry = 13.850065;
+
+      let data = {
+        p: [],
+        c: [],
+        d: []
+      };
+
+      let error = {
+        p: [],
+        c: [],
+        d: []
+      };
+
+      let template = {
+        id: "", //id
+        province: "", //省
+        city: "", //市
+        district: "", //区县
+        pid: "", //父id
+        letter: "", //首字母缩写
+        boundaries: [] //边界
+      };
+      (async () => {
+        //解析省  思想是循环经纬度  外层控制行,内层控制高  纬度是由南极到北极  所以需要--step
+        //省
+        for (let i = lx; i <= rx; i += step) {
+          for (let j = ly; j >= ry; j -= step) {
+            let point = new BMap.Point(i, j);
+            //获取地址
+            let res = await getLocation(point);
+            //为空
+            try {
+              if (!res||!res.address) continue;
+            } catch (error) {
+              console.error(error,res);
+            }
+            let { province, city, district } = res.addressComponents;
+            //没有汉字pass
+            if (!(haveHanzi(province) && haveHanzi(city) && haveHanzi(district))) continue;
+            template = {
+              id: uuid(), //id
+              province, //省
+              city: "", //市
+              district: "", //区县
+              pid: "", //父id
+              letter: xa_pinyin.getCamelChars(province), //首字母缩写
+              boundaries: [] //边界
+            };
+            let pObj = _.find(data.p,{province});
+            let cObj = _.find(data.c,{province,city});
+            let dObj = _.find(data.d,{province,city,district});
+            //省 不重复添加
+            if (!pObj) {
+              let templateP = {...template};
+              //数据装载
+              let strArray = [province, province.slice(0, -1)];
+              let promise = getBoundariesByArray(e => {
+                error.p.push(province);
+              }, strArray);
+              templateP.type = "province";
+              templateP.boundaries =await promise;
+              data.p.push(templateP);
+              //市添加需要pid做准备
+              pObj = templateP;
+            }
+            //市
+            if (!cObj) {
+              let templateC = {...template};
+              //数据装载
+              let strArray = [province + city,city,(province + city).slice(0, -1),city.slice(0, -1)];
+              let promise =  getBoundariesByArray(e => {
+                error.c.push(province + city);
+              }, strArray);
+              templateC.type = "city";
+              templateC.id = uuid();
+              templateC.city = city;
+              templateC.pid = pObj.id;
+              templateC.letter = xa_pinyin.getCamelChars(city); //首字母缩写
+              templateC.boundaries =await promise;
+              data.c.push(templateC);
+              //区添加需要pid做准备
+              cObj = templateC;
+            }
+            //区
+            if (!dObj) {
+              let templateD = {...template};
+              //数据装载
+              let strArray = [province+city+district, (province+city+district).slice(0, -1),(city+district).slice(0, -1)];
+              let promise = getBoundariesByArray(e => {
+                error.d.push(province+city+district);
+              }, strArray);
+              templateD.type = "district";
+              templateD.id = uuid();
+              templateD.city = city;
+              templateD.district = district;
+              templateD.pid=cObj.id;
+              templateD.letter=xa_pinyin.getCamelChars(district), //首字母缩写
+              templateD.boundaries =await promise;
+              data.d.push(templateD);
+            }
+          }
+          let progress = (((i - lx) / (rx - lx)) * 100).toFixed(2) + "%";
+          setProgress(progress)
+          console.log(progress);
+        }
+        //集中做排序  边界赋值操作
+        await runKey(data, async v => {
+          //排序
+          sortByKey(v, "letter");
+        });
+        setProgress("100%")
+        console.log(data, error);
+        downZip(data,error)
+      })();
+      function downZip(data,error){
+        var zip = new JSZip();
+        let getContent = data=>JSON.stringify(data,null,2);
+        zip.file("province.json",getContent(data.p));
+        zip.file("city.json",getContent(data.c));
+        zip.file("district.json",getContent(data.d));
+        zip.file("error.json",getContent(error));
+        zip.file("redeme.json",
+        `
+        data:
+        p: ${data.p.length}
+        c: ${data.c.length}
+        d: ${data.d.length}
+
+        error:
+        p: ${error.p.length}
+        c: ${error.c.length}
+        d: ${error.d.length}
+        排除澳门和台湾省:
+        ${error.d.filter(v=>!(~v.indexOf("澳门")||~v.indexOf("台湾")))}
+        `);
+        zip.generateAsync({type:"blob"})
+        .then(function(content) {
+            let time = new Date().format("yyyyMMddhhmmss");
+            saveAs(content, `扒取省市区数据${time}.zip`);
+        });
+      }
+      function setProgress(num){
+        progress.innerHTML = num;
+        bg.style.width = num;
+      }
+
+      //集中处理省市区数据
+      async function runKey(data, cb) {
+        for (const key in data) {
+          if (data.hasOwnProperty(key)) {
+            cb && await cb(data[key]);
+          }
+        }
+        return Promise.resolve();
+      }
+      /**
+       * @function 画出指定名字的行政边界
+       * @param
+       * - name：传入地区的名字
+       */
+      function draw(name) {
+        //获取行政区域
+        let bdary = new BMap.Boundary();
+        bdary.get(name, function(rs) {
+          //获取行政区域
+          var count = rs.boundaries.length; //行政区域的点有多少个
+          if (count === 0) {
+            console.error("未能获取" + name + "行政区域");
+            return;
+          }
+          console.log(JSON.stringify(rs.boundaries));
+          for (var i = 0; i < count; i++) {
+            //建立多边形覆盖物
+            let tempply = new BMap.Polygon(rs.boundaries[i], { strokeWeight: 2, strokeColor: "rgba(3,169,224,1)", fillColor: "rgba(3,169,224,0.2)" });
+            map.addOverlay(tempply); //添加覆盖物
+          }
+        });
+      }
+
+      //根据点 返回地址
+      function getLocation(point) {
+        //逆解析
+        let myGeo = new BMap.Geocoder();
+        return new Promise((resolve, reject) => {
+          myGeo.getLocation(point, function(rs) {
+            resolve(rs);
+          });
+        });
+      }
+      /**
+       * 根据数组名字返回边界数组，第一个返回有数据 则返回，如果都失败则执行错误回调，并返回空数组
+       */
+      function getBoundariesByArray(errcb, arr) {
+        let res = [];
+        let bdary = new BMap.Boundary();
+        return new Promise((resolve, reject) => {
+          arr.map(name => {
+            bdary.get(name, function(rs) {
+              if (rs.boundaries.length > 0) {
+                resolve(rs.boundaries);
+              } else {
+                res.push(false);
+              }
+              if (res.length == arr.length) {
+                resolve([]);
+                errcb && errcb();
+              }
+            });
+          });
+        });
+      }
+
+      //根据名字返回边界
+      function getBoundaries(name) {
+        let bdary = new BMap.Boundary();
+        return new Promise((resolve, reject) => {
+          bdary.get(name, function(rs) {
+            resolve(rs.boundaries);
+          });
+        });
+      }
+    </script>
+  </body>
+</html>

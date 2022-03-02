@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title></title>
+    <link rel="stylesheet" href="css/base.css" />
+  </head>
+  <body>
+    <style>
+      /*.5s cubic-bezier(.37,-0.58,.92,.73) , left .5s linear;*/
+      .a {
+        transition: all 0.5s;
+        transform: translate3d(100px, 0, 0);
+      }
+      .b {
+        width: 100px;
+        height: 100px;
+        background: blue;
+        border-radius: 50%;
+        transition: all 0.5s cubic-bezier(0.37, -0.58, 0.92, 0.73);
+        transform: translate3d(0, 100px, 0);
+      }
+      .a.go {
+        transform: translate3d(600px, 0, 0);
+      }
+      .a.go .b {
+        transform: translate3d(0px, 600px, 0);
+      }
+    </style>
+    <div class="a" id="ball">
+      <div class="b"></div>
+    </div>
+    <script>
+      ball.onclick = function () {
+        if (ball.mark) {
+          ball.mark = false;
+          this.classList = "a";
+        } else {
+          ball.mark = true;
+          this.classList = "a go";
+        }
+      };
+      ball.addEventListener(
+        "transitionend",
+        function () {
+          //this.classList = "a";
+          console.log(1);
+        },
+        false
+      );
+    </script>
+  </body>
+</html>

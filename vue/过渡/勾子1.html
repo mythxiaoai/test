@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title></title>
+  </head>
+  <style>
+    p{
+       transition: 2s all;
+    }
+    .v-enter{
+      background: blue;
+    }
+    .v-enter-active{
+      background: red;
+    }
+    .v-enter-to{
+      background: yellow;
+    }
+    .v-leave{
+      background: pink;
+    }
+    .v-leave-active{
+      background: gray;
+    }
+    .v-leave-to{
+      background: green;
+    }
+  </style>
+  <body>
+    <div id="app">
+      <input type="button" @click="show=!show" value="click"></input></br>
+      <transition
+        v-on:before-enter="beforeEnter"
+        v-on:enter="enter"
+        v-on:after-enter="afterEnter"
+        v-on:enter-cancelled="enterCancelled"
+        
+        v-on:before-leave="beforeLeave"
+        v-on:leave="leave"
+        v-on:after-leave="afterLeave"
+        v-on:leave-cancelled="leaveCancelled"
+      >
+        <p v-show="show">hello</p>
+      </transition>
+    </div>
+  </body>
+  <script src="https://cdn.bootcss.com/vue/2.5.16/vue.js"></script>
+  <script>
+    var vm = new Vue({
+      el:"#app",
+      computed:{
+       
+      },
+      data: {
+            show:false,
+          },
+      methods:{
+        beforeEnter: function (el) {
+         console.log("beforeEnter")
+        },
+        // 当与 CSS 结合使用时
+        // 回调函数 done 是可选的
+        enter: function (el, done) {
+          console.log("enter")
+          done()
+        },
+        afterEnter: function (el) {
+          console.log("afterEnter")
+        },
+        enterCancelled: function (el) {
+          console.log(el)
+          console.log(arguments)
+          console.log("enterCancelled")
+        },
+        
+        
+        beforeLeave: function (el) {
+          console.log("beforeLeave")
+        },
+        // 当与 CSS 结合使用时
+        // 回调函数 done 是可选的
+        leave: function (el, done) {
+          console.log("leave")
+          done()
+        },
+        afterLeave: function (el) {
+         console.log("afterLeave")
+        },
+        // leaveCancelled 只用于 v-show 中
+        leaveCancelled: function (el) {
+          console.log("leaveCancelled")
+        }
+      },
+    });
+  </script>
+</html>

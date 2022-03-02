@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+	<head>
+	    <!--声明当前页面的编码集：中文编码（gbk/gb2312）,国际编码（utf-8）-->
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+		<!--页面三要素-->
+		<title>dialog会话框组件开发Demo</title><!--小于等于31 大小写不区分-->
+		<meta name="Keywords" content="关键词,关键词,关键词"><!--<=76个字-->
+		<meta name="description" content=""><!--<=80个字-->
+		<!--js/css-->
+		<link rel="stylesheet" href="font/iconfont.css">
+		<link rel="stylesheet" href="../../../css/common.css">
+		<link rel="stylesheet" href="../../../js/bootstrap/bootstrap.css">
+	</head>  
+	<body class="gray-bg">
+		<div class="container">
+			<h2 class="page-header">简单版本</h2>
+			
+			<div class="panel  panel-default">
+				<div class="panel-body">
+					<a href="javascript:;" class="btn btn-default" id="xalert">alert</a>
+					<a href="javascript:;" class="btn btn-default" id="xconfirm">confirm</a>
+					<a href="javascript:;" class="btn btn-default" id="xerror">error</a>
+				</div>
+			</div>
+		</div>
+		<script src="js/jquery-3.0.0.min.js"></script>
+		<script src="js/dialog.js"></script>
+		<script>
+			$(function(){
+				$("#xalert").click(function(){
+					xalert("你的密码没输入哦~");
+				});
+				$("#xconfirm").click(function(){
+					xconfirm("你确定删除吗?",function(){
+						alert("ok");
+					});
+				});
+				$("#xerror").click(function(){
+					xerror("出现错误!");
+				});
+			});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body  style="background-color: brown;">
+		<script>
+			let log = a=>{console.log(a)}
+			function Person(){
+				this.a = ["a"];
+			}
+			Person.prototype.b=["b"];
+			function Myth(){
+				Person.call(this)
+				this.c = ["c"];
+			}
+			Myth.prototype=new Person();
+			Myth.prototype.constructor=Myth;
+			Myth.prototype.d=["d"];
+			/*function object(o){
+				function F(){};
+				F.prototype=o;
+				return new F();
+			}
+			function inheritPrototype(a,b){
+				let prototype = object(a.prototype);
+				prototype.constructor=a;
+				a.prototype=prototype;
+			}
+			function Person(){
+				this.a = ["a"];
+			}
+			Person.prototype.b=["b"];
+			function Myth(){
+				Person.call(this)
+				this.c = ["c"];
+			}
+			Myth.prototype=Person.prototype;
+			Myth.prototype.constructor = Myth;
+			
+			Myth.prototype.d=["d"];
+			*/
+			let myth1 = new Myth();
+			let myth2 = new Myth();
+			myth1.d.push("c");
+			myth2.d.push("d");
+			log(myth1);
+			log(myth2.d);
+		</script>
+	</body>
+</html>

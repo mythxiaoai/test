@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	  <script src="jquery.js"></script>
+	  <script>
+	    function a(){
+          $.ajax("./1.txt",{success(data){
+            console.log("success")
+            return data;
+          }}).then(()=>{
+            console.log("success2")
+          });
+      }
+	   console.log(a());
+	  </script>
+	</body>
+</html>

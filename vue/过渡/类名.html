@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title></title>
+  </head>
+  <style>
+    p{
+       transition: 6s all;
+    }
+    .v-enter{
+      background: blue;
+    }
+    .v-enter-active{
+      background: red;
+    }
+    .v-enter-to{
+      background: yellow;
+    }
+    .v-leave{
+      background: pink;
+    }
+    .v-leave-active{
+      background: gray;
+    }
+    .v-leave-to{
+      background: green;
+    }
+  </style>
+  <body>
+    <div id="app">
+      <input type="button" @click="show=!show" value="click"></input></br>
+      <transition>
+        <p v-show="show">hello</p>
+      </transition>
+    </div>
+  </body>
+  <script src="https://cdn.bootcss.com/vue/2.5.16/vue.js"></script>
+  <script>
+    var vm = new Vue({
+      el:"#app",
+      computed:{
+       
+      },
+      data: {
+            show:false,
+          },
+      methods:{
+    
+      },
+    });
+  </script>
+</html>

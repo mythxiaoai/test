@@ -1,0 +1,40 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <link rel="stylesheet" href="//g.alicdn.com/de/prismplayer/2.2.0/skins/default/aliplayer-min.css" />
+</head>
+<body>
+
+
+    
+    <div id="myplayer" cover='' ></div>
+
+    <script type="text/javascript" src="//g.alicdn.com/de/prismplayer/2.2.0/aliplayer-min.js"></script>
+
+<script>
+    var player = new Aliplayer({
+
+        id: "myplayer",
+
+        autoplay: true,
+
+        playsinline:true,
+
+        width:"100%",
+
+        height:"400px",
+
+        controlBarVisibility:"always",
+
+        source:"http://58.200.131.2:1935/livetv/hunantv",
+
+        cover:""
+
+    });
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,181 @@
+﻿<!doctype html>
+<html>
+	<head>
+	    <!--声明当前页面的编码集：中文编码（gbk/gb2312）,国际编码（utf-8）-->
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+		<!--页面三要素-->
+		<title>元素排序</title><!--小于等于31 大小写不区分-->
+		<meta name="Keywords" content="关键词,关键词,关键词"><!--<=76个字-->
+		<meta name="description" content=""><!--<=80个字-->
+		<!--js/css-->
+		<style type="text/css">
+			*{margin:0;padding:0;}
+			body{font-size:14px;color:#333;font-family:"微软雅黑";}
+			.fl{float:left;}
+			.fr{float:right;}
+			a{text-decoration:none;}
+			ul{list-style:none;}
+			/*table start*/
+			table{width:640px;margin:100px auto;border-collapse:collapse;}
+			table thead tr td{background:#111;color:#f9f9f9;position:relative;font-weight:700;}
+			table thead tr span{display:inline-block;border:6px solid transparent;position:absolute;cursor:pointer;}
+			table thead tr .up{border-top:6px solid #999;top:21px;}/*48/2=24-6*/
+			table thead tr .down{border-bottom:6px solid #999;bottom:21px;visibility:hidden;}
+			table tbody tr td,table thead tr td{height:48px;line-height:48px;text-align:center;border:1px solid #aaa;}
+			table tbody tr td div{outline:none;}
+			table tbody  tr:nth-child(odd){background:#eaeaea}
+			table tbody tr:nth-child(even){background:#f8f8f8}
+			table tbody tr:hover{background:#333;color:#fff}
+			table tbody tr:hover td:hover{background:#fc6}
+			/*end table*/
+		</style>
+		<script src="js/pinyin.js"></script>
+	</head>  
+	<body>
+		<table >
+			<thead>
+				<tr >
+					<td title="按名字的首字母小写排序">姓名<span class="up" onclick="tableSort(this,'down','name')"></span><span class="down" onclick="tableSort(this,'up','name')"></span></td>
+					<td title="按字母排序">性别<span class="up" onclick="tableSort(this,'down','sex')"></span><span class="down" onclick="tableSort(this,'up','sex')"></span></td>
+					<td title="按数字排序">年龄<span class="up" onclick="tableSort(this,'down','age')"></span><span class="down" onclick="tableSort(this,'up','age')"></span></td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td><div contenteditable="true">张三</div></td>
+					<td><div contenteditable="true">女</div></td>
+					<td><div contenteditable="true">18</div></td>
+				</tr>
+				<tr>
+					<td><div contenteditable="true">胡晓军</div></td>
+					<td><div contenteditable="true">男</div></td>
+					<td><div contenteditable="true">29</div></td>
+				</tr>
+				<tr>
+					<td><div contenteditable="true">田钟芳</div></td>
+					<td><div contenteditable="true">女</div></td>
+					<td><div contenteditable="true">16</div></td>
+				</tr>
+				<tr>
+					<td><div contenteditable="true">陈冰静</div></td>
+					<td><div contenteditable="true">女</div></td>
+					<td><div contenteditable="true">32</div></td>
+				</tr>
+				<tr>
+					<td><div contenteditable="true">陈浩然</div></td>
+					<td><div contenteditable="true">男</div></td>
+					<td><div contenteditable="true">36</div></td>
+				</tr>
+				<tr>
+					<td><div contenteditable="true">晓芳</div></td>
+					<td><div contenteditable="true">女</div></td>
+					<td><div contenteditable="true">17</div></td>
+				</tr>
+				<tr>
+					<td><div contenteditable="true">吴甜</div></td>
+					<td><div contenteditable="true">女</div></td>
+					<td><div contenteditable="true">22</div></td>
+				</tr>
+				<tr>
+					<td><div contenteditable="true">王二麻子</div></td>
+					<td><div contenteditable="true">男</div></td>
+					<td><div contenteditable="true">25</div></td>
+				</tr>
+				<tr>
+					<td><div contenteditable="true">刘恰恰</div></td>
+					<td><div contenteditable="true">女</div></td>
+					<td><div contenteditable="true">21</div></td>
+				</tr>
+				<tr>
+					<td><div contenteditable="true">王天启</div></td>
+					<td><div contenteditable="true">男</div></td>
+					<td><div contenteditable="true">20</div></td>
+				</tr>
+
+
+			</tbody>
+		</table>
+				<script>
+					function tableSort(self,direction,type){
+					if(direction=="down"){
+						self.style.visibility="hidden";
+						self.nextSibling.style.visibility="visible";
+					}else if(direction=="up"){
+						self.style.visibility="hidden";
+						self.previousSibling.style.visibility="visible";
+					}
+					//将对象装进数组
+					var tbody= document.getElementsByTagName("tbody")[0];
+					var trs=tbody.getElementsByTagName("tr");
+					var arr=Array.prototype.slice.call(trs);
+					//alert(arr[0].innerHTML);
+					//排序
+					if(type=="name"){
+						arr.sort(function(a,b){
+						var aName=a.getElementsByTagName("div")[0].innerHTML;
+						var bName=b.getElementsByTagName("div")[0].innerHTML;
+						if(xa_pinyin.haveChainFont(aName)){
+						aName=xa_pinyin.getCamelChars(aName).toLowerCase();
+						}
+						if(xa_pinyin.haveChainFont(bName)){
+						bName=xa_pinyin.getCamelChars(bName).toLowerCase();
+						}
+						var len =aName.length<bName.length?aName.length:bName.length;
+						for(var i =0;i<len;i++){
+							if(direction=="up"){
+								if(aName.charCodeAt(i)<bName.charCodeAt(i)){
+									return -1;
+								}
+							}else{
+								if(aName.charCodeAt(i)>bName.charCodeAt(i)){
+										return -1;
+									}
+							}
+							if(aName.charCodeAt(i)==bName.charCodeAt(i)){
+								continue;
+							}
+							return 1;
+						}
+						});
+					}else if(type=="sex"){
+						arr.sort(function(a,b){
+						var asex=a.getElementsByTagName("div")[1].innerHTML;
+						var bsex=b.getElementsByTagName("div")[1].innerHTML;
+						if(xa_pinyin.haveChainFont(asex)){
+						asex=xa_pinyin.getFullChars(asex).toLowerCase();
+						}
+						if(xa_pinyin.haveChainFont(bsex)){
+						bsex=xa_pinyin.getFullChars(bsex).toLowerCase();
+						}
+						var len =asex.length<bsex.length?asex.length:bsex.length;
+						for(var i =0;i<len;i++){
+							if(direction=="up"){
+								if(asex.charCodeAt(i)<bsex.charCodeAt(i)){
+									return -1;
+								}
+							}else{
+								if(asex.charCodeAt(i)>bsex.charCodeAt(i)){
+										return -1;
+									}
+							}
+							if(asex.charCodeAt(i)==bsex.charCodeAt(i)){
+								continue;
+							}
+							return 1;
+						}
+						});
+					}else if(type=="age"){
+						arr.sort(function(a,b){
+							var aage=a.getElementsByTagName("div")[2].innerHTML;
+							var bage=b.getElementsByTagName("div")[2].innerHTML;
+							return direction=="up"? aage-bage:bage-aage;
+						});
+					}
+					//排序完成  塞回去
+					for(var i =0;i<arr.length;i++){
+						tbody.appendChild(arr[i]);
+					}
+					}
+				</script>
+	</body>
+</html>

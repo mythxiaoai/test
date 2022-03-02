@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<!-- saved from url=(0042)http://fex.baidu.com/webuploader/demo.html -->
+<html lang="zh-CN"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+            演示 - Web Uploader
+        </title>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+    <link rel="shortcut icon" href="http://fex.baidu.com/webuploader/images/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="./demo_files/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="./demo_files/bootstrap-theme.min.css">
+    <link rel="stylesheet" type="text/css" href="./demo_files/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="./demo_files/syntax.css">
+    <link rel="stylesheet" type="text/css" href="./demo_files/style.css">
+    
+    <link rel="stylesheet" type="text/css" href="./demo_files/webuploader.css">
+    
+    <link rel="stylesheet" type="text/css" href="./demo_files/demo.css">
+    
+</head>
+
+<body style="">
+    <div id="wrapper">
+        <div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand logo" href="http://fex.baidu.com/webuploader/">
+                <span class="fa fa-cloud-upload"></span>WebUploader</a>
+        </div>
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">      <li><a href="http://fex.baidu.com/webuploader/getting-started.html">Getting started</a></li>      <li><a href="http://fex.baidu.com/webuploader/document.html">Document</a></li>           <li><a href="http://fex.baidu.com/webuploader/doc/index.html">API</a></li>    <li class="active"><a href="http://fex.baidu.com/webuploader/demo.html" class="active">Demo</a></li>          <li><a href="http://fex.baidu.com/webuploader/download.html">Download</a></li>                                      
+                <li><a target="_blank" href="https://github.com/fex-team/webuploader/issues?labels=faq&amp;page=1&amp;state=open">FAQ</a></li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li><a target="_blank" href="https://github.com/fex-team/webuploader">Github</a></li>
+            </ul>
+        </div>
+        <!-- /.nav-collapse -->
+    </div>
+    <!-- /.container -->
+</div>
+<!-- /.navbar --> <div class="page-body">
+
+<div id="post-container" class="container">
+    
+
+    
+
+    
+
+    <div class="page-container">
+        <h1 id="demo">Demo</h1>
+
+<p>您可以尝试文件拖拽，使用QQ截屏工具，然后激活窗口后粘贴，或者点击添加图片按钮，来体验此demo.</p>
+
+<div id="uploader" class="wu-example">
+    <div class="queueList">
+        <div id="dndArea" class="placeholder">
+            <div id="filePicker" class="webuploader-container"><div class="webuploader-pick">点击选择图片</div><div id="rt_rt_1d4rtu6dl1s0n1h971fip8uu35j1" style="position: absolute; top: 0px; left: 448px; width: 168px; height: 44px; overflow: hidden; bottom: auto; right: auto;"><input type="file" name="file" class="webuploader-element-invisible" multiple="multiple" accept="image/*"><label style="opacity: 0; width: 100%; height: 100%; display: block; cursor: pointer; background: rgb(255, 255, 255);"></label></div></div>
+            <p>或将照片拖到这里，单次最多可选300张</p>
+        </div>
+    <ul class="filelist"></ul></div>
+    <div class="statusBar" style="display:none;">
+        <div class="progress" style="display: none;">
+            <span class="text">0%</span>
+            <span class="percentage" style="width: 0%;"></span>
+        </div><div class="info">共0张（0B），已上传0张</div>
+        <div class="btns">
+            <div id="filePicker2" class="webuploader-container"><div class="webuploader-pick">继续添加</div><div id="rt_rt_1d4rtu6e41058j2v1k5eens139g6" style="position: absolute; top: 0px; left: 0px; width: 1px; height: 1px; overflow: hidden;"><input type="file" name="file" class="webuploader-element-invisible" multiple="multiple" accept="image/*"><label style="opacity: 0; width: 100%; height: 100%; display: block; cursor: pointer; background: rgb(255, 255, 255);"></label></div></div><div class="uploadBtn state-pedding">开始上传</div>
+        </div>
+    </div>
+</div>
+
+    </div>
+
+    
+
+<div id="ghComments" class="comments" data-issue-id="81">
+    <h2>评论</h2>
+    <div id="header">想要留下评论，请在<a href="https://github.com/fex-team/webuploader/issues/81">此Github issue</a> 页面完成操作，谢谢！</div>
+
+    <div class="alert alert-warning">
+        <p>如果是讨论技术问题或者报告bug，请最好还是新建一个issue展开讨论，以免你提出的问题石沉大海。</p>
+        <p>点此进入<a href="https://github.com/fex-team/webuploader/issues">issues列表页</a>。</p></div>
+</div>
+
+
+
+    
+</div></div> <div id="footer" class="footer">
+    <div class="footer-inner container">
+        <div class="row">
+            <div class="col-md-4">
+                <p class="copyright">Webuploader由<a href="https://github.com/fex-team">fex-team</a>团队负责维护</p>
+                <p>©2013-2018 Baidu Fex Team</p>
+            </div>
+            <div class="col-md-4">
+                <!-- <p>友情链接</p> -->
+                <ul class="friends-links">
+                    <li><a href="http://fis.baidu.com/" title="前端集成解决方案">Fis</a></li>
+                    <li><a href="http://gmu.baidu.com/" title="基于zepto的mobile UI组件库">GMU</a></li>
+                    <li><a href="http://ueditor.baidu.com/website/" title="UEditor是由百度web前端研发部开发所见即所得富文本web编辑器，具有轻量，可定制，注重用户体验等特点，开源基于MIT协议，允许自由使用和修改代码...">Ueditor</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <div class="weixin">
+                    <img src="./demo_files/qrcode.jpg" alt="..." class="img-rounded weixin-img">
+                    <p>微信公共帐号</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    </div>
+    <script type="text/javascript">
+    // 添加全局站点信息
+    var BASE_URL = '/webuploader';
+    </script>
+    <script type="text/javascript" src="./demo_files/jquery-1.10.2.min.js.下载"></script>
+    <script type="text/javascript" src="./demo_files/bootstrap.min.js.下载"></script>
+    <script type="text/javascript" src="./demo_files/global.js.下载"></script>
+    
+        <script type="text/javascript" src="./demo_files/webuploader.js.下载"></script>
+    
+        <script type="text/javascript" src="./demo_files/demo.js.下载"></script>
+    
+    <script type="text/javascript">
+    var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+    document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F67c4841095cbee8275705e1f6224a3c7' type='text/javascript'%3E%3C/script%3E"));
+    </script><script src="./demo_files/h.js.下载" type="text/javascript"></script>
+
+
+</body></html>

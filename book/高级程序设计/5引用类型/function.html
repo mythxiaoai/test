@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			let log = a=>{console.log(a)};
+/*function a (){
+	console.log(arguments.callee.caller);
+}
+function b (){
+	a();
+}
+b();//ƒ b(){a();}*/
+
+//call apply
+function sum(a,b){
+	return a+b;
+}
+function a(a,b){
+	//apply
+	//return sum.apply(this,arguments);//3  this = window
+	//return sum.apply(null,arguments);//3
+	//return sum.apply(undefined,arguments);//3
+	//call
+	return sum.call(this,a,b);//3
+}
+log(a(1,2));
+
+		</script>
+	</body>
+</html>

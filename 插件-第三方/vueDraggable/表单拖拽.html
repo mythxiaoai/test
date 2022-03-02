@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.box{
+				height: 500px;
+				width: 200px;
+				margin: 20px;
+				border:1px solid #777;
+				float: left;
+			}
+			.box2{
+				height: 200px;
+				width: 200px;
+				margin: 20px;
+				border:1px solid #777;
+				float: left;
+			}
+			.H100{
+				height: 100%;
+			}
+			.ghostClass{
+				background: red;
+				color: #fff;
+			}
+			.moveDom{
+				border:1px dashed #ffc107;
+				color: transparent;
+			}
+			.dragClass{
+				background: blue;
+				display: inline;
+				padding: 0 5px;
+				color: #fff;
+			}
+			.disable{
+				background: #ccc;
+			}
+		</style>
+		<link rel="stylesheet" href="examples/css/main.css">
+	</head>
+	<body>
+		<div id="app">
+		    	<div class="box">
+					<draggable class="H100" 
+						tag="nav"
+						:list="myArray" 
+						:options="{
+						group:{ name:'a',pull: 'clone', put: false},
+						sort:false,
+						animation:100,
+						}"
+						@start="start"
+						:move="moving"
+						@end="end"
+						>
+						<transition-group tag="span">
+							<div style="background: #008000;"  v-for="(item,index) in myArray" :key="item.id">
+								<span class="js_icon"><i class="iconfont icon-num"></i></span>
+						        <span class="js_label">{{item.name}}666</span>
+							</div>
+				        </transition-group>
+					</draggable>
+		    	</div>
+		    	<div class="box2">
+					<draggable class="H100 js_char1" v-model="x1" 
+						:options="{group:'a', 
+						animation:100,
+						}"
+						@clone="add"
+						delay="500"
+						>
+					        <div v-for="v in x1" :key="v.id">
+					            {{v.component}}
+					        </div>
+					</draggable>
+				 </div>
+				 {{a}}
+				 {{b}}
+		    	<!--<div class="box2">
+					<draggable v-model="x2">
+						    <transition-group>
+						        <div v-for="element in x2" :key="element.id">
+						            {{element.name}}
+						        </div>
+						    </transition-group>
+					</draggable>
+		    	</div>
+		    	<div class="box2">
+					<draggable v-model="y1">
+						    <transition-group>
+						        <div v-for="element in y1" :key="element.id">
+						            {{element.name}}
+						        </div>
+						    </transition-group>
+					</draggable>
+				</div>
+				<div class="box2">
+					<draggable v-model="y2">
+						    <transition-group>
+						        <div v-for="element in y2" :key="element.id">
+						            {{element.name}}
+						        </div>
+						    </transition-group>
+					</draggable>
+		    	</div>
+				{{myArray}}-->
+		</div>
+			<script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+			<script type="text/javascript" src="examples\libs\vue\dist\vue.js"></script>
+	        <script type="text/javascript" src="examples\libs\Sortable\Sortable.js"></script>
+	        <script type="text/javascript" src="examples\src\vuedraggable.js"></script>
+	</body>
+	<script>
+		var vm = new Vue({
+			el:"#app",
+			mounted(){
+				
+			},
+			data:{
+				activeDrag:null,
+				drag:false,
+				myArray:[
+					{
+						id:1,
+						name:"小艾",
+						component:"a-a"
+					},
+					{
+						id:2,
+						name:"小华",
+						component:"a-b"
+					},
+					{
+						id:3,
+						name:"小桥",
+						component:"a-c"
+					},
+					
+				],
+				x1:[],
+				x2:[],
+				y1:[],
+				y2:[],
+				a:null,
+				b:null,
+			},
+			methods:{
+				move2(){
+					console.log(2)
+				},
+				start(a){
+					console.log(a);
+					$(a.item).css("background","red")
+					$(a.clone).css("background","yellow")
+				},
+				add(a){
+					console.log("add");
+					console.log(a);
+				},
+				moving(a,b){
+					// a.dragged.classList.remove("ghostClass");
+					// a.dragged.classList.add("moveDom");
+				},
+				end(a){
+					/*a.item.classList.remove("moveDom");
+					a.item.classList.add("disable");
+					console.log(a);*/
+				},
+				allowDrop:function (ev) {
+		          ev.preventDefault();
+		        }
+			}
+		});
+		
+	/*group: "name",  // or { name: "...", pull: [true, false, clone], put: [true, false, array] }
+	sort: true,  // sorting inside list  是否自身排序
+	delay: 0, // time in milliseconds to define when the sorting should start
+	touchStartThreshold: 0, // px, how many pixels the point should move before cancelling a delayed drag event
+	disabled: false, // Disables the sortable if set to true.
+	store: null,  // @see Store
+	animation: 150,  // ms, animation speed moving items when sorting, `0` — without animation
+	handle: ".my-handle",  // Drag handle selector within list items  触发的选择器
+	filter: ".ignore-elements",  // Selectors that do not lead to dragging (String or Function) 忽略的选择器
+	preventOnFilter: true, // Call `event.preventDefault()` when triggered `filter`
+	draggable: ".item",  // Specifies which items inside the element should be draggable
+	ghostClass: "sortable-ghost",  // Class name for the drop placeholder 原始镜像样式
+	chosenClass: "sortable-chosen",  // Class name for the chosen item 选中镜像样式
+	dragClass: "sortable-drag",  // Class name for the dragging item 拖拽镜像样式
+	dataIdAttr: 'data-id',
+
+	forceFallback: false,  // ignore the HTML5 DnD behaviour and force the fallback to kick in
+
+	fallbackClass: "sortable-fallback",  // Class name for the cloned DOM Element when using forceFallback
+	fallbackOnBody: false,  // Appends the cloned DOM Element into the Document's Body
+	fallbackTolerance: 0, // Specify in pixels how far the mouse should move before it's considered as a drag.
+
+	scroll: true, // or HTMLElement
+	scrollFn: function(offsetX, offsetY, originalEvent, touchEvt, hoverTargetEl) { ... }, // if you have custom scrollbar scrollFn may be used for autoscrolling
+	scrollSensitivity: 30, // px, how near the mouse must be to an edge to start scrolling.
+	scrollSpeed: 10, // px
+
+	setData: function ( DataTransfer-dataTransfer,HTMLElement-dragEl) {
+		dataTransfer.setData('Text', dragEl.textContent); // `dataTransfer` object of HTML5 DragEvent
+	},
+
+	// Element is chosen
+	onChoose: function (Event-evt) {
+		evt.oldIndex;  // element index within parent
+	},
+
+	// Element dragging started
+	onStart: function (Event-evt) {
+		evt.oldIndex;  // element index within parent
+	},
+
+	// Element dragging ended
+	onEnd: function (Event-evt) {
+		var itemEl = evt.item;  // dragged HTMLElement
+		evt.to;    // target list
+		evt.from;  // previous list
+		evt.oldIndex;  // element's old index within old parent
+		evt.newIndex;  // element's new index within new parent
+	},
+
+	// Element is dropped into the list from another list
+	onAdd: function (Event-evt) {
+		// same properties as onEnd
+	},
+
+	// Changed sorting within list
+	onUpdate: function (Event-evt) {
+		// same properties as onEnd
+	},
+
+	// Called by any change to the list (add / update / remove)
+	onSort: function (Event-evt) {
+		// same properties as onEnd
+	},
+
+	// Element is removed from the list into another list
+	onRemove: function (Event-evt) {
+		// same properties as onEnd
+	},
+
+	// Attempt to drag a filtered element
+	onFilter: function (Event-evt) {
+		var itemEl = evt.item;  // HTMLElement receiving the `mousedown|tapstart` event.
+	},
+
+	// Event when you move an item in the list or between lists
+	onMove: function (Event-evt, Event-originalEvent) {
+		// Example: http://jsbin.com/tuyafe/1/edit?js,output
+		evt.dragged; // dragged HTMLElement
+		evt.draggedRect; // TextRectangle {left, top, right и bottom}
+		evt.related; // HTMLElement on which have guided
+		evt.relatedRect; // TextRectangle
+		originalEvent.clientY; // mouse position
+		// return false; — for cancel
+	},
+
+	// Called when creating a clone of element
+	onClone: function (Event-evt) {
+		var origEl = evt.item;
+		var cloneEl = evt.clone;
+	}*/
+	</script>
+</html>

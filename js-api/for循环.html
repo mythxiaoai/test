@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title></title>
+  </head>
+  <body>
+    <ul>
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+    </ul>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script>
+      let str = "abc";
+      let arr = ["a", "b", "c"];
+      let json = { a: 1, b: 2, c: 3 };
+
+      //for(let i = 0,len=arr.length;i<len;i++){}  性能最高
+      for (let i = 0, len = arr.length; i < len; i++) {
+        console.log("for:" + arr[i]);
+      }
+      console.log("-------------------------------------------");
+
+
+      //arr  forEach(function(value,index,all)   了解
+      arr.forEach(function (value, index, all) {
+        console.info("forEach:" + value);
+      });
+      console.log("-------------------------------------------");
+
+
+      //for in  --array  常用
+      for (let index in arr) {
+        console.log("for-in--array:" + arr[index]);
+      }
+      console.log("-------------------------------------------");
+
+
+      //for in  --object 常用
+      for (let key in json) {
+        console.log("for-in--object:" + key);
+        console.log("for-in--object:" + json[key]);
+      }
+      console.log("-------------------------------------------");
+
+
+      //for of --array  不能用于object 常用
+      for (let val of arr) {
+        console.log("for-of--array:" + val);
+      }
+      console.log("-------------------------------------------");
+
+
+      //each--array  常用
+      $.each(arr, function (index, val) {
+        if (index == 0) return;
+        console.log("$.each-index:" + index);
+        console.log("$.each-val:" + val);
+      });
+      console.log("-------------------------------------------");
+
+
+      //each--object	常用
+      $.each(json, function (key, val) {
+        console.log("$.each-key:" + key);
+        console.log("$.each-val:" + val);
+      });
+      console.log("-------------------------------------------");
+
+      
+      //each--doms	常用
+      //alert(Array.isArray($("li")))
+      $("li").each(function (index, dom) {
+        console.log("$.each-index:" + index);
+        console.log("$.each-val:" + dom);
+      });
+    </script>
+  </body>
+</html>

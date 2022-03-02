@@ -1,0 +1,167 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style type="text/css">
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="canvas" style="width:100%;height:90%"></div>
+    <button onclick="TakePhoto()">拍照</button>
+    <select id="DevName"></select>
+    <select id="DevResolution"></select>
+    <div id="TextInfo"></div>
+    <img id="CameraPhoto" style="height:100px;width100px;"></img>
+
+    <script src="gpyhs_dev.js"></script>
+    <script>
+      (() => {
+        if (!window.WebSocket) {
+          alert("浏览器不支持HTML5,请更新浏览器或者使用其它浏览器");
+        }
+        //console.log("LoadCameraDocument");
+        var obj = document.getElementById("canvas");
+        let width = obj.offsetWidth;
+        let height = obj.offsetHeight;
+        console.log(width, height);
+        Cam_ControlInit(obj, 0, 0, width, height);
+      })();
+
+      function sleep(milliSeconds) {
+        var startTime = new Date().getTime();
+        while (new Date().getTime() < startTime + milliSeconds);
+      }
+
+      function ShowInfo(op) {
+        var obj = document.getElementById("TextInfo");
+        obj.value = obj.value + "\r\n" + op;
+      }
+
+      /*----------------------------------------------------
+    ---（必须重写该函数）返回获取的设备数目及设备名称  ---
+    -----------------------------------------------------*/
+      function GetDevCountAndNameResultCB(devCount, devNameArr) {
+        if (devCount > 0) {
+          var obj = document.getElementById("DevName");
+          obj.options.length = 0;
+          for (var i = 0; i < devCount; i++) {
+            var objOption = document.createElement("option");
+            objOption.text = devNameArr[i];
+            objOption.value = i;
+            obj.options.add(objOption);
+          }
+          obj.selectedIndex = 0;
+          var CamID = obj.selectedIndex;
+
+          //获取分辨率
+          Cam_GetDevResolution(CamID);
+        } else {
+          ShowInfo("没有发现合适的设备！");
+        }
+      }
+
+      /*---------------------------------------------------
+    ---  （必须重写该函数）返回获取的设备分辨率信息   ---
+    ----------------------------------------------------*/
+      function GetResolutionResultCB(resCount, resArr) {
+        if (resCount > 0) {
+          var selectIndex = 0;
+          var obj = document.getElementById("DevResolution");
+          obj.options.length = 0;
+          for (var i = 0; i < resCount; i++) {
+            var objOption = document.createElement("option");
+            objOption.text = resArr[i];
+            objOption.value = i;
+            obj.options.add(objOption);
+            //默认500万分辨率打开
+            if (resArr[i] == "2592*1944") {
+              selectIndex = i;
+            }
+          }
+          obj.selectedIndex = selectIndex;
+
+          //打开摄像头
+          Cam_Close();
+          var restr = obj[obj.selectedIndex].text;
+          var pos = restr.lastIndexOf("*");
+          var width = parseInt(restr.substring(0, pos));
+          var height = parseInt(restr.substring(pos + 1, restr.length));
+          var CamID = document.getElementById("DevName").selectedIndex;
+          Cam_Open(CamID, width, height);
+        } else {
+          ShowInfo("获取分辨率信息失败！");
+        }
+      }
+
+      /*---------------------------------------------------
+    ---     （必须重写该函数）返回摄像头开启状态      ---
+    ----------------------------------------------------*/
+      function GetCameraOnOffStatus(status) {
+        if (status == 0) {
+          ShowInfo("设备开启成功");
+          //Cam_Rotate(1);   // 0-> 0度, 1->90度, 2->180度, 3->270度
+        } else {
+          ShowInfo("设备开启失败!");
+        }
+      }
+
+      /*********************
+       ***       拍照     ***
+       **********************/
+      function TakePhoto() {
+        var name = formatDate(new Date().getTime());
+        Cam_SetFileType(0); //设置文件格式
+        path = "D:\\" + name + ".jpg";
+        Cam_Photo(path); //主摄像头拍照
+      }
+
+      /*---------------------------------------------------
+    --------     （必须重写该函数）拍照结果     ---------
+    ----------------------------------------------------*/
+      function GetCaptrueImgResultCB(flag, path, base64Str) {
+        console.log("进来");
+        if (flag == 0) {
+          var obj = document.getElementById("CameraPhoto");
+          obj.src = "data:;base64," + base64Str;
+          if (path == "") {
+            ShowInfo("拍照成功");
+          } else {
+            ShowInfo("拍照成功，图片保存位置：" + path);
+          }
+        } else {
+          ShowInfo("拍照失败!");
+        }
+      }
+
+        //时间格式化显示
+    function formatDate(time) {
+        var date = new Date(time);
+        var year = date.getFullYear(),
+            month = date.getMonth() + 1, 
+            day = date.getDate(),
+            hour = date.getHours(),
+            min = date.getMinutes(),
+            sec = date.getSeconds();
+        var newTime = year + 
+                    (month < 10 ? '0' + month : month) + 
+                    (day < 10 ? '0' + day : day) + 
+                    (hour < 10 ? '0' + hour : hour) + 
+                    (min < 10 ? '0' + min : min) + 
+                    (sec < 10 ? '0' + sec : sec) ;
+        return newTime;
+    }
+
+    </script>
+  </body>
+</html>

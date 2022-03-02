@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<button type="button" id="btn">点我</button>
+		<div class="silde" style="background: red;height: 500px;width: 300px;display: none;">
+			123
+		</div>
+	</body>
+	<script src="../js/jquery.js"></script>
+	<script>
+		$("#btn").click(function(){
+			$(".silde").animate({height:"show"})
+		})
+	</script>
+</html>

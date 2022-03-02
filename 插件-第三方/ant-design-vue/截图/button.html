@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ant-design-vue@1.4.12/dist/antd.css" />
+    <style> 
+      .box {
+        width: 200px;
+        height: 156px;
+        border: 1px solid #e7e7e7;
+        display: flex;
+        align-items: center;
+        margin: 200px auto;
+        padding: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="btn">保存</button>
+    <div id="test">APP</div>
+    <div id="app">
+      <div class="box">
+        <a-form-model :model="form">
+          <!-- <a-form-model-item label="" :label-col="labelCol" :wrapper-col="wrapperCol" hasFeedback>
+            <a-input v-model="form.name" placeholder="请输入" />
+          </a-form-model-item> -->
+          <a-form-model-item label="">
+            <a-select v-model="form.region" placeholder="please select your zone" style="width: 180px;">
+              <a-select-option value="shanghai">
+                Zone one
+              </a-select-option>
+              <a-select-option value="beijing">
+                Zone two
+              </a-select-option>
+            </a-select>
+          </a-form-model-item>
+        </a-form-model>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0/moment.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.min.js" integrity="sha256-ngFW3UnAN0Tnm76mDuu7uUtYEcG3G5H1+zioJw3t+68=" crossorigin="anonymous"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/ant-design-vue@1.7.2dist/antd.js"></script> -->
+    <script src="https://cdn.bootcdn.net/ajax/libs/ant-design-vue/1.7.2/antd.min.js"></script>
+    <script type="text/javascript" src="js/jquery-1.11.2.min.js" ></script>
+    <script type="text/javascript" src="js/html2canvas.js" ></script>
+    <script>
+
+      var vm = new Vue({
+        el: "#app",
+        data: {
+          loading: false,
+          form: {name:""},
+          labelCol: {
+            xs: { span: 0 },
+            sm: { span: 0 },
+          },
+          wrapperCol: {
+            xs: { span: 24 },
+            sm: { span: 24 },
+          },
+        },
+        mounted() {
+          console.log(this.$refs.btn);
+        },
+        methods: {
+          handleMenuClick(e) {
+            console.log("click", e);
+          },
+        },
+        watch: {},
+      });
+  
+    $("#btn").click(v=>{
+      html2canvas($(".box")[0], {
+        onrendered: function(canvas) {
+          document.body.appendChild(canvas);
+        },
+        width: 200,
+        height: 156
+      });
+
+    })
+    </script>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        class Person {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+    //这里如果返回的是一个基础数据类型  那么当new对象的时候返回该对象的实例
+    //如果是引用类型的对象就直接返回当前，new没生效  相当于执行了构造器方法  为什么？
+    return {};
+  }
+}
+
+
+console.log(new Person()); //{}
+
+    </script>
+</body>
+</html>

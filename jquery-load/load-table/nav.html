@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>left</title>
+	</head>
+	<body>
+	  <link rel="stylesheet" href="js/bootstrap/bootstrap.css">
+	  <link rel="stylesheet" href="js/bootstrap/bootstrapfiller.css">
+	  <link rel="stylesheet" href="js/bootstrapTable/bootstrap-table.css">
+		<script type="text/javascript" src="js/jquery.js" ></script>
+		<script type="text/javascript" src="js/bootstrap/bootstrap.js"></script>
+		<script type="text/javascript" src="js/bootstrapTable/bootstrap-table.js"></script>
+		<script type="text/javascript" src="js/rjtx.js"></script>
+		<script>
+			$(function(){
+				$(".nav > li").click(function(){
+					//alert($(this).find("a").data("url"));
+					$(this).find("a").addClass("active").end().siblings().find("a").removeClass("active");
+					$(".cont").load($(this).find("a").data("url"),function(a,b,c){
+					});
+				});
+				console.log(window.onpopstate)
+				window.onpopstate = function(){
+				//	console.log(window.history.length)
+				}
+			});
+		</script>
+		<style>
+			.nav{width:220px;background:red;position: absolute;top: 200px;}
+			.nav a{display:block;}
+			.nav .active{background:blue}
+			.cont{
+			  position: absolute;left: 240px;
+			}
+		</style>
+		<ul class="nav">
+			<li><a href="#a" data-url="a.html">A</a></li>
+			<li><a href="#b" data-url="b.html">B</a></li>
+			<li><a href="#c" data-url="c.html">C</a></li>
+		</ul>
+		
+		<div class="cont"></div>
+	</body>
+</html>

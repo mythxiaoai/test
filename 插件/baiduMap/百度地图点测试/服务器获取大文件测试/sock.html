@@ -1,0 +1,134 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>加载海量点</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+  <style type="text/css">
+    html,body{
+        margin:0;
+        width:100%;
+        height:100%;
+        background:#ffffff;
+    }
+    #map{
+        width:100%;
+        height:100%;
+    }
+    #panel {
+        position: absolute;
+        top:30px;
+        left:10px;
+        z-index: 999;
+        color: #fff;
+    }
+    #login{
+        position:absolute;
+        width:300px;
+        height:40px;
+        left:50%;
+        top:50%;
+        margin:-40px 0 0 -150px;
+    }
+    #login input[type=password]{
+        width:200px;
+        height:30px;
+        padding:3px;
+        line-height:30px;
+        border:1px solid #000;
+    }
+    #login input[type=submit]{
+        width:80px;
+        height:38px;
+        display:inline-block;
+        line-height:38px;
+    }
+  </style>
+</head>
+<body>
+    <div id="map"></div>
+    <input id="file" disabled="disabled" type="file" onchange="importf(this)" style="position: absolute;top: 0;left: 0;"/>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=hYCENCEx1nXO0Nt46ldexfG9oI49xBGh"></script>
+    <script src="./js/TextIconOverlay_min.js"></script>
+    <script src="./js/MarkerClusterer_min.js"></script>
+    <script src="./js/transformationLonLat.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/xlsx/0.14.1/xlsx.full.min.js"></script>
+	  <script src="https://cdn.bootcss.com/socket.io/2.2.0/socket.io.js"></script>
+	  <script>
+	    let config = {
+        "showType":1,
+        "iswgs84":true,
+        color:"#d340c3",
+        shapeType:1
+      }
+      /*
+       showType：锚点展现形式//1为画布展现   2为聚合展现
+       iswgs84:是否是iswgs84标准的金纬度
+       color:颜色
+       shapeType：形状的类型
+       shapeType 0-4
+      0 圆形，为默认形状
+      1 星形
+      2 方形
+      3 菱形
+      4 水滴状，该类型无size和color属性
+       */
+      var map = new BMap.Map("map", {});// 创建Map实例
+      map.centerAndZoom(new BMap.Point(115.83,38.911), 17);     // 初始化地图,设置中心点坐标和地图级别
+      map.enableScrollWheelZoom();                        //启用滚轮放大缩小
+	    
+	    window.onload = function(){
+	      let points = [];
+	       let sock=io.connect('ws://localhost:8080/');
+           sock.on("connect",()=>{
+             points = [];
+            console.log("连接成功~")
+           })
+           sock.on("error",(e)=>{
+             console.log("报错了~"+e.code)
+             console.log(e)
+           })
+           sock.on("disconnect",()=>{
+             console.log("断开连接~")
+           })
+           sock.on("data",(data)=>{
+             var viewBound=map.getBounds();
+              let temp=null;
+              for (var i = 0,len=data.length; i < len; i+=2) {
+                //转换
+                temp =[data[i], data[i+1]]
+                if(config.iswgs84){
+                  coordtransform.wgs84togcj02(temp[0],temp[1]);
+                  temp = coordtransform.gcj02tobd09(temp[0],temp[1]);
+                }
+                temp = new BMap.Point(temp[0],temp[1]);
+                //在窗口内在渲染
+                if(viewBound.containsPoint(temp)){
+                  points.push(temp);
+                }
+              }
+              console.log(points.length)
+           })
+           sock.on("end",(msg)=>{
+             console.log(msg)
+             addOverlay(points)
+           })
+	    }
+	    
+	   function addOverlay(points){
+	         mp.clearOverlays();
+            var options = {
+                size: BMAP_POINT_SIZE_SMALL,
+                shape: config.shapeType,
+                color: config.color
+            }
+            var pointCollection = new BMap.PointCollection(points, options);  // 初始化PointCollection
+           /* pointCollection.addEventListener('click', function (e) {
+              alert('单击点的坐标为：' + e.point.lng + ',' + e.point.lat);  // 监听点击事件
+            });*/
+            map.addOverlay(pointCollection);  // 添加Overlay
+      }
+	  </script>
+	</body>
+</html>

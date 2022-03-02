@@ -1,0 +1,1726 @@
+[{
+	"id": 35,
+	"name": "阿坝藏族羌族自治州",
+	"pid": "22",
+	"letter": "ABCZQZZZZ"
+}, {
+	"id": 36,
+	"name": "阿克苏地区",
+	"pid": "31",
+	"letter": "AKSDQ"
+}, {
+	"id": 37,
+	"name": "安康市",
+	"pid": "25",
+	"letter": "AKS"
+}, {
+	"id": 38,
+	"name": "阿里地区",
+	"pid": "29",
+	"letter": "ALDQ"
+}, {
+	"id": 39,
+	"name": "阿拉善盟",
+	"pid": "19",
+	"letter": "ALSM"
+}, {
+	"id": 40,
+	"name": "阿勒泰地区",
+	"pid": "31",
+	"letter": "ALTDQ"
+}, {
+	"id": 41,
+	"name": "澳门",
+	"pid": "2",
+	"letter": "AM"
+}, {
+	"id": 42,
+	"name": "安庆市",
+	"pid": "1",
+	"letter": "AQS"
+}, {
+	"id": 43,
+	"name": "安顺市",
+	"pid": "8",
+	"letter": "ASS"
+}, {
+	"id": 44,
+	"name": "鞍山市",
+	"pid": "18",
+	"letter": "ASS"
+}, {
+	"id": 45,
+	"name": "安阳市",
+	"pid": "14",
+	"letter": "AYS"
+}, {
+	"id": 46,
+	"name": "蚌埠市",
+	"pid": "1",
+	"letter": "BBS"
+}, {
+	"id": 47,
+	"name": "白城市",
+	"pid": "15",
+	"letter": "BCS"
+}, {
+	"id": 48,
+	"name": "保定市",
+	"pid": "10",
+	"letter": "BDS"
+}, {
+	"id": 49,
+	"name": "博尔塔拉蒙古自治州",
+	"pid": "31",
+	"letter": "BETLMGZZZ"
+}, {
+	"id": 50,
+	"name": "北海市",
+	"pid": "7",
+	"letter": "BHS"
+}, {
+	"id": 51,
+	"name": "毕节市",
+	"pid": "8",
+	"letter": "BJS"
+}, {
+	"id": 52,
+	"name": "宝鸡市",
+	"pid": "25",
+	"letter": "BJS"
+}, {
+	"id": 53,
+	"name": "北京市",
+	"pid": "3",
+	"letter": "BJS"
+}, {
+	"id": 54,
+	"name": "保山市",
+	"pid": "32",
+	"letter": "BSS"
+}, {
+	"id": 55,
+	"name": "百色市",
+	"pid": "7",
+	"letter": "BSS"
+}, {
+	"id": 56,
+	"name": "佛山市",
+	"pid": "5",
+	"letter": "BSS"
+}, {
+	"id": 57,
+	"name": "白山市",
+	"pid": "15",
+	"letter": "BSS"
+}, {
+	"id": 58,
+	"name": "包头市",
+	"pid": "19",
+	"letter": "BTS"
+}, {
+	"id": 59,
+	"name": "本溪市",
+	"pid": "18",
+	"letter": "BXS"
+}, {
+	"id": 60,
+	"name": "巴音郭楞蒙古自治州",
+	"pid": "31",
+	"letter": "BYGLMGZZZ"
+}, {
+	"id": 61,
+	"name": "巴彦淖尔市",
+	"pid": "19",
+	"letter": "BYNES"
+}, {
+	"id": 62,
+	"name": "白银市",
+	"pid": "6",
+	"letter": "BYS"
+}, {
+	"id": 63,
+	"name": "巴中市",
+	"pid": "22",
+	"letter": "BZS"
+}, {
+	"id": 64,
+	"name": "亳州市",
+	"pid": "1",
+	"letter": "BZS"
+}, {
+	"id": 65,
+	"name": "滨州市",
+	"pid": "23",
+	"letter": "BZS"
+}, {
+	"id": 66,
+	"name": "昌都市",
+	"pid": "29",
+	"letter": "CDS"
+}, {
+	"id": 67,
+	"name": "成都市",
+	"pid": "22",
+	"letter": "CDS"
+}, {
+	"id": 68,
+	"name": "常德市",
+	"pid": "13",
+	"letter": "CDS"
+}, {
+	"id": 69,
+	"name": "承德市",
+	"pid": "10",
+	"letter": "CDS"
+}, {
+	"id": 70,
+	"name": "赤峰市",
+	"pid": "19",
+	"letter": "CFS"
+}, {
+	"id": 71,
+	"name": "昌吉回族自治州",
+	"pid": "31",
+	"letter": "CJHZZZZ"
+}, {
+	"id": 72,
+	"name": "楚雄彝族自治州",
+	"pid": "32",
+	"letter": "CXYZZZZ"
+}, {
+	"id": 73,
+	"name": "朝阳市",
+	"pid": "18",
+	"letter": "CYS"
+}, {
+	"id": 74,
+	"name": "崇左市",
+	"pid": "7",
+	"letter": "CZS"
+}, {
+	"id": 75,
+	"name": "郴州市",
+	"pid": "13",
+	"letter": "CZS"
+}, {
+	"id": 76,
+	"name": "沧州市",
+	"pid": "10",
+	"letter": "CZS"
+}, {
+	"id": 77,
+	"name": "潮州市",
+	"pid": "5",
+	"letter": "CZS"
+}, {
+	"id": 78,
+	"name": "池州市",
+	"pid": "1",
+	"letter": "CZS"
+}, {
+	"id": 79,
+	"name": "滁州市",
+	"pid": "1",
+	"letter": "CZS"
+}, {
+	"id": 80,
+	"name": "常州市",
+	"pid": "16",
+	"letter": "CZS"
+}, {
+	"id": 81,
+	"name": "丹东市",
+	"pid": "18",
+	"letter": "DDS"
+}, {
+	"id": 82,
+	"name": "东莞市",
+	"pid": "5",
+	"letter": "DGS"
+}, {
+	"id": 83,
+	"name": "德宏傣族景颇族自治州",
+	"pid": "32",
+	"letter": "DHDZJPZZZZ"
+}, {
+	"id": 84,
+	"name": "大理白族自治州",
+	"pid": "32",
+	"letter": "DLBZZZZ"
+}, {
+	"id": 85,
+	"name": "大连市",
+	"pid": "18",
+	"letter": "DLS"
+}, {
+	"id": 86,
+	"name": "迪庆藏族自治州",
+	"pid": "32",
+	"letter": "DQCZZZZ"
+}, {
+	"id": 87,
+	"name": "大庆市",
+	"pid": "11",
+	"letter": "DQS"
+}, {
+	"id": 88,
+	"name": "大同市",
+	"pid": "26",
+	"letter": "DTS"
+}, {
+	"id": 89,
+	"name": "大兴安岭地区",
+	"pid": "11",
+	"letter": "DXALDQ"
+}, {
+	"id": 90,
+	"name": "定西市",
+	"pid": "6",
+	"letter": "DXS"
+}, {
+	"id": 91,
+	"name": "德阳市",
+	"pid": "22",
+	"letter": "DYS"
+}, {
+	"id": 92,
+	"name": "东营市",
+	"pid": "23",
+	"letter": "DYS"
+}, {
+	"id": 93,
+	"name": "达州市",
+	"pid": "22",
+	"letter": "DZS"
+}, {
+	"id": 94,
+	"name": "儋州市",
+	"pid": "12",
+	"letter": "DZS"
+}, {
+	"id": 95,
+	"name": "德州市",
+	"pid": "23",
+	"letter": "DZS"
+}, {
+	"id": 96,
+	"name": "鄂尔多斯市",
+	"pid": "19",
+	"letter": "EEDSS"
+}, {
+	"id": 97,
+	"name": "恩施土家族苗族自治州",
+	"pid": "9",
+	"letter": "ESTJZMZZZZ"
+}, {
+	"id": 98,
+	"name": "鄂州市",
+	"pid": "9",
+	"letter": "EZS"
+}, {
+	"id": 99,
+	"name": "防城港市",
+	"pid": "7",
+	"letter": "FCGS"
+}, {
+	"id": 100,
+	"name": "抚顺市",
+	"pid": "18",
+	"letter": "FSS"
+}, {
+	"id": 101,
+	"name": "阜新市",
+	"pid": "18",
+	"letter": "FXS"
+}, {
+	"id": 102,
+	"name": "阜阳市",
+	"pid": "1",
+	"letter": "FYS"
+}, {
+	"id": 103,
+	"name": "抚州市",
+	"pid": "17",
+	"letter": "FZS"
+}, {
+	"id": 104,
+	"name": "福州市",
+	"pid": "4",
+	"letter": "FZS"
+}, {
+	"id": 105,
+	"name": "广安市",
+	"pid": "22",
+	"letter": "GAS"
+}, {
+	"id": 106,
+	"name": "贵港市",
+	"pid": "7",
+	"letter": "GGS"
+}, {
+	"id": 107,
+	"name": "果洛藏族自治州",
+	"pid": "21",
+	"letter": "GLCZZZZ"
+}, {
+	"id": 108,
+	"name": "桂林市",
+	"pid": "7",
+	"letter": "GLS"
+}, {
+	"id": 109,
+	"name": "甘南藏族自治州",
+	"pid": "6",
+	"letter": "GNCZZZZ"
+}, {
+	"id": 110,
+	"name": "高雄市",
+	"pid": "28",
+	"letter": "GXS"
+}, {
+	"id": 111,
+	"name": "广元市",
+	"pid": "22",
+	"letter": "GYS"
+}, {
+	"id": 112,
+	"name": "固原市",
+	"pid": "20",
+	"letter": "GYS"
+}, {
+	"id": 113,
+	"name": "贵阳市",
+	"pid": "8",
+	"letter": "GYS"
+}, {
+	"id": 114,
+	"name": "甘孜藏族自治州",
+	"pid": "22",
+	"letter": "GZCZZZZ"
+}, {
+	"id": 115,
+	"name": "广州市",
+	"pid": "5",
+	"letter": "GZS"
+}, {
+	"id": 116,
+	"name": "赣州市",
+	"pid": "17",
+	"letter": "GZS"
+}, {
+	"id": 117,
+	"name": "淮安市",
+	"pid": "16",
+	"letter": "HAS"
+}, {
+	"id": 118,
+	"name": "海北藏族自治州",
+	"pid": "21",
+	"letter": "HBCZZZZ"
+}, {
+	"id": 119,
+	"name": "鹤壁市",
+	"pid": "14",
+	"letter": "HBS"
+}, {
+	"id": 120,
+	"name": "淮北市",
+	"pid": "1",
+	"letter": "HBS"
+}, {
+	"id": 121,
+	"name": "河池市",
+	"pid": "7",
+	"letter": "HCS"
+}, {
+	"id": 122,
+	"name": "海东市",
+	"pid": "21",
+	"letter": "HDS"
+}, {
+	"id": 123,
+	"name": "邯郸市",
+	"pid": "10",
+	"letter": "HDS"
+}, {
+	"id": 124,
+	"name": "哈尔滨市",
+	"pid": "11",
+	"letter": "HEBS"
+}, {
+	"id": 125,
+	"name": "合肥市",
+	"pid": "1",
+	"letter": "HFS"
+}, {
+	"id": 126,
+	"name": "黄冈市",
+	"pid": "9",
+	"letter": "HGS"
+}, {
+	"id": 127,
+	"name": "鹤岗市",
+	"pid": "11",
+	"letter": "HGS"
+}, {
+	"id": 128,
+	"name": "红河哈尼族彝族自治州",
+	"pid": "32",
+	"letter": "HHHNZYZZZZ"
+}, {
+	"id": 129,
+	"name": "呼和浩特市",
+	"pid": "19",
+	"letter": "HHHTS"
+}, {
+	"id": 130,
+	"name": "怀化市",
+	"pid": "13",
+	"letter": "HHS"
+}, {
+	"id": 131,
+	"name": "黑河市",
+	"pid": "11",
+	"letter": "HHS"
+}, {
+	"id": 132,
+	"name": "海口市",
+	"pid": "12",
+	"letter": "HKS"
+}, {
+	"id": 133,
+	"name": "呼伦贝尔市",
+	"pid": "19",
+	"letter": "HLBES"
+}, {
+	"id": 134,
+	"name": "葫芦岛市",
+	"pid": "18",
+	"letter": "HLDS"
+}, {
+	"id": 135,
+	"name": "哈密市",
+	"pid": "31",
+	"letter": "HMS"
+}, {
+	"id": 136,
+	"name": "海南藏族自治州",
+	"pid": "21",
+	"letter": "HNCZZZZ"
+}, {
+	"id": 137,
+	"name": "黄南藏族自治州",
+	"pid": "21",
+	"letter": "HNCZZZZ"
+}, {
+	"id": 138,
+	"name": "淮南市",
+	"pid": "1",
+	"letter": "HNS"
+}, {
+	"id": 139,
+	"name": "黄石市",
+	"pid": "9",
+	"letter": "HSS"
+}, {
+	"id": 140,
+	"name": "衡水市",
+	"pid": "10",
+	"letter": "HSS"
+}, {
+	"id": 141,
+	"name": "黄山市",
+	"pid": "1",
+	"letter": "HSS"
+}, {
+	"id": 142,
+	"name": "和田地区",
+	"pid": "31",
+	"letter": "HTDQ"
+}, {
+	"id": 143,
+	"name": "海西蒙古族藏族自治州",
+	"pid": "21",
+	"letter": "HXMGZCZZZZ"
+}, {
+	"id": 144,
+	"name": "衡阳市",
+	"pid": "13",
+	"letter": "HYS"
+}, {
+	"id": 145,
+	"name": "河源市",
+	"pid": "5",
+	"letter": "HYS"
+}, {
+	"id": 146,
+	"name": "汉中市",
+	"pid": "25",
+	"letter": "HZS"
+}, {
+	"id": 147,
+	"name": "贺州市",
+	"pid": "7",
+	"letter": "HZS"
+}, {
+	"id": 148,
+	"name": "惠州市",
+	"pid": "5",
+	"letter": "HZS"
+}, {
+	"id": 149,
+	"name": "菏泽市",
+	"pid": "23",
+	"letter": "HZS"
+}, {
+	"id": 150,
+	"name": "杭州市",
+	"pid": "33",
+	"letter": "HZS"
+}, {
+	"id": 151,
+	"name": "湖州市",
+	"pid": "33",
+	"letter": "HZS"
+}, {
+	"id": 152,
+	"name": "吉安市",
+	"pid": "17",
+	"letter": "JAS"
+}, {
+	"id": 153,
+	"name": "金昌市",
+	"pid": "6",
+	"letter": "JCS"
+}, {
+	"id": 154,
+	"name": "晋城市",
+	"pid": "26",
+	"letter": "JCS"
+}, {
+	"id": 155,
+	"name": "景德镇市",
+	"pid": "17",
+	"letter": "JDZS"
+}, {
+	"id": 156,
+	"name": "金华市",
+	"pid": "33",
+	"letter": "JHS"
+}, {
+	"id": 157,
+	"name": "九江市",
+	"pid": "17",
+	"letter": "JJS"
+}, {
+	"id": 158,
+	"name": "吉林市",
+	"pid": "15",
+	"letter": "JLS"
+}, {
+	"id": 159,
+	"name": "荆门市",
+	"pid": "9",
+	"letter": "JMS"
+}, {
+	"id": 160,
+	"name": "江门市",
+	"pid": "5",
+	"letter": "JMS"
+}, {
+	"id": 161,
+	"name": "佳木斯市",
+	"pid": "11",
+	"letter": "JMSS"
+}, {
+	"id": 162,
+	"name": "济宁市",
+	"pid": "23",
+	"letter": "JNS"
+}, {
+	"id": 163,
+	"name": "济南市",
+	"pid": "23",
+	"letter": "JNS"
+}, {
+	"id": 164,
+	"name": "酒泉市",
+	"pid": "6",
+	"letter": "JQS"
+}, {
+	"id": 165,
+	"name": "嘉兴市",
+	"pid": "33",
+	"letter": "JXS"
+}, {
+	"id": 166,
+	"name": "鸡西市",
+	"pid": "11",
+	"letter": "JXS"
+}, {
+	"id": 167,
+	"name": "嘉峪关市",
+	"pid": "6",
+	"letter": "JYGS"
+}, {
+	"id": 168,
+	"name": "揭阳市",
+	"pid": "5",
+	"letter": "JYS"
+}, {
+	"id": 169,
+	"name": "荆州市",
+	"pid": "9",
+	"letter": "JZS"
+}, {
+	"id": 170,
+	"name": "晋中市",
+	"pid": "26",
+	"letter": "JZS"
+}, {
+	"id": 171,
+	"name": "焦作市",
+	"pid": "14",
+	"letter": "JZS"
+}, {
+	"id": 172,
+	"name": "锦州市",
+	"pid": "18",
+	"letter": "JZS"
+}, {
+	"id": 173,
+	"name": "开封市",
+	"pid": "14",
+	"letter": "KFS"
+}, {
+	"id": 174,
+	"name": "克拉玛依市",
+	"pid": "31",
+	"letter": "KLMYS"
+}, {
+	"id": 175,
+	"name": "昆明市",
+	"pid": "32",
+	"letter": "KMS"
+}, {
+	"id": 176,
+	"name": "喀什地区",
+	"pid": "31",
+	"letter": "KSDQ"
+}, {
+	"id": 177,
+	"name": "克孜勒苏柯尔克孜自治州",
+	"pid": "31",
+	"letter": "KZLSKEKZZZZ"
+}, {
+	"id": 178,
+	"name": "六安市",
+	"pid": "1",
+	"letter": "LAS"
+}, {
+	"id": 179,
+	"name": "来宾市",
+	"pid": "7",
+	"letter": "LBS"
+}, {
+	"id": 180,
+	"name": "临沧市",
+	"pid": "32",
+	"letter": "LCS"
+}, {
+	"id": 181,
+	"name": "聊城市",
+	"pid": "23",
+	"letter": "LCS"
+}, {
+	"id": 182,
+	"name": "娄底市",
+	"pid": "13",
+	"letter": "LDS"
+}, {
+	"id": 183,
+	"name": "临汾市",
+	"pid": "26",
+	"letter": "LFS"
+}, {
+	"id": 184,
+	"name": "廊坊市",
+	"pid": "10",
+	"letter": "LFS"
+}, {
+	"id": 185,
+	"name": "漯河市",
+	"pid": "14",
+	"letter": "LHS"
+}, {
+	"id": 186,
+	"name": "丽江市",
+	"pid": "32",
+	"letter": "LJS"
+}, {
+	"id": 187,
+	"name": "吕梁市",
+	"pid": "26",
+	"letter": "LLS"
+}, {
+	"id": 188,
+	"name": "陇南市",
+	"pid": "6",
+	"letter": "LNS"
+}, {
+	"id": 189,
+	"name": "六盘水市",
+	"pid": "8",
+	"letter": "LPSS"
+}, {
+	"id": 190,
+	"name": "拉萨市",
+	"pid": "29",
+	"letter": "LSS"
+}, {
+	"id": 191,
+	"name": "乐山市",
+	"pid": "22",
+	"letter": "LSS"
+}, {
+	"id": 192,
+	"name": "丽水市",
+	"pid": "33",
+	"letter": "LSS"
+}, {
+	"id": 193,
+	"name": "凉山彝族自治州",
+	"pid": "22",
+	"letter": "LSYZZZZ"
+}, {
+	"id": 194,
+	"name": "临夏回族自治州",
+	"pid": "6",
+	"letter": "LXHZZZZ"
+}, {
+	"id": 195,
+	"name": "连云港市",
+	"pid": "16",
+	"letter": "LYGS"
+}, {
+	"id": 196,
+	"name": "洛阳市",
+	"pid": "14",
+	"letter": "LYS"
+}, {
+	"id": 197,
+	"name": "龙岩市",
+	"pid": "4",
+	"letter": "LYS"
+}, {
+	"id": 198,
+	"name": "临沂市",
+	"pid": "23",
+	"letter": "LYS"
+}, {
+	"id": 199,
+	"name": "辽阳市",
+	"pid": "18",
+	"letter": "LYS"
+}, {
+	"id": 200,
+	"name": "辽源市",
+	"pid": "15",
+	"letter": "LYS"
+}, {
+	"id": 201,
+	"name": "林芝市",
+	"pid": "29",
+	"letter": "LZS"
+}, {
+	"id": 202,
+	"name": "兰州市",
+	"pid": "6",
+	"letter": "LZS"
+}, {
+	"id": 203,
+	"name": "泸州市",
+	"pid": "22",
+	"letter": "LZS"
+}, {
+	"id": 204,
+	"name": "柳州市",
+	"pid": "7",
+	"letter": "LZS"
+}, {
+	"id": 205,
+	"name": "马鞍山市",
+	"pid": "1",
+	"letter": "MASS"
+}, {
+	"id": 206,
+	"name": "牡丹江市",
+	"pid": "11",
+	"letter": "MDJS"
+}, {
+	"id": 207,
+	"name": "茂名市",
+	"pid": "5",
+	"letter": "MMS"
+}, {
+	"id": 208,
+	"name": "眉山市",
+	"pid": "22",
+	"letter": "MSS"
+}, {
+	"id": 209,
+	"name": "绵阳市",
+	"pid": "22",
+	"letter": "MYS"
+}, {
+	"id": 210,
+	"name": "梅州市",
+	"pid": "5",
+	"letter": "MZS"
+}, {
+	"id": 211,
+	"name": "宁波市",
+	"pid": "33",
+	"letter": "NBS"
+}, {
+	"id": 212,
+	"name": "南充市",
+	"pid": "22",
+	"letter": "NCS"
+}, {
+	"id": 213,
+	"name": "南昌市",
+	"pid": "17",
+	"letter": "NCS"
+}, {
+	"id": 214,
+	"name": "宁德市",
+	"pid": "4",
+	"letter": "NDS"
+}, {
+	"id": 215,
+	"name": "怒江傈僳族自治州",
+	"pid": "32",
+	"letter": "NJLSZZZZ"
+}, {
+	"id": 216,
+	"name": "内江市",
+	"pid": "22",
+	"letter": "NJS"
+}, {
+	"id": 217,
+	"name": "南京市",
+	"pid": "16",
+	"letter": "NJS"
+}, {
+	"id": 218,
+	"name": "南宁市",
+	"pid": "7",
+	"letter": "NNS"
+}, {
+	"id": 219,
+	"name": "南平市",
+	"pid": "4",
+	"letter": "NPS"
+}, {
+	"id": 220,
+	"name": "那曲市",
+	"pid": "29",
+	"letter": "NQS"
+}, {
+	"id": 221,
+	"name": "南通市",
+	"pid": "16",
+	"letter": "NTS"
+}, {
+	"id": 222,
+	"name": "南阳市",
+	"pid": "14",
+	"letter": "NYS"
+}, {
+	"id": 223,
+	"name": "平顶山市",
+	"pid": "14",
+	"letter": "PDSS"
+}, {
+	"id": 224,
+	"name": "普洱市",
+	"pid": "32",
+	"letter": "PES"
+}, {
+	"id": 225,
+	"name": "盘锦市",
+	"pid": "18",
+	"letter": "PJS"
+}, {
+	"id": 226,
+	"name": "平凉市",
+	"pid": "6",
+	"letter": "PLS"
+}, {
+	"id": 227,
+	"name": "莆田市",
+	"pid": "4",
+	"letter": "PTS"
+}, {
+	"id": 228,
+	"name": "萍乡市",
+	"pid": "17",
+	"letter": "PXS"
+}, {
+	"id": 229,
+	"name": "濮阳市",
+	"pid": "14",
+	"letter": "PYS"
+}, {
+	"id": 230,
+	"name": "攀枝花市",
+	"pid": "22",
+	"letter": "PZHS"
+}, {
+	"id": 231,
+	"name": "黔东南苗族侗族自治州",
+	"pid": "8",
+	"letter": "QDNMZDZZZZ"
+}, {
+	"id": 232,
+	"name": "青岛市",
+	"pid": "23",
+	"letter": "QDS"
+}, {
+	"id": 233,
+	"name": "秦皇岛市",
+	"pid": "10",
+	"letter": "QHDS"
+}, {
+	"id": 234,
+	"name": "曲靖市",
+	"pid": "32",
+	"letter": "QJS"
+}, {
+	"id": 235,
+	"name": "黔南布依族苗族自治州",
+	"pid": "8",
+	"letter": "QNBYZMZZZZ"
+}, {
+	"id": 236,
+	"name": "齐齐哈尔市",
+	"pid": "11",
+	"letter": "QQHES"
+}, {
+	"id": 237,
+	"name": "七台河市",
+	"pid": "11",
+	"letter": "QTHS"
+}, {
+	"id": 238,
+	"name": "黔西南布依族苗族自治州",
+	"pid": "8",
+	"letter": "QXNBYZMZZZZ"
+}, {
+	"id": 239,
+	"name": "庆阳市",
+	"pid": "6",
+	"letter": "QYS"
+}, {
+	"id": 240,
+	"name": "清远市",
+	"pid": "5",
+	"letter": "QYS"
+}, {
+	"id": 241,
+	"name": "钦州市",
+	"pid": "7",
+	"letter": "QZS"
+}, {
+	"id": 242,
+	"name": "泉州市",
+	"pid": "4",
+	"letter": "QZS"
+}, {
+	"id": 243,
+	"name": "衢州市",
+	"pid": "33",
+	"letter": "QZS"
+}, {
+	"id": 244,
+	"name": "日喀则市",
+	"pid": "29",
+	"letter": "RKZS"
+}, {
+	"id": 245,
+	"name": "日照市",
+	"pid": "23",
+	"letter": "RZS"
+}, {
+	"id": 246,
+	"name": "韶关市",
+	"pid": "5",
+	"letter": "SGS"
+}, {
+	"id": 247,
+	"name": "上海市",
+	"pid": "24",
+	"letter": "SHS"
+}, {
+	"id": 248,
+	"name": "绥化市",
+	"pid": "11",
+	"letter": "SHS"
+}, {
+	"id": 249,
+	"name": "石家庄市",
+	"pid": "10",
+	"letter": "SJZS"
+}, {
+	"id": 250,
+	"name": "商洛市",
+	"pid": "25",
+	"letter": "SLS"
+}, {
+	"id": 251,
+	"name": "三明市",
+	"pid": "4",
+	"letter": "SMS"
+}, {
+	"id": 252,
+	"name": "厦门市",
+	"pid": "4",
+	"letter": "SMS"
+}, {
+	"id": 253,
+	"name": "三门峡市",
+	"pid": "14",
+	"letter": "SMXS"
+}, {
+	"id": 254,
+	"name": "山南市",
+	"pid": "29",
+	"letter": "SNS"
+}, {
+	"id": 255,
+	"name": "遂宁市",
+	"pid": "22",
+	"letter": "SNS"
+}, {
+	"id": 256,
+	"name": "四平市",
+	"pid": "15",
+	"letter": "SPS"
+}, {
+	"id": 257,
+	"name": "商丘市",
+	"pid": "14",
+	"letter": "SQS"
+}, {
+	"id": 258,
+	"name": "上饶市",
+	"pid": "17",
+	"letter": "SRS"
+}, {
+	"id": 259,
+	"name": "三沙市",
+	"pid": "12",
+	"letter": "SSS"
+}, {
+	"id": 260,
+	"name": "汕头市",
+	"pid": "5",
+	"letter": "STS"
+}, {
+	"id": 261,
+	"name": "汕尾市",
+	"pid": "5",
+	"letter": "SWS"
+}, {
+	"id": 262,
+	"name": "绍兴市",
+	"pid": "33",
+	"letter": "SXS"
+}, {
+	"id": 263,
+	"name": "三亚市",
+	"pid": "12",
+	"letter": "SYS"
+}, {
+	"id": 264,
+	"name": "十堰市",
+	"pid": "9",
+	"letter": "SYS"
+}, {
+	"id": 265,
+	"name": "邵阳市",
+	"pid": "13",
+	"letter": "SYS"
+}, {
+	"id": 266,
+	"name": "沈阳市",
+	"pid": "18",
+	"letter": "SYS"
+}, {
+	"id": 267,
+	"name": "松原市",
+	"pid": "15",
+	"letter": "SYS"
+}, {
+	"id": 268,
+	"name": "双鸭山市",
+	"pid": "11",
+	"letter": "SYSS"
+}, {
+	"id": 269,
+	"name": "石嘴山市",
+	"pid": "20",
+	"letter": "SZSS"
+}, {
+	"id": 270,
+	"name": "朔州市",
+	"pid": "26",
+	"letter": "SZS"
+}, {
+	"id": 271,
+	"name": "随州市",
+	"pid": "9",
+	"letter": "SZS"
+}, {
+	"id": 272,
+	"name": "深圳市",
+	"pid": "5",
+	"letter": "SZS"
+}, {
+	"id": 273,
+	"name": "苏州市",
+	"pid": "16",
+	"letter": "SZS"
+}, {
+	"id": 274,
+	"name": "泰安市",
+	"pid": "23",
+	"letter": "TAS"
+}, {
+	"id": 275,
+	"name": "台北市",
+	"pid": "28",
+	"letter": "TBS"
+}, {
+	"id": 276,
+	"name": "塔城地区",
+	"pid": "31",
+	"letter": "TCDQ"
+}, {
+	"id": 277,
+	"name": "铜川市",
+	"pid": "25",
+	"letter": "TCS"
+}, {
+	"id": 278,
+	"name": "通化市",
+	"pid": "15",
+	"letter": "THS"
+}, {
+	"id": 279,
+	"name": "天津市",
+	"pid": "27",
+	"letter": "TJS"
+}, {
+	"id": 280,
+	"name": "吐鲁番市",
+	"pid": "31",
+	"letter": "TLFS"
+}, {
+	"id": 281,
+	"name": "铜陵市",
+	"pid": "1",
+	"letter": "TLS"
+}, {
+	"id": 282,
+	"name": "通辽市",
+	"pid": "19",
+	"letter": "TLS"
+}, {
+	"id": 283,
+	"name": "铁岭市",
+	"pid": "18",
+	"letter": "TLS"
+}, {
+	"id": 284,
+	"name": "台南市",
+	"pid": "28",
+	"letter": "TNS"
+}, {
+	"id": 285,
+	"name": "铜仁市",
+	"pid": "8",
+	"letter": "TRS"
+}, {
+	"id": 286,
+	"name": "天水市",
+	"pid": "6",
+	"letter": "TSS"
+}, {
+	"id": 287,
+	"name": "唐山市",
+	"pid": "10",
+	"letter": "TSS"
+}, {
+	"id": 288,
+	"name": "太原市",
+	"pid": "26",
+	"letter": "TYS"
+}, {
+	"id": 289,
+	"name": "桃园市",
+	"pid": "28",
+	"letter": "TYS"
+}, {
+	"id": 290,
+	"name": "泰州市",
+	"pid": "16",
+	"letter": "TZS"
+}, {
+	"id": 291,
+	"name": "台州市",
+	"pid": "33",
+	"letter": "TZS"
+}, {
+	"id": 292,
+	"name": "台中市",
+	"pid": "28",
+	"letter": "TZS"
+}, {
+	"id": 293,
+	"name": "潍坊市",
+	"pid": "23",
+	"letter": "WFS"
+}, {
+	"id": 294,
+	"name": "乌海市",
+	"pid": "19",
+	"letter": "WHS"
+}, {
+	"id": 295,
+	"name": "武汉市",
+	"pid": "9",
+	"letter": "WHS"
+}, {
+	"id": 296,
+	"name": "芜湖市",
+	"pid": "1",
+	"letter": "WHS"
+}, {
+	"id": 297,
+	"name": "威海市",
+	"pid": "23",
+	"letter": "WHS"
+}, {
+	"id": 298,
+	"name": "乌兰察布市",
+	"pid": "19",
+	"letter": "WLCBS"
+}, {
+	"id": 299,
+	"name": "乌鲁木齐市",
+	"pid": "31",
+	"letter": "WLMQS"
+}, {
+	"id": 300,
+	"name": "渭南市",
+	"pid": "25",
+	"letter": "WNS"
+}, {
+	"id": 301,
+	"name": "文山壮族苗族自治州",
+	"pid": "32",
+	"letter": "WSZZMZZZZ"
+}, {
+	"id": 302,
+	"name": "武威市",
+	"pid": "6",
+	"letter": "WWS"
+}, {
+	"id": 303,
+	"name": "无锡市",
+	"pid": "16",
+	"letter": "WXS"
+}, {
+	"id": 304,
+	"name": "吴忠市",
+	"pid": "20",
+	"letter": "WZS"
+}, {
+	"id": 305,
+	"name": "梧州市",
+	"pid": "7",
+	"letter": "WZS"
+}, {
+	"id": 306,
+	"name": "温州市",
+	"pid": "33",
+	"letter": "WZS"
+}, {
+	"id": 307,
+	"name": "兴安盟",
+	"pid": "19",
+	"letter": "XAM"
+}, {
+	"id": 308,
+	"name": "西安市",
+	"pid": "25",
+	"letter": "XAS"
+}, {
+	"id": 309,
+	"name": "新北市",
+	"pid": "28",
+	"letter": "XBS"
+}, {
+	"id": 310,
+	"name": "许昌市",
+	"pid": "14",
+	"letter": "XCS"
+}, {
+	"id": 311,
+	"name": "宣城市",
+	"pid": "1",
+	"letter": "XCS"
+}, {
+	"id": 312,
+	"name": "孝感市",
+	"pid": "9",
+	"letter": "XGS"
+}, {
+	"id": 313,
+	"name": "香港",
+	"pid": "30",
+	"letter": "XG"
+}, {
+	"id": 314,
+	"name": "锡林郭勒盟",
+	"pid": "19",
+	"letter": "XLGLM"
+}, {
+	"id": 315,
+	"name": "西宁市",
+	"pid": "21",
+	"letter": "XNS"
+}, {
+	"id": 316,
+	"name": "咸宁市",
+	"pid": "9",
+	"letter": "XNS"
+}, {
+	"id": 317,
+	"name": "宿迁市",
+	"pid": "16",
+	"letter": "XQS"
+}, {
+	"id": 318,
+	"name": "西双版纳傣族自治州",
+	"pid": "32",
+	"letter": "XSBNDZZZZ"
+}, {
+	"id": 319,
+	"name": "湘潭市",
+	"pid": "13",
+	"letter": "XTS"
+}, {
+	"id": 320,
+	"name": "邢台市",
+	"pid": "10",
+	"letter": "XTS"
+}, {
+	"id": 321,
+	"name": "新乡市",
+	"pid": "14",
+	"letter": "XXS"
+}, {
+	"id": 322,
+	"name": "湘西土家族苗族自治州",
+	"pid": "13",
+	"letter": "XXTJZMZZZZ"
+}, {
+	"id": 323,
+	"name": "咸阳市",
+	"pid": "25",
+	"letter": "XYS"
+}, {
+	"id": 324,
+	"name": "襄阳市",
+	"pid": "9",
+	"letter": "XYS"
+}, {
+	"id": 325,
+	"name": "信阳市",
+	"pid": "14",
+	"letter": "XYS"
+}, {
+	"id": 326,
+	"name": "新余市",
+	"pid": "17",
+	"letter": "XYS"
+}, {
+	"id": 327,
+	"name": "忻州市",
+	"pid": "26",
+	"letter": "XZS"
+}, {
+	"id": 328,
+	"name": "宿州市",
+	"pid": "1",
+	"letter": "XZS"
+}, {
+	"id": 329,
+	"name": "徐州市",
+	"pid": "16",
+	"letter": "XZS"
+}, {
+	"id": 330,
+	"name": "雅安市",
+	"pid": "22",
+	"letter": "YAS"
+}, {
+	"id": 331,
+	"name": "延安市",
+	"pid": "25",
+	"letter": "YAS"
+}, {
+	"id": 332,
+	"name": "延边朝鲜族自治州",
+	"pid": "15",
+	"letter": "YBCXZZZZ"
+}, {
+	"id": 333,
+	"name": "宜宾市",
+	"pid": "22",
+	"letter": "YBS"
+}, {
+	"id": 334,
+	"name": "银川市",
+	"pid": "20",
+	"letter": "YCS"
+}, {
+	"id": 335,
+	"name": "运城市",
+	"pid": "26",
+	"letter": "YCS"
+}, {
+	"id": 336,
+	"name": "宜昌市",
+	"pid": "9",
+	"letter": "YCS"
+}, {
+	"id": 337,
+	"name": "宜春市",
+	"pid": "17",
+	"letter": "YCS"
+}, {
+	"id": 338,
+	"name": "盐城市",
+	"pid": "16",
+	"letter": "YCS"
+}, {
+	"id": 339,
+	"name": "伊春市",
+	"pid": "11",
+	"letter": "YCS"
+}, {
+	"id": 340,
+	"name": "云浮市",
+	"pid": "5",
+	"letter": "YFS"
+}, {
+	"id": 341,
+	"name": "阳江市",
+	"pid": "5",
+	"letter": "YJS"
+}, {
+	"id": 342,
+	"name": "营口市",
+	"pid": "18",
+	"letter": "YKS"
+}, {
+	"id": 343,
+	"name": "伊犁哈萨克自治州",
+	"pid": "31",
+	"letter": "YLHSKZZZ"
+}, {
+	"id": 344,
+	"name": "榆林市",
+	"pid": "25",
+	"letter": "YLS"
+}, {
+	"id": 345,
+	"name": "玉林市",
+	"pid": "7",
+	"letter": "YLS"
+}, {
+	"id": 346,
+	"name": "阳泉市",
+	"pid": "26",
+	"letter": "YQS"
+}, {
+	"id": 347,
+	"name": "玉树藏族自治州",
+	"pid": "21",
+	"letter": "YSCZZZZ"
+}, {
+	"id": 348,
+	"name": "鹰潭市",
+	"pid": "17",
+	"letter": "YTS"
+}, {
+	"id": 349,
+	"name": "烟台市",
+	"pid": "23",
+	"letter": "YTS"
+}, {
+	"id": 350,
+	"name": "玉溪市",
+	"pid": "32",
+	"letter": "YXS"
+}, {
+	"id": 351,
+	"name": "益阳市",
+	"pid": "13",
+	"letter": "YYS"
+}, {
+	"id": 352,
+	"name": "岳阳市",
+	"pid": "13",
+	"letter": "YYS"
+}, {
+	"id": 353,
+	"name": "永州市",
+	"pid": "13",
+	"letter": "YZS"
+}, {
+	"id": 354,
+	"name": "扬州市",
+	"pid": "16",
+	"letter": "YZS"
+}, {
+	"id": 355,
+	"name": "淄博市",
+	"pid": "23",
+	"letter": "ZBS"
+}, {
+	"id": 356,
+	"name": "长春市",
+	"pid": "15",
+	"letter": "ZCS"
+}, {
+	"id": 357,
+	"name": "自贡市",
+	"pid": "22",
+	"letter": "ZGS"
+}, {
+	"id": 358,
+	"name": "珠海市",
+	"pid": "5",
+	"letter": "ZHS"
+}, {
+	"id": 359,
+	"name": "张家界市",
+	"pid": "13",
+	"letter": "ZJJS"
+}, {
+	"id": 360,
+	"name": "张家口市",
+	"pid": "10",
+	"letter": "ZJKS"
+}, {
+	"id": 361,
+	"name": "湛江市",
+	"pid": "5",
+	"letter": "ZJS"
+}, {
+	"id": 362,
+	"name": "镇江市",
+	"pid": "16",
+	"letter": "ZJS"
+}, {
+	"id": 363,
+	"name": "周口市",
+	"pid": "14",
+	"letter": "ZKS"
+}, {
+	"id": 364,
+	"name": "驻马店市",
+	"pid": "14",
+	"letter": "ZMDS"
+}, {
+	"id": 365,
+	"name": "重庆市",
+	"pid": "34",
+	"letter": "ZQS"
+}, {
+	"id": 366,
+	"name": "肇庆市",
+	"pid": "5",
+	"letter": "ZQS"
+}, {
+	"id": 367,
+	"name": "长沙市",
+	"pid": "13",
+	"letter": "ZSS"
+}, {
+	"id": 368,
+	"name": "中山市",
+	"pid": "5",
+	"letter": "ZSS"
+}, {
+	"id": 369,
+	"name": "舟山市",
+	"pid": "33",
+	"letter": "ZSS"
+}, {
+	"id": 370,
+	"name": "昭通市",
+	"pid": "32",
+	"letter": "ZTS"
+}, {
+	"id": 371,
+	"name": "中卫市",
+	"pid": "20",
+	"letter": "ZWS"
+}, {
+	"id": 372,
+	"name": "张掖市",
+	"pid": "6",
+	"letter": "ZYS"
+}, {
+	"id": 373,
+	"name": "资阳市",
+	"pid": "22",
+	"letter": "ZYS"
+}, {
+	"id": 374,
+	"name": "遵义市",
+	"pid": "8",
+	"letter": "ZYS"
+}, {
+	"id": 375,
+	"name": "长治市",
+	"pid": "26",
+	"letter": "ZZS"
+}, {
+	"id": 376,
+	"name": "郑州市",
+	"pid": "14",
+	"letter": "ZZS"
+}, {
+	"id": 377,
+	"name": "株洲市",
+	"pid": "13",
+	"letter": "ZZS"
+}, {
+	"id": 378,
+	"name": "枣庄市",
+	"pid": "23",
+	"letter": "ZZS"
+}, {
+	"id": 379,
+	"name": "漳州市",
+	"pid": "4",
+	"letter": "ZZS"
+}]

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		我是子
+		<a href="javascript:;" id="s" onclick="alert(2)">子的事件</a>
+	</body>
+	<script src="../../js/jquery.js"></script>
+	<script>
+		
+		/*$(()=>{
+			$(window.top.document).find("#p3").trigger("change")
+		});*/
+		
+		var svar ="我是子变量";
+		//调用父变量
+		
+		window.top.onload=function(){
+			$(window.top.document).find("#p").trigger("click")
+		}
+		$(window.top.document).find("#p").trigger("click")
+		$(document).ready(function(){
+		  console.log("子初始化完成")
+		  $(window.top.document).ready(function(){
+		    console.log("父初始化完成")
+		    $(window.top.document).find("#p").trigger("click");
+		  });
+		});
+		
+		//子调用子
+		
+  	/*	$(window.top.document).find("#iframe2")[0].contentWindow.document.load=function(){
+  		  console.log($(window.top.document).find("#iframe2")[0].contentWindow.s2)
+  		  let s2 = $(window.top.document).find("#iframe2")[0].contentWindow.s2;
+  		  s2.a = 22222;
+  		  s2.console();
+  		  console.log($($(window.top.document).find("#iframe2")[0].contentWindow.document).find("#s2"))
+  		  $($(window.top.document).find("#iframe2")[0].contentWindow.document).find("#s2").trigger("click");
+  		}
+  		 console.log($(window.top.document).find("#iframe2")[0].contentWindow.s2)
+        let s2 = $(window.top.document).find("#iframe2")[0].contentWindow.s2;
+        s2.a = 22222;
+        s2.auto();*/
+		//s2.init();
+		/*window.top.addEventListener("onload",function(){
+			console.log(window.parent.pvar)
+			//父页面加载完成
+			$(window.top.document).find("#iframe2")[0].contentWindow.addEventListener("onload",function(){
+				console.log(11111)
+				let s2 = $(window.top.document).find("#iframe2")[0].contentWindow.s2;
+				console.log(s2)
+				s2.list(function(){
+					s2.init();
+					$(this).find("#s2").trigger("click");
+				})
+			})
+			
+		})*/
+	</script>
+</html>

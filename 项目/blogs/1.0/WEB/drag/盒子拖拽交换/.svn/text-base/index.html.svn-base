@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <style>
+	*{padding:0;margin:0;-ms-user-select:none;-webkit-user-select:none;user-select:none}
+	body{font-size:14px;font-family:"微软雅黑";}
+	a{text-decoration:none;color:#3333}
+	ul li{list-style:none}
+	#box{width:640px;margin:100px auto;position:relative;background:red;}
+	#box li{height:100px;background:#111;margin-top:3px;line-height:100px;padding-left:5px;width:100px;
+		float:left;margin:10px;
+		color:#fff;font-size:32px;text-align:center;box-shadow:-5px 5px 5px -3px #000;border-radius:5px;
+	}
+	.btn{display:block;height:30px;width:100px;position:absolute;top:50px;left:0;right:0;margin: 0 auto; color:#aaa;}
+  </style>
+ </head>
+ <body>
+	<div id="box">
+		<ul id="ullist">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+
+			<li>6</li>
+			<li>7</li>
+			<li>8</li>
+			<li>9</li>
+			<li>10</li>
+
+			<li>11</li>
+			<li>12</li>
+			<li>13</li>
+			<li>14</li>
+			<li>15</li>
+
+			<li>16</li>
+			<li>17</li>
+			<li>18</li>
+			<li>19</li>
+			<li>20</li>
+		</ul>
+	</div>
+
+	<a class="btn" href="javascript:void(0)" id="tzrandom">随机排列</a>
+	<script src="js/dom.js"></script>
+	<script>
+		window.onload = function(){
+			/*
+				运动交互：位置的交互---改成定位布局
+				1：记录每个元素的位置坐标 数组 记录起来
+				2:添加定位，把记录位置重新赋予
+			
+			*/
+			var liDoms = dom("ullist").children;
+			var len = liDoms.length;
+			var zindex = 1;
+			//位置数组
+			var arr = [];
+			
+			for(var i=0;i<len;i++){
+				liDoms[i].index = i;//对象缓存索引，目的是为了找到当前元素在数组中的位置
+				liDoms[i].style.left = liDoms[i].offsetLeft+"px";
+				liDoms[i].style.top = liDoms[i].offsetTop+"px";
+				arr.push([liDoms[i].offsetLeft,liDoms[i].offsetTop]);//位置添加到数据中
+				
+			}
+			for(var i=0;i<len;i++){
+				liDoms[i].style.position = "absolute";
+				liDoms[i].style.margin = 0;
+				drag(liDoms[i]);
+			};
+
+			dom("tzrandom").onclick = function(){
+				var arrIndex = [];
+				for(var i=0;i<liDoms.length;i++){
+					arrIndex.push(i);
+				};
+
+				arrIndex.sort(function(a,b){
+					return Math.random()-0.5;
+				});
+				
+
+				for(var i=0;i<liDoms.length;i++){
+					move(liDoms[i],{left:arr[arrIndex[i]][0],top:arr[arrIndex[i]][1]});	
+					liDoms[i].index = arrIndex[i];
+				}
+				
+			};
+			
+			//拖拽元素
+			function drag(dom){
+				//鼠标按下事件
+				dom.onmousedown = function(e){
+					//获取鼠标按下的位置
+					var pos = getXY(e);
+					//获取元素的坐标位置
+					var l = this.offsetLeft;
+					var t = this.offsetTop;
+					//层级置顶
+					dom.style.zIndex = zindex++;
+					//document对象的移动--
+					document.onmousemove = function(e){
+						var nl = getXY(e).x - pos.x + l;
+						var nt = getXY(e).y - pos.y + t;
+						dom.style.left = nl+"px";
+						dom.style.top = nt+"px";
+
+						for(var i=0,len =liDoms.length ;i<len;i++){
+							liDoms[i].style.background = "#111";
+						}
+						//检查距离当前元素最近的元素
+						var nearLi = juli(dom);
+						//如果找到了就给元素添加背景色
+						if(nearLi){
+							nearLi.style.background = "red";
+						}
+					};
+					document.onmouseup = function(){
+						//事件清空
+						document.onmousemove = null;
+						document.onmouseup = null; 
+						//找到最短那个交换的元素
+						var nearLi = juli(dom);
+						
+						if(nearLi){
+							//动画交换
+							move(dom,{left:arr[nearLi.index][0],top:arr[nearLi.index][1]});
+							move(nearLi,{left:arr[dom.index][0],top:arr[dom.index][1]});
+							//交换
+							var cindex = dom.index;
+							dom.index = nearLi.index;
+							nearLi.index = cindex;
+							//交换元素进行还原背景色
+							nearLi.style.background = "#111";
+						}else{
+							//如果没有碰撞的情况下。直接回到自己的位置上.
+							move(dom,{left:arr[dom.index][0],top:arr[dom.index][1]});
+						}
+					};
+				};
+			}
+
+			//碰撞检测
+			function pengzhuang(dom1,dom2){
+				var L = dom1.offsetLeft;
+				var T = dom1.offsetTop;
+				var B = dom1.offsetTop + dom1.offsetHeight;
+				var R = dom1.offsetLeft + dom1.offsetWidth;
+
+				var L2 = dom2.offsetLeft;
+				var T2 = dom2.offsetTop;
+				var B2 = dom2.offsetTop + dom2.offsetHeight;
+				var R2 = dom2.offsetLeft + dom2.offsetWidth;
+				//没有碰撞情况
+				if(L > R2 || T > B2 || R <L2 || B < T2){
+					return true;
+				}else{
+					return false;
+				}
+			};
+
+			//找最近元素的进行交互,调用move方式 ,勾股定理找到最短元素的斜边
+
+			function juli(dom){
+				var value = Number.MAX_VALUE;//对比的数字
+				var index = -1;
+				for(var i=0,len =liDoms.length ;i<len;i++){
+					//循环检查碰撞的元素
+					if(!pengzhuang(dom,liDoms[i]) && dom!=liDoms[i]){
+						var a = dom.offsetLeft - liDoms[i].offsetLeft;
+						var b = dom.offsetTop - liDoms[i].offsetTop;
+						var c = Math.sqrt(a*a+b*b);
+						if(c<value){
+							value = c;
+							index = i;
+						}
+					}		
+				}
+				if(index!=-1){
+					return liDoms[index];
+				}else{
+					return false;
+				}	
+			}
+		};
+
+		
+	</script>
+	
+ </body>
+</html>

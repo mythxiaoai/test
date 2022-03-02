@@ -1,0 +1,112 @@
+2
+<div id="table">2</div>
+
+<script>
+  setTimeout(()=>{
+    initTbale2();
+  },1000);
+  function initTbale2(){
+    let table = rj.table.init({
+        id: "#table",
+        toolbar: false,
+        url:'http://192.168.130.106:8099/demo/s2',
+       sortName: "time",
+        queryParams:function(params) {
+            //将查询格式化
+            return{
+                pageSize:params.limit,
+                pageNum:(params.offset+params.limit)/params.limit,
+                //pageNum : params.offset,
+                pageNo : params.offset, // 页码
+                sortName:params.sort,//这里是读取sortName配置选项
+                sortOrder:params.order,//默认是desc
+            }
+        },
+        onLoadSuccess(res){
+          console.log(2222)
+          return res
+        },
+          columns: [
+              {checkbox: true },
+              {
+                  field: 'name',
+                  title: '人工评估任务名称',
+                  sortable:true,
+              },
+              {
+                  field: 'workNumber',
+                  title: '工单数',
+                  sortable:true,
+              },
+              {
+                  field: 'successNumber',
+                  title: '上传成功数',
+                  sortable:true,
+                  formatter: function(value,row,index){
+                      return `<a onclick="assessment.openInfo('${row.id}','tab1','${row.status}','${row.name}')">${value}</a>`
+                  }
+              },
+              {
+                  field: 'failNumber',
+                  title: '上传失败数',
+                  sortable:true,
+                  formatter: function(value,row,index){
+                      return `<a onclick="assessment.openInfo('${row.id}','tab2','${row.status}','${row.name}')">${value}</a>`
+                  }
+              },
+              {
+                  field: 'notMatchNumber',
+                  title: '无法匹配数',
+                  sortable:true,
+                  formatter: function(value,row,index){
+                      return `<a onclick="assessment.openInfo('${row.id}','tab3','${row.status}','${row.name}')">${value}</a>`
+                  }
+              },
+              {
+                  field: 'user',
+                  title: '用户',
+              },
+              {
+                  field: 'time',
+                  title: '任务开始时间',
+                  sortable:true,
+                  order:"desc",
+              },
+              {
+                  field: 'status',
+                  title: '评估状态',
+                  formatter:function(value,row,index){
+                      if(value=="已完成"){
+                          return `<span class='text-success'>${value}</span>`;
+                      }else if(value=="失败"){
+                          return `<span class='text-danger'>${value}</span>`;
+                      }else {
+                          return `<span class='text-info js_tooltip' title='上传成功数:${row.successNumber} 上传失败数:${row.failNumber} 无法匹配数:${row.notMatchNumber}'>${value}</span>`;
+                      }
+                  }
+              },
+              {
+                  field: 'failCause',
+                  title: '任务失败原因',
+                  formatter:function(value,row,index){
+                      if(value==""){
+                          return "";
+                      }else{
+                          return value;
+                      }
+                  }
+              },
+              {
+                  title: '操作',
+                  formatter: function(value, row, index) {
+                      return `
+                <div style="width:160px">
+                   <a class="btn btn-info btn-xs" onclick="assessment.openInfo('${row.id}','tab1','${row.status}','${row.name}')">查看详情</a>
+                   <a class="btn btn-danger btn-xs" onclick="assessment.delOne('${row.id}')">删除</a>
+                <div/>`
+                  }
+              }
+          ],
+    })
+  }
+ </script>

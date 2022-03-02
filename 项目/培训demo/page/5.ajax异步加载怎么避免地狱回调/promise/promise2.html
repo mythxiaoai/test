@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	  
+	  
+	<script type="text/javascript" src="../../../js/jquery.js" ></script>
+	  <script>
+	    let list ={
+	      init(){
+	        this.initSelect().then(data=>{
+	          //得到initSelect()返回的结果搞事情
+	          console.log(data)
+	          return this.tableInit(data)
+	        }).then(data=>{
+	          console.log(data)
+	        }).catch(res=>{
+	          console.error(res.responseText)
+	        })
+	      },
+	      //搜索条件
+	      initSelect(){
+	        return $.ajax({
+	        	type:"get",
+	        	url:"./a.json"
+	        });
+	      },
+	      //表格初始化
+	      tableInit(data){
+	         return $.ajax({
+            type:"get",
+            url:"./b.json"
+          });
+	      },
+	      info(){
+	         return $.ajax({
+            type:"get",
+            url:"./c.json"
+          });
+	      }
+	    }
+	    list.init();
+	    
+	    /*Promise.all([list.initSelect(),list.tableInit(),list.info()]).then(data=>{
+	      console.log(data);
+	    })*/
+	    
+	    
+	  </script>
+	</body>
+</html>

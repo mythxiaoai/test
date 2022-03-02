@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  </head>
+  <body>
+    <div id="app-4">
+      <ol>
+        <li v-for="todo in todos" :key="todo.id">
+          {{ todo.text }}----{{fn()}}
+        </li>
+      </ol>
+      <button type="button" @click="change">点我</button>{{test}}
+    </div>
+    <script>
+      var app4 = new Vue({
+        el: '#app-4',
+        data: {
+          test:false,
+          todos: [
+            {id:1, text: '学习 JavaScript' },
+            {id:2, text: '学习 Vue' },
+            {id:3, text: '整个牛项目' }
+          ]
+         
+        },
+        methods:{
+          change(){
+           //this.todos.splice(1, 1, {id:2, text: '学习 css' })
+           
+          },
+          fn(){
+            console.log("fn")
+            //this.test = !this.test  加上这个呈现会无限循环
+          }
+        }
+      })
+    </script>
+  </body>
+  
+</html>

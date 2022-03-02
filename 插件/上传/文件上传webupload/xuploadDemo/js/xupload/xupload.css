@@ -1,0 +1,72 @@
+.xupload{display:none;position:fixed;overflow:hidden;width:633px;bottom:0px;right:15px;z-index:99999;border-top-left-radius:7px;border-top-right-radius:7px;border:1px solid #e2e2e2;box-shadow:0 0 10px #ccc;margin-bottom:-2px;background-color: rgba(255,255,255,.9);}
+.xupload .xupload-header{border-top-left-radius:7px;border-top-right-radius:7px;height:44px;line-height:44px;font-weight:200;position:relative;user-select:none;padding:0 15px;border-bottom:1px solid #f7faff;}
+.xupload .xupload-header .xupload-header-title{padding-right:50px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;color:#666;line-height:44px;font-size:14px;font-weight:200;}
+.xupload .xupload-header .xupload-control{position:absolute;right:12px;top: 0;}
+.xupload .xupload-header .xupload-control .xupload-icon{width:20px;font-size:14px;text-align:center;line-height:44px;color:#999;margin:0 2px;cursor:pointer;float:left;}
+.xupload .xupload-header .xupload-control .xupload-icon:hover{opacity:.8;}
+.xupload-body .xupload-list-header{overflow:hidden;height:35px;border-bottom:1px solid #f2f6fd;line-height:35px;color:#424e67;}
+.xupload-body .xupload-list-header .file-name{width:45%;}
+.xupload-body .xupload-list-header .file-status{width:25%;}
+.xupload-body .xupload-list-header div{display:inline-block;padding-left:15px;height:35px;line-height:35px;color:#424e67;width:15%;float:left;font-size:12px;}
+.xupload-body .uploader-list{position:relative;overflow:hidden;overflow-y:auto;height:349px;margin-top:-1px;}
+.xupload-body .uploader-list-container{position:relative;overflow:hidden;}
+.xupload-body .file-list{position:relative;height:49px;border-bottom:1px solid #f2f6fd;line-height:49px;}
+.xupload-body .process{position:absolute;z-index:0;height:100%;line-height:49px;background:#e2eeff;}
+.xupload-body .info{position:absolute;width:100%;height:100%;}
+.xupload-body .info >div{display:inline-block;position:relative;float:left;overflow:hidden;width:15%;height:49px;line-height:49px;white-space:nowrap;padding-left:15px;font-size:12px;text-overflow:ellipsis;}
+.xupload-body .info .file-name{width:45%;padding-left:45px;}
+.xupload-body .info .file-status{width:25%;}
+.xupload-body .info .file-name .file-icon{position:absolute;top:12px;left:13px;width:24px;height:24px;text-align: center;line-height: 24px;font-size: 20px;}
+.xupload-body .info .file-name .file-text{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.xupload-body .info .file-status em{font-size:14px;top:2px;}
+.xupload-body .info .file-status .success{display:block;}
+.xupload-body .info .file-status .error em{color:#ef6363;}
+.xupload-body .info .file-status .success em{color:#5cd992;}
+.xupload-body .file-operate em{float:left;line-height:49px;width:16px;font-size:12px;margin-right:10px;cursor:pointer;color:#5f6f95;}
+.xupload-body .uploader-list .file-operate em:hover{opacity:.8;}
+.xupload-body .uploader-list .file-operate .operate-retry{font-size:14px;color:#999;}
+.xupload-body .uploader-list .file-operate .operate-retry:hover{color:#176bca;}
+.xupload-show {margin-bottom: 0;}
+.xupload-show li:first-child{margin-top: 15px;}
+.xupload-show li{position:relative;}
+.xupload-show li:hover .file-opts{display:block;}
+.xupload-show .file-info{display:inline-block;width:100%;padding-right:50px;overflow:hidden;white-space:nowrap;font-size:12px;text-overflow:ellipsis;}
+.xupload-show .file-info .file-icon{display:inline-block;font-size:20px;margin-right:10px;}
+.xupload-show .file-info .file-name{display:inline-block;font-size:13px;}
+.xupload-show .file-info .file-size{display:inline-block;font-size:12px;}
+.xupload-show .file-opts{display:none;width:85px;height:100%;text-align:right;position:absolute;right:15px;top:0;line-height:45px;}
+.xupload-show .file-opts>a{height: 100%;display: inline-block;padding: 0 5px;color:rgb(103, 106, 108);}
+.xupload-show .file-opts>a:hover{opacity: .8;}
+
+.webuploader-container .has-error .btn-default{border-color: #a94442;}
+.webuploader-container .help-block{font-size: 12px;}
+
+.webuploader-dnd-over:after{content:"放开双手,即可添加上传";position:fixed;background:rgba(255,255,255,0.6);border:3px dashed rgb(204,204,204);z-index:1000000;color:rgb(153,153,153);font-size:40px;text-align:center;overflow:hidden;top:0px;left:0px;height:539px;line-height:539px;width:100%;}
+
+/* .webuploader-container {
+	position: relative;
+} */
+.webuploader-element-invisible {
+	position: absolute !important;
+	clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+    clip: rect(1px,1px,1px,1px);
+}
+.webuploader-pick {
+	position: relative;
+	display: inline-block;
+	cursor: pointer;
+	background: #00b7ee;
+	padding: 10px 15px;
+	color: #fff;
+	text-align: center;
+	border-radius: 3px;
+	overflow: hidden;
+}
+.webuploader-pick-hover {
+	background: #00a2d4;
+}
+
+.webuploader-pick-disable {
+	opacity: 0.6;
+	pointer-events:none;
+}

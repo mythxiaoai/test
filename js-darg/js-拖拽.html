@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style>
+		.a{background:red;display: inline-block;}
+		*{margin: 0;padding: 0;}
+		#box{
+			position: absolute;top: 0;left: 0;
+		}
+	</style>
+	<body>
+		<div id="box" style="height: 100px;width: 100px;background: red;"></div>
+	</body>
+		<script>
+			box.onmousedown=function(e){
+				var l=e.pageX-box.offsetLeft;
+				var h=e.pageY-box.offsetTop;
+				document.onmousemove=function(e2){
+					var l2=e2.pageX-l;
+					var h2=e2.pageY-h;
+					if(l2<0){
+						l2=0;
+					}
+					console.log(l2)
+					console.log(h2)
+					box.style.left=l2+"px";
+					box.style.top=h2+"px";
+				}
+				document.onmouseup=function(){
+					document.onmousemove=null;
+					document.onmouseup=null;
+				}
+			}
+		</script>
+</html>

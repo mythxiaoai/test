@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			{{json}}<br>
+			{{jsonform}}<br><br>
+			{{json2}}
+			{{jsonform2}}
+			<input type="button" value="赋值" @click="changeValue" />
+			<input type="button" value="赋值2" @click="changeValue2" />
+			<input type="button" value="测试" @click="fn3" />
+			<ul>
+				<li v-for="i in json3" @click="fn1">
+					{{i}}
+				</li>
+		</div>
+	</body>
+	<script src="https://cdn.bootcss.com/vue/2.5.16/vue.js"></script>
+	<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+	<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+		
+	<script>
+		
+	Vue.use(ELEMENT)
+	let vue =new Vue({
+	  el: '#app',
+	  methods:{
+	  	changeValue(){
+	  		this.json.b=[3,4]
+	  	},
+	  	changeValue2(){
+	  		this.json2=[3,4]
+	  	},
+	  	fn1(){
+	  		console.log("fn1")
+	  	},
+	  	fn3(){
+			  console.log("fn3")
+			  console.log(this.jsonform);
+	  	}
+	  },
+	  data:{
+	  	json:{
+	  		a:3,
+	  		b:[]
+	  	},
+	  	json2:{
+	  		
+	  	},
+	  	json3:[
+	  		1,2,3,4,5
+	  	]
+	  },
+	  computed:{
+	  	jsonform(){
+	  		return {
+	  			a:this.json.a,
+	  			b:this.json.b[this.json.b.length-1]
+	  		}
+	  	},
+	  	jsonform2:{
+	  		// getter
+		    get: function () {
+		      return this.json2;
+		    },
+		    // setter
+		    set: function (newValue) {
+		    	this.json2.a=1;
+		      console.log("我是新值"+newValue)
+		    }
+	  	}
+	  }
+	})
+
+	</script>
+</html>

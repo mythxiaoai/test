@@ -1,0 +1,165 @@
+﻿<!doctype html>
+<html>
+	<head>
+	    <!--声明当前页面的编码集：中文编码（gbk/gb2312）,国际编码（utf-8）-->
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+		<!--页面三要素-->
+		<title>国际标准模板</title><!--小于等于31 大小写不区分-->
+		<meta name="Keywords" content="关键词,关键词,关键词"><!--<=76个字-->
+		<meta name="description" content=""><!--<=80个字-->
+		<!--js/css-->
+		<style type="text/css">
+		@charset "UTF-8";
+		* {word-wrap: break-word;;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;}
+		html {-webkit-text-size-adjust: none;overflow-x:hidden}
+		body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td,span{padding:0;margin:0;}
+		body{font:normal 0.75em/1.5em "微软雅黑","冬青黑体简体中文 w3","宋体"; }
+		fieldset,img,html,body,iframe{border:0;}
+		/** 重置表格元素 **/
+		table{border-collapse:collapse;border-spacing:0;}
+		ol,ul{list-style:none;}
+		address,caption,cite,code,dfn,em,strong,th,var{font-weight:normal;font-style:normal;}
+		caption,th{text-align:left;}
+		em,i,small,caption,th{font-weight:normal;font-style:normal;font-size:100%;}
+		h1,h2,h3,h4,h5,h6,em,strong,b{font-weight:400;font-size:100%;}
+		q:before,q:after{content:'';}
+		.clearfix{*zoom:1;}
+		.clearfix:after{content:"."; display:block;clear:both;visibility:hidden;line-height:0;height:0;}
+		a {color: #9D9C9C;text-decoration: none;}
+		a img {border: none;border:0;}
+		a,button{ outline:none; border:0;}
+		input,select{border:1px solid #ccc;}
+		button::-moz-focus-inner{border:0;padding:0;margin:0;}
+		textarea,input,button,select{outline:0;font-size:inherit;line-height:inherit;color:inherit;font-family:inherit;}
+		textarea{overflow:auto;resize:none;}
+		.hide,.none{display: none}
+		.hidden{visibility: hidden;}
+		.show,.block{display: block;}
+		img{ vertical-align:middle;}
+		input:disabled,select:disabled,textarea:disabled{background:#ccc;}
+		.fl{float: left;}
+		.fr{float: right;}
+		.red{color:red;}
+		.green{color:green;}
+		body{background:url("images/1.png") no-repeat;background-size:cover;}
+		/*box start*/
+		.box{width:1120px;margin:1785px auto;overflow:hidden;color:#fff}/*字被我隐身了*/
+		.box .stairs{width:1120px;height:57px;margin-bottom:20px;}
+		/*背景上的布局颜色..box .stairs:nth-child(even){background:yellow;}
+		..box .stairs:nth-child(odd){background:pink;}*/
+		.box .stage1{height:852px;}
+		.box .stage2{height:957px;}
+		.box .stage3{height:1022px;margin-bottom:30px;}
+		.box .stage4{height:652px;margin-bottom:40px;}
+		.box .stage5{height:617px;margin-bottom:40px;}
+		.box .stage6{height:1549px;margin-bottom:20px;}
+		.box .stage7{height:436px;}
+		/*end box*/
+		/* sNav  start上边ul*/
+		.snavbox{position:fixed;bottom:60px;right:0;display:none}
+		.snavbox .sNav{width:110px;height:224px;}
+		.snavbox .sNav li{margin-bottom:10px;position:relative;}
+		.snavbox .sNav li i{position:absolute;display:inline-block;width: 9px;height: 12px;background:url("images/top.png") no-repeat ;top:9px;left:3px;background-position:-86px 0px;}/*11+7  /2=9*/
+		.snavbox .sNav li i.on{width: 14px;height: 23px;background-position:-86px -21px;left: 0;top: 0;}
+		.snavbox .sNav  .cgray{display:block;width:110px;height:22px;line-height:22px;font-size:14px;color:#888;padding-left:20px;}
+		/* end sNav上边ul*/
+		.sCz{width:110px;height:166px;}
+		.sCz li{width:50px;height:50px;margin:8px 0 0 10px;}
+		.sCz li a{width:50px;height:50px;display:block;background:url("images/top.png") no-repeat;}
+		.sCz li.s_ml a:hover{background-position:0 -172px;}
+		.sCz li.s_wx{position:relative;}
+		.sCz li.s_wx a:hover{background-position:0 -230px;}
+		.sCz li.s_wx a{background-position:0 -58px;}
+		.sCz li.s_backTop a{background-position:0 -116px;}
+		.sCz li.s_backTop a:hover{background-position:0 -288px;}
+		/*sNav  end*/
+		</style>
+	</head>  
+	<body>
+		<!--box start-->
+		<div class="box">
+		<div class="stairs stage1">大明星</div>
+		<div class="stairs stage2">爱时尚</div>
+		<div class="stairs stage3">BEAUTY</div>
+		<div class="stairs stage4">乐生活</div>
+		<div class="stairs stage5">医美汇</div>
+		<div class="stairs stage6">摩登学院</div>
+		<div class="stairs stage7">有看点</div>
+		</div>
+		<!--end box-->
+		<!--snavbox start-->
+		<div class="snavbox">
+			<ul class="sNav">
+				<li><a class="cgray" href="###" entitle="STAR" chtitle="大明星"><i class="on"></i><span>大明星</span></a></li>
+				<li><a class="cgray" href="###" entitle="FASHION" chtitle="爱时尚"><i></i><span>爱时尚</span></a></li>
+				<li><a class="cgray" href="###" entitle="BEAUTY" chtitle="要漂亮"><i></i><span>要漂亮</span></a></li>
+				<li><a class="cgray" href="###" entitle="LOHAS" chtitle="乐生活"><i></i><span>乐生活</span></a></li>
+				<li><a class="cgray" href="###" entitle="PLASTIC" chtitle="医美汇"><i></i><span>医美汇</span></a></li>
+				<li><a class="cgray" href="###" entitle="MODERN" chtitle="摩登学院"><i></i><span>摩登学院</span></a></li>
+				<li><a class="cgray" href="###" entitle="VIDEO" chtitle="有看点" ><i></i><span>有看点</span></a></li>
+			</ul>
+			<ul class="sCz">
+				<li class="s_ml"><a href="javascript:;"></a></li>
+				<li class="s_wx">
+				<a href="javascript:;">
+				</a>
+				</li>
+				<li class="s_backTop"><a href="###"></a></li>
+			</ul>
+		<div>
+		<!--end snavbox-->
+		<script src="js/jquery-3.0.0.min.js"></script>
+		<script>
+			$(function(){
+				var vmark=true;//控制事件同时执行  相互影响
+				//点击显示和隐藏事件
+				$(".s_ml a").click(function(){
+					$(".sNav").slideToggle(1000);
+				});
+				//鼠标滚动事件
+				$(window).scroll(function(){
+					if(vmark){
+					var top =$(this).scrollTop();
+					$(".stairs").each(function(i,val){
+						//console.log($(".stairs").offset().top+"===="+$(window).scrollTop())
+						if(top>$(this).offset().top-10){//自己的布局与背景图片有偏差,
+							//替换文本改变颜色  删除其他样式
+						$(".sNav li").eq(i).find("i").addClass("on").closest("li").siblings().each(function(i,val){
+							$(val).find("i").removeClass("on");
+							$(".sNav li").eq(i).find("span").text($(".sNav li").eq(i).find(".cgray").attr("chtitle")).css("color","#888");
+							});
+						$(".sNav li").eq(i).find("span").text($(".sNav li").eq(i).find(".cgray").attr("entitle")).css("color","#e90aad");
+
+						}
+						
+					});
+					
+					if(top>$(".stairs").eq(0).offset().top){
+							$(".snavbox").fadeIn(500);
+						}else{
+							$(".snavbox").fadeOut(500);
+						}
+					}
+				});
+				//点击slidnav跳转到指定位置
+				$(".cgray").each(function(i,val){
+					val.index=i;
+					$(val).click(function(){
+						vmark=false;
+						$("html,body").animate({scrollTop:$(".stairs").eq(this.index).offset().top},1000,function(){
+						vmark=true;
+						});
+					});
+				});
+				
+				$(".s_backTop").click(function(){
+					vmark=false;
+					$("html,body").animate({scrollTop:0},1000,function(){
+					vmark=true;
+					});
+				});
+				
+			});
+		</script>
+	</body>
+</html>

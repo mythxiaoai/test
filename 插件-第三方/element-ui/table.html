@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/element-ui/2.4.9/theme-chalk/index.css" rel="stylesheet">
+		<style>
+		  .el-table .cell{
+		    text-overflow: unset;
+		    white-space: nowrap;
+		  }
+		  col:nth-child(1){
+		    width: 800px!important;
+		  }
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<el-table
+		    :data="tableData"
+		    border
+		    style="width: 100%">
+			    <el-table-column
+			      prop="date"
+			      label="日期"
+			      width="180">
+			    </el-table-column>
+			    <el-table-column
+			      label="手机号"
+			      prop="tel"
+			      class-name="row"
+			      >
+			    </el-table-column>
+			    <el-table-column
+			      label="操作">
+			       <template slot-scope="scope">
+			        <el-button
+			          size="mini"
+			          @click="handleEdit1(scope.$index)">查看</el-button>
+			      	</template>
+			    </el-table-column>
+			    <el-table-column
+			      label="座机"
+			      width="180"
+			      prop="telT"
+			      >
+			    </el-table-column>
+			    <el-table-column
+			      label="操作">
+			       <template slot-scope="scope">
+			        <el-button
+			          size="mini"
+			          @click="handleEdit2(scope.$index)">查看</el-button>
+			      	</template>
+			    </el-table-column>
+
+		  </el-table>
+
+		</div>
+		  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+		  <script src="https://cdnjs.cloudflare.com/ajax/libs/element-ui/2.4.9/index.js"></script>
+	</body>
+	<script>
+		console.log(window)
+		var vm = new Vue({
+			el:"#app",
+			created(){
+
+				
+			},
+			data:{
+		        tableData: [{
+		          date: '2016-05-02',
+		          tel: '啊的发大水发烧发烧发烧啊的发大水发烧发烧发烧啊的发大水发烧发烧发烧啊的发大水发烧发烧发烧啊的发大水发烧发烧发烧1啊的发大水发烧发烧发烧啊的发大水发烧发烧发烧啊的发大水发烧发烧发烧啊的发大水发烧发烧发烧啊的发大水发烧发烧发烧111111',
+		          telT:"563****9634",
+		          address: '上海市普陀区金沙江路 1518 弄',
+		        }, {
+		          date: '2016-05-04',
+		          tel: '155****2548',
+		          telT:"563****9634",
+		          address: '上海市普陀区金沙江路 1517 弄',
+		        }, {
+		          date: '2016-05-01',
+		          tel: '155****2548',
+		          telT:"563****9634",
+		          address: '上海市普陀区金沙江路 1519 弄',
+		        }, {
+		          date: '2016-05-03',
+		          tel: '155****2548',
+		          telT:"563****9634",
+		          address: '上海市普陀区金沙江路 1516 弄',
+		        }]
+			},
+			methods:{
+			  fn(row, column, cellValue, index){
+			    return cellValue+"<div></div>";
+			  },
+				handleEdit1(index){
+					//后台给的时候初始化都是带星号的， 每点击对应的按钮请求后台数据返回个完整的手机号(不用管请求)塞到按钮前面的手机号
+					//比如点击按钮 后台给个完整手机号15556932548  就这一个数据
+					//后台数据不修改 操作在前台
+					
+					/*****************************/
+					//发送ajax返回
+					let letNum = "123456789"
+					this.tableData[index].tel = letNum;
+				},
+				handleEdit2(index){
+					//后台给的时候初始化都是带星号的， 每点击对应的按钮请求后台数据返回个完整的手机号(不用管请求)塞到按钮前面的手机号
+					//比如点击按钮 后台给个完整手机号15556932548  就这一个数据
+					//后台数据不修改 操作在前台
+					
+					/*****************************/
+					//发送ajax返回
+					let letNum = "123456789"
+					this.tableData[index].telT = letNum;
+				}
+			},
+			filters:{
+				fmtTel(cellValue){
+					if(cellValue){
+						let temp = cellValue.slice(3,7);
+						cellValue=cellValue.replace(temp,"****")
+					}
+					return cellValue;
+				}
+			}
+		});
+	</script>
+</html>

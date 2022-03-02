@@ -1,0 +1,60 @@
+/*form表单样式*/
+.xform{display:none;position:fixed;width: 100%; height: 100%;bottom: 0;right: 0; left:0;top:0;margin:auto;background: rgba(0,0,0,0.5); z-index: 999;}
+.xform >div{position: absolute;width: 39.2%;min-width:645px;box-shadow: 3px 3px 15px #333;border-top-left-radius: 5px;border-top-right-radius: 5px;background: #eaeaea;} 
+.xform >div >.f_haeder{width: 100%; height: 40px; background: #006f48; border-radius: 3px 3px 0 0;cursor: move;}
+.xform >div >.f_haeder >span{padding-left:15px; line-height: 40px; color: #fff;font-weight: 700;font-size: 14px;}
+.xform >div >.f_haeder >a{display:inline-block;width:40px;height:40px;float:right;text-align: center;line-height: 40px;}
+.xform >div >.f_haeder >a:hover {opacity: 0.8;}
+.xform >div >.f_haeder >a >span{display:inline-block;height: 10px;width: 10px;background: #ff5f58;border-radius: 50%;}
+.xform >div >.f_cont{max-height: 60vh;min-height:200px;overflow: auto;}
+.xform >div >.f_cont >table{width:100%;}
+.xform >div >.f_cont >table tr{line-height: 40px;font-size: 14px;}
+.xform >div >.f_cont >table tr >td:first-child{width:39.2%;padding-right:15px;text-align: right;font-weight:700;color #333;}
+.xform >div >.f_cont >table tr >td:last-child{padding:0 15px;position: relative;}
+.xform >div >.f_cont >table tr >td >.form-control{height: 30px;}
+.xform >div >.f_cont >table tr >td input{max-width: 260px;}
+/*多选和单选*/
+.xform >div >.f_cont >table tr >td input[type='radio'],.xform >div >.f_cont >table tr >td input[type='checkbox']{max-width: 260px;vertical-align: sub;margin-right: 2px;}
+/*textarea*/
+.xform >div >.f_cont >table tr >td.textarea{height: 80px;}
+.xform >div >.f_cont >table tr >td.textarea textarea{min-height: 60px;}
+/*label*/
+.xform >div >.f_cont >table tr >td label{font-weight: normal;}
+/*img show  update*/
+.xform >div >.f_cont >table tr >td.files >label{display: block;margin-right: 0;}
+.xform >div >.f_cont >table tr >td.files .f_des{height: 40px;line-height:40px;padding: 0 10px;background:#fff;border: 1px dashed #C3C9D0;}
+.xform >div >.f_cont >table tr >td.files .f_des .f_add{font-size: 24px;font-weight: 700;vertical-align: top;}
+.xform >div >.f_cont >table tr >td.files .f_des .f_tip{font-size: 12px;}
+.xform >div >.f_cont >table tr >td.files .f_des:hover{background: #E6F5FF;cursor: pointer;}
+.xform >div >.f_cont >table tr >td.files{padding:15px 15px;}
+.xform >div >.f_cont >table tr >td.files >ul >li{position:relative;width:100%;font-size:12px;line-height: 40px;border-radius:3px;border: 1px solid #E9E9E9;background:rgba(255,255,255,0.65);margin-bottom: 5px;}
+.xform >div >.f_cont >table tr >td.files >ul >li .f_info{height:40px;}
+.xform >div >.f_cont >table tr >td.files >ul >li .f_info .f_file{height:40px;width: 40px;padding:5px;display:inline-block;vertical-align: top;text-align: center;line-height: 36px;}
+.xform >div >.f_cont >table tr >td.files >ul >li .f_info .f_name{white-space:nowrap;max-width:200px;overflow:hidden;display:inline-block;line-height: 40px;text-overflow: ellipsis;}
+.xform >div >.f_cont >table tr >td.files >ul >li .f_info img{cursor: pointer;max-height:100%;max-width: 100%;display: inline-block;}
+.xform >div >.f_cont >table tr >td.files >ul >li .f_opts{display:none;position: absolute;right: 5px;top: 0;height: 40px;line-height: 40px;bottom: 0;margin: auto 0;}
+.xform >div >.f_cont >table tr >td.files >ul >li .f_opts a,.xform >div >.f_cont >table tr >td.files >ul >li .f_opts span{height: 40px;display: inline-block;}
+.xform >div >.f_cont >table tr >td.files >ul >li:hover .f_opts{display: block;}
+/*select*/
+.xform >div >.f_cont >table tr >td select{max-width: 260px;position:relative;z-index:3;background:transparent;-webkit-appearance: none;-moz-appearance: none;-ms-appearance: none;appearance: none;}
+.xform >div >.f_cont >table tr >td select+b{min-width: 260px;position: absolute;left: 15px;bottom: 5px;border-radius: 4px;background: #FFF;z-index: 1; height: 30px;}
+.xform >div >.f_cont >table tr >td select~i{position: absolute;top: 50%;left: 260px;margin-top: -2px;display: inline-block;width: 0;height: 0;border: 4px solid transparent;border-top: 6px solid #222;border-bottom-width: 0;z-index: 2;}
+/*ztree*/
+.xform >div >.f_cont >table tr >td.tree >div{display:none;position: fixed;background: #fff;border: 1px solid #ccc;z-index: 999;max-height: 300px;overflow: auto;}
+/*submit btn*/
+.xform >div .opts{text-align: center;}
+.xform >div .opts .btn{border-radius: 17px;width: 96px;margin:15px;}
+/*折叠*/
+.xform >div >.f_cont > ul {margin: 10px; border: 1px solid #999; border-radius: 3px;}
+.xform >div >.f_cont > ul > li{ width: 100%; border-bottom: 1px solid #999;}
+.xform >div >.f_cont > ul > li:last-child{ border: 0;}
+.xform >div >.f_cont > ul > li > .acc_tit{padding: 0 10px; font-size: 1.5rem; font-weight: 700; cursor: pointer;}
+.xform >div >.f_cont > ul > li > .acc_tit.acc_bg{background-color: rgba(83, 145, 102, 0.65); color: #fff;}
+.xform >div >.f_cont > ul > li > .acc_tit:hover{background-color: rgba(83, 145, 102, 0.65); color: #fff;}
+.xform >div >.f_cont > ul > li > .acc_con{display: none;padding: 0 10px; border-top: 1px solid #999;}
+.xform >div >.f_cont > ul > li > .acc_con > form >table{width:100%;}
+.xform >div >.f_cont > ul > li > .acc_con > form >table tr{line-height: 40px;font-size: 14px;}
+.xform >div >.f_cont > ul > li > .acc_con > form >table tr >td:first-child{width:39.2%;padding-right:15px;text-align: right;font-weight:700;color #333;}
+.xform >div >.f_cont > ul > li > .acc_con > form >table tr >td:last-child{padding:0 15px;position: relative;}
+.xform >div >.f_cont > ul > li > .acc_con > form >table tr >td >.form-control{height: 30px;}
+.xform >div >.f_cont > ul > li > .acc_con > form >table tr >td input{max-width: 260px;}

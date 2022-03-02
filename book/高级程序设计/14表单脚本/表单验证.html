@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<form name="form1">
+			<input name="input1"  required onblur="console.log(this.checkValidity())"/>
+			<input name="input2" type="number" onblur="console.log(this.checkValidity())"/>
+			<input name="input3" type="email" onblur="console.log(this.checkValidity())"/>
+			<input name="input4" type="color" onblur="console.log(this.checkValidity())"/>
+			<input name="input5" pattern="\d+" onblur="console.log(this.checkValidity())"/>
+			<input type="button" name="input6"  value="验证" />
+			<input type="submit" value="提交" />
+		</form>
+		<script>
+			let formDom = document.getElementsByTagName("form")[0];
+			formDom.input5.setCustomValidity("你妹,这都填错")//验证这个表格是否是有效字段，符合当前表单的类型或者符合patten规则
+		</script>		
+	</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        <style>
+            *{margin: 0px;padding: 0;}
+			#allmap{position:absolute;width: 100%;height: 100%;}
+		</style>
+    </head>
+    <body>
+        <canvas id="demo"></canvas>
+        <img src="demo.png" width="400" height="400" />
+        <!-- <div id="allmap"></div> <div id="r-result"></div> <div id="gpsback"></div>-->
+        <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=hYCENCEx1nXO0Nt46ldexfG9oI49xBGh"></script>
+        <script type="text/javascript" src="js/jquery.js"></script>
+        <!--标注点data测试数据-->
+        <script>
+            var canvasdom = document.getElementById("demo");
+            canvasdom.width = 400;
+            canvasdom.height = 400;
+            canvasdom.style.backgroundColor = "#333";
+            //2
+            var context = canvasdom.getContext("2d");
+
+            //加载所需要的图片
+            let src = "./img/ranks.png"
+            
+            loadImg(src).then(imgObj=>{
+                console.log(imgObj);
+                drawImg(imgObj,200,200,.5);
+            })
+             
+            function drawImg(img, x, y, sacle = 1) {
+                let w = img.width;
+                let h = img.height;
+                context.save();
+                //context.scale(scale,scale);
+                context.translate(x, y);
+                context.drawImage(img, 0, 0, w, h, -w * sacle / 2, -h * sacle / 2, w * sacle, h * sacle);
+                context.restore()
+            }
+
+            function loadImg(src) {
+                return new Promise((reslove, reject) => {
+                    let img = new Image();
+                    img.onload = function() {
+                        reslove(img)
+                    }
+                    img.onerror = function() {
+                        reject("图片" + src + "加载失败")
+                    }
+                    img.src = src;
+                });
+            }
+
+
+
+
+
+            canvasdom.addEventListener('click', function(e) {
+                //$this.draw({x:e.pageX-$(map.Va).offset().left,y:e.pageY-$(map.Va).offset().top});
+                var p = {
+                    x: e.pageX,
+                    y: e.pageY
+                };
+                if (context.isPointInPath(p.x, p.y)) {
+                    alert(true)
+                }
+            }, false);
+        </script>
+    </body>
+</html>

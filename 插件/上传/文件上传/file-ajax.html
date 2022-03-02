@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>文件上传百分比</title>
+		<link rel="stylesheet" href="css/common/common.css" />
+		<script type="text/javascript" src="JQ-load/js/jquery.min.js" ></script>
+	</head>
+	<body>
+		<style>
+			.imgTarger{width:500px;height: 500px;border:1px dashed #333;}
+		</style>
+		<form id="form1">
+    			<input type="text"  name="name" >
+    			<input type="file" id="upload"  name="file"  multiple="multiple">
+    			<button id="tj"  type="button">提交</button>
+    			<button id="stop"  type="button">暂停</button>
+    			<progress  id="progress"></progress>
+    			<div id="pro">0%</div>
+    	</form>
+    	<div id="targ"></div>
+	</body>
+	 <script src="./jquery.js"></script>
+		<script>
+		  let currajax = null;
+		  function progressBar(e) {
+		    console.log(e)
+         progress.value=e.loaded/e.total;
+         pro.innerHTML=e.loaded/e.total*100+"%"
+      }
+		  
+		  $("#tj").click(()=>{
+		    var fd = new FormData($("#form1")[0]);
+		      currajax = $.ajax({
+          type: "post",
+          url: "http://localhost:8080/rjtx-dw-web/test/fileupload.do",
+          data: fd,
+          dataType: "json",
+          cache: false,
+          contentType: false,
+          processData: false,
+          xhr:function(xhr) { //ajax进度条
+              var xhr = $.ajaxSettings.xhr();
+              if (xhr.upload) {
+              console.log(1111)
+                  xhr.upload.addEventListener("progress", progressBar, false);
+                  return xhr;
+              }
+          },
+          success:function(data){
+            console.log(data)
+          },
+        })
+		  });
+		  $("#stop").click(()=>{
+		    console.log(currajax)
+		    currajax.abort();
+		  });
+		</script>
+</html>

@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <style>
+	*{padding:0;margin:0}
+	body{font-size:14px;font-family:"微软雅黑"}
+	a{text-decoration:none;color:#fff}
+	ul li{list-style:none}
+	#ullist{margin:100px auto;border:1px solid #111;border-bottom:0;border-right:0;overflow:hidden}
+	#ullist li{float:left;border:1px solid #111;border-top:0;border-left:0;
+		text-align:center;
+		line-height:70px;
+		font-size:16px;
+	}
+
+  </style>
+ </head>
+ <body>
+
+	<ul id="ullist">
+		
+	</ul>
+
+	<script src="dom.js"></script>
+	<script>
+		window.onload = function(){
+			//获取盒子对象
+			var ulDom = dom("ullist");	
+			//5 * 5
+			var size = 15;
+			var wh = 50;
+			var len = size * size;
+
+			ulDom.style.width = size * (wh+1)+"px";
+			for(var i=0;i<len;i++){
+				var liDom = document.createElement("li");
+				liDom.style.height = wh+"px";
+				liDom.style.width = wh+"px";
+				
+				ulDom.appendChild(liDom);
+			}
+			
+
+			//行列--索引
+			var row = 0;
+			var col = 0;
+			//环数的控制
+			var min = 0;
+			var max = size - 1;
+			var cliDom = dom("ullist").children;	
+
+			for(var i=0;i<len;i++){
+				cliDom[row*size+col].innerHTML = i;
+				if(row==min && col<max){
+					col = col+1; //第一圈
+				}else if(col == max && row < max){
+					row = row + 1;//
+				}else if(row==max && col> min){
+					col = col - 1;
+				}else if(col==min && row >min){
+					row = row - 1;
+				}
+
+				//减少圈数
+				if((row-1) ==min && col==min){
+					min = min+1;
+					max = max-1;
+				}
+
+			}
+
+		};
+	</script>
+  
+ </body>
+</html>

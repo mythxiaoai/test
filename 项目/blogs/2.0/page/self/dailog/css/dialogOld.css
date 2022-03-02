@@ -1,0 +1,15 @@
+/*xa_dialog start*/
+#xa_dialogbox{position:fixed;height:100%;width:100%;top:0px;left:0;background:rgba(0,0,0,0.2);}
+#xa_dialog{height:175px;width:320px;position:absolute;background:#fff;border-radius:3px;border:3px solid #EFEFEF;webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}
+#xa_dialog .tittle{height:34px;background:#EFEFEF;border-bottom:1px solid #aaa;line-height:34px;text-indent:14px;font-size:14px;cursor:move;}
+#xa_dialog .tittle .close{display:inline-block;padding:3px;height:24px;width:24px;line-height:24px;text-align:center;cursor:pointer;transition:transform 1s;text-indent:0;font-size:24px;}
+#xa_dialog .tittle .close:hover{transition:transform .3s;transform:rotate(1turn)}
+#xa_dialog .content{height:100px;}
+#xa_dialog .content .tip{cursor:default;display:block;height:100px;width:30%;font-size:50px;line-height:100px;color:#3E9037;text-align:center;}
+#xa_dialog .content .c_content{width:68%;height:52px;line-height:24px;padding:24px 0;font-size:14px;text-overflow:ellipsis;overflow:hidden;word-break:break-all;word-wrap:break-word;}
+#xa_dialog .btn{height:40px;text-align:center;line-height:40px;}
+#xa_dialog .btn a{background:#E3E3E3;color:#000;padding:5px 10px;border:1px solid #e3e3e3;margin-right:15px;border-radius:3px;}
+#xa_dialog .btn i{vertical-align:bottom;display:inline-block;padding-right:5px;}
+#xa_dialog .btn a:hover{background:#A99F9A;}
+#xa_dialog .btn a:active{border:1px solid #fff;}
+/*end dialog */

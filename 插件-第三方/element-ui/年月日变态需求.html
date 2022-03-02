@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+	</head>
+	<body>
+		<div id="app">
+		    <el-date-picker
+		      v-model="time1"
+		      type="datetimerange"
+		      align="center"
+		      range-separator="至"
+		      start-placeholder="开始日期"
+		      end-placeholder="结束日期"
+		      format="yyyy 年 MM 月 dd 日 HH时mm分"
+			  value-format="yyyy-MM-dd HH:mm"
+			  :picker-options="{disabledDate(time){return time.getTime() > Date.now();},onPick:one}"
+			  :editable="false"
+		      >
+		    </el-date-picker>
+		    <el-date-picker
+		      v-model="time2"
+		      type="week"
+		      align="center"
+		      range-separator="至"
+		      start-placeholder="开始日期"
+		      end-placeholder="结束日期"
+		      format="yyyy"
+			  value-format="yyyy"
+			  :time-arrow-control="false"
+			  :picker-options="{disabledDate(time){return time.getTime() > Date.now();},onPick:one}"
+			  :editable="false"
+		      >
+		    </el-date-picker>
+		    
+		    <el-date-picker
+		      v-model="time3"
+		      type="month"
+		      align="center"
+		      placeholder="开始日期"
+		      format="yyyy-MM"
+			  value-format="yyyy 年 MM 月"
+			  :time-arrow-control="false"
+			  :picker-options="{disabledDate(time){return time.getTime() > Date.now();},onPick:one}"
+			  :editable="false"
+		      >
+		    </el-date-picker>
+		    <span>~</span>
+		    <el-date-picker
+		      v-model="time4"
+		      type="month"
+		      align="center"
+		     placeholder="结束日期"
+		      format="yyyy-MM"
+			  value-format="yyyy 年 MM 月"
+			  :time-arrow-control="false"
+			  :picker-options="{disabledDate(time){return time.getTime() > Date.now();},onPick:one}"
+			  :editable="false"
+		      >
+		    </el-date-picker>
+		</div>
+		 <!-- import Vue before Element -->
+		  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+		  <!-- import JavaScript -->
+		  <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+	</body>
+	<script>
+		console.log(window)
+		var vm = new Vue({
+			el:"#app",
+			data:{
+				time1:[],
+				time2:[],
+				time3:[],
+				time4:[],
+			},
+			mounted(){
+				
+			},
+			methods:{
+				one(a,b){
+					console.log(a)
+					console.log(b)
+				}
+			},
+			watch:{
+			
+			}
+		});
+		function getTime(){
+				}
+	</script>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html >
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>css格式化工具</title>
+<style type="text/css">
+html,body,form,fieldset,textarea { height:100%; margin:0; padding:0; border:0; font-size:10pt; background:#eee; }
+form { margin:0 1%; overflow:hidden; }
+legend { line-height:3em; font-weight:bolder; }
+button { float:left; margin:1% 1% 0 0; cursor:pointer; }
+textarea { width:100%; height:20em; border:1px solid #ccc; display:block; background:#fff; }
+</style>
+</head><body>
+<form action="" onsubmit="return false"><fieldset>
+	<legend>css格式化工具</legend>
+	<textarea name="" rows="" cols="" id="codeText">body * { font-size:10pt; }/* ss sda   */			
+p 
+{ clear:left; padding:5px 10px;
+}
+td 
+,
+fieldset
+{	padding			 		 : 	 10px 	 ;	 }
+textarea { 
+	 width:90%;
+	 height:10em;
+ }
+	</textarea>
+	<button type="button" onclick="$(&#39;codeText&#39;).value=code.A();">压缩代码</button>
+	<button type="button" onclick="$(&#39;codeText&#39;).value=code.B();">格式(多行)</button>
+	<button type="button" onclick="$(&#39;codeText&#39;).value=code.C();">格式(单行)</button>
+	<button type="button" onclick="$(&#39;codeText&#39;).value=code.Z();">还原代码</button>
+</fieldset></form>
+<script type="text/javascript">
+function $(id){return document.getElementById(id);}
+function codeZip(obj){
+	this.S=function(){
+		var code=obj.value;
+		if(!this.codeZ||this.codeZ=="")this.codeZ=code;
+		code=code.replace(/(\n|\t|\s)*/ig,'$1');
+		code=code.replace(/\n|\t|\s(\{|\}|\,|\:|\;)/ig,'$1');
+		code=code.replace(/(\{|\}|\,|\:|\;)\s/ig,'$1');
+		return code;
+	}
+	this.A=function(){
+		var code=this.S();
+		return code;
+	} 
+	this.B=function(){
+		var code=this.S();
+		code=code.replace(/(\{)/ig,' $1');
+		code=code.replace(/(\{|\;)/ig,'$1\n\t');
+		code=code.replace(/\t*(\})/ig,'$1\n');
+		code=code.replace(/(\*\/)/ig,'$1\n');
+		return code;
+	}
+	this.C=function(){
+		var code=this.S();
+		code=code.replace(/(\})/ig,'$1\n');
+		code=code.replace(/(\*\/)/ig,'$1\n');
+		return code;
+	} 
+	this.Z=function(){
+		return (this.codeZ)?this.codeZ:obj.value;
+	}
+	var my=this;
+	obj.onkeydown=function(){
+		my.codeZ="";	
+	}
+}
+var code=new codeZip($('codeText'));
+</script>
+</body>
+</html>

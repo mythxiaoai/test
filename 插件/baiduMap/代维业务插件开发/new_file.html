@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    <body>
+        <canvas id="demo"></canvas>
+        <script>
+            var canvasdom = document.getElementById("demo");
+            canvasdom.width = 400;
+            canvasdom.height = 400;
+           // canvasdom.style.backgroundColor = "#333";
+            //2
+            var context = canvasdom.getContext("2d");
+
+            let oImg = new Image();
+            oImg.src = 'https://www.gravatar.com/avatar/4e281957584b8b71fb1f2c14173cde4d?s=46&d=identicon';
+
+            oImg.onload = function() {
+            context.rect(0,0,oImg.width+5,oImg.height+5);
+            context.stroke();
+                context.drawImage(oImg, 0, 0, oImg.width, oImg.height);
+                //context.rect(20,20,150,100);
+                if (context.isPointInPath(23, 25)) {
+                    console.log(1)
+                }else{
+                  console.log(2)  
+                }
+                
+            }
+            
+        </script>
+    </body>
+</html>

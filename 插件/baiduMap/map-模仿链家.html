@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="../js/loading/loading.css" />
+		<link rel="stylesheet" href="../css/animate.css" />
+		<link rel="stylesheet" href="../css/csshake.css" />
+		<link rel="stylesheet" href="../js/sweetalert/sweetalert.css" />
+		<link rel="stylesheet" href="../fonts/font-awesome.min.css" />
+		<link rel="stylesheet" href="../js/bootstrap/bootstrap.css" />
+		<link rel="stylesheet" href="../js/bootstrapTable/bootstrap-table.css" />
+		<link rel="stylesheet" href="../js/bootstrap/bootstrapfiller.css" />
+		<link rel="stylesheet" href="../js/map/DrawingManager.css" />
+		<link rel="stylesheet" href="../css/common.css" />
+		<style>
+			*{margin: 0;padding: 0;}
+			#allmap{position:absolute;width: 100%;height: 100%;}
+			.bootstrap-table .fixed-table-body{height:100%;}
+			.bubble{user-select:none;box-shadow:0 2px 2px rgba(0,0,0,.2);transition:background-color .15s ease-in-out;width:84px;height:84px;line-height:20px;font-size:12px;border:none;background-color:rgba(3,169,224,0.9);border-radius:50%;overflow:hidden;cursor:pointer;position:relative;}
+			.bubble.area{width:56px;height:56px;}
+			.bubble:hover{background-color:rgba(244,134,3,.9);}
+			.bubble .name{margin-top:12px;font-size:13px;}
+			.bubble a{color:#fff;font-size:13px;font-weight:bold;margin-top:-2px;overflow:hidden;text-overflow:ellipsis;padding-left:6px;padding-right:6px;}
+			.bubble a.min{font-size:12px;}
+			.bubble a:hover{text-decoration:underline;}
+			.bubble a i{position:relative;top:-1px;}
+			.captionTitile{font-size:14px;padding-left:5px;border-left:3px solid #003EFF;margin-bottom:10px;font-weight:600;}
+			.countP{line-height:22px;font-size:14px;font-weight:500;}
+			.area_name{position:absolute;line-height:22px;height:22px;width:100%;top:0;bottom:0;margin:auto 0;font-size:14px;font-weight:600;text-align:center;}
+			.result_tab{display:none;}
+			.result_tab.active{display:block;}
+		</style>
+	</head>
+	<body>
+		 <div id="allmap"></div>
+		 <!--result table start-->
+		<div class="result fadeOutDownBig animated  js_resultPanel">
+			<div class="panel panel-white panel-fixed">
+				<div class="panel-heading">
+					<div class="panel-title js_panelTitle">
+						结果呈现
+                	</div>
+                    <a class="result_icon js_result_btn" draggable="false" href="javascript:;"><i class="fa fa-angle-double-down fz25"></i></a>
+                    <a class="targ_line js_result_line" draggable="false"  href="javascript:;"></a>
+				</div>
+				<div class="panel-body js_tbalePanel">
+					<!--市的结果呈现-->
+					<div class="result_tab js_tab1 active">
+						<div class="row">
+							<div class="col-md-4">
+								<div class="captionTitile m-t-xs">
+									历史合同数据概况
+								</div>
+								<div id="chart1" style="height: 200px;width: 100%;"></div>
+							</div>
+							<div class="col-md-4">
+								<div class="captionTitile m-t-xs">
+									总体预览
+								</div>
+								<p class="h3 fw600">标杆值 : <span class="fw600 text-primary">30000</span>  元/年</p></p>
+								<p class="countP">历史合同均值 : 
+									<span class="fw600 text-primary">25000</span>  元/年  
+									<a href="historyTable.html" target="_blank" class="btn btn-link m-l btn-sm">查看</a>
+								</p>
+								<p class="countP">市场数据均值 : <span class="fw600 text-primary">30000</span>  元/年</p>
+								<p class="countP">省间调整系数 : <span class="fw600 text-primary">1.33</span></p>
+							</div>
+							<div class="col-md-4">
+								<div class="captionTitile m-t-xs">
+									详细指标
+								</div>
+									<p class="h5 fw600">总价</p>
+									<p class="countP">最高合同总价 : <span class="fw600 text-primary">70000</span>  元/年</p>
+									<p class="countP">最低合同总价 : <span class="fw600 text-primary">710000</span>  元/年</p>
+									<p class="countP">平均合同总价 : <span class="fw600 text-primary">731000</span>  元/年</p>
+									<p class="h5 fw600">超标占比</p>
+									<p class="countP">超标杆10%比例 : <span class="fw600 text-primary">30.5%</span> </p>
+									<p class="countP">超标杆30%比例 : <span class="fw600 text-primary">15.7%</span> </p>
+									<p class="countP">超标杆50%比例 : <span class="fw600 text-primary">6.5%</span> </p>
+							</div>
+						</div>
+					</div>
+					<!--锚点结果呈现-->
+					<div class="result_tab js_tab2">
+						<div class="row">
+							<div class="col-md-4">
+								<div class="captionTitile m-t-xs">
+									图标统计
+								</div>
+								<div id="chart2" style="height: 200px;width: 100%;"></div>
+							</div>
+							<div class="col-md-4">
+								<div class="captionTitile m-t-xs">
+									总体预览
+								</div>
+								<p class="h4 fw600"> 区域内房源数量 : <span class="fw600 text-primary js_tab2_num"> 80 </span></p>
+								<p class="countP">单价最大值 : <span class="fw600 text-primary">100</span> 元/平米/月</p>
+								<p class="countP">单价最小值 : <span class="fw600 text-primary">20</span> 元/平米/月</p>
+								<p class="countP">单价平均值 : <span class="fw600 text-primary">70</span> 元/平米/月</p>
+							</div>
+							<div class="col-md-4">
+								<div class="captionTitile m-t-xs">
+									详细数据
+								</div>
+								<table id="table"><table>
+							</div>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+		<!--end result table-->
+		 
+		<script type="text/javascript" src="../js/jquery.js" ></script>
+		<script type="text/javascript" src="../js/loading/loading.js" ></script>
+		<script type="text/javascript" src="../js/tip.js" ></script>
+		<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=hYCENCEx1nXO0Nt46ldexfG9oI49xBGh"></script>
+		<script type="text/javascript" src="../js/map/TextIconOverlay_min.js" ></script>
+		<script type="text/javascript" src="../js/map/MarkerClusterer_min.js" ></script>
+		<script type="text/javascript" src="../js/map/GeoUtils_min.js" ></script>
+		<script type="text/javascript" src="../js/bootstrap/bootstrap.js" ></script>
+		<script type="text/javascript" src="../js/map/DrawingManager_min.js" ></script>
+		<script type="text/javascript" src="../js/bootstrapTable/bootstrap-table.js" ></script>
+		<script type="text/javascript" src="../js/bootstrapTable/bootstrap-table-zh-CN.js" ></script>
+		<script type="text/javascript" src="../js/sweetalert/sweetalert-dev.js"></script>
+		<script type="text/javascript" src="../js/echart/echarts.min.js"></script>
+		<script type="text/javascript" src="../js/common.js" ></script>
+		
+		<!--标注点data测试数据-->
+		<script>
+    	// 百度地图API功能
+    	let rental = {
+    		opts:{
+    			pointArr:[],//判定点是否在花圈的形状中的参数
+    			geoc:null,//经纬度解析地址
+				bdary:null,//地址获取行政区域
+				ply:[],//行政边界组件
+				choseMark:[],
+				zIndex:1,//覆盖物的层级
+				markTip:true,
+				labelStyle:{
+    			  	display: 'inline-block',
+    			  	width:"84px",
+    			  	height:"84px",
+				    cursor: 'pointer',
+				    backgroundColor: 'transparent',
+				    border: 'none',
+				    padding: '0px',
+				    whiteSpace: 'nowrap',
+				    fontStyle: 'normal',
+				    fontVariant: 'normal',
+				    fontWeight: 'normal',
+				    fontStretch: 'normal',
+				    fontSize: '12px',
+				    lineHeight: 'normal',
+				    zIndex: '2',
+				    color: 'rgb(255, 255, 255)',
+				    textAlign: 'center',
+				    userSelect: 'none',
+				},
+				styleOptions:{
+			        strokeColor:"rgba(244,134,3,1)",    //边线颜色。
+			        fillColor:"rgba(244,134,3,1)",      //填充颜色。当参数为空时，圆形将没有填充效果。
+			        strokeWeight: 3,       //边线的宽度，以像素为单位。
+			        strokeOpacity: 0.9,	   //边线透明度，取值范围0 - 1。
+			        fillOpacity: 0.3,      //填充的透明度，取值范围0 - 1。
+			        strokeStyle: 'solid' //边线的样式，solid或dashed。
+			    }
+    		},
+    		mp:null,//地图实例
+    		markerClusterer:null,//聚合点对象实例
+    		init(){
+    			this.mapInit();
+    			this.drawInit();
+    		},
+    		drawInit(){
+    			let $this = this;
+    			//绘画
+				let overlays  = [];
+				var drawingManager = new BMapLib.DrawingManager($this.mp, {
+			        isOpen: false, //是否开启绘制模式
+			        enableDrawingTool: true, //是否显示工具栏
+			        drawingToolOptions: {
+			            anchor: BMAP_ANCHOR_TOP_RIGHT, //位置
+			            offset: new BMap.Size(5, 5), //偏离值
+			            drawingModes : [
+				            BMAP_DRAWING_CIRCLE,
+				            BMAP_DRAWING_POLYGON,//这个有bug  建议别开启  没有提示用户双击才是完成
+				            BMAP_DRAWING_RECTANGLE 
+				         ]
+			        },
+			        circleOptions: this.opts.styleOptions, //圆的样式
+			        polylineOptions: this.opts.styleOptions, //线的样式
+			        polygonOptions: this.opts.styleOptions, //多边形的样式
+			        rectangleOptions: this.opts.styleOptions //矩形的样式
+			    });
+			    //给多边形的提示  双击确定
+			    $(".BMapLib_polygon").attr("title","Tip:画多边形鼠标双击闭合~");
+			     $('#allmap').tooltip({
+				  selector: '.BMapLib_polygon',
+				  placement:"bottom",
+				  trigger:"hover",
+				  container:"body"
+				});
+			    //画区域完成
+			    drawingManager.addEventListener('overlaycomplete', (e)=>{
+			    	$this.opts.choseMark.length=0;
+			    	drawingManager.close();
+			    	overlays.push(e.overlay);
+			    	if($this.opts.markTip){
+			    		xtip("点击右键清除~")
+			    		$this.opts.markTip = false;
+			    	}
+			    	let overlay = e.overlay;
+			    	var viewBound=$this.mp.getBounds();
+			    	console.log(overlay)
+			    	console.log($this.opts.pointArr.length)
+		        	for(let i = 0,len=$this.opts.pointArr.length;i<len;i++){
+		        		if(viewBound.containsPoint($this.opts.pointArr[i])){
+		        			if(BMapLib.GeoUtils.isPointInPolygon($this.opts.pointArr[i], overlay)){
+		        				$this.opts.choseMark.push($this.opts.pointArr[i]);
+		        			}
+		        		}
+		        	}
+		        	//显示东西
+						//let id = e.currentTarget.id;//id的获取
+						//显示
+						if($this.opts.choseMark.length == 0){
+							return false;
+						}
+						if($(".js_resultPanel").hasClass("fadeOutDownBig")){
+	        				$(".js_resultPanel").removeClass("fadeOutDownBig").addClass("fadeInUpBig");
+	        			}else{
+	        				if($(".js_resultPanel").find(".js_result_btn i").hasClass("fa-angle-double-up")){
+	        					$(".js_resultPanel").find(".js_result_btn").trigger("click");
+	        				}
+	        			}
+	        			//tab显示
+	        			$(".result_tab").hide();
+	        			$(".js_tab2").show();
+	        			
+	        			//显示数量
+	        			$(".js_tab2_num").text($this.opts.choseMark.length)
+	        			console.log($this.opts.choseMark)//选中的id在里面
+	        			//价格标杆
+	    				let myChart = echarts.init($("#chart2")[0]);
+	    				let option = {
+						    tooltip: {
+						        trigger: 'axis'
+						    },
+		    			    grid: {
+						        left: '3%',
+						        right: '4%',
+						        bottom: '3%',
+						        top:'3%',
+						        containLabel: true
+						    },
+						    xAxis: {
+						        type: 'category',
+						        data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+						    },
+						    yAxis: {
+						        type: 'value'
+						    },
+						    series: [{
+						        data: [820, 932, 901, 934, 1290, 1330, 1320],
+						        type: 'line',
+						        smooth: true,
+						    }]
+						};
+						 myChart.setOption(option);
+						 //窗口变动，表格刷新
+						 $(window).resize(function(){myChart.resize();});
+						 //表格初始化
+						 xtable.init({
+							id:"#table",
+							toolbar:false,
+							height:200,
+							pagination:false,
+							data:[
+								{
+									col1:"假日盈润园 卧室出租 押一付一 双周保洁",
+									col2:"商业街铺",
+									col3:"30",
+									col4:"3000",
+									col5:"100.00",
+								},
+								{
+									col1:"仁恒滨河湾 2室2厅1卫",
+									col2:"商业街铺",
+									col3:"120",
+									col4:"22000",
+									col5:"183.00",
+								},
+								{
+									col1:"五一阳光御园81平米2室1厅1卫精装设施齐1400",
+									col2:"商业街铺",
+									col3:"112",
+									col4:"20160",
+									col5:"180.00",
+								},
+								{
+									col1:"友谊中信附近拎包入住",
+									col2:"商业街铺",
+									col3:"124",
+									col4:"22320",
+									col5:"100.00",
+								},
+								{
+									col1:"临园里 家具齐全 素质舍友 24看房",
+									col2:"商业街铺",
+									col3:"320",
+									col4:"30000",
+									col5:"180.00",
+								},
+							],
+							columns:[
+								{
+									field: 'col1',
+									title: '标题'
+								},
+								{
+									field: 'col2',
+									title: '类型'
+								},
+								{
+									field: 'col3',
+									title: '面积'
+								},
+								{
+									field: 'col4',
+									title: '总价'
+								},
+								{
+									field: 'col5',
+									title: '单价'
+								}
+							],
+						});
+			    });
+			    //右点击取消
+			    $this.mp.addEventListener("rightclick",()=>{
+			    	for(var i = 0; i < overlays.length; i++){
+			            $this.mp.removeOverlay(overlays[i]);
+			        }
+			        overlays.length = 0 
+			        //drawingManager.close()
+			    })
+    		},
+    		mapInit(){
+    			let mp = new BMap.Map("allmap",{minZoom:6,enableMapClick: false});
+    			this.mp = mp;
+    			this.opts.geoc = new BMap.Geocoder();
+    			this.opts.bdary = new BMap.Boundary();
+				mp.centerAndZoom(new BMap.Point(117.1362441,39.09259841),9);
+				mp.enableScrollWheelZoom();
+				mp.addControl(new BMap.MapTypeControl({anchor: BMAP_ANCHOR_TOP_LEFT,offset: new BMap.Size(10, 44)})); //添加地图类型控件
+				mp.addControl(new BMap.CityListControl({anchor: BMAP_ANCHOR_TOP_LEFT}));
+				//数据
+    			//地市数据
+    			/**
+    			 *zoom层级数据分布
+    			 * 19  18	17	16 显示最小聚合点
+    			 * 15	14	13 街道的聚合点  这里不做详细 与19~15一样  如果需要我再做细分
+    			 * 12	11区的标记点
+    			 * 10	9市的标记点
+    			 * 8	7	6	4	3	2	1省的标记点   //需求没有省的需要  忽略  最小为6层级
+    			 * 最小设置为
+    			 */
+    			let cityArr=[
+    			{id:"1",city:"天津",lng:"117.1362441",lat:"39.09259841","norm":"30000","meanOld":"1700","meanNow":"30000","provinceAdjust":"1.33","maxValue":"1937","minValue":"24000","meanValue":"100","surpass10Prop":"1937","surpass30Prop":"30.66%","surpass50Prop":"18.54%","undefined":"11.88%"},
+    			{id:"2",city:"北京",lng:"116.413467",lat:"39.923568","norm":"45000","meanOld":"1700","meanNow":"30000","provinceAdjust":"1.33","maxValue":"1937","minValue":"24000","meanValue":"100","surpass10Prop":"1937","surpass30Prop":"30.66%","surpass50Prop":"18.54%","undefined":"11.88%"},
+    			]
+    			let areaArr=[
+					{id:"1","cityArea":"东丽","lng":"117.4147823","lat":"39.13960464"},
+					{id:"2","cityArea":"北辰","lng":"117.1806061","lat":"39.25913063"},
+					{id:"3","cityArea":"南开","lng":"117.1627279","lat":"39.11698729"},
+					{id:"4","cityArea":"和平","lng":"117.2028137","lat":"39.12480884"},
+					{id:"5","cityArea":"塘沽","lng":"117.6490814","lat":"39.00793614"},
+					{id:"6","cityArea":"大港","lng":"117.3807944","lat":"38.72957287"},
+					{id:"7","cityArea":"宁河","lng":"117.6312358","lat":"39.39042157"},
+					{id:"8","cityArea":"宝坻","lng":"117.4114206","lat":"39.615544"},
+					{id:"9","cityArea":"开发区","lng":"117.695272","lat":"39.0459524"},
+					{id:"10","cityArea":"武清","lng":"117.0345779","lat":"39.45704258"},
+					{id:"11","cityArea":"汉沽","lng":"117.8735301","lat":"39.24777318"},
+					{id:"12","cityArea":"河东","lng":"117.2616932","lat":"39.12662568"},
+					{id:"13","cityArea":"河北","lng":"117.2202968","lat":"39.17314893"},
+					{id:"14","cityArea":"河西","lng":"117.2361655","lat":"39.08449374"},
+					{id:"15","cityArea":"津南","lng":"117.39291","lat":"38.96979053"},
+					{id:"16","cityArea":"红桥","lng":"117.1622168","lat":"39.17062133"},
+					{id:"17","cityArea":"蓟县","lng":"117.4411592","lat":"40.00961366"},
+					{id:"18","cityArea":"西青","lng":"117.1262013","lat":"39.03506461"},
+					{id:"19","cityArea":"静海","lng":"116.9868253","lat":"38.8375108"}
+				]
+    			let marks = [
+							{"id":"2991","lon":"117.1362441","lat":"39.09259841"},
+							{"id":"2992","lon":"117.1362441","lat":"39.09259841"},
+							{"id":"2994","lon":"117.176559","lat":"39.13906308"},
+							{"id":"2995","lon":"117.176559","lat":"39.13906308"},
+							{"id":"2996","lon":"117.1253649","lat":"39.15799604"},
+							{"id":"3000","lon":"117.133223","lat":"39.08990673"},
+							{"id":"3001","lon":"117.133223","lat":"39.08990673"},
+							{"id":"3002","lon":"117.133223","lat":"39.08990673"},
+							{"id":"3003","lon":"117.1584589","lat":"39.07935796"},
+							{"id":"3004","lon":"117.1584589","lat":"39.07935796"},
+							{"id":"3005","lon":"117.085592","lat":"38.97170261"},
+							{"id":"3006","lon":"117.085592","lat":"38.97170261"},
+							{"id":"3008","lon":"117.1877873","lat":"39.14738605"},
+							{"id":"3009","lon":"117.1877873","lat":"39.14738605"},
+							{"id":"3010","lon":"117.1877873","lat":"39.14738605"},
+							{"id":"3011","lon":"117.1877873","lat":"39.14738605"},
+							{"id":"3012","lon":"117.1877873","lat":"39.14738605"},
+							{"id":"3013","lon":"117.1877873","lat":"39.14738605"},
+							{"id":"3014","lon":"117.1877873","lat":"39.14738605"},
+							{"id":"3015","lon":"117.1877873","lat":"39.14738605"},
+							{"id":"3016","lon":"117.1877873","lat":"39.14738605"},
+							{"id":"3017","lon":"117.1877873","lat":"39.14738605"},
+							{"id":"3019","lon":"117.1792952","lat":"39.14206292"},
+							{"id":"3020","lon":"117.1792952","lat":"39.14206292"},
+							{"id":"3021","lon":"117.1792952","lat":"39.14206292"},
+							{"id":"3022","lon":"117.1792952","lat":"39.14206292"},
+							{"id":"3023","lon":"117.1792952","lat":"39.14206292"},
+							{"id":"3024","lon":"117.085592","lat":"38.97170261"},
+							{"id":"3025","lon":"117.085592","lat":"38.97170261"},
+							{"id":"3026","lon":"117.1850325","lat":"39.12285155"},
+							{"id":"3027","lon":"117.1850325","lat":"39.12285155"},
+							{"id":"3028","lon":"117.1850325","lat":"39.12285155"},
+							{"id":"3029","lon":"117.1850325","lat":"39.12285155"},
+							{"id":"3030","lon":"117.1725664","lat":"39.11862205"},
+							{"id":"3031","lon":"117.1725664","lat":"39.11862205"},
+							{"id":"3032","lon":"117.1725664","lat":"39.11862205"},
+							{"id":"3033","lon":"117.1725664","lat":"39.11862205"},
+							{"id":"3034","lon":"117.1725664","lat":"39.11862205"},
+							{"id":"3035","lon":"117.1668969","lat":"39.10030178"},
+							{"id":"3036","lon":"117.1668969","lat":"39.10030178"},
+							{"id":"3037","lon":"117.1668969","lat":"39.10030178"},
+							{"id":"3038","lon":"117.1668969","lat":"39.10030178"},
+							{"id":"3039","lon":"117.1668969","lat":"39.10030178"},
+							{"id":"3040","lon":"117.1668969","lat":"39.10030178"},
+							{"id":"3041","lon":"117.1545425","lat":"39.09229926"},
+							{"id":"3043","lon":"117.1877873","lat":"39.14738605"},
+							{"id":"3044","lon":"117.1877873","lat":"39.14738605"},
+							{"id":"3045","lon":"117.1877873","lat":"39.14738605"},
+							{"id":"3046","lon":"117.1877873","lat":"39.14738605"},
+							{"id":"3049","lon":"117.176303","lat":"39.12328934"},
+							{"id":"3050","lon":"117.176303","lat":"39.12328934"},
+							{"id":"3052","lon":"117.1707619","lat":"39.1156111"},
+							{"id":"3053","lon":"117.1707619","lat":"39.1156111"},
+							{"id":"3054","lon":"117.1707619","lat":"39.1156111"},
+							{"id":"3055","lon":"117.1707619","lat":"39.1156111"},
+							{"id":"3056","lon":"117.1707619","lat":"39.1156111"},
+							{"id":"3057","lon":"117.1707619","lat":"39.1156111"},
+							{"id":"3058","lon":"117.1760142","lat":"39.12569956"},
+							{"id":"3059","lon":"117.085592","lat":"38.97170261"},
+							{"id":"3060","lon":"117.085592","lat":"38.97170261"}
+						];
+    			let marksArr =[];
+    			//聚合点装载
+				for(let i=0,len=marks.length;i<len;i++){
+					let point = new BMap.Point(marks[i].lon,marks[i].lat);
+					point.id=marks[i].id;//将id代入point对象
+					this.opts.pointArr.push(point);
+					let mark =new BMap.Marker(point);
+					mark.id = marks[i].id;//将id代入mark对象
+		        	marksArr.push(mark);
+				}
+				let $this = this;
+				let time = null;
+				initEvent();
+				mp.addEventListener("zoomend",initEvent);
+				mp.addEventListener("moveend",initEvent);
+				function initEvent(){
+					mp.clearOverlays();
+					$this.markerClusterer&&$this.markerClusterer.clearMarkers();
+	    			if(time)clearTimeout(time);
+					time=setTimeout(function(){
+						let zoom = mp.getZoom();
+						if(zoom<11){
+							//市
+							$this.cityInit(cityArr);
+						}else if(zoom==11||zoom==12){
+							//区
+							$this.areaInit(areaArr);
+						}else{
+							//锚点
+							$this.markInit(marksArr);
+						}
+					},200)
+				}
+				
+    		},
+    		cityInit(data){
+    			let $this = this;
+    			let cityName,norm,updata;//城市名称，价格标杆，涨幅标杆
+    			let htmlStr = `
+    			<div class="bubble js_bubble">
+    				<p class="name js_city">天津</p>
+    				<p>
+    					<a href="javascript:;" class="index"><i class="fa fa-cny"></i> <span class="js_index1">3.0</span>万</a>
+    				</p>
+    				<p>
+    					<a href="javascript:;" class="index min"> <i class="fa fa-long-arrow-up"></i> <span class="js_index2">0.2</span>万</a>
+    				</p>
+    			</div>
+    			`
+    			var viewBound=this.mp.getBounds();
+    			for(let i=0,len=data.length;i<len;i++){
+    				let id=data[i].id;//唯一(用来绑定事件),
+    				cityName=data[i].city;
+    				norm=(data[i].norm/10000).toFixed(1);
+    				updata="0.3";
+    				let html = $("<div>").append(htmlStr);
+    				html.find(".bubble").removeClass("js_bubble").addClass("js_bubble"+id)
+    				html.find(".js_city").text(cityName);
+    				html.find(".js_index1").text(norm);
+    				html.find(".js_index2").text(updata);
+    				let tempPoint = new BMap.Point(data[i].lng,data[i].lat);
+		        	if(viewBound.containsPoint(tempPoint)){
+		        		let label = new BMap.Label(html.html(),{
+		        			position:tempPoint,
+		        			offset:new BMap.Size(-42, -42)
+		        		});
+		        		label.setStyle($this.opts.labelStyle);
+						//区域边界
+		        		this.mp.addOverlay(label);
+		        		//事件绑定
+		        		//价格点击
+		        		$(".js_bubble"+id).click(()=>{
+							$this.opts.ply.length=0;
+							$this.mp.centerAndZoom(tempPoint,11);
+		        		})
+		        		$(".js_bubble"+id+" .js_index1").click((e)=>{
+		        			e.stopPropagation();
+		        			//面板显示
+		        			if($(".js_resultPanel").hasClass("fadeOutDownBig")){
+		        				$(".js_resultPanel").removeClass("fadeOutDownBig").addClass("fadeInUpBig");
+		        			}else{
+		        				if($(".js_resultPanel").find(".js_result_btn i").hasClass("fa-angle-double-up")){
+		        					$(".js_resultPanel").find(".js_result_btn").trigger("click");
+		        				}
+		        			}
+		        			//tab显示
+		        			$(".result_tab").hide();
+		        			$(".js_tab1").show();
+		        			resultPanel.mapClick(id,"index1");
+		        		});
+		        		$(".js_bubble"+id+" .js_index2").click((e)=>{
+		        			e.stopPropagation();
+		        			if($(".js_resultPanel").hasClass("fadeOutDownBig")){
+		        				$(".js_resultPanel").removeClass("fadeOutDownBig").addClass("fadeInUpBig");
+		        			}else{
+		        				if($(".js_resultPanel").find(".js_result_btn i").hasClass("fa-angle-double-up")){
+		        					$(".js_resultPanel").find(".js_result_btn").trigger("click");
+		        				}
+		        			}
+		        			//tab显示
+		        			$(".result_tab").hide();
+		        			$(".js_tab1").show();
+		        			resultPanel.mapClick(id,"index2");
+		        		});
+		        		//涨幅点击
+		        		$(".js_bubble"+id).mouseenter(function(){
+		        			$(this).closest(".BMapLabel").css("zIndex",1);
+		        			$this.drawPeriphery(tempPoint,"city");
+		        		})
+		        		$(".js_bubble"+id).mouseleave(function(){
+		        			$(this).closest(".BMapLabel").css("zIndex",0);
+		        			for(let ply of $this.opts.ply){
+								$this.mp.removeOverlay(ply);
+							}
+							$this.opts.ply.length=0;
+		        		})
+		        	}
+    			}
+    		},
+    		areaInit(data){
+    			let $this = this;
+    			let areaName;//区域名称
+    			let htmlStr = `
+    			<div class="bubble area js_bubble">
+    				<p class="area_name js_area">天津</p>
+    			</div>
+    			`;
+    			var viewBound=this.mp.getBounds();
+          console.log(viewBound);
+    			for(let i=0,len=data.length;i<len;i++){
+    				let id=data[i].id;
+    				areaName=data[i].cityArea;
+    				let html = $("<div>").append(htmlStr);
+    				html.find(".bubble").removeClass("js_bubble").addClass("js_bubble"+id)
+    				html.find(".js_area").text(areaName);
+    				let tempPoint = new BMap.Point(data[i].lng,data[i].lat);
+		        	if(viewBound.containsPoint(tempPoint)){
+		        		let label = new BMap.Label(html.html(),{
+		        			position:tempPoint,
+		        			offset:new BMap.Size(-28, -28)
+		        		});
+		        		label.setStyle($this.opts.labelStyle);
+		        		label.setStyle({
+		        			width:"56px",
+		        			height:"56px",
+		        		});
+						//区域边界
+		        		this.mp.addOverlay(label);
+		        		//事件绑定
+		        		//价格点击
+		        		$(".js_bubble"+id).click(()=>{
+							$this.opts.ply.length=0;
+							$this.mp.centerAndZoom(tempPoint,13);
+		        		})
+		        	
+		        		$(".js_bubble"+id).mouseenter(function(){
+		        			$(this).closest(".BMapLabel").css("zIndex",1);
+		        			$this.drawPeriphery(tempPoint,"area");
+		        		})
+		        		$(".js_bubble"+id).mouseleave(function(){
+		        			$(this).closest(".BMapLabel").css("zIndex",0);
+		        			for(let ply of $this.opts.ply){
+								$this.mp.removeOverlay(ply);
+							}
+							$this.opts.ply.length=0;
+		        		})
+		        	}
+    			}
+    		},
+    		markInit(data){
+    			//最小的
+    			this.markerClusterer = new BMapLib.MarkerClusterer(this.mp, {markers:data,isAverangeCenter:true});
+    		},
+    		drawPeriphery(point,opt){
+    			let $this = this;
+				//对指定的坐标点进行反地址解析。如果解析成功，则回调函数的参数为GeocoderResult对象
+				$this.opts.geoc.getLocation(point, function(rs){
+					var addComp = rs.addressComponents;
+					let province = addComp.province;//省
+					let city = addComp.city;//市
+					let district = addComp.district;//区
+					let street = addComp.street;//街道
+					if(opt=="city"){
+						$this.getBoundary(city);
+					}else if(opt=="area"){
+						$this.getBoundary(city+district);
+					}
+				});
+			},
+    		getBoundary(val){
+    			let $this = this;
+    			let rental_periphery = window.localStorage.rental_periphery;
+    			if(rental_periphery){
+    				rental_periphery = JSON.parse(rental_periphery);
+    				if(rental_periphery[val]){
+    					let boundaries = rental_periphery[val];
+	    				for (var i = 0,len=boundaries.length; i < len; i++) {
+							let tempply= new BMap.Polygon(boundaries[i], {strokeWeight: 2, strokeColor: "rgba(3,169,224,1)",fillColor:"rgba(3,169,224,0.2)"}); //建立多边形覆盖物
+							$this.opts.ply.push(tempply);
+							$this.mp.addOverlay(tempply);  //添加覆盖物
+						}
+    				}else{
+    					$this.opts.bdary.get(val, function(rs){       //获取行政区域
+							var count = rs.boundaries.length; //行政区域的点有多少个
+							if (count === 0) {
+								console.log('未能获取'+val+'行政区域');
+								return ;
+							}
+							for (var i = 0; i < count; i++) {
+								let tempply= new BMap.Polygon(rs.boundaries[i], {strokeWeight: 2, strokeColor: "rgba(3,169,224,1)",fillColor:"rgba(3,169,224,0.2)"}); //建立多边形覆盖物
+								$this.opts.ply.push(tempply);
+								$this.mp.addOverlay(tempply);  //添加覆盖物
+							}
+							//缓存下来
+							rental_periphery[val]=rs.boundaries;
+							window.localStorage.setItem("rental_periphery",JSON.stringify(rental_periphery))
+						});
+    				}
+    			}else{
+    				$this.opts.bdary.get(val, function(rs){       //获取行政区域
+						var count = rs.boundaries.length; //行政区域的点有多少个
+						if (count === 0) {
+							console.log('未能获取'+val+'行政区域');
+							return ;
+						}
+						for (var i = 0; i < count; i++) {
+							let tempply= new BMap.Polygon(rs.boundaries[i], {strokeWeight: 2, strokeColor: "#ff0000"}); //建立多边形覆盖物
+							$this.opts.ply.push(tempply);
+							$this.mp.addOverlay(tempply);  //添加覆盖物
+						}
+						//缓存下来
+						let rental_periphery ={};
+						rental_periphery[val]=rs.boundaries;
+						window.localStorage.setItem("rental_periphery",JSON.stringify(rental_periphery));
+					}); 
+    			}
+    			
+			}
+    	}
+    	
+    	
+    	//面板交互
+    	let resultPanel = {
+    		init(){
+				this.result_icon();	
+				//拖拽改变高度
+				this.drag();
+    		},
+    		mapClick(id,opts){
+    			if(opts=="index1"){
+    				//价格标杆
+    				let myChart = echarts.init($("#chart1")[0]);
+    				let option = {
+					    tooltip: {
+					        trigger: 'axis'
+					    },
+	    			    grid: {
+					        left: '3%',
+					        right: '4%',
+					        bottom: '3%',
+					        top:'3%',
+					        containLabel: true
+					    },
+					    xAxis: {
+					        type: 'category',
+					        data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+					    },
+					    yAxis: {
+					        type: 'value'
+					    },
+					    series: [{
+					        data: [820, 932, 901, 934, 1290, 1330, 1320],
+					        type: 'line',
+					        smooth: true,
+					    }]
+					};
+					 myChart.setOption(option);
+					 //窗口变动，表格刷新
+					 $(window).resize(function(){myChart.resize();});
+    				
+    			}else if(opts=="index2"){
+    				//涨幅标杆
+    				xtip("暂未开发~");
+    			}
+    			console.log(id)
+    			console.log(opts)
+    			console.log("执行")
+    		},
+    		result_icon:function(){
+				toggleAnimate({
+					triggerDom:".js_result_btn",
+					targetDom:[".js_tbalePanel"],
+					triggerToggleClass:["fa-angle-double-down","fa-angle-double-up shake-vertical-slow shake-constant shake-constant--hover"],
+					targetToggleAttr:[{"height":["0","250"]}],
+				});
+			},
+			drag:function(){
+				 $(".js_result_line").mousedown(function(e){
+				 	var $this =this;
+				 	var dom = $($this).closest(".js_resultPanel").find(".js_tbalePanel");
+				 	var y  = e.pageY;
+				 	var Oldheight =dom.outerHeight();
+					$(document).mousemove(function(e){
+				 		if(!(e.pageY<58)){
+						 	var add =-(e.pageY-y);
+					 		dom.css("height",Oldheight+add);
+				 		}
+				 		//防止与光标选中事件冲突
+						window.getSelection ? window.getSelection().removeAllRanges() : document.selection.empty();
+				 	});
+				 	$(document).mouseup(function(e){
+				 		console.log("unbind")
+				 		$(this).unbind("mousemove mouseup");
+				 	});
+				 })
+			},
+    	}
+    	rental.init();
+    	resultPanel.init();
+		</script>
+	</body>
+</html>

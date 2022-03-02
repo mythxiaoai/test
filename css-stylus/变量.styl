@@ -1,0 +1,18 @@
+*
+  padding:0
+  margin:0
+body
+  background:#eee
+  text-align:center
+  .box
+    width:w= 200px
+    height: 400px
+    display: inline-block
+    background:red
+    color:#fff
+    position:absolute
+    top:50%
+    left:50%
+    margin-left:-(w/2)
+    /*属性会“向上冒泡”*/
+    margin-top:-(@height/2)

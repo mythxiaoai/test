@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Graphiql - Mars</title>
+    <link href="https://unpkg.com/graphiql@1.0.6/graphiql.min.css" rel="stylesheet" />
+    <style>
+      html,
+      body {
+        margin: 0;
+        overflow: hidden;
+      }
+
+      #gql {
+        height: 100vh;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="gql"></div>
+    <script src="https://unpkg.com/react@17.0.1/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@17.0.1/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/graphiql@1.3.2/graphiql.min.js"></script>
+    <script>
+      var params = new URLSearchParams(location.search.slice(1));
+      var auth = params.get("token") || "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MDBkNGFlZjhiMTllYTY5MjE4YWRlMWEiLCJpc3MiOiJtYXJzLW1pY3JvIiwiaWF0IjoxNjIyMTAwMjY3fQ.aemTdW4aF_ah_tJTw00ZHIea3b7MraNGGWn9xHgMh6Y";
+      var url = params.get("url") || "http://localhost:8000/";
+      var name = "";
+      localStorage.removeItem("graphiql:query");
+      if (auth) {
+        var arr = auth.split(".");
+        if (arr.length == 3) {
+          try {
+            let json = JSON.parse(atob(arr[1]));
+            name = json.sub;
+          } catch {
+            name = "非法token";
+          }
+        }
+      }
+      var qs = "# 自定义服务器和jwt\n\n" + "# 在URL里添加?url=服务器&token=jwt\n\n" + "# 当前服务器： " + url + "\n" + "# 当前token的用户ID： " + name + "\n";
+      function fetcher(data, opts) {
+        var headers = {
+          "Content-Type": "application/json",
+        };
+        if (auth) headers.Authorization = "Bearer " + auth;
+        return fetch(url, {
+          method: "POST",
+          body: JSON.stringify(data),
+          headers: headers,
+        }).then(async (res) =>res.json());
+      }
+      ReactDOM.render(
+        React.createElement(GraphiQL, {
+          fetcher,
+          defaultQuery: qs,
+        }),
+        document.getElementById("gql")
+      );
+    </script>
+  </body>
+</html>

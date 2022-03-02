@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        <style>
+            *{margin: 0;padding: 0;}
+			#allmap{position:absolute;width: 100%;height: 100%;}
+		</style>
+    </head>
+    <body>
+        <div id="allmap"></div>
+        <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=hYCENCEx1nXO0Nt46ldexfG9oI49xBGh"></script>
+        <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+        <script type="text/javascript" src="js/mapCanvas3.js"></script>
+        <!--标注点data测试数据-->
+        <script>
+            // 百度地图API功能
+            let mp = new BMap.Map("allmap");
+            mp.centerAndZoom(new BMap.Point(116.4064, 39.9093), 15);
+            mp.enableScrollWheelZoom();
+            let arr = [{
+                    lng: 116.3964,
+                    lat: 39.9093,
+                    shape: "square",
+                    px: "50",
+                    color: "rgba(50,133,255,.6)",
+                    showTextArr: ["小区CI:萨达萨德萨11", "小区名:22", "小区名:33"]
+                },
+                {
+                    lng: 116.4064,
+                    lat: 39.9093,
+                    shape: "sector",
+                    "dir": 60,
+                    distance: "500",
+                    minDistance: "20",
+                    color: "rgba(50,133,255,.6)",
+                    borderColor: "rgba(50,133,255,0.8)",
+                    showTextArr: ["小区CI:", "小区名:"]
+                },
+                {
+                    lng: 116.4064,
+                    lat: 39.8993,
+                    shape: "sectorS1",
+                    "dir": 60,
+                    distance: "1000",
+                    //绿78ff66  95-100   蓝668af5   90-95  黄FFCC00 85-90  红FF0000 80-85
+                    color: "#668af5",
+                },
+                {
+                    lng: 116.4164,
+                    lat: 39.9093,
+                    shape: "circle",
+                    distance: "500",
+                    color: "#FF0000"
+                },
+                {
+                    lng: 116.4264,
+                    lat: 39.9093,
+                    shape: "circleS1",
+                    distance: "1000",
+                    color: "#668af5",
+                },
+                {
+                    lng: 116.4364,
+                    lat: 39.9093,
+                    shape: "circleO",
+                    distance: "500",
+                    color: "rgba(255,186,50,.6)",
+                    borderColor: "rgba(255,186,50,0.2)",
+                    showTextArr: ["小区CI:萨达萨德萨11", "小区名:22", "小区名:33"]
+                },
+            ]
+            let myCompOverlay = new ComplexCustomOverlay(arr, {
+                showAllZoom: 0,
+                showTextZoom: 15,
+                sectorDeg: 60,
+                showShapeZoom: {
+                    "square": 15
+                }
+            });
+            mp.addOverlay(myCompOverlay);
+            myCompOverlay.addEventListener("click", (e) => {
+                console.log(e.data[0])
+            });
+
+            let time = {
+                run: true
+            };
+            let color = "#FF0000";
+            let i = 0;
+            (function runflash() {
+                if (time.run) {
+                    setTimeout(() => {
+                        let opacity = i % 2==0?0:10;
+                        console.log(opacity);
+                        arr[3].color = color.colorRgba(opacity);
+                        mp.clearOverlays();
+                        //mp.removeOverlay(myCompOverlay);
+                        let myCompOverlay = new ComplexCustomOverlay(arr, {
+                            showAllZoom: 0,
+                            showTextZoom: 15,
+                            sectorDeg: 60,
+                            showShapeZoom: {
+                                "square": 15
+                            }
+                        });
+                        mp.addOverlay(myCompOverlay);
+                        i++;
+                        requestAnimationFrame(runflash);
+                    }, 300);
+                }
+            })()
+
+            var reg = /^#([0-9a-fA-f]{3}|[0-9a-fA-f]{6})$/;
+            String.prototype.colorRgba = function(num) {
+                var sColor = this.toLowerCase();
+                if (sColor && reg.test(sColor)) {
+                    if (sColor.length === 4) {
+                        var sColorNew = "#";
+                        for (var i = 1; i < 4; i += 1) {
+                            sColorNew += sColor.slice(i, i + 1).concat(sColor.slice(i, i + 1));
+                        }
+                        sColor = sColorNew;
+                    }
+                    //处理六位的颜色值  
+                    var sColorChange = [];
+                    for (var i = 1; i < 7; i += 2) {
+                        sColorChange.push(parseInt("0x" + sColor.slice(i, i + 2)));
+                    }
+                    //return "rgb(" + sColorChange.join(",") + ")";
+                    //或 
+                    return `rgba(${sColorChange.join(",")},${num/10})`;
+                } else {
+                    return sColor;
+                }
+            };
+        </script>
+    </body>
+</html>

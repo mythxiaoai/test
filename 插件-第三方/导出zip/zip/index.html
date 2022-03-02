@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+    <div class='domo'>
+      <div class="yaojianbaogao" style="display: none;">
+        <img src="./img/user.jpg" width="50" data-ordercode="bianhao0001" data-title="goods-good-1212" data-alt="goods-good-1212-pic1.jpg">
+        <img src="./img/user.jpg" width="50" data-ordercode="bianhao0001" data-title="goods-good-1212" data-alt="goods-good-1212-pic2.jpg">
+        <img src="./img/user.jpg" width="50" data-ordercode="bianhao0001" data-title="goods-good-1211" data-alt="goods-good-1211-pic1.jpg">
+      </div>
+
+      <a href="javascript:;" class="label label-primary radius ml-5 downloadzip">&nbsp;&nbsp;打包下载&nbsp;&nbsp;</a>
+    </div>
+
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/jszip/3.2.2/jszip.min.js"></script>
+    <script src="https://cdn.bootcss.com/FileSaver.js/2014-11-29/FileSaver.min.js"></script>
+    <script>
+      //图片打包成zip
+      $(".downloadzip").click(function() {
+        var imgs = $(this).parent().find('.yaojianbaogao').children();
+        var zip = new JSZip();
+        var file_name = '';
+        $.each(imgs, function(index, item) {
+          file_name = $(item).data('ordercode') + '.zip';
+          var img = zip.folder($(item).data('title'));
+          var imgdata = getBase64Image($(item).attr('src'));
+          var img_arr = imgdata.split(',');
+          img.file($(item).data('alt'), img_arr[1], {
+            base64: true
+          });
+        })
+        zip.generateAsync({
+            type: "blob"
+          })
+          .then(function(content) {
+            saveAs(content, file_name);
+          });
+      });
+
+      function getBase64Image(images) {
+        var img = new Image();
+        img.src = images;
+        var canvas = document.createElement("canvas");
+        canvas.width = img.width;
+        canvas.height = img.height;
+        var ctx = canvas.getContext("2d");
+        ctx.drawImage(img, 0, 0, img.width, img.height);
+        var ext = img.src.substring(img.src.lastIndexOf(".") + 1).toLowerCase();
+        var dataURL = canvas.toDataURL();
+        return dataURL;
+      }
+    </script>
+  </body>
+</html>

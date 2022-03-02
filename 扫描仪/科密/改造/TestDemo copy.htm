@@ -1,0 +1,754 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>跨浏览器调用高拍仪测试demo</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+
+<!-- 引入高拍仪JS接口-->
+<script src="gpyhs_dev.js"  type="text/javascript" charset="utf-8"></script>
+
+<script type="text/javascript">
+
+
+    //时间格式化显示
+    function formatDate(time) {
+        var date = new Date(time);
+        var year = date.getFullYear(),
+            month = date.getMonth() + 1, 
+            day = date.getDate(),
+            hour = date.getHours(),
+            min = date.getMinutes(),
+            sec = date.getSeconds();
+        var newTime = year + 
+                    (month < 10 ? '0' + month : month) + 
+                    (day < 10 ? '0' + day : day) + 
+                    (hour < 10 ? '0' + hour : hour) + 
+                    (min < 10 ? '0' + min : min) + 
+                    (sec < 10 ? '0' + sec : sec) ;
+        return newTime;
+    }
+
+
+    function sleep(milliSeconds) {
+        var startTime = new Date().getTime();
+        while (new Date().getTime() < startTime + milliSeconds);
+    }
+
+    function ShowInfo(op) {
+        var obj = document.getElementById("TextInfo");
+        obj.value = obj.value + "\r\n" + op
+    }
+
+
+    /*----------------------------------------------------
+    ---（必须重写该函数）返回获取的设备数目及设备名称  ---
+    -----------------------------------------------------*/
+    function GetDevCountAndNameResultCB(devCount, devNameArr) {
+
+        if (devCount > 0) {
+
+            var obj = document.getElementById("DevName");
+            obj.options.length = 0;
+            for (var i = 0; i < devCount; i++) {
+                var objOption = document.createElement("option");
+                objOption.text = devNameArr[i];
+                objOption.value = i;
+                obj.options.add(objOption);
+            }
+            obj.selectedIndex = 0;
+            var CamID = obj.selectedIndex;
+
+            //获取分辨率
+            Cam_GetDevResolution(CamID);  
+           
+        }
+        else {
+            ShowInfo("没有发现合适的设备！");
+         }
+    }
+
+    /*---------------------------------------------------
+    ---  （必须重写该函数）返回获取的设备分辨率信息   ---
+    ----------------------------------------------------*/
+    function GetResolutionResultCB(resCount, resArr) {
+
+        if (resCount > 0) {
+            var selectIndex = 0;
+            var obj = document.getElementById("DevResolution");
+            obj.options.length = 0;
+            for (var i = 0; i < resCount; i++) {
+                var objOption = document.createElement("option");
+                objOption.text = resArr[i];
+                objOption.value = i;
+                obj.options.add(objOption);
+                //默认500万分辨率打开
+                if (resArr[i] == "2592*1944") {
+                    selectIndex = i;
+                 }
+            }
+            obj.selectedIndex = selectIndex;
+
+            //打开摄像头
+            Cam_Close();
+            var restr = obj[obj.selectedIndex].text;
+            var pos = restr.lastIndexOf("*");
+            var width = parseInt(restr.substring(0, pos));
+            var height = parseInt(restr.substring(pos + 1, restr.length));
+            var CamID = document.getElementById("DevName").selectedIndex;
+            Cam_Open(CamID, width, height);
+        }
+        else {
+            ShowInfo("获取分辨率信息失败！");
+         }
+    }
+
+
+    /*---------------------------------------------------
+    ---     （必须重写该函数）返回摄像头开启状态      ---
+    ----------------------------------------------------*/
+    function GetCameraOnOffStatus(status) {
+        if (status == 0) {
+            ShowInfo("设备开启成功");
+            //Cam_Rotate(1);   // 0-> 0度, 1->90度, 2->180度, 3->270度
+        }
+        else {
+            ShowInfo("设备开启失败!");
+         }
+
+    }
+
+
+//    /*---------------------------------------------------
+//    --------     （必须重写该函数）当前拍照状态 ---------
+//    ----------------------------------------------------*/
+//    function GetCaptrueStatusResultCB(status) {
+//        if (status == 0) {
+//            ShowInfo("拍照完成");
+//        }
+//        else {
+//            ShowInfo("正在拍摄...");
+//        }
+
+//    }
+
+
+    /*---------------------------------------------------
+    --------     （必须重写该函数）拍照结果     ---------
+    ----------------------------------------------------*/
+    function GetCaptrueImgResultCB( flag, path , base64Str) {
+        if (flag == 0) {
+            var obj = document.getElementById("CameraPhoto");
+            obj.src = "data:;base64," + base64Str;
+            if (path == "") {
+                ShowInfo("拍照成功");
+            }
+            else {
+                ShowInfo("拍照成功，图片保存位置：" + path);
+             }
+        }
+        else {
+            ShowInfo("拍照失败!");
+        }
+
+    }
+
+
+    /*---------------------------------------------------
+    ------  （必须重写该函数）身份证信息返回结果   ------
+    ----------------------------------------------------*/
+    function GetIdCardInfoResultCB(flag, Name, Sex, Nation, Born, Address, CardNum, IssuedAt, EffectedDate, CardImgPath, CardImgBase64) {
+        if (flag == 0) {
+            document.getElementById("CardName").value = Name;
+            document.getElementById("CardSex").value = Sex;
+            document.getElementById("CardNation").value = Nation;
+            document.getElementById("CardBorn").value = Born;
+            document.getElementById("CardAddress").value = Address;
+            document.getElementById("CardNum").value = CardNum;
+            document.getElementById("CardIssuedAt").value = IssuedAt;
+            document.getElementById("CardEffectDate").value = EffectedDate;
+            var obj = document.getElementById("IdCardPhoto");
+            obj.src = "data:;base64," + CardImgBase64;
+            ShowInfo("读卡成功");
+        }
+        else {
+            ShowInfo("读卡失败!");
+        }
+
+    }
+
+
+
+    /*-------------------------------------------------------------------
+    ------  （必须重写该函数）身份证信息及正反面合并照片返回结果   ------
+    --------------------------------------------------------------------*/
+    function GetIdCardInfoAndImgResultCB(flag, Name, Sex, Nation, Born, Address, CardNum, IssuedAt, EffectedDate, CardImgPath, CardHeadImgBase64, CardImgBase64) {
+        if (flag == 0) {
+            document.getElementById("CardName").value = Name;
+            document.getElementById("CardSex").value = Sex;
+            document.getElementById("CardNation").value = Nation;
+            document.getElementById("CardBorn").value = Born;
+            document.getElementById("CardAddress").value = Address;
+            document.getElementById("CardNum").value = CardNum;
+            document.getElementById("CardIssuedAt").value = IssuedAt;
+            document.getElementById("CardEffectDate").value = EffectedDate;
+            var obj = document.getElementById("IdCardPhoto");
+            obj.src = "data:;base64," + CardHeadImgBase64;
+            var obj = document.getElementById("CameraPhoto");
+            obj.src = "data:;base64," + CardImgBase64;
+            ShowInfo("读卡成功");
+        }
+        else {
+            ShowInfo("读卡失败!");
+        }
+
+    }
+
+
+    /*---------------------------------------------------
+    ------  （必须重写该函数）条码二维码识别返回结果------
+    ----------------------------------------------------*/
+    function QrBarCodeRecogResultCB(flag,codeStr) {
+        if (flag == 0)
+            ShowInfo("条码/二维码 识别结果:" + codeStr);
+        else
+            ShowInfo("未识别到内容!");
+     }
+
+
+
+    /*********************
+    ***    初始化操作  ***
+    **********************/
+
+
+    function LoadCameraDocument() {
+
+        if (!window.WebSocket) {
+            alert("浏览器不支持HTML5,请更新浏览器或者使用其它浏览器");
+        }
+        //console.log("LoadCameraDocument");
+        var obj = document.getElementById("CameraCtl");
+        Cam_ControlInit(obj,0, 0, 600, 400);
+    }
+
+
+    window.onload = function () {
+        console.log("window.onload");
+    }
+
+
+    /*********************
+    ***    打开摄像头  ***
+    **********************/
+    function toOpenCamera() {
+        var CamID = document.getElementById("DevName").selectedIndex;
+        var obj = document.getElementById("DevResolution");
+        var restr = obj[obj.selectedIndex].text;
+        var pos = restr.lastIndexOf("*");
+        var width = parseInt(restr.substring(0, pos));
+        var height = parseInt(restr.substring(pos + 1, restr.length));
+        Cam_Open(CamID, width, height);
+        
+    }
+
+    /*********************
+    ***    关闭摄像头  ***
+    **********************/
+    function toCloseCamera() {
+        Cam_Close();
+    }
+
+
+    /*********************
+    ***    切换摄像头  ***
+    **********************/
+    function SelectDevice() {
+        var CamID = document.getElementById("DevName").selectedIndex;
+        //获取分辨率
+        Cam_GetDevResolution(CamID);  
+     }
+
+
+     /*********************
+     ***    切换分辨率  ***
+     **********************/
+     function SelectResolution() {
+         var obj = document.getElementById("DevResolution");
+         var restr = obj[obj.selectedIndex].text;
+         var pos = restr.lastIndexOf("*");
+         var width = parseInt(restr.substring(0, pos));
+         var height = parseInt(restr.substring(pos + 1, restr.length));
+         var CamID = document.getElementById("DevName").selectedIndex;
+         Cam_Open(CamID, width, height); 
+     }
+
+
+     /*********************
+     ***       拍照     ***
+     **********************/
+    function TakePhoto() {
+
+        var name = formatDate(new Date().getTime());
+
+        var obj = document.getElementById("FileType");
+        var path;
+        Cam_SetFileType(obj.selectedIndex); //设置文件格式
+        if (obj.selectedIndex == 0) {
+            path = "D:\\" + name + ".jpg";
+         }
+        else if (obj.selectedIndex == 1) {
+            path = "D:\\" + name + ".png";
+        }
+        else if (obj.selectedIndex == 2) {
+            path = "D:\\" + name + ".tif";
+        }
+        else if (obj.selectedIndex == 3) {
+            path = "D:\\" + name + ".pdf";
+        }
+        else {
+            path = "D:\\" + name + ".jpg";
+        }
+            
+            
+
+        Cam_Photo(path);  //主摄像头拍照
+        //Cam_Photo("");  //主摄像头拍照
+       
+    }
+
+
+    function SetCameraCutMode() {
+
+        if (document.getElementById("Radio1").checked) {
+            Cam_SetCutMode(0);
+        }
+        if (document.getElementById("Radio3").checked) {
+            Cam_SetCutMode(1);
+        }
+        if (document.getElementById("Radio2").checked) {
+            Cam_SetCutMode(2);
+        }
+        if (document.getElementById("Radio4").checked) {
+
+            Cam_SetCutMode(3);
+            //设置裁剪区域
+            //toSleep(100);
+            //console.log("SetCustomArea");
+            SetCustomArea(3000,3000,9000,9000);
+        } 
+    }
+
+
+    /*********************
+    ***    读取身份证  ***
+    **********************/
+    function GetIdCardInfo() {
+        var path = "D:\\IdCard.jpg";
+        //Cam_ReadIdCard(path);
+        //Cam_ReadIdCard("");
+        Cam_ReadIdCardEx(path);
+    }
+
+
+    /*********************
+    ***    设置文件格式  ***
+    **********************/
+    function toSetFileType() {
+        var obj = document.getElementById("FileType");
+        Cam_SetFileType(obj.selectedIndex);
+    }
+
+
+    /*********************
+    ***    设置色彩模式  ***
+    **********************/
+    function toSetColorModel() {
+        var obj = document.getElementById("ColorMode");
+        Cam_SetColorMode(obj.selectedIndex);
+    }
+
+
+    /*********************
+    ***    设置JPG图像质量  ***
+    **********************/
+    function toSetJpgQuality() {
+        var obj = document.getElementById("JpgQuality");
+        var val = obj[obj.selectedIndex].text;
+        Cam_SetJpgQuality(val);
+    }
+
+
+     /*********************
+     ***    设置去黑边  ***
+     **********************/
+     function toSetDeleteBlackEdge() {
+         var obj = document.getElementById("Checkbox1");
+         if (obj.checked) {
+             Cam_SetDeleteBlackEdge(1);
+         }
+         else {
+             Cam_SetDeleteBlackEdge(0);
+         }
+     }
+
+     /*********************
+     ***    设置去底色  ***
+     **********************/
+     function toSetDeleteBgColor() {
+         var obj = document.getElementById("Checkbox2");
+         if (obj.checked) {
+             Cam_SetDeleteBgColor(1);
+         }
+         else {
+             Cam_SetDeleteBgColor(0);
+         }
+     }
+
+
+    /*---------------------------------------------------
+    --------     （必须重写该函数）上传结果     ---------
+    ----------------------------------------------------*/
+    function HttpResultCB(flag, ResultStr) {
+        if (flag == 0) {
+            alert("上传成功 :" + ResultStr);
+        }
+        else {
+            alert("上传失败！");
+        }
+    }
+
+
+    /*********************
+    ******    上传  ******
+    **********************/
+    function HttpUploadFile() {
+
+        var filePath = "D:\\test.pdf";
+        //var url = "http://112.27.213.220:2201/interface/FileUploadCode.jsp";
+
+        //var url = "http://localhost:9005/MyServletTest/upload";
+        var url = "http://localhost:4523/UploadFile.ashx";
+        //var url = "http://localhost:9005/MyServletTest/upload";
+        UploadFile(url, filePath);
+     
+    }
+
+
+    //从摄像头中识别二维码
+    function RecogQrCodeFromCamera(type){
+        Cam_RecogQrBarCodeFromCamera(type)
+    }
+
+    //从图片文件中识别二维码
+    function RecogBarCodeFromFile(type) {
+        var imgpath = "D:\\123.jpg";
+        Cam_RecogQrBarCodeFromFile(type, imgpath)
+    }
+
+
+
+
+    //添加要合并的PDF文件
+    function ToAddPDFFile() {
+//        Cam_AddImgFileToPDF("D:\\1.jpg");
+//        sleep(100);
+//        Cam_AddImgFileToPDF("D:\\2.jpg");
+//        sleep(100);
+//        Cam_AddImgFileToPDF("D:\\3.jpg");
+        //        sleep(100);
+
+        Cam_AddImgFileToPDF("");
+        sleep(100);
+    }
+    
+    /*---------------------------------------------------
+    --------     添加合并的PDF文件返回结果     ---------
+    ----------------------------------------------------*/
+    function AddImgFileToPDFResultCB(flag, base64Str)
+    {
+        if (flag == 0) {
+            ShowInfo("添加合并的PDF文件成功");
+            var obj = document.getElementById("CameraPhoto");
+            obj.src = "data:;base64," + base64Str;
+        }
+        else {
+            ShowInfo("添加合并的PDF文件失败!");
+         }
+    }
+
+
+    //PDF合并测试
+    function ToCombinePDF() {
+        Cam_CombinePDF("D:\\test.pdf");
+        //Cam_CombinePDF("");        
+    }
+
+    /*---------------------------------------------------
+    --------     （必须重写该函数）合并PDF结果     ---------
+    ----------------------------------------------------*/
+    function PdfCombineResultCB(flag, PdfBase64Str) {
+        if (flag == 0) {
+            ShowInfo("合并PDF完成");
+            console.log(PdfBase64Str);
+        }
+        else {
+            ShowInfo("合并PDF失败!");
+        }
+    }
+
+
+    //添加要合并的图像文件
+    function ToAddMergeImageFile() {
+        Cam_AddMergeImageFile("");
+        sleep(100);
+    }
+
+    /*---------------------------------------------------
+    --------     添加合并图像文件返回结果     ---------
+    ----------------------------------------------------*/
+    function AddMergeImageFileResultCB(flag, base64Str) {
+        if (flag == 0) {
+            ShowInfo("添加合并图像文件成功");
+            var obj = document.getElementById("CameraPhoto");
+            obj.src = "data:;base64," + base64Str;
+        }
+        else {
+            ShowInfo("添加合并图像文件失败!");
+        }
+    }
+
+
+    //图像合并测试
+    function ToMergeImages() {
+        Cam_MergeImages("D:\\merge.jpg",0);     
+    }
+
+    /*---------------------------------------------------
+    --------     （必须重写该函数）图像合并结果     ---------
+    ----------------------------------------------------*/
+    function MergeImagesResultCB(flag, base64Str) {
+        if (flag == 0) {
+            ShowInfo("图像合并完成");
+            var obj = document.getElementById("CameraPhoto");
+            obj.src = "data:;base64," + base64Str;
+        }
+        else {
+            ShowInfo("图像合并失败!");
+        }
+    }
+
+
+
+
+    /*---------------------------------------------------
+    -------（必须重写该函数）获取驱动盘符返回结果--------
+    ----------------------------------------------------*/
+    function GetDriveResultCB(driveStr) {
+        if (driveStr == "") {
+            ShowInfo("获取盘符失败!");
+        }
+        else {
+            ShowInfo(driveStr);
+         }
+     }
+
+
+     //设置水印
+     function toSetWaterMarkParams() {
+         var isAddMark;
+         var isAddTime;
+         var wTransp;
+         var wPos;
+         var wSize;
+         var wColor;
+         var szInfo;
+         var obj = document.getElementById("Checkbox3");
+         if (obj.checked)
+             isAddMark = 1;
+         else
+             isAddMark = 0;
+         obj = document.getElementById("Checkbox4");
+         if (obj.checked)
+             isAddTime = 1;
+         else
+             isAddTime = 0;
+         szInfo = document.getElementById("Text1").value;   //水印内容
+         wTransp = parseInt(document.getElementById("Text2").value); //透明度
+         wSize = parseInt(document.getElementById("Text3").value);   //水印大小
+         wPos = document.getElementById("Select1").selectedIndex;   //水印位置
+         wColor = document.getElementById("Select2").selectedIndex;   //水印颜色
+         SetWaterMark(isAddMark, 0, isAddTime, wTransp, wPos, wSize, wColor, szInfo);  //生效水印设置
+      }
+
+
+
+      //删除文件
+      function ToDeleteFile() {
+          var path = "D:\\log.txt";
+          DeleteFile(path);
+       }
+
+       //删除文件返回结果
+       function GetDeleteFileResultCB(flag) {
+           if (flag == 0) {
+               ShowInfo("删除文件成功");
+           }
+           else {
+               ShowInfo("删除文件失败！");
+            }
+       }
+
+    
+</script>
+
+<body onload="LoadCameraDocument()">
+
+
+
+
+        <div style="width:602px; height: 640px; border: 1px solid white; background:#C7EDCC;  float:left">
+
+            <div  id='CameraCtl' style="width:600px; height: 400px">  </div>
+            <div>
+                设备
+                <select style="width:140px" id="DevName"  onchange = "SelectDevice()"></select> 
+                分辨率
+                <select style="width:140px" id="DevResolution" onchange = "SelectResolution()"></select> 
+                <input type = "button" value = " 打开设备 " onclick = "toOpenCamera();"/>
+                <input type = "button" value = " 关闭设备 " onclick = "toCloseCamera();"/>
+                <br />
+                    
+                裁切模式:               
+                <input id="Radio1"  name="R1" type="radio" value="V1" onclick="SetCameraCutMode()" checked="checked"/>不裁切
+                <input id="Radio2"  name="R1" type="radio" value="V2" onclick="SetCameraCutMode()"/>手动裁切
+                <input id="Radio3"  name="R1" type="radio" value="V3" onclick="SetCameraCutMode()"/>自动裁切
+                <input id="Radio4"  name="R1" type="radio" value="V4" onclick="SetCameraCutMode()"/>自定义
+                <br />
+
+                文件格式: 
+                <select   id="FileType" onchange = "toSetFileType()">
+                    <option value="0">jpg</option>
+                    <option value="1">png</option>
+                    <option value="2">tif</option>
+                    <option value="3">pdf</option>
+                </select> 
+
+                色彩模式: 
+                <select   id="ColorMode" onchange = "toSetColorModel()">
+                    <option value="0">彩色</option>
+                    <option value="1">灰度</option>
+                    <option value="2">黑白</option>
+                </select> 
+
+                图像质量: 
+                <select   id="JpgQuality" onchange = "toSetJpgQuality()">
+                    <option value="0">10</option>
+                    <option value="1">20</option>
+                    <option value="2">30</option>
+                    <option value="3">40</option>
+                    <option value="4">50</option>
+                    <option value="5" selected="true">60</option>
+                    <option value="6">70</option>
+                    <option value="7">80</option>
+                    <option value="8">90</option>
+                    <option value="9">100</option>
+                </select> 
+                
+                <input id="Checkbox1" type="checkbox" onclick = "toSetDeleteBlackEdge()"/> 去黑边   
+                <input id="Checkbox2" type="checkbox" onclick = "toSetDeleteBgColor()"/> 去底色
+
+            </div>
+             <br />
+
+            <div>
+                <input id="Checkbox3" type="checkbox" /> 添加水印              
+                水印内容<input id="Text1" type="text" value="水印测试" />
+                透明度<input id="Text2" type="text" value="127" style="width:40px" />
+                大小<input id="Text3" type="text" value="80" style="width:40px"/>  <br />
+                位置
+                <select   id="Select1">
+                    <option value="0">左上</option>
+                    <option value="1">右上</option>                    
+                    <option value="2">左下</option>
+                    <option value="3">右下</option>
+                    <option value="4">中间</option>
+                </select> 
+                颜色
+                <select   id="Select2" >
+                    <option value="0">红色</option>
+                    <option value="1">绿色</option>
+                    <option value="2">蓝色</option>
+                    <option value="3">青色</option>
+                    <option value="4">黄色</option>
+                    <option value="5">白色</option>
+                    <option value="6">黑色</option>
+                </select> 
+                <input id="Checkbox4" type="checkbox" /> 添加时间水印    
+                <input type = "button" value = "生效水印参数设置" onclick = "toSetWaterMarkParams()"/>   
+            </div>
+
+            <br />
+
+            <div>
+                <input type = "button" value = "获取盘符" onclick = "GetDrives();" />
+                <input type = "button" value = "放大" onclick = "Cam_ZoomIn();" />
+                <input type = "button" value = "缩小" onclick = "Cam_ZoomOut();" />
+                <input type = "button" value = "适屏" onclick = "Cam_BestSize();" />
+                <input type = "button" value = "1:1" onclick = "Cam_TrueSize();" />
+                <input type = "button" value = "左旋" onclick = "Cam_RotateLeft();" />
+                <input type = "button" value = "右旋" onclick = "Cam_RotateRight();" />
+                <input type = "button" value = "拍照" onclick = "TakePhoto();" />
+                <input type = "button" value = "对焦" onclick = "Cam_Focus();" />
+                <input type = "button" value = "设置" onclick = "Cam_ShowVideoProp();" />  
+                <input type = "button" value = "上传" onclick = "HttpUploadFile();" />            
+                <input type = "button" value = "读身份证" onclick = "GetIdCardInfo();" />                
+                <input type = "button" value = "从摄像头中识别二维码" onclick = "RecogQrCodeFromCamera(1);" />
+                <input type = "button" value = "从图片中识别二维码" onclick = "RecogBarCodeFromFile(1);" />
+                <input type = "button" value = "添加合并PDF文件" onclick = "ToAddPDFFile();" />
+                <input type = "button" value = "合并PDF" onclick = "ToCombinePDF();" />
+                <input type = "button" value = "添加合并图像文件" onclick = "ToAddMergeImageFile();" />
+                <input type = "button" value = "合并图像" onclick = "ToMergeImages();" />
+                <input type = "button" value = "删除文件" onclick = "ToDeleteFile();" />
+            </div>
+
+            <div style="width:595px; height: 80px">
+                <textarea  style="width:100%; height:100%" id="TextInfo" cols="20" rows="2"></textarea>
+            </div>
+                  
+        </div>
+
+
+         <div style="width:202px; height: 640px; border: 1px solid white; background:#C7EDCC;  float:left">
+            拍照图片
+            <br />
+            <img id="CameraPhoto"  src="" style="width: 198px;height: 198px;"  />
+            <br />
+            身份证信息
+            <br />
+            <img id="IdCardPhoto"  src="" style="width: 80px;height: 100px;"  />
+            <br />
+            姓名
+            <input id="CardName" type="text"  style="width: 100px"/> <br />
+            性别
+            <input id="CardSex" type="text"  style="width: 50px"/>
+            民族
+            <input id="CardNation" type="text"  style="width: 60px"/> <br />
+            出生
+            <input id="CardBorn" type="text"  style="width: 100px"/>  <br />
+            住址 
+            <br />
+            <textarea  id="CardAddress" cols="20" rows="3"  style="width:192px"></textarea>
+            身份证号码
+            <br />
+            <input id="CardNum" type="text"  style="width: 195px"/>  <br />
+            签发机关
+            <input id="CardIssuedAt" type="text"  style="width: 125px"/>  <br />
+            有效期限
+            <input id="CardEffectDate" type="text"  style="width: 125px"/>  <br />
+         </div>
+
+</body>
+
+
+</html>

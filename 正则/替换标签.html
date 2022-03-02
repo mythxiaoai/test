@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			let str = "asafasf\ntadasf"
+			document.write(str.replace(/(\n)/g, "\\n"))
+			function pre(str){
+        return str.replace(/[<>"&]/g,function(val,index,allText){
+          switch(val){
+            case "<":
+              return "&lt;";
+            case ">":
+              return "&gt;";
+            case "\"":
+              return "&quot;";
+            case "&":
+              return "&amp;";
+          }
+        });
+      }
+		</script>
+	</body>
+</html>

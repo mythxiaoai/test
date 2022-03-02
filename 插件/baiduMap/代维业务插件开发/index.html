@@ -1,0 +1,952 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0">
+        <meta name="Keywords" content="">
+        <meta name="description" content="">
+        <link rel="stylesheet" href="../../fonts/font-awesome.min.css" />
+        <title>百度地图尺子</title>
+         <link rel="stylesheet" href="../../css/common.css" />
+        <style>
+            *{padding: 0;margin: 0;}
+			a{text-decoration: none;}
+			#allmap{
+				position: absolute;
+				height: 100%;
+				width: 100%;
+			}
+			.rulercss{
+				position: absolute;
+				top: 20px;
+				left: 50px;
+			}
+.list-group-item {
+  position: relative;
+  display: block;
+  padding: 10px 15px;
+  margin-bottom: -1px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+}
+.list-group-item:first-child {
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+.list-group-item:last-child {
+  margin-bottom: 0;
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+a.list-group-item,
+button.list-group-item {
+  color: #555;
+}
+a.list-group-item .list-group-item-heading,
+button.list-group-item .list-group-item-heading {
+  color: #333;
+}
+a.list-group-item:hover,
+button.list-group-item:hover,
+a.list-group-item:focus,
+button.list-group-item:focus {
+  color: #555;
+  text-decoration: none;
+  background-color: #f5f5f5;
+}
+button.list-group-item {
+  width: 100%;
+  text-align: left;
+}
+.list-group-item.disabled,
+.list-group-item.disabled:hover,
+.list-group-item.disabled:focus {
+  color: #777;
+  cursor: not-allowed;
+  background-color: #eee;
+}
+.list-group-item.disabled .list-group-item-heading,
+.list-group-item.disabled:hover .list-group-item-heading,
+.list-group-item.disabled:focus .list-group-item-heading {
+  color: inherit;
+}
+.list-group-item.disabled .list-group-item-text,
+.list-group-item.disabled:hover .list-group-item-text,
+.list-group-item.disabled:focus .list-group-item-text {
+  color: #777;
+}
+.list-group-item.active,
+.list-group-item.active:hover,
+.list-group-item.active:focus {
+  z-index: 2;
+  color: #fff;
+  background-color: #337ab7;
+  border-color: #337ab7;
+}
+.list-group-item.active .list-group-item-heading,
+.list-group-item.active:hover .list-group-item-heading,
+.list-group-item.active:focus .list-group-item-heading,
+.list-group-item.active .list-group-item-heading > small,
+.list-group-item.active:hover .list-group-item-heading > small,
+.list-group-item.active:focus .list-group-item-heading > small,
+.list-group-item.active .list-group-item-heading > .small,
+.list-group-item.active:hover .list-group-item-heading > .small,
+.list-group-item.active:focus .list-group-item-heading > .small {
+  color: inherit;
+}
+.list-group-item.active .list-group-item-text,
+.list-group-item.active:hover .list-group-item-text,
+.list-group-item.active:focus .list-group-item-text {
+  color: #c7ddef;
+}
+.list-group-item-success {
+  color: #3c763d;
+  background-color: #dff0d8;
+}
+a.list-group-item-success,
+button.list-group-item-success {
+  color: #3c763d;
+}
+a.list-group-item-success .list-group-item-heading,
+button.list-group-item-success .list-group-item-heading {
+  color: inherit;
+}
+a.list-group-item-success:hover,
+button.list-group-item-success:hover,
+a.list-group-item-success:focus,
+button.list-group-item-success:focus {
+  color: #3c763d;
+  background-color: #d0e9c6;
+}
+a.list-group-item-success.active,
+button.list-group-item-success.active,
+a.list-group-item-success.active:hover,
+button.list-group-item-success.active:hover,
+a.list-group-item-success.active:focus,
+button.list-group-item-success.active:focus {
+  color: #fff;
+  background-color: #3c763d;
+  border-color: #3c763d;
+}
+.list-group-item-info {
+  color: #31708f;
+  background-color: #d9edf7;
+}
+a.list-group-item-info,
+button.list-group-item-info {
+  color: #31708f;
+}
+a.list-group-item-info .list-group-item-heading,
+button.list-group-item-info .list-group-item-heading {
+  color: inherit;
+}
+a.list-group-item-info:hover,
+button.list-group-item-info:hover,
+a.list-group-item-info:focus,
+button.list-group-item-info:focus {
+  color: #31708f;
+  background-color: #c4e3f3;
+}
+a.list-group-item-info.active,
+button.list-group-item-info.active,
+a.list-group-item-info.active:hover,
+button.list-group-item-info.active:hover,
+a.list-group-item-info.active:focus,
+button.list-group-item-info.active:focus {
+  color: #fff;
+  background-color: #31708f;
+  border-color: #31708f;
+}
+.list-group-item-warning {
+  color: #8a6d3b;
+  background-color: #fcf8e3;
+}
+a.list-group-item-warning,
+button.list-group-item-warning {
+  color: #8a6d3b;
+}
+a.list-group-item-warning .list-group-item-heading,
+button.list-group-item-warning .list-group-item-heading {
+  color: inherit;
+}
+a.list-group-item-warning:hover,
+button.list-group-item-warning:hover,
+a.list-group-item-warning:focus,
+button.list-group-item-warning:focus {
+  color: #8a6d3b;
+  background-color: #faf2cc;
+}
+a.list-group-item-warning.active,
+button.list-group-item-warning.active,
+a.list-group-item-warning.active:hover,
+button.list-group-item-warning.active:hover,
+a.list-group-item-warning.active:focus,
+button.list-group-item-warning.active:focus {
+  color: #fff;
+  background-color: #8a6d3b;
+  border-color: #8a6d3b;
+}
+.list-group-item-danger {
+  color: #a94442;
+  background-color: #f2dede;
+}
+a.list-group-item-danger,
+button.list-group-item-danger {
+  color: #a94442;
+}
+a.list-group-item-danger .list-group-item-heading,
+button.list-group-item-danger .list-group-item-heading {
+  color: inherit;
+}
+a.list-group-item-danger:hover,
+button.list-group-item-danger:hover,
+a.list-group-item-danger:focus,
+button.list-group-item-danger:focus {
+  color: #a94442;
+  background-color: #ebcccc;
+}
+a.list-group-item-danger.active,
+button.list-group-item-danger.active,
+a.list-group-item-danger.active:hover,
+button.list-group-item-danger.active:hover,
+a.list-group-item-danger.active:focus,
+button.list-group-item-danger.active:focus {
+  color: #fff;
+  background-color: #a94442;
+  border-color: #a94442;
+}
+.list-group-item-heading {
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+.list-group-item-text {
+  margin-bottom: 0;
+  line-height: 1.3;
+}
+/*bootstarp*/
+.panel {
+  margin-bottom: 20px;
+  background-color: #fff;
+  border: 1px solid transparent;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+          box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+}
+.panel-body {
+}
+.panel-heading {
+  padding: 10px 15px;
+  border-bottom: 1px solid transparent;
+}
+.panel-heading > .dropdown .dropdown-toggle {
+  color: inherit;
+}
+.panel-title {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 16px;
+  color: inherit;
+}
+.panel-title > a,
+.panel-title > small,
+.panel-title > .small,
+.panel-title > small > a,
+.panel-title > .small > a {
+  color: inherit;
+}
+.panel-footer {
+  padding: 10px 15px;
+  background-color: #f5f5f5;
+  border-top: 1px solid #ddd;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+.panel > .list-group,
+.panel > .panel-collapse > .list-group {
+  margin-bottom: 0;
+}
+.panel > .list-group .list-group-item,
+.panel > .panel-collapse > .list-group .list-group-item {
+  border-width: 1px 0;
+  border-radius: 0;
+}
+.panel > .list-group:first-child .list-group-item:first-child,
+.panel > .panel-collapse > .list-group:first-child .list-group-item:first-child {
+  border-top: 0;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+.panel > .list-group:last-child .list-group-item:last-child,
+.panel > .panel-collapse > .list-group:last-child .list-group-item:last-child {
+  border-bottom: 0;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+.panel > .panel-heading + .panel-collapse > .list-group .list-group-item:first-child {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+.panel-heading + .list-group .list-group-item:first-child {
+  border-top-width: 0;
+}
+.list-group + .panel-footer {
+  border-top-width: 0;
+}
+.panel > .table,
+.panel > .table-responsive > .table,
+.panel > .panel-collapse > .table {
+  margin-bottom: 0;
+}
+.panel > .table caption,
+.panel > .table-responsive > .table caption,
+.panel > .panel-collapse > .table caption {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+.panel > .table:first-child,
+.panel > .table-responsive:first-child > .table:first-child {
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+.panel > .table:first-child > thead:first-child > tr:first-child,
+.panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child,
+.panel > .table:first-child > tbody:first-child > tr:first-child,
+.panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child {
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+.panel > .table:first-child > thead:first-child > tr:first-child td:first-child,
+.panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child td:first-child,
+.panel > .table:first-child > tbody:first-child > tr:first-child td:first-child,
+.panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child td:first-child,
+.panel > .table:first-child > thead:first-child > tr:first-child th:first-child,
+.panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child th:first-child,
+.panel > .table:first-child > tbody:first-child > tr:first-child th:first-child,
+.panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child th:first-child {
+  border-top-left-radius: 3px;
+}
+.panel > .table:first-child > thead:first-child > tr:first-child td:last-child,
+.panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child td:last-child,
+.panel > .table:first-child > tbody:first-child > tr:first-child td:last-child,
+.panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child td:last-child,
+.panel > .table:first-child > thead:first-child > tr:first-child th:last-child,
+.panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child th:last-child,
+.panel > .table:first-child > tbody:first-child > tr:first-child th:last-child,
+.panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child th:last-child {
+  border-top-right-radius: 3px;
+}
+.panel > .table:last-child,
+.panel > .table-responsive:last-child > .table:last-child {
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+.panel > .table:last-child > tbody:last-child > tr:last-child,
+.panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child,
+.panel > .table:last-child > tfoot:last-child > tr:last-child,
+.panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child {
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+.panel > .table:last-child > tbody:last-child > tr:last-child td:first-child,
+.panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child td:first-child,
+.panel > .table:last-child > tfoot:last-child > tr:last-child td:first-child,
+.panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child td:first-child,
+.panel > .table:last-child > tbody:last-child > tr:last-child th:first-child,
+.panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child th:first-child,
+.panel > .table:last-child > tfoot:last-child > tr:last-child th:first-child,
+.panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child th:first-child {
+  border-bottom-left-radius: 3px;
+}
+.panel > .table:last-child > tbody:last-child > tr:last-child td:last-child,
+.panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child td:last-child,
+.panel > .table:last-child > tfoot:last-child > tr:last-child td:last-child,
+.panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child td:last-child,
+.panel > .table:last-child > tbody:last-child > tr:last-child th:last-child,
+.panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child th:last-child,
+.panel > .table:last-child > tfoot:last-child > tr:last-child th:last-child,
+.panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child th:last-child {
+  border-bottom-right-radius: 3px;
+}
+.panel > .panel-body + .table,
+.panel > .panel-body + .table-responsive,
+.panel > .table + .panel-body,
+.panel > .table-responsive + .panel-body {
+  border-top: 1px solid #ddd;
+}
+.panel > .table > tbody:first-child > tr:first-child th,
+.panel > .table > tbody:first-child > tr:first-child td {
+  border-top: 0;
+}
+.panel > .table-bordered,
+.panel > .table-responsive > .table-bordered {
+  border: 0;
+}
+.panel > .table-bordered > thead > tr > th:first-child,
+.panel > .table-responsive > .table-bordered > thead > tr > th:first-child,
+.panel > .table-bordered > tbody > tr > th:first-child,
+.panel > .table-responsive > .table-bordered > tbody > tr > th:first-child,
+.panel > .table-bordered > tfoot > tr > th:first-child,
+.panel > .table-responsive > .table-bordered > tfoot > tr > th:first-child,
+.panel > .table-bordered > thead > tr > td:first-child,
+.panel > .table-responsive > .table-bordered > thead > tr > td:first-child,
+.panel > .table-bordered > tbody > tr > td:first-child,
+.panel > .table-responsive > .table-bordered > tbody > tr > td:first-child,
+.panel > .table-bordered > tfoot > tr > td:first-child,
+.panel > .table-responsive > .table-bordered > tfoot > tr > td:first-child {
+  border-left: 0;
+}
+.panel > .table-bordered > thead > tr > th:last-child,
+.panel > .table-responsive > .table-bordered > thead > tr > th:last-child,
+.panel > .table-bordered > tbody > tr > th:last-child,
+.panel > .table-responsive > .table-bordered > tbody > tr > th:last-child,
+.panel > .table-bordered > tfoot > tr > th:last-child,
+.panel > .table-responsive > .table-bordered > tfoot > tr > th:last-child,
+.panel > .table-bordered > thead > tr > td:last-child,
+.panel > .table-responsive > .table-bordered > thead > tr > td:last-child,
+.panel > .table-bordered > tbody > tr > td:last-child,
+.panel > .table-responsive > .table-bordered > tbody > tr > td:last-child,
+.panel > .table-bordered > tfoot > tr > td:last-child,
+.panel > .table-responsive > .table-bordered > tfoot > tr > td:last-child {
+  border-right: 0;
+}
+.panel > .table-bordered > thead > tr:first-child > td,
+.panel > .table-responsive > .table-bordered > thead > tr:first-child > td,
+.panel > .table-bordered > tbody > tr:first-child > td,
+.panel > .table-responsive > .table-bordered > tbody > tr:first-child > td,
+.panel > .table-bordered > thead > tr:first-child > th,
+.panel > .table-responsive > .table-bordered > thead > tr:first-child > th,
+.panel > .table-bordered > tbody > tr:first-child > th,
+.panel > .table-responsive > .table-bordered > tbody > tr:first-child > th {
+  border-bottom: 0;
+}
+.panel > .table-bordered > tbody > tr:last-child > td,
+.panel > .table-responsive > .table-bordered > tbody > tr:last-child > td,
+.panel > .table-bordered > tfoot > tr:last-child > td,
+.panel > .table-responsive > .table-bordered > tfoot > tr:last-child > td,
+.panel > .table-bordered > tbody > tr:last-child > th,
+.panel > .table-responsive > .table-bordered > tbody > tr:last-child > th,
+.panel > .table-bordered > tfoot > tr:last-child > th,
+.panel > .table-responsive > .table-bordered > tfoot > tr:last-child > th {
+  border-bottom: 0;
+}
+.panel > .table-responsive {
+  margin-bottom: 0;
+  border: 0;
+}
+.panel-group {
+  margin-bottom: 20px;
+}
+.panel-group .panel {
+  margin-bottom: 0;
+}
+.panel-group .panel + .panel {
+  margin-top: 5px;
+}
+.panel-group .panel-heading {
+  border-bottom: 0;
+}
+.panel-group .panel-heading + .panel-collapse > .panel-body,
+.panel-group .panel-heading + .panel-collapse > .list-group {
+  border-top: 1px solid #ddd;
+}
+.panel-group .panel-footer {
+  border-top: 0;
+}
+.panel-group .panel-footer + .panel-collapse .panel-body {
+  border-bottom: 1px solid #ddd;
+}
+.panel-default {
+  border-color: #ddd;
+}
+.panel-default > .panel-heading {
+  color: #333;
+  background-color: #f5f5f5;
+  border-color: #ddd;
+}
+.panel-default > .panel-heading + .panel-collapse > .panel-body {
+  border-top-color: #ddd;
+}
+.panel-default > .panel-heading .badge {
+  color: #f5f5f5;
+  background-color: #333;
+}
+.panel-default > .panel-footer + .panel-collapse > .panel-body {
+  border-bottom-color: #ddd;
+}
+.panel-primary {
+  border-color: #337ab7;
+}
+.panel-primary > .panel-heading {
+  color: #fff;
+  background-color: #337ab7;
+  border-color: #337ab7;
+}
+.panel-primary > .panel-heading + .panel-collapse > .panel-body {
+  border-top-color: #337ab7;
+}
+.panel-primary > .panel-heading .badge {
+  color: #337ab7;
+  background-color: #fff;
+}
+.panel-primary > .panel-footer + .panel-collapse > .panel-body {
+  border-bottom-color: #337ab7;
+}
+.panel-success {
+  border-color: #d6e9c6;
+}
+.panel-success > .panel-heading {
+  color: #3c763d;
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+}
+.panel-success > .panel-heading + .panel-collapse > .panel-body {
+  border-top-color: #d6e9c6;
+}
+.panel-success > .panel-heading .badge {
+  color: #dff0d8;
+  background-color: #3c763d;
+}
+.panel-success > .panel-footer + .panel-collapse > .panel-body {
+  border-bottom-color: #d6e9c6;
+}
+.panel-info {
+  border-color: #bce8f1;
+}
+.panel-info > .panel-heading {
+  color: #31708f;
+  background-color: #d9edf7;
+  border-color: #bce8f1;
+}
+.panel-info > .panel-heading + .panel-collapse > .panel-body {
+  border-top-color: #bce8f1;
+}
+.panel-info > .panel-heading .badge {
+  color: #d9edf7;
+  background-color: #31708f;
+}
+.panel-info > .panel-footer + .panel-collapse > .panel-body {
+  border-bottom-color: #bce8f1;
+}
+.panel-warning {
+  border-color: #faebcc;
+}
+.panel-warning > .panel-heading {
+  color: #8a6d3b;
+  background-color: #fcf8e3;
+  border-color: #faebcc;
+}
+.panel-warning > .panel-heading + .panel-collapse > .panel-body {
+  border-top-color: #faebcc;
+}
+.panel-warning > .panel-heading .badge {
+  color: #fcf8e3;
+  background-color: #8a6d3b;
+}
+.panel-warning > .panel-footer + .panel-collapse > .panel-body {
+  border-bottom-color: #faebcc;
+}
+.panel-danger {
+  border-color: #ebccd1;
+}
+.panel-danger > .panel-heading {
+  color: #a94442;
+  background-color: #f2dede;
+  border-color: #ebccd1;
+}
+.panel-danger > .panel-heading + .panel-collapse > .panel-body {
+  border-top-color: #ebccd1;
+}
+.panel-danger > .panel-heading .badge {
+  color: #f2dede;
+  background-color: #a94442;
+}
+.panel-danger > .panel-footer + .panel-collapse > .panel-body {
+  border-bottom-color: #ebccd1;
+}
+/*重写panel*/
+.panel{
+	border-radius: 0;
+}
+.panel-heading{
+	border-radius: 0;
+	border-style: solid none solid none;
+	border-color: #e7eaec;
+	border-width: 0px 0 1px 0;
+	position: relative;
+}
+
+.panel-heading:after{content:".";display:block;clear:both;visibility:hidden;line-height:0;height:0;}
+.panel-title{
+	float: left;
+	font-size: 14px;
+	white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 80%;
+}
+.panel-tools{
+	float: right;
+	font-size: 14px;
+}
+.panel-tools > a{
+	margin-left: 5px;
+	color:#c4c4c4;
+}
+.panel-tools > a:hover{
+	opacity: 0.8;
+}
+
+.panel-tools .collapse-link.collapsed .fa.fa-chevron-up:before {
+	content: "\f078"
+}
+	
+.panel-white {
+  border-color: #e7eaec;
+}
+.panel-white > .panel-heading {
+  color: #999;
+  background-color: #fff;
+  border-color: #e7eaec;
+}
+.panel-white > .panel-heading + .panel-collapse > .panel-body {
+  border-top-color: #e7eaec;
+}
+.panel-white > .panel-heading .badge {
+  color: #f5f5f5;
+  background-color: #333;
+}
+.panel-white > .panel-footer + .panel-collapse > .panel-body {
+  border-bottom-color: #e7eaec;
+}
+.collapse.in {
+    display: block;
+}
+.collapse {
+    display: none;
+}
+.panel-body {
+   	background: #fff;
+}
+
+ .list-group-item{
+            border-left-width: 0;
+            border-right-width: 0;
+        }
+        .list-group-item:first-child{
+            border-radius: 0;
+            border-top-width: 0;
+        }
+        .list-group-item:last-child{
+            border-radius: 0;
+            border-bottom-width: 0;
+        }
+        .BMap_bubble_content{height: 100%!important;overflow: hidden;padding: 20px 10px 0px 10px;box-sizing: border-box;}
+		</style>
+    </head>
+    <body>
+        <!--工具条-->
+        <div id="allmap"></div>
+        <script type="text/javascript" src="../../js/jquery.js"></script>
+        <script type="text/javascript" src="js/transformationLonLat.js"></script>
+        <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=hYCENCEx1nXO0Nt46ldexfG9oI49xBGh"></script>
+        <script type="text/javascript" src="js/mapCanvas4.js"></script>
+        <!--业务通用js-->
+        <script>
+            let mp;
+            /**
+             *注意  调用标尺工具  需要提前取消所有点击事件  结束后在绑定 
+             */
+            //enableMapClick   默认地图上的一些标注不可点击
+            let img,
+                line,
+                oil,
+                site,
+                statistics,
+                team;
+                
+            let test = {
+                async init() {
+                    img = await $.ajax("./js/data/img.js");
+                    line = await $.ajax("./js/data/line.js");
+                    oil = await $.ajax("./js/data/oil.js");
+                    site = await $.ajax("./js/data/site.js");
+                    statistics = await $.ajax("./js/data/statistics.js");
+                    team = await $.ajax("./js/data/team.js");
+
+                    img = eval(img)
+                    img = img[0]
+                    line = eval(line)
+                    oil = eval(oil)
+                    site = eval(site)
+                    statistics = eval(statistics)
+                    team = eval(team)
+
+                    this.initMap();
+                },
+                initMap() {
+                    mp = new BMap.Map("allmap", {
+                        minZoom: 4,
+                        enableMapClick: false,
+                    });
+                    mp.centerAndZoom(new BMap.Point(100.813686, 21.972526), 17);
+                    mp.enableScrollWheelZoom(); //开启鼠标滚轮缩放功能
+                    mp.disableDoubleClickZoom();
+                    mp.addEventListener("click",function(e){
+                        console.log(e.point);
+                        console.log(mp.getZoom());
+                    })
+                    this.loadData()
+                },
+                loadData() {
+                    let zoom = mp.getZoom();
+                    console.log(zoom)
+                    mp.clearOverlays();
+                    if (zoom >= 5 && zoom <= 8) {
+                        this.showPanel = "p";
+                    } else if (zoom > 8 && zoom <= 13) {
+                        this.showPanel = "c";
+                    } else if (zoom > 13 && zoom <= 14) {
+                        this.showPanel = "d";
+                    } else {
+                        this.showPanel = "x";
+                        //加载对应的锚点
+                        this.loadDataX();
+                    }
+                },
+                loadDataX() {
+                    console.log("loadDataX")
+                    //数据处理
+                    let data = site,
+                        item = null,
+                        temp = null;
+                    //基站
+                    for (let i = 0, len = data.length; i < len; i++) {
+                        //经纬度转换
+                        temp = coordtransform.wgs84togcj02(data[i].longitude, data[i].latitude);
+                        temp = coordtransform.gcj02tobd09(temp[0], temp[1]);
+                        data[i].lng = temp[0];
+                        data[i].lat = temp[1];
+                        //形状赋予
+                        data[i].shape = "gather";
+                        data[i].distance = 200;
+                        data[i].minDistance = 20;
+                        data[i].type = "site";
+                    }
+                    //队伍team
+                    for (let i = 0, len = team.length; i < len; i++) {
+                        //经纬度转换
+                        let json = { ...team[i]
+                        };
+                        temp = coordtransform.wgs84togcj02(json.team_lon, json.team_lat);
+                        temp = coordtransform.gcj02tobd09(temp[0], temp[1]);
+                        json.lng = temp[0];
+                        json.lat = temp[1];
+                        //形状赋予
+                        json.shape = "img";
+                        json.imgSrc = "./img/ranks.png";
+                        json.px = 36;
+                        json.type = "team";
+                        data.push(json);
+                    }
+                    //队伍oil
+                    for (let i = 0, len = oil.length; i < len; i++) {
+                        //经纬度转换
+                        let json = { ...oil[i]
+                        };
+                        temp = coordtransform.wgs84togcj02(json.oil_machine_lon, json.oil_machine_lat);
+                        temp = coordtransform.gcj02tobd09(temp[0], temp[1]);
+                        json.lng = temp[0];
+                        json.lat = temp[1];
+                        //形状赋予
+                        json.shape = "img";
+                        json.imgSrc = "./img/carrystandby.png";
+                        json.px = 85 / 3;
+                        json.offset = {
+                            x: 9,
+                            y: 9
+                        };
+                        json.type = "oil";
+                        data.push(json);
+                    }
+
+                    //画线
+                    let lines = {};
+                    for (let item of line) {
+                        let temp = coordtransform.wgs84togcj02(line.team_lon, line.team_lat);
+                        temp = coordtransform.gcj02tobd09(line[0], line[1]);
+                        line.team_lon = temp[0];
+                        line.team_lat = temp[1];
+                        if (!lines[item.security_team]) {
+                            lines[item.security_team] = []
+                        }
+                        lines[item.security_team].push(item);
+                    }
+                    //排序
+                    for (let key in lines) {
+                        lines[key] = lines[key].sort((a, b) => a["repair_order"] - b["repair_order"]);
+                    }
+                    //画线 s起点  e终点  arr途径点
+                    console.log(lines)
+                    let s, e, arr = [];
+                    for (let key in lines) {
+                        var driving = new BMap.DrivingRoute(mp, {
+                            renderOptions: {
+                                map: mp,
+                                autoViewport: true
+                            }
+                        });
+                        arr.length=0;
+                        for (let i = 0, len = lines[key].length; i < len; i++) {
+                            let json = lines[key][i];
+                            if (i === 0) {
+                                s = new BMap.Point(json.team_lon, json.team_lat);
+                            } else if (i == (len - 1)) {
+                                e = new BMap.Point(json.team_lon, json.team_lat);
+                                /* driving.search(s, e, {
+                                    waypoints: arr
+                                }) */
+                            } else {
+                                arr.push(new BMap.Point(json.team_lon, json.team_lat));
+                            }
+                        }
+                    }
+                    
+                    let myCompOverlay = new ComplexCustomOverlay(data, {
+                        showAllZoom:12,
+                    });
+                    mp.addOverlay(myCompOverlay);
+                    //添加点击事件
+                   myCompOverlay.addEventListener("click",this.drawItemClick.bind(this));
+                },
+                drawItemClick(e) {
+                    //数据过滤
+                    //e.data = e.data.filter(v => v.type == "site");
+                    if (e.data.length == 0) return false;
+                    let $p = $(this.getHTML());
+                    let item = $p.find(".js_panel_item").prop("outerHTML");
+                    $p.find(".js_panel_item").remove();
+                
+                    let $div = $("<div/>")
+                    $.each(e.data, function(index, val) {
+                        let $html = $(item);
+                        $html.find(".js_panel").eq(0).removeClass("collapsed");
+                        if (index == 0) {
+                            $html.find(".js_panel").eq(0).removeClass("collapsed");
+                            $html.find(".js_panel").eq(1).addClass("in");
+                        }
+                        //数据
+                        //js_site_name js_site_code js_discharge_time js_security_team 
+                        //js_maintenance_team_leader js_maintenance_team_leader_tel
+                        if(val.type == "site"){
+                            $html.find(".js_title").html(val["site_name"]).attr("title",val["site_name"]);
+                            $html.find(".js_text1").html(val["site_name"]).attr("title",val["site_name"]);
+                            $html.find(".js_text2").html(val["site_code"]).attr("title",val["site_name"]);;
+                            $html.find(".js_text3").html(val["scene"]);
+                            $html.find(".js_text4").html(val["discharge_time"]+"h");
+                            $html.find(".js_text5").html(val["security_team"]);
+                            $html.find(".js_text6").html(val["maintenance_team_leader"]);
+                            $html.find(".js_text7").html(val["maintenance_team_leader_tel"]);
+                        }else if(val.type == "team"){
+                            $html.find(".js_title").html(val["security_team"]).attr("title",val["security_team"]);
+                            $html.find(".js_text1").html(val["security_team"])
+                            .attr("title",val["security_team"])
+                            .prev().html("队伍名称");
+                            $html.find(".js_text2").html(val["maintenance_team_leader"])
+                            .prev().html("负责人");
+                            $html.find(".js_text3").html(val["maintenance_team_leader_tel"])
+                            .prev().html("负责人电话");
+                            $html.find(".js_text4").html("null")
+                            .prev().html("上线时长");
+                            $html.find(".js_text5").closest(".list-group-item").hide();
+                            $html.find(".js_text6").closest(".list-group-item").hide();
+                            $html.find(".js_text7").closest(".list-group-item").hide();
+                        }else if(val.type == "oil"){
+                            $html.find(".js_title").html(val["oil_machine_name"]).attr("title",val["oil_machine_name"]);
+                            $html.find(".js_text1").html(val["oil_machine_name"])
+                            .attr("title",val["oil_machine_name"])
+                            .prev().html("油机名称");
+                            $html.find(".js_text2").html(val["oil_machine_power"])
+                            .prev().html("油机功率");
+                            $html.find(".js_text3").html(val["oil_machine_company"])
+                            .prev().html("厂家来源");
+                            $html.find(".js_text4").closest(".list-group-item").hide();
+                            $html.find(".js_text5").closest(".list-group-item").hide();
+                            $html.find(".js_text6").closest(".list-group-item").hide();
+                            $html.find(".js_text7").closest(".list-group-item").hide();
+                        }
+                        $div.append($html);
+                    });
+                
+                    $p.prepend($div.children());
+                    let infoWindow = new BMap.InfoWindow($p[0]);
+                    let point = mp.pixelToPoint(new BMap.Pixel(e.x, e.y));
+                    mp.openInfoWindow(infoWindow, point);
+                
+                },
+                getHTML() {
+                    return `
+                    <div class='panel-group' style='width: 249px;height: 100%;overflow: auto;'>
+                    <div class='panel panel-white js_panel_item'>
+                    		<div class='panel-heading'>
+                    			<div class='panel-title text-warning js_title' >panel-white</div>
+                    			<div class='panel-tools'>
+                    				<a class='collapse-link js_panel collapsed' href='javascript:;' onclick="mapToggle(this)">
+                                        <i class='fa fa-chevron-up'></i>
+                                    </a>
+                    			</div>
+                    		</div>
+                             <div class='panel-body p-none panel-collapse collapse js_panel'>
+                                 <ul class='list-group text-center js_mappaneal m-b-none' >
+                    				<li class='list-group-item'>
+                    					<span style='width: 48%;display: inline-block;' class='text-overflow'>站点名称</span>
+                    					<span style='width: 49%;display: inline-block;' class='text-overflow js_text1'>东塔-23F</span>
+                    				</li>
+                    				<li class='list-group-item'>
+                    					<span style='width: 48%;display: inline-block;' class='text-overflow'>站址编码</span>
+                    					<span style='width: 49%;display: inline-block;' class='text-overflow js_text2'>11111</span>
+                    				</li>
+                                    <li class='list-group-item'>
+                    					<span style='width: 48%;display: inline-block;' class='text-overflow'>覆盖场景</span>
+                    					<span style='width: 49%;display: inline-block;' class='text-overflow js_text3'>11111</span>
+                    				</li>
+                    				<li class='list-group-item'>
+                    					<span style='width: 48%;display: inline-block;' class='text-overflow'>蓄电池放电时长</span>
+                    					<span style='width: 49%;display: inline-block;' class='text-overflow js_text4'>83.4%</span>
+                    				</li>
+                                    <li class='list-group-item'>
+                    					<span style='width: 48%;display: inline-block;' class='text-overflow'>保障班组</span>
+                    					<span style='width: 49%;display: inline-block;' class='text-overflow js_text5'>83.4%</span>
+                    				</li>
+                                    <li class='list-group-item'>
+                    					<span style='width: 48%;display: inline-block;' class='text-overflow'>负责人</span>
+                    					<span style='width: 49%;display: inline-block;' class='text-overflow js_text6'>83.4%</span>
+                    				</li>  
+                                    <li class='list-group-item'>
+                    					<span style='width: 48%;display: inline-block;' class='text-overflow'>联系电话</span>
+                    					<span style='width: 49%;display: inline-block;' class='text-overflow js_text7'>83.4%</span>
+                    				</li>
+                    			</ul>
+                            </div>
+                    	</div>
+                    <div class=' m-t-sm' style='color:#ccc;text-align:center'>—— end ——</div>
+                    </div>`;
+                },
+            }
+            test.init();
+           
+           function mapToggle(dom) {
+                if ($(dom).hasClass("collapsed")) {
+                    //开启
+                    $(dom).removeClass("collapsed");
+                    $(dom).closest(".js_panel_item").find(".panel-body").slideDown()
+                        .end().siblings().find(".panel-body").slideUp()
+                        .end().find(".collapse-link").addClass("collapsed");
+                } else {
+                    //关闭
+                    $(dom).addClass("collapsed");
+                    $(dom).closest(".js_panel_item").find(".panel-body").slideUp();
+                }
+            }
+            
+        </script>
+    </body>
+</html>

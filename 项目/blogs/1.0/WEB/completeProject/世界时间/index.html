@@ -1,0 +1,131 @@
+<!doctype html>
+<html>
+	<head>
+	    <!--声明当前页面的编码集：中文编码（gbk/gb2312）,国际编码（utf-8）-->
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+		<!--页面三要素-->
+		<title>世界时间</title><!--小于等于31 大小写不区分-->
+		<meta name="Keywords" content="关键词,关键词,关键词"><!--<=76个字-->
+		<meta name="description" content=""><!--<=80个字-->
+		<!--js/css-->
+		<style type="text/css">
+		@charset "UTF-8";
+		* {word-wrap: break-word;;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;}
+		html {-webkit-text-size-adjust: none;overflow-x:hidden}
+		body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td,span{padding:0;margin:0;}
+		body{font:normal 0.75em/1.5em "微软雅黑","冬青黑体简体中文 w3","宋体"; }
+		fieldset,img,html,body,iframe{border:0;}
+		/** 重置表格元素 **/
+		table{border-collapse:collapse;border-spacing:0;}
+		ol,ul{list-style:none;}
+		address,caption,cite,code,dfn,em,strong,th,var{font-weight:normal;font-style:normal;}
+		caption,th{text-align:left;}
+		em,i,small,caption,th{font-weight:normal;font-style:normal;font-size:100%;}
+		h1,h2,h3,h4,h5,h6,em,strong,b{font-weight:400;font-size:100%;}
+		q:before,q:after{content:'';}
+		.clearfix{*zoom:1;}
+		.clearfix:after{content:"."; display:block;clear:both;visibility:hidden;line-height:0;height:0;}
+		a {color: #9D9C9C;text-decoration: none;}
+		a img {border: none;border:0;}
+		a,button{ outline:none; border:0;}
+		input,select{border:1px solid #ccc;}
+		button::-moz-focus-inner{border:0;padding:0;margin:0;}
+		textarea,input,button,select{outline:0;font-size:inherit;line-height:inherit;color:inherit;font-family:inherit;}
+		textarea{overflow:auto;resize:none;}
+		.hide,.none{display: none}
+		.hidden{visibility: hidden;}
+		.show,.block{display: block;}
+		img{ vertical-align:middle;}
+		input:disabled,select:disabled,textarea:disabled{background:#ccc;}
+		.fl{float: left;}
+		.fr{float: right;}
+		.red{color:red;}
+		.green{color:green;}
+		/*wordTime start*/
+		body{background:#111;}
+		.wordTime{width:960px;margin:100px auto;color:#fff;text-align:center;}
+		.wordTime .tittle{height:28px;font-size:28px;}
+		.wordTime .searchs{width:232px;height:20px;margin:20px auto;}
+		.wordTime .searchs .search{width:200px;height:20px;color:#ccc;outline:none;text-indent:10px;}
+		.wordTime .searchs .btn{width:30px;height:22px;display:inline-block;background:#38f;color:#fff;border-radius:0 1px 1px 0;}
+		.wordTime .searchs .btn:after{content:"";display:block;clear:both}
+		.wordTime .country{width:300px;margin:20px auto;}
+		.wordTime .country li{height:50px;line-height:50px;border:1px solid #111;margin-bottom:10px;background:#222;border-radius:3px;}
+		/*end wordTime*/
+		</style>
+	</head>  
+	<body>
+	<div class="wordTime">
+		<h1 class="tittle">世界时间</h1>
+		<div class="searchs">
+			<input class="search fl" id="searchValue" placeholder="请输入时区:(ps:+8:00)"></input>
+			<a class="btn fl" href="javascript:void(0)" onclick="searchLocaleTime()">查询</a>
+		</div>
+		<ul class="country">
+			<li>中国:<span id="china"></span></li>
+			<li>美国:<span id="usa"></span></li>
+			<li>日本:<span id="japan"></span></li>
+			<li>英国:<span id="england"></span></li>
+			<li>印度:<span id="india"></span></li>
+			<li>巴西:<span id="brazil"></span></li>
+		</ul>
+	</div>
+		<script>
+		//各国国家的时区
+		var chain=8;
+		var usa=-4;
+		var japan=9;
+		var england=1;
+		var india=5;
+		var brazil=-3;
+		runTime();
+		function runTime(){
+		var chainTime=getPlaceTime(chain);
+		$("china").innerHTML=chainTime.toLocaleString();
+
+		var usaTime=getPlaceTime(usa);
+		$("usa").innerHTML = usaTime.toLocaleString();
+
+		var japanTime=getPlaceTime(japan);
+		$("japan").innerHTML = japanTime.toLocaleString();
+
+		var englandTime=getPlaceTime(england);
+		$("england").innerHTML = englandTime.toLocaleString();
+
+		var indiaTime=getPlaceTime(india);
+		$("india").innerHTML = indiaTime.toLocaleString();
+
+		var brazilTime=getPlaceTime(brazil);
+		$("brazil").innerHTML = brazilTime.toLocaleString();
+		};
+
+		setInterval(runTime,1000);
+
+		function searchLocaleTime(){
+			var value=$("searchValue").value || "0";
+			if(value.indexOf(":")!=-1||value.indexOf("：")!=-1){
+				value=value.replace(":",".");
+				value=value.replace("：",".");
+			}
+			if(value.indexOf("+")!=-1){
+				value=value.replace("+","");
+			}
+			var LocaleTime=getPlaceTime(value);
+			alert("所在时区"+value+"的时间为:"+LocaleTime.toLocaleString());
+		}
+
+		function $(id){
+			return document.getElementById(id);
+		};
+
+		function getPlaceTime(placeGMT){
+			var d = new Date();
+			//得到世界时间的毫秒数
+			//getTimezoneOffse返回本地时间与GTM的时间差  以分钟为单位   当前时间的毫秒数+当前时间与世界时间相差的毫秒数
+			var timeGMT = d.getTime()+d.getTimezoneOffset()*60*1000;
+			return new Date(timeGMT + (3600000*placeGMT));
+		};
+		
+		</script>
+	</body>
+</html>

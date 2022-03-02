@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <style>
+	*{padding:0;margin:0}
+	body{font-size:14px;font-family:"微软雅黑";}
+	a{text-decoration:none;color:#333}
+	li{list-style:none}
+	#box{background:#ccc;height:40px;}
+	#box span{background:red;height:40px;position:absolute;top:0px;left:50%;}
+	#box span:nth-child(1){background:#111;}
+	#box span:nth-child(2){background:green;}
+	#box span:nth-child(2){background:pink;}
+	@keyframes move{
+		0%{width:0%}
+		100%{margin-left:-50%;width:100%;}
+	}
+	.move{animation:move 1.3s ease infinite alternate;}
+	.d1{animation-delay:0.5s}
+	.d2{animation-delay:0.7s}
+	.d3{animation-delay:0.8s}
+
+  </style>
+ </head>
+ <body>
+
+	<div id="box">
+		<span class="move"></span>
+		<span class="move d1"></span>
+		<span class="move d2"></span>
+		<span class="move d3"></span>
+	</div>
+	<script src="dom.js"></script>
+ </body>
+</html>

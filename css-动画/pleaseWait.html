@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="../js/bootstrap/bootstrap.css" />
+		<link rel="stylesheet" href="../css/common/animate.css" />
+		<link rel="stylesheet" href="../css/common/common.css" />
+		<style>
+			.pleaseWait{
+				display: inline-block;
+				position: relative;
+				font-size: 14px;
+				min-width: 32px;
+				min-height: 20px;
+			}
+			.pleaseWait:before{
+				content: "······";
+				display: inline-block;
+				font-size: 14px;
+			    font-weight: 600;
+				position: absolute;
+				text-align: left;
+				padding: 7px 0;
+				left:0;
+				overflow: hidden;
+				white-space:nowrap;
+				animation: loadingdot 1.75s linear infinite;
+			}
+			@keyframes loadingdot{
+				0%{width: 0px;}
+				30%{width: 14px;}
+				60%{width: 28px;}
+				100%{width: 32px;}
+			}
+		</style>
+	</head>
+	<div style="display: table-cell;">
+		
+		请稍后<div class="pleaseWait"></div>
+	</div>
+	<body>
+	</body>
+</html>

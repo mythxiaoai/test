@@ -1,0 +1,25 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* .box {
+        border: 1px solid #ddd;
+      }
+      :root box {
+        border: 0 none;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+      } */
+        /* 好的写法 利用rgba 只有ie9 + 才认识  */
+      .box {
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+        border: 1px solid #d0d0d5;
+        border: 0 rgba(0, 0, 0, 0.2);
+      }
+    </style>
+  </head>
+  <body>
+      <div class="box">11</div>
+  </body>
+</html>

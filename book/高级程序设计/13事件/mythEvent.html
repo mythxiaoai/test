@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<button type="button" id="myth">我是自定义事件</button>
+		<script>
+			var btndom =document.getElementById("myth");
+			var selfevent = document.createEvent("MouseEvents");//"UIEvents", "MouseEvents", "MutationEvents", 或者 "HTMLEvents"
+			//参数依次是
+			/*
+			 type	字符串	表示要触发的事件类型
+			 bubbles	boolean	表示是否冒泡	
+			 cancelable	boolean	表示事件是否可以取消
+			 view	与事件关联的视图  应该设置为  document.defaultView
+			 detail	整数	与事件相关的详细信息	0
+			 screenX	整数	事件相对屏幕的X坐标
+			 screenY	整数	事件相对屏幕的Y坐标
+			 clientX	整数	事件相对于视口的X坐标
+			 clientY	整数	事件相对于视口的Y坐标
+			 ctrlKey	boolean	表示是否按下了Ctrl键	默认是false
+			 altKey		boolean	表示是否按下了alt键	默认是false
+			 shiftKey	boolean	表示是否按下了shift键		默认是false
+			 metaKey	boolean	表示是否按下了meta键		默认是false
+			 button		整数	是否俺下了哪一个鼠标键	默认为0
+			 relatedTarget	表示与事件相关的对象，这个参数只有在模拟mouseover或mouseout的事件的时候有用
+			 * */
+			selfevent.initMouseEvent("nimei",true,true);
+			btndom.addEventListener("nimei",function(){console.log(1111)},false)
+			btndom.dispatchEvent(selfevent);//模拟事件执行
+			//https://www.cnblogs.com/xiaohuochai/p/5880851.html
+		</script>
+	</body>
+</html>

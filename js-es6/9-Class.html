@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+let log =(a)=>{console.log(a)};
+/*			class Person{
+				constructor(name){
+					this.name=name;
+				}
+				sayName(){
+					this.age=18;
+					return this.name;
+				}
+			}
+			let p = new Person("你妹");
+			let log=(a)=>{console.log(a)};
+			log(p.sayName())
+			log(p)*/
+/* class A{
+ 	sayName(){
+ 		return "哈哈";
+ 	}
+ }
+ function getIn(a){
+ 	return new a();
+ }
+ console.log(getIn(A).sayName())//哈哈*/
+/*let a=1;
+let danli = new class{
+	sayName(){
+ 		return "哈哈";
+ 	}
+};
+console.log(danli)*/
+/*
+let b=3;
+let a = {
+      //方法
+      name() {
+        return 'eryue'
+      },
+      name2:function(){return 2},
+      log,
+      b,
+    }
+console.log(JSON.stringify(a))//{"b":3}  这个测试表明  stringify只能打印属性值
+console.log(a)//{b: 3, name: ƒ, name2: ƒ, log: ƒ}*/
+let a = {
+	a(){},
+	b(){}
+}
+log(a);
+		</script>
+	</body>
+</html>

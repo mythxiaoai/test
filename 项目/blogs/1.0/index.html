@@ -1,0 +1,375 @@
+<!doctype html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+		<title></title>
+		<meta name="Keywords" content="小艾,个人博客,前端特效">
+		<meta name="description" content="小艾的个人博客，小艾的技术作品，小艾的IT成长之路">
+		<meta name="author" content="艾华桥,Myth" />
+		<!--js/css-->
+		<style type="text/css">
+		/*重置默认样式*/
+		@charset "UTF-8";*{word-wrap:break-word;;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;}
+		html{-webkit-text-size-adjust:none;overflow-x:hidden}
+		body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td,span{padding:0;margin:0;}
+		body{font:normal 0.75em/1.5em "微软雅黑","冬青黑体简体中文 w3","宋体";color:#fff}
+		fieldset,img,html,body,iframe{border:0;}
+		/** 重置表格元素 **/
+		table{border-collapse:collapse;border-spacing:0;}
+		ol,ul{list-style:none;}
+		address,caption,cite,code,dfn,em,strong,th,var{font-weight:normal;font-style:normal;}
+		caption,th{text-align:left;}
+		em,i,small,caption,th{font-weight:normal;font-style:normal;font-size:100%;}
+		h1,h2,h3,h4,h5,h6,em,strong,b{font-weight:400;font-size:100%;}
+		q:before,q:after{content:'';}
+		.clearfix{*zoom:1;}
+		.clearfix:after{content:".";display:block;clear:both;visibility:hidden;line-height:0;height:0;}
+		a{color:#fff;text-decoration:none;}
+		a img{border:none;border:0;}
+		a,button{outline:none;border:0;}
+		input,select{border:1px solid #ccc;}
+		button::-moz-focus-inner{border:0;padding:0;margin:0;}
+		textarea,input,button,select{outline:0;font-size:inherit;line-height:inherit;color:inherit;font-family:inherit;}
+		textarea{overflow:auto;resize:none;}
+		.hide,.none{display:none}
+		.hidden{visibility:hidden;}
+		.show,.block{display:block;}
+		img{vertical-align:middle;}
+		input:disabled,select:disabled,textarea:disabled{background:#ccc;}
+		.fl{float:left;}
+		.fr{float:right;}
+		/*header start*/
+		#header{height:60px;background:#333;position:relative;}
+		#header .logo{width:100px;height:60px;position:absolute;left:0;right:0;margin:0 auto;text-align:center;line-height:60px;font-size:28px;color:#FC0;background:#222;text-shadow:1px 1px #000,2px 2px #000;letter-spacing:5px;}
+		#header .logo:hover{color:#fff;background:#FC0;text-shadow:1px 1px #ccc,2px 2px #ccc;}
+		/*end header*/
+		/*container statr*/
+		#container{position:absolute;top:60;left:0;height:100%;width:100%;z-index:-1;}
+		#container .mainNav{width:180px;height:100%;background:rgba(0,0,0,0.5);position:absolute;top:0;left:0;z-index:3;overflow:hidden;}
+		#container .content{left:50px;display:block;width:100%;height:100%;position:absolute;z-index:-1;}
+		#container .mainNav .rowicon{height:30px;background:rgba(0,0,0,0.5)}
+		#container .mainNav .rowicon .nav_btn{display:block;text-align:center;font-size:30px;line-height:30px;}
+		#container .mainNav .rowicon .nav_btn .icon-tablecollapse{width:30px;display:inline-block;height:30px;vertical-align:top;transform:rotate(90deg);font-size:15px;}
+		#container .mainNav .rowicon .nav_btn .icon-tablecollapse:hover{color:#fff;}
+		#container .mainNav .nav_list{width:180px;height:400px;height:160px;position:absolute;top:30px;bottom:0;margin:auto 0;}
+		#container .mainNav .nav_list .items{height:39px;width:180px;background:rgba(0,0,0,0.4);border-bottom:1px solid rgba(0,0,0,0.3);}
+		#container .mainNav .nav_list .items .item{display:block;height:40px;line-height:40px;color:#fff;}
+		#container .mainNav .nav_list .items .on{color:#fff;background:rgba(255,204,0,0.5)!important;}
+		#container .mainNav .nav_list .items .item .active{color:#fff;}
+		#container .mainNav .nav_list .items .item i{display:inline-block;width:50px;height:39px;text-align:center;font-size:20px;color:#AEB9C2}
+		#container .mainNav .nav_list .items .item:hover{background:rgba(255,204,0,0.3);}
+		#container .mainNav .nav_list .items .item:hover i{color:#fff}
+		#container .subNav{width:180px;height:100%;background:rgba(0,0,0,0.3);left:180px;top:0;position:absolute;box-shadow:3px 3px 30px -5px #222;}
+		#container .subNav .con{width:180px;height:100%;overflow:auto;}
+		#container .subNav .title{width:180px;height:70px;line-height:70px;text-indent:20px;font-weight:700;background:rgba(255,204,0,0.6)!important;}
+		#container .subNav .sub_ul:nth-child(odd){display:none}
+		#container .subNav .sub_ul .items{width:180px;position:relative;}
+		#container .subNav .sub_ul .items:hover .itemA{background:rgba(255,204,0,0.2);;color:#fff}
+		#container .subNav .sub_ul .itemA{display:block;height:39px;line-height:40px;border-bottom:1px solid rgba(0,0,0,0.2);}
+		#container .subNav .sub_ul .itemA .font{display:inline-block;width:150px;text-indent:30px;white-space:nowrap;text-overflow:ellipsis;overflow:hidden;}
+		#container .subNav .sub_ul .itemA .num{position:absolute;width:16px;height:18px;background:rgba(0,0,0,0.2);right:5px;top:12px;text-indent:0;line-height:18px;text-align:center;}
+		#container .subNav .sub_ul .items .on{background:rgba(255,204,0,0.5)!important;color:#fff;}
+		#container .subNav .sub_ul .sub_ul2{display:none}
+		#container .subNav .sub_ul .sub_ul2 .items2{width:180px;text-indent:35px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;}
+		#container .subNav .sub_ul .sub_ul2 .items2 .itemA2{display:block;line-height:39px;background:rgba(0,0,0,0.4);height:39px;border-bottom:1px solid rgba(0,0,0,0.4)}
+		#container .subNav .sub_ul .sub_ul2 .items2 .on2{background:rgba(255,204,0,0.3)!important;color:#fff;}
+		#container .subNav .sub_ul .sub_ul2 .items2 .itemA2:hover{background:rgba(255,204,0,0.3);color:#fff;}
+		#container .subNav .sub_icon_close{position:absolute;height:50px;width:20px;right:0;top:0;bottom:0;margin:auto 0;}
+		#container .subNav .sub_icon_close .bg{position:absolute;height:32px;border-bottom:9px solid transparent;border-left:none;border-right:16px solid rgba(0,0,0,0.3);border-top:9px solid transparent;right:0;top:0;bottom:0;margin:auto 0;transform:all .3s;z-index:1;}
+		#container .subNav .sub_icon_close .iconA{position:absolute;display:block;height:50px;width:20px;right:0;top:0;bottom:0;margin:auto 0;z-index:2;background:rgba(0,0,0,0);}
+		#container .subNav .sub_icon_close .iconA .icon-collapse-left-copy{display:inline-block;height:50px;width:20px;font-size:10px;text-align:right;line-height:50px;transform:all .3s;}
+		#container .subNav .sub_icon_close:hover .iconA .icon-collapse-left-copy{color:#fff;text-align:left;}
+		#container .subNav .sub_icon_close:hover .bg{border-bottom:9px solid transparent;border-left:none;border-right:20px solid rgba(0,0,0,0.3);border-top:9px solid transparent;}
+		#container .subNav .sub_icon_open{position:absolute;height:50px;width:20px;right:-16px;top:0;bottom:0;margin:auto 0;display:none;}
+		#container .subNav .sub_icon_open .bg{position:absolute;height:32px;border-bottom:9px solid transparent;border-left:16px solid rgba(0,0,0,0.3);border-right:none;border-top:9px solid transparent;right:0;top:0;bottom:0;margin:auto 0;transform:all .3s;z-index:1;}
+		#container .subNav .sub_icon_open .iconA{position:absolute;display:block;height:50px;width:20px;right:-4px;top:0;bottom:0;margin:auto 0;z-index:2;background:rgba(0,0,0,0);}
+		#container .subNav .sub_icon_open .iconA .icon-176theleftcollapse{display:inline-block;height:50px;width:20px;font-size:10px;text-align:left;line-height:50px;transform:all .3s;}
+		#container .subNav .sub_icon_open:hover .iconA .icon-176theleftcollapse{color:#fff;text-align:right;}
+		#container .subNav .sub_icon_open:hover .bg{right:-4px;border-bottom:9px solid transparent;border-left:20px solid rgba(0,0,0,0.3);border-right:none;border-top:9px solid transparent;}
+		/*end container*/
+		/*scroll*/
+		::-webkit-scrollbar{width:5px;height:6px;background:#ccc;}
+		::-webkit-scrollbar-button{background-color:#e5e5e5;}
+		::-webkit-scrollbar-track{background:#999;}
+		::-webkit-scrollbar-track-piece{background:#ccc}
+		::-webkit-scrollbar-thumb{background:#666;}
+		::-webkit-scrollbar-corner{background:#82AFFF;}
+		::-webkit-scrollbar-resizer{background:#FF0BEE;}
+		scrollbar{-moz-appearance:none !important;background:rgb(0,255,0) !important;}
+		scrollbarbutton{-moz-appearance:none !important;background-color:rgb(0,0,255) !important;}
+		scrollbarbutton:hover{-moz-appearance:none !important;background-color:rgb(255,0,0) !important;}
+		</style><link rel="stylesheet" href="font/iconfont.css"><script src="js/jquery-3.0.0.min.js"></script><script src="js/music.js"></script></head><body><!--header start--><style>#header .music{width:60px;height:60px;background:#222;float:right;margin-right:10px;text-align:center;line-height:60px;}
+		#header .music .iconfont{font-size:24px;cursor:pointer;vertical-align:nottom;padding-top:2px;}
+		#header .music .key{animation:musickey 1s infinite linear;display: inline-block;}
+		@keyframes musickey{0%{transform:rotate(0deg);-ms-transform:rotate(0deg);/* IE 9 */
+		-moz-transform:rotate(0deg);/* Firefox */
+		-webkit-transform:rotate(0deg);/* Safari 和 Chrome */
+		-o-transform:rotate(0deg);color:#fff;}
+		100%{transform:rotate(360deg);-ms-transform:rotate(360deg);/* IE 9 */
+		-moz-transform:rotate(360deg);/* Firefox */
+		-webkit-transform:rotate(360deg);/* Safari 和 Chrome */
+		-o-transform:rotate(360deg);color:red;}
+		}
+		@-webkit-keyframes musickey /* Safari and Chrome */
+		{0%{-webkit-transform:rotate(0deg);transform:rotate(0deg);-ms-transform:rotate(0deg);/* IE 9 */
+		-moz-transform:rotate(0deg);/* Firefox */
+		 /* Safari 和 Chrome */
+		-o-transform:rotate(0deg);color:#fff;}
+		100%{-webkit-transform:rotate(360deg);transform:rotate(360deg);-ms-transform:rotate(360deg);/* IE 9 */
+		-moz-transform:rotate(360deg);/* Firefox */
+		 /* Safari 和 Chrome */
+		-o-transform:rotate(360deg);color:red;}
+		}
+	</style>
+	<div id="header">
+		<div class="logo">XA</div>
+		<div class="music"><i class="iconfont icon-music key" title="Bad Day"></i></div>
+	</div>
+	<!--end header-->
+	<!--container start-->
+	<div id="container">
+		<div class="mainNav" id="main">
+			<div class="rowicon">
+				<a href="javascript:;" class="nav_btn"><i class="iconfont icon-tablecollapse"></i></a>
+			</div>
+			
+			<ul class="nav_list" id="main_list">
+				<li class="items">
+					<a class="item on" href="javascript:;" title="WEB前端"><i class="iconfont icon-web active"></i>WEB前端</a>
+				</li>
+				<li class="items">
+					<a class="item" href="javascript:;" title="JAVA后台"><i class="iconfont icon-java"></i>JAVA后台</a>
+				</li>
+				<li class="items">
+					<a class="item" href="javascript:;" title="SQL数据库"><i class="iconfont icon-data"></i>SQL数据库</a>
+				</li>
+				<li class="items">
+					<a class="item" href="javascript:;" title="TOOL实用工具"><i class="iconfont icon-tool"></i>TOOL实用工具</a>
+				</li>
+			</ul>
+		</div>
+		<div class="subNav" id="sub">
+			<div class="con">
+				<div class="title">WEB前端</div>
+				<ul class="sub_ul" id="sub_list">
+					<li class="items"><a class="itemA " href="javascript:;"><span class="font">BANNER轮播</span><span class="num">2</span></a>
+						<ul class="sub_ul2">
+							<li class="items2"><a href="WEB/banner/淡入淡出/index.html" target="ifrCont" class="itemA2 "><span class="font">淡入淡出</span></a></li>
+							<li class="items2"><a href="WEB/banner/无缝滑动/index.html" target="ifrCont" class="itemA2"><span class="font">无缝滑动</span></a></li>
+							<li class="items2"><a href="WEB/banner/无缝平移广告/index.html" target="ifrCont" class="itemA2"><span class="font">无缝平移广告</span></a></li>
+							<li class="items2"><a href="WEB/banner/小方块淡出/index.html" target="ifrCont" class="itemA2"><span class="font">小方块淡出</span></a></li>
+						</ul>
+					</li>
+					<li class="items"><a class="itemA" href="javascript:;"><span class="font">ANIMATE动画</span><span class="num">2</span></a>
+						<ul class="sub_ul2">
+							<li class="items2"><a href="WEB/animate/迸发线条-css3/index.html" target="ifrCont" class="itemA2 "><span class="font">迸发线条-css3</span></a></li>
+							<li class="items2"><a href="WEB/animate/迸发线条-keyframes/index.html" target="ifrCont" class="itemA2"><span class="font">迸发线条-keyframes</span></a></li>
+							<li class="items2"><a href="WEB/animate/光晕-keyframes/index.html" target="ifrCont" class="itemA2"><span class="font">光晕-keyframes</span></a></li>
+							<li class="items2"><a href="WEB/animate/文字打印/index.html" target="ifrCont" class="itemA2"><span class="font">文字打印</span></a></li>
+							<li class="items2"><a href="WEB/animate/烟花-canvas/index.html" target="ifrCont" class="itemA2"><span class="font">烟花-canvas</span></a></li>
+							<li class="items2"><a href="WEB/animate/移动弹射/index.html" target="ifrCont" class="itemA2"><span class="font">移动弹射</span></a></li>
+						</ul>
+					</li>
+					<li class="items"><a class="itemA" href="javascript:;"><span class="font">DRAG拖拽</span><span class="num">2</span></a>
+						<ul class="sub_ul2">
+							<li class="items2"><a href="WEB/drag/盒子拖拽交换/index.html" target="ifrCont" class="itemA2 "><span class="font">盒子拖拽交换</span></a></li>
+							<li class="items2"><a href="WEB/drag/拖拽-H5/index.html" target="ifrCont" class="itemA2"><span class="font">拖拽H5</span></a></li>
+							<li class="items2"><a href="WEB/drag/拖拽组件/index.html" target="ifrCont" class="itemA2"><span class="font">拖拽组件</span></a></li>
+						</ul>
+					</li>
+					<li class="items"><a class="itemA" href="javascript:;"><span class="font">TAB选项卡</span><span class="num">2</span></a>
+						<ul class="sub_ul2">
+							<li class="items2"><a href="WEB/tab/简单Demo/index.html" target="ifrCont" class="itemA2 "><span class="font">简单Demo</span></a></li>
+						</ul>
+					</li>
+					<li class="items"><a class="itemA" href="javascript:;"><span class="font">PRACTICE实践</span><span class="num">2</span></a>
+						<ul class="sub_ul2">
+							<li class="items2"><a href="WEB/practice/css3互动-UI中国/index.html" target="ifrCont" class="itemA2 "><span class="font">css3互动-UI中国</span></a></li>
+							<li class="items2"><a href="WEB/practice/QQ空间图片预览/index.html" target="ifrCont" class="itemA2 "><span class="font">QQ空间图片预览</span></a></li>
+							<li class="items2"><a href="WEB/practice/表格元素排序/index.html" target="ifrCont" class="itemA2 "><span class="font">表格元素排序</span></a></li>
+							<li class="items2"><a href="WEB/practice/弹出层组件/index.html" target="ifrCont" class="itemA2 "><span class="font">弹出层组件</span></a></li>
+							<li class="items2"><a href="WEB/practice/购物车结算/index.html" target="ifrCont" class="itemA2 "><span class="font">购物车结算</span></a></li>
+							<li class="items2"><a href="WEB/practice/获取图片主色调/index.html" target="ifrCont" class="itemA2 "><span class="font">获取图片主色调</span></a></li>
+							<li class="items2"><a href="WEB/practice/螺纹算法/index.html" target="ifrCont" class="itemA2 "><span class="font">螺纹算法</span></a></li>
+							<li class="items2"><a href="WEB/practice/瀑布流/index.html" target="ifrCont" class="itemA2 "><span class="font">瀑布流</span></a></li>
+							<li class="items2"><a href="WEB/practice/数据提示-jQery组件/index.html" target="ifrCont" class="itemA2 "><span class="font">数据提示-jQery组件</span></a></li>
+							<li class="items2"><a href="WEB/practice/双导航-登录居中/index.html" target="ifrCont" class="itemA2 "><span class="font">双导航-登录居中</span></a></li>
+							<li class="items2"><a href="WEB/practice/图片懒加载/index.html" target="ifrCont" class="itemA2 "><span class="font">图片懒加载</span></a></li>
+							<li class="items2"><a href="WEB/practice/万年历/index.html" target="ifrCont" class="itemA2 "><span class="font">万年历</span></a></li>
+							<li class="items2"><a href="WEB/practice/元素换位/元素的上下移动 - 朴素版.html" target="ifrCont" class="itemA2 "><span class="font">元素的上下移动 - 朴素版</span></a></li>
+							<li class="items2"><a href="WEB/practice/元素换位/元素的上下移动 - 动画版.html" target="ifrCont" class="itemA2 "><span class="font">元素的上下移动 - 动画版</span></a></li>
+							<li class="items2"><a href="WEB/practice/元素换位/元素的上下移动 - 拖拽版.html" target="ifrCont" class="itemA2 "><span class="font">元素的上下移动 - 拖拽版</span></a></li>
+							<li class="items2"><a href="WEB/practice/置顶/index.html" target="ifrCont" class="itemA2 "><span class="font">置顶</span></a></li>
+							<li class="items2"><a href="WEB/practice/字符统计/index.html" target="ifrCont" class="itemA2 "><span class="font">字符统计</span></a></li>
+						</ul>
+					</li>
+					<li class="items"><a class="itemA" href="javascript:;"><span class="font">完整项目</span><span class="num">2</span></a>
+						<ul class="sub_ul2">
+							<li class="items2"><a href="WEB/completeProject/QQ空间留言板/index.html" target="ifrCont" class="itemA2"><span class="font">QQ空间留言板</span></a></li>
+							<li class="items2"><a href="WEB/completeProject/百度换肤/index.html" target="ifrCont" class="itemA2 "><span class="font">百度换肤</span></a></li>
+							<li class="items2"><a href="WEB/completeProject/放大镜/index.html" target="ifrCont" class="itemA2 "><span class="font">放大镜</span></a></li>
+							<li class="items2"><a href="WEB/completeProject/时间换肤/index.html" target="ifrCont" class="itemA2 "><span class="font">时间换肤</span></a></li>
+							<li class="items2"><a href="WEB/completeProject/时钟/index.html" target="ifrCont" class="itemA2 "><span class="font">时钟</span></a></li>
+							<li class="items2"><a href="WEB/completeProject/世界时间/index.html" target="ifrCont" class="itemA2 "><span class="font">世界时间</span></a></li>
+							<li class="items2"><a href="WEB/completeProject/虾米音乐/index.html" target="ifrCont" class="itemA2 "><span class="font">虾米音乐</span></a></li>
+						</ul>
+					</li>
+				</ul>
+
+				<ul class="sub_ul" id="sub_tool">
+					<li class="items"><a class="itemA " href="javascript:;"><span class="font">代码工具</span><span class="num">2</span></a>
+						<ul class="sub_ul2">
+							<li class="items2"><a href="tool/CSSformat.html" target="ifrCont" class="itemA2 "><span class="font">CSS格式化工具</span></a></li>
+							<li class="items2"><a href="tool/quotChange.html" target="ifrCont" class="itemA2"><span class="font">双引号转化工具</span></a></li>
+						</ul>
+					</li>
+					<li class="items"><a class="itemA " href="javascript:;"><span class="font">日常工具</span><span class="num">2</span></a>
+						<ul class="sub_ul2">
+							<li class="items2"><a href="tool/calculator.html" target="ifrCont" class="itemA2 "><span class="font">计算器</span></a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<div class="sub_icon_close">
+				<div class="bg"></div>
+				<a href="javascript:;" class="iconA"><i class="iconfont icon-collapse-left-copy"></i></a>
+			</div>
+			<div class="sub_icon_open">
+				<div class="bg"></div>
+				<a href="javascript:;" class="iconA"><i class="iconfont icon-176theleftcollapse"></i></a>
+			</div>
+		</div>
+		<iframe class="content" name="ifrCont" src="WEB/banner/淡入淡出/index.html"></iframe>
+	</div>
+	<!--end container-->
+		<script>
+		$(function(){
+		//音乐
+		var music = new XaMusic();
+		//初始化音乐组件
+		music.init();
+		//初始化页面信息
+		var musicArrSrc=[
+		"mp3/Bad Day.mp3"];
+		music.add([{"src":"mp3/Bad Day.mp3"}]);
+		music.play();
+		$("#header .music").click(function(){
+			if(music.audioDom.paused){
+				music.play(function(){
+				$("#header .icon-music").addClass("key")
+				});
+			}else{
+				music.stop(function(){
+				$("#header .icon-music").removeClass("key")
+				});
+			}
+		})
+		//循环
+		music.audioDom.loop="loop";
+		//页面布局按钮:
+		//1.主菜单缩放
+			$("#main .rowicon").click(function(){
+				if($("#main").width()==180){
+				$("#main").animate({"width":50},300);
+					if($("#sub").offset().left==0){
+					$("#sub").stop(true,true).animate({"left":-130},300);
+					}else{
+					$("#sub").stop(true,true).animate({"left":50},300);
+					}
+				}else if($("#main").width()==50){
+				$("#main").stop(true,true).animate({"width":180},300);
+					if($("#sub").offset().left==-130){
+					$("#sub").stop(true,true).animate({"left":0},300);
+					}else{
+					$("#sub").stop(true,true).animate({"left":180},300);
+					}
+				}
+			  });
+			//2.子菜单缩放
+			$(".sub_icon_close").click(function(){
+				if($("#main").width()==180){
+					$("#sub").animate({"left":0},300,function(){
+						$(".sub_icon_close").hide();
+						$(".sub_icon_open").show();
+					})
+				}else{
+						$("#sub").animate({"left":-130},300,function(){
+						$(".sub_icon_close").hide();
+						$(".sub_icon_open").show();
+					})
+				}
+			})
+			$(".sub_icon_open").click(function(){
+				if($("#main").width()==180){
+					$("#sub").animate({"left":180},300,function(){
+						$(".sub_icon_open").hide();
+						$(".sub_icon_close").show();
+					})
+				}else{
+					$("#sub").animate({"left":50},300,function(){
+						$(".sub_icon_open").hide();
+						$(".sub_icon_close").show();
+					})
+				}
+			})
+			//选项点击
+			$("#main_list .items").each(function(index,val){
+				$(this).click(function(){
+					var text=$(this).text();
+					if(index==1||index==2){
+					alert("有待开发~")
+					}
+					$(this).find(".item").addClass("on").end().siblings().find(".item").removeClass("on");
+					$(this).find(".iconfont").addClass("active").end().siblings().find(".iconfont").removeClass("active");
+					if(index==0){
+						$(".sub_icon_open").trigger("click");
+						$("#sub").show();
+						$("#sub_list").show();
+						$("#sub_tool").hide();
+						$("#sub .title").html(text);
+						//模板数据加载
+					}
+					if(index==3){
+						$(".sub_icon_open").trigger("click");
+						$("#sub").show();
+						$("#sub_tool").show();
+						$("#sub_list").hide();
+						$("#sub .title").html(text);
+					}
+				});
+			});
+			//子导航点击样式和动画控制
+			$("#sub_list .items,#sub_tool .items").each(function(index,val){
+				var num =$(this).find(".sub_ul2").children().length;
+				$(this).find(".num").html(num);
+				$(this).click(function(){
+					$(this).find(".itemA").addClass("on").end().siblings().find(".itemA").removeClass("on");
+					
+					$(this).find(".sub_ul2").stop(true,true).slideToggle().end().siblings().find(".sub_ul2").slideUp();
+					
+				});
+				$(this).find(".itemA2").click(function(e){
+					$(".itemA2").removeClass("on2");
+					$(this).addClass("on2");
+					if($("#main").width()==180){
+						$("#main").animate({"width":50},300);
+							if($("#sub").offset().left==0){
+							$("#sub").stop(true,true).animate({"left":-130},300);
+							}else{
+							$("#sub").stop(true,true).animate({"left":50},300);
+							}
+					}
+					if($("#sub").width()==180){
+						$("#sub").animate({"left":-130},300,function(){
+						$(".sub_icon_close").hide();
+						$(".sub_icon_open").show();
+						});
+					}
+				$("html,body").animate({"scrollTop":60},300);
+				});
+			});
+		});
+
+		</script>
+	</body>
+</html>

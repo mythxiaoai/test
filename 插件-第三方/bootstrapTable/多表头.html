@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0">
+		<meta name="Keywords" content="">
+		<meta name="description" content="">
+		<title>智能分析</title>
+		<link rel="stylesheet" href="../../css/animate.css" />
+		<link rel="stylesheet" href="../../fonts/font-awesome.min.css" />
+		<link rel="stylesheet" href="../../js/sweetalert/sweetalert.css" />
+		<link rel="stylesheet" href="../../js/bootstrap/bootstrap.css" />
+		<link rel="stylesheet" href="../../js/bootstrap/bootstrapfiller.css" />
+		<link rel="stylesheet" href="../../js/bootstrapTable/bootstrap-table.css" />
+		<link rel="stylesheet" href="../../js/chosen/chosen.css" />
+		<link rel="stylesheet" href="../../js/bootstrapDatetimepicker/bootstrap-datetimepicker.css" />
+		<link rel="stylesheet" href="../../css/common.css" />
+	</head>
+	<body class="bg-gray">
+		<div class="p-md animated fadeInRight">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="panel panel-white">
+						<div class="panel-heading">
+							<div class="panel-title">
+								<h5>智能分析</h5>
+                        	</div>
+                        	<div class="panel-tools">
+	                            <a class="collapse-link" data-toggle="collapse"  href="#panelContent">
+	                                <i class="fa fa-chevron-up"></i>
+	                            </a>
+	                            <a class="close-link" href="javascript:;" data-dismiss="panel">
+	                                <i class="fa fa-times"></i>
+	                            </a>
+	                        </div>
+						</div>
+						<div class="panel-body collapsed in" id="panelContent">
+			                    <ul class="nav nav-tabs">
+			                        <li class="active"><a data-toggle="tab" href="#tab-1" > 智能分析</a>
+			                        </li>
+			                        <li class=""><a class="js_compareIA" data-toggle="tab" href="#tab-2"> 结果对比</a>
+			                        </li>
+			                    </ul>
+			                    <div class="tab-content">
+			                        <div id="tab-1" class="tab-pane active">
+			                            <div class="panel-body">
+			                            	<!--智能分析-->
+			                            	<!--查询条件-->
+											<div class="row m-b">
+												<form id="search" class="col-md-12 form-inline m-b-sm fz12">
+						                            <div class="form-group m-r">
+						                                <label class="fw-n">省份
+						                                	<select class="form-control chosen-select pv" id="pv">
+																<option value="">--请选择--</option>
+															</select> 
+						                                </label>
+						                            </div>
+						                            <div class="form-group space-15">
+						                                <label class="fw-n">城市
+						                                	<select class="form-control chosen-select ct" id="ct"  >
+																<option value="">--请选择--</option>
+															</select> 
+						                                </label>
+						                            </div>
+					               		            <div class="form-group  space-15">
+										            	 <label class="fw-n">项目
+									                		<select class="form-control">
+																<option value="">--请选择--</option>
+															</select>
+										                </label>
+										            </div>
+										            <div class="form-group space-15">
+										            	 <label class="fw-n">工程
+									                		<select class="form-control">
+																<option value="">--请选择--</option>
+															</select>
+										                </label>
+										            </div>
+						                            <div class="form-group m-b-xs">
+						                                <input class="btn btn-default btn-sm js_search" type="button" value="一键分析" />
+						                            </div>
+						                        </form>
+												<div class="col-md-12 animated js_progress hide">
+					                                <div class="progress progress-striped m-b-none">
+					                                	<!--到100%去除active样式-->
+										 				<div class="progress-bar active js_progressBar" style="width: 0%;background-color: #54b0ff;">
+										 					<span>0%</span>
+										 				</div>
+										 			</div>
+										 			<div style="line-height: 20px;" >
+										 				<span>
+										 					起始时间: <span class="js_startTime m-r">2018-04-13 10:04:55</span>
+										 					分析状态：<span class="badge badge-info js_status" style="margin-top: -2px;">分析中...</span>
+										 				</span>
+										 				<span class="pull-right"> 耗时: 
+										 					<span class="js_spendTime">0秒</span>
+										 				</span>
+										 			</div>
+						                        </div>
+						                    </div>
+											<div class="row">
+												<div class="space-15">
+													<div class="icaption">分析图表呈现</div>
+												</div>
+												<div class="col-md-3 animated fadeInLeftBig">
+													<table id="table1"></table>
+												</div>
+												<div class="col-md-9 js_result animated fadeInRightBig">
+													<div id="chart1" style="height: 540px;width: 100%;">
+														
+													</div>
+												</div>
+											</div>
+											<!--end IA -->
+			                            </div>
+			                        </div>
+			                        <div id="tab-2" class="tab-pane">
+		                            	<!--结果对比-->
+		                            	 <div class="panel-body">
+											<div class="row m-b">
+												<form id="search2" class="col-md-12 form-inline m-b-sm fz12">
+						                            <div class="form-group m-r">
+						                                <label class="fw-n">省份
+						                                	<select class="form-control chosen-select2" id="pv2">
+																<option value="">--请选择--</option>
+															</select> 
+						                                </label>
+						                            </div>
+						                            <div class="form-group space-15">
+						                                <label class="fw-n">城市
+						                                	<select class="form-control chosen-select2" id="ct2"  >
+																<option value="">--请选择--</option>
+															</select> 
+						                                </label>
+						                            </div>
+					               		            <div class="form-group space-15">
+										            	 <label class="fw-n">项目
+									                		<select class="form-control chosen-select2">
+																<option value="">--请选择--</option>
+															</select>
+										                </label>
+										            </div>
+										             <div class="form-group  space-15">
+										            	 <label class="fw-n">工程
+									                		<select class="form-control chosen-select2" name="project"  id="workiis"  multiple="multiple" style="width:320px;" data-placeholder="最多支持3个工程对比" >
+																<option value="" hassubinfo="true">field1</option>
+							                                    <option value="" hassubinfo="true">field2</option>
+							                                    <option value="" hassubinfo="true">field3</option>
+							                                    <option value="" hassubinfo="true">field4</option>
+							                                    <option value="" hassubinfo="true">field5</option>
+															</select>
+										                </label>
+										            </div>
+						                            <div class="form-group m-b-xs">
+						                                <input class="btn btn-default btn-sm js_search2" type="button" value="对比" />
+						                            </div>
+						                        </form>
+						                    </div>
+											<div class="row">
+												<div class="space-15">
+													<div class="icaption">对比图表呈现</div>
+												</div>
+												<div class="col-md-3 animated fadeInLeftBig">
+													<table id="table2">
+														<thead>
+												            <tr>
+												                <th data-field="file1" rowspan="2" data-valign="middle">分析结果</th>
+												                <th colspan="2" class="js_pro1">工程一</th>
+												                <th colspan="2" class="js_pro2">工程二</th>
+												                <th colspan="2" class="js_pro3">工程三</th>
+												                		
+												            </tr>
+												            <tr>
+												                <th data-field="file2">数量</th>
+												                <th data-field="file3">比例</th>
+												                <th data-field="file4">数量</th>
+												                <th data-field="file5">比例</th>
+												                <th data-field="file5">数量</th>
+												                <th data-field="file6">比例</th>
+												            </tr>
+												            </thead>
+														<!--
+                                                        	http://issues.wenzhixin.net.cn/bootstrap-table/#options/group-columns.html   data-url=""
+                                                        -->
+													</table>
+												</div>
+												<div class="col-md-9 animated fadeInRightBig">
+													<div id="chart2" style="height: 540px;width: 100%;">
+														
+													</div>
+												</div>
+											</div>
+			                            </div>
+			                            <!--end tab2-->
+			                        </div>
+			                    </div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+<script type="text/javascript" src="../../js/jquery.js" ></script>
+<script type="text/javascript" src="../../js/bootstrap/bootstrap.js" ></script>
+<script type="text/javascript" src="../../js/bootstrapTable/bootstrap-table.js" ></script>
+<script type="text/javascript" src="../../js/bootstrapTable/bootstrap-table-zh-CN.js" ></script>
+<script type="text/javascript" src="../../js/layer/layer.js"></script>
+<script type="text/javascript" src="../../js/util.js"></script>
+<script type="text/javascript" src="../../js/tip.js"></script>
+<script type="text/javascript" src="../../js/sweetalert/sweetalert-dev.js"></script>
+<script type="text/javascript" src="../../js/echart/echarts.min.js"></script>
+<script type="text/javascript" src="../../js/chosen/chosen.jquery.js"></script>
+<!--时间插件-->
+<script type="text/javascript" src="../../js/bootstrapDatetimepicker/moment-with-locales.js" ></script>
+<script type="text/javascript" src="../../js/bootstrapDatetimepicker/bootstrap-datetimepicker.min.js" ></script>
+<script type="text/javascript" src="../../js/common.js" ></script>
+<script type="text/javascript">
+$(function(){
+	/*主页*/
+	//业务
+	var ia={
+		init:function(){
+			//初始化省事插件
+			this.chosen();
+			//一键分析
+			this.search();
+			//左表格
+			this.list1();
+			//chart图
+			this.charts();
+		},
+		chosen:function(){
+			$(".chosen-select").chosen({no_results_text: "没有找到该数据~"});
+		},
+		search:function(){
+			//fadeInRight|js_progress|js_progressBar|js_startTime|js_spendTime
+			var $this = this;
+			var intervalTime=null;
+			var intervalTest=null;
+			$(".js_search").click(function(){
+				$(".js_search").prop("disabled",true);
+				//样式
+				if($(".js_progress").hasClass("hide")){
+					$(".js_progress").removeClass("hide").addClass("fadeInLeftBig")
+				}else{
+					$(".js_progress").removeClass("fadeInLeftBig").addClass("fadeOutRight");
+					setTimeout(function(){
+						$(".js_progress").removeClass("fadeOutRight").addClass("fadeInLeftBig");
+					},400);
+				}
+				//值的变更  这个需要websockt去更新时间和上传进度
+				$(".js_progressBar").css("width","0%").addClass("active").find("span").text("0%");
+				//时间
+				let startTime = new Date();
+				$(".js_startTime").text(startTime.format("yyyy-MM-dd HH:mm:ss"));
+				
+				if(intervalTime)clearInterval(intervalTime);
+				
+				intervalTime = setInterval(function(){
+					spendTime= new Date() - startTime;
+					var days = spendTime/1000/60/60/24|0;
+				    var hours = spendTime/1000/60/60%24|0;
+				    var minutes = spendTime/1000/60%60|0;
+				    var seconds = spendTime/1000%60|0;
+					$(".js_spendTime").text(days+"天"+hours+"时"+minutes+"分"+seconds+"秒");
+				},1000);
+				
+				let width=0;
+				$(".js_status").addClass("badge-info").removeClass("badge-success").text("分析中...");
+				if(intervalTest)clearInterval(intervalTest);
+				intervalTest =setInterval(function(){
+					$(".js_progressBar").css("width",width+"%").find("span").text(width+"%");
+					if(width>=100){
+						xalert("分析成功","分析成功,可以在\"结果对比\"面板中对比已分析的工程","success",function(){});
+						$(".js_search").prop("disabled",false);
+						clearInterval(intervalTest);
+						clearInterval(intervalTime);
+						$(".js_progressBar").removeClass("active");
+						
+						$(".js_status").removeClass("badge-info").addClass("badge-success").text("分析成功");
+					}
+					width++;
+				},200)
+			});
+		},
+		list1:function(){
+			xtable.init({
+				id:"#table1",
+				toolbar:false,
+				pagination:false,//不显示分页
+				url:'',
+				uniqueId:"id",//作用是在tr上面加上主键  方便做修改和删除操作
+				sortName: "createDate", //主键创建时间
+				data:[{file1:1,file2:2,file3:3},{file1:1,file2:2,file3:4}],
+				queryParams:function(params) {
+					//将查询格式化,得到查询参数,传到后台
+					var formdata= getFromJson($("#search")[0]);
+		            return{
+			            //每页条数
+		            	pageSize:params.limit,
+			            //页码
+			            pageNum:(params.offset+params.limit)/params.limit,
+			          	//这里是读取sortName配置选项,排序名称
+			            sortName:params.sort,
+			            //排序规定,按时间顺序
+			            sortOrder:params.order,//默认是desc
+			            //搜索关键字
+			            search:isNotEmpty(formdata.search)?formdata.search:undefined,
+			            //性别
+			            gender:isNotEmpty(formdata.gender)?formdata.gender:undefined,
+			            //用户类型
+			            userType:isNotEmpty(formdata.userType)?formdata.userType:undefined,
+			            //是否激活
+			            isEnabled:isNotEmpty(formdata.isEnabled)?formdata.isEnabled:undefined,
+			            //remark:isNotEmpty(formdata.remark)?formdata.remark:undefined,
+		            }
+	           },
+				columns: [{
+						field: 'file1',
+						title: '分析结果'
+					}, {
+						field: 'file2',
+						title: '数量'
+					}, {
+						field: 'file3',
+						title: '比例',
+					}],
+			});
+		},
+		_flush:function(){
+			$("#table1").bootstrapTable('refresh');
+		},
+		charts:function(){
+			var myChart = echarts.init($("#chart1")[0]);
+			var option = {
+			    title: {
+			        text: '世界人口总量',
+			        subtext: '数据来自网络'
+			    },
+			    tooltip: {
+			        trigger: 'axis',
+			        axisPointer: {
+			            type: 'shadow'
+			        }
+			    },
+			    legend: {
+			        data: ['2011年',"2012年"],
+			    },
+			    grid: {
+			        left: '3%',
+			        right: '4%',
+			        bottom: '3%',
+			        containLabel: true
+			    },
+			    yAxis: {
+			        type: 'value',
+			        boundaryGap: [0, 0.01],
+			    },
+			    xAxis: {
+			        type: 'category',
+			        data: ['弱覆盖','室分外泄', '疑似天馈接反', '主瓣过弱', '上瓣过强', '后瓣过强 ', '水平旁瓣过强','高干扰','性能劣化','上瓣过强(MRO)','水平旁瓣过强(MRO)','后瓣过强(MRO)','主瓣过弱(MRO)','天线波瓣异常'],
+			    	axisLabel:{
+		    			interval:0,
+		    			rotate:40,
+			    	},
+			    },
+			    series: [
+			        {
+			            name: '2011年',
+			            type: 'bar',
+			            data: [18, 0, 29, 104, 131, 630,56,52,15,0,9,90,70,99],
+			            barCategoryGap:"30%",
+			            barGap:"10%",
+			        	label: {
+		                    show: true,
+		                    position: 'top'
+			            },
+			        },
+			      	{
+			            name: '2012年',
+			            type: 'bar',
+			            data: [23, 31, 121, 134, 681,56,52,15,90,80,77,88,33],
+			        	barCategoryGap:"30%",
+			        	barGap:"10%",
+			        	label: {
+		                    show: true,
+		                    position: 'top'
+			            },
+			        }
+			    ]
+			};
+			 myChart.setOption(option);
+			 //窗口变动，表格刷新
+			 $(window).resize(function(){myChart.resize();});
+		}
+	};
+	
+	//分析结果对比
+	var compareIA={
+		init:function(){
+			//点击第二个选项卡加点延迟是为了解决 插件初始化因为是隐藏的所以没宽度。所以导致插件恶心
+			$(".js_compareIA").one("click",()=>{
+				setTimeout(()=>{
+					//初始化省事插件
+					this.chosen();
+					//一键分析
+					this.search();
+					//左表格
+					this.list1();
+					//chart图
+					this.charts();
+				},400)
+			});
+			
+		},
+		chosen:function(){
+			$(".chosen-select2").chosen({max_selected_options: 3,no_results_text: "没有找到该数据~"});
+		},
+		search:function(){
+			$(".js_search2").click(function(){
+				xtip("至少选择两个工程进行对比")
+			})
+		},
+		list1:function(){
+			xtable.init({
+				id:"#table2",
+				toolbar:false,
+				pagination:false,//不显示分页
+				url:'',
+				uniqueId:"id",//作用是在tr上面加上主键  方便做修改和删除操作
+				sortName: "createDate", //主键创建时间
+				data:[{file1:1,file2:2,file3:3,file3:3,file4:4,file5:5,file5:5,file6:6,file7:7},{file1:1,file2:2,file3:3,file3:3,file4:4,file5:5,file5:5,file6:6,file7:7}],
+				queryParams:function(params) {
+					//将查询格式化,得到查询参数,传到后台
+					var formdata= getFromJson($("#search")[0]);
+		            return{
+			            //每页条数
+		            	pageSize:params.limit,
+			            //页码
+			            pageNum:(params.offset+params.limit)/params.limit,
+			          	//这里是读取sortName配置选项,排序名称
+			            sortName:params.sort,
+			            //排序规定,按时间顺序
+			            sortOrder:params.order,//默认是desc
+			            //搜索关键字
+			            search:isNotEmpty(formdata.search)?formdata.search:undefined,
+			            //性别
+			            gender:isNotEmpty(formdata.gender)?formdata.gender:undefined,
+			            //用户类型
+			            userType:isNotEmpty(formdata.userType)?formdata.userType:undefined,
+			            //是否激活
+			            isEnabled:isNotEmpty(formdata.isEnabled)?formdata.isEnabled:undefined,
+			            //remark:isNotEmpty(formdata.remark)?formdata.remark:undefined,
+		            }
+	           },
+	           responseHandler:function(res){
+		           	$(".js_pro1 .th-inner").text("工程一")
+	           		$(".js_pro2 .th-inner").text("工程二")
+	           		$(".js_pro3 .th-inner").text("工程三")
+	           		return res;
+	           },
+				/*columns: [{
+						field: 'file1',
+						title: '分析结果'
+					}, {
+						field: 'file2',
+						title: '数量'
+					}, {
+						field: 'file3',
+						title: '比例',
+					}],*/
+			});
+			
+			/*$("#table2").on("post-header.bs.table",function(){
+				alert("执行")
+				$(".js_pro1 .th-inner").text("工程一")
+           		$(".js_pro2 .th-inner").text("工程二")
+           		$(".js_pro3 .th-inner").text("工程三")
+			});*/
+			
+		},
+		_flush:function(){
+			$("#table2").bootstrapTable('refresh');
+		},
+		charts:function(){
+			var myChart = echarts.init($("#chart2")[0]);
+			var option = {
+			    title: {
+			        text: '世界人口总量',
+			        subtext: '数据来自网络'
+			    },
+			    tooltip: {
+			        trigger: 'axis',
+			        axisPointer: {
+			            type: 'shadow'
+			        }
+			    },
+			    legend: {
+			        data: ['2011年', '2012年']
+			    },
+			    grid: {
+			        left: '3%',
+			        right: '4%',
+			        bottom: '3%',
+			        containLabel: true
+			    },
+			    yAxis: {
+			        type: 'value',
+			        boundaryGap: [0, 0.01]
+			    },
+			    xAxis: {
+			        type: 'category',
+			        data: ['弱覆盖','室分外泄', '疑似天馈接反', '主瓣过弱', '上瓣过强', '后瓣过强 ', '水平旁瓣过强','高干扰','性能劣化','上瓣过强(MRO)','水平旁瓣过强(MRO)','后瓣过强(MRO)','主瓣过弱(MRO)'],
+			    },
+			    series: [
+			        {
+			            name: '2011年',
+			            type: 'bar',
+			            data: [18203, 23489, 29034, 104970, 131744, 630230,6789,7890 ,7856,8909,1234,3456,8765]
+			        },
+			        {
+			            name: '2012年',
+			            type: 'bar',
+			            data: [19325, 23438, 31000, 121594, 134141, 681807,1234,3456,8908,7890,5678,2345,5678]
+			        }
+			    ]
+			};
+			 myChart.setOption(option);
+			 //窗口变动，表格刷新
+			 $(window).resize(function(){myChart.resize();});
+		}
+	};
+	compareIA.init();
+	ia.init();	
+});
+</script>
+	</body>
+</html>

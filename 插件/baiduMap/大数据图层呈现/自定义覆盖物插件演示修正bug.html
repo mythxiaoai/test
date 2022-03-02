@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{margin: 0;padding: 0;}
+			#allmap{position:absolute;width: 100%;height: 100%;top: 50px;}
+		</style>
+	</head>
+	<body>
+    1234
+		 <div id="allmap"></div>
+		<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=hYCENCEx1nXO0Nt46ldexfG9oI49xBGh"></script>
+		<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+		<script type="text/javascript" src="js/mapCanvas3.js" ></script>
+		<!--标注点data测试数据-->
+		<script>
+		  // 百度地图API功能
+    let mp = new BMap.Map("allmap");
+    mp.centerAndZoom(new BMap.Point(116.4064,39.9093),15);
+    mp.enableScrollWheelZoom();
+    let arr = [{
+              lng:116.3964,
+              lat:39.9093,
+              shape:"square",
+              px:"50",
+              color:"rgba(50,133,255,.6)",
+              showTextArr:["小区CI:萨达萨德萨11","小区名:22","小区名:33"]
+            },
+            {
+              lng:116.4064,
+              lat:39.9093,
+              shape:"sector",
+              "dir":60,
+              distance:"500",
+              minDistance:"20",
+              color:"rgba(50,133,255,.6)",
+              borderColor:"rgba(50,133,255,0.8)",
+              showTextArr:["小区CI:","小区名:"]
+            },
+            {
+              lng:116.4064,
+              lat:39.8993,
+              shape:"sectorS",
+              "dir":60,
+              distance:"500",
+              color:"rgba(50,133,255,.6)",
+              borderColor:"rgba(50,133,255,0.8)",
+              showTextArr:["小区CI:","小区名:"]
+            },
+            {
+              lng:116.4164,
+              lat:39.9093,
+              shape:"circle",
+              distance:"500",
+              color:"rgba(255,186,50,.6)",
+              borderColor:"rgba(255,186,50,0.8)",
+              showTextArr:["哈哈1asdasdasdasdkas","哈哈2"]
+            },
+            {
+              lng:116.4264,
+              lat:39.9093,
+              shape:"circleS",
+              distance:"500",
+              color:"rgba(255,186,50,.6)",
+              outColor:"rgba(0,186,50,.6)",
+              borderColor:"rgba(255,186,50,0.2)",
+               showTextArr:["小区CI:萨达萨德萨11","小区名:22","小区名:33"]
+            },
+            {
+              lng:116.4364,
+              lat:39.9093,
+              shape:"circleO",
+              distance:"500",
+              color:"rgba(255,186,50,.6)",
+              borderColor:"rgba(255,186,50,0.2)",
+              showTextArr:["小区CI:萨达萨德萨11","小区名:22","小区名:33"]
+            },
+    ]
+    let myCompOverlay = new ComplexCustomOverlay(arr,{
+      showAllZoom:0,
+      showTextZoom:15,
+      sectorDeg:60,
+      showShapeZoom:{"square":15}
+    });
+    mp.addOverlay(myCompOverlay);
+    myCompOverlay.addEventListener("click",(e)=>{
+      console.log(e);
+      let pixel = new BMap.Pixel(e.x,e.y);
+      let point = mp.pixelToPoint(pixel);
+      var mark = new BMap.Marker(point);
+      mp.addOverlay(mark);
+    });
+		</script>
+	</body>
+</html>

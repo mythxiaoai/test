@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+  <script>
+    // let i = 0;
+    // function log(){
+    //   console.log(++i)
+    //   requestAnimationFrame(log(i));
+    // }
+   // log()
+    let arr = [4,2,6,23,45,5,2,1,5,99];
+    //冒泡
+/*    for (let i=0,len=arr.length;i<len;i++) {
+    	for (let j = 0;j<len-i-1;j++) {
+    		if(arr[j]>arr[j+1]){
+          arr[j]=arr[j+1]+arr[j];
+          arr[j+1] = arr[j]-arr[j+1];
+          arr[j] = arr[j] - arr[j+1];
+        }
+    	}
+    } */
+    //console.log(arr)
+    //选择
+    for (let i=0,len=arr.length;i<len;i++) {
+    	for (let j = i+1;j<len;j++) {
+    		if(arr[i]>arr[j]){
+          arr[j]=arr[i]+arr[j];
+          arr[i] = arr[j] - arr[i];
+          arr[j] = arr[j] - arr[i];
+        }
+    	}
+      console.log(arr)
+    }
+    console.log(arr);
+  </script>
+</html>

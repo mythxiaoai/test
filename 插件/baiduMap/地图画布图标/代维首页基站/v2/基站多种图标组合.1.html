@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{margin: 0px;padding: 0;}
+			#allmap{position:absolute;width: 100%;height: 100%;}
+		</style>
+	</head>
+	<body>
+		<canvas id="demo"></canvas>
+        <img src="img/400(3).png" width="400" height="400"/>
+		<!-- <div id="allmap"></div> <div id="r-result"></div> <div id="gpsback"></div>-->
+		<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=hYCENCEx1nXO0Nt46ldexfG9oI49xBGh"></script>
+		<script type="text/javascript" src="js/jquery.js" ></script>
+		<!--标注点data测试数据-->
+		<script>
+	var canvasdom =document.getElementById("demo");
+	canvasdom.width=400;
+	canvasdom.height=400;
+	//canvasdom.style.backgroundColor="#333";
+	//2
+	var context =canvasdom.getContext("2d");
+    
+    //加载所需要的图片
+   (async function(){
+        let imgs = [
+            "tower.png",
+            
+            "accesscontrol.png",
+            
+            "electricoiler.png",
+            
+            "level1.png",
+            
+            "battery1.png",
+            
+            "sopserving.png",
+        ]
+          window.imgs = [...imgs];
+        imgs = imgs.map(v=>`./img/${v}`);
+        imgs = imgs.map(v=>loadImg(v));
+        Promise.all(imgs).then(arr => {
+          imgs = arr; 
+          draw();
+        })
+        function draw(){
+          //铁塔
+          let x = 200;
+          let y = 200;
+          let scale = .8;
+          let w = 400*scale;
+          let h = 400*scale;
+          //drawImg(imgs[0], x/scale, y/scale,scale);
+          
+          drawImg(imgs[0], x,y,scale);
+          //铁塔
+          //警告  200   138 247  -300
+           //1
+           //drawImg(imgs[1],x,y-h/2+(imgs[1].height/2+10)*scale,scale);
+           //2
+           //drawImg(imgs[1],(x-(imgs[1].width/2+10)*scale),y-h/2+(imgs[1].height/2+10)*scale,scale);
+           //drawImg(imgs[1],(x+(imgs[1].width/2+10)*scale),y-h/2+(imgs[1].height/2+10)*scale,scale);
+           //3
+           drawImg(imgs[1], (x-(imgs[1].width+20)*scale),y-h/2+(imgs[1].height/2+10)*scale,scale);
+           drawImg(imgs[1], x, y-h/2+(imgs[1].height/2+10)*scale,scale);
+           drawImg(imgs[1], (x+(imgs[1].width+20)*scale),y-h/2+(imgs[1].height/2+10)*scale,scale);
+           
+           
+           //固定油机63 364  固定油机
+           drawImg(imgs[2],
+           (x-w/2+(imgs[2].width/2)*scale),
+           (y+h/2-imgs[2].height/2*scale-2*scale),scale); 
+           
+           /*//移动油机79 276
+           drawImg(imgs[6],200-imgs[8].width/2-88-4,400-imgs[8].height-imgs[6].height/2-15); */
+           
+           //维护等级155 370  
+           drawImg(imgs[3],
+           (x+(imgs[3].width/2+10-82)*scale),
+           (y+h/2-imgs[3].height/2*scale-2*scale),scale);
+           
+           //电池 340 375
+           drawImg(imgs[4],
+           (x+w/2-(imgs[4].width/2)*scale),
+          (y+h/2-imgs[4].height/2*scale-2*scale),scale);
+          let ww = getTextWidth("我是对齐的");
+          console.log(ww)
+          context.fillText("我是对齐的", x-ww/2, y+h/2+15*scale);
+          
+        }
+         function translate(x,y){
+            context.save();
+            context.translate(x,y);
+            context.restore()
+        }
+        
+        function drawImg(img,x,y,scale=1){
+            let w = img.width;
+            let h = img.height;
+            context.save();
+            //context.scale(scale,scale);
+            context.translate(x,y);
+            context.drawImage(img,0,0,w,h,-w*scale/2,-h*scale/2,w*scale,h*scale);
+            context.restore()
+        }
+        
+        
+    })();
+    
+    
+    function getTextWidth(str,fontSize=10){
+      let span = document.createElement("span");
+      let width = 0;
+      span.innerHTML=str;
+      span.style=`color:transparent;font-size:${fontSize}px`;
+      document.body.appendChild(span);
+      width = span.offsetWidth;
+      document.body.removeChild(span);
+      return width;
+    }
+    
+    
+    function loadImg(src){
+      return new Promise((reslove,reject)=>{
+        let img = new Image();
+          img.onload = function () {
+            reslove(img)
+          }
+          img.onerror = function () {
+            reject("图片"+src+"加载失败")
+          }
+        img.src = src;
+      });
+    }
+    
+    
+    
+	
+     
+ 	canvasdom.addEventListener('click', function(e){
+	  //$this.draw({x:e.pageX-$(map.Va).offset().left,y:e.pageY-$(map.Va).offset().top});
+	  var p={x:e.pageX,y:e.pageY};
+	  if(context.isPointInPath(p.x, p.y)){
+	  	alert(true)
+	  }
+	}, false);
+	</script>
+	</body>
+</html>

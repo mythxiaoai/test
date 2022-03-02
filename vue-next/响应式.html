@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.bootcdn.net/ajax/libs/ant-design-vue/2.2.0-rc.1/antd.css" rel="stylesheet">
+</head>
+
+<body>
+    <div id="app">
+        <!-- {{test}}
+        {{testC}} -->
+        {{test2.a}}
+        <button @click="handleClick">按钮</button>
+        </template>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0/moment.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/3.1.2/vue.global.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/ant-design-vue/2.2.0-rc.1/antd-with-locales.min.js"></script>
+    <script>
+        let { onMounted, ref, toRefs, computed, reactive, unref, onUpdated } = Vue;
+
+        let vm = Vue.createApp({
+            setup(props, ctx) {
+                // let tableRef = ref()
+                // let test = reactive({ a: 1 });
+                //结论
+                //1.reactive拓展值如果页面没有引用全部的值是不会触发onUpdated的
+                //2.需要自身数据是响应式才能更新dom
+                let test2 = reactive({ a: { b: 1 } });
+                console.log(test2.a.b);
+                let handleClick = () => {
+                    test2.b = 6
+                }
+
+
+                // let test3 = toRefs(test2)
+                // console.log(test3);
+                // window.test = test;
+
+                // let testC = computed(v => test)
+
+                onUpdated(v => {
+                    console.log("onUpdate");
+                })
+                return {
+
+                    // test,
+                    test2,
+                    // testC,
+                    handleClick
+                }
+            }
+        })
+
+        vm.use(antd)
+
+        vm.mount('#app')
+
+    </script>
+</body>
+
+</html>

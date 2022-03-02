@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/bootstrap.css" />
+		<link rel="stylesheet" href="css/common/bootstrapfiller.css" />
+		<script type="text/javascript" src="js/jquery.min.js" ></script>
+				<!--zTree-->
+		<link rel="stylesheet" href="css/zTree/zTreeStyle.css" />
+		<script type="text/javascript" src="js/common.js" ></script>
+				<!--zTree-->
+		<script type="text/javascript" src="js/zTree/jquery.ztree.core.js" ></script>
+		<script type="text/javascript" src="js/zTree/jquery.ztree.excheck.js" ></script>
+	</head>
+	<body>
+		<style>
+		*{padding: 0; margin: 0;}
+		ul{list-style: none;}
+		
+/*form表单样式*/
+.xform{position:fixed;width: 100%; height: 100%;bottom: 0;right: 0; left:0;top:0;margin:auto;background: rgba(0,0,0,0.5); z-index: 999;}
+.xform >div{position: absolute;width: 39.2%;min-width:645px;box-shadow: 3px 3px 15px #333;border-top-left-radius: 5px;border-top-right-radius: 5px;background: #eaeaea;} 
+.xform >div >.f_haeder{width: 100%; height: 40px; background: #006f48; border-radius: 3px 3px 0 0;cursor: move;}
+.xform >div >.f_haeder >span{padding-left:15px; line-height: 40px; color: #fff;font-weight: 700;font-size: 14px;}
+.xform >div >.f_haeder >a{display:inline-block;width:40px;height:40px;float:right;text-align: center;line-height: 40px;}
+.xform >div >.f_haeder >a:hover {opacity: 0.8;}
+.xform >div >.f_haeder >a >span{display:inline-block;height: 10px;width: 10px;background: #ff5f58;border-radius: 50%;}
+.xform >div >.f_cont{max-height: 60vh;min-height:200px;overflow: auto;}
+.xform >div >.f_cont >table{width:100%;}
+.xform >div >.f_cont >table tr{line-height: 40px;font-size: 14px;}
+.xform >div >.f_cont >table tr >td:first-child{width:39.2%;padding-right:15px;text-align: right;font-weight:700;color #333;}
+.xform >div >.f_cont >table tr >td:last-child{padding:0 15px;position: relative;}
+.xform >div >.f_cont >table tr >td >.form-control{height: 30px;}
+.xform >div >.f_cont >table tr >td input{max-width: 260px;}
+/*多选和单选*/
+.xform >div >.f_cont >table tr >td input[type='radio'],.xform >div >.f_cont >table tr >td input[type='checkbox']{max-width: 260px;vertical-align: sub;margin-right: 2px;}
+/*textarea*/
+.xform >div >.f_cont >table tr >td.textarea{height: 80px;}
+.xform >div >.f_cont >table tr >td.textarea textarea{min-height: 60px;}
+/*label*/
+.xform >div >.f_cont >table tr >td label{font-weight: normal;}
+/*img show  update*/
+.xform >div >.f_cont >table tr >td.files >label{display: block;margin-right: 0;}
+.xform >div >.f_cont >table tr >td.files .f_des{height: 40px;line-height:40px;padding: 0 10px;background:#fff;border: 1px dashed #C3C9D0;}
+.xform >div >.f_cont >table tr >td.files .f_des .f_add{font-size: 24px;font-weight: 700;vertical-align: top;}
+.xform >div >.f_cont >table tr >td.files .f_des .f_tip{font-size: 12px;}
+.xform >div >.f_cont >table tr >td.files .f_des:hover{background: #E6F5FF;cursor: pointer;}
+.xform >div >.f_cont >table tr >td.files{padding:15px 15px;}
+.xform >div >.f_cont >table tr >td.files >ul >li{position:relative;width:100%;height: 40px;font-size:12px;line-height: 40px;border-radius:3px;border: 1px solid #E9E9E9;background:rgba(255,255,255,0.65);margin-bottom: 5px;}
+.xform >div >.f_cont >table tr >td.files >ul >li .f_info{height:40px;}
+.xform >div >.f_cont >table tr >td.files >ul >li .f_info .f_file{height:38px;width: 38px;padding:5px;display:inline-block;vertical-align: top;text-align: center;line-height: 36px;}
+.xform >div >.f_cont >table tr >td.files >ul >li .f_info .f_name{white-space:nowrap;max-width:200px;overflow:hidden;display:inline-block;line-height: 40px;text-overflow: ellipsis;}
+.xform >div >.f_cont >table tr >td.files >ul >li .f_info img{cursor: pointer;max-height:100%;max-width: 100%;display: inline-block;}
+.xform >div >.f_cont >table tr >td.files >ul >li .f_opts{display:none;position: absolute;right: 5px;top: 0;height: 40px;}
+.xform >div >.f_cont >table tr >td.files >ul >li .f_opts a,.xform >div >.f_cont >table tr >td.files >ul >li .f_opts span{height: 40px;display: inline-block;}
+.xform >div >.f_cont >table tr >td.files >ul >li:hover .f_opts{display: block;}
+/*select*/
+.xform >div >.f_cont >table tr >td select{max-width: 260px;position:relative;z-index:3;background:transparent;-webkit-appearance: none;-moz-appearance: none;-ms-appearance: none;appearance: none;}
+.xform >div >.f_cont >table tr >td select+b{min-width: 260px;position: absolute;left: 15px;bottom: 5px;border-radius: 4px;background: #FFF;z-index: 1; height: 30px;}
+.xform >div >.f_cont >table tr >td select~i{position: absolute;top: 50%;left: 260px;margin-top: -2px;display: inline-block;width: 0;height: 0;border: 4px solid transparent;border-top: 6px solid #222;border-bottom-width: 0;z-index: 2;}
+/*ztree*/
+.xform >div >.f_cont >table tr >td.tree >div{display:none;position: fixed;background: #fff;border: 1px solid #ccc;z-index: 999;max-height: 300px;overflow: auto;}
+/*submit btn*/
+.xform >div >.f_cont >.opts{text-align: center;}
+.xform >div >.f_cont >.opts .btn{border-radius: 17px;width: 96px;margin:15px;}
+		</style>
+		<script>
+			
+		</script>
+		<!--工单归档 stars-->
+		<div class="xform" >
+			<div>
+				<div class="f_haeder">
+					<span>工单归档</span>
+					<a class="f_close" href="javascript:;" title="关闭">
+						<span></span>
+					</a>
+				</div>
+				<form class="f_cont">
+					<table >
+						<tbody>
+							<tr>
+								<td>工单号</td>
+								<td>
+									<input class="form-control" type="text" />
+								</td>
+							</tr>
+							<tr>
+								<td>省</td>
+								<td><input class="form-control" type="text" />
+								</td>
+							</tr>
+							<tr>
+								<td>充电站名称</td>
+								<td>
+									<div class="form-inline">
+										<label>
+											<input  type="radio" name="hobbly"/>王者
+										</label>
+										<label>
+											<input  type="radio" name="hobbly" />LOL
+										</label>
+										
+										<label>
+									      <input type="checkbox">Check me out
+									    </label>
+										<label>
+									      <input type="checkbox">Check me out
+									    </label>
+										<label>
+									      <input type="checkbox">Check me out
+									    </label>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>文本域</td>
+								<!--textarea注意   成对标签不要换行！换行的话会把空标签添加到文本值里面去-->
+								<td class="textarea">
+									<textarea class="form-control"></textarea>
+								</td>
+							</tr>
+							<tr>
+								<td>添加图片</td>
+								<td class="files">
+									<label>
+										<div class="f_des js_drag">
+											<span class="f_add">+</span>
+											<span class="f_tip">请选择或拖拽上传多个文件、限制每个512k以内。</span>
+										</div>
+										<input class="hide js_files" type="file" name="file" multiple/>
+									</label>
+									<ul class="js_fileList">
+										
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<td>图片点击后的展示的list</td>
+								<td class="files">
+									<ul>
+										<li>
+											<div class="f_info">
+												<span class="f_file">
+													<img src="img/monitor/piece_jl2.png"/>
+												</span>
+												<span class="f_name">充电桩 Wiz.lnk (1 KB)</span>
+											</div>
+											<div class="f_opts">
+												<a href="javascript:;" class="text-info">重新选择</a> |
+												<a href="javascript:;" class="text-danger">删除</a> |
+												<a href="javascript:;" class="text-warning">再次添加</a>
+											</div>
+										</li>
+										<li></li>
+										<li></li>
+									</ul>
+									
+								</td>
+							</tr>
+							<tr>
+								<td>单纯的图片展示</td>
+								<td class="files">
+									<ul>
+										<li>
+											<div class="f_info">
+												<span class="f_file">
+													<img src="img/home/test.jpg"/>
+												</span>
+												<span class="f_name">充电桩 Wiz.lnk (1 KB)</span>
+											</div>
+										</li>
+										<li></li>
+										<li></li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<td>下拉</td>
+								<td>
+									<select class="form-control">
+										<option>1</option>
+										<option>2</option>
+										<option>3</option>
+									</select>
+									<b class="dropdown-bg"></b>
+									<i class="dropdown-trigger"></i>
+								</td>
+							</tr>
+							<tr>
+								<td>Ztree</td>
+								<td class="tree">
+									<input class="form-control" type="text" onclick="fjs.tree(this);"/>
+									<div>
+										<ul id="ztree1" class="ztree"></ul>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>单纯的图片展示</td>
+								<td class="files">
+									<ul>
+										<li>
+											<div class="f_info">
+												<span class="f_file">
+													<img src="img/home/test.jpg"/>
+												</span>
+												<span class="f_name">充电桩 Wiz.lnk (1 KB)</span>
+											</div>
+										</li>
+										<li></li>
+										<li></li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<td>Ztree</td>
+								<td class="tree">
+									<input class="form-control" type="text" onclick="fjs.tree(this)"/>
+									<div>
+										<ul id="ztree2" class="ztree"></ul>
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<div class="opts">
+						<a class="btn btn-danger">确定</a>
+						<a class="btn btn-danger">取消</a>
+					</div>
+				</form>
+			</div>
+		</div>
+		<!--end工单归档-->
+		<script>
+			$(function(){
+				fjs.init();
+				var setting = {
+					view: {
+						dblClickExpand: false,
+						showLine: false,
+						showIcon:false
+					},
+					data: {
+						simpleData: {
+							enable: true
+						}
+					},
+					check:{
+						enable:true,
+						chkStyle: "radio",
+						radioType: "all",
+					},
+					callback: {
+						onClick:function(e, treeId, treeNode){
+							if(treeNode.isParent){
+								$("#"+treeNode.tId+"_switch").trigger("click");
+							}
+						},
+						onCheck: function(e, treeId, treeNode){
+							$("#"+treeNode.tId).closest(".ztree").closest("div").fadeOut("fast").prev().attr("value",treeNode.name);
+						}
+					}
+				};
+				var zNodes =[
+					{id:4, pId:0, name:"财务部"},
+					{id:41, pId:4, name:"财务小组1"},
+					{id:42, pId:4, name:"财务小组2"},
+					{id:43, pId:4, name:"财务小组3"},
+					{id:44, pId:4, name:"财务小组4"},
+					{id:5, pId:0, name:"研发部"},
+					{id:51, pId:5, name:"研发部1"},
+					{id:52, pId:5, name:"研发部2"},
+					{id:53, pId:5, name:"研发部3"},
+					{id:54, pId:5, name:"研发部4"},
+					{id:6, pId:0, name:"行政部"},
+					{id:61, pId:6, name:"行政部1"},
+					{id:62, pId:6, name:"行政部2"},
+					{id:63, pId:6, name:"行政部3"},
+					{id:64, pId:6, name:"行政部4"}
+				 ];
+				$.fn.zTree.init($("#ztree1"), setting, zNodes);
+				
+				//ztree2
+				var setting = {
+					view: {
+						dblClickExpand: false,
+						showLine: false,
+						showIcon:false
+					},
+					data: {
+						simpleData: {
+							enable: true
+						}
+					},
+					check:{
+						enable:true,
+						chkStyle: "checkbox",
+						chkboxType: { "Y": "ps", "N": "ps" }
+					},
+					callback: {
+						onClick:function(e, treeId, treeNode){
+							if(treeNode.isParent){
+								$("#"+treeNode.tId+"_switch").trigger("click");
+							}
+						},
+						onCheck: function(e, treeId, treeNode){
+							var treeObj = $.fn.zTree.getZTreeObj("ztree2");
+							var nodes = treeObj.getCheckedNodes(true);
+							var len = nodes.length;//选中的数组长度
+							var sublen = 0;//选中子项的查明后第
+							var html ="";//页面显示的值
+							var ids ="";//数据库传入的值
+							$.each(nodes, function(index,node){
+								if(!node.isParent){
+									sublen++;
+									if(index!=len-1){
+										html+=node.name+",";
+										ids+=node.id+",";
+									}else{
+										html+=node.name;
+										ids+=node.id;
+									}
+								}
+							});
+							$("#"+treeNode.tId).closest(".ztree").closest("div").prev().attr("value","("+sublen+"个)"+html).data("ids",ids);
+						}
+					}
+				};
+				var zNodes =[
+					{id:1, pId:0, name:"北京"},
+					{id:2, pId:0, name:"天津"},
+					{id:3, pId:0, name:"上海"},
+					{id:6, pId:0, name:"重庆"},
+					{id:4, pId:0, name:"河北省", open:true},
+					{id:41, pId:4, name:"石家庄"},
+					{id:42, pId:4, name:"保定"},
+					{id:43, pId:4, name:"邯郸"},
+					{id:44, pId:4, name:"承德"},
+					{id:5, pId:0, name:"广东省", open:true},
+					{id:51, pId:5, name:"广州"},
+					{id:52, pId:5, name:"深圳"},
+					{id:53, pId:5, name:"东莞"},
+					{id:54, pId:5, name:"佛山"},
+					{id:6, pId:0, name:"福建省", open:true},
+					{id:61, pId:6, name:"福州"},
+					{id:62, pId:6, name:"厦门"},
+					{id:63, pId:6, name:"泉州"},
+					{id:64, pId:6, name:"三明"}
+				 ];
+				$.fn.zTree.init($("#ztree2"), setting, zNodes);
+			});
+			
+			 
+		</script>
+	</body>
+</html>

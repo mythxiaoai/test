@@ -1,0 +1,168 @@
+<!doctype html>
+<html>
+	<head>
+	    <!--声明当前页面的编码集：中文编码（gbk/gb2312）,国际编码（utf-8）-->
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+		<!--页面三要素-->
+		<title>国际标准模板</title><!--小于等于31 大小写不区分-->
+		<meta name="Keywords" content="关键词,关键词,关键词"><!--<=76个字-->
+		<meta name="description" content=""><!--<=80个字-->
+		<!--js/css-->
+		<style type="text/css">
+		@charset "UTF-8";
+		* {word-wrap: break-word;;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;}
+		html {-webkit-text-size-adjust: none;overflow-x:hidden}
+		body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td,span{padding:0;margin:0;}
+		body{font:normal 0.75em/1.5em "微软雅黑","冬青黑体简体中文 w3","宋体"; }
+		fieldset,img,html,body,iframe{border:0;}
+		/** 重置表格元素 **/
+		table{border-collapse:collapse;border-spacing:0;}
+		ol,ul{list-style:none;}
+		address,caption,cite,code,dfn,em,strong,th,var{font-weight:normal;font-style:normal;}
+		caption,th{text-align:left;}
+		em,i,small,caption,th{font-weight:normal;font-style:normal;font-size:100%;}
+		h1,h2,h3,h4,h5,h6,em,strong,b{font-weight:400;font-size:100%;}
+		q:before,q:after{content:'';}
+		.clearfix{*zoom:1;}
+		.clearfix:after{content:"."; display:block;clear:both;visibility:hidden;line-height:0;height:0;}
+		a {color: #9D9C9C;text-decoration: none;}
+		a img {border: none;border:0;}
+		a,button{ outline:none; border:0;}
+		input,select{border:1px solid #ccc;}
+		button::-moz-focus-inner{border:0;padding:0;margin:0;}
+		textarea,input,button,select{outline:0;font-size:inherit;line-height:inherit;color:inherit;font-family:inherit;}
+		textarea{overflow:auto;resize:none;}
+		.hide,.none{display: none}
+		.hidden{visibility: hidden;}
+		.show,.block{display: block;}
+		img{ vertical-align:middle;}
+		input:disabled,select:disabled,textarea:disabled{background:#ccc;}
+		.fl{float: left;}
+		.fr{float: right;}
+		.red{color:red;}
+		.green{color:green;}
+
+		/*adbox start*/
+		.adbox{width:960px;height:600px;position:relative;margin:50px auto;background:url('images/1.png') no-repeat;}
+		.adbox .imgs{height:400px;padding-top:200px;width:746px;position:absolute;top:0;bottom:0;margin:auto 101px;overflow:hidden}/* 745px*/
+		.adbox .imgs  .img{height:200px;width:320px;padding-right:10px;float:left;white-space:nowrap;display:inline-block;position:absolute;cursor:pointer;}/*330*/
+		.adbox .imgs  .img img{border-radius:5px;box-shadow:3px 3px 10px rgba(0,0,0,0.6);}
+		.adbox .btn {width:50px;height:50px;font-size:50px;color:#ccc;line-height:45px;display:inline-block;cursor:pointer;text-align:center;border-radius:50%;top:0;bottom:0;position:absolute;margin:auto 22px;}
+		.adbox .btn:hover{background:rgba(0,0,0,0.5);}
+		.adbox .left{left:0px;}
+		.adbox .right{right:12px;}
+		/*end adbox*/
+		</style>
+	</head>  
+	<body>
+	<!--adbox  start-->
+		<div class="adbox">
+			<ul class="imgs">
+				<li class="img"><img alt="展示图片" height="200" width="320" src="images/1.jpg"/></li>
+				<li class="img"><img alt="展示图片" height="200" width="320" src="images/2.jpg"/></li>
+				<li class="img"><img alt="展示图片" height="200" width="320" src="images/3.jpg"/></li>
+				<li class="img"><img alt="展示图片" height="200" width="320" src="images/4.jpg"/></li>
+				<li class="img"><img alt="展示图片" height="200" width="320" src="images/5.jpg"/></li>
+			</ul>
+			<div class="btn left" onclick="left()">&lt</div>
+			<div class="btn right" onclick="right()">&gt</div>
+		</div>
+	<!--end adbox-->
+		<script>
+			/*var eimgs=null;//全部的图片的父元素
+			var eimg=null;//所有子图片元素
+			var eimgWidth=null;//子元素的宽度   用来判断循环的条件
+			var arrimg=null;//图片数组
+			var time=null;//定时器
+			*/
+			var step = 5;//步长   用来控制 每帧图片走的距离  单位px
+			var time=null;
+			var eimgs=eimg=eimgWidth=arrimg=time=null;
+			var direction="left";
+			eimgs=document.getElementsByClassName("imgs")[0];
+			function init(){
+				 eimg=eimgs.children;
+				 arrimg=Array.prototype.slice.call(eimg);
+			}
+			init();
+				for(var i = 0; i<arrimg.length;i++){
+				arrimg[i].style.left=330*i+"px";
+				console.log(arrimg[i].offsetLeft);
+				}
+			left();
+			function right(){
+				direction="right";
+				clearInterval(time);
+				function initPosition(){
+					for(var i = arrimg.length-1;i>=0;i--){
+						var distance=arrimg[i].offsetLeft;
+						if(distance>=eimgs.offsetWidth){
+							var temp =arrimg.pop();
+							temp.style.left=arrimg[0].offsetLeft-330+"px";
+							arrimg.unshift(temp);
+							i++;//这个作死  因为元素的位置发生了改变
+						}else{
+							break;
+						}
+					}
+					for(var i = 0 ;i<arrimg.length;i++){
+						eimgs.appendChild(arrimg[i]);
+					}
+				}
+				initPosition();
+				init();
+				function rightmove(){
+					for(var i = 0 ;i<arrimg.length;i++){
+						var distance=arrimg[i].offsetLeft;
+						distance+=step;
+					arrimg[i].style.left=distance+"px";
+					initPosition();
+				}
+				}
+				time=setInterval(rightmove,1000/30);
+			}
+			function left(){
+				direction="left";
+				clearInterval(time);
+				function initPosition(){
+					for(var i = 0;i<arrimg.length;i++){
+						var distance=arrimg[i].offsetLeft;
+						if(distance<=-330){
+							var temp =arrimg.shift();
+							temp.style.left=arrimg[arrimg.length-1].offsetLeft+330+"px";
+							arrimg.push(temp);
+							i--;//这个作死  因为元素的位置发生了改变
+						}else{
+							break;
+						}
+					}
+					for(var i = 0 ;i<arrimg.length;i++){
+						eimgs.appendChild(arrimg[i]);
+					}
+				}
+				initPosition();
+				init();
+				function leftmove(){
+					for(var i = 0 ;i<arrimg.length;i++){
+						var distance=arrimg[i].offsetLeft;
+						distance-=step;
+					arrimg[i].style.left=distance+"px";
+					if(i==arrimg.length-1){
+					initPosition();
+					}
+				}
+				}
+				time=setInterval(leftmove,30);
+			}
+			//鼠标移动上面停止
+			for(var i = 0 ;i<eimg.length;i++){
+				eimg[i].onmouseover=function(){
+					clearInterval(time);
+				}
+				eimg[i].onmouseout=function(){
+					direction=="left"?left():right();
+				}
+			}
+		</script>
+	</body>
+</html>

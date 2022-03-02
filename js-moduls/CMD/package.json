@@ -1,0 +1,23 @@
+{
+  "name": "cmd",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "dependencies": {
+    "grunt": "^1.0.3",
+    "grunt-cmd-transport": "0.1.1",
+    "grunt-cmd-concat": "0.1.0",
+    "grunt-contrib-uglify": "0.2.0",
+    "grunt-contrib-clean": "0.4.0",
+    "grunt-contrib-copy": "^0.7.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

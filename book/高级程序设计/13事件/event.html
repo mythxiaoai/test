@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="../../css/common/common.css" />
+	</head>
+	<body>
+		
+		<form name="form1">
+			<input name="a" value="1" onkeyup="b.value=this.value"/>
+			<input name="b" value="2" onclick="alert(a.name)" />
+			<textarea rows="3" oninput="this.style.height = this.scrollHeight+'px'"></textarea>
+			<input id="codeInput" >
+		</form>
+		<a href="https://www.baidu.com/">111</a>
+		<input type="button" value="你妹" autofocus/>
+		<div style="height: 500px;"></div>
+	</body>
+	<script>
+		/*window.onbeforeunload=function(){
+			alert("onunload");
+		}
+		window.onload=function(){
+			alert("onload");
+		}*/
+		/*var html =document.getElementsByTagName("html")[0];
+		var body =document.getElementsByTagName("body")[0];
+		console.log(html)
+		console.log(html.scrollHeight)
+		console.log(document.body.scrollHeight)
+		console.log(document.documentElement.scrollHeight)*/
+		//console.log(document.activeElement)
+		document.body.onclick=function(e){
+			console.log(e.eventPhase)
+			let arr =[];
+			if(e.shiftKey){
+				arr.push("shiftKey")
+			}
+			if(e.ctrlKey){
+				arr.push("ctrlKey")
+			}
+			if(e.altKey){
+				arr.push("altKey")
+			}
+			if(e.metaKey){
+				arr.push("metaKey")
+			}
+			console.log(arr)
+		}
+		document.body.onmousewheel=function(e){
+			console.log(e)
+			console.log(e.wheelDelta)
+		}
+		/*setTimeout(()=>{
+			window.location.href=null;
+		},2000);*/
+		codeInput.onkeypress=function(e){
+			console.log(this.value)
+		}
+		/*window.onbeforeunload=function(e){
+			alert(1);
+			return true;
+		}*/
+		window.onload=function(){
+			console.log("onload")
+		}
+		console.log(navigator.onLine)
+		console.log(document.onpage)
+		window.onpageshow=function(){
+			console.log("onpage")
+		}
+		window.onpagehide=function(){
+			console.log("onpagehide")
+		}
+	</script>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/ant-design-vue@1.4.12/dist/antd.css"
+    />
+    <style>
+      /* you can make up upload button and sample style by using stylesheets */
+      .ant-upload-select-picture-card i {
+        font-size: 32px;
+        color: #999;
+      }
+
+      .ant-upload-select-picture-card .ant-upload-text {
+        margin-top: 8px;
+        color: #666;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <div class="clearfix">
+        <a-upload
+          action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
+          list-type="picture"
+          :file-list="fileList"
+          @preview="handlePreview"
+          @change="handleChange"
+          :remove="remove"
+          :show-upload-list="showUploadList"
+          >
+          <!-- :locale="{uploading:`上传`}" -->
+          <div v-if="fileList.length < 8">
+            <a-icon type="plus" />
+            <div class="ant-upload-text">
+              Upload
+            </div>
+          </div>
+        </a-upload>
+
+        <a-modal
+          :visible="previewVisible"
+          :footer="null"
+          @cancel="handleCancel"
+        >
+          <img alt="example" style="width: 100%;" :src="previewImage" />
+        </a-modal>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0/moment.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.min.js"
+      integrity="sha256-ngFW3UnAN0Tnm76mDuu7uUtYEcG3G5H1+zioJw3t+68="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/ant-design-vue@1.4.12/dist/antd.js"></script>
+    <script>
+      function getBase64(file) {
+        return new Promise((resolve, reject) => {
+          const reader = new FileReader()
+          reader.readAsDataURL(file)
+          reader.onload = () => resolve(reader.result)
+          reader.onerror = (error) => reject(error)
+        })
+      }
+      var vm = new Vue({
+        el: '#app',
+        data() {
+          return {
+            previewVisible: false,
+            previewImage: '',
+            showUploadList:{
+              showPreviewIcon:true,
+              showRemoveIcon:true,
+              showDownloadIcon:true
+            },
+            fileList: [
+              {
+                uid: '-1',
+                name: 'image.png',
+                status: 'uploading',
+                url:
+                  'https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png',
+              
+                },
+              {
+                uid: '-2',
+                name: 'image.png',
+                status: 'removed',
+                url:
+                  'https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png',
+              },
+              {
+                uid: '-3',
+                name: 'image.png',
+                status: 'done',
+                thumbUrl:"https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png?x-oss-process=image/blur,r_50,s_50/quality,q_1/resize,m_mfit,h_200,w_200",
+                url:
+                  'https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png',
+                  
+              },
+              {
+                uid: '-4',
+                name: 'image.png',
+                status: 'done',
+                url:'https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png',
+                linkProps:`{"download": "https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"}`,
+                },
+              
+              {
+                uid: '-5',
+                name: 'image.png',
+                status: 'error',
+              },
+            ],
+          }
+        },
+        methods: {
+          remove(){
+            return false;
+          },
+          handleCancel() {
+            this.previewVisible = false
+          },
+          async handlePreview(file) {
+            if (!file.url && !file.preview) {
+              file.preview = await getBase64(file.originFileObj)
+            }
+            this.previewImage = file.url || file.preview
+            this.previewVisible = true
+          },
+          handleChange(e) {
+            console.log(e);
+            this.fileList = e.fileList
+          },
+        },
+        mounted() {
+          console.log(this.$refs.btn)
+        },
+        watch: {},
+      })
+    </script>
+  </body>
+</html>

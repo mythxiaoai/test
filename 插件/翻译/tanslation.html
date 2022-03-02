@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	  <button type="button" onclick="changeLang('zn')">中文</button>
+	  <button type="button" onclick="changeLang('en')">英文</button>
+	  <div id="box">
+	        "主题":"Title",
+    "下一页":"NextPage",
+    "末页":"LastPage",
+    "首页":" FirstPage ",
+    "上一页":" PreviousPage ",
+    "待办工作":"MyTasks",
+    "中":"Middle",
+    "每页":" EachPage ",
+    "条":" Record ",
+    "共":" Total ",
+    "页":" Page ",
+    "第":" Current ",
+    "工作主题":" ProcTitle",
+    "上传数据":"upload",
+	  </div>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script src="translation.js"></script>
+	</body>
+<script>
+  function changeLang(str){
+    sessionStorage.setItem("lang",str);
+    if(str=="en"){
+      fanyi();
+    }else{
+      location.reload();
+    }
+  }
+  </script>
+</html>

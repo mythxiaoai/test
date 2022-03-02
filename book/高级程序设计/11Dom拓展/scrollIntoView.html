@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.div{background: red;}
+			.div:after{content: ">";}
+			div{background: green;}
+			
+		</style>
+	</head>
+	<body>
+<div style="height: 500px;">1</div>
+<div class="div" id="div" style="height: 500px;">2</div>
+<div style="height: 500px;">3</div>
+<div style="height: 500px;">4</div>
+<div style="height: 500px;">5</div>
+<button id="btnTest" type="button">我是个按钮</button>
+<script>
+	let divDom =document.getElementById("div")
+	console.log(divDom.style)
+	console.log(divDom.style.cssText)
+	console.log(divDom.style.length)
+	console.log(divDom.style.parentRule);
+	console.log(divDom.style.getPropertyValue(divDom.style[0]));
+	console.log(document.defaultView.getComputedStyle(divDom,":after"));
+	console.log(divDom.offsetParent.offsetParent);
+	setTimeout(()=>{
+		divDom.scrollIntoView(true);
+	},200)
+</script>
+	</body>
+</html>

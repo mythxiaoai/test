@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>three.js webgl - equirectangular video panorama</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+    <style>
+      body {
+        background-color: #000000;
+        margin: 0px;
+        overflow: hidden;
+      }
+
+      #info {
+        position: absolute;
+        top: 0px;
+        width: 100%;
+        color: #ffffff;
+        padding: 5px;
+        font-family: Monospace;
+        font-size: 13px;
+        font-weight: bold;
+        text-align: center;
+      }
+
+      a {
+        color: #ffffff;
+      }
+      html,
+      body,
+      #container {
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <iframe src="http://192.168.40.249:10800/play.html?channel=1&protocol=RTMP&iframe=yes&aspect=640x360" border="0" width="100%" height="100%" allowfullscreen allow="fullscreen"></iframe>
+    </div>
+    <!-- https://vr.vra.cn/krpano/data/25144/video/1382/HD1382.mp4 -->
+    <script src="https://cdn.bootcdn.net/ajax/libs/three.js/r122/three.js"></script>
+
+    <script></script>
+  </body>
+</html>

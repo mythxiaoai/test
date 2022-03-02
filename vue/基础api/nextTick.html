@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+	</head>
+	<body>
+		<div id="app">
+			<el-input v-model="a" placeholder="请输入字段描述" :clearable="false" ref = "test"></el-input>
+		</div>
+		 <!-- import Vue before Element -->
+		  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+		  <!-- import JavaScript -->
+		  <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+	</body>
+	<script>
+		console.log(window)
+		var vm = new Vue({
+			el:"#app",
+			created(){
+				this.$nextTick(()=>{
+					
+				})
+			},
+			data:{
+				a:"",
+			},
+			methods{
+				
+			}
+		});
+	</script>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script>
+	 //bad code
+	 function fn1(a,b){
+	   a = a||true
+	   b = b||3
+	   console.log(a,b)
+	 }
+	 fn1();
+	 
+	 //good code
+	 function fn2(a=true,b=3){
+	   console.log(a,b)
+	 }
+	 
+	 fn2()
+	 //bad code
+	 function fn3(a,b,c,d){
+	   //方法逻辑
+	 }
+	 //调用  fn3(a,b,c,d)
+	 //good code
+	 function fn4(opts){
+	   //方法逻辑
+	   //opts.属性
+	 }
+	 //fn4({a:1,...})
+	</script>
+</html>

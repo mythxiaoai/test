@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <style>
+	*{padding:0;margin:0}
+	body{font-size:14px;font-family:"微软雅黑";background:#333}
+	a{text-decoration:none;color:#333}
+	li{list-style:none}
+	
+	/*万年历*/
+	.kecalc .kcalcr .kecln-controls{position:relative;font-size:0.8em;text-align:center;}
+	.kecalc .kcalcr .month{padding:16px 0 0 0;text-align:center;font-size:18px;}
+	.kecalc .ke_calc_next{position:absolute;right:24px;top:12px;width:30px;height:43px;background:url(images/arrows.png) no-repeat -30px 0px;cursor:pointer;}
+	.kecalc .ke_calc_prev{position:absolute;left:24px;top:12px;width:30px;height:43px;background:url(images/arrows.png) no-repeat -1px 0px;cursor:pointer;}
+	.kecalc .kcalcr .kecalc_box{margin-top:24px}
+	.kecalc .kcalcr .kecln-table{table-layout:fixed;width:100%;height:300px;margin:0 auto;border-collapse:collapse}
+	.kecalc .kcalcr .kecln-table .header-days{font-size:0.85em;font-weight:600;}
+	.kecalc .kcalcr .kecln-table .header-days .header-day{vertical-align:middle;text-align:center;font-size:14px;}
+	.kecalc .kcalcr .kecln-table tr{height:36px;}
+
+	.kecalc .kcalcr .kecln-table tr td{vertical-align:top;border:1px solid #000;transition:all 0.3s;cursor:pointer;}
+	.kecalc .kcalcr .kecln-table tr td:hover{background:#000;color:#fff;}
+	.kecalc .kcalcr .kecln-table tr .day.today:hover{background:#000;color:#fff;}
+	.kecalc .kcalcr .kecln-table tr .day{width:100%;height:inherit;vertical-align:middle;}
+	.kecalc .kcalcr .kecln-table tr .day.empt:hover{background:none}
+	.kecalc .kcalcr .kecln-table tr .day.today{color:#FFFFFF!important;text-decoration:none;background:#333;}
+	
+
+	#date1{width:320px;margin:10px auto}
+	#date2{width:480px;margin:10px auto}
+
+
+  </style>
+ </head>
+ <body>
+  
+
+ <div id="date1"></div>
+ <div id="date2"></div>
+
+
+ <h1 id="time"></h1>
+ <h1 id="time2"></h1>
+ <script src="dom.js"></script>
+ <script>
+	var Calender = (function(){
+		/**
+		 * 对Date的扩展，将 Date 转化为指定格式的String 月(M)、日(d)、12小时(h)、24小时(H)、分(m)、秒(s)、周(E)、季度(q)
+		 * 可以用 1-2 个占位符 年(y)可以用 1-4 个占位符，毫秒(S)只能用 1 个占位符(是 1-3 位的数字) eg: (new
+		 * Date()).format("yyyy-MM-dd hh:mm:ss.S") ==> 2006-07-02 08:09:04.423 (new
+		 * Date()).format("yyyy-MM-dd E HH:mm:ss") ==> 2009-03-10 二 20:09:04 (new
+		 * Date()).format("yyyy-MM-dd EE hh:mm:ss") ==> 2009-03-10 周二 08:09:04 (new
+		 * Date()).format("yyyy-MM-dd EEE hh:mm:ss") ==> 2009-03-10 星期二 08:09:04 (new
+		 * Date()).format("yyyy-M-d h:m:s.S q ") ==> 2006-7-2 8:9:4.18
+		 */
+		Date.prototype.format = function(fmt) {
+			var o = {
+				"Y+" : this.getFullYear(),
+				"M+" : this.getMonth() + 1,
+				// 月份
+				"d+" : this.getDate(),
+				// 日
+				"h+" : this.getHours() % 12 == 0 ? 12 : this.getHours() % 12,
+				// 小时
+				"H+" : this.getHours(),
+				// 小时
+				"m+" : this.getMinutes(),
+				// 分
+				"s+" : this.getSeconds(),
+				// 秒
+				"q+" : Math.floor((this.getMonth() + 3) / 3),
+				// 季度
+				"S" : this.getMilliseconds()
+			// 毫秒
+			};
+			var week = {
+				"0" : "日",
+				"1" : "一",
+				"2" : "二",
+				"3" : "三",
+				"4" : "四",
+				"5" : "五",
+				"6" : "六"
+			};
+			if (/(y+)/.test(fmt)) {
+				fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "")
+						.substr(4 - RegExp.$1.length));
+			}
+			if (/(E+)/.test(fmt)) {
+				fmt = fmt
+						.replace(
+								RegExp.$1,
+								((RegExp.$1.length > 1) ? (RegExp.$1.length > 2 ? "/u661f/u671f"
+										: "/u5468")
+										: "")
+										+ week[this.getDay() + ""]);
+			}
+			for ( var k in o) {
+				if (new RegExp("(" + k + ")").test(fmt)) {
+					fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k])
+							: (("00" + o[k]).substr(("" + o[k]).length)));
+				}
+			}
+			return fmt;
+		};
+		var KeCalender = function(opts,callback,successCallback){
+			this.id = opts.id;
+			this.defaults = {
+				width:480,
+				height:480,
+				background:"#fff",
+				color:"#999",
+				format:"yyyy-MM-dd"
+			},
+			this.options = mix(this.defaults,opts); //jquery extend原理
+			this.yrange = this.options.yrange || KeCalender.YEARS;
+			this.monthTag = this.options.monthTag || KeCalender.MONTHS;
+			this.weekTag = this.options.weekTag || KeCalender.WEEKS;
+			this.callback = callback;
+			this.success = successCallback;
+
+		};
+		
+		//静态常量
+		KeCalender.WEEKS = ["星期日","星期一","星期二","星期三","星期四","星期五","星期六"];
+		KeCalender.MONTHS = ["一月","二月","三月","四月","五月","六月","七月","八月","九月","十月","十一月","十二月"];
+		KeCalender.YEARS = [2015,2017];
+
+		KeCalender.prototype = {
+			consturctor:KeCalender,
+			init:function(){
+				var args = arguments;
+				var year = "",month="";
+				if(args.length==2){
+					year = args[0];
+					month = args[1];
+				}else{
+					var date = new Date();
+					year = date.getFullYear();
+					month = date.getMonth()+1;
+				};
+				//初始化模板
+				var domObj = this.template(year,month);
+				
+				var json ={};
+				domClass(domObj,"ke_calcd").forEach(function(obj){
+					json[obj.getAttribute("ymd")] = obj;
+				});
+				//测试用
+				domClass(domObj,"ke_calcd").forEach(function(obj){
+					obj.onclick=function(){
+					alert(this.getAttribute("ymd"));
+					}
+				});
+				if(this.success)this.success.call(json);
+			},
+			template:function(year,month){
+				var $calc = this;
+				var boxDom = dom($calc.id);
+				var html = "<div class='kecalc'>"+
+				"<div class='kcalcr'>"+
+				"	<div class='kecln-controls'>"+
+				"		<div class='kecln-control-button'>"+
+				"			<p class='ke_calc_prev ke_prev'></p>"+
+				"		</div>"+
+				"		<div class='month'>"+$calc.monthTag[month-1]+"/"+year+"</div>"+
+				"		<div class='kecln-control-button rightalign'>"+
+				"			<p class='ke_calc_next ke_next'></p>"+
+				"		</div>"+
+				"		<div class='kecalc_box' id='ke_cacle_"+$calc.id+"'></div>"+
+				"	</div>"+
+				"</div>"+
+				"</div>";
+				boxDom.innerHTML = html;
+				//给盒子添加样式，比如说宽度，高度，背景色，
+				$calc.css(boxDom,$calc.options);
+				//绑定事件,上一年，下一年
+				$calc.prevEvent(boxDom,year,month);
+				$calc.nextEvent(boxDom,year,month);
+
+				//创建一个表格
+				var tableDom = $calc.element("table");
+				$calc.css(tableDom,{height:$calc.options.height-65});
+				$calc.addClass(tableDom,"kecln-table");
+				//创建表头
+				var theadDom = $calc.element("thead");
+				//创建一个tr
+				var trDom =  $calc.element("tr");
+				$calc.addClass(trDom,"header-days");
+				for(var i=0,len=$calc.weekTag.length;i<len;i++){
+					var tdDom = $calc.element("td");
+					$calc.addClass(tdDom,"header-day");
+					tdDom.innerHTML = $calc.weekTag[i];
+					trDom.appendChild(tdDom);
+				};
+				//将行添加到表头中
+				$calc.append(theadDom,trDom);
+				  
+				//创建表体
+				var tbodyDom = $calc.element("tbody");
+				
+				//获取当月的天数
+				var days = $calc.getMonthDay(year,month);
+				//拿到上一个月的总天数，补齐前面的空格
+				var pdays = $calc.getMonthDay(year,month-1);
+				//创建每个月的第一天的日期对象
+				var date = new Date(year,month-1,1);
+				var currentDate = new Date();
+				var cdate =  currentDate.getDate();
+				//获取每个月的第一天是星期几
+				var week =date.getDay();
+				var j = 0;//记录天数
+				var tdHtml = "";
+				var cmark = false;
+				var nindex = 1;
+				var pwdays = pdays -week +1;
+				while(true){
+					tdHtml+="<tr>";
+					//拿到一个月有多少天
+					//拿到这个月第一天是星期几
+					for(var i=0;i<7;i++){
+						var mark = "day";
+						if(j==0 && i==week){//就去是寻找每个月第一天是星期几
+							j++;
+							if(j==cdate)mark = "day  today";
+							tdHtml +="<td ymd='"+year+"/"+month+"/"+j+"' class='ke_calcd "+mark+"'>1</td>";
+							cmark = true;
+						}else if(j>0 && j<days){
+							j++;
+							if(j==cdate)mark = "day today";
+							tdHtml +="<td ymd='"+year+"/"+month+"/"+j+"' class='ke_calcd "+mark+"'>"+j+"</td>";
+						}else{
+							//td填空格
+							if(!cmark){
+								var oy = year;
+								if(month==1){
+									oy = year-1;
+								}
+								tdHtml +="<td ymd='"+oy+"/"+(month-1==0?12:month-1)+"/"+pwdays+"' class='ke_calcd day empt'>"+pwdays+"</td>";
+								pwdays++;
+							}else{
+								var oy = year;
+								if(month==12)oy = year+1;
+								tdHtml +="<td ymd='"+oy+"/"+(month+1)+"/"+nindex+"' class='ke_calcd day empt'>"+nindex+"</td>";
+								nindex++;
+							}
+						}
+					}
+					tdHtml+="</tr>";
+					if(j>=days)break;
+				};
+				//节假日[]
+				//农历
+				
+				//追加拼接的日期文本
+				tbodyDom.innerHTML = tdHtml;
+				//追加元素
+				$calc.append(tableDom,theadDom);
+				$calc.append(tableDom,tbodyDom);
+				$calc.append(dom("ke_cacle_"+$calc.id),tableDom);
+
+				//给所有的td元素绑定点击事件
+				domClass(tbodyDom,"ke_calcd").forEach(function(obj){
+					obj.onclick = function(){
+						var ymd = this.getAttribute("ymd");
+						var date = new Date();
+						var hour = date.getHours();
+						var min = date.getMinutes();
+						var sec = date.getSeconds();
+						var dataStr = ymd+" "+hour+":"+min+":"+sec;
+						var rdate = new Date(dataStr);
+						if($calc.callback)$calc.callback.call(rdate,rdate.format($calc.options.format));
+					}
+				});
+
+				return boxDom;
+			},
+			nextEvent:function(dom,year,month){//下一年
+				var $calc = this;
+				domClass(dom,"ke_next")[0].onclick = function(){
+					var m = month+1;
+					var y = year;
+					if(year==$calc.yrange[1] && m>12){
+						alert("你已经到最大年限了...");
+						return;
+					}
+					if(m > 12){
+						y = year+1;
+						m = 1;
+					}
+					
+					$calc.template(y,m);
+				};
+			},
+			prevEvent:function(dom,year,month){//上一年
+				var $calc = this;
+				domClass(dom,"ke_prev")[0].onclick = function(){
+					var m = month-1;
+					var y = year;
+					if(year==$calc.yrange[0] && m==0){
+						alert("你已经到最小年限了...");
+						return;
+					}
+					if(m ==0){
+						y = year-1;
+						m = 12;
+					}
+					$calc.template(y,m);
+				};
+			},
+			getMonthDay:function(year,month){//拿到一个月有多少天，getDate()拿到今天是几号
+				return new Date(year,month,0).getDate();//拿到上个月最后一天
+			},
+			addClass:function(dom,className){//添加样式
+				dom.className = className;
+			},
+			append:function(dom,subdom){//追加元素
+				dom.appendChild(subdom);
+			},
+			element:function(ele){//创建元素
+				return document.createElement(ele);
+			},
+			css:function(dom,opts){
+				for(var key in opts){
+					var v = opts[key];
+					dom.style[key] = (typeof v==="number"?v+"px":v);
+				}
+			}
+		};
+		return KeCalender;
+	})();
+	
+
+
+	var smtag = ["Jan","Feby","Mar","Apr","May","Jun","Jul","Aug","Sept","Oct","Nov","Dec"];
+	var swtag = ["Sun","Mon", "Tues", "Wed", "Thu", "Fri", "Sat"];
+
+
+	var c1 = new Calender({
+		id:"date1",
+		width:460,
+		height:400,
+		background:"radial-gradient(at top,green,#000)",
+		color:"#fff",monthTag:smtag,weekTag:swtag,format:"yyyy年MM月dd日"},
+		function(formatStr){
+		dom("time").innerHTML = formatStr;},
+		function(){
+		//alert(JSON.stringify(this))
+		/*this["2016/1/5"].innerHTML += "★";
+		this["2016/1/5"].style.background = "red";
+		this["2016/1/5"].onclick = function(){
+			
+		};
+
+		this["2016/1/10"].innerHTML += "★";
+		this["2016/1/10"].style.background = "red";
+		this["2016/1/10"].onclick = function(){
+			
+		}
+
+
+		this["2016/1/20"].innerHTML += "★";
+		this["2016/1/20"].style.background = "red";
+		this["2016/1/20"].onclick = function(){
+		
+		}*/
+	});
+	c1.init();
+	var c2 = new Calender({id:"date2",width:360,height:400,background:"radial-gradient(at top,pink,#000)",color:"#fff",monthTag:smtag,weekTag:swtag,format:"yyyy年MM月dd日"},function(formatStr){
+		dom("time2").innerHTML = formatStr;
+	});
+	c2.init();
+
+	
+	
+</script>
+</body>
+</html>

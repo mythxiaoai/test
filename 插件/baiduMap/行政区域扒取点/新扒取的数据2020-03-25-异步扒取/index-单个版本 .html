@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=hYCENCEx1nXO0Nt46ldexfG9oI49xBGh"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/lodash.js/4.17.12-pre/lodash.js"></script>
+    <script src="./pinyin.js"></script>
+    <script src="./util.js"></script>
+    <script>
+      //中国   5zoom   1px的经纬度的差为 0.07358918309859164   大约0.07的经度去做循环
+      //左上  右下的恒定点为
+      const step = 0.07 * 50;
+      //全国的框框
+      let lx = 71.818915;
+      let ly = 54.164576;
+      let rx = 135.69433;
+      let ry = 13.850065;
+
+      let pdata = [];
+      let pdataX = [];
+
+      let cdata = [];
+      let cdataX = [];
+
+      let ddata = [];
+      let ddataX = [];
+
+      let error = [];
+      let promiseArr = [];
+      (async () => {
+        //解析省  思想是循环经纬度  外层控制行,内层控制高  纬度是由南极到北极  所以需要--step
+          //省
+          for (let i = lx; i <= rx; i += step) {
+            for (let j = ly; j >= ry; j -= step) {
+              
+              let point = new BMap.Point(i, j);
+              //获取地址
+              let res= await getLocation(point);
+              //为空
+              if(!res.address)continue;
+              let { province: p, city: c, district: d } = res.addressComponents;
+              
+              //没有汉字pass
+              if (!haveHanzi(p)) continue;
+              //重复pass
+              if (_.find(pdata, ["name", p])) continue;
+              let temp = {
+                id: "",
+                name: p,
+                pid: "",
+                letter: xa_pinyin.getCamelChars(p)
+              };
+              //数据装载
+              pdata.push(temp);
+              let strArray = [p,p.slice(0,-1)];
+              let promise = getBoundariesByArray(strArray);
+              //let promise = getBoundariesByArray([p]);
+              promiseArr.push({
+                ...temp,
+                boundaries: promise
+              });
+            }
+            console.log((((i - lx) / (rx - lx)) * 100).toFixed(2) + "%");
+          }
+          //pdata
+          //排序
+          sortByKey(pdata, "letter");
+          //id赋值  保证是1~顺序排列
+          pdata.map((v, i) => {
+            v.id = _.uniqueId();
+          });
+          //pdataX
+          let boundaries;
+          try {
+            boundaries = await Promise.all(promiseArr.map(v => v.boundaries));
+            console.log(boundaries);
+          } catch (error) {
+            console.error(error);
+          }
+          promiseArr.forEach((v, i) => {
+            v.boundaries = boundaries[i];
+          });
+          pdataX = promiseArr;
+          console.log(`p:${pdata.length}    ${pdataX.length}`);
+          console.log(`error:${error.length}`);
+      })();
+    </script>
+  </body>
+</html>

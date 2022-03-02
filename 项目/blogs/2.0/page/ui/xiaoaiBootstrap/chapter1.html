@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+	<!--
+    	作者：774813571@qq.com
+    	时间：2016-08-26
+    	描述：告诉IE浏览器用最新的引擎渲染这个页面
+    -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--
+    	作者：774813571@qq.com
+    	时间：2016-08-26
+    	为了确保适当的绘制和触屏缩放，需要在 <head> 之中添加 viewport 元数据标签。
+    -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>文字</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    	<style>
+    	body{background:#dadada}
+    	</style>
+  </head>
+  <body>
+  	<div class="container">
+	    <h1>1.初识</h1>
+	    <h2>font文字排版</h2>
+	    
+	    <h3 class="page-header">mark</h3>
+    	<mark>高亮的颜色</mark>
+    	
+	    <h3 class="page-header">del/s</h3>
+    	<del>删除的文本  (过期  下价商品)</del>
+    	<s>删除的文本  (过期  下价商品)</s>
+    	
+	    <h3 class="page-header">uins</h3>
+    	<u>下划线的文本</u>
+    	<ins>下划线的文本</ins>
+    	
+	    <h3 class="page-header">small</h3>
+    	<small>小号文本 缩小85%</small>
+    	
+	    <h3 class="page-header">strong</h3>
+    	<strong>加粗 700</strong>
+    	
+	    <h3 class="page-header">em</h3>
+    	<em>倾斜</em>
+    	
+	    <h2>对齐 </h2>
+    	<h3 class="page-header">文字对齐方式</h3>
+	    <div style="width: 200px;border: 1px solid #eee;">
+    	<p class="text-left">我是左对齐</p>
+    	<p class="text-center">居中</p>
+    	<p class="text-right">我是右对齐</p>
+    	<p class="text-justify">我是两段对齐，我是两段，我是两段对齐，我是两段，我是两段对齐，我是两段，我是两段对齐，我是两段(文字多行时右端会对齐)</p>
+    	<p class="text-nowrap">我不会换行，我不会换行，我不会换行，我不会换行</p>
+    	</div>
+    	
+    	<h3 class="page-header">改变大小写</h3>
+    	<p class="text-uppercase">myth text-uppercase</p>
+    	<p class="text-lowercase">myth text-lowercase</p>
+    	<p class="text-capitalize">myth text-capitalize  首字母大写</p>
+    	
+    	<h3 class="page-header">abbr缩略语</h3>
+    	<p>你知道<abbr title="I LOVE YOU">ily</abbr>是什么意思吗？</p>
+    	<p>你知道<abbr title="I LOVE YOU" class="initialism">ily</abbr>是什么意思吗？(initialism会让字体稍微变小95%,字母变大写)</p>
+    	
+    	<h2>引用</h2>
+    	<h3 class="page-header">引用话的修饰blockquote</h3>
+    	<blockquote>
+    		<p>付出不亚于任何人的努力</p>
+    		<footer class="text-right">小艾</footer>
+    	</blockquote>
+    	
+    	<h2>列表</h2>
+    	<h3 class="page-header">无序列表(list-unstyled 贴边)</h3>
+    	<ul class="list-unstyled">
+    		<li>我是无序列表1</li>
+    		<li>我是无序列表1</li>
+    		<li>我是无序列表1
+    			<ul>
+		    		<li>我是无序列表2</li>
+		    		<li>我是无序列表2</li>
+		    		<li>我是无序列表2</li>
+		    		<li>我是无序列表2</li>
+		    	</ul>
+    		</li>
+    		<li>我是无序列表1</li>
+    	</ul>
+    	<h3 class="page-header">有序列表</h3>
+    	<ol>
+    		<li>我是有序列表</li>
+    		<li>我是有序列表</li>
+    		<li>我是有序列表</li>
+    		<li>我是有序列表</li>
+    	</ol>
+    	<h3 class="page-header">list-inline变成一行 </h3>
+    	<ul class="list-inline">
+    		<li>我是无序列表</li>
+    		<li>我是无序列表</li>
+    		<li>我是无序列表</li>
+    		<li>我是无序列表</li>
+    	</ul>
+    	<pre>
+去除内补白 变成inline-block
+.list-inline{padding-left:0;margin-left:-5px;list-style:none;}
+.list-inline > li{display:inline-block;padding-right:5px;padding-left:5px;}
+    	</pre>
+    	<h3 class="page-header">描述列表 水平排列描述</h3>
+    	<dl class="dl-horizontal">
+    		<dt>web</dt>
+    		<dd>html</dd>
+    		<dd>css</dd>
+    		<dd>js</dd>
+    		<dt>java</dt>
+    		<dd>javase</dd>
+    		<dd>javaee</dd>
+    		<dt>data</dt>
+    		<dd>oracle</dd>
+    		<dd>mysql</dd>
+    		<dd>sqlservice</dd>
+    	</dl>
+   
+		<h2>代码</h2>
+		<h3 class="page-header">code</h3>
+		<p><code>&lt;code&gt;</code>内白高亮尖括号转义</p>
+		<h3 class="page-header">键盘提示kbd</h3>
+		<p>Emment输入ul&gt;li*4按<kbd class="text-capitalize">tab</kbd>会出现什么结果呢？</p>
+	</div>
+   <script src="js/jquery-1.11.2.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+  </body>
+</html>

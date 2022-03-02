@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+let log =a=>{console.log(a)};
+function selectFrom(strNum,endNum){
+	let len = endNum-strNum+1;
+	return Math.floor(Math.random()*len+strNum);
+}
+log(selectFrom(3,8))//从3到8这几个数中随机一个整数包括3和8
+log({a:null,b:undefined})
+		</script>
+	</body>
+</html>

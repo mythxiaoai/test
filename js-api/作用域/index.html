@@ -1,0 +1,38 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+//https://mp.weixin.qq.com/s?__biz=MzA4Nzg0MDM5Nw==&mid=2247484944&idx=1&sn=d64935cf19584ef0e6ad189c6b7d8390&chksm=903205f2a7458ce4d33166e74fb080ebac7b2d783d77dc1242197a77ba166fc1ad404f12c480&scene=0&xtrack=1&key=f2043c48cbd2a4d34a4090c558b0481d77a956a35c1bf26c766dd8b5ec7bcdaa05a3efbf1eadd0b0f33ff5e892b49805c4ce1b8bb325075ea1f71988e1018b80b912e9d4b0fe382e85b847c85aaa12b1&ascene=14&uin=MzY4MDM2NzM1&devicetype=Windows+10+x64&version=62090070&lang=zh_CN&exportkey=AdH9jfT5tP8izNfTfGItTSE%3D&pass_ticket=oYp4pKQRj5%2BMf6O9kh6k6y1wVLFSHH5LUws6a5VwUw%2BhtUkZMx4HCigjce1WKYO0
+        //关键点  就是 a= 1的时候是声明了内部
+    //   var a = 0;
+    //   if (true) {
+    //     a = 1;
+    //     function a() {}
+    //     a = 21;
+    //     console.log("里面" + a);
+    //   }
+    //   console.log("外面" + a); //0
+
+    //   console.log(a);
+
+      //解析  关键点是   28行  声明式a函数的时候把变量自动提升的函数指向指回作用域内，导致后面的21赋值是赋值内部的
+      var a = 0;
+      if (true) {
+          console.log(a, window.a); // 函数提升，是块级作用域，输出 function a 和 0
+          a = 1; // 取作用域最近的块级作用域的 function a ,且被重置为 1了，本质又是一个 变量的赋值。
+          console.log(a, window.a); // a 是指向块级作用域的 a, 输出 1 和 0
+          function a() {} // 函数的声明，将执行函数的变量的定义同步到函数级的作用域,执行到它本身function全局的值才回赋值上？
+          console.log(a, window.a); // 输出 1 和 1
+          a = 21; // 仍然是函数定义块级作用域的 a ,重置为 21
+        console.log(a, window.a); // 输出为函数提升的块级作用域的 a, 输出 21，1
+        console.log("里面", a);
+      }
+      console.log("外部", a);
+
+    </script>
+  </body>
+</html>

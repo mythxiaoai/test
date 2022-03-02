@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/base.css" />
+	</head>
+	<body>
+		<style>
+			.logo{position: relative;width: 250px;height: 250px; margin:100px auto;}
+			.logo .left,.right{position: absolute;}
+			.logo .right{transform: rotateY(180deg);}
+			.logo .left{left:60px;}
+			.logo .left .a .b{background: radial-gradient(circle at 125% 100%,transparent 0%,transparent 55%,#fff 60%,#fff 60%,#8a2229 60%,#8a2229 100%);}
+			.logo .a{background: radial-gradient(circle at 130% 110%,transparent 0%,transparent 55%,#ca1721 55%,#ca1721 100%);width: 200px;height: 250px;border-top-left-radius: 100%;position: relative;transition: 3s;}
+			.logo .a .b{background: radial-gradient(circle at 125% 105%,transparent 0%,transparent 60%,#8a2229 60%,#8a2229 100%);width: 200px;height: 175px;border-top-left-radius: 100%;position: absolute;right: 0;bottom: 0;}
+			.logo .a .c{background:rgba(0,0,0,0.0);width: 125px;height: 175px;border-top-left-radius: 100%;position: absolute;right: 0;bottom: 0;}
+			.logo:hover .a{width:300px;}
+			
+		</style>
+		<h1>兴国logo-小艾</h1>
+		<div class="logo">
+			<div class="right">
+				<div class="a">
+					<div class="b"></div>
+					<div class="c"></div>
+				</div>
+			</div>
+			<div class="left">
+				<div class="a">
+					<div class="b"></div>
+					<div class="c"></div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

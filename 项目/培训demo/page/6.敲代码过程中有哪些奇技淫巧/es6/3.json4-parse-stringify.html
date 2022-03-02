@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+		 let data = {
+		  "name":"myth",
+     "beanClass":"com.rjtx.gd.job.controller.TaskTimerController",
+      "createBy":"system",
+      "createDate":"2018-11-14 19:19:51",
+      "cronExpression":"0 0 10 * * ?",
+      "deptId":"d102",
+      "description":"",
+      "id":"36",
+      "isConcurrent":"",
+      "jobGroup":"48",
+      "jobName":"清远告警数据",
+      "jobStatus":"-1",
+      "jobType":"告警数据统计",
+      "methodName":"pullMessage",
+      "parameter":"",
+      "updateBy":"system",
+      "updateDate":"2019-01-03 15:26:02",
+      json:{
+        "name":"myth2",
+        a:1,
+        b:2
+      }
+    }
+		 //变字符串
+		 console.log(JSON.stringify(data))
+		 //变字符串--带格式
+		 console.log(JSON.stringify(data,null,4))
+		/* 
+		 
+		 let str = `{
+        "name": "myth2",
+        "a": 1,
+        "b": 2
+    }`
+    //变json
+		 console.log(typeof str)
+		 console.log(JSON.parse(str))*/
+		</script>
+	</body>
+</html>

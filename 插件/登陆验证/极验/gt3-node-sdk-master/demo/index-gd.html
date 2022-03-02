@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>滑动模式</title>
+    <style>
+      .geetest_panel_footer{display: none!important}
+      .geetest_wind.geetest_panel .geetest_panel_box.geetest_panelshowslide{
+        height: 240px!important;
+      }
+      .geetest_panel{display: none;}
+    </style>
+</head>
+<body>
+<h1>滑动模式</h1>
+<form id="form">
+    <div>
+        <label for="username">用户名：</label>
+        <input class="inp" id="username" type="text" value="用户名">
+    </div>
+    <br>
+    <div>
+        <label for="password">密码：</label>
+        <input class="inp" id="password" type="password" value="123456">
+    </div>
+    <br>
+    <div id="btn" class="btn">提交</div>
+</form>
+
+<!-- 注意，验证码本身是不需要 jquery 库，此处使用 jquery 仅为了在 demo 中使用，减少代码量 -->
+  <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/gt.js"></script>
+<script>
+    let login ={
+      async init(){
+        let data = await this.register();
+        this.initGeetest(data);
+      },
+      register(){
+        return $.ajax("gt/register-slide")
+      },
+      initGeetest(data){
+         // 调用 initGeetest 进行初始化
+          // 参数1：配置参数
+          // 参数2：回调，回调的第一个参数验证码对象，之后可以使用它调用相应的接口
+          let I =initGeetest({
+              // 以下 4 个配置参数为必须，不能缺少
+              gt: data.gt,
+              challenge: data.challenge,
+              offline: !data.success, // 表示用户后台检测极验服务器是否宕机
+              new_captcha: data.new_captcha, // 用于宕机时表示是新验证码的宕机
+              product: "bind", // 产品形式，包括：float，popup
+              width: "300px",
+              https: true
+              // 更多配置参数说明请参见：http://docs.geetest.com/install/client/web-front/
+          }, this.handler);
+      },
+      handler(captchaObj){
+        $('#btn').click(function () {
+            // 调用之前先通过前端表单校验
+            captchaObj.verify();
+        });
+        captchaObj.onReady(function () {
+            $("#wait").hide();
+        }).onSuccess(function () {
+          console.log(captchaObj)
+            var result = captchaObj.getValidate();
+            if (!result) {
+                return alert('请完成验证');
+            }
+            $.ajax({
+                url: 'gt/validate-slide',
+                type: 'POST',
+                dataType: 'json',
+                data: {
+                    username: $('#username').val(),
+                    password: $('#password').val(),
+                    geetest_challenge: result.geetest_challenge,
+                    geetest_validate: result.geetest_validate,
+                    geetest_seccode: result.geetest_seccode
+                },
+                success: function (data) {
+                    if (data.status === 'success') {
+                        setTimeout(function () {
+                            alert('登录成功');
+                        }, 1500);
+                    } else if (data.status === 'fail') {
+                        setTimeout(function () {
+                            alert('登录失败，请完成验证');
+                            captchaObj.reset();
+                        }, 1500);
+                    }
+                }
+            });
+        });
+      }
+    }
+    login.init();
+</script>
+</body>
+</html>

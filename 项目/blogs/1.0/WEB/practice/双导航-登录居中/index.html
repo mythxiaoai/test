@@ -1,0 +1,382 @@
+﻿<!doctype html>
+<html>
+	<head>
+	    <!--声明当前页面的编码集：中文编码（gbk/gb2312）,国际编码（utf-8）-->
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+		<!--页面三要素-->
+		<title>国际标准模板</title><!--小于等于31 大小写不区分-->
+		<meta name="Keywords" content="关键词,关键词,关键词"><!--<=76个字-->
+		<meta name="description" content=""><!--<=80个字-->
+		<!--js/css-->
+		<style type="text/css">
+			@charset "UTF-8";
+		* {word-wrap: break-word;;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;}
+		html {-webkit-text-size-adjust: none;overflow-x:hidden}
+		body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td,span{padding:0;margin:0;}
+		body{font:normal 0.75em/1.5em "微软雅黑","冬青黑体简体中文 w3","宋体"; }
+		fieldset,img,html,body,iframe{border:0;}
+		/** 重置表格元素 **/
+		table{border-collapse:collapse;border-spacing:0;}
+		ol,ul{list-style:none;}
+		address,caption,cite,code,dfn,em,strong,th,var{font-weight:normal;font-style:normal;}
+		caption,th{text-align:left;}
+		em,i,small,caption,th{font-weight:normal;font-style:normal;font-size:100%;}
+		h1,h2,h3,h4,h5,h6,em,strong,b{font-weight:400;font-size:100%;}
+		q:before,q:after{content:'';}
+		.clearfix{*zoom:1;}
+		.clearfix:after{content:"."; display:block;clear:both;visibility:hidden;line-height:0;height:0;}
+		a {color: #9D9C9C;text-decoration: none;}
+		a img {border: none;border:0;}
+		a,button{ outline:none; border:0;}
+		input,select{border:1px solid #ccc;}
+		button::-moz-focus-inner{border:0;padding:0;margin:0;}
+		textarea,input,button,select{outline:0;font-size:inherit;line-height:inherit;color:inherit;font-family:inherit;}
+		textarea{overflow:auto;resize:none;}
+		.hide,.none{display: none}
+		.hidden{visibility: hidden;}
+		.show,.block{display: block;}
+		img{ vertical-align:middle;}
+		input:disabled,select:disabled,textarea:disabled{background:#ccc;}
+		.fl{float: left;}
+		.fr{float: right;}
+			/*top start*/
+			.top {background:#333}
+			.top .t_content{width:1226px;height:40px;margin:0 auto;line-height:40px;}
+			.top .t_content a{color:rgb(176,176,176)}
+			.top .t_content a:hover{color:#fff}
+			.top .t_content .sep{margin:0 0.5em;color:#424242}
+			.top .t_content .t_c_shopping{width:120px;height:40px;background:#424242;text-align:center;margin-left:15px;}
+			.top .t_content .t_c_shopping:hover{background:#fff;}
+			.top .t_content .t_c_shopping:hover a {color:#FF6700;}
+			.top .t_content .t_c_shopping .fa-shopping-cart{font-size:20px;padding-right:10px;vertical-align:middle;}
+			/*end top*/
+						/*loginpanel start*/
+			.loginpanel{display:none;position:absolute;width:100%;height:100%;top:0;left:0;background:rgba(0,0,0,0.5);z-index:999;}
+			.loginpanel .content{position:absolute;width:640px;height:450px;background:#fff;border-radius:3px;}
+			.loginpanel .content .logo{width:49px;height:49px;background:#FF6700 url("images//mi-logo.png") no-repeat;cursor:pointer;margin:30px auto 20px;}
+			.loginpanel .content .tittle{font-size:24px;color:#424242;text-align:center;}
+			.loginpanel .content .infoinput{width:320px;height:110px;margin:20px auto;}
+			.loginpanel .content .infoinput input{width:320px;padding:17px 0;border:1px solid #ccc;text-indent:12px;}
+			.loginpanel .content .infoinput .username{margin-bottom:10px;}
+			.loginpanel .content .btn{width:322px;height:50px;line-height:50px;font-size:14px;color:#fff;text-align:center;margin:0 auto 20px;background:#FF6700;display:block;}
+			.loginpanel .content .seq{width:320px;margin:0 auto;border-top:1px solid #ccc;text-align:center;position:relative;}
+			.loginpanel .content .seq .seqtip{position:absolute;width:75px;left:0;right:0;margin:0 auto;top:-8px;color:#ccc;background:#fff;}/*6*12=72*/
+			.loginpanel .content .other{height:30px;width:320px;margin:10px auto 10px;text-align: center;}
+			.loginpanel .content .other a{display:inline-block;width:18px;height:18px;background:rgb(117, 117, 117);border-radius:50%;margin-right:20px;color:#fff;padding:6px;}
+			.loginpanel .content .other a:hover{background:rgb(2, 136, 209)}
+			.loginpanel .content .other .fa{vertical-align:top;font-size:18px;}
+			.loginpanel .content .foottip{width:320px;text-align:center;font-size:14px;margin:10px auto;}
+			.loginpanel .content .foottip a:hover{color:#FF6700}
+			.loginpanel .content .foottip a,.loginpanel .content .foottip span{color:rgb(117,117,117);margin-right:10px;}
+			.loginpanel .closelogin{position:absolute;width:18px;border-radius:50%;padding:6px;height:18px;right:5px;top:5px;background:#ccc;font-size:18px;cursor:pointer;color:#fff;text-align:center;transition:all 1s;}
+			.loginpanel .closelogin:hover{background:#aaa;transform:rotate(180deg);}
+			/* end loginpanel*/
+			/*statr top_site*/
+			.top_site {width:1226px;height:100px;margin:0 auto;background:#FF6700}
+			/*end top_site*/
+			/*focus statr*/
+			.focus{width:1226px;height:460px;margin:0 auto;position:relative;}
+			.focus .menu{width:234px;background:rgba(0,0,0,0.5);position:absolute;left:0;top:0;padding:20px 0;}
+			.focus .menu .menulist{line-height:42px;}
+			.focus .menu .menulist .info{padding-left:30px;color:#fff;font-size:14px;display:block;}
+			.focus .menu .menulist .menuli:hover{background:#FF6700}
+			.focus .menu .menulist .info .fa-chevron-right{float:right;padding-right:20px;line-height:42px;color:#ccc}
+			.focus .menushow{height:458px;border:1px solid #e0e0e0;border-left: 0;position:absolute;left:234px;top:0;background:#fff;box-shadow:0px 8px 16px rgba(0,0,0,0.18);display:none;}
+			.focus .menu .menulist .menushow ul{width:265px;float:left;padding: 1px 0;}
+			.focus .menu .menulist .menushow li .info{display:block;font-size:14px;float:left;color:#333;white-space:nowrap;overflow:hidden;}
+			.focus .menu .menulist .menushow li .info:hover{color:#FF6700;}
+			.focus .menu .menulist .menushow li .info img{padding: 18px 20px;vertical-align:middle;}
+			.focus .menu .menulist .menushow li .pick{width:58px;height:22px;display:block;margin:26px 10px 0 0;float:right;color:#FF6700;text-align:center;line-height:22px;border:1px solid #FF6700;}
+			.focus .menu .menulist .menushow li .pick:hover{background:#F25807;color:#fff;}
+			.focus .menu .menulist .menushow2{width:234px;border:1px solid #e0e0e0;border-left: 0;position:absolute;left:0px;top:460px;background:#fff;display:none;}
+			.focus .menu .menulist .menushow2 ul{width:234px;float:left;margin-right:20px;margin-bottom:20px;box-shadow:8px 8px 16px -1px rgba(0,0,0,0.18);}
+			.focus .menu .menulist .menushow2 li{width:232px;font-size:14px;text-align:center;border:1px solid #fff;}
+			.focus .menu .menulist .menushow2 li:hover{color:#FF6700;border:1px solid #F25807;}
+			/*end focus*/
+		</style>
+			<link rel="stylesheet" href="css/font-awesome.min.css"/>
+	</head>  
+	<body>
+		<!--start top-->
+		<div class="top">
+			<div class="t_content">
+				<div class="t_c_menu fl">
+					<a href="javascript:void(0);">小米网</a>
+					<span class="sep">|</span>
+					<a href="javascript:void(0);">MIUI</a>
+					<span class="sep">|<span>
+					<a href="javascript:void(0);">米聊</a>
+					<span class="sep">|<span>
+					<a href="javascript:void(0);">游戏</a>
+					<span class="sep">|<span>
+					<a href="javascript:void(0);">多看阅读</a>
+					<span class="sep">|<span>
+					<a href="javascript:void(0);">云服务</a>
+					<span class="sep">|<span>
+					<a href="javascript:void(0);">小米网移动版</a>
+					<span class="sep">|<span>
+					<a href="javascript:void(0);">问题反馈</a>
+					<span class="sep">|<span>
+					<a href="javascript:void(0);">Select Region</a>
+				</div>
+				<div class="t_c_shopping fr"><a href="javascript:void(0);"><i class="fa fa-shopping-cart"></i>购物车<span class="shopping_num">(0)<span></a></div>
+				<div class="t_c_loging fr" >
+					<a href="javascript:void(0);" id="login">登陆</a>
+					<span class="sep">|<span>
+					<a href="javascript:void(0);">注册</a>
+				</div>
+			</div>
+		</div>
+		<!--end top-->
+		<!--loginpanel start-->
+		<div class="loginpanel">
+			<div class="content">
+			<div class="closelogin fa fa-close"></div>
+				<div class="logo"></div>
+				<div class="tittle">小米账号登录</div>
+				<div class="infoinput">
+					<input class="username" type="text" placeholder="邮箱/手机号码/小米账号"></input>
+					<input class="password" type="password" placeholder="密码"></input>
+				</div>
+				<a class="btn" href="javascript:;" >立即登录</a>
+				<div class="seq">
+					<span class="seqtip">其他账号登录</span>
+				</div>
+				<div class="other">
+					<a href="javascript:;" class="fa fa-qq"></a>
+					<a href="javascript:;" class="fa fa-weibo"></a>
+					<a href="javascript:;" class="fa fa-wechat"></a>
+				</div>
+				<div class="foottip">
+					<a href="javascript:;" class="register">注册小米账号</a>
+					<span>|</span>
+					<a href="javascript:;" class="forgetpw">忘记密码？</a>
+				</div>
+			</div>
+		</div>
+		<!--end loginpanel-->
+		<div class="top_site">
+				<div class="t_logo"></div>
+				<div class="t_swf"></div>
+				<div class="t_menu"></div>
+				<div class="t_search"></div>
+		</div>
+
+		<!--focus start-->
+		<div class="focus">
+			<div class="f_main">
+				<div class="f_m_img"><a href="javascript:void(0)"><img alt="小米推荐" height="460" width="1226" src="images/2.jpg"/></div>
+				<div class="menu">
+					<ul class="menulist" >
+						<li class="menuli"><a class="info" href="javascript:void(0);">手机 平板 电话卡<i class="fa fa-chevron-right"></i></a><div  class="menushow"></div><div  class="menushow2"></div></li>
+						<li class="menuli"><a class="info" href="javascript:void(0);">电视 盒子<i class="fa fa-chevron-right"></i></a><div  class="menushow"></div><div  class="menushow2"></div></li>
+						<li class="menuli"><a class="info" href="javascript:void(0);">路由器 智能硬件<i class="fa fa-chevron-right"></i></a><div  class="menushow"></div><div  class="menushow2"></div></li>
+						<li class="menuli"><a class="info" href="javascript:void(0);">移动电源 插线板<i class="fa fa-chevron-right"></i></a><div  class="menushow"></div><div  class="menushow2"></div></li>
+						<li class="menuli"><a class="info" href="javascript:void(0);">耳机 音箱<i class="fa fa-chevron-right"></i></a><div  class="menushow"></div><div  class="menushow2"></div></li>
+						<li class="menuli"><a class="info" href="javascript:void(0);">电池 存储卡<i class="fa fa-chevron-right"></i></a><div  class="menushow"></div><div  class="menushow2"></div></li>
+						<li class="menuli"><a class="info" href="javascript:void(0);">保护套 后盖<i class="fa fa-chevron-right"></i></a><div  class="menushow"></div><div  class="menushow2"></div></li>
+						<li class="menuli"><a class="info" href="javascript:void(0);">贴膜 其他配件<i class="fa fa-chevron-right"></i></a><div  class="menushow"></div><div  class="menushow2"></div></li>
+						<li class="menuli"><a class="info" href="javascript:void(0);">米兔 服装<i class="fa fa-chevron-right"></i></a><div  class="menushow"></div><div  class="menushow2"></div></li>
+						<li class="menuli"><a class="info" href="javascript:void(0);">箱包 其他周边<i class="fa fa-chevron-right"></i></a><div  class="menushow"></div><div  class="menushow2"></div></li>
+					</ul>
+				</div>
+			</div>
+			<div class="focus-slider"></div>
+			<div class="focus-goods"></div>
+		</div>
+		<!--end focus-->
+		<script>
+			//登录面板
+			var login=document.getElementById("login");
+			var loginpanel=document.getElementsByClassName("loginpanel")[0];
+			var closelogin=document.getElementsByClassName("closelogin")[0];
+			var content=document.getElementsByClassName("content")[0];
+			login.onclick=function(){
+				loginpanel.style.display="block";
+				center();
+			}
+			closelogin.onclick=function(){
+				loginpanel.style.display="none";
+			}
+			//居中
+			function center(){
+			content.style.left=document.documentElement.clientWidth/2-content.offsetWidth/2+"px";
+			content.style.top=document.documentElement.clientHeight/2-content.offsetHeight/2+"px";
+			}
+			//登录面板拖拽效果
+			content.onmousedown=function(e){
+				var e = e || window.event;
+				var x = e.clientX-this.offsetLeft;
+				var y = e.clientY-this.offsetTop;
+				this.style.cursor="move";
+				document.onmousemove=function(e){
+					var e = e || window.event;
+					content.style.left=e.clientX-x+"px";
+					content.style.top=e.clientY-y+"px";
+					if(content.offsetLeft<0)content.style.left=0;
+					if(content.offsetTop<0)content.style.top=0;
+					if(content.offsetLeft>(window.innerWidth-content.offsetWidth))content.style.left=window.innerWidth-content.offsetWidth+"px";
+					if(content.offsetTop>(window.innerHeight-content.offsetHeight))content.style.top=(window.innerHeight-content.offsetHeight)+"px";
+				}
+
+				document.onmouseup=function(){
+				content.style.cursor="default";
+					document.onmousemove=null;
+					document.onmouseup=null;
+				}
+			}
+			//做右边栏显示
+			var emenulist=document.getElementsByClassName("menulist")[0];//父亲
+			var emenulistlis=emenulist.getElementsByClassName("menuli");//儿子成群
+			var emenushow=emenulist.getElementsByClassName("menushow");//大孙子成群
+			var emenushow2=emenulist.getElementsByClassName("menushow2");//小孙子成群
+			var phone=["小米手机5","小米Max","小米手机4c","红米Note3","红米手机3S","红米手机3","小米平板2","合约机","定制版手机","对比手机","小米移动 电话卡"];
+			var phoneurl=["http://c1.mifile.cn/f/i/15/goods/list/mi5bar80.jpg?width=40&height=40"];
+			var tv=["小米电视 43英寸","小米电视 48英寸","小米电视 55英寸","小米电视 60英寸","小米电视 65英寸","小米电视 70英寸","小米电视主机","小米盒子3 增强版","小米盒子3","小米盒子mini","小米低音炮","蓝牙手柄","家庭音响","电视盒子配件"];
+			var tvurl=["http://c1.mifile.cn/f/i/15/goods/sidebar/4380side.jpg?width=40&height=40"];
+			var router=["小米无人机","小米路由器","就九号平衡车","米家家里IH电饭煲","米家恒温电水壶","运动相机","米兔儿童电话手表","血压计","净化器及滤芯","净水器及滤芯","摄像机","智能灯","只能插座","智能家庭组合","手环及配件","体重秤","WiFi放大器","全部智能配件"];
+			var routerurl=["http://c1.mifile.cn/f/i/g/2015/video/wurenji80.jpg?width=40&height=40"];
+			var power =["小米移动电源","小米插线板","品牌移动电源","移动电源附件"];
+			var powerurl=["http://c1.mifile.cn/f/i/15/goods/sidebar/dianyuan.jpg?width=40&height=40"];
+			var headset=["小米头戴式耳机","小米圈铁耳机","小米胶囊耳机","小米活塞耳机基础班","小米蓝牙耳机","品牌耳机","小米蓝牙音箱","小米随身蓝牙音箱","小钢炮音箱 2","小钢炮音箱 青春版","小米方盒子音箱","网络收音机","品牌音箱"]
+			var headseturl=["http://c1.mifile.cn/f/i/15/goods/sidebar/headphone.jpg?width=40&height=40"];
+			var battery =["彩虹5号电池","彩虹7号电池","电池","充电器","线材","存储卡"];
+			var batteryurl=["http://c1.mifile.cn/f/i/15/goods/sidebar/5Battery1.jpg?width=40&height=40"];
+			var protectpart=["保护套/保护壳","后盖"];
+			var protectparturl=["http://c1.mifile.cn/f/i/15/goods/sidebar/baohu.jpg?width=40&height=40"];
+			var otherpad =["贴膜","自拍杆","贴纸","防尘塞","手机支架","随身WiFi"]
+			var otherpadurl=["http://c1.mifile.cn/f/i/15/goods/sidebar/tiemo.jpg?width=40&height=40"];
+			var micolthes=["米兔","服装","变形金刚特别版声波",];
+			var micolthesurl=["http://c1.mifile.cn/f/i/g/2015/cn-index/mitu-80.jpg?width=40&height=40"];
+			var packages =["箱包","90分旅行箱","小米鼠标垫","生活周边"]
+			var packagesurl=["http://c1.mifile.cn/f/i/g/2015/cn-index/xiangbao-80.jpg?width=40&height=40"];
+			//循环元素为每个li绑定事件和赋予对应的值
+			for(var i = 0 ;i<emenulistlis.length;i++){
+				emenulistlis[i].index=i;
+				emenulistlis[i].onmouseover=function(){
+					//因为每个li下面都会有这个div   so   index共用可以
+					emenushow[this.index].style.display="block";
+					emenushow2[this.index].style.display="block";
+						getulli2(this,2,8);
+						//传phone
+						if(this.index==0){
+							getulli(phoneurl,phone,this.index);
+						}
+						//传tv
+						if(this.index==1){
+							getulli(tvurl,tv,this.index);
+						}
+						//传router
+						if(this.index==2){
+							getulli(routerurl,router,this.index);
+						}
+						if(this.index==3){
+							getulli(powerurl,power,this.index);
+						}
+						if(this.index==4){
+							getulli(headseturl,headset,this.index);
+						}
+						if(this.index==5){
+							getulli(batteryurl,battery,this.index);
+						}
+						if(this.index==6){
+							getulli(protectparturl,protectpart,this.index);
+						}
+						if(this.index==7){
+							getulli(otherpadurl,otherpad,this.index);
+						}
+						if(this.index==8){
+							getulli(micolthesurl,micolthes,this.index);
+						}
+						if(this.index==9){
+							getulli(packagesurl,packages,this.index);
+						}
+				}
+				emenulistlis[i].onmouseout=function(){
+					emenushow[this.index].style.display="none";
+					emenushow2[this.index].style.display="none";
+				}
+			}
+			/*
+				arrimg  图片数组
+				arrdata 文字数据数组
+				index  作用的下标
+			*/
+			function getulli(arrimg,arrdata,index){
+				//如果这个li的数据已经加载了  就无需加载 不用每次触发事件就去覆盖一次，提高效率
+				if(!emenushow[index].innerHTML){
+						var ulindex = 0;
+						var arrindex = 0;
+						var maxarrindex=arrdata.length-1;
+						var ulnum=Math.ceil(arrdata.length/6);
+						for(var i = 0;i<ulnum;i++){
+							var ul =document.createElement("ul");
+							for(var j = 0 ;j<6;j++){
+								ul.innerHTML+="<li><a class='info' href='javascript:void(0);'><img alt='样板' width='40' heright='40' src='"+arrimg[0]+"'/><span>"+arrdata[arrindex]+"</span></a></li>"
+								if(maxarrindex==arrindex){
+									break;
+								}
+								arrindex++;
+							}
+							emenushow[index].style.width=265*(ulindex+1)+"px";
+							emenushow[index].appendChild(ul);
+							ulindex++;
+						}
+				}
+			}
+
+			
+			/*
+				domparent  父元素   目的是数据源的处理，，用父元素的text填子元素的内容
+				numul  要多少个ul
+				nulli  每个ul下面的li要多少个
+			*/
+			function getulli2(domparent,numul,nulli){
+				if(!emenushow2[domparent.index].innerHTML){
+					for(var i = 0 ; i<numul;i++){
+						var ul = document.createElement("ul");
+						for(var j = 0 ; j<nulli;j++){
+							ul.innerHTML+="<li>"+domparent.getElementsByTagName("a")[0].innerHTML+(i+1)+"-"+(j+1)+"</li>";
+						}
+						emenushow2[domparent.index].appendChild(ul);
+					}
+					//20是间距
+						playStyle(emenushow2[domparent.index],"width",(234*numul)+(20*numul)+"px");
+				}
+			}
+			/*
+			obj  传进来的对象；
+			attr 什么样式
+			*/
+			function getStyle(obj,attr){
+					/*if(obj.getComputedStyle(obj,null)){
+						return window.getComputedStyle(obj,null)[attr];
+					}else{
+						return obj.currentStyle[attr];
+					}*/
+					return obj.currentStyle?obj.currentStyle[attr]:window.getComputedStyle(obj,":hover")[attr];
+			}
+			/*玩样式
+				一个参数 返回这个元素的全部样式对象
+				两个参数 返回指定属性样式
+				三个参数  改变指定属性样式的值，当然 改变作用上去是行内式   而不改变其他样式区域
+				obj  传进来的对象；
+				attr 什么样式
+				value 改变样式的值
+			*/
+			function playStyle(obj,attr,value){
+				if(arguments.length == 1){
+					return obj.currentStyle?obj.currentStyle:window.getComputedStyle(obj,null);
+				}else if( arguments.length == 2){ 
+					return getStyle( obj ,attr );
+				}else if( arguments.length ==3 ){
+					obj.style[attr] = value;
+					return "修改成功";
+				}else{
+					return "这个不是写插件,请传递正确参数数量"
+				}
+			}
+			
+		</script>
+	</body>
+</html>

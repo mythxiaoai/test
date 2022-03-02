@@ -1,0 +1,47 @@
+<div id="app">
+  <div>
+    <div v-for="(item,index) in multiterm.data" :key="index">
+      <input v-model="item.key" />
+      <input v-model="item.value" />
+      <button v-if="multiterm.data.length>1" @click="mins(index)">-</button>
+      <button @click="plus(index)">+</button>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.min.js" integrity="sha256-ngFW3UnAN0Tnm76mDuu7uUtYEcG3G5H1+zioJw3t+68=" crossorigin="anonymous"></script>
+
+<script>
+  const vm = new Vue({
+    el: "#app",
+    created() {},
+    mounted() {},
+    data: function () {
+      return {
+        multiterm: {
+          data: [
+            { key: "1", value: "男" },
+            { key: "2", value: "女" },
+          ],
+          config: {
+            label: ["键", "值"],
+            visible: [false, false],
+          },
+        },
+      };
+    },
+    methods: {
+      plus(index) {
+        this.multiterm.data.splice(index + 1, 0, { key: "", value: "" });
+      },
+      mins(index) {
+        this.multiterm.data.splice(index, 1);
+      },
+    },
+    computed: {},
+    watch: {},
+    components: {},
+  });
+</script>
+
+<style scoped></style>

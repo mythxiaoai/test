@@ -1,0 +1,117 @@
+﻿<!doctype html>
+<html>
+	<head>
+	    <!--声明当前页面的编码集：中文编码（gbk/gb2312）,国际编码（utf-8）-->
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+		<!--页面三要素-->
+		<title>国际标准模板</title><!--小于等于31 大小写不区分-->
+		<meta name="Keywords" content="关键词,关键词,关键词"><!--<=76个字-->
+		<meta name="description" content=""><!--<=80个字-->
+		<!--js/css-->
+		<style type="text/css">
+			*{margin:0;padding:0;}
+			body{font-size:12px;color:#333;font-family:"微软雅黑";}
+			.fl{float:left;}
+			.fr{float:right;}
+			a{text-decoration:none;}
+			img{border:none;}
+			ul{list-style:none;}
+			/*focus statr*/
+			.f_m_img{width:1226px;height:460px;margin:100px auto;position:relative;overflow:hidden;}
+			/*轮播操作样式*/
+			.f_m_img .m_imgs{position:relative;}
+			.f_m_img .m_imgs .m_img{height:460px;display:block;vertical-align:top;}
+			.f_m_img  .banner_foot{position:absolute;width:400px;height:18px;bottom:20px; right:30px;}
+			.f_m_img  .banner_foot .f_icon{width:6px;height:6px;margin:4px 5px 0 5px;display:inline-block;background: rgba(0,0,0,0.4);transition:all 0.5s;float:left; border: 2px solid rgba(255,255,255,0.3);
+    border-radius:50%;}
+			.f_m_img  .banner_foot .f_icon:hover{background: rgba(255,255,255,0.4);border-color:rgba(0,0,0,0.4);}
+			.f_m_img  .banner_foot .f_checked{background: rgba(255,255,255,0.4);border-color:rgba(0,0,0,0.4);};
+			/*end focus*/
+		</style>
+	</head>  
+	<body>
+
+		<!--f_m_img start-->
+		<div class="f_m_img">
+			<ul class="m_imgs">
+				<li class="m_img m_checked"><a href="javascript:void(0)"><img alt="小米推荐" height="460" width="1226" src="images/1.jpg"/></a></li>
+				<li class="m_img"><a href="javascript:void(0)"><img alt="小米推荐" height="460" width="1226" src="images/2.jpg"/></a></li>
+				<li class="m_img"><a href="javascript:void(0)"><img alt="小米推荐" height="460" width="1226" src="images/3.jpg"/></a></li>
+				<li class="m_img"><a href="javascript:void(0)"><img alt="小米推荐" height="460" width="1226" src="images/4.jpg"/></a></li>
+				<li class="m_img"><a href="javascript:void(0)"><img alt="小米推荐" height="460" width="1226" src="images/5.jpg"/></a></li>
+			</ul>
+			<div class="banner_foot">
+				<ul class="banner_icons fr">
+					<li class="f_icon f_checked"></li>
+					<li class="f_icon"></li>
+					<li class="f_icon"></li>
+					<li class="f_icon"></li>
+					<li class="f_icon"></li>
+				<ul>
+			</div>
+		</div>
+		<!--end f_m_img-->
+		<script src="js\jquery-1.11.2.min.js"></script>
+		<script>
+			
+		/*
+		无缝滑动
+		时间：2016-7-19
+		作者：小艾
+		思路：
+		把UL整体向上移动
+		pindex/currIndex:0-1  top =-height*pindex+"px";
+		pindex/currIndex:1-2 top =-height*pindex+"px";
+		pindex/currIndex:2-3 top =-height*pindex+"px";
+		pindex/currIndex:3-4 top =-height*pindex+"px";
+		当currIndex=4的时候  把第一个li相对定位到整个ul的下方，并把currIndex=0作为初始化pindex的重拾初始化;
+		li[0].style.position="relative"
+		top=li.len*height
+		pindex:4-5/currIndex:0; top =-height*pindex+"px";
+		因currIndex=0pIndex=0 整个ul拉下来  第一个元素还原  pIndex++  currIndex++
+		pindex:5-1/currIndex:0-1  top =-height*pindex+"px";
+		loop duration...
+		*/
+			var currIndex=0;
+			var pindex=0;
+			var time =null;
+			var imgs=document.getElementsByClassName("m_img");
+			var icons=document.getElementsByClassName("f_icon");
+			var m_imgs=document.getElementsByClassName("m_imgs")[0];
+			var imgsHeight=imgs[0].offsetHeight;
+			//自动轮播
+			function run(){
+				if(currIndex==0){
+					pindex=0;
+					imgs[0].style.position="static";
+					m_imgs.style.top="0";
+				}
+				if(currIndex==imgs.length-1){
+					currIndex=0;
+					imgs[0].style.position="relative";
+					imgs[0].style.top=imgsHeight*(imgs.length)+"px";
+				}else{
+					currIndex++;
+				}
+				pindex++;
+				$(m_imgs).animate({top:-imgsHeight*pindex+"px"},300);
+				for(var i =0;i<imgs.length;i++){
+					icons[i].className="f_icon";
+				}
+				icons[currIndex].className="f_icon f_checked";
+				/*for(var i =0;i<imgs.length;i++){
+					icons[i].className="f_icon";
+				}
+				icons[currIndex].className="f_icon f_checked";
+				$(m_imgs).animate({top:-imgsHeight*currIndex+"px"},300);
+
+				if(currIndex==imgs.length-1){
+					currIndex=0;
+				}else{
+					currIndex++;
+				}*/
+			}
+			time=setInterval(run,1000);
+		</script>
+	</body>
+</html>

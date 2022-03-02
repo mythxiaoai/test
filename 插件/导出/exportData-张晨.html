@@ -1,0 +1,164 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #box{
+          width:100px;
+          height:100px;
+          position:absolute;
+          /* animation:run infinite 4s;
+          top:200px;
+          left:0px; */
+          border: 1px solid #ccc;
+      }
+      @keyframes run{
+          0% {
+              top:200px;
+              left:0px;
+          }
+          25% {
+              top:200px;
+              left:200px;
+          }
+          50% {
+              top:300px;
+              left:200px;
+          }
+          75% {
+              top:300px;
+              left:0px;
+          }
+      }
+      #box{
+          width:100px;
+          height:100px;
+          animation:run infinite 4s;
+          transform:translate(200px,200px);
+          border: 1px solid #ccc;
+      }
+      @keyframes run{
+          0% {
+          transform:translate(200px,200px);
+          }
+          25% {
+          transform:translate(200px,400px);
+          }
+          50% {
+          transform:translate(400px,400px);
+          }
+          75% {
+          transform:translate(400px,200px);
+          }
+          100% {
+            transform:translate(200px,200px);
+          }
+      }
+  </style>
+</head>
+<body>
+  <input type="">
+  <div id="box"></div>
+    <script src="https://cdn.bootcss.com/FileSaver.js/1.3.8/FileSaver.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/xlsx/0.16.8/xlsx.full.min.js"></script>
+
+    <script>
+      const auth = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MDBkNGFlZjhiMTllYTY5MjE4YWRlMWEiLCJpc3MiOiJtYXJzLW1pY3JvIiwiaWF0IjoxNjIyMTg2Mjg3fQ.o1iujqItQCdkjGWuha2Kt1qXBaglgDikOvIQZsml1HY";
+      async function fetchData(url, params, opts) {
+        var options = {
+          method: "POST",
+          body: params,
+          headers: {
+            "content-type": "application/json",
+            Authorization: auth && "Bearer " + auth,
+          },
+        };
+        opts = Object.assign({}, options, opts);
+        return await (await fetch(url, opts)).json();
+      }
+      
+      (async () => {
+        let url = "https://mars.companyP2.shop/graphql/";
+        let params = `{"query":"query processType($page: Int, $limit: Int, $sort: String, $filter: ProcessTypeFilter) { processType(page: $page, limit: $limit, sort: $sort, filter: $filter) { count list { ...processType } } } fragment processType on ProcessType { _id id name className type timing price tag comment creator { _id nickname } company { _id name } enable docType createTime updateTime }","variables":{"page":1,"limit":999999}}`;
+        let res = await fetchData(url, params);
+        //数据组装
+        //表头
+        let fields = ["序号","工序类型","工序分类","工序名称","工序耗时(分)","工序计价(元)","备注","状态"];
+        //数据
+        let arr = res.data.processType.list;
+        console.log(arr);
+        let temp = [];
+        arr.forEach(v=>{
+          temp.push({
+            "序号":v.id,
+            "工序类型":"车缝",
+            "工序分类":v.className,
+            "工序名称":v.name,
+            "工序耗时(分)":"不会算~",
+            "工序计价(元)":v.price,
+            "备注":v.comment,
+            "状态":v.enable =="ENABLE"?"启用":"停用",
+          })
+        })
+        console.log(arr);
+        //xlsx(temp, fields, "工序核价档案截止2021年6月9日");
+        
+       arr = null;
+       fields = null;
+      })();
+
+      /**
+       * json
+       *
+       **/
+      function xlsx(json, header, filename = ".xlsx") {
+        let sheetName = filename; //excel的文件名称
+        let wb = XLSX.utils.book_new(); //工作簿对象包含一SheetNames数组，以及一个表对象映射表名称到表对象。XLSX.utils.book_new实用函数创建一个新的工作簿对象。
+        let ws = XLSX.utils.json_to_sheet(json, { header }); //将JS对象数组转换为工作表。
+        wb.SheetNames.push(sheetName);
+        wb.Sheets[sheetName] = ws;
+        const defaultCellStyle = { font: { name: "Verdana", sz: 65, color: "FF00FF88" }, fill: { fgColor: { rgb: "FFFFAA00" } } }; //设置表格的样式
+        let wopts = { bookType: "xlsx", bookSST: false, type: "binary", cellStyles: true, defaultCellStyle: defaultCellStyle, showGridLines: false }; //写入的样式
+        let wbout = XLSX.write(wb, wopts);
+        let blob = new Blob([s2ab(wbout)], { type: "application/octet-stream" });
+        saveAs(blob, filename + ".xlsx");
+      }
+
+      function s2ab(s) {
+        var buf;
+        if (typeof ArrayBuffer !== "undefined") {
+          buf = new ArrayBuffer(s.length);
+          var view = new Uint8Array(buf);
+          for (var i = 0; i != s.length; ++i) view[i] = s.charCodeAt(i) & 0xff;
+          return buf;
+        } else {
+          buf = new Array(s.length);
+          for (var i = 0; i != s.length; ++i) buf[i] = s.charCodeAt(i) & 0xff;
+          return buf;
+        }
+      }
+
+
+      function ts(fn) {
+        if (typeof fn !== "function") return;
+        let gen = fn();
+        if (!gen || typeof gen.next !== "function") return;
+
+        let next = function () {
+          let start = performance.now();
+          let res = null;
+          do {
+            res = gen.next();
+          } while (!(res.done || performance.now() - start > 25));
+          if (res.done) return;
+          setTimeout(next);
+        };
+
+        next();
+      }
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+<script type="module">
+	import {m} from './export6.js'
+	//constant   导出的变量是不能更改的 const类型  不能更改原始，但是能够做赋值操作
+	//m=1//Assignment to constant variable.
+	const a = 5;
+	//a=1;//Assignment to constant variable.
+	//console.log(a);
+	let b = m;
+	console.log(b);
+</script>
+	</body>
+</html>

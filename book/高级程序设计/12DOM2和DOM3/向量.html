@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.div{background: red;}
+			.div:after{content: ">";}
+			div{background: green;}
+			
+		</style>
+	</head>
+	<body>
+<div style="height: 500px;">1</div>
+<div class="div" id="div1" style="height: 500px;position: relative;">
+	<div id="div2" style="position: absolute;top: 50px;left: 300px;width: 1px;height: 1px;background-color: #fff;"></div>
+</div>
+<div style="height: 500px;">3</div>
+<div style="height: 500px;">4</div>
+<div style="height: 500px;">5</div>
+<style>
+	*{margin: 0;padding: 0;}
+</style>
+<script>
+	let divDom =document.getElementById("div2")
+	//offset
+	console.log(divDom.offsetParent);//body  获取定位的父元素
+	console.log(divDom.offsetWidth);//width 1366	获取元素包括变框的 整体宽度
+	console.log(divDom.offsetHeight);//height 500	获取元素包括边框的整体高度
+	console.log(divDom.offsetTop);//top	500	获取元素与相对定位元素的top值的距离  如果没有找到定位元素  则默认以body为定位元素
+	console.log(divDom.offsetLeft);//left	0	获取元素到定位元素的left值	如果没有找到定位元素  则默认以body为定位元素
+	//offset到顶
+	function getOffset(element){
+		var json ={};
+		json.top = element.offsetTop;
+		json.left = element.offsetLeft;
+		let currPsition = element.offsetParent;
+		while (currPsition !==null){
+			json.top += currPsition.offsetTop;
+			json.left += currPsition.offsetLeft;
+			currPsition = currPsition.offsetParent;
+		}
+		return json;
+	}
+	console.log(getOffset(divDom))//{top: 550, left: 300}
+	//上下左右宽高IE11+   获取的是元素到相对定位元素的距离   出现滚动条的情况有点尴尬
+	console.log(divDom.getBoundingClientRect())//{top: 550, right: 300, bottom: 550, left: 300, width: 0}
+	//获取视口的宽高
+	function getViewport(){
+		if(document.compatMode!="CSS1Compat"){
+			return{
+				width:document.body.clientWidth,
+				height:document.body.clientHeight,
+			}
+		}else{
+			return{
+				width:document.documentElement.clientWidth,
+				height:document.documentElement.clientHeight,
+			}
+		}
+	}
+	console.log(getViewport())//{width: 1349, height: 331}
+	
+	
+	console.log(window.innerHeight)
+	console.log(window.innerWidth)//1366 与视口的不一样  因为少了个滚动条
+	console.log(document.documentElement.scrollHeight)//2500  如果没有滚动条  就是元素的内容高度
+	console.log(document.documentElement.scrollWidth)//1349 1366-1349 17的滚动条宽度
+	//页面整体的宽高
+	function getPageWH(){
+		if(document.compatMode!="CSS1Compat"){
+			return{
+				pageX:Math.max(document.body.scrollWidth,document.body.clientWidth),
+				pageY:Math.max(document.body.scrollHeight,document.body.clientHeight)
+			}
+		}else{
+			return{
+				pageX:Math.max(document.documentElement.scrollWidth,document.documentElement.clientWidth),
+				pageY:Math.max(document.documentElement.scrollHeight,document.documentElement.clientHeight)
+			}
+		}
+	}
+	console.log(getPageWH())//{pageX: 1349, pageY: 2500}
+	
+	
+	window.onscroll=function(){
+		console.log(document.body.scrollTop)//
+		console.log(document.body.scrollLeft)//
+	}
+	//上下左右
+    function getBoundingClientRect(element){
+        var scrollTop = document.documentElement.scrollTop;
+        var scrollLeft = document.documentElement.scrollLeft;
+        
+        if (element.getBoundingClientRect){
+            if (typeof arguments.callee.offset != "number"){
+                var temp = document.createElement("div");
+                temp.style.cssText = "position:absolute;left:0;top:0;";
+                document.body.appendChild(temp);
+                arguments.callee.offset = -temp.getBoundingClientRect().top - scrollTop;
+                document.body.removeChild(temp);
+                temp = null;
+            }
+    
+            var rect = element.getBoundingClientRect();
+            var offset = arguments.callee.offset;
+    		console.log("offset"+offset)
+            return {
+                left: rect.left + offset,
+                right: rect.right + offset,
+                top: rect.top + offset,
+                bottom: rect.bottom + offset
+    
+            };
+        } else {
+    
+            var actualLeft = getOffset(element).left;
+            var actualTop = getOffset(element).top;
+    
+           return {
+                left: actualLeft - scrollLeft,
+                right: actualLeft + element.offsetWidth - scrollLeft,
+                top: actualTop - scrollTop,
+                bottom: actualTop + element.offsetHeight - scrollTop
+            }
+        }
+    }
+	console.log(getBoundingClientRect(divDom))
+</script>
+	</body>
+</html>

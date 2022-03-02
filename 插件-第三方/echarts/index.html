@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	  <div id="chart" style="height: 500px;width: 1200px;background: red;margin: 0 auto;"></div>
+	  
+	  <!--echart图表插件-->
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript" src="echart/echarts.js"></script>
+<script type="text/javascript" src="echart/map/js/yunnan.js"></script>
+<script>
+  function randomData() {  
+           return Math.round(Math.random()*500);  
+      }
+      var mydata = [  
+                {name: '广州市',value: '100' },{name: '佛山市',value: randomData() },  
+                {name: '肇庆市',value: randomData() },{name: '云浮市',value: randomData() },  
+            ];
+            var optionMap = {
+                backgroundColor: '#FFFFFF',  
+                title: {  
+                    text: '广州地图大数据',  
+                    subtext: '',  
+                    x:'center'  
+                },
+                tooltip : {  
+                    trigger: 'item'  
+                },  
+                toolbox: {
+              feature: {
+                  saveAsImage: {show: true}
+              }
+          },
+                //左侧小导航图标
+                visualMap: {
+                    min: 0,
+                    max: 2500,
+                    left: 'left',
+                    top: 'bottom',
+                    text:['高','低'],           // 文本，默认为数值文本
+                    calculable : true
+                },
+                //配置属性
+                series: [{
+                    name: '投资收入比',  
+                    type: 'map',  
+                    mapType: '云南',
+                    roam: true,  
+                    label: {  
+                        normal: {  
+                            show: false  //省份名称  
+                        },
+                         emphasis: {
+                          show: false
+                         }
+                    },
+                    itemStyle:{
+                      areaColor:"#fff",
+                    },
+                    emphasis: {
+                        itemStyle:{
+                          areaColor:"#e1f5fe",
+                        }
+                    },
+                    data:mydata  //数据
+                }]  
+            };  
+          //初始化echarts实例
+          var myChart = echarts.init($("#chart")[0]);
+       myChart.setOption(optionMap);
+       //窗口变动，表格刷新
+       $(window).resize(function(){myChart.resize();});
+</script>
+	</body>
+</html>

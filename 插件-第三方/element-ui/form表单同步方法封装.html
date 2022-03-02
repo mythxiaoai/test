@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			function com1(callback){
+				return new Promise(function(resolve,reject){
+					setTimeout(function(){
+						callback(true);
+						resolve();
+					},1000);
+				})
+			}
+			function com2(callback){
+				return new Promise(function(resolve,reject){
+					setTimeout(function(){
+						callback(true);
+						resolve();
+					},1000);
+				})
+			}
+			function com3(callback){
+				return new Promise(function(resolve,reject){
+					setTimeout(function(){
+						callback(true);
+						resolve();
+					},1000);
+				})
+			}
+			/*let arr = ["com1"]
+			window[arr[0]](function(a){
+				console.log(a)
+				console.log("执行1")
+			})*/
+			/*com1(function(a){
+				console.log(a)
+				console.log("执行1")
+			}).then(function(){
+				return com2(function(a){
+					console.log(a)
+					console.log("执行2")
+				});
+			})*/
+			function all(arr,callback,i=0,vResult=[]){
+				console.log(arr[i]);
+				window[arr[i]](function(v){
+					console.log(vResult.length+"==="+arr.length);
+					if(vResult.length==(arr.length-1)){
+						vResult.push(v);
+						callback?callback(vResult.every(v=>v)):"";
+						return;
+					}else{
+						vResult.push(v);
+						all(arr,callback,++i,vResult)
+					}
+				})
+			};
+			/*all(["com1","com2","com3"],function(a){
+				console.log(a)
+			})*/
+			
+			
+			let a=[false,false,false,false];
+			
+			function b(i){
+				return new Promise((resolve,reject)=>{
+					setTimeout(()=>{
+						a[i]=true;
+						resolve();
+						console.log("1操作成功"+i);
+						console.log(a);
+						console.log(a.every(v=>v));
+					},1000);
+				});
+			}
+				/*b(0).then(()=>{b(1)}).then(()=>{b(2)}).then(()=>{
+					console.log("----------------------");
+					console.log(a);
+					console.log(a.every(v=>v));
+				})
+			*/
+			/*b(0).then(function(){
+				b(1);
+			}).then(function(){
+				b(2);
+			}).then(function(){
+				b(3);
+			}).then(function(){
+			})*/
+			
+			/*
+			let aaa=[];
+			 console.log(aaa);
+			Promise.all([com1(function(a){
+				aaa.push(a)
+			}),com2(function(a){
+				aaa.push(a)
+			}), com3(function(a){
+				aaa.push(a)
+			})])
+			.then(function(results){
+			    console.log(results);
+			    console.log("执行完成");
+			    console.log(aaa);
+			});*/
+		</script>
+	</body>
+</html>

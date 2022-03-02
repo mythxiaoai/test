@@ -1,0 +1,32 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+         background: rgb(141, 183, 245);
+         width: 300px;
+         height: 300px;
+         margin:200px auto;
+         display: flex;
+         justify-content:space-between;
+        }
+        .item{
+            width: 100px;height:100px;
+            background-color:red;
+            text-align:center;
+            line-height:100px;
+        }
+        .item:nth-of-type(2){
+            align-self: flex-end;
+        }
+    </style>
+</head>
+<body>
+    <biv class="box">
+        <div class="item">1</div>
+        <div class="item">2</div>
+    </biv>
+</body>
+</html>

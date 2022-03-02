@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title></title>
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css" />
+  </head>
+  <body>
+    <div id="app">
+      {{g}}
+    </div>
+    <!-- import Vue before Element -->
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <!-- import JavaScript -->
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+  </body>
+  <script>
+    let vm = new Vue({
+      el: "#app",
+      data() {
+        return {
+          g: {},
+        };
+      },
+      watch: {
+        g: {
+          handler: function () {
+			  console.log("运行");
+            this.g = {...this.g};
+          },
+          deep: true,
+        },
+      },
+    });
+  </script>
+</html>

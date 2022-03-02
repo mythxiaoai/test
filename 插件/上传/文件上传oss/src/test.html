@@ -1,0 +1,177 @@
+
+<html lang="en">
+
+    <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+    </head>
+    
+    <body>
+      <input type="file" id="file" />
+      <progress id="progress"></progress>
+      <span id="speed"></span>
+      <ul id="fileList"></ul>
+      <!-- <script src="js/components/enc-base64-min.js"></script>
+        <script src="js/components/sha256.js"></script> -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/sha256.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/md5.js"></script>
+      <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.21.1/axios.js"></script>
+    
+      <script>
+        async function getList() {
+          let res = await xfetch('/find')
+          let html = ''
+          res.forEach((v) => {
+            html += `<li><a href='${v.url}' target='_blank'>${v.name
+              }</a>(${formatSize(v.size)})</li>`
+          })
+          fileList.innerHTML = html
+        }
+    
+        getList()
+        file.onchange = async function (v) {
+          let file = this.files[0]
+          //md5值
+          const md5 = await getMd5(file)
+          console.log(md5)
+          //查找原始数据库是否存在
+          // let res = await xfetch('/find', { data: { md5 } })
+          // console.log('/find', res)
+          // if (res.length > 0) return;
+          const name = file.name
+          const type = file.type
+          const size = file.size
+          res = await xfetch('http://yitiaogou:8000/upload/prepare', {
+            data: {
+              filename: file.name,
+              folder: 'test',
+              mimetype: type,
+            }
+          })
+          console.log('/getPolicy', res)
+          // 上传到阿里云
+          const oss = await uploadToAliOSS(res.data, file)
+          //存数据库
+          res = await xfetch('http://yitiaogou:8000/upload/commit', {
+            data: {
+              filename: file.name,
+              mimetype: file.type,
+              key: res.data.key
+            }
+          })
+          console.log('/saveUpdate', oss, res)
+          getList()
+        }
+    
+        async function xfetch(url, opts = {}) {
+          opts.method = 'POST'
+          opts.headers = {
+            'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9vYy1zdGEuZGV2LnBhdHBhdC52aXA6MTgwMlwvZXJwXC9hdXRoXC9sb2dpbiIsImlhdCI6MTYyNTIxOTUzNCwiZXhwIjoxNjI1ODI0MzM0LCJuYmYiOjE2MjUyMTk1MzQsImp0aSI6ImJwbTBjVjhXWHc1WU1JTGgiLCJzdWIiOjEzNiwicHJ2IjoiYzVkN2QyMDg5YzA4YTRiZDEwMGM3MDExZTk3YmRhYzNlMWY5YTUwZiJ9.wE6S9wIYcmAcLQziK0hmWC8QwPoWEL8dPbdouphKSRo'
+          }
+          return (await axios.request(url, opts)).data
+        }
+        async function xfetch2(url, opts = {}) {
+          opts.method = 'POST'
+          return (await axios.request(url, opts)).data
+        }
+    
+        async function getMd5(file) {
+          let { size, type, name } = file
+          //抽样取前10M的文件
+          file = file.slice(0, 10 * 1024 * 1024)
+          let text = await file.text() + size + type + name;
+          return CryptoJS.MD5(text).toString()
+        }
+    
+        // 上传到阿里OSS
+        async function uploadToAliOSS(signature, file) {
+          const formData = new FormData()
+          formData.append('key', signature.key)
+          // formData.append('Content-Disposition', file.name)
+          formData.append('OSSAccessKeyId', signature.accessKeyId)
+          formData.append('policy', signature.policy)
+          formData.append('signature', signature.signature)
+          formData.append('file', file)
+          let startTime = Date.now()
+          let preload = 0
+          let pretime = 0
+          return await xfetch2(signature.endPoint, {
+            // method: 'POST',
+            // headers: {
+            //   'Content-Type': 'multipart/form-data',
+            // },
+            onUploadProgress: function (e) {
+              let res = {
+                percent: (e.loaded / e.total).toFixed(4),
+                time: new Date() - startTime,
+                fmtTime: fmtTime(new Date() - startTime),
+                speed: fmtspeed(Date.now() - pretime, e.loaded - preload),
+              }
+    
+              preload = e.loaded
+              pretime = Date.now()
+              //progress(res, e);
+              progress.value = res.percent
+              speed.innerHTML = res.speed
+              if (e.loaded == e.total) speed.innerHTML = '--'
+              // Do whatever you want with the native progress event
+            },
+            data: formData,
+          })
+          // return await fetch(signature.endPoint, {
+          //     method: 'POST',
+          //     body: formData,
+          //   })
+        }
+        //time:毫秒数   size:多少
+        function fmtspeed(time, size) {
+          return formatSize((1000 * size) / time) + '/s'
+        }
+    
+        function fmtTime(spendTime) {
+          var days = (spendTime / 1000 / 60 / 60 / 24) | 0
+          var hours = (spendTime / 1000 / 60 / 60) % 24 | 0
+          var minutes = (spendTime / 1000 / 60) % 60 | 0
+          var seconds = (spendTime / 1000) % 60 | 0
+          days = days > 0 && days <= 9 ? '0' + days : days
+          hours = hours > 0 && hours <= 9 ? '0' + hours : hours
+          minutes = minutes > 0 && minutes <= 9 ? '0' + minutes : minutes
+          seconds = seconds > 0 && seconds <= 9 ? '0' + seconds : seconds
+          return days + '天' + hours + '时' + minutes + '分' + seconds + '秒'
+        }
+    
+        /**
+         * 格式化文件大小, 输出成带单位的字符串
+         * @method formatSize
+         * @grammar Base.formatSize( size ) => String
+         * @grammar Base.formatSize( size, pointLength ) => String
+         * @grammar Base.formatSize( size, pointLength, units ) => String
+         * @param {Number} size 文件大小
+         * @param {Number} [pointLength=2] 精确到的小数点数。
+         * @param {Array} [units=[ 'B', 'K', 'M', 'G', 'TB' ]] 单位数组。从字节，到千字节，一直往上指定。如果单位数组里面只指定了到了K(千字节)，同时文件大小大于M, 此方法的输出将还是显示成多少K.
+         * @example
+         * console.log( Base.formatSize( 100 ) );    // => 100B
+         * console.log( Base.formatSize( 1024 ) );    // => 1.00K
+         * console.log( Base.formatSize( 1024, 0 ) );    // => 1K
+         * console.log( Base.formatSize( 1024 * 1024 ) );    // => 1.00M
+         * console.log( Base.formatSize( 1024 * 1024 * 1024 ) );    // => 1.00G
+         * console.log( Base.formatSize( 1024 * 1024 * 1024, 0, ['B', 'KB', 'MB'] ) );    // => 1024MB
+         */
+        function formatSize(size, pointLength, units) {
+          var unit
+    
+          units = units || ['B', 'K', 'M', 'G', 'TB']
+    
+          while ((unit = units.shift()) && size > 1024) {
+            size = size / 1024
+          }
+    
+          return (unit === 'B' ? size : size.toFixed(pointLength || 2)) + unit
+        }
+      </script>
+    </body>
+    
+    </html>

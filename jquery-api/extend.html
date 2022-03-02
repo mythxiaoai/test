@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<button type="button" id="btn">点我</button>
+		<div class="silde" style="background: red;height: 500px;width: 300px;display: none;">
+			123
+		</div>
+	</body>
+	<script src="../js/jquery.js"></script>
+	<script>
+		let b = {
+			a:1,
+			b:{
+				a:2,
+				b:3
+			}
+		}
+		let a = {
+			a:2,
+			b:{
+				a:3,
+				b:4,
+				c:5
+			}
+		}
+		console.log($.extend({},a, b))
+		console.log($.extend(true,{},a, b))
+	</script>
+</html>

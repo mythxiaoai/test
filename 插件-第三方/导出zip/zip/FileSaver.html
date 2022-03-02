@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="https://cdn.bootcss.com/FileSaver.js/1.3.8/FileSaver.min.js"></script>
+    <script src="https://cdn.bootcss.com/jszip/3.2.2/jszip.min.js"></script>
+    
+    <script>
+        //zip保存
+        console.log(window);
+        
+        let json = [
+            {a:1},
+            {b:2}
+        ]
+        let json2 = [
+            {a:2},
+            {b:2}
+        ]
+       var blob1 = new Blob([json], {type: "text/plain;charset=utf-8"});
+       var blob2 = new Blob([JSON.stringify(json)], {type: "application/json"});
+      // saveAs(blob2, "test.json");
+        var zip = new JSZip();
+        zip.file("test1.json",JSON.stringify(json,null,2));
+        zip.file("test2.json",JSON.stringify(json2,null,2));
+        zip.generateAsync({type:"blob"})
+        .then(function(content) {
+            // see FileSaver.js
+            saveAs(content, "example.zip");
+        });
+
+
+        function downjson(data,fileName){
+            var blob = new Blob([JSON.stringify(data,null,2)], {type: "application/json"});
+            saveAs(blob,fileName);
+        }
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,249 @@
+
+/*table*/
+.table .form-control{
+	padding: 6px 0px;
+}
+.table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
+    padding: 8px 5px;
+}
+/*dropdown-menu*/ 
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  display: none;
+  float: left;
+  min-width: auto;
+  padding: 5px 0;
+  margin: 2px 0 0;
+  font-size: 14px;
+  text-align: left;
+  list-style: none;
+  background-color: #fff;
+  -webkit-background-clip: padding-box;
+          background-clip: padding-box;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, .15);
+  border-radius: 0px;
+  -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+          box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+}
+.dropdown-menu > li > a {
+    border-radius: 3px;
+    line-height: 25px;
+    margin: 4px;
+    text-align: left;
+    font-weight: 400;
+}
+/*重写菜单*/
+.navbar-white {
+  background-color: #fff;
+  border-color: #e7eaec;
+}
+.navbar-white .navbar-brand {
+  color: #777;
+}
+.navbar-white .navbar-brand:hover,
+.navbar-white .navbar-brand:focus {
+  color: #5e5e5e;
+  background-color: transparent;
+}
+.navbar-white .navbar-text {
+  color: #777;
+}
+.navbar-white .navbar-nav > li > a {
+  color: #777;
+}
+.navbar-white .navbar-nav > li > a:hover,
+.navbar-white .navbar-nav > li > a:focus {
+  color: #333;
+  background-color: transparent;
+}
+.navbar-white .navbar-nav > .active > a,
+.navbar-white .navbar-nav > .active > a:hover,
+.navbar-white .navbar-nav > .active > a:focus {
+  color: #555;
+  background-color: #e7eaec;
+}
+.navbar-white .navbar-nav > .disabled > a,
+.navbar-white .navbar-nav > .disabled > a:hover,
+.navbar-white .navbar-nav > .disabled > a:focus {
+  color: #ccc;
+  background-color: transparent;
+}
+.navbar-white .navbar-toggle {
+  border-color: #ddd;
+}
+.navbar-white .navbar-toggle:hover,
+.navbar-white .navbar-toggle:focus {
+  background-color: #ddd;
+}
+.navbar-white .navbar-toggle .icon-bar {
+  background-color: #888;
+}
+.navbar-white .navbar-collapse,
+.navbar-white .navbar-form {
+  border-color: #e7eaec;
+}
+.navbar-white .navbar-nav > .open > a,
+.navbar-white .navbar-nav > .open > a:hover,
+.navbar-white .navbar-nav > .open > a:focus {
+  color: #555;
+  background-color: #e7eaec;
+}
+@media (max-width: 767px) {
+  .navbar-white .navbar-nav .open .dropdown-menu > li > a {
+    color: #777;
+  }
+  .navbar-white .navbar-nav .open .dropdown-menu > li > a:hover,
+  .navbar-white .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #333;
+    background-color: transparent;
+  }
+  .navbar-white .navbar-nav .open .dropdown-menu > .active > a,
+  .navbar-white .navbar-nav .open .dropdown-menu > .active > a:hover,
+  .navbar-white .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #555;
+    background-color: #e7eaec;
+  }
+  .navbar-white .navbar-nav .open .dropdown-menu > .disabled > a,
+  .navbar-white .navbar-nav .open .dropdown-menu > .disabled > a:hover,
+  .navbar-white .navbar-nav .open .dropdown-menu > .disabled > a:focus {
+    color: #ccc;
+    background-color: transparent;
+  }
+}
+.navbar-white .navbar-link {
+  color: #777;
+}
+.navbar-white .navbar-link:hover {
+  color: #333;
+}
+.navbar-white .btn-link {
+  color: #777;
+}
+.navbar-white .btn-link:hover,
+.navbar-white .btn-link:focus {
+  color: #333;
+}
+.navbar-white .btn-link[disabled]:hover,
+fieldset[disabled] .navbar-white .btn-link:hover,
+.navbar-white .btn-link[disabled]:focus,
+fieldset[disabled] .navbar-white .btn-link:focus {
+  color: #ccc;
+}
+/*平面盒子*/
+.nav-content-layout{position:absolute;top:56px;height:calc(100% - 56px);width:100%;}
+/*label 上下没对齐*/
+.label{padding: .3em .6em .3em;}
+/*重写panel*/
+.panel{
+	border-radius: 0;
+}
+.panel-heading{
+	border-radius: 0;
+}
+.panel-heading:after{content:".";display:block;clear:both;visibility:hidden;line-height:0;height:0;}
+.panel-title{
+	float: left;
+	font-size: 14px;
+	padding-left: 5px;
+	border-left-style: solid;
+	border-left-width: 3px;
+	white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 80%;
+}
+.panel-tools{
+	float: right;
+	font-size: 14px;
+}
+.panel-tools > a{
+	margin-left: 5px;
+	color:#c4c4c4;
+}
+.panel-tools > a:hover{
+	opacity: 0.8;
+}
+
+.panel-tools .collapse-link.collapsed .fa.fa-chevron-up:before {
+	content: "\f078"
+}
+	
+.panel-white {
+  border-color: #e7eaec;
+}
+.panel-white > .panel-heading {
+  color: #999;
+  background-color: #fff;
+  border-color: #e7eaec;
+  height: 40px;
+}
+.panel-white > .panel-heading + .panel-collapse > .panel-body {
+  border-top-color: #e7eaec;
+}
+.panel-white > .panel-heading .badge {
+  color: #f5f5f5;
+  background-color: #333;
+}
+.panel-white > .panel-footer + .panel-collapse > .panel-body {
+  border-bottom-color: #e7eaec;
+}
+/*title*/
+.panel > .panel-body .icaption{
+	margin-bottom: 10px;
+	padding-bottom: 5px;
+	border-bottom: 1px solid #e7eaec;
+	font-weight: 600;
+}
+/*右悬挂*/
+.research{position:fixed;top:88px;width: 280px;z-index:999;right: 0;}
+.panel-fixed{opacity:0.9;box-shadow: 3px 3px 5px #ccc;}
+.panel-fixed .panel-heading {position: relative;}
+.panel-fixed .panel-heading .icon{position: absolute;z-index: -1;color:#0B8AFF;border-color:#ccc;top:0;right: -40px;width: 40px;height: 40px;background-color:#fff;text-align:center;padding:6px;border: 1px solid #e7eaec;box-shadow: 3px 3px 5px #ccc;left: -40px;}
+.panel-fixed .panel-heading .icon:hover{color:#3C80BE}
+.research.pos-right .panel-body{padding: 10px 0}
+.research.pos-right .panel-body td >input[type="number"]{width:45px;}/*消除number为上下*/
+/*下*/
+.result{position: fixed;bottom: 0; width: 100%;opacity: 0.9;z-index:1000;}
+.result:after{content: "";background-color:#fff;position: absolute;height: 100%;width: 100%;}/*添加底色，为不与opacity冲突*/
+.result .panel{margin-bottom:0px;}
+.result .panel .panel-body{height:180px;margin-bottom:0px;overflow: auto;padding: 0px 20px 0px;}
+.result .result_icon{color:#0B8AFF;position: absolute; left: 0; right: 0;top: 0;margin: 0 auto;text-align: center;padding-top: 8px; width: 40px;height:40px;}
+.result .result_icon:hover{color:#3C80BE}
+.result .targ_line{position: absolute;height: 3px;width:100%;background: #3C80BE;top:0;left: 0;cursor:n-resize ;}
+/*滑动盒子*/
+.panel-slide .panel-body{padding: 0;}
+/*滑动盒子 左侧查询*/
+.panel-slide .research-box{position:relative;padding:15px 20px 20px;box-shadow:1px 1px 3px #ccc;background-color:#fff;margin-left: 0;z-index:1;min-height: 470px;}
+.panel-slide .research-box .form-control{font-size:12px;}
+.panel-slide .research-box td,.panel-slide .research-box th{padding:5px 2px;}
+.panel-slide .research-box .icon{position:absolute;color:#0B8AFF;right:-20px;width:20px;height:40px;padding:11px 0;background-color:#fff;text-align:center;box-shadow:2px 2px 3px -1px #ccc;font-size:18px;top:0;bottom:0;margin:auto 0;}
+/*end panel*/
+/*导航*/
+.nav-tabs.nav-justified > li > a {
+  padding: 10px 0px;
+}
+/*.badge*/
+.badge{
+    padding: 3px 6px;
+}
+.badge.badge-primary{background: #418BCA;}
+.badge.badge-danger{background: #D9544F;}
+.badge.badge-info{background: #5BC0DE;}
+.badge.badge-success{background: #5BB85D;}
+.badge.badge-warning{background: #EFAD4D;}
+/*按钮*/
+.btn-default,.btn-default:focus,.btn-default:hover,.btn-default:active{background-color:#FFFFFF;color:#757575;}
+.btn{border-radius:2px;-webkit-box-shadow:0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);box-shadow:0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);-webkit-transition:box-shadow linear 0.4s;-moz-transition:box-shadow linear 0.4s;-ms-transition:box-shadow linear 0.4s;transition:box-shadow linear 0.4s;display:inline-block;font-weight:400;text-align:center;white-space:nowrap;vertical-align:middle;cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;border:1px solid transparent;border-radius:.25rem;}
+.btn:hover{-webkit-box-shadow:none;box-shadow:none;border-color:transparent;}
+.btn:active,.btn:focus{border-color:transparent;}
+.btn:active:focus{border-color:transparent;}
+.btn:focus,.btn:hover{text-decoration:none;}
+
+/*bootstrap-table
+.fixed-table-body {
+    height: auto;
+}*/

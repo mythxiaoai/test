@@ -1,0 +1,151 @@
+<!doctype html>
+<html>
+	<head>
+	    <!--声明当前页面的编码集：中文编码（gbk/gb2312）,国际编码（utf-8）-->
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+		<!--页面三要素-->
+		<title>国际标准模板</title><!--小于等于31 大小写不区分-->
+		<meta name="Keywords" content="关键词,关键词,关键词"><!--<=76个字-->
+		<meta name="description" content=""><!--<=80个字-->
+		<!--js/css-->
+		<style type="text/css">
+		@charset "UTF-8";
+		* {word-wrap: break-word;;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;}
+		html {-webkit-text-size-adjust: none;overflow-x:hidden}
+		body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td,span{padding:0;margin:0;}
+		body{font:normal 0.75em/1.5em "微软雅黑","冬青黑体简体中文 w3","宋体";-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}
+		fieldset,img,html,body,iframe{border:0;}
+		/** 重置表格元素 **/
+		table{border-collapse:collapse;border-spacing:0;}
+		ol,ul{list-style:none;}
+		address,caption,cite,code,dfn,em,strong,th,var{font-weight:normal;font-style:normal;}
+		caption,th{text-align:left;}
+		em,i,small,caption,th{font-weight:normal;font-style:normal;font-size:100%;}
+		h1,h2,h3,h4,h5,h6,em,strong,b{font-weight:400;font-size:100%;}
+		q:before,q:after{content:'';}
+		.clearfix{*zoom:1;}
+		.clearfix:after{content:"."; display:block;clear:both;visibility:hidden;line-height:0;height:0;}
+		a {color: #9D9C9C;text-decoration: none;}
+		a img {border: none;border:0;}
+		a,button{ outline:none; border:0;}
+		input,select{border:1px solid #ccc;}
+		button::-moz-focus-inner{border:0;padding:0;margin:0;}
+		textarea,input,button,select{outline:0;font-size:inherit;line-height:inherit;color:inherit;font-family:inherit;}
+		textarea{overflow:auto;resize:none;}
+		.hide,.none{display: none}
+		.hidden{visibility: hidden;}
+		.show,.block{display: block;}
+		img{ vertical-align:middle;}
+		input:disabled,select:disabled,textarea:disabled{background:#ccc;}
+		.fl{float: left;}
+		.fr{float: right;}
+		.red{color:red;}
+		.green{color:green;}
+		#box{width:560px;height:260px;margin:100px auto;position:relative;}
+		#box li{height:40px;width:530px;padding:0 15px;line-height:40px;background:#aaa;border-radius:3px;text-shadow:1px 1px  #ccc;font-size:14px;color:#fff;position:absolute;}
+		#box li a{float:right;margin-left:10px;background:#ccc;width:40px;text-align:center;border-radius:50%;box-shadow:-1px -1px 2px #333}
+		</style>
+	</head>
+	<body>
+		<ul id="box">
+			<li>元素1</li>
+			<li>元素2</li>
+			<li>元素3</li>
+			<li>元素4</li>
+			<li>元素5</li>
+		</ul>
+		<script src="js/jquery-1.11.2.min.js"></script>
+		<script src="js/drag.js"></script>
+		<script>
+			//获取元素  绑定事件
+			//思路：
+			//动画改变位置top值和元素排序都做了。
+			window.onload=function(){
+				var lidoms = box.getElementsByTagName("li");
+				var marginBottom=15;
+				for(var i = 0 ;i<lidoms.length;i++){
+					//初始化位置
+					lidoms[i].style.top=i*(lidoms[i].offsetHeight+marginBottom)+"px";
+					//把需要的位置信息记录在每个元素的属性上 index可以不需要 如果要传入后台可以用到
+					lidoms[i].index=i;
+					lidoms[i].top=i*(lidoms[i].offsetHeight+marginBottom);
+				};
+				
+				//拖拽事件
+				var mixdom;
+				for(var i = 0 ;i<lidoms.length;i++){
+					drag.init({
+					dom:lidoms[i],
+					callbackDur:function(){
+						mixdom=null;
+						var arrpen=[];
+						for(var j = 0 ;j<lidoms.length;j++){
+							if(this.dom!=lidoms[j]&&pengZhuang(this.dom,lidoms[j])){
+								arrpen.push(lidoms[j]);
+							}
+						}
+						//找出碰撞中的最小值
+						for(var i in arrpen){
+							arrpen[i].style.background="#aaa";
+						}
+						if(arrpen.length>0){
+							mixdom=getMixPDom(this.dom,arrpen);
+							mixdom.dom.style.background="red";
+						}
+					},
+					callbackEnd:function(){
+						if(mixdom){
+						$(this.dom).animate({top:mixdom.dom.top},300);
+						$(mixdom.dom).animate({top:this.dom.top},300);
+						var temp =this.dom.index;
+						this.dom.index=mixdom.dom.index;
+						mixdom.dom.index=temp;
+						temp=this.dom.top;
+						this.dom.top=mixdom.dom.top;
+						mixdom.dom.top=temp;
+						mixdom.dom.style.backgroundColor="#aaa";
+						}else{
+						$(this.dom).animate({top:this.dom.top},300);
+						}
+					}
+					});
+				}
+				//是否碰撞
+				function pengZhuang(dom1,dom2){
+					var T1=dom1.offsetTop;
+					var R1=dom1.offsetLeft+dom1.offsetWidth;
+					var B1=dom1.offsetTop+dom1.offsetHeight;
+					var L1=dom1.offsetLeft;
+
+					var T2=dom2.offsetTop;
+					var R2=dom2.offsetLeft+dom1.offsetWidth;
+					var B2=dom2.offsetTop+dom1.offsetHeight;
+					var L2=dom2.offsetLeft;
+					if(T2>=B1||R2<=L1||B2<=T1||L2>=R1){
+						return false;
+					}else{
+						return true;
+					}
+				}
+				//算出拖拽元素与碰撞元素最小距离的元素
+				//思路  沟谷定理
+				function getMixPDom(dom,arr){
+					//var mixDom=[dom,index,distance]
+					var mixDom=[];
+					for(var i in arr){
+						var left=arr[i].offsetLeft-dom.offsetLeft;
+						var top=arr[i].offsetTop-dom.offsetTop;
+						var temp=Math.sqrt(left*left+top*top);
+						mixDom.push({dom:arr[i],index:i,distance:temp});
+					}
+					//排序
+					mixDom.sort(function(a,b){
+						return a.distance-b.distance;
+					});
+					//想要其他值可以方便改
+					return mixDom[0];
+				}
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		我是A界面
+		<iframe src="messageB.html" name="iframeB"></iframe>
+	</body>
+	<script>
+		//我想B页面发送参数
+		let iframeDom = document.getElementsByTagName("iframe")[0].contentWindow;
+		console.log(window.location.origin)
+		iframeDom.postMessage("我是传过来的参数","*");
+	</script>
+</html>

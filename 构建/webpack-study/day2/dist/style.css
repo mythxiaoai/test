@@ -1,0 +1,25 @@
+/*a.css*/
+body{
+    background: yellow;
+}
+/*index.css*/
+body{
+    background: red;
+}
+/*index.scss*/
+body div {
+  color: pink;
+  border: 1px solid #000;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg); }
+
+/*index.less*/
+body div {
+  color: yellow;
+}
+
+/*index.styl*/
+body div {
+  color: #008000;
+}
+

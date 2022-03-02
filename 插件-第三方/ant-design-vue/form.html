@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="https://cdn.bootcdn.net/ajax/libs/ant-design-vue/1.7.2/antd.min.css" rel="stylesheet" />
+    <style>
+      body {
+        padding: 200px;
+      }
+      .del {
+        color: blue;
+        float: right;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <div>
+        <!-- {{pageFlagShow}} -->
+        <!-- @click ="pageFlagShow=!pageFlagShow" -->
+        <!-- <a-switch class="a" :checked="pageFlagShow" @click="change" /> -->
+
+        <!-- <a-collapse :bordered="false" expand-icon-position="right">
+            <a-collapse-panel class="body" header="This is panel header 1">
+              <p>{{ text }}</p>
+            </a-collapse-panel>
+           
+          </a-collapse> -->
+
+        <!-- <a-checkbox v-model="checkbox"  @change="onChange">
+            Checkbox
+          </a-checkbox>{{checkbox}} -->
+        <!-- <a-select mode="tags" v-model="select">
+            <a-select-option>nomal</a-select-option>
+            <a-select-option>unique</a-select-option>
+            </a-select> -->
+
+        <!-- <a-select v-model="select" style="width:200px">
+                <a-select-option v-for="v in ['a','b','c']" :key="v" :title="2">
+                  <div>{{v}}<span class="del">删除</span></div>
+                </a-select-option>
+              </a-select>
+              {{select}} -->
+<!-- {{treeSelect}}
+        <a-tree-select v-model="idShow"  style="width: 100%" :dropdown-style="{ maxHeight: '400px', overflow: 'auto' }" placeholder="Please select" tree-default-expand-all>
+          <a-tree-select-node v-for="v in treeData" :key="v.title" :value="v.title">
+            <template #title >
+              {{v.title}}<div><span class="del" @click.stop="del">删除</span></div>
+          </template>
+          </a-tree-select-node>
+        </a-tree-select> -->
+
+        <!-- <a-checkbox-group :options="['Apple', 'Pear', 'Orange']" /> -->
+
+        <textarea v-model="test.a" contenteditable="true">
+
+        </textarea>
+        {{test}}
+
+        <input placeholder="请输入" v-model="bindAttr.value" key="asdsadsadsa"/>
+        <input type="checkbox"  v-model="bindAttr.allowClear"/>
+        {{checked}}
+        <a-input placeholder="请输入" v-bind = "bindAttr"  key="1"/>
+
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0/moment.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/ant-design-vue/1.7.2/antd.js"></script>
+    <script>
+      const treeData = [
+        {
+          title: "Node1",
+          id: "0-0",
+          scopedSlots: {
+            // custom title
+            title: "title",
+          },
+        },
+        {
+          title: "Node2",
+          id: "0-1",
+          scopedSlots: {
+            // custom title
+            title: "title",
+          }
+        },
+      ];
+
+      var vm = new Vue({
+        el: "#app",
+        data: {
+          pageFlagShow: true,
+          text: `A dog is a type of domesticated animal.Known for its loyalty and faithfulness,it can be found as a welcome guest in many households across the world.`,
+          activeKey: ["1"],
+          checkbox: true,
+          select: "",
+          number: [],
+          treeSelect:"0-0",
+          idShow:"",
+          treeData,
+          bindAttr:{
+            "value":"666"
+          },
+          checked:true,
+          test:{}
+        },
+        mounted() {},
+        methods: {
+          change(val) {
+            this.pageFlagShow = val;
+          },
+          del(){
+            
+          }
+        },
+        watch: {},
+      });
+    </script>
+  </body>
+</html>

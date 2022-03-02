@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title></title>
+  </head>
+  <body>
+    <div id="app">
+      {{num}}
+      <test num="子组件显示的数据"></test>
+    </div>
+
+    <div id="test">
+      {{num}}
+    </div>
+
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.11/vue.min.js"></script>
+
+    <script type="module">
+      import test from "./a.js";
+      (async ()=>{
+        let test2 = (await import("./a.js")).default;
+        console.log(test2);
+      })()
+      let haha = 6666;
+      var vm = new Vue({
+        components: {
+          test,
+        },
+        el: "#app",
+        data() {
+          return {
+            num: 1,
+          };
+        },
+      });
+      window.vm = vm;
+    </script>
+  </body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+<script type="module">
+	
+	import {a} from './export2.js'
+	console.log(a)
+	//a={};//Assignment to constant variable   接口变量不能被改变  只能被赋值
+	//console.log(a)
+	a.b=123;
+	console.log(a)//可以改变对象的属性
+</script>
+	</body>
+</html>

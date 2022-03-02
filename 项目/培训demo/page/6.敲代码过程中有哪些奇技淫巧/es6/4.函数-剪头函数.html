@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script>
+	    /* 
+    ()=>
+    arg=>
+    (a,b)=>
+    
+    =>res
+    =>res+1
+    =>({a:1})
+    =>{return res}
+    =>{
+      res = 
+      return res}*/
+	   let a =3,b=5;
+	   //以下是es6的函数定义
+      ()=>"";//当没有参数的匿名函数的时候  可以直接写括号代替
+      a=>a;//当只有一个参数的时候  可以直接省略括号
+      (a,b)=>a+b;//当有两个参数的时候  需要用阔号括起来~
+      let c = (a,b)=>({a:a,b:b});//当返回的是一个对象的时候  需要用()括起来
+      //立即执行   当做匿名函数运行  参数传进去
+      console.log(((a,b)=>({a:a,b:b}))(a,b));
+      //立即执行直接写{}  是展开函数体   需要自己写return;
+      console.log((a=>{return a})(a));
+      
+       //排序
+      let arr = [10, 50, 30, 40, 20]
+      console.log(arr.sort((a,b)=>a-b));
+      //乱序
+       arr = [10, 50, 30, 40, 20]
+      console.log(arr.sort(()=>Math.random()-0.5));
+	</script>
+</html>

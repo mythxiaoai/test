@@ -1,0 +1,21 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<button id="btn">点我</button>
+<body>
+    <script>
+        btn.addEventListener("click",function(e){
+            e.preventDefault();
+            console.log(1);
+        },{
+            capture:false,
+            once:false,
+            passive:true,// Unable to preventDefault inside passive event listener invocation.  不会堵塞渲染
+        })
+        Ev
+    </script>
+</body>
+</html>

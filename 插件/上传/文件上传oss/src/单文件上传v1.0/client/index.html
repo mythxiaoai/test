@@ -1,0 +1,90 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="file" id="file" />
+    <!-- <script src="js/components/enc-base64-min.js"></script>
+    <script src="js/components/sha256.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/sha256.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
+
+    <script>
+      file.onchange = async function (v) {
+        let file = this.files[0]
+        console.log(file);
+        //hash值
+        const hash = await toHash(file)
+        //查找原始数据库是否存在
+        let res = await xfetch('/find',{body:{hash}})
+        console.log("res",res);
+        if (res.length > 0) return
+        const name = file.name;
+        const type = file.type;
+        console.log("hash",hash);
+        res = await xfetch('/getPolicy', { body: { hash } })
+        // 上传到阿里云
+        const oss = await uploadToAliOSS(res, file)
+        //存数据库
+        res = await xfetch('/saveUpdate',{body:{ name, type, hash }});
+        console.log(oss,res);
+
+      }
+
+      async function xfetch(url, opts) {
+        opts?.body && (opts.body = JSON.stringify(opts.body))
+        let defaultOpts = {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json'}
+        }
+        opts = Object.assign({}, defaultOpts, opts);
+        return await (await fetch(url, opts)).json()
+      }
+
+      async function toHash(file) {
+        let str = ''
+        if (file.size < 1024 * 1024 * 10) {
+          let arr = new Uint8Array(await file.arrayBuffer())
+          for (const i of arr) str += String.fromCharCode(i)
+        } else {
+          const { name, size, uid = Date.now(), type } = file
+          str = name + size + uid + type
+        }
+        console.log(crypto)
+        return CryptoJS.SHA256(str)
+          .toString(CryptoJS.enc.Base64)
+          .replace(/[\=\/\+]/g, '')
+      }
+
+      // 上传到阿里OSS
+async function uploadToAliOSS(signature, file) {
+  return new Promise((resolve, reject) => {
+    const formData = new FormData()
+    formData.append('key', signature.key)
+    formData.append('OSSAccessKeyId', signature.accessId)
+    formData.append('policy', signature.policy)
+    formData.append('signature', signature.signature)
+    formData.append('file', file)
+
+    fetch(signature.endPoint, {
+      method: 'POST',
+      body: formData
+    })
+      .then((response) => {
+        resolve({
+          url: signature.url
+        })
+      })
+      .catch((err) => {
+        reject('上传到阿里云失败')
+      })
+  })
+}
+
+
+    </script>
+  </body>
+</html>

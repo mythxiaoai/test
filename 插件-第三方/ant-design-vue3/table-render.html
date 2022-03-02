@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.bootcdn.net/ajax/libs/ant-design-vue/2.1.6/antd.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div id="app">
+        <div v-html="btn"></div>
+        
+        <a-table ref="tableRef" :data-source="data" :columns="columns">
+
+            <template #a="{ text, record, index , column}">
+                {{text +1}}{{column.format(text,index,record)}}
+            </template>
+            <template #b="{ text, record, index , column}">
+                6666
+            </template>
+        </a-table>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0/moment.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/3.1.2/vue.global.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/ant-design-vue/2.1.6/antd.min.js"></script>
+
+    <script>
+        //renderSlot(slots, name, props = {},
+        let { defineComponent, reactive, ref,onMounted,renderSlot,render } = Vue;
+        const data = [
+            {
+                key: '1',
+                name: 'John Brown',
+                age: 32,
+                address: 'New York No. 1 Lake Park',
+            },
+            {
+                key: '2',
+                name: 'Joe Black',
+                age: 42,
+                address: 'London No. 1 Lake Park',
+            },
+            {
+                key: '3',
+                name: 'Jim Green',
+                age: 32,
+                address: 'Sidney No. 1 Lake Park',
+            },
+            {
+                key: '4',
+                name: 'Jim Red',
+                age: 32,
+                address: 'London No. 2 Lake Park',
+            },
+        ];
+
+        let vm = Vue.createApp({
+            // components: {
+            //     SearchOutlined,
+            // },
+            setup() {
+                let tableRef = ref();
+                onMounted(v=>{
+                    // console.log(tableRef.value.$.slots.a);
+                    // console.log(renderSlot(tableRef.value));
+                    // console.log(render(null));
+                })
+                const state = reactive({
+                    searchText: '',
+                    searchedColumn: '',
+                });
+
+                const searchInput = ref();
+
+                const columns = [
+                    {
+                        title: 'Name',
+                        dataIndex: 'name',
+                        key: 'name',
+                        format(value, index, data){
+                            return value+3333;
+                        },
+                        slots: {
+                            customRender: 'a',
+                        }
+                    }
+                ];
+
+                const handleSearch = (selectedKeys, confirm, dataIndex) => {
+                    confirm();
+                    state.searchText = selectedKeys[0];
+                    state.searchedColumn = dataIndex;
+                };
+
+                const handleReset = clearFilters => {
+                    clearFilters();
+                    state.searchText = '';
+                };
+
+                return {
+                    data,
+                    columns,
+                    handleSearch,
+                    handleReset,
+                    searchText: '',
+                    searchInput,
+                    searchedColumn: '',
+                    tableRef,
+                    btn:'<a type="primary" loading> Loading </a>'
+                };
+            }
+        })
+
+        vm.use(antd)
+
+        vm.mount('#app')
+
+    </script>
+</body>
+
+</html>

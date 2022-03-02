@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	  <form id="addOrUpdate">
+	    <input name="a">
+	    <button type="submit">提交</button>
+	  </form>
+	  <script src="jquery.js"></script>
+	  <script src="js/jquery.validate.js"></script>
+	  <script src="js/jquery.validate.messages_zh.js"></script>
+	  <script>
+	     $("#addOrUpdate").validate({
+                rules: {
+                    a: {
+                        required: true,
+                    }
+                },
+                messages: {
+                     a: {
+                        remote:v_icon+"key已经存在"
+                    }
+                },
+                submitHandler: function () {
+                  alert("提交")
+                }
+                })
+	  </script>
+	</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.bootcdn.net/ajax/libs/ant-design-vue/2.2.0-rc.1/antd.css" rel="stylesheet">
+</head>
+
+<body>
+    <div id="app">
+        {{test}}
+        <a-input v-model:["id"]="test" style="width: 100px" />
+        <!-- <a-button type="primary" loading>
+            Loading
+        </a-button>
+        <a-mentions autofocus>
+            <a-mentions-option v-for="item of options" :value="item.value">{{item.label}}</a-mentions-option>
+        </a-mentions> -->
+        
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0/moment.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/3.1.2/vue.global.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/ant-design-vue/2.2.0-rc.1/antd-with-locales.min.js"></script>
+    <script>
+        let {ref} = Vue;
+        let vm = Vue.createApp({
+            setup(){
+                return {options:[{label:"Apple",value:"1"},{label:"Pear",value:"2"},{label:"Orange",value:"3"}],test:ref("11")}
+            }
+        })
+
+        vm.use(antd)
+
+        vm.mount('#app')
+
+    </script>
+</body>
+
+</html>

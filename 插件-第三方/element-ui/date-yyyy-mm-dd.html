@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+	</head>
+	<body>
+		<div id="app">
+			<el-date-picker
+		      v-model="time1"
+		      type="date"
+		      placeholder="选择日期"
+		      format="yyyy 年 MM 月 dd 日"
+		      value-format="yyyy-MM-dd">
+		    </el-date-picker>
+			{{time1}}
+			<!--datetime/datetimerange/daterange-->
+			<el-date-picker
+		      v-model="time2"
+		      type="datetime"
+		      placeholder="选择时间"
+		      format="yyyy年MM月dd日 HH时mm分ss秒"
+		      value-format="yyyy-MM-dd HH:mm:ss"
+		      style="width:260px;"
+		      >
+		    </el-date-picker>
+			{{time2}}
+			<el-date-picker
+		      v-model="time3"
+		      type="daterange"
+		      align="center"
+		      range-separator="至"
+		      start-placeholder="开始日期"
+		      end-placeholder="结束日期"
+		      format="yyyy 年 MM 月 dd 日"
+			  value-format="yyyy-MM-dd"
+		      >
+		    </el-date-picker>
+		    {{time3}}
+		    <el-date-picker
+	      v-model="timesCom"
+	      type="daterange"
+	      align="center"
+	      range-separator="至"
+	      start-placeholder="开始日期"
+	      end-placeholder="结束日期"
+	      format="yyyy 年 MM 月 dd 日"
+		  value-format="yyyy-MM-dd"
+		  :picker-options="{disabledDate(time){return time.getTime() > Date.now();}}"
+	      :editable="false"
+	      >
+	    </el-date-picker>
+	    <input v-model="timesCom">
+	    {{timesCom}}
+	    {{time4}}
+	    {{time5}}
+	    {{time6}}
+	    <button type="button" @click="change">123</button>
+		</div>
+		 <!-- import Vue before Element -->
+		  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+		  <!-- import JavaScript -->
+		  <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+	</body>
+	<script>
+		console.log(window)
+		var vm = new Vue({
+			el:"#app",
+			data:{
+				time1:"2018-05-30",
+				time2:"",
+				time3:[,],
+				time4:[],
+				time5:"",
+				time6:"",
+			},
+			mounted(){
+				
+			},
+			methods:{
+				change(){
+					//this.time5="2016-06-06"
+					this.time4=["2016-06-06","2018-05-31"];
+					this.time5="2016-06-06";
+					this.time6="2018-05-31";
+				}
+			},
+			watch:{
+			
+			},
+			computed:{
+				timesCom:{
+					// getter
+				    get: function () {
+				    	console.log("get")
+				    	if(!(this.time5&&this.time6)){
+				    		console.log("进来")
+				    		return this.time4;
+				    	}
+				    	this.time4[0] = this.time5;
+				    	this.time4[1] = this.time6;
+				      return this.time4;
+				    },
+				    // setter
+				    set: function (newValue) {
+				    	console.log("set")
+				    	this.time5 =  newValue[0];
+				    	this.time6 =  newValue[1];
+				    }
+				}
+			}
+		});
+		function getTime(){
+				}
+	</script>
+</html>

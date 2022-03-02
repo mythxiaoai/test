@@ -1,0 +1,27 @@
+{
+  "name": "webpackTest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "基础.webpack.js",
+  "dependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "css-loader": "^2.0.2",
+    "ts-loader": "^5.3.2",
+    "typescript": "^3.2.2",
+    "webpack": "^4.28.1",
+    "webpack-dev-server": "^3.1.11"
+  },
+  "devDependencies": {
+    "webpack-cli": "^3.2.3"
+  },
+  "scripts": {
+    "start": "webpack --watch --config babel.webpack.js",
+    "dev": "webpack --watch --config babel.webpack.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

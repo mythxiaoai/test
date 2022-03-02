@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+		  //json  可以通过  json.key  也可以  json[key]
+		let mark = true;
+    var user ={
+     init(){
+       this[${mark?'add1':'add2'}]();
+     },
+     add1(){
+       console.log("执行add1")
+     },
+     add2(){
+       console.log("执行add2")
+     }
+    }
+    console.log(user)
+		</script>
+	</body>
+</html>

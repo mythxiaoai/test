@@ -1,0 +1,20 @@
+时间：2016年7月19日
+作者：小艾
+
+
+功能及调用
+1.随意拖拽
+2.横向拖拽
+3.纵向拖拽
+4.代理拖拽(子元素标题栏才能点击拖拽)
+5.镜像拖拽
+
+调用：
+window.drag.init(
+dom:dom,//传入拖拽dom元素
+dir:"x/y"//x横向   y纵向
+proxyChild:index,//代理  子元素的下标传入即可
+ghost:boolean，//ture 开启镜像  默认false 
+callbackDur:function(){},//持续移动时的回调函数
+callbackEnd:function(){}//结束移动时的回调函数
+)

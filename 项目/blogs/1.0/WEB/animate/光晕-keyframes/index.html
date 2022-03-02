@@ -1,0 +1,112 @@
+<!doctype html>
+<html>
+	<head>
+	    <!--声明当前页面的编码集：中文编码（gbk/gb2312）,国际编码（utf-8）-->
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+		<!--页面三要素-->
+		<title>国际标准模板</title><!--小于等于31 大小写不区分-->
+		<meta name="Keywords" content="关键词,关键词,关键词"><!--<=76个字-->
+		<meta name="description" content=""><!--<=80个字-->
+		<!--js/css-->
+		<style type="text/css">
+		@charset "UTF-8";
+		* {word-wrap: break-word;;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;}
+		html {-webkit-text-size-adjust: none;overflow-x:hidden}
+		body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td,span{padding:0;margin:0;}
+		body{font:normal 0.75em/1.5em "微软雅黑","冬青黑体简体中文 w3","宋体"; }
+		fieldset,img,html,body,iframe{border:0;}
+		/** 重置表格元素 **/
+		table{border-collapse:collapse;border-spacing:0;}
+		ol,ul{list-style:none;}
+		address,caption,cite,code,dfn,em,strong,th,var{font-weight:normal;font-style:normal;}
+		caption,th{text-align:left;}
+		em,i,small,caption,th{font-weight:normal;font-style:normal;font-size:100%;}
+		h1,h2,h3,h4,h5,h6,em,strong,b{font-weight:400;font-size:100%;}
+		q:before,q:after{content:'';}
+		.clearfix{*zoom:1;}
+		.clearfix:after{content:"."; display:block;clear:both;visibility:hidden;line-height:0;height:0;}
+		a {color: #9D9C9C;text-decoration: none;}
+		a img {border: none;border:0;}
+		a,button{ outline:none; border:0;}
+		input,select{border:1px solid #ccc;}
+		button::-moz-focus-inner{border:0;padding:0;margin:0;}
+		textarea,input,button,select{outline:0;font-size:inherit;line-height:inherit;color:inherit;font-family:inherit;}
+		textarea{overflow:auto;resize:none;}
+		.hide,.none{display: none}
+		.hidden{visibility: hidden;}
+		.show,.block{display: block;}
+		img{ vertical-align:middle;}
+		input:disabled,select:disabled,textarea:disabled{background:#ccc;}
+		.fl{float: left;}
+		.fr{float: right;}
+		.red{color:red;}
+		.green{color:green;}
+		#xa_halo{position:fixed;width:100px;height:100px;top:300px;left:0;right:0;margin:0 auto;}
+		#xa_halo .xa_lovepanel{position:absolute;width:100px;height:100px;z-index:1;}
+		#xa_halo .xa_lovepanel .squ{position:absolute;border-radius:50%;display:block;width:50px;height:50px;background:pink;left:0;background:pink;}
+		#xa_halo .xa_lovepanel .pre{left:43px;}
+		#xa_halo .xa_lovepanel .next{left:7px;}
+		#xa_halo .xa_lovepanel  .squ3{position:absolute;display:block;width:50px;height:50px;top:18px;left:25px;background:pink;transform:rotate(45deg)}
+		#xa_halo .xa_lovepanel a{position:absolute;z-index:2;width:100px;height:100px;line-height:75px;text-align:center;}
+		/*最小的那个 用来做摆设*/
+		#xa_halo .xa_lovemin{position:absolute;width:100px;height:100px;z-index:-1;animation:scalelove 1s infinite ease-in-out ;}
+		#xa_halo .xa_lovemin .squ{position:absolute;border-radius:50%;display:block;width:50px;height:50px;background:pink;left:0;background:pink;}
+		#xa_halo .xa_lovemin .pre{left:43px;}
+		#xa_halo .xa_lovemin .next{left:7px;}
+		#xa_halo .xa_lovemin  .squ3{position:absolute;display:block;width:50px;height:50px;top:18px;left:25px;background:pink;transform:rotate(45deg)}
+
+		/*阴影*/
+		#xa_halo .xa_love{position:absolute;width:100px;height:100px;z-index:-1;animation:scalelove2 1s 1 ease-in-out;}
+		#xa_halo .xa_love .squ{position:absolute;border-radius:50%;display:block;width:50px;height:50px;background:pink;;left:0;background:pink;}
+		#xa_halo .xa_love .pre{left:43px;}
+		#xa_halo .xa_love .next{left:7px;}
+		#xa_halo .xa_love  .squ3{position:absolute;display:block;width:50px;height:50px;top:18px;left:25px;background:pink;transform:rotate(45deg)}
+		@keyframes scalelove{
+			0% {transform:scale(1);opacity:1}
+			100% {transform:scale(1.5);opacity:0}
+		}
+		@keyframes scalelove2{
+			0% {transform:scale(1);opacity:1}
+			100% {transform:scale(6);opacity:0}
+		}
+
+		</style>
+	</head>  
+	<body>
+		
+		<div id="xa_halo">
+			<div class="xa_lovepanel">
+				<span class="squ pre"></span>
+				<span class="squ next"></span>
+				<span class="squ3"></span>
+				<a class="btn" href="javascript:;">点我</a>
+			</div>
+			<div class="xa_lovemin">
+				<span class="squ pre"></span>
+				<span class="squ next"></span>
+				<span class="squ3"></span>
+			</div>
+		</div>
+		<script>
+			var btnDom = document.querySelectorAll(".btn")[0];
+			btnDom.onclick=function(){
+				var parDom=this.parentElement;
+				var dom = document.createElement("div");
+				dom.className="xa_love";
+				dom.innerHTML="<span class='squ pre'></span>"+
+				"<span class='squ next'></span>"+
+				"<span class='squ3'></span>";
+				parDom.appendChild(dom);
+
+				var spanDom=dom.querySelectorAll("span");
+				var ranColor="rgb("+Math.floor(Math.random()*256)+","+Math.floor(Math.random()*256)+","+Math.floor(Math.random()*256)+")";
+				for(var i =0,len=spanDom.length;i<len;i++){
+					spanDom[i].style.backgroundColor=ranColor;
+				}
+				setTimeout(function(){
+				parDom.removeChild(dom);
+				},1000)
+			}
+		</script>
+	</body>
+</html>

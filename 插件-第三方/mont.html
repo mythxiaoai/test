@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+	</head>
+	<body>
+		<div id="app">
+				
+		</div>
+			 <!-- import Vue before Element -->
+		  <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.js"></script>
+		  <script src="https://cdn.bootcss.com/vuex/3.0.1/vuex.js"></script>
+		  <!-- import JavaScript -->
+		  <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+		  <script src="https://cdn.bootcss.com/moment.js/2.22.1/moment.min.js"></script>
+		  <script src="https://cdn.bootcss.com/moment.js/2.22.1/locale/zh-cn.js"></script>
+	</body>
+	<script>
+		console.log(window)
+		let start = moment("2008-01-01", "YYYY-MM-DD").unix();
+		let end = moment("2008-01-30", "YYYY-MM-DD").unix();
+		console.log(start);
+		console.log(end);
+	</script>
+</html>

@@ -1,0 +1,196 @@
+﻿<!doctype html>
+<html>
+	<head>
+	    <!--声明当前页面的编码集：中文编码（gbk/gb2312）,国际编码（utf-8）-->
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+		<!--页面三要素-->
+		<title>百度换肤</title><!--小于等于31 大小写不区分-->
+		<meta name="Keywords" content="关键词,关键词,关键词"><!--<=76个字-->
+		<meta name="description" content=""><!--<=80个字-->
+		<!--js/css-->
+		<style type="text/css">
+		*{margin:0;padding:0;}
+		body{font-size:12px;color:#fff;font-family:"微软雅黑";}
+		a{text-decoration:none;color:#fff;}
+		ul{list-style:none;}
+		.fl{float:left}
+		.fr{float:right}
+		.skin{position:absolute;height:100%;width:100%;z-index:-1;background-size:cover;background-position:center;background-repeat:no-repeat;}
+		/*top start*/
+		.top{height:32px;background:rgba(0,0,0,0.5);position:relative;}
+		.top .t_nav{padding-left:15px;}
+		.top .t_nav li a{display:block;height:32px;padding-right:10px;float:left;line-height:32px;}
+		.top .fa-bolt{color:#FC0;margin-right:10px;}
+		.top .quality{color:#A5DC00;font-weight:700px;}/*eq font-weight:bold;*/
+		.top .apply{text-decoration:underline;}
+		/*skinPanel starr*/
+		.top .s_icon{display:none;position:absolute;top:22px;left:197px;border:10px solid transparent;border-bottom:10px solid rgba(0,0,0,0.5);}
+		.top .skinPanel{display:none;position:absolute;background:rgba(0,0,0,0.5);top:42px;left:0;z-index:1;width:100%;}
+		.top .skinPanel .s_content{width:804px;height:230px;margin:0 auto;padding-top:15px;}
+		.top .skinPanel .s_content .s_list{height:200px;width:480px;}
+		.top .skinPanel .s_content .s_list .s_bgimgs li{list-style:none;float:left;position:relative;}
+		.top .skinPanel .s_content .s_list .s_bgimgs li img{height:100px;width:160px;display:block;}
+		.top .skinPanel .s_content .s_list .s_bgimgs .fa-check-circle{position:absolute;bottom:5px;right:5px;width:18px;height:18px;font-size:23px;color:#45C63B;background:#fff;border-radius:50%;line-height:18px;}
+		.top .skinPanel .s_content .s_operation{width:480px;height:28px;margin-top:2px;position:relative;}/*height:230-200-30*/
+		.top .skinPanel .s_content .s_operation .o_btns{height:25px;width:120px;display:inline-block;position:absolute;left:0;right:0;top:0;bottom:0;margin:auto;}
+		.top .skinPanel .s_content .s_operation .o_btns li{display:block;height:25px;color:#CBCBCB;float:left;text-align:center;line-height:25px;border-radius:1px;margin:0 auto;}
+		.top .skinPanel .s_content .s_operation .o_btns .fa-angle-left{width:25px;font-size:26px;padding-right:10px;cursor:pointer;}
+		.top .skinPanel .s_content .s_operation .o_btns .fa-angle-left:hover{background:#7F7F7F;}
+		.top .skinPanel .s_content .s_operation .o_btns .fa-angle-right{width:25px;font-size:26px;padding-left:10px;cursor:pointer;}
+		.top .skinPanel .s_content .s_operation .o_btns .fa-angle-right:hover{background:#7F7F7F;}
+		.top .skinPanel .s_content .s_operation .o_btns .fa-square-o{font-size:9px;-webkit-transform:scale(0.8);width:15px;}
+		.top .skinPanel .s_content .s_operation .o_btns .fa-square{font-size:7px;-webkit-transform:scale(0.7);width:15px;}
+		.top .skinPanel .s_content .s_preview{padding-top:10px;width:264px;height:220px;position:relative;}/*width:804-480-60-264*/
+		.top .skinPanel .s_content .s_preview .previewBox{height:200px;background:url("images/skin_preview.png") no-repeat;}
+		.top .skinPanel .s_content .s_preview .position_box{position:absolute;width:262px;height:164px;top:25px;left:1px;background-size:cover;z-index:-1;}
+		.top .skinPanel .s_content .s_preview .previewTip{width:96px;margin:0 auto;}/*width:12*8=96px*/
+		/*end skinPanel*/
+		/*end top*/
+		/*mian start*/
+		.main{position:relative;width:642px;margin-left:-320px;top:42px;left:50%;}/*width:537+104=640/2=320 height:32px+10px*/
+		.main .logo{display:block;margin:0 auto;}
+		.main .m_search{box-shadow:1px 1px 3px rgba(0,0,0,0.2);border-radius:1px;overflow:hidden;}
+		.main .searchbox{width:486px;height:38px;border:1px solid #b8b8b8;border-bottom:1px solid #ccc;outline:5px s;line-height:40px;font-size:14px;text-indent:10px;padding-right:50px;position:relative;}
+		.main .btn{width:104px;height:40px;line-height:40px;text-align:center;color:#fff;background:#38f;border:none;}
+		.main .btn:hover{background:#317EF3;}
+		.main .fa-camera{position:absolute;bottom:11px;right:120px;text-shadow:1px 0 #999,-1px 0 #999,0 -1px #999,0 1px #999;cursor:pointer;}
+		/*end mian*/
+		/*foot start*/
+		.foot{position:absolute;bottom:0;width:100%;text-align:center;}
+		.foot img{vertical-align:top;}
+		.foot .f_foot{padding-top:6px;line-height:16px;}
+		/*end foot*/
+
+		</style>
+		<link rel="stylesheet" href="js/font-awesome-4.5.0/css/font-awesome.min.css">
+	</head>  
+	<body>
+		<div class="skin" style="background-image:url('images/1.jpg');"></div>
+		<!--top start-->
+		<div class="top">
+			<ul class="t_nav">
+				<li><a href="javascript:void(0);">广州</a></li>
+				<li><a href="javascript:void(0);"><i class="fa fa-bolt fa-lg"></i>24℃</a></li>
+				<li><a class="quality" href="javascript:void(0);">良</a></li>
+				<li><a href="javascript:void(0);">54</a></li>
+				<li><a href="javascript:void(0);">|</a></li>
+				<li><a class="apply" href="javascript:void(0);">宝箱</a></li>
+				<li><a class="apply" id="change_skin" href="javascript:void(0);">换肤</a></li>
+				<li><a class="apply" href="javascript:void(0);">消息</a></li>
+			</ul>
+				<!--skinPanel start-->
+				<div class="s_icon"></div>
+				<div class="skinPanel">
+					<div class="s_content">
+						<div class="fl">
+							<div class="s_list">
+								  <ul class="s_bgimgs">
+									<li></li>
+									<li></li>
+									<li></li>
+									<li></li>
+									<li></li>
+									<li></li>
+								</ul>
+							</div>
+							<div class="s_operation">
+								<ul class="o_btns">
+									<li class="fa fa-angle-left"></li>
+									<li class="fa fa-square-o"></li>
+									<li class="fa fa-square"></li>
+									<li class="fa fa-angle-right "></li>
+								</ul>
+							</div>
+						</div>
+						<div class="s_preview fr">
+							<div class="previewBox"></div>
+							<div class="position_box" style="background-image:url('images/1.jpg');"></div>
+							<div class="previewTip">背景皮肤效果预览</div>
+						</div>
+					</div>
+				</div>
+				<!--end skinPanel--->
+		</div>
+		<!--end top-->
+		<!--main start-->
+		<div class="main">
+			<img class="logo" src="images/logo.png" width="270" height="129"/>
+			<div class="m_search">
+			<input class="searchbox fl" type="text"><i class="fa fa-camera fa-lg"/></i></input>
+			<input class="btn fl" type="button" value="百度一下"/>
+			</div>
+		</div>
+		<!--end main-->
+		<!--foot start-->
+		<div class="foot">
+			<div class="f_top">
+				<a href="javascript:void(0)">设为首页</a>
+				<span>©2016&nbsp;Baidu&nbsp;</span>
+				<a href="javascript:void(0)">使用百度前必读</a>&nbsp;
+				<a href="javascript:void(0)">意见反馈</a>&nbsp;
+				<span>京ICP证030173号&nbsp;</span>
+				<img width="13" height="16" src="https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/copy_rignt_24.png">
+			</div>
+			<div class="f_foot">
+				<a href="javascript:void(0)">
+				<img width="14" height="16" src="https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/icon-police.png?v=md5">
+				<i class="f_icon"></i>京公网安备11000002000001号</a>
+			</div>
+		</div>
+		<!--end foot-->
+		<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+		<script>
+			$(function(){
+			//图片初始化
+			var aimgName=[];
+			var pageSize=6;
+			var pageIndex=1;
+			var pageCount;
+			for(var i =0;i<12;i++){
+				aimgName[i]=i+1+".jpg";
+			}
+			$(".s_bgimgs li").each(function(){
+				$(this).append("<img alt='背景图片模板展示' src='images/"+aimgName[$(this).index()]+"'/><i></i>");
+			});
+			pageCount = aimgName.length/6;
+			//点击图片  加选中样式  更换背景图片
+				$(".s_bgimgs li img").click(function(){
+					$(this).next().addClass("fa fa-check-circle").parent().siblings().find("i").removeClass("fa fa-check-circle");
+					$(".skin").css('background-image',"url('"+this.src+"')");
+				});
+			//点击换肤  显示换肤面板
+				$("#change_skin").click(function(){
+					$(".s_icon").fadeToggle(500);
+					$(".skinPanel").fadeToggle(500);
+				});
+			//鼠标悬浮  预览效果
+				$(".s_bgimgs li img").mouseover(function(){
+					$(".position_box").css('background-image',"url('"+this.src+"')");
+				});
+			
+			//点击右加载另外一组图片
+			$(".fa-angle-right,.fa-angle-left").click(function(){
+				if(pageIndex==pageCount){
+				pageIndex=1;
+				}else{
+				pageIndex+=1;
+				}
+				if(pageIndex==1){
+				$(".s_bgimgs li ").each(function(){
+				var src="images/"+aimgName[$(this).index()];
+				$(this).find("img").attr("src",src);
+				});
+				}else if(pageIndex==2){
+				$(".s_bgimgs li ").each(function(){
+				var src="images/"+aimgName[$(this).index()+6];
+				$(this).find("img").attr("src",src);
+				});
+				}
+				/*$(".o_btns").children().eq(pageIndex).removeClass("fa fa-square").addClass("fa fa-square-o");
+				$(".o_btns").children().eq(pageIndex).prev().removeClass("fa fa-square-o").addClass("fa fa-square");*/
+			});
+
+			});
+		</script>
+	</body>
+</html>

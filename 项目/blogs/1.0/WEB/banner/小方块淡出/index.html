@@ -1,0 +1,158 @@
+﻿<!doctype html>
+<html>
+	<head>
+	    <!--声明当前页面的编码集：中文编码（gbk/gb2312）,国际编码（utf-8）-->
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+		<!--页面三要素-->
+		<title>国际标准模板</title><!--小于等于31 大小写不区分-->
+		<meta name="Keywords" content="关键词,关键词,关键词"><!--<=76个字-->
+		<meta name="description" content=""><!--<=80个字-->
+		<!--js/css-->
+		<style type="text/css">
+			*{margin:0;padding:0;}
+			body{font-size:12px;color:#333;font-family:"微软雅黑";}
+			.fl{float:left;}
+			.fr{float:right;}
+			a{text-decoration:none;}
+			img{border:none;}
+			ul{list-style:none;}
+			/*focus statr*/
+			.f_m_img{width:1000px;height:375px;margin:100px auto;position:relative;overflow:hidden;}
+			/*轮播操作样式*/
+			.f_m_img .m_imgs{position:relative;height:375px;width:1000px;}
+			.f_m_img .m_imgs .m_img{height:375px;display:none}
+			.f_m_img .block{width:100%;height:100%;position:absolute;top:0;left:0;}
+			.f_m_img .banner_foot{position:absolute;width:400px;height:18px;bottom:20px; right:30px;}
+			.f_m_img .banner_foot .f_icon{width:6px;height:6px;margin:4px 5px 0 5px;display:inline-block;background: rgba(0,0,0,0.4);transition:all 0.5s;float:left; border: 2px solid rgba(255,255,255,0.3);
+    border-radius:50%;}
+			.f_m_img .banner_foot .f_icon:hover{background: rgba(255,255,255,0.4);border-color:rgba(0,0,0,0.4);}
+			.f_m_img .banner_foot .f_checked{background: rgba(255,255,255,0.4);border-color:rgba(0,0,0,0.4);};
+			/*end focus*/
+		</style>
+	</head>  
+	<body>
+
+		<!--f_m_img start-->
+		<div class="f_m_img">
+			<ul class="m_imgs">
+				<li class="m_img m_checked"><a href="javascript:void(0)"><img alt="小米推荐" height="375" width="1000" src="images/1.jpg"/></a></li>
+				<li class="m_img" ><a href="javascript:void(0)"><img alt="小米推荐" height="375" width="1000" src="images/2.jpg"/></a></li>
+				<li class="m_img"><a href="javascript:void(0)"><img alt="小米推荐" height="375" width="1000" src="images/3.jpg"/></a></li>
+				<li class="m_img"><a href="javascript:void(0)"><img alt="小米推荐" height="375" width="1000" src="images/4.jpg"/></a></li>
+				<li class="m_img"><a href="javascript:void(0)"><img alt="小米推荐" height="375" width="1000" src="images/5.jpg"/></a></li>
+			</ul>
+			<div class="block">
+			
+			</div>
+			<div class="banner_foot">
+				<ul class="banner_icons fr">
+					<li class="f_icon f_checked"></li>
+					<li class="f_icon"></li>
+					<li class="f_icon"></li>
+					<li class="f_icon"></li>
+					<li class="f_icon"></li>
+				<ul>
+			</div>
+		</div>
+		<!--end f_m_img-->
+		<script src="js\jquery-1.11.2.min.js"></script>
+		<script>
+			
+		/*
+		小方块banner
+		时间：2016-7-19
+		作者：小艾
+		思路：
+		总体思路：把图片分割成小方块进行操作
+		*/
+		//height="460" width="1226"
+		var imgLidom=document.querySelectorAll(".m_img");
+		var uldom=document.querySelectorAll(".m_imgs")[0];
+		var blockdom=document.querySelectorAll(".block")[0];
+		var imgDom=imgLidom[0].getElementsByTagName("img")[0];
+		var icondom=document.querySelectorAll(".f_icon");
+		var blockWidth=98;
+		var blockHeight=35.5;
+		var pageIndex=0;//轮播下标
+		var time;
+		//getBlock(imgDom);
+		for(var i =0;i<imgLidom.length;i++){
+				imgLidom[i].style.display="none";
+				icondom[i].className="f_icon";
+		}
+		(icondom[pageIndex]).className="f_icon f_checked";
+		(imgLidom[pageIndex]).style.display="block"
+
+		time=setInterval(run,2000);
+
+		function run(){
+			if(pageIndex==imgLidom.length)pageIndex=0;
+			for(var i =0;i<imgLidom.length;i++){
+				imgLidom[i].style.display="none";
+			}
+			imgLidom[pageIndex].style.display="block"
+			imgDom=imgLidom[pageIndex].getElementsByTagName("img")[0];
+			pageIndex++;
+			var blockArr=getBlock(imgDom);
+			//数组克隆~
+			var oldBlockArr=blockArr.slice(0);
+			var cancelArr=[];
+			var timerblock = null;
+			timerblock=setInterval(function(){
+				clearInterval(time);
+				for(var i =0;i<imgLidom.length;i++){
+				imgLidom[i].style.display="none";
+				icondom[i].className="f_icon";
+				}
+				(icondom[pageIndex]||icondom[0]).className="f_icon f_checked";
+				(imgLidom[pageIndex]||imgLidom[0]).style.display="block"
+				if(oldBlockArr.length!=0){
+				var random =Math.floor(Math.random()*oldBlockArr.length);
+				var temp=oldBlockArr.splice(random,1)[0];
+				cancelArr.push(temp);
+				$(temp).fadeOut();
+				}else{
+					clearInterval(timerblock);
+					time=setInterval(run,2000);
+				}
+			},1)
+		}
+		/*
+		图片盒子Dom
+		imgLidom
+		*/
+		//
+		function getBlock(imgDom){
+			var blockArr=[];//切割图片装进divDom
+			var col=Math.floor(imgDom.parentElement.parentElement.parentElement.clientWidth/blockWidth)
+			var row=Math.floor(imgDom.parentElement.parentElement.parentElement.clientHeight/blockHeight)
+			var imgurl=imgDom.src;
+			//分割小方格
+			//console.log(col+"=="+row)
+			var liIndex=0;
+			for(var i = 0 ;i<row;i++){
+				for(var j = 0; j<col;j++){
+					var divDom=document.createElement("div");
+					divDom.index =liIndex++;
+					//dom css
+					with(divDom.style){
+						backgroundOrigin:"border-box";
+						width=blockWidth+"px";
+						height=blockHeight+"px";
+						border="1px solid rgba(255,255,255,0.5)";
+						position="absolute";
+						//这里需要-1才能重合..做个记号 还没弄懂原因
+						top=i*(blockHeight+2)-1+"px";
+						left=j*(blockWidth+2)-1+"px";
+						backgroundImage="url("+imgurl+")";
+						backgroundPosition=(-j*(blockWidth+2))+"px "+(-i*(blockHeight+2))+"px";
+					}
+					blockArr.push(divDom);
+					blockdom.appendChild(divDom);
+				}
+			}
+			return blockArr;
+		}
+		</script>
+	</body>
+</html>

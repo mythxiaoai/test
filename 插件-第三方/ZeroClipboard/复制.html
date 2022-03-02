@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<textarea id="content" rows="10" cols="40">这里是需要复制的内容</textarea>
+<input id="copy" type="button" data-clipboard-target="content" value="复制">
+<script type="text/javascript" src="js/jquery.js" ></script>
+		<script src="js/ZeroClipboard/ZeroClipboard.min.js"></script>
+		<script>
+			/**
+1、ZeroClipboard依赖于jquery，确保引入了jquery，并放在同一目录下。
+2、ZeroClipboard.js   ZeroClipboard.min.js   ZeroClipboard.swf三个文件放在同一目录下。
+3、上代码： */
+			$(document).ready(function() {  
+			    var clip = new ZeroClipboard($("#copy"));  
+			    clip.on('error', function (event) {  
+			        alert("复制失败，请手动复制。");  
+			    });  
+			    clip.on('aftercopy', function (event) {  
+			        alert("复制成功！");  
+			    });  
+			  
+			});  
+		</script>
+	</body>
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+		<style type="text/css">
+			body,
+			html,
+			#allmap {
+				width: 100%;
+				height: 100%;
+				overflow: hidden;
+				margin: 0;
+				font-family: "微软雅黑";
+			}
+		</style>
+		<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=hYCENCEx1nXO0Nt46ldexfG9oI49xBGh"></script>
+		<title>添加行政区划</title>
+	</head>
+
+	<body>
+		<div id="allmap"></div>
+	</body>
+
+</html>
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/lodash.js/4.17.12-pre/lodash.js"></script>
+<script src="./pinyin.js"></script>
+<script src="./cTest.js"></script>
+<script type="text/javascript">
+	let log = (...arg) => console.log(...arg)
+	// 百度地图API功能
+	var map = new BMap.Map("allmap", {
+		enableMapClick: false
+	});
+	map.centerAndZoom("延安", 5);
+	map.enableScrollWheelZoom();
+	//中国   5zoom   1px的经纬度的差为 0.07358918309859164   大约0.07的经度去做循环
+	//左上  右下的恒定点为
+	const step = 0.07 * 50;
+	let lx = 71.818915
+	let ly = 54.164576;
+	let rx = 135.69433;
+	let ry = 13.850065;
+
+	let pdata = [];
+	let pdataX = [];
+
+	//let cdata = [];
+	let cdataX = [];
+
+	let ddata = [];
+	let ddataX = [];
+
+	let error = [];
+	//逆解析
+	let myGeo = new BMap.Geocoder();
+	//获取行政区域
+	let bdary = new BMap.Boundary();
+	
+	  let p = "";
+	  let c = "";
+	  let d = "";
+	//解析省  思想是循环经纬度  外层控制行,内层控制高  纬度是由南极到北极  所以需要--step
+	//该循环  循环525888次
+	let stop = 0;
+	(async() => {
+		try {
+		/* 	cdata = await $.ajax("./c.js");
+			cdata = JSON.parse(cdata); */
+			let len = cdata[cdata.length - 1].id * 1;
+			//县
+			for(let i = lx; i <= rx; i += step) {
+				for(let j = ly; j >= ry; j -= step) {
+					let point = new BMap.Point(i, j);
+					//获取地址
+					let addComp = await getLocation(point);
+          //保证直到获取到为止
+          while (!addComp){addComp = await getLocation(point);}
+					p = addComp.province;
+					c = addComp.city;
+					d = addComp.district;
+					//判断没有汉字就跳过循环;
+					if(!(p && c && d)) continue;
+					if(!haveHanzi(p)) continue;
+					//如果重复添加就跳过
+					if(_.find(ddata, ["name", d]) != undefined) continue;
+
+					//获取行政区域
+					let boundaries = await getBoundaries(p + c + d);
+					if(boundaries.length === 0) {
+						console.log('未能获取' + p + c + d+ '行政区域');
+						boundaries = await getBoundaries(c + d);
+						if(boundaries.length === 0) {
+							boundaries = await getBoundaries(d);
+							if(boundaries.length === 0) {
+								error.push(p + c + d);
+								console.log('第三次~未能获取' + p + c + d + '行政区域');
+							}
+						}
+					}
+					let pObj = _.find(cdata, ["name", c]);
+					if(!pObj){
+						console.error('找不到pid',p,c,d);
+						continue;
+					}
+					let temp = {
+						id: "",
+						name: d,
+						pid:pObj.id,
+						letter: xa_pinyin.getCamelChars(d)
+					}
+
+					//数据装载
+					ddata.push(temp);
+					ddataX.push({
+						...temp,
+						boundaries: boundaries
+					})
+				}
+				console.log("县" + (((i - lx) / (rx - lx)) * 100).toFixed(2) + "%");
+			}
+			//排序
+			sortByletter(ddata);
+			sortByletter(ddataX);
+			console.log(`d:${ddata.length}    ${ddataX.length}`);
+			//完了之后赋上id  保证是1~顺序排列
+			ddata.map((v, i) => {
+				let id = _.uniqueId() * 1 + len;
+				v.id = id;
+				ddataX[i].id = id;
+			});
+		} catch(e) {
+			console.error(e,p,d,c)
+		}
+
+		console.log(`d:${ddata.length}    ${ddataX.length}`)
+		console.log(`error:${error.length}`)
+	})()
+
+	function haveHanzi(name) {
+		return /[\u4E00-\u9FA5]+/.test(name);
+	}
+
+	function draw(arr, name, temp) {
+		bdary.get(name, function(rs) { //获取行政区域
+			var count = rs.boundaries.length; //行政区域的点有多少个
+			if(count === 0) {
+				error.push(name);
+				console.log('未能获取' + name + '行政区域');
+				return;
+			}
+			let json = Object.assign({}, temp);
+			json.boundaries = rs.boundaries;
+			arr.push(json);
+		});
+	}
+
+	//根据letter排序
+	function sortByletter(data) {
+		data.sort(function(a, b) {
+			var len = a.letter.length < b.letter.length ? a.letter.length : b.letter.length;
+			for(var i = 0; i < len; i++) {
+				if(a.letter.charCodeAt(i) < b.letter.charCodeAt(i)) {
+					return -1;
+				}
+				if(a.letter.charCodeAt(i) == b.letter.charCodeAt(i)) {
+					continue;
+				}
+				return 1;
+			}
+		})
+	}
+	//根据点 返回地址
+	function getLocation(point) {
+		return new Promise((resolve, reject) => {
+			myGeo.getLocation(point, function(rs) {
+        resolve(rs? rs.addressComponents :rs)
+			});
+		})
+	}
+	//根据名字返回边界
+	function getBoundaries(name) {
+		return new Promise((resolve, reject) => {
+			bdary.get(name, function(rs) { //获取行政区域
+				resolve(rs.boundaries);
+			});
+		})
+	}
+</script>

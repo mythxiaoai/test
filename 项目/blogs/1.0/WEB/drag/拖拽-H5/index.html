@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <style>
+	*{padding:0;margin:0}
+	body{font-size:14px;font-family:"微软雅黑"}
+	a{text-decoration:none;color:#333}
+	ul li{list-style:none}
+	.box{width:140px;height:100px;background:#333;color:#fff;float:left;margin-left:10px;}
+	.box span{display:block;}
+
+	#cshopcar{width:640px;height:360px;background:#eee;margin-top:10px;margin-left:10px;}
+	#cshopcar div{float:left;margin:2px;}
+	table{width:100%;border-collapse: collapse;}
+	table td{border:1px solid #ccc;padding:5px;}
+  </style>
+ </head>
+ <body>
+		<div id="bookbox">
+			<div class="box" draggable="true">
+				<span class="name">华为手机</span>
+				<span class="price">360</span>
+				<span class="pub">广州</span>
+				<span class="pub">1</span>
+			</div>
+			<div class="box" draggable="true">
+				<span class="name">小米手机</span>
+				<span class="price">400</span>
+				<span class="pub">杭州</span>
+				<span class="pub">2</span>
+			</div>
+			<div class="box" draggable="true">
+				<span class="name">三星手机</span>
+				<span class="price">200</span>
+				<span class="pub">上海</span>
+				<span class="pub">3</span>
+			</div>
+		</div>
+
+		<br><br><br><br><br><br><br><br>
+		<div id="cshopcar">
+			<table>
+				<tbody id="shopcar">
+				</tbody>
+			</table>
+		</div>
+		总金额是：<h1 id="total"></h1>
+		<a href="javascript:void(0);" onclick="clearShopcar()">清空购物车</a>
+		<script>
+			/*
+				html5--可触动的拖放功能--draggable
+				在页面中有两个元素默认开启的：a和img ,draggable="true"
+				onmousedown onmouseove onmouseup
+
+				Draggable和文件Api通过ajax实现文件上传
+
+				参照物：拖放的元素 和 目标点
+				
+				API事件:
+					ondragstart:开始拖放元素触发的事件 ,对象：拖放的元素
+					ondrag:拖放过程中触发的事件，       对象：拖放的元素
+
+
+					ondragenter：有拖放的元素进入目标元素时触发的事件，   对象：目标元素
+					ondragover:有拖放的元素在目标元素内移动触发的事件：对象：目标元素
+					ondragleave：有拖放的元素离开目标元素触发的事件，  对象：目标元素
+					ondrop:有拖放的元素在本元素松开的时候触发的事件  对象：目标元素
+
+					ondragend：拖放元素结束触发的事件      对象：拖放的元素
+
+			*/
+
+			function dom(id){
+				return document.getElementById(id);
+			};
+
+			window.onload = function(){
+				var booksDom = dom("bookbox");//拖放元素
+				var boxDoms =  booksDom.children;
+
+				//目标元素
+				var shopDom = dom("cshopcar");
+				//tbody对象 
+				var tbodyDom = dom("shopcar");
+
+
+				for(var i=0,len=boxDoms.length;i<len;i++){
+					boxDoms[i].ondragstart = function(e){
+						var cdoms = this.children;
+						var json = {};
+						//存储到对象
+						json.name = cdoms[0].innerHTML;
+						json.price = cdoms[1].innerHTML;
+						json.address = cdoms[2].innerHTML;
+						json.opid= cdoms[3].innerHTML;
+						//序列化成jsonstring
+						var jsonString = JSON.stringify(json);
+						//放入到数据传输对象中
+						e.dataTransfer.setData("text",jsonString);
+						this.style.background = "red";
+					};
+					
+					//释放元素的时候触发
+					boxDoms[i].ondragend = function(){
+						shopDom.style.background = "#eee";
+						this.style.background = "#333";
+					};
+				}
+
+
+
+				shopDom.ondragenter = function(e){
+					this.style.background = "#888";
+				};
+
+
+
+				shopDom.ondragover = function(e){
+					console.log("ondragover")
+					e.preventDefault();
+				};
+				shopDom.ondragleave = function(e){
+					console.log("ondragleave")
+					e.preventDefault();
+				};
+				shopDom.ondrop = function(e){
+					var text = e.dataTransfer.getData("text");
+					if(text){
+						try{
+							//解析存储的json数据
+							var json = JSON.parse(text);
+							var len = tbodyDom.children.length||0;
+							var tdom = dom("sp_"+json.opid);
+							if(!tdom){//如果为空，追加数据
+								var html = "<tr id='sp_"+json.opid+"'>"+
+								"		<td>"+(len+1)+"</td>"+
+								"		<td>"+json.name+"</td>"+
+								"		<td>"+json.price+"</td>"+
+								"		<td>"+json.address+"</td>"+
+									"	<td><a href='javascript:void(0);' onclick='delshop(this)'>删除</a></td>"+
+								"	</tr>";
+								tbodyDom.innerHTML += html;
+							}else{
+								var p = tdom.children[2].innerHTML || 0;
+								tdom.children[2].innerHTML = p*1 + json.price*1;
+							}
+							
+							//计算总金额
+							getTotal();
+
+							//提交数据到服务器端进行保存
+							//$.ajax({})
+						}catch(ex){
+							this.style.background = "#eee";
+						}
+					}
+				};
+			}
+
+			//计算总金额
+			function getTotal(){
+				var tbodyDom = dom("shopcar");
+				var trDoms =tbodyDom.children;
+				var total = 0;
+				for(var i=0,len=trDoms.length;i<len;i++){
+					var p = trDoms[i].children[2].innerHTML;
+					total+=p*1;
+				}
+				dom("total").innerHTML = total;
+			}
+			
+			//删除商品
+			function delshop(obj){
+				var tbodyDom = dom("shopcar");
+				tbodyDom.removeChild(obj.parentElement.parentElement);
+				//计算总金额
+				getTotal();
+			}
+
+			//清空购物车
+			function clearShopcar(){
+				var tbodyDom = dom("shopcar");
+				tbodyDom.innerHTML = "";
+				//计算总金额
+				getTotal();
+			}
+
+		</script>
+ </body>
+</html>

@@ -1,0 +1,214 @@
+<!doctype html>
+<html>
+	<head>
+	    <!--声明当前页面的编码集：中文编码（gbk/gb2312）,国际编码（utf-8）-->
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+		<!--页面三要素-->
+		<title>国际标准模板</title><!--小于等于31 大小写不区分-->
+		<meta name="Keywords" content="关键词,关键词,关键词"><!--<=76个字-->
+		<meta name="description" content=""><!--<=80个字-->
+		<!--js/css-->
+		<style type="text/css">
+		@charset "UTF-8";
+		* {word-wrap: break-word;;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;}
+		html {-webkit-text-size-adjust: none;overflow-x:hidden}
+		body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td,span{padding:0;margin:0;}
+		body{font:normal 0.75em/1.5em "微软雅黑","冬青黑体简体中文 w3","宋体"; }
+		fieldset,img,html,body,iframe{border:0;}
+		/** 重置表格元素 **/
+		table{border-collapse:collapse;border-spacing:0;}
+		ol,ul{list-style:none;}
+		address,caption,cite,code,dfn,em,strong,th,var{font-weight:normal;font-style:normal;}
+		caption,th{text-align:left;}
+		em,i,small,caption,th{font-weight:normal;font-style:normal;font-size:100%;}
+		h1,h2,h3,h4,h5,h6,em,strong,b{font-weight:400;font-size:100%;}
+		q:before,q:after{content:'';}
+		.clearfix{*zoom:1;}
+		.clearfix:after{content:"."; display:block;clear:both;visibility:hidden;line-height:0;height:0;}
+		a {color: #9D9C9C;text-decoration: none;}
+		a img {border: none;border:0;}
+		a,button{ outline:none; border:0;}
+		input,select{border:1px solid #ccc;}
+		button::-moz-focus-inner{border:0;padding:0;margin:0;}
+		textarea,input,button,select{outline:0;font-size:inherit;line-height:inherit;color:inherit;font-family:inherit;}
+		textarea{overflow:auto;resize:none;}
+		.hide,.none{display: none}
+		.hidden{visibility: hidden;}
+		.show,.block{display: block;}
+		img{ vertical-align:middle;}
+		input:disabled,select:disabled,textarea:disabled{background:#ccc;}
+		.fl{float: left;}
+		.fr{float: right;}
+		.red{color:red;}
+		.green{color:green;}
+		
+
+		/*皮肤*/
+		.bg{background:#eff3f5}
+
+		.w1180{width:1180px;}
+		.bannerbox{margin:50px auto 0;height:350px;}
+		.tjbox {height:600px;margin:20px auto 0;}
+		.tjbox li.items{width:280px;height:300px;float:left;margin-right:20px;margin-bottom:20px;}/*1180/4*-4*20，浮动流体发生改变 margin-top就有折射点*/
+		.tjbox li{position:relative;}
+		.tjbox li.last{margin-right:0}
+		.tjbox li.items:before{content:"";position:absolute;background:#fff;opacity:0;left:-14px;right:-14px;top:-16px;bottom:0px;z-index:-1;box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);}
+		.tjbox .items:hover:before {opacity:1;}
+		.tjbox .items:hover strong{color:#3498db}
+		.tjbox .items:hover .show-img img{transition:all .3s;transform:scale(1.1);}
+		.tjbox .items .show-img{display:block;overflow:hidden;width:280px;height:210px;}
+		.tjbox li.items h3{padding:5px 0;font-weight:700;color:#34495e;font-size:14px;white-space:nowrap;text-overflow:ellipsis;overflow:hidden}
+		.tjbox li.items{font-size:14px;color:#9aabb8;  }
+		.tjbox li.items .creat{margin-right: 10px;
+    display: inline-block;padding:0 5px;font-size:12px;height:20px;color:#9aabb8;line-height:20px;background:#dfe5e9;text-align:center;border-radius:3px;}
+		.tjbox li.items i{padding:0 10px;font-size:18px;color:#9aabb8;}
+		.tjbox li.items .pic{height:20px;padding:7px 0 0 0;}
+		.tjbox li.items .hpic{height:18px;width:18px;border-radius:50%;margin-right:5px;}
+		.tjbox li.items strong{font-size:12px; color:#2c3e50;}
+
+		</style>
+		<link rel="stylesheet" href="font/font-awesome.min.css"/>
+	</head>  
+	<body class="bg">
+		<div class="w1180 bannerbox">
+			<a href="javascript:;"><img src="http://img.ui.cn/data/upload/201606/1466644772_384.jpeg?v=1467758463" alt="demo" width="1180" height="350"></a>
+		</div>
+		<div class="w1180 tjbox">
+			<ul>
+				<li class="items">
+					<a class="show-img" href="javascript:;"><img  src="http://img.ui.cn/data/file/9/5/9/674959.jpg" alt="test" width="280" height="210"></a>
+					<h3 class="tettle">这可能是Ai中最好用的10个工具</h3>
+					<p class="pic">
+						<span class="creat">原创</span>
+						<i class="fa fa-eye"></i>2354
+						<i class="fa fa-commenting-o"></i>235
+						<i class="fa fa-leaf"></i>1245
+					</p>
+					<p class="pic">
+						<a href="javascript:;">
+							<img class="hpic" alt="user" src="http://imgavater.ui.cn/avatar/2/9/8/2/372892.jpg?imageMogr2/auto-orient/crop/!1000x1000-2a0/thumbnail/60x60/1467758463" width="18" height="18"></img>
+							<strong>设计产</strong>
+						<a>
+					</p>
+				</li>
+				<li class="items">
+					<a href="javascript:;" class="show-img"><img src="http://img.ui.cn/data/file/9/1/0/684019.gif" alt="test" width="280" height="210"></a>
+					<h3>这可能是Ai中最好用的10个工具</h3>
+					<p class="pic">
+						<span class="creat">原创</span>
+						<i class="fa fa-eye"></i>2354
+						<i class="fa fa-commenting-o"></i>235
+						<i class="fa fa-leaf"></i>1245
+					</p>
+					<p class="pic">
+						<a href="javascript:;">
+							<img class="hpic" alt="user" src="http://imgavater.ui.cn/avatar/2/9/8/2/372892.jpg?imageMogr2/auto-orient/crop/!1000x1000-2a0/thumbnail/60x60/1467758463" width="18" height="18"></img>
+							<strong>设计产</strong>
+						<a>
+					</p>
+					</li>
+				<li class="items">
+					<a href="javascript:;" class="show-img" ><img src="http://img.ui.cn/data/file/3/3/1/678133.jpg" alt="test" width="280" height="210"></a>
+					<h3>这可能是Ai中最好用的10个工具</h3>
+					<p class="pic">
+						<span class="creat">原创</span>
+						<i class="fa fa-eye"></i>2354
+						<i class="fa fa-commenting-o"></i>235
+						<i class="fa fa-leaf"></i>1245
+					</p>
+					<p class="pic">
+						<a href="javascript:;">
+							<img class="hpic" alt="user" src="http://imgavater.ui.cn/avatar/2/9/8/2/372892.jpg?imageMogr2/auto-orient/crop/!1000x1000-2a0/thumbnail/60x60/1467758463" width="18" height="18"></img>
+							<strong>设计产</strong>
+						<a>
+					</p>
+				</li>
+				<li class="items last">
+					<a href="javascript:;" class="show-img"><img src="http://img.ui.cn/data/file/5/6/4/683465.jpg" alt="test" width="280" height="210"></a>
+					<h3>这可能是Ai中最好用的10个工具</h3>
+					<p class="pic">
+						<span class="creat">原创</span>
+						<i class="fa fa-eye"></i>2354
+						<i class="fa fa-commenting-o"></i>235
+						<i class="fa fa-leaf"></i>1245
+					</p>
+					<p class="pic">
+						<a href="javascript:;">
+							<img class="hpic" alt="user" src="http://imgavater.ui.cn/avatar/2/9/8/2/372892.jpg?imageMogr2/auto-orient/crop/!1000x1000-2a0/thumbnail/60x60/1467758463" width="18" height="18"></img>
+							<strong>设计产</strong>
+						<a>
+					</p>
+				</li>
+			</ul>
+			<ul>
+				<li class="items">
+					<a href="javascript:;" class="show-img"><img src="http://img.ui.cn/data/file/9/5/9/674959.jpg" alt="test" width="280" height="210"></a>
+					<h3>这可能是Ai中最好用的10个工具</h3>
+					<p class="pic">
+						<span class="creat">原创</span>
+						<i class="fa fa-eye"></i>2354
+						<i class="fa fa-commenting-o"></i>235
+						<i class="fa fa-leaf"></i>1245
+					</p>
+					<p class="pic">
+						<a href="javascript:;">
+							<img class="hpic" alt="user" src="http://imgavater.ui.cn/avatar/2/9/8/2/372892.jpg?imageMogr2/auto-orient/crop/!1000x1000-2a0/thumbnail/60x60/1467758463" width="18" height="18"></img>
+							<strong>设计产</strong>
+						<a>
+					</p>
+				</li>
+				<li class="items">
+					<a href="javascript:;" class="show-img"><img src="http://img.ui.cn/data/file/9/5/9/674959.jpg" alt="test" width="280" height="210"></a>
+					<h3>这可能是Ai中最好用的10个工具</h3>
+					<p class="pic">
+						<span class="creat">原创</span>
+						<i class="fa fa-eye"></i>2354
+						<i class="fa fa-commenting-o"></i>235
+						<i class="fa fa-leaf"></i>1245
+					</p>
+					<p class="pic">
+						<a href="javascript:;">
+							<img class="hpic" alt="user" src="http://imgavater.ui.cn/avatar/2/9/8/2/372892.jpg?imageMogr2/auto-orient/crop/!1000x1000-2a0/thumbnail/60x60/1467758463" width="18" height="18"></img>
+							<strong>设计产</strong>
+						<a>
+					</p>
+					</li>
+				<li class="items">
+					<a href="javascript:;" class="show-img"><img src="http://img.ui.cn/data/file/9/5/9/674959.jpg" alt="test" width="280" height="210"></a>
+					<h3>这可能是Ai中最好用的10个工具</h3>
+					<p class="pic">
+						<span class="creat">原创</span>
+						<i class="fa fa-eye"></i>2354
+						<i class="fa fa-commenting-o"></i>235
+						<i class="fa fa-leaf"></i>1245
+					</p>
+					<p class="pic">
+						<a href="javascript:;">
+							<img class="hpic" alt="user" src="http://imgavater.ui.cn/avatar/2/9/8/2/372892.jpg?imageMogr2/auto-orient/crop/!1000x1000-2a0/thumbnail/60x60/1467758463" width="18" height="18"></img>
+							<strong>设计产</strong>
+						<a>
+					</p>
+				</li>
+				<li class="items last">
+					<a href="javascript:;" class="show-img"><img src="http://img.ui.cn/data/file/9/5/9/674959.jpg" alt="test" width="280" height="210"></a>
+					<h3>这可能是Ai中最好用的10个工具</h3>
+					<p class="pic">
+						<span class="creat">原创</span>
+						<i class="fa fa-eye"></i>2354
+						<i class="fa fa-commenting-o"></i>235
+						<i class="fa fa-leaf"></i>1245
+					</p>
+					<p class="pic">
+						<a href="javascript:;">
+							<img class="hpic" alt="user" src="http://imgavater.ui.cn/avatar/2/9/8/2/372892.jpg?imageMogr2/auto-orient/crop/!1000x1000-2a0/thumbnail/60x60/1467758463" width="18" height="18"></img>
+							<strong>设计产</strong>
+						<a>
+					</p>
+				</li>
+			</ul>
+		</div>
+		<script>
+
+		</script>
+	</body>
+</html>

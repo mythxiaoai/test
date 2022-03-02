@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title></title>
+  </head>
+  <body>
+    <div id="box"></div>
+    <script>
+    let data ={
+      cellid:651658415,
+      cellname:"我是小区中文名",
+      lon:115.652458,
+      lat:113.652458,
+    }
+    //bad  code
+    var panelInfo="<ul class='list-group text-center js_mappaneal' style='width: 240px;margin:0 14px'>"+
+                "     <li class='list-group-item'>"+
+                "       <span style='width: 48%;display: inline-block;'>小区CI:</span>"+
+                "       <span style='width: 49%;display: inline-block;'>" +data.cellid+"</span>"+
+                "     </li>"+
+                "     <li class='list-group-item'>"+
+                "       <span style='width: 48%;display: inline-block;'>小区中文名:</span>"+
+                "       <span class='text-nowrap' style='width: 49%;display: inline-block;text-overflow: ellipsis;overflow:hidden;' title='"+data.cellname+"'>" +data.cellname+"</span>"+
+                "     </li>"+
+                "     <li class='list-group-item'>"+
+                "       <span style='width: 48%;display: inline-block;'>经纬</span>"+
+                "       <span style='width: 49%;display: inline-block;'>" +data.lon.toFixed(2)+"</span>"+
+                "     </li>"+
+                "     <li class='list-group-item'>"+
+                "       <span style='width: 48%;display: inline-block;'>维度</span>"+
+                "       <span style='width: 49%;display: inline-block;'>" +data.lat.toFixed(2)+"</span>"+
+                "     </li>"+
+                "   </ul>";
+    //good  code
+    var panelInfo=`<ul class="list-group text-center js_mappaneal" style="width: 240px;margin:0 14px">
+                     <li class="list-group-item">
+                       <span style="width: 48%;display: inline-block;">小区CI:</span>
+                       <span style="width: 49%;display: inline-block;"> ${data.cellid}</span>
+                     </li>
+                     <li class="list-group-item">
+                       <span style="width: 48%;display: inline-block;">小区中文名:</span>
+                       <span class="text-nowrap" style="width: 49%;display: inline-block;text-overflow: ellipsis;overflow:hidden;" title="${data.cellname}">${data.cellname}</span>
+                     </li>
+                     <li class="list-group-item">
+                       <span style="width: 48%;display: inline-block;">经纬</span>
+                       <span style="width: 49%;display: inline-block;"> ${data.lon.toFixed(2)}</span>
+                     </li>
+                     <li class="list-group-item">
+                       <span style="width: 48%;display: inline-block;">维度</span>
+                       <span style="width: 49%;display: inline-block;"> ${data.lat.toFixed(2)}</span>
+                     </li>
+                   </ul>`;
+     box.innerHTML = panelInfo;
+    </script>
+  </body>
+</html>

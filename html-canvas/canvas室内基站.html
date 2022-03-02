@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{margin: 0;padding: 0;}
+			#allmap{position:absolute;width: 100%;height: 100%;}
+		</style>
+	</head>
+	<body>
+		<canvas id="demo"></canvas>
+		<!-- <div id="allmap"></div> <div id="r-result"></div> <div id="gpsback"></div>-->
+		<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=hYCENCEx1nXO0Nt46ldexfG9oI49xBGh"></script>
+		<script type="text/javascript" src="js/jquery.js" ></script>
+		<!--标注点data测试数据-->
+		<script>
+	var canvasdom =document.getElementById("demo");
+	canvasdom.width=400;
+	canvasdom.height=400;
+	//2
+	var context =canvasdom.getContext("2d");
+	//起始一条路径，或重置当前路径
+	context.beginPath();
+		context.arc(200,200,70,0,2*Math.PI,false);
+		var grd=context.createRadialGradient(200,200,0,200,200,70);
+		grd.addColorStop(0,"#3285FF");
+		grd.addColorStop(0.2,"#3285FF");
+		grd.addColorStop(0.3,"rgba(255, 255, 255, 0)");
+		grd.addColorStop(0.4,"rgba(255, 255, 255, 0)");
+		grd.addColorStop(0.4,"#3285FF");
+		grd.addColorStop(0.5,"#fff");
+		grd.addColorStop(0.5,"rgba(255, 255, 255, 0)");
+		grd.addColorStop(0.6,"rgba(255, 255, 255, 0)");
+		grd.addColorStop(0.6,"#3285FF");
+		grd.addColorStop(0.7,"#fff");
+		grd.addColorStop(0.7,"rgba(255, 255, 255, 0)");
+		grd.addColorStop(0.8,"rgba(255, 255, 255, 0)");
+		grd.addColorStop(0.8,"#3285FF");
+		grd.addColorStop(1,"#fff");
+		//填充为黄色
+		context.fillStyle=grd;
+	//填充当前绘图（路径）
+	context.fill();
+	</script>
+	</body>
+</html>

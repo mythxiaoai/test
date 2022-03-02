@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+	<!--
+    	作者：774813571@qq.com
+    	时间：2016-08-26
+    	描述：告诉IE浏览器用最新的引擎渲染这个页面
+    -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--
+    	作者：774813571@qq.com
+    	时间：2016-08-26
+    	为了确保适当的绘制和触屏缩放，需要在 <head> 之中添加 viewport 元数据标签。
+    -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>2.表格样式  按钮 文字  图片</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    	<style>
+    	</style>
+  </head>
+  	<body>
+  		<div class="container">
+  			<h2>表格</h2>
+  			<h3 class="page-header">表格样式</h3>
+  			<!--
+              	作者：774813571@qq.com
+              	时间：2016-08-28
+              	描述：表格总体样式：
+              	table：普通表格
+              	table-striped：隔行变色
+              	table-bordered：带边框
+              	table-condensed：紧缩表格
+              	table-hover：添加悬停效果
+              	table-responsive：响应式表格， 表格父元素设置响应式，小于 768px 出现边框
+
+              -->
+  			<table class="table table-striped table-bordered table-hover table-condensed table-responsive">
+  				<thead>
+  					<th>序号</th>
+  					<th>姓名</th>
+  					<th>性别</th>
+  				</thead>
+  				<tbody>
+  					<tr>
+	  					<td>001</td>
+	  					<td>小艾</td>
+	  					<td>男</td>
+  					</tr>
+  					<tr>
+	  					<td>002</td>
+	  					<td>张三</td>
+	  					<td>男</td>
+  					</tr>
+  					<tr>
+	  					<td>003</td>
+	  					<td>小欢</td>
+	  					<td>女</td>
+  					</tr>
+  				</tbody>
+  			</table>
+  			<pre>table：普通表格
+table-striped：隔行变色
+table-bordered：带边框
+table-condensed：紧缩表格
+table-hover：添加悬停效果
+table-responsive：响应式表格，小于768px出现表格外边框</pre>
+  		<h3 class="page-header">行内状态修饰</h3>
+  			<!--
+              	作者：774813571@qq.com
+              	时间：2016-08-28
+              	描述：表格总体样式：
+              	active：选中加色
+              	success：标识成功或积极的动作
+              	info：标识普通的提示信息或动作
+              	warning：标识警告或需要用户注意
+              	danger：	标识危险或潜在的带来负面影响的动作
+              	sr-only：隐藏某一行
+              -->
+  			<table class="table">
+				<tr class="active">
+  					<td>acive</td>
+  					<td>鼠标悬停在行或单元格上时所设置的颜色</td>
+				</tr>
+				<tr class="success">
+  					<td>success</td>
+  					<td>标识成功或积极的动作</td>
+				</tr>
+				<tr class="info">
+  					<td>info</td>
+  					<td>标识普通的提示信息或动作</td>
+				</tr>
+				<tr class="warning">
+  					<td>warning</td>
+  					<td>标识警告或需要用户注意</td>
+				</tr>
+				<tr class="danger ">
+  					<td>danger</td>
+  					<td>标识危险或潜在的带来负面影响的动作</td>
+				</tr>
+				<tr class="danger sr-only">
+  					<td>sr-only</td>
+  					<td>隐藏某一行</td>
+				</tr>
+  				
+  			</table>
+				<pre>active：选中加色
+success：标识成功或积极的动作
+info：标识普通的提示信息或动作
+warning：标识警告或需要用户注意
+danger：	标识危险或潜在的带来负面影响的动作
+sr-only：隐藏某一行
+				</pre>
+		<h2>按钮</h2>
+			<!--
+              	作者：774813571@qq.com
+              	时间：2016-08-28
+              	描述：表格总体样式：
+	        	btn-default：默认
+	        	btn-info：一般信息
+	        	btn-primary：首选项 信息  主要信息
+	        	btn-success：成功
+	        	btn-warning：警告
+	        	btn-danger：危险
+	        	btn-link：链接
+	        	btn-lg：大
+	        	btn-sm：偏小
+	        	btn-xs：极小
+	        	推荐使用Buttom来修饰！
+	        -->
+			<h3 class="page-header">常规按钮input</h3>
+			<input type="button" class="btn btn-default  active" value="default">
+			<input type="button" class="btn btn-info" value="info">
+			<input type="button" class="btn btn-primary" value="primary">
+			<input type="button" class="btn btn-success" value="success">
+			<input type="button" class="btn btn-warning" value="warning">
+			<input type="button" class="btn btn-danger" value="danger">
+			<input type="button" class="btn btn-link" value="danger">
+			
+			<h3 class="page-header">大号按钮a</h3>
+			<a type="button" class="btn btn-default btn-lg" href="javascript:;" >default</a>
+			<a type="button" class="btn btn-info btn-lg" href="javascript:;" >info</a>
+			<a type="button" class="btn btn-primary btn-lg" href="javascript:;" >primary</a>
+			<a type="button" class="btn btn-success btn-lg" href="javascript:;" >success</a>
+			<a type="button" class="btn btn-warning btn-lg" href="javascript:;" >warning</a>
+			<a type="button" class="btn btn-danger btn-lg" href="javascript:;" >danger</a>
+			<a type="button" class="btn btn-link btn-lg" href="javascript:;" >danger</a>
+			
+			<h3 class="page-header">小号按钮button</h3>
+			<button  class="btn btn-default btn-sm" >default</button>
+			<button  class="btn btn-info btn-sm" >info</button>
+			<button  class="btn btn-primary btn-sm" >primary</button>
+			<button  class="btn btn-success btn-" >success</button>
+			<button  class="btn btn-warning btn-sm" >warning</button>
+			<button  class="btn btn-danger btn-sm" >danger</button>
+			<button  class="btn btn-link btn-sm" >danger</button>
+			
+			<h3 class="page-header">极小按钮input</h3>
+			<input type="button" class="btn btn-default btn-xs" value="default"/>
+			<input type="button" class="btn btn-info btn-xs" value="info"/>
+			<input type="button" class="btn btn-primary btn-xs" value="primary"/>
+			<input type="button" class="btn btn-success btn-xs" value="success"/>
+			<input type="button" class="btn btn-warning btn-xs" value="warning"/>
+			<input type="button" class="btn btn-danger btn-xs" value="danger"/>
+			<input type="button" class="btn btn-link btn-xs" value="danger"/>
+			
+			<h3 class="page-header"> 块级按钮</h3>
+			<button class="btn btn-block center-block" style="width: 100px;">Button</button>
+	  		<pre>
+.btn-block {display: block;width: 100%;}
+.center-block {display: block;margin-right: auto;margin-left: auto;}
+注：center-block 需要设置小点的宽度效果会更好
+	  		</pre>
+	  		<h3 class="page-header"> 禁用状态</h3>
+			<button class="btn btn-primary disabled"  disabled="disabled">Button</button>
+		
+			<h2>文字</h2>
+			<!--
+	        	作者：774813571@qq.com
+	        	时间：2016-08-28
+	        	描述：以上buton差不多
+	        	
+	        -->
+	        <h3 class="page-header">文本状态</h3>
+	        <p class="text-success">success成功</p>
+	        <p class="text-info">info信息</p>
+	        <p class="text-danger">danger警告</p>
+	        <p class="text-primary">primary主要</p>
+	        <p class="text-muted">muted默认的</p>
+			<h2>图片</h2>
+			<h3 class="page-header">图片形状</h3>
+			<p>
+			<img class="img-circle" src="img/1.jpg" width="300px" width="187px"/>
+			圆50%
+			</p>
+			<p>
+			<img class="img-rounded" src="img/1.jpg" width="300px" width="187px"/>
+			圆角6px
+			</p>
+			<p>
+			<img class="img-thumbnail" src="img/1.jpg" width="300px" width="187px"/>
+	  		框内显示（并带有自适应）
+			</p>
+	  		<h3 class="page-header">自适应</h3>
+			<img class="img-responsive" src="img/1.jpg" width="300px" width="187px"/>
+		</div>
+  	</body>
+</html>

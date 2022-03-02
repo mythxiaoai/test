@@ -1,0 +1,32 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        dingtalk://dingtalkclient/action/open_micro_app?miniAppId=5000000001080687&agentId=1290759366&pVersion=1&packageType=1&corpId=dingaf24416fadd7380135c2f4657eb6378f&page=pages/index/index?x=
+        const DDURL = `dingtalk://dingtalkclient/action/open_micro_app?miniAppId=5000000001080687&agentId=1290759366&pVersion=1&packageType=1&corpId=dingaf24416fadd7380135c2f4657eb6378f&page=pages%2Findex%2Findex%3Fx%3D`
+        
+        let params = GetQueryString("x");
+        if(!params)return;
+        window.location = DDURL + params
+
+        /**
+         * 获取URL的参数
+         * addOrUpdate.html?opt=update    ==>GetQueryString("opt")  ==>update
+         * @param {Object} name
+         */
+        function GetQueryString(name) {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+            var r = window.location.search.substr(1).match(reg);
+            if (r != null) return r[2]; return null;
+        }
+    </script>
+</body>
+
+</html>

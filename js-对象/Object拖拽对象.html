@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			function Person(){
+				this.name="小艾";
+			}
+			Person.prototype={
+				say:function(){
+					console.log("你妹");
+				}
+			}
+			let xiaoai = new Person();
+			xiaoai.say()
+			Person.prototype.say=function(){
+				console.log("你弟");
+			}
+			xiaoai.say()
+			let xiaoai2 = new Person();
+			xiaoai2.say.call(xiaoai)
+		</script>
+	</body>
+</html>

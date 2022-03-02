@@ -1,0 +1,95 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #box {
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        /* animation: run infinite 4s; */
+        top: 200px;
+        left: 0px;
+        border: 1px solid #ccc;
+      }
+      @keyframes run {
+        0% {
+          top: 200px;
+          left: 0px;
+        }
+        25% {
+          top: 200px;
+          left: 200px;
+        }
+        50% {
+          top: 300px;
+          left: 200px;
+        }
+        75% {
+          top: 300px;
+          left: 0px;
+        }
+      }
+      /* #box{
+            width:100px;
+            height:100px;
+            animation:run infinite 4s;
+            transform:translate(200px,0);
+            border: 1px solid #ccc;
+        }
+        @keyframes run{
+            0% {
+            transform:translate(200px,0);
+            }
+            25% {
+            transform:translate(200px,200px);
+            }
+            50% {
+            transform:translate(300px,200px);
+            }
+            75% {
+            transform:translate(300px,200px);
+            }
+        } */
+    </style>
+  </head>
+  <body>
+    <button id="btn">开始</button>
+    <input type="" />
+
+    <div id="box"></div>
+    <script>
+      //   btn.onclick = ts(function* () {
+      //     console.log(1); // 执行了50毫秒
+      //     yield;
+      //     console.log(2); // 执行了50毫秒
+      //   });
+
+      ts(function* () {
+        for (let i = 0; i < 999; i++) {
+          console.log(performance.now());
+          console.log(1); // 执行了50毫秒
+          yield;
+          console.log(2); // 执行了50毫秒
+        }
+      })();
+      
+      function ts(gen) {
+        if (typeof gen === "function") gen = gen();
+        if (!gen || typeof gen.next !== "function") return;
+        return function next() {
+          const start = performance.now();
+          let res = null;
+          do {
+            res = gen.next();
+          } while (!res.done && performance.now() - start < 25);
+
+          if (res.done) return;
+          setTimeout(next);
+        };
+      }
+    </script>
+  </body>
+</html>

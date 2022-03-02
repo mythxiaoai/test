@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+	</head>
+	<body>
+		<div id="app">
+			<button type="button" @click="btn">改变</button>
+			{{data}}
+			<el-form
+				:model="data.columns" ref="numberValidateForm"
+				:rules="rules2"
+				>
+				<div v-for="(field,index) in data.columns" >
+					<el-row :gutter="30" class="m-b js_drag">
+			    		<el-col :span="2" >
+		    					{{index}}
+				    	</el-col>
+				    	<el-col :span="2">
+								<el-checkbox name="opts2" v-model="optsChecks"  :label="index"> &nbsp;</el-checkbox>
+				    	</el-col>
+				    	<el-col :span="4">
+				    		<el-form-item>
+				    			<el-input  placeholder="请输入字段描述"></el-input>
+				    		</el-form-item>
+				    	</el-col>
+				    	<el-col :span="2">
+				    		<el-form-item>
+				    			<el-input type="number" title="请输入字段长度" ></el-input>
+				    		</el-form-item>
+				    	</el-col>
+				    	<el-col :span="2">
+				    		<el-form-item>
+				    			<el-input type="number"  title="小数点长度" ></el-input>
+				    		</el-form-item>
+				    		
+				    	</el-col>
+				    	<el-col :span="4">
+				    		<el-form-item prop="row">
+				    			<el-input  placeholder="请输入默认值" v-model="field.row" ></el-input>
+				    		</el-form-item>
+				    	</el-col>
+				    	<el-col :span="4">
+				    		<el-form-item>
+				    			<el-input  placeholder="请输入默认值" ></el-input>
+				    		</el-form-item>
+				    	</el-col>
+				    	<el-col :span="4">
+				    		<el-form-item>
+				    			<el-input  placeholder="请输入默认值" ></el-input>
+				    		</el-form-item>
+				    	</el-col>
+				    	<el-col :span="4">
+				    		<el-form-item>
+				    			<el-input  placeholder="请输入默认值" ></el-input>
+				    		</el-form-item>
+				    	</el-col>
+				    	<el-col :span="4">
+				    		<el-form-item>
+				    			<el-input  placeholder="请输入默认值" ></el-input>
+				    		</el-form-item>
+				    	</el-col>
+		    		</el-row>
+				</span>
+				</div>
+				<el-form-item>
+				    <el-button type="primary" @click="submitForm('numberValidateForm')">提交</el-button>
+				    <el-button @click="resetForm('numberValidateForm')">重置</el-button>
+				  </el-form-item>
+			</el-form>
+		</div>
+		 <!-- import Vue before Element -->
+		  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+		  <!-- import JavaScript -->
+		  <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+	</body>
+	<script>
+		console.log(window)
+		var vm = new Vue({
+			el:"#app",
+			created(){
+				for(let i = 0,len = 50;i<len;i++){
+					this.data.columns.push({rows:i})
+				}
+			},
+			data:{
+				data:{
+					columns:[
+						
+					],
+				},
+				optsChecks:[]
+				rules2:{
+					row: [
+			            { required: true, message: '请输入活动名称', trigger: 'blur' },
+			          ]
+				}
+			},
+			methods:{
+				btn(){
+					this.data.columns[0][0].push({row:2})
+				},
+				submitForm(){
+					this.$refs.numberValidateForm.validate((valid) => {
+			          if (valid) {
+			            alert('submit!');
+			          } else {
+			            console.log('error submit!!');
+			            return false;
+			          }
+			        });
+				}
+			}
+		});
+	</script>
+</html>

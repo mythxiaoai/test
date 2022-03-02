@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	</head>
+	<body>
+		<div id="app" :title="date">{{msg}}</div>
+		<div id="app-4">
+		  <ol>
+		    <li v-for="todo in todos" :key="todo.text">
+		      {{ todo.text }}
+		    </li>
+		  </ol>
+		  <ol>
+		    <li v-for="todo in sb">
+		      {{ todo.text }}
+		    </li>
+		  </ol>
+		  <input type="checkbox" name="a" v-model="arr" value="call"/>call
+		  <input type="checkbox" name="a" v-model="arr" value="call2"/>call2
+		  arr:{{arr}}
+		  <button type="button" @click.shift.exact="alert(arr)">点我</button>
+		  <input v-model.number="input" />{{input}}
+		</div>
+		<script>
+			var app4 = new Vue({
+			  el: '#app-4',
+        created(){
+          Vue.nextTick(function(){
+               console.log(2)
+          })
+        	setTimeout(()=>{
+            console.log(1)
+          });
+        },
+			  data: {
+			    todos: [
+			      { text: '学习 JavaScript' },
+			      { text: '学习 Vue' },
+			      { text: '整个牛项目' }
+			    ],
+			    arr:[],
+			    input:0
+			  },
+			  computed:{
+			  	sb:function(){
+			  		this.todos=[{text:1},{text:2},{text:3}];
+			  		return this.todos;
+			  	}
+			  }
+			})
+		</script>
+	</body>
+	<script>
+		var app = new Vue({
+			el:"#app",
+			data:{
+				msg:"hello Vue",
+				date:new Date().toLocaleString()
+			}
+		});
+	</script>
+</html>

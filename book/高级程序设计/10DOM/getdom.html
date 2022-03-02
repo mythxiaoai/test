@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+			<form onsubmit="sub()">
+				<input name="input1"/>
+				<button type="button" onclick="form.reset();">重置</button>
+				<button type="submit">重置</button>
+			</form>
+			<ul id="lits">
+				<li> 1 </li> 
+				<li> 2 </li> 
+				<li> 3 </li> 
+				<li> 4 </li> 
+			</ul>		
+	<script>
+		/*let inputDom = document.createElement("input");
+		document.getElementsByTagName("form")[0].appendChild(inputDom)
+		function sub(){
+			alert(1);
+		}*/
+		/*var node = document.createTextNode("<b>123<\/b>")
+		document.getElementsByTagName("form")[0].appendChild(node);
+		console.log(document.getElementsByTagName("form")[0].lastChild.nodeValue)*/
+		
+		
+		/*let listDom =document.getElementById("lits");
+		let lidom =document.createElement("li");
+		listDom.insertBefore(lidom,listDom.lastElementChild);*/
+		
+		let listDom =document.getElementById("lits");
+		let lidom =document.createElement("li");
+		let fragDom =document.createDocumentFragment();
+		fragDom.appendChild(lidom);
+		console.log(fragDom.nodeType)
+		listDom.insertBefore(fragDom,listDom.lastElementChild);
+	</script>
+	</body>
+</html>

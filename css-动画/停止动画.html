@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<button type="button" id="stoped">停止</button>
+		<button type="button" id="runing">跑</button>
+	</body>
+	<script>
+		let i =0
+		function run (){
+			let json = {mark:true}
+			function next(){
+				i++;
+				console.log(i)
+				if(json.mark){
+					requestAnimationFrame(next)
+				}
+			}
+			next()
+			return json;
+		}
+		
+		function stop(a){
+			a.mark =false;
+		}
+		let r = run();
+		
+		stoped.onclick = ()=>{
+			stop(r);
+		}
+		
+		runing.onclick = ()=>{
+			if(!r.mark){
+				r = run()
+			}
+		}
+		
+		
+	</script>
+</html>

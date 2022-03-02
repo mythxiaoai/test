@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script>
+ 
+			function *show(){
+				let a = yield "赫赫";
+				alert(a)
+				return 523;
+			}
+			let gen = show();
+			console.log(gen.next());//{value: "赫赫", done: false}
+			console.log(gen.next());//{value: 523, done: true}
+</script>

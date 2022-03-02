@@ -1,0 +1,25 @@
+统计字符插件
+1.使用方法
+	引用后，直接绑定在window对象下的statisFont拓展属性了
+	statisFont（str,callback)
+参数：	str:统计数据源
+	callback：回调函数
+		this.allCount	全部文字个数
+		this.cnCount	中文汉字个数
+		this.enCount	英文字母个数
+		this.puCount	字符标点个数
+		this.spCount	空格个数
+返回值：json，也可以在回调函数中拿值做处理
+
+Demo：//统计
+			function statis(obj){
+				var strText=$(obj).text();
+				statisFont(strText,function(){
+					$(".allCount").text(this.allCount);
+					$(".cnCount").text(this.cnCount);
+					$(".enCount").text(this.enCount);
+					$(".numCount").text(this.numCount);
+					$(".puCount").text(this.puCount);
+					$(".spCount").text(this.spCount);
+				});
+			}

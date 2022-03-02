@@ -1,0 +1,69 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+        <style type="text/css">
+            body,
+            html,
+            #allmap {
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+                margin: 0;
+                font-family: "微软雅黑";
+            }
+        </style>
+        <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=koGxek8pG1gFQiBDTUT7WShyKW7zpVXo"></script>
+        <title>设置驾车路线途经点</title>
+    </head>
+    <body>
+        <div id="allmap"></div>
+    </body>
+</html>
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+<script src="./transformationLonLat.js"></script>
+<script src="./drawLine.js"></script>
+<script type="text/javascript">
+    (function() {
+
+        // 百度地图API功能
+        var map = new BMap.Map("allmap");
+        map.centerAndZoom(new BMap.Point(117.270591, 23.812999), 11);
+        map.enableScrollWheelZoom(true);
+
+        let arr = [{
+            lng: 116.301934,
+            lat: 39.977552,
+            name: "队伍"
+        }, {
+            lng: 116.365942,
+            lat: 39.996165,
+            name: "站点1"
+        }, {
+            lng: 116.408757,
+            lat: 39.995704,
+            name: "站点2"
+        }, {
+            lng: 116.508328,
+            lat: 39.919141,
+            name: "站点3"
+        }]
+
+        /**
+         * @param {Point} s 起点
+         * @param {Point} e 终点
+         * @param {Point} arr 途径点
+         * 
+         */
+        let ran = ["#c00000", "#ff0000", "#ffc000", "#ffff00", "#92d050",
+            "#00b050", "#00b0f0", "#0070c0", "#002060", "#7030a0"
+        ];
+            let lineObj = new drawLine({
+                arr: arr,
+                map: map,
+                color: ran[0],
+            });
+
+
+    })()
+</script>

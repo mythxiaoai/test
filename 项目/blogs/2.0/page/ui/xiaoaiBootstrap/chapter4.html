@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+	<!--
+    	作者：774813571@qq.com
+    	时间：2016-08-26
+    	描述：告诉IE浏览器用最新的引擎渲染这个页面
+    -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--
+    	作者：774813571@qq.com
+    	时间：2016-08-26
+    	为了确保适当的绘制和触屏缩放，需要在 <head> 之中添加 viewport 元数据标签。
+    -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>4.辅助类，响应式工具，下拉菜单</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    	<style>
+    	body{background:#dadada}
+    	</style>
+  	</head>
+ 	<body>
+ 		<div class="container">
+			<h2 class="page-header">文字</h2>
+			<!--
+		    	作者：774813571@qq.com
+		    	时间：2016-08-28
+		    	描述：以上buton差不多
+		    -->
+		    <p class="text-success">success成功</p>
+		    <p class="text-info">text-nfo信息</p>
+		    <p class="text-danger">text-danger警告</p>
+		    <p class="text-primary">text-primary主要</p>
+		    <p class="text-muted">text-muted默认 --就的变个暗沉的颜色</p>
+		    
+		    <h2 class="page-header">文字背景</h2>
+		    <p class="bg-primary">bg-primary 主体信息</p>
+		    <p class="bg-info">bg-info 一般信息</p>
+		    <p class="bg-success">bg-success 成功</p>
+		    <p class="bg-warning">bg-warning 警告</p>
+		    <p class="bg-danger">bg-danger 危险提示</p>
+		    <p class="thumbnail">bg-danger 危险提示</p>
+		    <h2 class="page-header">关闭按钮  --叉叉</h2>
+		    <button class="btn btn-primary">
+		    	<span class=" close pull-left">&times;</span>
+		    </button>
+		    
+		    <h2 class="page-header">下拉 --小三角</h2>
+		    <button class="btn btn-primary">
+		    	<span class="caret pull-left"></span>
+		    </button>
+		    
+		    <h2 class="page-header">浮动 pull-left/right</h2>
+		    <div>
+		    	<button class="btn btn-info pull-left">&lt;——pull-left</button>
+		    	<button class="btn btn-info pull-right">pull-right——&gt;</button>
+		    </div>
+		    <div class="clearfix"></div>
+		    <h2 class="page-header">清除浮动clearfix</h2>
+		    <div>
+		    	<button class="btn btn-info ">1</button>
+		    	<button class="btn btn-primary ">2</button>
+		    	<button class="btn btn-default pull-left">3</button>
+		    	<button class="btn btn-danger ">4</button>
+		    	<div class="clearfix"></div>
+		    	<button class="btn btn-warning pull-left">5</button>
+		    	<button class="btn btn-success pull-left">6</button>
+		    </div>
+		    <div class="clearfix"></div>
+		    
+		    <h2 class="page-header">显示与隐藏  show(display：block 独占一行了) hide</h2>
+		    <div>
+		    	<div class="form-group">
+		    		<button class="btn btn-info show" style="display: none;">1</button>
+		    	</div>
+		    	<div class="form-group">
+		    		<button class="btn btn-primary hide">2</button>
+		    	</div>
+		    	<div class="form-group">
+		    		<button class="btn btn-default show">3</button>
+		    	</div>
+		    	<div class="form-group">
+		    		<button class="btn btn-danger hide">4</button>
+		    	</div>
+		    	<div class="form-group">
+		    		<button class="btn btn-warning show">5</button>
+		    	</div>
+		    	<div class="form-group">
+		    		<button class="btn btn-success hide">6</button>
+		    	</div>
+		    </div>
+		    <h2 class="page-header">响应式 hidden//visible</h2>
+		    <pre>
+		    	hidden-*：在某某分辨率下隐藏当前元素，其他分辨率显示！
+		    	visible-*：在某某分辨率下显示当前元素，其他分辨率隐藏！
+		    </pre>
+	    	<div class="thumbnail">
+	    		<div class="row">
+	    			<div class="col-xs-6">
+			        	<button class="btn btn-info hidden-lg">hidden-lg1200隐藏，其他显示</button><br>
+			        	<button class="btn btn-info hidden-md">hidden-md992隐藏，其他显示</button><br>
+			        	<button class="btn btn-info hidden-sm">hidden-sm768隐藏，其他显示</button><br>
+			        	<button class="btn btn-info hidden-xs">hidden-xs手机隐藏，其他显示</button>
+		        	</div>
+		        	<div class="col-xs-6">
+			        	<button class="btn btn-info visible-lg">visible-lg1200显示，其他隐藏</button><br>
+			        	<button class="btn btn-info visible-md">visible-md992显示，其他隐藏</button><br>
+			        	<button class="btn btn-info visible-sm">visible-sm768显示，其他隐藏</button><br>
+			        	<button class="btn btn-info visible-xs">visible-xs手机显示，其他隐藏</button>
+		        	</div>
+	        	</div>
+		    </div>
+		    
+		    <h2 class="page-header">下拉菜单-dropdown</h2>
+<pre>
+1）基本的下拉菜单     
+	dropdown dropdpwn-menu
+2）对齐  
+	dropdown-menu-right    
+3）标题 不要加超链接       
+	dropdown-header
+4）分隔线    
+	divider
+5）禁用的菜单项          
+	disabled
+6）让菜单默认显示         
+	dropdown open
+
+css：
+|-dropdown 相对定位
+	|-dropdown-toggle 激活选中样式  按钮的active样式的渲染
+	|-caret 小图标
+		|-dropdown-menu 隐藏list的声明  ul li  的修饰
+		|-dropdown-menu-left  默认  左边平齐
+		|-dropdown-menu-right 右边平齐
+			|-dropdown-header 列表标题
+			|-divider 横线
+js：
+|-data-toggle="dropdown" 标识让事件去绑定当前元素去做动作
+
+</pre>
+		    <div class="dropdown">
+		    	<div class="btn-group">
+			    	<button class="btn btn-primary">前端</button>
+			    	<button class="btn btn-primary dropdown-toggle"  data-toggle="dropdown">
+			    		<span class="caret"></span>
+			    	</button>
+			    	<ul class="dropdown-menu dropdown-menu-left">
+			    		<li class="dropdown-header">系统班学习范围</li>
+			    		<li class="divider"></li>
+		    			<li><a href="javascript:;">css</a></li>
+		    			<li><a href="javascript:;">html</a></li>
+		    			<li><a href="javascript:;">js</a></li>
+		    			<li><a href="javascript:;">css3</a></li>
+		    			<li><a href="javascript:;">html5</a></li>
+		    			<li><a href="javascript:;">nodejs</a></li>
+		    			<li class="disabled"><a href="javascript:;">java后台</a></li>
+			    	</ul>
+		    	</div>
+		    </div>
+		</div>
+        </div>
+        <script type="text/javascript" src="js/jquery-1.11.2.min.js" ></script>
+        <script type="text/javascript" src="js/bootstrap.min.js" ></script>
+	</body>
+</html>

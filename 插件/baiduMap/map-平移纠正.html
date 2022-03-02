@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+	<style type="text/css">
+		body, html,#allmap {width: 100%;height: 100%;overflow: hidden;margin:0;font-family:"微软雅黑";}
+		#l-map{height:100%;width:78%;float:left;border-right:2px solid #bcbcbc;}
+		#r-result{height:100%;width:20%;float:left;}
+	</style>
+	<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=hYCENCEx1nXO0Nt46ldexfG9oI49xBGh"></script>
+	<title>添加多个标注点</title>
+</head>
+<body>
+	<script src="../excelHelp/js/jquery.js"></script>
+<div class="BMap_stdMpPan" style="background-position: 0px 0px;position: relative;">
+	<div class="BMap_button BMap_panN" style="position: absolute;"  title="向上平移"></div>
+	<div class="BMap_button BMap_panE" style="position: absolute;" title="向右平移"></div>
+	<div class="BMap_button BMap_panS" style="position: absolute;" title="向下平移"></div>
+	<div class="BMap_button BMap_panW" style="position: absolute;" title="向左平移"></div>
+</div>
+	<script>
+		$("body").on("mouseenter",".BMap_button",function(){
+			if($(this).hasClass("BMap_panN")){
+				$(".BMap_stdMpPan").css("background-position","0px -44px")
+			}
+			if($(this).hasClass("BMap_panE")){
+				$(".BMap_stdMpPan").css("background-position","0px -88px")
+			}
+			if($(this).hasClass("BMap_panS")){
+				$(".BMap_stdMpPan").css("background-position","0px -132px")
+			}
+			if($(this).hasClass("BMap_panW")){
+				$(".BMap_stdMpPan").css("background-position","0px -176px")
+			}
+		});
+		$("body").on("mouseout",".BMap_button",function(){
+			$(".BMap_stdMpPan").css("background-position","0px 0px")
+		});
+	</script>
+	<div id="allmap"></div>
+</body>
+</html>
+<script type="text/javascript">
+	let date=[[109.92608,33.85961],
+[109.9261,33.85959],
+[109.92612,33.85959],
+[109.92612,33.85959],
+[109.92612,33.85959],
+[109.92612,33.85959],
+[109.92611,33.85959],
+[109.92611,33.85959],
+[109.9261,33.8596],
+[109.9261,33.8596],
+[109.9261,33.8596],
+[109.92609,33.8596],
+[109.9261,33.8596],
+[109.92613,33.85962],
+];
+	// 百度地图API功能
+	var map = new BMap.Map("allmap");
+	var point = new BMap.Point(109.92608, 33.85961);//初始化的经纬度
+	map.centerAndZoom(point, 21);//缩放的层级1-21  21最大
+	map.enableScrollWheelZoom();
+	  var navigationControl = new BMap.NavigationControl({
+	    // 靠左上角位置
+	    anchor: BMAP_ANCHOR_TOP_LEFT,
+	    // LARGE类型
+	    // 启用显示定位
+	  });
+	  map.addControl(navigationControl);
+	// 编写自定义函数,创建标注
+	function addMarker(point){
+	  var marker = new BMap.Marker(point);
+	  map.addOverlay(marker);
+	}
+	for (var i = 0; i < date.length; i ++) {
+		var point = new BMap.Point(date[i][0], date[i][1]);
+		console.log(point);
+		addMarker(point);
+	}
+</script>
+

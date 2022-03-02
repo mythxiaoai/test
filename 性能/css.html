@@ -1,0 +1,32 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*  0.77ms*/
+        /* div:nth-child(3){
+            background:red
+        } */
+        /* 0.6ms*/
+        /* .box{
+            background:red
+        } */
+        .move{
+            transform: translate(0, 100px);
+        }
+
+    </style>
+</head>
+<body>
+    <button onclick="console.log(1)">点击</button>
+    <div>1</div>
+    <div>2</div>
+    <div id="box" class="box">3</div>
+
+    <script>
+            box.className="move"    
+    </script>
+</body>
+</html>

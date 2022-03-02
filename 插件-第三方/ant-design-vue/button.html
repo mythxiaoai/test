@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ant-design-vue@1.4.12/dist/antd.css">
+</head>
+<body>
+    <div id="app">
+        <div>
+
+            <!--type:primary dashed danger link-->
+            <a-button type="primary">Primary</a-button>
+            <a-button>Default</a-button>
+            <a-button disabled>disabled</a-button>
+            <a-button type="dashed">Dashed</a-button>
+            <a-button type="danger">Danger</a-button>
+            <a-button type="primary">按钮</a-button>
+            <a-button type="link">Link</a-button>
+            <a-button icon="cloud"></a-button>
+            <!--ConfigProvider 全局化配置-->
+            <a-config-provider :autoInsertSpaceInButton="false">
+              <a-button type="primary">按钮</a-button>
+            </a-config-provider>
+          </div>
+          <!--Button group-->
+          <h4>按钮组合</h4>
+          <a-button-group>
+              <a-button>
+                  <a-icon type="left"></a-icon>LEFT
+              </a-button>
+              <a-button>
+                RIGHT<a-icon type="right"></a-icon>
+              </a-button>
+          </a-button-group>
+
+          <h4>幽灵按钮</h4>
+          <div :style="{ background: 'rgb(190, 200, 200)', padding: '26px 16px 16px' }">
+            <a-button type="primary" ghost>Primary</a-button>
+            <a-button ghost>Default</a-button>
+            <a-button type="dashed" ghost>Dashed</a-button>
+            <a-button type="danger" ghost>Danger</a-button>
+            <a-button type="link" ghost>Link</a-button>
+          </div>
+          
+          <h4>圆角</h4>
+          <a-button shape="circle" icon="search"></a-button>
+
+          <h4>loading</h4>
+          <a-button type="primary" loading>
+            Loading
+          </a-button>
+          <a-button :loading="loading" @click="loading={ delay: 1000 }">
+            点我延迟1s执行
+          </a-button>
+          <h4>下拉</h4>
+          <a-dropdown>
+            <a-menu slot="overlay" @click="handleMenuClick">
+              <a-menu-item key="1">1st item</a-menu-item>
+              <a-menu-item key="2">2nd item</a-menu-item>
+              <a-menu-item key="3">3rd item</a-menu-item>
+            </a-menu>
+            <a-button> Actions <a-icon type="down" /> </a-button>
+          </a-dropdown>
+          <!--large small-->
+
+          <a-form-model >
+            <a-form-model-item label="字段名" hasFeedback>
+              <a-input  placeholder="请输入" />
+            </a-form-model-item>
+          </a-form-model>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0/moment.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.min.js" integrity="sha256-ngFW3UnAN0Tnm76mDuu7uUtYEcG3G5H1+zioJw3t+68=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/ant-design-vue@1.4.12/dist/antd.js"></script>
+    <script>
+         var vm = new Vue({
+            el: "#app",
+            data: {
+              loading:false
+            },
+            mounted() {
+               console.log(this.$refs.btn);
+               
+            },
+            methods: {
+                handleMenuClick(e) {
+                    console.log('click', e);
+                },
+            },
+            watch: {
+             
+            }
+        });
+        
+
+    </script>
+</body>
+</html>

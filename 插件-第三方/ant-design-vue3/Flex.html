@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ant-design-vue@1.4.12/dist/antd.css">
+</head>
+<body>
+    <style>
+        .height-100{
+            height: 100px;
+            background-color: blue;
+            
+        }
+        .height-50{
+            height: 50px;
+            background-color: red;
+            
+        }
+        .bgcolor{
+            padding: 5px;
+            background-color: rgb(165, 186, 245);
+        }
+        
+    </style>
+    <div id="app">
+        <div>
+            <h4>
+                justify:start end enter space-between space-around</br>
+                align:top bottom middle</br>
+            </h4>
+            <a-row type="flex"  justify="end" align="middle">
+                <a-col :span="4">
+                    <p class="height-100">col-4</p>
+                </a-col>
+                <a-col :span="4">
+                    <p class="height-50">col-4</p>
+                </a-col>
+                <a-col :span="4">
+                    <p class="height-100">col-4</p>
+                </a-col>
+                <a-col :span="4">
+                    <p class="height-50">col-4</p>
+                </a-col>
+            </a-row>
+            <h4>
+                Row：gutter{xs:8,sm:16,md:24:lg:32}
+            </h4>
+            <a-row :gutter="32">
+                <a-col :span="6">
+                    <div  class="bgcolor">a-6</div>
+                </a-col>
+                <a-col :span="6">
+                    <div  class="bgcolor">a-6</div>
+                </a-col>
+                <a-col :span="6">
+                    <div  class="bgcolor">a-6</div>
+                </a-col>
+                <a-col :span="6">
+                    <div  class="bgcolor">a-6</div>
+                </a-col>
+            </a-row>
+            <p></p>
+
+                <div>
+                  <a-row>
+                      <!-- 相对定位 -->
+                    <a-col class="bgcolor" :span="5" :push="16">col-18 col-push-6</a-col>
+                    <a-col class="bgcolor" :span="10">col-18 col-push-10</a-col>
+                  </a-row>
+                  <a-row>
+                      <!-- margin-left -->
+                    <a-col class="bgcolor" :span="5" :offset="1">col-18 col-push-6</a-col>
+                    <a-col class="bgcolor" :span="10">col-18 col-push-10</a-col>
+                  </a-row>
+                </div>
+              
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0/moment.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.min.js" integrity="sha256-ngFW3UnAN0Tnm76mDuu7uUtYEcG3G5H1+zioJw3t+68=" crossorigin="anonymous"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/ant-design-vue/1.6.4/antd.min.js"></script>
+    <script>
+         var vm = new Vue({
+            el: "#app",
+            data: {
+              
+            },
+            mounted() {
+               
+            },
+            methods: {
+
+            },
+            watch: {
+             
+            }
+        });
+        
+
+    </script>
+</body>
+</html>

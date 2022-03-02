@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	  123
+	  <input type="file" onchange="change(this)"/><div id="show"></div>
+	  <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+	  <script>
+	    //这个例子说明  大文件通过input去上传然后解析文件 会照成浏览器崩溃
+	     async function change(obj){
+	       if(!obj.files||obj.files.length==0) {
+              return;
+          }
+          var f = obj.files[0];
+          console.log
+          const BYTES_PER_CHUNK = 1024 * 1024; //10M每片
+          var start = 0;
+          var end;
+          var index = 0;
+          var totalSlices = 0;
+          totalSlices = Math.ceil(f.size / BYTES_PER_CHUNK);
+          let blockBox = [];
+          let data = [];
+          let reg =/\b(\d{2,3}.(\d{2,}))\b/g;
+          while(start < f.size) {
+            end = start + BYTES_PER_CHUNK;
+            if(end > f.size) {
+              end = f.size;
+            }
+            //切割文件
+            chunk =f.slice(start,end);
+            let text =await reader(chunk)
+            blockBox.push(text);
+            console.log(`分片-进行到${(end/f.size*100).toFixed(2)}%`)
+            start = end;
+            index++;
+            if ( index>=totalSlices ){
+              console.log("分片完成~")
+            }
+          }
+          let time = Date.now();
+          //解析出金纬度
+            //头尾黏合  以/r/n为标识
+            console.log(blockBox.length)
+            for (let i = 0,len=blockBox.length;i<len;i++) {
+              if(i!=len-1){
+                //减后一条数据的尾巴添加到前面数据上来
+                blockBox[i] += blockBox[i+1].substring(0,blockBox[i+1].indexOf("\r\n"));
+                blockBox[i+1] = blockBox[i+1].substring(blockBox[i+1].indexOf("\r\n"),blockBox[i+1].length);
+              }
+              console.log(`解析-进行到${(i/(len-1)*100).toFixed(2)}%`)
+             let temp = blockBox[i].match(reg)
+             for (let j = 0,len2=temp.length;j<len2;j++) {
+               data.push(temp[j])
+             }
+             temp = null;
+            }
+            //提取金纬度
+            console.log(`----------解析的点总有:${total/2}----------`)
+            console.log(`耗时:${(Date.now()-time)/1000}秒`)
+           
+        }
+	     
+	     
+	     
+	     
+	     //同步加载文件
+	     async function reader(chunk){
+	       return new Promise((resolve,reject)=>{
+	          var reader = new FileReader();
+            reader.onload =function(e) {
+              resolve(e.target.result)
+            }
+            reader.readAsText(chunk);
+            reader.onerror=function(err) {
+              reject(err)
+            }
+	       });
+	     }
+	     
+	    
+	  </script>
+	</body>
+</html>

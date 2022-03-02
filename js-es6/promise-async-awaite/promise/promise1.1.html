@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript" src="../../../js/jquery.js"></script>
+    <script></script>
+    <script>
+      //模拟ajax
+      function ajax(str, time, boolean) {
+        return new Promise((reslove, reject) => {
+          setTimeout(() => {
+            boolean?reslove(str + "返回结果成功"):reject("失败");
+          }, time || 1000);
+        });
+      }
+
+
+      ajax("失败",1000,false).then(()=>{
+        console.log(1);
+      },()=>{
+        console.log(2);
+      }).then(()=>{
+        console.log(1111);
+      },()=>{
+        console.log(2222);
+      }).then(()=>{
+        console.log(3333);
+      },()=>{
+        console.log(4444);
+      })
+    </script>
+  </body>
+</html>

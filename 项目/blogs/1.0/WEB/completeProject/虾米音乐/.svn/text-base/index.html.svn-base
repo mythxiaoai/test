@@ -1,0 +1,381 @@
+<!doctype html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+		<title>虾米音乐-小艾</title>
+		<meta name="Keywords" content="关键词,关键词,关键词">
+		<meta name="description" content="">
+		<!--js/css-->
+		<link  rel="stylesheet" href="css/music.css" >
+		<link  rel="stylesheet" href="font/font-awesome-4.5.0/font-awesome.min.css" >
+	</head>  
+	<body>
+		<!--top start-->
+		<div id="top">
+			<div class="t_head">
+				<div class="t_logo fl">
+					<a href="#"><img src="images\logo.png" alt="logo" width="162" height="34"/></a>
+				</div>
+				<div class="t_search fl">
+					<input type="text"/>
+				</div>
+				<div class="t_login fr">
+					<a href="#">
+						<span>马上</span>登录
+						<div class="t_icon fr"></div>
+					</a>
+				</div>
+			</div>
+		</div>
+		<!--end top-->
+
+		<!--start middle-->
+		<div id="middle">
+			<div class="m_left fl">
+					<div class="m_l_menu">
+						<ul class="m_l_menuinfo">
+							<li class="c_sel"><a href="#"><i class="m_icon stop"></i>正在播放</a></li>
+							<li><a href="#"><i class="m_icon playerold"></i>播放历史</a></li>
+							<li><a href="#"><i class="m_icon favorite"></i>我收藏的单曲</a></li>
+						</ul>
+					</div>
+					<div class="m_l_collect">
+						<p>我创建的精选集
+						<a class="m_icon_add fr" href="#" title="创建精选集"></a>
+						</p>
+						<img alt="创建精选集" src="images\\01.png"/>
+					</div>
+			</div>
+			<div class="m_center">
+					<div class="m_c_title">
+						<div class="m_c_title_info">
+							<div class="fl">歌曲(50)</div>
+							<div class="fl">演唱者</div>
+							<div class="fl">专辑</div>
+						</div>
+					</div>
+					<div class="m_c_list_body" id="list">
+						<div id="musicList">
+						</div>
+					</div>
+						<ul class="m_c_operation" >
+							<li  class="m_c_checkbox"><input type="checkbox"/></li>
+							<li><a class="delete" href="javascript:void(0);"><i></i>删除</a></li>
+							<li><a class="favorite" href="javascript:void(0);"><i></i>收藏</a></li>
+							<li><a class="add" href="javascript:void(0);"><i></i>添到精选集</a></li>
+							<li><a class="more" href="javascript:void(0);"><i></i>更多</a></li>
+						<ul>
+			</div>
+			<div class="m_right">
+				<div class="musicImg">
+					<a class="a-musicImg" href="javascript:;">
+						<img class="img-music" alt="歌曲信息" href="javascript:void(0)" width="185"  src="images/musichead.jpg"/>
+					</a>
+				</div>
+				<div class="d-musicInfo">
+					<a class="a-word" href="javascript:;">
+						<i class="fa fa-shopping-cart"></i>
+						<span class="sp-go">去音乐馆淘一下</span>
+					</a>
+				</div>
+				<div class="d-lrc">
+				</div>
+		</div>
+		<!--end middle-->
+		<!--start bottom-->
+		<div id="bottom">
+			<div class="d-bLeft fl">
+				<div class="d-contorl">
+					<a class="btn prev" href="javascript:;"></a>
+					<a class="btn play" href="javascript:;"></a>
+					<a class="btn stop" href="javascript:;"></a>
+					<a class="btn next" href="javascript:;"></a>
+				</div>
+				<div class="mode">
+					<a class="btn order" href="javascript:;"></a>
+				</div>
+			</div>
+			<div class="d-bMiddle">
+				<div class="playInfo">
+					<div class="musicInfo fl">
+						<a class="font musicName" href="javascript:;">相亲相爱一家人</a>
+						<a class="font musicSpecial" href="javascript:;">群星</a>
+						<a class="font musicAuthor" href="javascript:;"></a>
+					</div>
+					<div class="option fr">
+						<a class="icon favorite" title="收藏" href="javascript:;"></a>
+						<a class="icon share" title="分享" href="javascript:;"></a>
+						<a class="icon more" title="更多" href="javascript:;"></a>
+					</div>
+				</div>
+				<div class="time-line">
+						<div class="time curr-time">00:00</div>
+						<div class="play-progress">
+							<div class="background">
+								<div class="pow"></div>
+							</div>
+							<div class="ball"></div>
+						</div>
+						<div class="time all-time">00:00/00:00</div>
+				</div>
+			</div> 
+			<div class="d-bRight fr">
+				<a class="quality fl" href="javascript:;"></a>
+				<div class="volume fl">
+					<a class="btn on fl" href="javascript:;"></a>
+					<a class="btn off fl" href="javascript:;"></a>
+					<div class="volume-panel fl">
+						<div class="v_background">
+							<div class="v_pow"></div>
+						</div>
+						<div class="v_ball"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--end bottom-->
+		<script src="js/drag.js"></script>
+		<script src="js/dom.js"></script>
+		<script src="js/jquery-3.0.0.min.js"></script>
+		<script src="js/resourceMP3.js"></script>
+		<script src="js/music.js"></script>
+		<script>
+		var mark=true;//控制  拖拽进度条额时候  事件停止向前跑
+		var musicArr=[];//歌曲信息
+		//讲歌曲文件信息格式化
+		for(var i=0,len=musicArrLrc.length;i<len;i+=1){
+			var mp3Info={};//{"musicName,musicSpecial,musicAuthor}
+			mp3Info.id=i+1;
+			mp3Info.src=musicArrSrc[i];
+			var temp=musicArrSrc[i].split(".");
+			if(temp[temp.length-1]=="mp3"){
+				//resource/chAngE (改变) - miwa (みわ).mp3 分割文件
+				temp =temp[0].split("-");
+				//歌曲作者
+				mp3Info.author =temp[temp.length-1].trim();
+				if(temp[0].lastIndexOf(")")!=-1){
+					temp = temp[0].split("(");
+					//歌曲专辑
+					mp3Info.special = temp[temp.length-1].trim().slice(0,-1);
+					//歌曲名称
+					temp = temp[0].split("/");
+					mp3Info.name=temp[temp.length-1].trim();
+				}else{
+					temp= temp[0].split("/");
+					mp3Info.name = temp[temp.length-1].trim();
+					mp3Info.special = "未知";
+				}
+				musicArr.push(mp3Info)
+			}
+		}
+		//歌词信息初始化
+		var musicLrcTime=[];//时间
+		var musicLrcContent=[];//歌词
+		for(var i = 0,len = musicArrLrc.length;i<len;i++){
+			var content=[];//纯歌词
+			var time=[]//歌词信息
+			var row=musicArrLrc[i].split("[");
+			for (var j =0,templen=row.length;j<templen;j++){//内循环 一首歌的一行
+				var temp =row[j].split("]");
+				if(temp[temp.length-1]){
+					//秒  round
+					var hs=temp[0].split(":");
+					var s=(hs[0]*60+hs[1]*1).toFixed(0);
+					time.push(s);
+					content.push(temp[temp.length-1].trim());
+				}
+			}
+			musicLrcContent.push(content);
+			musicLrcTime.push(time);
+		}
+		//初始化歌词
+		initLrc(0);
+		function initLrc(index){
+			$(".m_right .d-lrc").html("");
+			$(".d-lrc").animate({scrollTop:0},1000);
+			for (var i=0,len=musicLrcContent[index].length; i<len;i++){
+				var $div= $("<div/>");
+				$div.data("time",musicLrcTime[index][i]);
+				$div.html(musicLrcContent[index][i]);
+				$(".m_right .d-lrc").append($div.get(0));
+			}
+		}
+		//加载歌曲列表信息
+		var html ="";
+		for(var i =0,len=musicArr.length;i<len;i+=1){
+			html+="<div class=\"m_c_list\">"+
+					"<div class=\"m_c_checkbox fl\">"+
+					"<input type=\"checkbox\"/>"+
+					"</div>"+
+					"<div class=\"m_c_status fl\">"+musicArr[i].id+"</div>"+
+					"<div class=\"m_c_musicInfo fl\">"+
+					"<div class=\"fl musicName\">"+musicArr[i].name+"</div>"+
+					"<div class=\"fl musicAuthor\">"+musicArr[i].author+"</div>"+
+					"<div class=\"fl musicSpecial\">"+musicArr[i].special+"</div>"+
+					"</div>"+
+					"<div class=\"operation fr\">"+
+					"<a class=\"favorite\"></a>"+
+					"<a class=\"more\"></a>"+
+					"<a class=\"delete\"></a>"+
+					"</div>"+
+					"</div>"
+		}
+		$("#musicList").html(html);
+		//穿件音乐对象
+		var music = new XaMusic();
+		//初始化音乐组件
+		music.init();
+		//初始化页面信息
+		initData(0,"init");
+		music.add(musicArr);
+		music.progress(function(){
+			if(mark){
+			$(".curr-time").html(this.cur||"00:00");
+			$(".all-time").html((this.sTime ||"00:00")+"/"+this.tot);
+			$(".pow").css("width",this.per+"%");
+			$(".ball").css("left",this.per+"%");
+			}
+		//歌词联动
+		if(this.rawcur){
+			var rawcur=this.rawcur.toFixed(0);
+			$(".d-lrc").find("div").each(function(i,dom){
+				if(rawcur==$(dom).data("time")){//如果当前时间有歌词的话
+					$(dom).addClass("active").siblings().removeClass("active");
+					//滚筒条联动
+					if($(dom).get(0).offsetTop>$(".d-lrc").height()/2){
+						$(".d-lrc").animate({scrollTop:$(dom).get(0).offsetTop-$(".d-lrc").height()/2},1000);
+					}
+				}
+			});
+		}
+		});
+		$("#bottom .play").on("click",function(){
+			music.play(function(index){
+				initData(index,"play");
+				initLrc(index);
+			});
+		});
+		$("#bottom .stop").on("click",function(){
+			music.stop(function(index){
+				initData(index,"stop")
+			});
+		});
+
+		//拖拽
+		drag.init({dom:$("#bottom .play-progress .ball").get(0),dir:"x",
+		callbackDur:function(){
+			mark=false;
+			var cur=XaMusic.formateTime(music.audioDom.duration*this.rateLeft);
+			var sTime=XaMusic.formateTime(music.audioDom.duration-music.audioDom.duration*this.rateLeft);
+			var tot=XaMusic.formateTime(music.audioDom.duration);
+			$(".curr-time").html(cur || "00:00");
+			$(".all-time").html((sTime || "00:00")+"/"+tot);
+			$("#bottom .play-progress .pow").css("width",(this.rateLeft*100+"%"));
+		},
+		callbackEnd:function(){
+			mark=true;
+			music.audioDom.currentTime=this.rateLeft*music.audioDom.duration||0;
+		}
+		})
+		//点击跳到指定位置播放
+		$("#bottom .play-progress .background").click(function(e){
+			var e = e||window.event;
+			var pos=dom.getXY(e);
+			var left=pos.pageX-dom.getLeft(this);
+			var rate=(left/this.offsetWidth).toFixed(2);
+			$("#bottom .play-progress .pow").stop(true,true).animate({"width":(rate*100+"%")},300);
+			$("#bottom .play-progress .ball").stop(true,true).animate({"left":(rate*100+"%")},300);
+			music.audioDom.currentTime=rate*music.audioDom.duration||0;
+		});
+		//音频拖拽
+		drag.init({dom:$(".volume-panel .v_ball").get(0),dir:"x",
+		callbackDur:function(){
+			$(".volume-panel .v_pow").css("width",(this.rateLeft*100+"%"));
+			music.sound(this.rateLeft.toFixed(1));
+		},
+		callbackEnd:function(){
+		}
+		})
+		//点击跳到指定位置控制音量
+		$(".d-bRight .volume .volume-panel .v_background").click(function(e){
+			var e = e||window.event;
+			var pos=dom.getXY(e);
+			var left=pos.pageX-dom.getLeft(this);
+			var rate=(left/this.offsetWidth).toFixed(1);
+			$(".v_background .v_pow").stop(true,true).animate({"width":(rate*100+"%")},300);
+			$(".volume-panel .v_ball").stop(true,true).animate({"left":(rate*100+"%")},300);
+			music.sound(rate);
+		});
+		//静音
+		$(".d-bRight .volume .on").click(function(){
+			$(this).hide();
+			$(".d-bRight .volume .off").show();
+			music.muted();
+		});
+		$(".d-bRight .volume .off").click(function(){
+			$(this).hide();
+			$(".d-bRight .volume .on").show();
+			music.muted();
+		});
+		//上一首  下一首 
+		$(".d-contorl .next").click(function(){
+			music.next(function(index){
+				initData(index,"prenext");
+				initLrc(index);
+			});
+		});
+
+		$(".d-contorl .prev").click(function(){
+			music.pre(function(index){
+				initData(index,"prenext");
+				initLrc(index);
+			});
+		
+		});
+		//点击跳转播放
+		$(".m_c_status").click(function(){
+			var index=$(this).html()-1;
+			music.selectplay(index,function(){
+				initData(index,"prenext");
+				initLrc(index);
+			})
+		});
+		//播放完后的播放方式  做了功能没测,页面图标还没切..
+		music.ended("listLoop",function(index){
+			initData(index,"prenext");
+			initLrc(index);
+		});
+		
+		function initData(index,state){
+			if(state=="init"){
+				$(".d-bMiddle .musicName").html(musicArr[index].name);
+				$(".d-bMiddle .musicSpecial").html(musicArr[index].special);
+				$(".d-bMiddle .musicAuthor").html(musicArr[index].author);
+				$(".v_background .v_pow").css({"width":(music.audioDom.volume*100+"%")});
+				$(".volume-panel .v_ball").css({"left":(music.audioDom.volume*100+"%")});
+			}else if(state=="play"){
+			//修改三地方的图标
+				$("#bottom .play").hide();
+				$("#bottom .stop").show();
+				$("#middle .m_left .stop").removeClass("stop").addClass("player");
+				$(".m_c_status").eq(index).removeClass("stop").addClass("player");
+			}else if(state=="stop"){
+				$("#bottom .stop").hide();
+				$("#bottom .play").show();
+				$("#middle .m_left .player").removeClass("player").addClass("stop");
+				$(".m_c_status").eq(index).addClass("stop").removeClass("player");
+				$(".m_c_list").eq(index).addClass("sel").siblings().removeClass("sel");
+			}else if(state="prenext"){
+				$(".d-bMiddle .musicName").html(musicArr[index].name);
+				$(".d-bMiddle .musicSpecial").html(musicArr[index].special);
+				$(".d-bMiddle .musicAuthor").html(musicArr[index].author);
+				$(".m_c_list").eq(index).addClass("sel").siblings().removeClass("sel").find(".player").removeClass("player");
+				$("#bottom .play").hide();
+				$("#bottom .stop").show();
+				$("#middle .m_left .stop").removeClass("stop").addClass("player");
+				$(".m_c_status").eq(index).removeClass("stop").addClass("player");
+			}
+		}
+		</script>
+	</body>
+</html>

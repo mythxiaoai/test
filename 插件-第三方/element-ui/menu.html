@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+	</head>
+	<body>
+		<div id="app">
+				<!--子菜单-->
+				<el-menu class="menuUl"
+			      	:default-active="activeMenu"
+			      	:collapse="!isCollapse"
+			     >
+			      	<!--ref="navbar"-->
+			      	<!--@select="subMenuClick"-->
+			      <el-menu-item v-for="item in menuData" :index="item.id" :key="item.id">
+			      	<i class="el-icon-menu"></i>
+        			<span slot="title"> {{item.label}}</span>
+			      </el-menu-item>
+			    </el-menu>
+		</div>
+		 <!-- import Vue before Element -->
+		  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+		  <!-- import JavaScript -->
+		  
+		 <script src="https://cdn.bootcss.com/element-ui/2.3.8/index.js"></script>
+	</body>
+	<script>
+		console.log(window)
+		var vm = new Vue({
+			el:"#app",
+			created(){
+				
+			},
+			data:{
+				isCollapse:true,
+				 activeMenu: 'tab1',
+				 menuData:[
+					{label:"监控面板",id:"tab1"},
+					{label:"工单面板",id:"tab2"},
+					{label:"实时面板",id:"tab3"},
+				],
+			},
+			methods:{
+				
+			}
+		});
+	</script>
+</html>

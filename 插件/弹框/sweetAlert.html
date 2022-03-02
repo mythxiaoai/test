@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="../../js/sweetalert/sweetalert.css" />
+		<link rel="stylesheet" href="../../css/common/common.css" />
+		<link rel="stylesheet" href="../../js/bootstrap/bootstrap.css" />
+		<link rel="stylesheet" href="../../js/bootstrap/bootstrapfiller.css" />
+		<script type="text/javascript" src="../../js/sweetalert/sweetalert-dev.js" ></script>
+	</head>
+	<body>
+		<button class="btn btn-success m-r" onclick="xalert('操作成功','数据已经操作成功！','success')">success</button>
+		<button class='btn btn-danger m-r' onclick="xalert('操作失败','操作失败，请重试！','error')">error</button>
+		<button class='btn btn-warning m-r' onclick="xalert('警告','退出会导致操作失败！','warning')">warning</button>
+		<button class='btn btn-info m-r' onclick="xalert('提示','我就是默认的信息展示框了！','info')">info</button>
+		
+		<button class="btn btn-default" onclick="xerrorTest()">xerror</button>
+		<button class="btn btn-default" onclick="xconfirmTest()">xconfirm</button>
+		<script>
+	(function(win){
+		function getDefault(){
+			return {
+				cancelButtonText:"取消",
+				confirmButtonText:"确认",
+				html:true
+			};
+		}
+	win.xalert=function(title,text,type,fn){
+		var json =getDefault();
+			json.title=title;
+			json.text=text;
+			json.type=type || "info",
+		swal(json,function(){
+		  if(fn!=null)fn();
+		});
+	}
+	win.xerror=function(title,text,type,fn){
+		var json =getDefault();
+		json.title=title;
+		json.text=text;
+		json.type=type || "error";
+		swal(json,function(){
+			if(fn!=null)fn();
+		});
+	}
+	win.xconfirm=function(title,text,type,fn){
+		var json =getDefault();
+		json.title=title;
+		json.text=text;
+		json.showCancelButton=true;
+		json.type=type || "warning";
+		json.closeOnConfirm=false;
+  		json.showLoaderOnConfirm=true;
+		swal(json,function(){
+		  setTimeout(function(){
+				if(fn!=null)fn();
+			},200);
+		});
+	}
+})(window);
+function xalertTest(){
+	xalert("欢迎使用SweetAlert","Sweet Alert 是一个替代传统的 JavaScript Alert 的漂亮提示效果。")
+}
+function xerrorTest(){
+	xerror("系统错误",`java.lang.IllegalArgumentException: Cannot format given Object as a Number
+ at java.text.DecimalFormat.format(DecimalFormat.java:507)
+ at java.text.Format.format(Format.java:157)
+ at com.rjtx.service.optimize.lte.impl.OptimizeOverviewServiceImpl.analyzeLTEOptimzeReasonCount(OptimizeOverviewServiceImpl.java:114)
+ at com.rjtx.service.optimize.lte.impl.OptimizeOverviewServiceImpl.analyzeFromOriginTable(OptimizeOverviewServiceImpl.java:200)
+ at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+ at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+ at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+ at java.lang.reflect.Method.invoke(Method.java:498)
+ at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:302)
+ at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:190)
+ at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157)
+ at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:99)
+ at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:281)
+ at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:96)
+ at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+ at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:208)
+ at com.sun.proxy.$Proxy144.analyzeFromOriginTable(Unknown Source)
+ at com.rjtx.controller.optimize.OptimizeOverviewController.loadLTEQuestionFromOrigin(OptimizeOverviewController.java:169)
+ at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+ at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+ at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+ at java.lang.reflect.Method.invoke(Method.java:498)`)
+}
+function xconfirmTest(){
+	xconfirm("您确定要删除这条信息吗？","删除后将无法恢复，请谨慎操作！",null,function(){
+		xalert("删除成功！","您已经永久删除了这条信息。","success")
+	})
+}
+
+		</script>
+	</body>
+</html>

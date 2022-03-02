@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<ul>
+			<li class="b a">1</li>
+			<li class="b">2</li>
+			<li class="a">3</li>
+			<li class="a">4</li>
+		</ul>
+		
+		<script>
+		console.log(document.getElementsByClassName("a b"))
+		let classList = document.getElementsByClassName("b")[0].classList;
+		console.log(classList)//a b
+		classList.add("a")
+		classList.add("c")
+		console.log(classList)//a b c  页面上的属性也会更改了
+		
+		</script>
+	</body>
+</html>

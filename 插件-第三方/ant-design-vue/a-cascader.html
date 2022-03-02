@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.bootcdn.net/ajax/libs/ant-design-vue/2.2.2/antd.css" rel="stylesheet">
+</head>
+
+<body>
+    <div id="app">
+        <a-input style="width:240px" />
+        <a-cascader :options="options" placeholder="Please select" />
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0/moment.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/3.1.2/vue.global.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/ant-design-vue/2.2.2/antd-with-locales.min.js"></script>
+    <script>
+        const options = [
+            {
+                value: 'zhejiang',
+                label: 'Zhejiang',
+                children: [
+                    {
+                        value: 'hangzhou',
+                        label: 'Hangzhou',
+                        children: [
+                            {
+                                value: 'xihu',
+                                label: 'West Lake',
+                            },
+                        ],
+                    },
+                ],
+            },
+            {
+                value: 'jiangsu',
+                label: 'Jiangsu',
+                children: [
+                    {
+                        value: 'nanjing',
+                        label: 'Nanjing',
+                        children: [
+                            {
+                                value: 'zhonghuamen',
+                                label: 'Zhong Hua Men',
+                            },
+                        ],
+                    },
+                ],
+            },
+        ];
+
+        let vm = Vue.createApp({
+            setup() {
+                return {
+                    options
+                }
+            }
+        });
+        console.log();
+        antd.Input.props.allowClear.default = parms => !parms.prefixCls
+
+        vm.use(antd)
+
+        vm.mount('#app')
+
+    </script>
+</body>
+
+</html>

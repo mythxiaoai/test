@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+	<style type="text/css">
+		body, html,#allmap {width: 100%;height: 100%;overflow: hidden;margin:0;font-family:"微软雅黑";}
+	</style>
+	<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=koGxek8pG1gFQiBDTUT7WShyKW7zpVXo"></script>
+	<title>添加行政区划</title>
+</head>
+<body>
+	<div id="allmap"></div>
+</body>
+</html>
+<script type="text/javascript" src="../../js/jquery.js" ></script>
+<script src="https://cdn.bootcss.com/lodash.js/4.17.12-pre/lodash.js"></script>
+<script src="bmaplib.geoutils.js"></script>
+<script src="../../js/pinyin/pinyin.js"></script>
+<script type="text/javascript">
+	// 百度地图API功能
+	var map = new BMap.Map("allmap",{enableMapClick:false});
+	map.centerAndZoom("延安",5);
+	map.enableScrollWheelZoom();
+	let pdata =[
+	]
+	let bounds = [];
+	var bdary = new BMap.Boundary();
+	var myGeo = new BMap.Geocoder();
+	var once = true;
+	map.addEventListener("click",function(e){
+		console.log(e.point);
+		myGeo.getLocation(e.point,function(rs){
+			var addComp = rs.addressComponents;
+			let p =addComp.province;
+			let c =addComp.city;
+			let d =addComp.district;
+			console.log(rs)
+			if(!_.find(pdata,["name",d])){
+				//有汉字的才加进去
+				if(/[\u4E00-\u9FA5]+/.test(d)){
+					let temp = {
+						id:"",
+						name:d,
+						pid:"",
+					}
+					draw(p);
+					pdata.push(temp);
+				}
+			}
+		});
+	},true);
+  
+	function draw(name){
+		bdary.get(name, function(rs){       //获取行政区域
+		 var count = rs.boundaries.length; //行政区域的点有多少个
+			if (count === 0) {
+				console.log('未能获取'+name+'行政区域');
+				return ;
+			}
+      		console.log(JSON.stringify(rs.boundaries))
+			for (var i = 0; i < count; i++) {
+				 //建立多边形覆盖物
+				let tempply= new BMap.Polygon(
+				rs.boundaries[i], 
+				{strokeWeight: 2,
+				 strokeColor: "rgba(3,169,224,1)",
+				 fillColor:"rgba(3,169,224,0.2)"},
+				 );
+				bounds.push(tempply);
+				map.addOverlay(tempply);  //添加覆盖物
+			}
+		});
+	}
+	
+/* 	map.addEventListener("mousemove",function(e){
+		console.count("mousemove")
+		bounds.forEach(function(v){
+			v.setStrokeWeight(2);
+			if(BMapLib.GeoUtils.isPointInPolygon(e.point, v)){
+				v.setStrokeWeight(5);
+			}
+		})
+	}); */
+	
+	
+</script>

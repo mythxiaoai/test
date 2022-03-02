@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{margin: 10px;padding: 0;}
+			#allmap{position:absolute;width: 100%;height: 100%;}
+		</style>
+	</head>
+	<body>
+		<canvas id="demo"></canvas>
+		<!-- <div id="allmap"></div> <div id="r-result"></div> <div id="gpsback"></div>-->
+		<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=hYCENCEx1nXO0Nt46ldexfG9oI49xBGh"></script>
+		<script type="text/javascript" src="js/jquery.js" ></script>
+		<!--标注点data测试数据-->
+		<script>
+	var canvasdom =document.getElementById("demo");
+	canvasdom.width=400;
+	canvasdom.height=400;
+	canvasdom.style.backgroundColor="#333";
+	//2
+	var context =canvasdom.getContext("2d");
+	//起始一条路径，或重置当前路径
+	context.beginPath();
+		context.arc(200,200,100*0.18,0,2*Math.PI,false);
+		var grd=context.createRadialGradient(200,200,0,200,200,100*0.18);
+		grd.addColorStop(0,"#3285FF");
+		grd.addColorStop(0.3,"#3285FF");
+		grd.addColorStop(0.5,'rgba(255, 255, 255, 0)');
+		grd.addColorStop(0.7,'rgba(255, 255, 255, 0)');
+		grd.addColorStop(0.7,"#3285FF");
+		grd.addColorStop(1,'#fff');
+		//填充为黄色
+		context.fillStyle=grd;
+	//填充当前绘图（路径）
+	context.fill();
+	//3
+	//拓展画扇形方法
+	CanvasRenderingContext2D.prototype.sector = function(x,y,r,angle1,angle2){
+        this.save();
+        //起始一条路径，或重置当前路径
+        this.beginPath();
+        //移动到中心点
+        this.moveTo(x,y);
+        //画股线
+        this.arc(x,y,r,angle1*Math.PI/180,angle2*Math.PI/180,false);
+        //创建从当前点回到起始点的路径
+        this.closePath();  
+        //返回之前保存过的路径状态和属性
+        this.restore();
+        return this;
+    }
+	var line=context.createRadialGradient(200,200,0,200,200,100);
+	line.addColorStop(0,'rgba(255, 255, 255, 0)');
+	line.addColorStop(0.2,"rgba(255, 255, 255, 0)");
+	line.addColorStop(0.2,"#3285FF");
+	line.addColorStop(0.23,"#3285FF");
+	line.addColorStop(0.3,"rgba(255, 255, 255, 0)");
+	line.addColorStop(0.3,"rgba(255, 255, 255, 0)");
+	line.addColorStop(0.4,"rgba(255, 255, 255, 0)");
+	line.addColorStop(0.4,"#3285FF");
+	line.addColorStop(0.43,"#3285FF");
+	line.addColorStop(0.5,"rgba(255, 255, 255, 0)");
+	line.addColorStop(0.5,"rgba(255, 255, 255, 0)");
+	line.addColorStop(0.6,"rgba(255, 255, 255, 0)");
+	line.addColorStop(0.6,"#3285FF");
+	line.addColorStop(0.63,"#3285FF");
+	line.addColorStop(0.7,"rgba(255, 255, 255, 0)");
+	line.addColorStop(0.7,"rgba(255, 255, 255, 0)");
+	line.addColorStop(0.8,"rgba(255, 255, 255, 0)");
+	line.addColorStop(0.8,"#3285FF");
+	line.addColorStop(0.83,"#3285FF");
+	line.addColorStop(0.9,"rgba(255, 255, 255, 0)");
+	line.addColorStop(0.9,"rgba(255, 255, 255, 0)");
+	line.addColorStop(1,"rgba(255, 255, 255, 0)");
+	//填充为黄色
+	context.fillStyle=line;
+    context.sector(200,200,100,-30,30).fill();
+    context.strokeStyle="rgba(32,85,255,0.1)";
+     context.lineWidth=2;
+     context.stroke();
+     
+ 	canvasdom.addEventListener('click', function(e){
+	  //$this.draw({x:e.pageX-$(map.Va).offset().left,y:e.pageY-$(map.Va).offset().top});
+	  var p={x:e.pageX,y:e.pageY};
+	  if(context.isPointInPath(p.x, p.y)){
+	  	alert(true)
+	  }
+	}, false);
+	</script>
+	</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	<script type="text/javascript" src="../../../js/jquery.js" ></script>
+	  <script>
+     /*
+      地狱回调例子
+      $.ajax({
+        type:"get",
+        url:"./a.json"
+        success(data){
+          //...业务逻辑
+          $.ajax({
+            type:"get",
+            url:"./b.json"
+            success(data){
+              //...业务逻辑
+              $.ajax({
+                type:"get",
+                url:"./c.json"
+                success(data){
+                  
+                }
+              });
+            }
+          });
+        }
+      });
+      * 
+      * */
+     
+     
+     //认识ajax
+    /* let $ajax = $.ajax({
+           	type:"get",
+           	url:"./a.json",
+           	success(data){
+           	  console.log(data)
+           	}
+           });
+     console.log($ajax);*/
+     
+     
+     //模拟ajax
+     function ajax(str,time){
+       return new Promise((reslove,reject)=>{
+         setTimeout(()=>{
+           reslove(str+"返回结果成功");
+         },time||1000);
+       })
+     }
+     //常规调用
+     ajax("a").then(function(v){
+       console.log(v);
+       return ajax("b")
+     }).then(function(v){
+       console.log(v);
+       return ajax("c")
+     }).then(function(v){
+       console.log(v);
+     });
+     
+     //all方法   全部ajax执行完返回
+   /*  Promise.all([ajax("a",2000),ajax("b",3000),ajax("c",4000)]).then(function(datas){
+       console.log(datas)
+     })*/
+    
+    //race方法  谁最先跑完就返回谁
+     /*Promise.race([ajax("a",2000),ajax("b",3000),ajax("c",4000)]).then(function(data){
+       console.log(data)
+     })*/
+     
+	    
+	  </script>
+	</body>
+</html>

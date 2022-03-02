@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+//函数的默认值赋值   默认值不能被arguments识别。
+/*function getNum(){return 5};
+function a(mun=getNum()){
+	console.log(mun+"哈哈")
+	console.log(arguments[0])
+	mun=2
+	console.log(arguments[0]);//这里如果参数有默认值   像这样的赋值   就代表是es6的写法  function体就会执行javascript严格模式  如果只是num~arguments[0] //2 
+}
+a(1);*/
+			
+			//...表示数组
+			/*function a(...haha){
+				console.log(haha[0])
+				console.log(haha[1])
+			}
+			a(1,2)*/
+			//参数的引入  赫赫   但是有点想不通的是   变量名是怎么带进来的   带进来的 并不是局部棉量   与let不用 如果在定义了一个let的变量  则生成一个临时的死区并覆盖传进来的参数变量   好可怕...
+			/*function add(...haha){
+				console.log(arguments)
+				console.log(a)//a is not defined
+				let a =8;
+				console.log(a)//8
+				console.log(b)
+				return a+b
+				/*************************
+				console.log(arguments)
+				console.log(a)//1
+				console.log(b)//2
+				return a+b
+			}
+			let a=1,b=2;
+			console.log(add(a,b))*/
+			//测试  放在对象里面的参数
+		/*	var json ={
+				add:function(...arr){
+					console.log(a);
+					console.log(b);
+					return a+b;
+				}
+			}
+			let a=1,b=2;
+			json.add(a,b);*/
+			/*let arr = [10, 20, 50, 40, 30]
+			console.log(...arr+"\n"+Math.max(...arr));//1 0 , 2 0 , 5 0 , 4 0 , 3 0   50*/
+			//函数的穿透问题
+			/*if(true) {
+		      var a = function(){
+		      }
+		    } 
+		    a();*/
+		   //剪头函数
+		  /* const s = (a,b) =>this
+ 			//console.log(s(2,3)) // 5
+ 			//
+		   const c = a => a
+ 			console.log(s(2)) // 2*/
+ 			const json ={
+ 				test:()=>a+b,
+ 			}
+ 			let a =3,b=5;
+ 			console.log(json.test(a,b));
+ 			
+ 			//以下是es6的函数定义
+ 			()=>"";//当没有参数的匿名函数的时候  可以直接写括号代替
+ 			a=>a;//当只有一个参数的时候  可以直接省略括号
+ 			(a,b)=>a+b;//当有两个参数的时候  需要用阔号括起来~
+ 			let c = (a,b)=>({a:a,b:b});//当返回的是一个对象的时候  需要用()括起来
+ 			//立即执行   当做匿名函数运行  参数传进去
+ 			console.log(((a,b)=>({a:a,b:b}))(a,b));
+ 			//立即执行直接写{}  是展开函数体   需要自己写return;
+ 			console.log((a=>{return a})(a));
+			let fn1 ={
+				fn2(){
+					return "fn2";//当键值对没有key值的时候函数的函数名充当key
+				}
+			}
+			console.log(fn1.fn2()) //fn2
+ 			
+ 			/*const test =(id=>({getId(){console.log(id)}}))(18)//18
+		    test.getId() // 18*/
+	      	const test = (id =>({
+		        getId() {
+		          console.log(id)
+		        }
+		    }))(18)
+		    test.getId() // 18
+		    
+		    //排序
+		    let arr = [10, 50, 30, 40, 20]
+		    console.log(arr.sort((a,b)=>a-b));
+		    //乱序
+		     arr = [10, 50, 30, 40, 20]
+		    console.log(arr.sort(()=>Math.random()-0.5));
+		    
+		     //新型尾优化写法
+		    let strTime = new Date()
+		    console.log(strTime.toLocaleString());
+		    function sum(n, p = 1) {
+		      if(n <= 1) {
+		        return p
+		      }
+		      let s = n + p
+		      sum(n - 1, s)
+		    }
+		    //求 1 x 2 x 3的阶乘
+		    let sumres = sum(1000);
+		    console.log(sumres)； // 6
+		    console.log((new Date()-strTime).toLocaleString());
+		</script>
+	</body>
+</html>

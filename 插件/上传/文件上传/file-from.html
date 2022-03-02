@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>文件上传百分比</title>
+		<link rel="stylesheet" href="css/common/common.css" />
+		<script type="text/javascript" src="JQ-load/js/jquery.min.js" ></script>
+	</head>
+	<body>
+		<style>
+			.imgTarger{width:500px;height: 500px;border:1px dashed #333;}
+		</style>
+		<form action="http://localhost:8080/rjtx-dw-web/test/fileupload.do" method="post" enctype="multipart/form-data">
+    		  <input type="text"  name="name" >
+    			<input type="file" id="upload"  name="file"  multiple="multiple">
+    			<button type="submit">提交</button>
+    			<progress  id="progress" ></progress>
+    	</form>
+    	<div id="targ"></div>
+	</body>
+	
+		<script>
+		</script>
+</html>

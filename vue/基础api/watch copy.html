@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+	</head>
+	<body>
+		<div id="app">
+				 watch-a	<input v-model="a" />{{a}}<br>
+				 watch-b	<input v-model="b.a" />{{b}}<br>
+				 watch-c 	<input v-model="c.a" />{{c}}<br>
+				 watch-d 	<input v-model="d" />{{d}}<br>
+				 watch-e 	<input v-model="e.a" />{{e}}<br>
+				 watch-f 	<input v-model="f.a" />{{f}}
+		</div>
+		 <!-- import Vue before Element -->
+		  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+		  <!-- import JavaScript -->
+		  <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+	</body>
+	<script>
+		console.log(window)
+		var vm = new Vue({
+			el: '#app',
+			data:{
+				a:123,
+				b:{a:"bbbb"},
+				c:{a:"哈哈"},
+				d:123,
+				e:{a:"123"},
+				f:{a:"123"},
+			},
+			methods:{
+				someMethod(val){
+					console.log("watch-b"+val)
+				}
+			},
+			watch:{
+				a: function (val, oldVal) {
+			      console.log('new: %s, old: %s  watch-a', val, oldVal)
+			    },
+			    // 方法名
+			    b: 'someMethod',
+			    // 深度 watcher
+			    c: {
+			      handler: function (a, b,c) {
+			      	console.log('watch-c'); 
+			      	console.log(a); 
+			      	console.log(b);
+			      	console.log(c);
+			      },
+			      deep: true
+			    },
+			    // 该回调将会在侦听开始之后被立即调用
+			    d: {
+			      handler: function (val, oldVal) { console.log('watch-d', val, oldVal) },
+			      immediate: true
+			    },
+			    // watch vm.e.f's value: {g: 5}
+			    'e.a': function (val, oldVal) { console.log('watch-e.a', val, oldVal) },
+		     	'f.a': [
+			      function handle1 (val, oldVal) { console.log('watch-e-a', val, oldVal) },
+			      function handle2 (val, oldVal) { console.log('watch-e-b', val, oldVal) },
+			    ],
+			}
+		});
+	</script>
+</html>

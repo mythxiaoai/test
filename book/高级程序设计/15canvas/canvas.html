@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<canvas width="500" height="500" id="mycanvas"></canvas>
+		<canvas width="500" height="500" id="mycanvas2" style="background: #ccc;"></canvas>
+		<canvas width="500" height="500" id="mycanvas3" style="background: #ccc;"></canvas>
+		<canvas width="500" height="500" id="mycanvas4" ></canvas>
+		<canvas width="500" height="500" id="mycanvas5"></canvas>
+		<canvas width="500" height="500" id="mycanvas6" style="background: #ccc;"></canvas>
+		<script>
+			let canvas = document.getElementById("mycanvas");
+			if(canvas.getContext){
+				/*//console.log(JSON.string)
+				for(var key in canvas){
+					console.log(key+":"+canvas[key]+",")
+				}
+				var imgURL = canvas.toDataURL("image/png")
+				//var imgURL2 = canvas.toBlob();
+				//data:image/png;base64,iVBOR
+				console.log(imgURL)
+				console.log(imgURL2)*/
+				let context = canvas.getContext("2d");
+				context.lineWidth=25;//粗细
+				context.lineCap="butt";//butt、square、round//平|圆|方   控制线条末端的形状
+				context.lineJoin="round";//round、bevel、miter、//圆|斜交|斜接  控制线条相交的方式
+				context.strokeRect(50,250,50,50)
+				context.lineJoin="bevel";//round、bevel、miter、//圆|斜交|斜接  控制线条相交的方式
+				context.strokeRect(150,250,50,50)
+				context.lineJoin="miter";//round、bevel、miter、//圆|斜交|斜接  控制线条相交的方式
+				context.strokeRect(250,250,50,50)
+				context.clearRect(50,250,10,10)
+				context.lineWidth=1;
+				//开始路径
+				context.beginPath();
+				//绘制外圆
+				context.arc(100,100,99,0,2*Math.PI,false);
+				//绘制内圆
+				context.moveTo(194,100);//这里的moveTo的作用是  想象是个画质   moveTo是提笔点到下一个作画形状的起始点上去
+				context.arc(100,100,94,0,2*Math.PI,false);
+				context.translate(100,100);
+				//旋转
+				context.rotate(Math.PI*0.4);
+				//绘制分针
+				context.moveTo(0,0);
+				context.lineTo(0,-85)
+				//绘画时针
+				context.moveTo(0,0);
+				context.lineTo(-65,0)
+				context.stroke();
+			}
+			
+			let canvas2 = document.getElementById("mycanvas2");
+			if(canvas2.getContext){
+				let context = canvas2.getContext("2d");
+				 
+				    //绘制与当前端点、端点1、端点2三个点所形成的夹角的两边相切并且半径为50px的圆的一段弧线
+				    context.fillRect(200,50,2,2)
+				    context.fillRect(200,100,2,2)
+				    context.moveTo(150,50)
+				    context.arcTo(200, 50, 200,100,50);
+				    //设置线条颜色为蓝色
+				    context.strokeStyle = "blue";
+				    //按照上述绘制路径绘制弧线
+				    context.stroke();
+			}
+			let canvas3 = document.getElementById("mycanvas3");
+			if(canvas3.getContext){
+				let context = canvas3.getContext("2d");
+					context.beginPath();
+				    //绘制与当前端点、端点1、端点2三个点所形成的夹角的两边相切并且半径为50px的圆的一段弧线
+				    context.bezierCurveTo(100, 100, 150,0,200,100);
+				    context.quadraticCurveTo(150,200,100, 100);
+				     context.strokeStyle = "blue";
+				    //按照上述绘制路径绘制弧线
+				    context.stroke();
+				    context.closePath();
+				   	context.beginPath();
+				    moveTo(150,100);
+				    context.arc(150,100,20,0,2*Math.PI,false);
+				    console.log(context.isPointInPath(0,100))
+				    //设置线条颜色为蓝色
+				    context.strokeStyle = "blue";
+				    //按照上述绘制路径绘制弧线
+				    context.stroke();
+			}
+			let canvas4 = document.getElementById("mycanvas4");
+			if(canvas4.getContext){
+				let context = canvas4.getContext("2d");
+					context.fillStyle = "#f00"
+					context.translate(100,100);
+					context.save()
+					context.fillStyle = "#0f0"
+					context.save()
+					context.fillStyle = "#00f"
+					context.fillRect(0,0,50,50);
+					context.restore();
+					context.fillRect(100,0,50,50);
+					context.restore();
+					context.fillRect(200,0,50,50);
+			}
+			
+			let canvas5 = document.getElementById("mycanvas5");
+			if(canvas5.getContext){
+				let context = canvas5.getContext("2d");
+					context.fillStyle="#777"
+					context.shadowColor="#555"
+					context.shadowBlur=1;
+					context.shadowOffsetX=10;
+					context.shadowOffsetY=10;
+					context.fillRect(100,100,100,100);
+					context.fillStyle="#555"
+					context.shadowColor="#777"
+					context.shadowBlur=1;
+					context.shadowOffsetX=10;
+					context.shadowOffsetY=10;
+					context.fillRect(150,150,100,100);
+			}
+			let canvas6 = document.getElementById("mycanvas6");
+			if(canvas6.getContext){
+				let context = canvas6.getContext("2d");
+					let letgradient = context.createLinearGradient(100,75,400,75);
+					letgradient.addColorStop("0","red");
+					letgradient.addColorStop("0.2","yellow");
+					letgradient.addColorStop("0.4","blue");
+					letgradient.addColorStop("0.6","green");
+					letgradient.addColorStop("0.8","pink");
+					letgradient.addColorStop("1.0","purple");
+					context.fillStyle=letgradient;
+					context.fillRect(100,50,300,100);
+					
+					context.moveTo(100,225);
+					let letgradient2 = context.createRadialGradient(100,225,0,400,225,25);
+					letgradient2.addColorStop("0","red");
+					letgradient2.addColorStop("0.2","yellow");
+					letgradient2.addColorStop("0.4","blue");
+					letgradient2.addColorStop("0.6","green");
+					letgradient2.addColorStop("0.8","pink");
+					letgradient2.addColorStop("1.0","purple");
+					context.fillStyle=letgradient2;
+					context.fillRect(100,200,300,100);
+			}
+		</script>
+	</body>
+</html>

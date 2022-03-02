@@ -1,0 +1,105 @@
+[{
+        "om_id": "A0001", //油机ID
+        "oil_machine_name": "油机demo01", //油机名称
+        "oil_machine_lon": "100.79447127", //油机经度
+        "oil_machine_lat": "22.00270071", //油机纬度
+        "oil_machine_power": "50KW", //功率
+        "oil_machine_company": "润建" //厂家
+    },
+    {
+        "om_id": "A0002",
+        "oil_machine_name": "油机demo02",
+        "oil_machine_lon": "101.07129818",
+        "oil_machine_lat": "22.444437818",
+        "oil_machine_power": "20KW",
+        "oil_machine_company": "润建"
+    },
+    {
+        "om_id": "A0003",
+        "oil_machine_name": "油机demo03",
+        "oil_machine_lon": "101.06227988",
+        "oil_machine_lat": "22.428581163",
+        "oil_machine_power": "1100KW",
+        "oil_machine_company": "润建"
+    },
+    {
+        "om_id": "A0004",
+        "oil_machine_name": "油机demo04",
+        "oil_machine_lon": "100.88614904",
+        "oil_machine_lat": "22.188318189",
+        "oil_machine_power": "8.5KW",
+        "oil_machine_company": "润建"
+    },
+    {
+        "om_id": "A0005",
+        "oil_machine_name": "油机demo05",
+        "oil_machine_lon": "100.70683956",
+        "oil_machine_lat": "21.639294562",
+        "oil_machine_power": "8.5KW",
+        "oil_machine_company": "润建"
+    },
+    {
+        "om_id": "A0006",
+        "oil_machine_name": "油机demo06",
+        "oil_machine_lon": "100.69009138",
+        "oil_machine_lat": "21.639984402",
+        "oil_machine_power": "8.5KW",
+        "oil_machine_company": "润建"
+    },
+    {
+        "om_id": "A0007",
+        "oil_machine_name": "油机demo07",
+        "oil_machine_lon": "100.81191203",
+        "oil_machine_lat": "21.896576759",
+        "oil_machine_power": "7.5KW",
+        "oil_machine_company": "润建"
+    },
+    {
+        "om_id": "A0008",
+        "oil_machine_name": "油机demo08",
+        "oil_machine_lon": "100.80686297",
+        "oil_machine_lat": "21.996208105",
+        "oil_machine_power": "7.5KW",
+        "oil_machine_company": "润建"
+    },
+    {
+        "om_id": "A0009",
+        "oil_machine_name": "油机demo09",
+        "oil_machine_lon": "100.77165961",
+        "oil_machine_lat": "21.945849214",
+        "oil_machine_power": "30KW",
+        "oil_machine_company": "润建"
+    },
+    {
+        "om_id": "A0010",
+        "oil_machine_name": "油机demo10",
+        "oil_machine_lon": "100.76629956",
+        "oil_machine_lat": "22.02600801",
+        "oil_machine_power": "5KW",
+        "oil_machine_company": "润建"
+    },
+    {
+        "om_id": "A0011",
+        "oil_machine_name": "油机demo11",
+        "oil_machine_lon": "100.97569488",
+        "oil_machine_lat": "21.874545375",
+        "oil_machine_power": "5KW",
+        "oil_machine_company": "润建"
+    },
+    {
+        "om_id": "A0012",
+        "oil_machine_name": "油机demo12",
+        "oil_machine_lon": "100.99151271",
+        "oil_machine_lat": "21.895825864",
+        "oil_machine_power": "30KW",
+        "oil_machine_company": "润建"
+    },
+    {
+        "om_id": "A0013",
+        "oil_machine_name": "油机demo13",
+        "oil_machine_lon": "100.88849311",
+        "oil_machine_lat": "22.160552459",
+        "oil_machine_power": "5KW",
+        "oil_machine_company": "润建"
+    }
+]

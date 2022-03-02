@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="../css/base.css" />
+	</head>
+	<body>
+		<style>
+			    *{padding:0;margin: 0;}
+			    html{height:100%;}
+			    body{height:100%;}
+			    .box{
+			        height:30vh;
+			        background:#111;
+			        text-align: center;
+			        font-size:30px;
+			        font-family: "微软雅黑";
+			        line-height: 200px;
+			    }
+			    .box h1{
+			        display: inline-block;
+			        color:rgba(255,255,255,0.2);
+			        background:-webkit-linear-gradient(-30deg,
+			            rgba(255,255,255,0) 40%,
+			            rgba(255,255,255,1) 48%,
+			            rgba(255,255,255,1) 52%,
+			            rgba(255,255,255,0) 60%
+			        ) no-repeat;
+			        -webkit-background-clip: text;
+			        -moz-background-clip: text;
+			        background-clip: text;
+			        animation: move 2s linear infinite;
+			    }
+			    @keyframes move{
+			    	0%{background-position: -1920px 0;}
+			    	100%{background-position: 1920px 0;}
+			    }
+			    
+		</style>
+			<div class="box">
+				<h1>我会发光~一二三四~再来一次~</h1>
+			</div>
+		<script>
+			//颜色带代码生成器
+			/*
+			 fz:字体的宽度   就是font-size；number
+			 color:颜色数组  array    可以是   red   #十六进制颜色  色相 rgba(0,0,0,0)
+			 * */
+			var color=["red","yellow","blue","green","pink","purple"]
+			function getColorcode(fz,color){
+				var code ="";
+				color.forEach(function(item,i){
+					if(i==color.length-1){
+						code+= item+" "+i*fz+"px,"+item+" "+(i+1)*fz+"px"
+					}else{
+						code+= item+" "+i*fz+"px,"+item+" "+(i+1)*fz+"px,"
+					}
+				});
+				console.log(code);
+				return code;
+			}
+			/**
+			 *获取随机颜色
+			 * param:
+			 * 	number n:要随机颜色的数量
+			 * 	rgba a：  透明度  可选
+			 * return arr
+			 */
+			function getRandomColorArr(n,a){
+				var arr=[];
+				if(a!=undefined){
+					for(var i = 0 ;i < n ;i++){
+						var r=Math.floor(Math.random()*256);
+						var g=Math.floor(Math.random()*256);
+						var b=Math.floor(Math.random()*256);
+						arr.push("rgba("+r+","+g+","+b+","+a+")");
+					}
+				}else{
+					for(var i = 0 ;i < n ;i++){
+						var r=Math.floor(Math.random()*256);
+						var g=Math.floor(Math.random()*256);
+						var b=Math.floor(Math.random()*256);
+						arr.push("rgb("+r+","+g+","+b+")");
+					}
+				}
+				
+				console.log(arr);
+				return arr;
+			}
+			color =getRandomColorArr(8);
+			getColorcode(28,color);
+		</script>
+	</body>
+</html>

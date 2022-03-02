@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	  <script>
+	    //数组
+	    let a = [1,2,3];
+	    let b = [...a,4,5,6];
+	    console.log(b);
+	    //求最大值
+	   /* console.log(Math.max(...b));*/
+	    
+	    //对象
+	  /*  let jsona = {
+	      a:1,
+	      b:2,
+	      c:3
+	    }
+	    let jsonb = {
+	      c:4,
+	      d:5,
+	      ...jsona
+	    }
+	    console.log(jsonb);*/
+	    
+	    //折叠用法   动态拓展
+	   /* viewImg("c:img.png",235,87,true)
+	    function viewImg(src,...arg){
+	      console.log(src)
+	      console.log(...arg)
+	    }*/
+	    
+	    //变量渗透
+	  /*  let arg1 = 5;
+	    let arg2 = 3;
+	   function add(...arg){
+	     return arg1+arg2;
+	   }
+	   console.log(add(arg1,arg2))*/
+	    
+	  </script>
+	</body>
+</html>

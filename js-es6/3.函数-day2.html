@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+/* function a(num=3){
+      console.log(num === arguments[0]) //true
+  num = 2 //修改参数默认值
+  console.log(num === arguments[0]) //true
+}
+a(1)
+console.log(num)*/
+/*function a(a=2,b =a) {
+	console.log(a)//1
+	console.log(b)//1
+}
+a(1);*/
+/* function add(...arr){
+ 	console.log(arr)//[1,2]
+  console.log(a.c + b)
+}
+let a = {c:1},b = 2
+add(a, b) // 3*/
+
+/*let arr = [10, 20, 50, 40, 30]
+let b = Math.max(10, 20, 50, 40, 30);
+console.log(b)*/
+/* "use strict";
+    if(true) {
+      var a = function(){
+      }
+      console.log(a)
+    } 
+    console.log(a)*/
+   
+//参数的引入  赫赫   但是有点想不通的是   变量名是怎么带进来的   带进来的 并不是局部棉量   与let不用 如果在定义了一个let的变量  则生成一个临时的死区并覆盖传进来的参数变量   好可怕...
+/*function add(...haha){
+	console.log(a)//1
+	console.log(b)//2
+	return a+b;
+}
+let a=1,b=2;
+console.log(add(a,b))//3*/
+	/*let c = "c";
+	let d = "d";
+	let a = [c,d];console.log(((...a)=>({a:a,b:d}))(a))//{a:["c","d"], b: "d"}*/
+	
+	let d =(a,b)=>{let c=a+b; return c+"aaa"};
+	console.log(d(1,2))//{}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div class="box box1">1</div>
+		<script src="../js/jquery.js"></script>
+	<script>
+        $.ajax("common.css").then(data=>{
+            document.write(`<pre>${data}<pre>`)
+        });
+	</script>
+	</body>
+</html>

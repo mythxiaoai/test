@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style>
+			.cont{width: 500px;height: 500px;background: url(img/user.jpg) no-repeat;position: relative;}
+			.eid{width:50px;height:20px;color: #fff;}
+		</style>
+	</head>
+	<body>
+		<button type="button" id="btn">加</button>
+		<div class="cont">
+			<div class="eid">1</div>
+			<img src="img/user.jpg" />
+		</div>
+	</body>
+	<script type="text/javascript" src="js/jquery-1.11.2.min.js" ></script>
+	<script type="text/javascript" src="js/html2canvas.js" ></script>
+	<script>
+		$(function(){
+			var i=1;
+			$("#btn").click(function(){
+				$(".eid").text(i++);
+					html2canvas($(".cont")[0], {
+					  onrendered: function(canvas) {
+					    document.body.appendChild(canvas);
+					  },
+					  width: 300,
+					  height: 300
+					});
+			});
+
+		})
+		
+	</script>
+</html>

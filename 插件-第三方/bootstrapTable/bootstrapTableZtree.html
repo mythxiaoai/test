@@ -1,0 +1,283 @@
+<html>
+<head>
+  	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0">
+	<meta name="Keywords" content="">
+	<meta name="description" content="">
+	<title>bootstrapTable测试</title>
+	<link rel="stylesheet" href="../../fonts/font-awesome.min.css" />
+	<!--bootstrap-->
+	<link rel="stylesheet" href="../../js/bootstrap/bootstrap.css" />
+	<!--bootstrap过滤样式-->
+	<link rel="stylesheet" href="../../js/bootstrap/bootstrapfiller.css" />
+	<!--sweetalert弹框提示-->
+	<link rel="stylesheet" href="../../js/sweetalert/sweetalert.css" />
+	<!--时间插件-->
+	<link rel="stylesheet" href="../../js/bootstrapDatetimepicker/bootstrap-datetimepicker.css" />
+	<!--bootstrap表格-->
+	<link rel="stylesheet" href="../../js/bootstrapTable/bootstrap-table.css" />
+	<!--基础样式文件-->
+	<link rel="stylesheet" href="../../css/common/common.css" />
+	</head>
+	<body class="bg-gray">
+		<div class="p-md animated fadeInRight">
+			<div class="panel panel-white panel-slide">
+				<div class="panel-heading">
+					<div class="panel-title">
+						<h5>bootstrapTable测试</h5>
+                	</div>
+					<div class="panel-tools">
+                        <a class="collapse-link" data-toggle="collapse"  href="#panelBody">
+                            <i class="fa fa-chevron-up"></i>
+                        </a>
+                        <a class="close-link" href="javascript:;" data-dismiss="panel">
+                            <i class="fa fa-times"></i>
+                        </a>
+                    </div>
+				</div>
+				<div class="panel-body  collapsed in" id="panelBody">
+					<div class="content-box col-sm-12 js_rightContent">
+						<table id="table"></table></div>
+					</div>
+				</div>
+			</div>
+		</div>		
+<!--jQuery-->
+<script type="text/javascript" src="../../js/jquery.js" ></script>
+<!--bootstrap-->
+<script type="text/javascript" src="../../js/bootstrap/bootstrap.js" ></script>
+<!--checkbox/radio修饰-->
+<script type="text/javascript" src="../../js/icheck/icheck.js" ></script>
+<!--sweetalert提示框-->
+<script type="text/javascript" src="../../js/sweetalert/sweetalert-dev.js" ></script>
+<!--tip 错误操作提示框-->
+<script type="text/javascript" src="../../js/tip.js" ></script>
+<script type="text/javascript" src="../../js/util.js" ></script>
+<!--下拉框美化-->
+<script type="text/javascript" src="../../js/chosen/chosen.jquery.js" ></script>
+
+<!--bootstrap表格-->
+<script type="text/javascript" src="../../js/bootstrapTable/bootstrap-table.js" ></script>
+<script type="text/javascript" src="../../js/bootstrapTable/bootstrap-table-zh-CN.js" ></script>
+<!--业务通用js-->
+<script type="text/javascript" src="../../js/common.js" ></script>
+<script>
+		$.fn.bootstrapTable.columnDefaults.formatter=function(value,row,index){
+		if(!row[0]&&!value){
+			return null;
+		}
+		var divDom = $("<div style='white-space: nowrap;display:inline-block;overflow: hidden;word-break: break-all;word-wrap: break-word;text-overflow: ellipsis;font-size: 1.2rem;' title='"+value+"'>"+value+"</div>")
+		var width =divDom.appendTo(document.body).width();
+		if(width>=250){
+			divDom.css("max-width","250px").addClass("js_tooltip");
+		}
+		var html=divDom[0].outerHTML;
+		divDom.remove();
+		return html;
+	}
+	/*
+	 
+	 var zNodes =[
+			{ name:"小名",
+			age:"16",
+			sex:"1",
+				children: [
+					{ name:"父节点11 - 折叠",
+						children: [
+							{ name:"叶子节点111"},
+							{ name:"叶子节点112"},
+							{ name:"叶子节点113"},
+							{ name:"叶子节点114"}
+						]},
+					{ name:"父节点12 - 折叠",
+						children: [
+							{ name:"叶子节点121"},
+							{ name:"叶子节点122"},
+							{ name:"叶子节点123"},
+							{ name:"叶子节点124"}
+						]},
+					{ name:"父节点13 - 没有子节点", isParent:true}
+				]},
+				{ name:"小华",
+			age:"15",
+			sex:"1",
+				children: [
+					{ name:"父节点11 - 折叠",
+						children: [
+							{ name:"叶子节点111"},
+							{ name:"叶子节点112"},
+							{ name:"叶子节点113"},
+							{ name:"叶子节点114"}
+						]},
+					{ name:"父节点12 - 折叠",
+						children: [
+							{ name:"叶子节点121"},
+							{ name:"叶子节点122"},
+							{ name:"叶子节点123"},
+							{ name:"叶子节点124"}
+						]},
+					{ name:"父节点13 - 没有子节点", isParent:true}
+				]},
+		];
+
+	 * 
+	 * */
+	var reseach={
+		init:function(){
+			this.tableinit();
+		},
+		tableinit:function(){
+			xtable.init({
+				id:"#table",
+				toolbar:"#toolbar",
+				data:[{"authId":"c234ba7f58d74c5982e471113200b660","authName":"无优大数据","authCode":"AUTH_3","parentId":null,"isEnabled":0,"authType":0,"icon":"fa fa-pie-chart fa-fw","url":"/views/big_data/**","remark":"","creator":"admin","createDate":1508230748480,"modifier":"admin","modifyDate":1508479201365,"priority":500,"level":1,"parentName":null,"childNode":null},{"authId":"bb3247193c174702828115e89919cdc3","authName":"端到端指标分析","authCode":"AUTH_4","parentId":null,"isEnabled":0,"authType":0,"icon":"fa fa-arrows-h fa-fw","url":"/views/lte/**","remark":"","creator":"admin","createDate":1508230950658,"modifier":"admin","modifyDate":1508479241298,"priority":500,"level":1,"parentName":null,"childNode":null},{"authId":"de77bf75f2274c92a8424ec17e3d1414","authName":"端到端监控","authCode":"AUTH_5","parentId":null,"isEnabled":0,"authType":0,"icon":"fa fa-desktop fa-fw","url":"/views/lte_monitoring/**","remark":"","creator":"admin","createDate":1508231015344,"modifier":"admin","modifyDate":1508479273993,"priority":500,"level":1,"parentName":null,"childNode":null},{"authId":"dbc558623b394f4fa6051bebe2063fdc","authName":"用户感知分析","authCode":"AUTH_6","parentId":null,"isEnabled":0,"authType":0,"icon":"fa fa-heartbeat fa-fw","url":"/views/perception/**","remark":"","creator":"admin","createDate":1508231124346,"modifier":"admin","modifyDate":1508479310361,"priority":500,"level":1,"parentName":null,"childNode":null},{"authId":"52c655af05f24f469a6108c066ebf4e6","authName":"用户投诉分析","authCode":"AUTH_7","parentId":null,"isEnabled":0,"authType":0,"icon":"fa fa-stethoscope fa-fw","url":"/views/complaint/**","remark":"","creator":"admin","createDate":1508231194516,"modifier":"admin","modifyDate":1508479331987,"priority":500,"level":1,"parentName":null,"childNode":null},{"authId":"5af5afe65404427bb4a28ee4394d51f5","authName":"用户画像分析","authCode":"AUTH_8","parentId":null,"isEnabled":0,"authType":0,"icon":"fa fa-user-md fa-fw","url":"/views/px/**","remark":"","creator":"admin","createDate":1508231377441,"modifier":"admin","modifyDate":1508479354294,"priority":500,"level":1,"parentName":null,"childNode":null},{"authId":"32d8d7802c6142898837f8258c295827","authName":"系统管理","authCode":"AUTH_9","parentId":null,"isEnabled":0,"authType":0,"icon":"fa fa-gears fa-fw","url":"/views/system/**","remark":"","creator":"admin","createDate":1508231904556,"modifier":"admin","modifyDate":1508479380637,"priority":500,"level":1,"parentName":null,"childNode":null},{"authId":"7a0f2b01d3204f4c8fb8a131657c58e9","authName":"无线地理化概览","authCode":"AUTH_10","parentId":"c234ba7f58d74c5982e471113200b660","isEnabled":0,"authType":1,"icon":"","url":"/views/big_data/user_cover/heatmap.jsp","remark":"","creator":"admin","createDate":1508232201103,"modifier":"admin","modifyDate":1508232848909,"priority":1,"level":2,"parentName":null,"childNode":null},{"authId":"82d37e17784949daa92617e2810a4a26","authName":"用户/权限管理","authCode":"AUTH_11","parentId":"32d8d7802c6142898837f8258c295827","isEnabled":0,"authType":0,"icon":"","url":"/views/system/user_authority_mang/**","remark":"","creator":"admin","createDate":1508232346366,"modifier":null,"modifyDate":null,"priority":500,"level":2,"parentName":null,"childNode":null},{"authId":"5cd9a9a9c57647bf9c7e58503dd5a3c8","authName":"sql查询","authCode":"AUTH_12","parentId":"32d8d7802c6142898837f8258c295827","isEnabled":0,"authType":1,"icon":"","url":"/views/system/system_configuration_management/sql-query.jsp","remark":"","creator":"admin","createDate":1508232415791,"modifier":"admin","modifyDate":1508232868315,"priority":1,"level":2,"parentName":null,"childNode":null},{"authId":"c90df5f9f9d043a0b165c8b01889dd73","authName":"系统数据配置管理","authCode":"AUTH_13","parentId":"32d8d7802c6142898837f8258c295827","isEnabled":0,"authType":1,"icon":"","url":"/views/system/data_conf_mgr/data_conf_model.jsp","remark":"","creator":"admin","createDate":1508232448801,"modifier":"admin","modifyDate":1508232885926,"priority":1,"level":2,"parentName":null,"childNode":null},{"authId":"f42b21bfe87a4c3db964ada19721b3fe","authName":"数据库集群监控","authCode":"AUTH_14","parentId":"32d8d7802c6142898837f8258c295827","isEnabled":0,"authType":0,"icon":"","url":"/views/system/sys_datasource_mgr/**","remark":"","creator":"admin","createDate":1508232772113,"modifier":null,"modifyDate":null,"priority":500,"level":2,"parentName":null,"childNode":null},{"authId":"a6a684efc4c04e3ab591528e1318c902","authName":"日志管理","authCode":"AUTH_15","parentId":"32d8d7802c6142898837f8258c295827","isEnabled":0,"authType":1,"icon":"","url":"/views/system/log/sysLogManage.jsp","remark":"","creator":"admin","createDate":1508232831276,"modifier":"admin","modifyDate":1510215318194,"priority":1,"level":2,"parentName":null,"childNode":null},{"authId":"c6bc35099f174e798ed83dec82006f5e","authName":"用户管理","authCode":"AUTH_16","parentId":"82d37e17784949daa92617e2810a4a26","isEnabled":0,"authType":1,"icon":"","url":"/views/system/user_authority_mang/user/userManage.jsp","remark":"","creator":"admin","createDate":1508232972526,"modifier":null,"modifyDate":null,"priority":1,"level":3,"parentName":null,"childNode":null},{"authId":"ab695f23a1464347b2ec1176f7bfc94b","authName":"角色管理","authCode":"AUTH_17","parentId":"82d37e17784949daa92617e2810a4a26","isEnabled":0,"authType":1,"icon":"","url":"/views/system/user_authority_mang/role/result.jsp","remark":"","creator":"admin","createDate":1508233031964,"modifier":null,"modifyDate":null,"priority":1,"level":3,"parentName":null,"childNode":null},{"authId":"789e4c3064104a67824fdb45d9a5460d","authName":"权限管理","authCode":"AUTH_18","parentId":"82d37e17784949daa92617e2810a4a26","isEnabled":0,"authType":1,"icon":"","url":"/views/system/user_authority_mang/authority/authority.jsp","remark":"","creator":"admin","createDate":1508233071395,"modifier":null,"modifyDate":null,"priority":1,"level":3,"parentName":null,"childNode":null},{"authId":"004e238065d64c4e81573b80bfa53c29","authName":"用户偏好图谱","authCode":"AUTH_19","parentId":"5af5afe65404427bb4a28ee4394d51f5","isEnabled":0,"authType":1,"icon":"","url":"/doing.html","remark":"","creator":"admin","createDate":1508233486408,"modifier":null,"modifyDate":null,"priority":1,"level":2,"parentName":null,"childNode":null},{"authId":"830a0f2e48ed489f8882fb89ab365229","authName":"精准用户分析","authCode":"AUTH_20","parentId":"5af5afe65404427bb4a28ee4394d51f5","isEnabled":0,"authType":0,"icon":"","url":"/views/px/**","remark":"","creator":"admin","createDate":1508233566283,"modifier":null,"modifyDate":null,"priority":500,"level":2,"parentName":null,"childNode":null},{"authId":"8e5e926db20c48c287efff480d267f6d","authName":"吃","authCode":"AUTH_21","parentId":"830a0f2e48ed489f8882fb89ab365229","isEnabled":0,"authType":1,"icon":"","url":"/doing.html","remark":"","creator":"admin","createDate":1508233618943,"modifier":null,"modifyDate":null,"priority":1,"level":3,"parentName":null,"childNode":null},{"authId":"f08325ba6bff477699c325cdbe1b9cce","authName":"穿","authCode":"AUTH_22","parentId":"830a0f2e48ed489f8882fb89ab365229","isEnabled":0,"authType":1,"icon":"","url":"/doing.html","remark":"","creator":"admin","createDate":1508233657189,"modifier":null,"modifyDate":null,"priority":1,"level":3,"parentName":null,"childNode":null},{"authId":"1ffe5a6a55224a11a1d50c09f4a68e21","authName":"乐","authCode":"AUTH_23","parentId":"830a0f2e48ed489f8882fb89ab365229","isEnabled":0,"authType":1,"icon":"","url":"/doing.html","remark":"","creator":"admin","createDate":1508233685105,"modifier":null,"modifyDate":null,"priority":1,"level":3,"parentName":null,"childNode":null},{"authId":"9f9a19745a6f4bef8ddeffa1548e634b","authName":"行","authCode":"AUTH_24","parentId":"830a0f2e48ed489f8882fb89ab365229","isEnabled":0,"authType":1,"icon":"","url":"/doing.html","remark":"","creator":"admin","createDate":1508233705260,"modifier":null,"modifyDate":null,"priority":1,"level":3,"parentName":null,"childNode":null},{"authId":"e9d092696eb74698bbd638d756c04dd2","authName":"一键投诉分析","authCode":"AUTH_25","parentId":"52c655af05f24f469a6108c066ebf4e6","isEnabled":0,"authType":1,"icon":"","url":"/doing.html","remark":"","creator":"admin","createDate":1508233763064,"modifier":null,"modifyDate":null,"priority":1,"level":2,"parentName":null,"childNode":null},{"authId":"920961af80994b239016756b604c0d03","authName":"用户综合话单","authCode":"AUTH_26","parentId":"52c655af05f24f469a6108c066ebf4e6","isEnabled":0,"authType":1,"icon":"","url":"/doing.html","remark":"","creator":"admin","createDate":1508233798155,"modifier":null,"modifyDate":null,"priority":1,"level":2,"parentName":null,"childNode":null},{"authId":"e7075689aa0a49d69ece47c2fe5f3915","authName":"端到端用户感知评分","authCode":"AUTH_27","parentId":"dbc558623b394f4fa6051bebe2063fdc","isEnabled":0,"authType":1,"icon":"","url":"/doing.html","remark":"","creator":"admin","createDate":1508233843633,"modifier":null,"modifyDate":null,"priority":1,"level":2,"parentName":null,"childNode":null},{"authId":"52bf84a51dac41499a3f23c3a6cfafa7","authName":"VIP用户感知监控","authCode":"AUTH_28","parentId":"dbc558623b394f4fa6051bebe2063fdc","isEnabled":0,"authType":1,"icon":"","url":"/doing.html","remark":"","creator":"admin","createDate":1508233883510,"modifier":null,"modifyDate":null,"priority":1,"level":2,"parentName":null,"childNode":null},{"authId":"7c25c4baec344aee9d50bd6c9c543ed8","authName":"NPS满意度关联分析","authCode":"AUTH_29","parentId":"dbc558623b394f4fa6051bebe2063fdc","isEnabled":0,"authType":1,"icon":"","url":"/doing.html","remark":"","creator":"admin","createDate":1508233921031,"modifier":null,"modifyDate":null,"priority":1,"level":2,"parentName":null,"childNode":null},{"authId":"d44c396227cb43ba9037a60937aadf05","authName":"APP感知评分","authCode":"AUTH_30","parentId":"dbc558623b394f4fa6051bebe2063fdc","isEnabled":0,"authType":1,"icon":"","url":"/doing.html","remark":"","creator":"admin","createDate":1508233945651,"modifier":null,"modifyDate":null,"priority":1,"level":2,"parentName":null,"childNode":null},{"authId":"be58397a8d334ad7a8a7e5879d4b4362","authName":"端到端告警监控","authCode":"AUTH_31","parentId":"de77bf75f2274c92a8424ec17e3d1414","isEnabled":0,"authType":0,"icon":"","url":"/views/lte_monitoring/lte_alarm/**","remark":"","creator":"admin","createDate":1508234099281,"modifier":null,"modifyDate":null,"priority":500,"level":2,"parentName":null,"childNode":null},{"authId":"dd3c36624211404ab544494549f424bc","authName":"重点区域监控","authCode":"AUTH_32","parentId":"de77bf75f2274c92a8424ec17e3d1414","isEnabled":0,"authType":1,"icon":"","url":"/doing.html","remark":"","creator":"admin","createDate":1508234146229,"modifier":null,"modifyDate":null,"priority":1,"level":2,"parentName":null,"childNode":null},{"authId":"14bbb69d6f5740ac9915c9154becfc8f","authName":"自助报表","authCode":"AUTH_33","parentId":"de77bf75f2274c92a8424ec17e3d1414","isEnabled":0,"authType":1,"icon":"","url":"/views/lte_monitoring/suit_screen/suitScreen.jsp","remark":"","creator":"admin","createDate":1508234217444,"modifier":null,"modifyDate":null,"priority":1,"level":2,"parentName":null,"childNode":null},{"authId":"ba46b71605074a98aca2942c5d7199a0","authName":"告警管理","authCode":"AUTH_34","parentId":"be58397a8d334ad7a8a7e5879d4b4362","isEnabled":0,"authType":1,"icon":"","url":"/views/lte_monitoring/lte_alarm/alarm_manage/alarmManage.jsp","remark":"","creator":"admin","createDate":1508234561901,"modifier":null,"modifyDate":null,"priority":1,"level":3,"parentName":null,"childNode":null},{"authId":"277cfd726e0e4c5f9a144b9658bc3ed2","authName":"告警呈现","authCode":"AUTH_35","parentId":"be58397a8d334ad7a8a7e5879d4b4362","isEnabled":0,"authType":1,"icon":"","url":"/views/lte_monitoring/lte_alarm/alarm_show/alarmShow.jsp","remark":"","creator":"admin","createDate":1508234609194,"modifier":null,"modifyDate":null,"priority":1,"level":3,"parentName":null,"childNode":null},{"authId":"4e9c484bbdef497bb79cff3e787881db","authName":"指标查询","authCode":"AUTH_36","parentId":"bb3247193c174702828115e89919cdc3","isEnabled":0,"authType":0,"icon":"","url":"/views/lte/query_interface/**","remark":"","creator":"admin","createDate":1508234734393,"modifier":"admin","modifyDate":1508234887417,"priority":500,"level":2,"parentName":null,"childNode":null},{"authId":"bb7cd89121ff4abbb76fabce9364e1a0","authName":"端到端指标分析","authCode":"AUTH_37","parentId":"bb3247193c174702828115e89919cdc3","isEnabled":0,"authType":0,"icon":"","url":"/views/lte/endToEnd/**","remark":"","creator":"admin","createDate":1508235035683,"modifier":null,"modifyDate":null,"priority":500,"level":2,"parentName":null,"childNode":null},{"authId":"3183d6b2249a442abd2f72784c25ad18","authName":"专项指标分析","authCode":"AUTH_38","parentId":"bb3247193c174702828115e89919cdc3","isEnabled":0,"authType":0,"icon":"","url":"/views/lte/special_index_analysis/**","remark":"","creator":"admin","createDate":1508235099629,"modifier":null,"modifyDate":null,"priority":500,"level":2,"parentName":null,"childNode":null},{"authId":"a825967f49ab4e39afc9a85b5d56f226","authName":"互联网内容源分析","authCode":"AUTH_39","parentId":"bb3247193c174702828115e89919cdc3","isEnabled":0,"authType":0,"icon":"","url":"/views/lte/web_analysis/**","remark":"","creator":"admin","createDate":1508235168394,"modifier":null,"modifyDate":null,"priority":500,"level":2,"parentName":null,"childNode":null},{"authId":"8b790b257c904ddeb13be4d860f16f88","authName":"指标查询","authCode":"AUTH_40","parentId":"4e9c484bbdef497bb79cff3e787881db","isEnabled":0,"authType":1,"icon":"","url":"/views/lte/query_interface/query_interFace.jsp","remark":"","creator":"admin","createDate":1508235241270,"modifier":null,"modifyDate":null,"priority":1,"level":3,"parentName":null,"childNode":null},{"authId":"4ce3a526dbb94a62bc277aeb0fe75a23","authName":"指标管理","authCode":"AUTH_41","parentId":"4e9c484bbdef497bb79cff3e787881db","isEnabled":0,"authType":1,"icon":"","url":"/views/lte/query_interface/ExpressionRight.jsp","remark":"","creator":"admin","createDate":1508235276160,"modifier":null,"modifyDate":null,"priority":1,"level":3,"parentName":null,"childNode":null},{"authId":"d3650f91065340498fbe353a412f3599","authName":"Volte指标分析","authCode":"AUTH_42","parentId":"bb7cd89121ff4abbb76fabce9364e1a0","isEnabled":0,"authType":1,"icon":"","url":"/doing.html","remark":"","creator":"admin","createDate":1508235312774,"modifier":null,"modifyDate":null,"priority":1,"level":3,"parentName":null,"childNode":null},{"authId":"e3dbdcbbd0c14663870eee979c586a3a","authName":"网元指标分析","authCode":"AUTH_43","parentId":"bb7cd89121ff4abbb76fabce9364e1a0","isEnabled":0,"authType":1,"icon":"","url":"/views/lte/endToEnd/netIndicators.jsp","remark":"","creator":"admin","createDate":1508235352171,"modifier":null,"modifyDate":null,"priority":1,"level":3,"parentName":null,"childNode":null},{"authId":"f25a034a46b741f881b5606dea51c9be","authName":"考核指标分析","authCode":"AUTH_44","parentId":"3183d6b2249a442abd2f72784c25ad18","isEnabled":0,"authType":1,"icon":"","url":"/views/lte/special_index_analysis/specialindex.jsp","remark":"","creator":"admin","createDate":1508235397224,"modifier":null,"modifyDate":null,"priority":1,"level":3,"parentName":null,"childNode":null},{"authId":"1743da9d396d45bbba0121275f9dbb0c","authName":"下载速率","authCode":"AUTH_45","parentId":"3183d6b2249a442abd2f72784c25ad18","isEnabled":0,"authType":1,"icon":"","url":"/doing.html","remark":"","creator":"admin","createDate":1508235450971,"modifier":null,"modifyDate":null,"priority":1,"level":3,"parentName":null,"childNode":null},{"authId":"d279ba62b0b3447c95ae268565ac6016","authName":"互联网资源概览","authCode":"AUTH_46","parentId":"a825967f49ab4e39afc9a85b5d56f226","isEnabled":0,"authType":1,"icon":"","url":"/views/lte/web_analysis/home/internetdataanalysis.jsp","remark":"","creator":"admin","createDate":1508235514458,"modifier":null,"modifyDate":null,"priority":1,"level":3,"parentName":null,"childNode":null},{"authId":"9aa6dc9405424c5d8f45f8ef30780e63","authName":"CP质量分析","authCode":"AUTH_47","parentId":"a825967f49ab4e39afc9a85b5d56f226","isEnabled":0,"authType":1,"icon":"","url":"/views/lte/web_analysis/cp_quality_analysis/cpQualityAnalysis.jsp","remark":"","creator":"admin","createDate":1508235556805,"modifier":null,"modifyDate":null,"priority":1,"level":3,"parentName":null,"childNode":null},{"authId":"212357a2a05b4ea8be4be8e25fd50faf","authName":"本网资源运营","authCode":"AUTH_48","parentId":"a825967f49ab4e39afc9a85b5d56f226","isEnabled":0,"authType":1,"icon":"","url":"/views/lte/web_analysis/localSource/localSource.jsp","remark":"","creator":"admin","createDate":1508235593508,"modifier":null,"modifyDate":null,"priority":1,"level":3,"parentName":null,"childNode":null},{"authId":"9ff2afe602034dd58a7ad3d448acaec0","authName":"模拟路测","authCode":"AUTH_49","parentId":"c234ba7f58d74c5982e471113200b660","isEnabled":0,"authType":0,"icon":"","url":"/views/big_data/simulate_road_test/**","remark":"","creator":"admin","createDate":1508235685997,"modifier":null,"modifyDate":null,"priority":500,"level":2,"parentName":null,"childNode":null},{"authId":"c3ac11c7d1b940f8a3597608b7685928","authName":"网络覆盖分析","authCode":"AUTH_50","parentId":"c234ba7f58d74c5982e471113200b660","isEnabled":0,"authType":0,"icon":"","url":"/views/big_data/net_coverage//**","remark":"","creator":"admin","createDate":1508235732886,"modifier":null,"modifyDate":null,"priority":500,"level":2,"parentName":null,"childNode":null},{"authId":"84c18d42432e4e4d928f10a359d2ba49","authName":"用户轨迹跟踪","authCode":"AUTH_51","parentId":"c234ba7f58d74c5982e471113200b660","isEnabled":0,"authType":1,"icon":"","url":"/views/big_data/trajectory/trajectory.jsp","remark":"","creator":"admin","createDate":1508235768730,"modifier":null,"modifyDate":null,"priority":1,"level":2,"parentName":null,"childNode":null},{"authId":"2c24e7e6dccc4888bf5970abca704939","authName":"网络价值分析","authCode":"AUTH_52","parentId":"c234ba7f58d74c5982e471113200b660","isEnabled":0,"authType":0,"icon":"","url":"/views/big_data/value/**","remark":"","creator":"admin","createDate":1508235827213,"modifier":null,"modifyDate":null,"priority":500,"level":2,"parentName":null,"childNode":null},{"authId":"cf2fcc035fc1493a823037cdff64e05d","authName":"站点价值分析","authCode":"AUTH_53","parentId":"2c24e7e6dccc4888bf5970abca704939","isEnabled":0,"authType":1,"icon":"","url":"/doing.html","remark":"","creator":"admin","createDate":1508236038254,"modifier":null,"modifyDate":null,"priority":1,"level":3,"parentName":null,"childNode":null},{"authId":"e53b5bbf259b4fdc8881ab4767380c13","authName":"区域价值分析","authCode":"AUTH_54","parentId":"2c24e7e6dccc4888bf5970abca704939","isEnabled":0,"authType":1,"icon":"","url":"/doing","remark":"","creator":"admin","createDate":1508236090202,"modifier":null,"modifyDate":null,"priority":1,"level":3,"parentName":null,"childNode":null},{"authId":"c342fdd771c6490cb9a8fa8b9c9c34dd","authName":"用户价值分析","authCode":"AUTH_55","parentId":"2c24e7e6dccc4888bf5970abca704939","isEnabled":0,"authType":1,"icon":"","url":"/doing.html","remark":"","creator":"admin","createDate":1508236123437,"modifier":null,"modifyDate":null,"priority":1,"level":3,"parentName":null,"childNode":null},{"authId":"f88736225bc64398b7f0b50853607675","authName":"网络覆盖质量","authCode":"AUTH_56","parentId":"c3ac11c7d1b940f8a3597608b7685928","isEnabled":0,"authType":1,"icon":"","url":"/views/big_data/net_coverage/net_coverage.jsp","remark":"","creator":"admin","createDate":1508236171216,"modifier":null,"modifyDate":null,"priority":1,"level":3,"parentName":null,"childNode":null},{"authId":"546e1cb93d4546dfa5483b2a30ab9806","authName":"天馈调整分析","authCode":"AUTH_57","parentId":"c3ac11c7d1b940f8a3597608b7685928","isEnabled":0,"authType":1,"icon":"","url":"/doing.html","remark":"","creator":"admin","createDate":1508236200318,"modifier":null,"modifyDate":null,"priority":1,"level":3,"parentName":null,"childNode":null},{"authId":"d03a5ec44a9b4a8e8ad8db33d39371b1","authName":"道路模拟","authCode":"AUTH_58","parentId":"9ff2afe602034dd58a7ad3d448acaec0","isEnabled":0,"authType":1,"icon":"","url":"/views/big_data/simulate_road_test/newRoadAnalysis.jsp","remark":"","creator":"admin","createDate":1508236254178,"modifier":null,"modifyDate":null,"priority":1,"level":3,"parentName":null,"childNode":null},{"authId":"842363436ac847c3b750cf0456f3bc76","authName":"高铁模拟","authCode":"AUTH_59","parentId":"9ff2afe602034dd58a7ad3d448acaec0","isEnabled":0,"authType":1,"icon":"","url":"/doing.html","remark":"","creator":"admin","createDate":1508236281963,"modifier":null,"modifyDate":null,"priority":1,"level":3,"parentName":null,"childNode":null},{"authId":"a55ad1c5822b4466bdc648fce5119ca9","authName":"地铁模拟","authCode":"AUTH_60","parentId":"9ff2afe602034dd58a7ad3d448acaec0","isEnabled":0,"authType":1,"icon":"","url":"/doing.html","remark":"","creator":"admin","createDate":1508236309262,"modifier":null,"modifyDate":null,"priority":1,"level":3,"parentName":null,"childNode":null},{"authId":"6f5682d8e8af4b4dbb23c3ae23ed42d8","authName":"高速模拟","authCode":"AUTH_61","parentId":"9ff2afe602034dd58a7ad3d448acaec0","isEnabled":0,"authType":1,"icon":"","url":"/doing.html","remark":"","creator":"admin","createDate":1508236332911,"modifier":null,"modifyDate":null,"priority":1,"level":3,"parentName":null,"childNode":null},{"authId":"528ee033ab0c4075bc10cde469dd51e7","authName":"数据源配置","authCode":"AUTH_62","parentId":"f42b21bfe87a4c3db964ada19721b3fe","isEnabled":0,"authType":1,"icon":"","url":"/views/system/sys_datasource_mgr/data-source-view.jsp","remark":"","creator":"admin","createDate":1508236584162,"modifier":null,"modifyDate":null,"priority":1,"level":3,"parentName":null,"childNode":null},{"authId":"387c93b0aeec4b739a15f58d7c15d2da","authName":"性能监控","authCode":"AUTH_63","parentId":"f42b21bfe87a4c3db964ada19721b3fe","isEnabled":0,"authType":1,"icon":"","url":"/views/system/cluster/property/propertyMonitor.jsp","remark":"","creator":"admin","createDate":1508236611696,"modifier":"delights","modifyDate":1511321996910,"priority":1,"level":3,"parentName":null,"childNode":null}],
+				toolbarAlign:"right",
+				columns:[{
+					checkbox: true
+					}, {
+						field: 'authName',
+						title:'名称',
+						formatter:function(value,row,index){
+							if(row.children&&row.open){
+								return '<i class="glyphicon glyphicon-chevron-right"></i> '+value;
+							}else if(row.children&&!row.open){
+								return '<i class="glyphicon glyphicon-chevron-down"></i> '+value;
+							}
+							return value;
+						}
+					}, {
+						field: 'authId',
+						title:'年龄'
+					}, {
+						field: 'parentId',
+						title:'性别'
+					}],
+				on:function(data){
+					let len1 = data.length,i=0,j=0;
+					for(i = 0;i<len1;i++){
+						if(!data[i].children){
+							continue;
+						}
+						let len2 =data[i].children.length;
+						for(j = 0;j<len2;j++){
+							$("#table").bootstrapTable('insertRow', {index:i+j, row: data[i].children[j]});
+						}
+					}
+					/*addrows(data,0);
+					console.log(data)
+					function addrows(data,index){
+						$.each(data, function(value,index2) {
+							if(!value.children){
+								return 1
+							}
+							$table.bootstrapTable('insertRow', {index:index+index2, row: value});
+							return addrows(value,index+index2)
+						});
+						
+					}*/
+					
+				}
+			});
+		}
+	};
+	reseach.init();
+	let ops  ={
+		id:'#table',
+		icon:[`<i class="glyphicon glyphicon-chevron-right"></i>`,`<i class="glyphicon glyphicon-chevron-right"></i>`]
+	}
+	
+	var data =$(ops.id).bootstrapTable('getData').splice(0);
+	console.log(data)
+	$(ops.id).bootstrapTable('removeAll');
+	let fmtdata = data.splice(0);
+	let dataP = [];
+	for (let i=0;i<fmtdata.length;i++){
+		if(fmtdata[i].parentId==null){
+			dataP.push(fmtdata[i]);
+		}
+	}
+	fmtdata =fmtdata.filter(function(value,index,all){
+		let mark =true;
+		for (var index in dataP) {
+			if(dataP[index]==value){
+				mark=false;
+				break;
+			}
+		}
+		return mark;
+	});
+
+	let instrIndex = 1;
+	function addrows(data,leven){
+		let i=0;
+		let len1 = data.length;
+		for(;i<len1;i++){
+			let html ="";
+			let k=0;
+			for(;k<leven;k++){
+				html+="&nbsp;&nbsp;&nbsp;&nbsp;";
+			}
+			data[i].authName=html+"|--"+data[i].authName;
+			$("#table").bootstrapTable('insertRow', {index:instrIndex++, row: data[i]});
+			let j =0;
+			let len2 =fmtdata.length;
+			let children = [];
+			for(;j<len2;j++){
+				if(data[i].authId==fmtdata[j].parentId){
+					children.push(fmtdata[j]);
+				}
+			}
+			if(children.length>0){
+				fmtdata =fmtdata.filter(function(value,index,all){
+					let mark =true;
+					for (var index in children) {
+						if(children[index]==value){
+							mark=false;
+							break;
+						}
+					}
+					return mark;
+				});
+				addrows(children,(leven+1));
+			}else{
+				
+			}
+		}
+	}
+	addrows(dataP,0);
+	
+	
+/*	var arrnew =[]
+	function addrows(children,leven+1){
+		var len = children.length;
+		var i =0;
+		for(;i<len1;i++){
+			if(children[i].parentId==null){
+				
+			}
+		}
+	}*/
+	/*
+	 	"authId":"bb3247193c174702828115e89919cdc3",
+		"authName":"端到端指标分析",
+		"authCode":"AUTH_4",
+		"parentId":null,
+		"isEnabled":0,
+		"authType":0,
+		"icon":"fa fa-arrows-h fa-fw",
+		"url":"/views/lte/**",
+		"remark":"",
+		"creator":"admin",
+		"createDate":1508230950658,
+		"modifier":"admin",
+		"modifyDate":1508479241298,
+		"priority":500,
+		"level":1,
+		"parentName":null,
+		"childNode":null
+	 * 
+	 * */
+</script>
+	</body>
+</html>

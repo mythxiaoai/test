@@ -1,0 +1,134 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+        <style type="text/css">
+            body,
+            html,
+            #allmap {
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+                margin: 0;
+                font-family: "微软雅黑";
+            }
+        </style>
+        <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=koGxek8pG1gFQiBDTUT7WShyKW7zpVXo"></script>
+        <title>设置驾车路线途经点</title>
+    </head>
+    <body>
+        <div id="allmap"></div>
+    </body>
+</html>
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+<script src="./transformationLonLat.js"></script>
+<script src="./drawLine.v2.js"></script>
+<script type="text/javascript">
+    (function() {
+
+        // 百度地图API功能
+        var map = new BMap.Map("allmap");
+        map.centerAndZoom(new BMap.Point(117.270591, 23.812999), 11);
+        map.enableScrollWheelZoom(true);
+
+        let arr = [{
+            lng: 116.301934,
+            lat: 39.977552,
+            name: "队伍"
+        }, {
+            lng: 116.365942,
+            lat: 39.996165,
+            name: "站点1"
+        }, {
+            lng: 116.408757,
+            lat: 39.995704,
+            name: "站点2"
+        }, {
+            lng: 116.508328,
+            lat: 39.919141,
+            name: "站点3"
+        }]
+
+        /**
+         * @param {Point} s 起点
+         * @param {Point} e 终点
+         * @param {Point} arr 途径点
+         * 
+         */
+        let ran = ["#c00000", "#ff0000", "#ffc000", "#ffff00", "#92d050",
+            "#00b050", "#00b0f0", "#0070c0", "#002060", "#7030a0"
+        ];
+        
+        (async () => {
+            try {
+                let line = await $.ajax("./line.js")
+                line = eval(line);
+                line = line[0].records;
+                let lines = {};
+                //转换
+                for (let item of line) {
+                    let temp = coordtransform.wgs84togcj02(item.team_lon, item.team_lat);
+                    temp = coordtransform.gcj02tobd09(temp[0], temp[1]);
+                    item.team_lon = temp[0];
+                    item.team_lat = temp[1];
+
+                    let temp2 = coordtransform.wgs84togcj02(item.longitude, item.latitude);
+                    temp2 = coordtransform.gcj02tobd09(temp2[0], temp2[1]);
+                    item.longitude = temp2[0];
+                    item.latitude = temp2[1];
+
+                    if (!lines[item.security_team]) {
+                        lines[item.security_team] = []
+                    }
+
+                    lines[item.security_team].push(item);
+                }
+                //排序
+                for (let key in lines) {
+                    lines[key] = lines[key].sort((a, b) => a["repair_order"] - b["repair_order"]);
+                }
+                let temps = Object.keys(lines);
+                console.log(lines)
+
+                let arrs = [];
+                //分化
+                for (let key in lines) {
+                    let temp = [];
+                    for (let i = 0, len = lines[key].length; i < len; i++) {
+                        let json = lines[key][i];
+                        json.lng = json.longitude;
+                        json.lat = json.latitude;
+                        if (i == 0) {
+                            temp.push({ ...json,
+                                ...{
+                                    lon: json.team_lon,
+                                    lat: json.team_lat,
+                                }
+                            });
+                        }
+                        temp.push({ ...json
+                        });
+
+                        if (i == (len - 1)) {
+                            arrs.push(temp);
+                        }
+                    }
+                }
+                arrs = [arrs[1]];
+                for (let a of arrs) {
+                    console.log(a)
+                    let lineObj = new drawLine({
+                        arr: a,
+                        map: map,
+                        color: ran[0],
+                    });
+                }
+
+            } catch (e) {
+                console.log(e)
+            }
+        })()
+
+
+    })()
+</script>

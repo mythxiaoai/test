@@ -1,0 +1,136 @@
+<!doctype html>
+<html>
+	<head>
+	    <!--声明当前页面的编码集：中文编码（gbk/gb2312）,国际编码（utf-8）-->
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+		<!--页面三要素-->
+		<title>字符统计</title><!--小于等于31 大小写不区分-->
+		<meta name="Keywords" content="关键词,关键词,关键词"><!--<=76个字-->
+		<meta name="description" content=""><!--<=80个字-->
+		<!--js/css-->
+		<style type="text/css">
+		@charset "UTF-8";
+		* {word-wrap: break-word;;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;}
+		html {-webkit-text-size-adjust: none;overflow-x:hidden}
+		body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td,span{padding:0;margin:0;}
+		body{font:normal 0.75em/1.5em "微软雅黑","冬青黑体简体中文 w3","宋体"; }
+		fieldset,img,html,body,iframe{border:0;}
+		/** 重置表格元素 **/
+		table{border-collapse:collapse;border-spacing:0;}
+		ol,ul{list-style:none;}
+		address,caption,cite,code,dfn,em,strong,th,var{font-weight:normal;font-style:normal;}
+		caption,th{text-align:left;}
+		em,i,small,caption,th{font-weight:normal;font-style:normal;font-size:100%;}
+		h1,h2,h3,h4,h5,h6,em,strong,b{font-weight:400;font-size:100%;}
+		q:before,q:after{content:'';}
+		.clearfix{*zoom:1;}
+		.clearfix:after{content:"."; display:block;clear:both;visibility:hidden;line-height:0;height:0;}
+		a {color: #9D9C9C;text-decoration: none;}
+		a img {border: none;border:0;}
+		a,button{ outline:none; border:0;}
+		input,select{border:1px solid #ccc;}
+		button::-moz-focus-inner{border:0;padding:0;margin:0;}
+		textarea,input,button,select{outline:0;font-size:inherit;line-height:inherit;color:inherit;font-family:inherit;}
+		textarea{overflow:auto;resize:none;}
+		.hide,.none{display: none}
+		.hidden{visibility: hidden;}
+		.show,.block{display: block;}
+		img{ vertical-align:middle;}
+		input:disabled,select:disabled,textarea:disabled{background:#ccc;}
+		.fl{float: left;}
+		.fr{float: right;}
+		.red{color:red;}
+		.green{color:green;}
+		*{padding:0;margin:0;}
+		body{background:#E8DAD1;color:#999;}
+		#statis{width:960px;height:530px;margin:100px auto;border:1px solid #ccc;padding:50px;position:relative;}
+		#statis .title{position:absolute;height:24px;width:100px;vertical-align:top;background:#E8DAD1;font-size:24px;line-height:24px;top:-14px;left:24px;}
+		#statis .searchbox{width:320px;height:50px;margin:0 auto 20px;position:relative;}
+		#statis .searchbox .search{width:190px;height:50px;margin:0 auto;line-height:50px;padding:0 15px 0;border-radius:3px 0 0 3px;border:none;outline:none;}
+		#statis .searchbox .searchShow{position:absolute;width:100px;line-height: 50px;height:50px;vertical-align:top;background:#fff;right:1px;top:0;bottom:0;margin:auto 0;text-align:center;border-radius:0 3px 3px 0;}/*right:1px;IE有1PX间隔*/
+		#statis .input{width:680px;height:420px;background:#fff;border-radius:1px;text-indent:12px;overflow:auto;word-break:break-all;word-wrap:break-word;margin-right:15px;color:#333;font-size:14px;padding:20px;line-height:28px;}
+		#statis .input .on{background:#ff0};
+		#statis .show{width:225px;height:460px;background:#E3D1E8}/*960-720+15=225*/
+		#statis .show li{border-radius:5px;padding-left:10px;height:50px;width:205px;line-height:50px;font-size:14px;font-weight:bold;margin-bottom:15px;background:#FFF9E5;position:relative;}
+		#statis .show li b{font-size:24px;background:#FFF9E5;position:absolute;width:100px;right:0;left:100px;margin:0 auto;color: transparent;text-shadow:0 0 6px #F96, -1px -1px  #FFF, 1px -1px  #444;}
+		</style>
+	</head>  
+	<body>
+		<!--statis start-->
+		<div id="statis">
+			<div class="title">文字统计</div>
+			<div class="searchbox">
+				<input class="search"  placeholder="请输入想要匹配的字符"></input>
+				<div class="searchShow"></div>
+			</div>
+			<div class="input fl" contenteditable="true" onkeyup="statis(this)">
+			它最初由Netscape的Brendan Eich设计。JavaScript是甲骨文公司的注册商标。Ecma国际以JavaScript为基础制定了ECMAScript标准。JavaScript也可以用于其他场合，如服务器端编程。完整的JavaScript实现包含三个部分：ECMAScript，文档对象模型，浏览器对象模型。[7] 
+Netscape在最初将其脚本语言命名为LiveScript，后来Netscape在与Sun合作之后将其改名为JavaScript。JavaScript最初受Java启发而开始设计的，目的之一就是“看上去像Java”，因此语法上有类似之处，一些名称和命名规范也借自Java。但JavaScript的主要设计原则源自Self和Scheme。JavaScript与Java名称上的近似，是当时Netscape为了营销考虑与Sun微系统达成协议的结果。为了取得技术优势，微软推出了JScript来迎战JavaScript的脚本语言。为了互用性，Ecma国际（前身为欧洲计算机制造商协会）创建了ECMA-262标准（ECMAScript）。两者都属于ECMAScript的实现。尽管JavaScript作为给非程序人员的脚本语言，而非作为给程序人员的脚本语言来推广和宣传，但是JavaScript具有非常丰富的特性。[8] 
+发展初期，JavaScript的标准并未确定，同期有Netscape的JavaScript，微软的JScript和CEnvi的ScriptEase三足鼎立。1997年，在ECMA（欧洲计算机制造商协会）的协调下，由Netscape、Sun、微软、Borland组成的工作组确定统一标准：ECMA-262。
+			</div>
+			<div class="show fl">
+				<ul>
+					<li><span class="item">总个数</span><b class="allCount">0</b></li>
+					<li><span class="item">汉子数</span><b class="cnCount">0</b></li>
+					<li><span class="item">数字数</span><b class="numCount">0</b></li>
+					<li><span class="item">字母数</span><b class="enCount">0</b></li>
+					<li><span class="item">标点符号数</span><b class="puCount">0</b></li>
+					<li><span class="item">空格数</span><b class="spCount">0</b></li>
+				</ul>
+			</div>
+		</div>
+		<!--end statis-->
+		<script src="js/jquery-1.11.1.min.js"></script>
+		<script src="js/statisFont.js"></script>
+		<script>
+			statis($(".input").get(0));
+			//统计
+			function statis(obj){
+				var strText=$(obj).text();
+				statisFont(strText,function(){
+					$(".allCount").text(this.allCount);
+					$(".cnCount").text(this.cnCount);
+					$(".enCount").text(this.enCount);
+					$(".numCount").text(this.numCount);
+					$(".puCount").text(this.puCount);
+					$(".spCount").text(this.spCount);
+				});
+			}
+
+			$(function(){
+				var oldsearchText=null;//记录上一次改变的值，当清空的时候变回来
+				var oldreslut=null;//记录上一次改变的值，当清空的时候变回来
+				$(".search").keyup(function(){
+					var searchText = $(".search").val();
+					var inputText = $(".input").text();
+					if(searchText){
+						oldsearchText=searchText;//记录
+						var regex =new RegExp(searchText,"gim");
+						//替换样式
+						var result=inputText.replace(regex,"<span class='on'>"+searchText+"</span>");
+						oldreslut="<span class='on'>"+searchText+"</span>"//不会空的时候记录一遍
+						$(".input").html(result);
+						//
+						var num = inputText.match(regex);
+						if(num){
+						$(".searchShow").html("共"+num.length+"条");
+						$(".searchShow").css("color","#999");
+						}else{
+						$(".searchShow").html("共0条");
+						$(".searchShow").css("color","red");
+						}
+					}else{//替换回去
+						//如果全部提出 
+						//1.吧上一个做的动作复原
+						var regex =new RegExp(oldreslut,"gim");
+						var result=inputText.replace(regex,oldsearchText);
+						$(".input").html(result);
+						$(".searchShow").html("");
+					}
+					//console.log("replaceback"+replaceback+"num"+num.length);
+
+				});
+			});
+		</script>
+	</body>
+</html>

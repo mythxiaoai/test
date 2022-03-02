@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    </head>
+    <body>
+        <div id="app">
+            <el-radio v-for='(radioItem,radioIndex) in [{ "label": "是", "value": "Y" }, { "label": "否", "value": "N" } ]'
+                :key="radioItem.value" v-model="obj.a" :label="radioItem.value">
+                {{radioItem.label+radioIndex}}
+            </el-radio>
+            {{obj}}
+            <el-checkbox-group v-model="obj.b">
+                <el-checkbox :label="1"> &nbsp;</el-checkbox>
+                <el-checkbox :label="2"> &nbsp;</el-checkbox>
+                <el-checkbox :label="3">3</el-checkbox>
+                <el-checkbox :label="4">4</el-checkbox>
+            </el-checkbox-group>
+            {{optsChecks}}
+
+            <el-checkbox-group v-model="optsChecks">
+                <el-checkbox v-for='(radioItem,index) in [ { "label": "男", "value": 0 }, { "label": "女", "value": 1 } ]'
+                    :key="radioItem.value" :label="radioItem.value" :checked="index==0">
+                    {{radioItem.label}}
+                </el-checkbox>
+            </el-checkbox-group>
+
+            <el-radio name="a" v-model="radio" label="Y">我是单选2</el-radio>
+            <el-radio name="a" v-model="radio1" label="Y">我是单选</el-radio>
+            {{radio}}
+
+
+
+            <el-checkbox-group v-model="checkBox">
+                <el-checkbox name="opts2" true-label="Y" false-label="N">第一</el-checkbox>
+                <el-checkbox name="opts2" true-label="Y" false-label="N"> 第2</el-checkbox>
+                <el-checkbox name="opts2" true-label="Y" false-label="N">第三</el-checkbox>
+                <el-checkbox name="opts2" true-label="Y" false-label="N" 第4></el-checkbox>
+            </el-checkbox-group>
+            {{checkBox}}
+        </div>
+        <!-- import Vue before Element -->
+        <script src="https://unpkg.com/vue/dist/vue.js"></script>
+        <!-- import JavaScript -->
+        <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+    </body>
+    <script>
+        console.log(window)
+        var vm = new Vue({
+            el: "#app",
+            data: {
+                one: "",
+                optsChecks: [],
+                obj: {},
+                radio: "Y",
+                radio1: "N",
+                checkBox: "N"
+            },
+            mounted() {
+                this.obj.b = [];
+                this.obj = Object.assign({}, this.obj);
+            },
+            methods: {
+
+            },
+            watch: {
+                obj: {
+                    handler: function(val) {
+                        console.log(1)
+                    },
+                    deep: true,
+                }
+            }
+        });
+    </script>
+</html>

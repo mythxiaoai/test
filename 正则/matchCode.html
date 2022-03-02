@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>匹配物料编码</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="cache-control" content="no-cache">
+	<meta http-equiv="expires" content="0">    
+	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+	<meta http-equiv="description" content="This is my page">
+	<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+	<style type="text/css">
+		body{font-size: 12px;}
+		textarea {width:99%;height:180px;margin: 4px;}
+		label {cursor: pointer;}
+	</style>
+  </head>
+  <body>
+    <textarea id="tm-source">
+        
+LL21-081A foco led blue spot 12v-80v
+-LL21080A  “          “       “          “           “
+-M011-006A  rodamiento mástil axial
+-MC01-010A  cadena mástil BL634
+-MC01-016A   “                “      BL823
+-A-EK00-023A-0000D
+-A-SR03-054A-0309A
+-A-SR03-055A-0309A
+-A-SR09-057A-0973A
+-A-SR09-056A-0973A
+-A-SR11-052A-0024A
+-A-SK05-024A-0024A                                                      
+-A-SK05-023A-0024
+    </textarea>
+    <!-- <label><input type="radio" name="type" value="2">双引号转单引号</label>
+    <label><input type="radio" name="type" value="1" checked="checked">单引号转双引号</label> -->
+    <label><input type="button" onclick="tm_transfter()" value="开始转换"></label>
+    <textarea id="tm-result"></textarea>
+    <script type="text/javascript">
+    	function tm_transfter(){
+            var source = $.trim($("#tm-source").val().replace(/(\n)*$/,""));
+            console.log(source);
+            var result = source.match(/[A-Z0-9][A-Z0-9-]{8,}\b/gm);
+            console.log(result.join("\r\n"));
+            
+    		$("#tm-result").val(result.join("\r\n"));
+    	}
+    </script>
+  </body>
+</html>

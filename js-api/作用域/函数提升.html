@@ -1,0 +1,43 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<script>
+    //函数自动提升  是提升到当前作用域下;
+    // console.log(a);//undefined
+    // //表达式
+    // var a = function(){
+
+    // }
+
+
+    // console.log(a);//f a(){ }
+    // //声明式
+    // function a(){
+        
+    // }
+
+    //块级作用域
+    // console.log(a);// undefined
+    // if(true){
+    //     console.log(a); // function a
+    //     function a(){}
+    // }
+
+
+    // 上面的解析
+    var a=0; //  函数 a 的声明
+    console.log(a);// undefined
+    if(true){
+        a=2;
+        console.log(a,window.a);//2 undefined
+        function a(){} // 函数 a 的定义
+        console.log(a,window.a);//2 2
+    }
+</script>
+</body>
+</html>

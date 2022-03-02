@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			let log = a=>{console.log(a)};
+			
+			let a ={a:15};
+			let b ={b:15};
+			/*&&*/
+			log(a&&false);//false
+			log(true&&a);//{a:15}
+			log(a&&b);//{b:15}
+			log(null&&true);//null
+			log(true&&null);//null
+			log(NaN&&true);//NaN
+			log(undefined&&true);//undefined
+			/*||*/
+			log(a||b);//a
+			log(false||a);//{a:15} 惰性赋值
+			log(null||true);//null
+			log(true||null);//null
+			log(NaN||true);//NaN
+			log(undefined||true);//undefined
+			log("\n")
+			/*<  >  =*/
+			log("aA"<"Aa");//false
+			log("aA"<"aa");//true
+			log("aA"<"Aa");//true
+		</script>
+	</body>
+</html>

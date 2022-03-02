@@ -1,0 +1,6 @@
+{
+    "type": "node",
+    "request": "launch",
+    "name": "Launch Node",
+    "program": "${workspaceFolder}/算法/树/deep.js"
+    }

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{margin: 0;padding: 0;}
+			#allmap{position:absolute;width: 100%;height: 100%;}
+		</style>
+		<link rel="stylesheet" href="../fonts/font-awesome.min.css" />
+		<link rel="stylesheet" href="../js/bootstrap/bootstrap.css" />
+		<link rel="stylesheet" href="../js/bootstrap/bootstrapfiller.css" />
+		<link rel="stylesheet" href="../css/common/common.css" />
+		<style>
+			/*地图弹出框滚动条*/
+			.BMap_bubble_content{height: 100%!important;overflow: hidden;padding: 20px 10px 0px 10px;}
+		</style>
+	</head>
+	<body>
+		 <div id="allmap"></div> <div id="r-result"></div> <div id="gpsback"></div>
+		 <button type="button" class="js_position" style="position: absolute;top: 20px;">定位</button>
+		<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=hYCENCEx1nXO0Nt46ldexfG9oI49xBGh"></script>
+		<script type="text/javascript" src="../js/jquery.js" ></script>
+		<script src="http://lbsyun.baidu.com/jsdemo/data/points-sample-data.js"></script>
+		<script src="../js/mapCanvas.js"></script>
+		<!--标注点data测试数据-->
+		<script>
+    	// 百度地图API功能
+		let mp = new BMap.Map("allmap");
+		mp.centerAndZoom(new BMap.Point(116.3964,39.9093),19);
+		mp.enableScrollWheelZoom();
+        //shape //String   "sector"  "circle"  海量点的预设形状。
+        //color //String
+        //size  //String   像素为单位  50px ==填写50    半径 
+        let arr =[];
+        for(let item in data.data){
+        	let shape=Math.random()>0.5?"sector":"circle";
+        	let size=Math.random()>0.5?"50":"90";
+        	let color,borderColor;
+        	if(size=="50"){
+        		color ="#3285FF"
+        		borderColor="rgba(50,133,255,.1)";
+        	}else{
+        		color ="#FFBA32"
+        		borderColor="rgba(255,186,50,.1)";
+        	}
+        	 arr.push({
+        	 	lng:data.data[item][0],
+		    	lat:data.data[item][1],
+		    	shape:shape,
+		    	"dir":Math.floor(Math.random()*361),
+		    	size:size,
+		    	color:color,
+		    	borderColor:borderColor,
+		    	showTextArr:["我是小区中文名"+item,"ci:1254114"+item]
+        	 });
+        }
+          for(let i in [1,2]){
+          	let shape=Math.random()>0.5?"sector":"circle";
+        	let size=Math.random()>0.5?"50":"90";
+        	let color,borderColor;
+        	if(size=="50"){
+        		color ="#3285FF"
+        		borderColor="rgba(50,133,255,.1)";
+        	}else{
+        		color ="#FFBA32"
+        		borderColor="rgba(255,186,50,.1)";
+        	}
+        	 arr.push({
+        	 	lng:"116.3964",
+		    	lat:"39.9093",
+		    	shape:"sector",
+		    	"dir":Math.floor(Math.random()*361),
+		    	size:size,
+		    	color:color,
+		    	borderColor:borderColor,
+		    	showTextArr:["我是小区中文名"+i,"ci:1254114"+i]
+        	 });
+        	 arr.push({
+        	 	lng:"116.3944",
+		    	lat:"39.9093",
+		    	shape:"sector",
+		    	"dir":Math.floor(Math.random()*361),
+		    	size:size,
+		    	color:color,
+		    	borderColor:borderColor,
+		    	showTextArr:["我是小区中文名"+i,"ci:1254114"+i]
+        	 });
+        }
+	    let myCompOverlay = new ComplexCustomOverlay(arr);
+		mp.addOverlay(myCompOverlay);
+		/*setTimeout(function(){
+			//84.952,43.768,1
+			myCompOverlay.movePoint(new BMap.Point("84.952","43.768"));
+		},3000);*/
+		myCompOverlay.addEventListener("click",drawClick);
+		
+		function drawClick(e){
+		  console.log(e)
+      let $Phtml=$("<div class='panel-group' id='accordion' style='width: 249px;height: 100%;overflow: auto;'><div class='text-center m-t-sm' style='color:#ccc'>—— end ——</div></div>");
+        let html="<div class='panel panel-white'>"+
+        "   <div class='panel-heading'>"+
+        "     <div class='panel-title text-warning js_title' >panel-white</div>"+
+        "     <div class='panel-tools'>"+
+        "       <a class='collapse-link js_panel' data-toggle='collapse' href='javascript:;' data-target='panel1'>"+
+        "                    <i class='fa fa-chevron-up'></i>"+
+        "                </a>"+
+        "                <a class='close-link' href='javascript:;' data-dismiss='panel'>"+
+        "                    <i class='fa fa-times'></i>"+
+        "                </a>"+
+        "     </div>"+
+        "   </div>"+
+        "    <div id='panel1' class='panel-collapse collapse in js_panel' >"+
+        "            <div class='panel-body p-none'>"+
+        "             <ul class='list-group text-center js_mappaneal m-b-none' >"+
+        "       <li class='list-group-item'>"+
+        "         <span style='width: 48%;display: inline-block;' class='text-overflow'>小区名</span>"+
+        "         <span style='width: 49%;display: inline-block;' class='text-overflow js_name'>东塔-23F</span>"+
+        "       </li>"+
+        "       <li class='list-group-item'>"+
+        "         <span style='width: 48%;display: inline-block;' class='text-overflow'>小区CI</span>"+
+        "         <span style='width: 49%;display: inline-block;' class='text-overflow js_ci'>11111</span>"+
+        "       </li>"+
+        "       <li class='list-group-item'>"+
+        "         <span style='width: 48%;display: inline-block;' class='text-overflow'>MR覆盖率</span>"+
+        "         <span style='width: 49%;display: inline-block;' class='text-overflow js_mr'>83.4%</span>"+
+        "       </li>"+
+        "       <li class='list-group-item'>"+
+        "         <span style='width: 48%;display: inline-block;' class='text-overflow'>RSRP</span>"+
+        "         <span style='width: 49%;display: inline-block;' class='text-overflow js_rsrp'>-129dBm</span>"+
+        "       </li>"+
+        "       <li class='list-group-item'>"+
+        "         <a href='javascript:;' class='btn btn-link js_resultInfo' onclick='roadmap.showInfo()'>详细指标</a>"+
+        "       </li>"+
+        "     </ul>"+
+        "            </div>"+
+        "        </div>"+
+        " </div>";
+      $.each(e.data, function(index,val) {
+        //样式
+        let $html =$(html)
+        $html.find(".js_panel").eq(0).attr("data-target","panel"+index);
+        $html.find(".js_panel").eq(1).attr("id","panel"+index);
+        if(index!=0){
+          $html.find(".js_panel").eq(1).removeClass("in");
+          $html.find(".js_panel").eq(0).addClass("collapsed");
+        }
+        //数据
+        $html.find(".js_title").html(val.showTextArr[0]);
+        $html.find(".js_name").html(val.showTextArr[0]);
+        $html.find(".js_ci").html(val.showTextArr[1]);
+        $Phtml.prepend($html);
+      });
+      let panelInfo=$Phtml[0];
+        let infoWindow = new BMap.InfoWindow(panelInfo,{height:0});
+        let pixel = new BMap.Pixel(e.x,e.y);
+        let point = mp.pixelToPoint(pixel);
+        mp.openInfoWindow(infoWindow,point);
+        //点击动画   open事件只初始化执行一次
+        infoWindow.addEventListener("open",function(){
+          animateClick();
+        })
+        animateClick();
+        function animateClick(){
+          let $panelHeight=$("#panel0").height();
+          $("[data-toggle='collapse']").eq(0).mark=true;
+          $.each($("[data-toggle='collapse']"),function(index,val){
+            if(index==0){
+              val.mark=true;
+            }else{
+              val.mark=false;
+            }
+          })
+          $("[data-toggle='collapse']").on("click",function(e){
+            e.preventDefault();
+            if($(this)[0].mark){
+              $(this)[0].mark=false;
+              $(this).addClass("collapsed");
+              $("#"+$(this).attr("data-target")).animate({height:30},400,function(){
+                $(this).removeClass("in").hide();;            
+              })
+            }else{
+              $(this)[0].mark=true;
+              $(this).removeClass("collapsed")
+              $("#"+$(this).attr("data-target")).show();
+              $("#"+$(this).attr("data-target")).animate({height:$panelHeight},400,function(){
+                $(this).addClass("in");
+              })
+              let siblingsDoms=$(this).closest(".panel").siblings().find("[data-toggle='collapse']").addClass("collapsed");
+              $.each(siblingsDoms, function(index,val) {
+                $("#"+$(val).attr("data-target")).animate({height:30},400,function(){
+                  $(this).removeClass("in").hide();           
+                })
+              });
+            }
+          })
+        }
+    }
+		
+		$(".js_position").click(function(){
+		  let point =new BMap.Point("116.3944","39.9093");
+			myCompOverlay.movePoint(point,21,function(){
+			  let a = {
+			    data :[
+			    {
+          lng:"116.3944",
+          lat:"39.9093",
+          shape:"sector",
+          "dir":Math.floor(Math.random()*361),
+          size:1,
+          color:"#FFBA32",
+          borderColor:"#FFBA32",
+          showTextArr:["我是小区中文名","ci:1254114"]
+           }],
+           x:mp.pointToPixel(point).x,
+           y:mp.pointToPixel(point).y
+			  }
+			  drawClick(a);
+			});
+		})
+		</script>
+	</body>
+</html>

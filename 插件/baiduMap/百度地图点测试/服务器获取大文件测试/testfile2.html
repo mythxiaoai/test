@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	  123
+	  <input type="file" onchange="change(this)"/><div id="show"></div>
+	  <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+	  <script>
+	    //这个例子说明  大文件通过input去上传然后解析文件 会照成浏览器崩溃
+	     async function change(obj){
+	       if(!obj.files||obj.files.length==0) {
+              return;
+          }
+          var f = obj.files[0];
+         
+        }
+	     
+	     
+	     
+	     
+	     //同步加载文件
+	     async function reader(chunk){
+	       return new Promise((resolve,reject)=>{
+	          var reader = new FileReader();
+            reader.onload =function(e) {
+              resolve(e.target.result)
+            }
+            reader.readAsText(chunk);
+            reader.onerror=function(err) {
+              reject(err)
+            }
+	       });
+	     }
+	     
+	    
+	  </script>
+	</body>
+</html>

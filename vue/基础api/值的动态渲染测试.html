@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+	</head>
+	<body>
+		<div id="app">
+			<button type="button" @click="click">变</button>
+			<div v-for="(item,index) in arr" :key="item.id">
+				{{item}}
+			</div>
+		</div>
+		 <!-- import Vue before Element -->
+		  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+		  <!-- import JavaScript -->
+		  <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+	</body>
+	<script>
+		var vm = new Vue({
+			el:"#app",
+			created(){
+			},
+			data:{
+				arr:[
+					{id:1,a:"a"},
+					{id:2,b:"b"},
+					{id:3,c:"c"},
+				]
+			},
+			methods:{
+				click(){
+					this.arr[0]={"id":4,d:"d"};
+					/*this.arr.b="b";
+					this.arr = this.arr
+					this.arr.length = 0;*/
+					this.arr = this.arr.splice(0,1);
+					/*this.arr=Object.assign({},this.arr);
+					Vue.set(this.arr,0,{"id":4,d:"d"})*/
+				}
+			}
+		});
+	</script>
+</html>

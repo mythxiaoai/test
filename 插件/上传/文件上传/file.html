@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>文件上传百分比</title>
+		<link rel="stylesheet" href="css/common/common.css" />
+		<script type="text/javascript" src="JQ-load/js/jquery.min.js" ></script>
+	</head>
+	<body>
+		<style>
+			.imgTarger{width:500px;height: 500px;border:1px dashed #333;}
+		</style>
+		<form action="UrlTest" method="post" enctype="multipart/form-data">
+    			<input type="file" id="upload"  name="file"  multiple="multiple">
+    			<button id="tj"  type="button">提交</button>
+    			<progress  id="progress" ></progress>
+    	</form>
+    	<div id="targ"></div>
+	</body>
+	
+		<script>
+		upload.onchange=function(){
+			var file = upload.files[0];
+			console.log(upload.files);
+			(function(file){
+					var fr = new FileReader();
+					fr.readAsDataURL(file);
+					fr.onprogress=function(e){
+						progress.value=e.loaded/e.total;
+					}
+					fr.onload = function(e){
+						/*console.log("readAsDataURL"+this.result);
+						console.log(this.result.split(",")[1]);*/
+					}
+			})(file)
+			
+		}
+	
+		window.onload=function(){
+			targ.ondragover=function(e){
+				console.log("ondragover")
+				e.preventDefault();
+			}
+			targ.ondrop=function(e){
+				console.log("ondrop")
+				e.preventDefault();
+			}
+		
+			/*targ.addEventListener("dragenter",function(e){
+				console.log("dragenter")
+			});
+			
+			targ.addEventListener("dragover",function(e){
+				console.log("dragover")
+			});
+			targ.addEventListener("dragleave",function(e){
+				console.log("dragleave")
+			});
+			targ.addEventListener("drop",function(e){
+				console.log("drop")
+				alert(e.dataTransfer.files.length)
+				e.stopPropagation();
+				e.preventDefault();
+			});
+			targ.addEventListener("dragend",function(e){
+				e.stopPropagation();
+				e.preventDefault();
+			});*/
+			
+			
+		}	
+			
+		</script>
+</html>
