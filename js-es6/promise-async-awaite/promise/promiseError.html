@@ -27,8 +27,8 @@
     //     console.log(3);
 
     // })()
-    async function middlePromise() {
-      return await ajax("ajax", false).catch(err => {
+    function middlePromise() {
+      return ajax("ajax", false).catch(err => {
         console.log("middlePromise", err);
       })
     }
