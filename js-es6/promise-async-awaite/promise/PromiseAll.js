@@ -19,6 +19,24 @@ function ajax(str,boo, time) {
   await Promise.all([ajax("ajax",false).catch(v=>{}),ajax("ajax",true)])
   console.log("正常运行3");
   //如果里层捕获也不会向上抛
-  let any = await Promise.any([ajax("ajax",false),ajax("A",true),ajax("B",true)])
+  let any = await Promise.any([ajax("ajax",false),ajax("A",false),ajax("B",true)])
   console.log("正常运行4",any);
 })()
+
+process.on('uncaughtException', (err, origin) => {
+  console.log("uncaughtException",err)
+  // fs.writeSync(
+  //   process.stderr.fd,
+  //   `Caught exception: ${err}\n` +
+  //   `Exception origin: ${origin}`
+  // );
+});
+process.on('unhandledRejection', (err, origin) => {
+  console.log("unhandledRejection",err)
+  // fs.writeSync(
+  //   process.stderr.fd,
+  //   `Caught exception: ${err}\n` +
+  //   `Exception origin: ${origin}`
+  // );
+});
+
