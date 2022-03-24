@@ -1,0 +1,51 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  .hide {
+    display: none;
+  }
+
+  .show {
+    display: inherit;
+  }
+</style>
+
+<body>
+
+  <button onclick="play()">播放</button>
+
+  <div class="hide" id="box">
+    <video id="video" width="320" height="240" controls>
+      <source src="test.mp4" type="video/mp4">
+      您的浏览器不支持Video标签。
+    </video>
+  </div>
+
+  <!-- <video id="video" class="art-video" preload="metadata" crossorigin="anonymous" autoplay="" src="test.mp4"></video> -->
+</body>
+<script>
+  // window.onload = function () {
+  //   console.log(video);
+  //   for (const key in video) {
+  //     console.log(key, video[key]);
+  //   }
+  //   video.addEventListener("canplay", (e) => {
+  //     console.log(e);
+  //     // video.clik();
+  //     video.play()
+  //   })
+  // }
+  function play() {
+    box.classList = ["show"]
+    video.play()
+  }
+
+</script>
+
+</html>
