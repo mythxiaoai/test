@@ -369,6 +369,30 @@ function dom_findParentbyClass(dom, className) {
   }
   return false
 }
+/**
+ * 路径代理
+ * @param {*} callback 
+ * @returns 
+ */
+function proxyKey(callback) {
+  let keyPath = []
+  let fn = function () {
+    return new Proxy(Object.create(null), {
+      get: (_target, key) => {
+        if (key === 'get') {
+          let temp = [...keyPath]
+          let fn = (...arg) => callback(temp, arg)
+          keyPath.length = 0
+          return fn
+        } else {
+          keyPath.push(key)
+          return fn()
+        }
+      }
+    })
+  }
+  return fn()
+}
 
 
 
