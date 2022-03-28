@@ -1,0 +1,67 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <input type="file" id="file"></input>
+  <img id="img" src="">
+  <script>
+
+    file.onchange = async (e) => {
+      let url = window.URL.createObjectURL(e.target.files[0])
+      let info = await getVideoBasicInfo(url);
+      let blob = await getVideoFrame(info);
+      img.src = window.URL.createObjectURL(blob)
+    }
+    // 获取视频基本信息
+    function getVideoBasicInfo(videoSrc) {
+      return new Promise((resolve, reject) => {
+        const video = document.createElement('video')
+        video.src = videoSrc
+        // 视频一定要添加预加载
+        video.preload = 'auto'
+        // 视频一定要同源或者必须允许跨域
+        video.crossOrigin = 'Anonymous'
+        // 监听：异常
+        video.addEventListener('error', error => {
+          reject(error)
+        })
+        // 监听：加载完成基本信息,设置要播放的时常
+        video.addEventListener('loadedmetadata', () => {
+          const videoInfo = {
+            video,
+            width: video.videoWidth,
+            height: video.videoHeight,
+            duration: video.duration
+          }
+          resolve(videoInfo)
+        })
+      })
+    }
+
+    function getVideoFrame(videoInfo) {
+      return new Promise(resolve => {
+        const { video, width, height } = videoInfo
+        video.addEventListener('canplay', () => {
+          const canvas = document.createElement('canvas')
+          canvas.width = width
+          canvas.height = height
+          const ctx = canvas.getContext('2d')
+          ctx.drawImage(video, 0, 0, width, height)
+          canvas.toBlob(v => {
+            resolve(v)
+          }, 'image/jpg')
+
+        })
+      })
+    }
+
+  </script>
+</body>
+
+</html>

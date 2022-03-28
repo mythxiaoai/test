@@ -335,10 +335,6 @@ function getIconByfile(vType, vName) {
   return icon[getFileType(vType, vName)];
 }
 
-
-
-
-
 //深度克隆
 function mix(target, datajson) {
   var args = Array.prototype.slice.call(arguments);
@@ -369,7 +365,19 @@ function dom_findParentbyClass(dom, className) {
   }
   return false
 }
-
+//缓存
+function memoize(fn) {
+  const cache = {};
+  return function() {
+    const key = JSON.stringify(arguments);
+    var value = cache[key];
+    if(!value) {
+      value = [fn.apply(null, arguments)];  // 放在一个数组中，方便应对 undefined，null 等异常情况
+      cache[key] = value; 
+    }
+    return value[0];
+  }
+}
 
 
 
