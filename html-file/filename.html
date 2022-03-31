@@ -1,0 +1,34 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <p><input type=file name=image onchange="updateFilename(this.value)"></p>
+  <p>The name of the file you picked is: <span id="filename">(none)</span></p>
+  <script>
+    function updateFilename(path) {
+      var name = extractFilename(path);
+      document.getElementById('filename').textContent = name;
+    }
+
+    function extractFilename(path) {
+      if (path.substr(0, 12) == "C:\\fakepath\\")
+        return path.substr(12); // modern browser
+      var x;
+      x = path.lastIndexOf('/');
+      if (x >= 0) // Unix-based path
+        return path.substr(x + 1);
+      x = path.lastIndexOf('\\');
+      if (x >= 0) // Windows-based path
+        return path.substr(x + 1);
+      return path; // just the filename
+    }
+  </script>
+</body>
+
+</html>
