@@ -1,0 +1,30 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <script src="https://cdn.bootcdn.net/ajax/libs/ramda/0.28.0/ramda.js"></script>
+  <script src="https://cdn.bootcdn.net/ajax/libs/ramda-adjunct/3.0.0/RA.web.standalone.js"></script>
+  <script>
+    let ajax = (v = 1) => {
+      return new Promise((resolve, reject) => {
+        setTimeout(() => {
+          resolve(v)
+        }, 1000)
+      })
+    }
+    let log = console.log.bind(this);
+    (async () => {
+      console.log(R);
+      R.compose(ajax(6), log)
+    })()
+  </script>
+</body>
+
+</html>
