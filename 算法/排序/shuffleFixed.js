@@ -33,5 +33,5 @@ function getRandom(arr,fixIndex){
   return randomArr;
 }
 let arr = [3, 2, 5, 1];
-console.log(getRandom(arr,3));
+console.log(getRandom(arr,3));//[ 2, 3, 5, 1 ]
 
