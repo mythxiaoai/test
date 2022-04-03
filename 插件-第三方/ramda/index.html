@@ -21,8 +21,8 @@
     }
     let log = console.log.bind(this);
     (async () => {
-      console.log(R);
-      R.compose(ajax(6), log)
+      let res = R.compose(await ajax(6), log());
+      console.log(res());
     })()
   </script>
 </body>
