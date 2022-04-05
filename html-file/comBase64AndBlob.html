@@ -1,0 +1,55 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <input id="file" type="file" multiple />
+  <img id="img1" src="" />
+  <img id="img2" src="" />
+  <script>
+    (async () => {
+      let file = await (await fetch("./test.jpg")).blob();
+      let base64 = await fileDateURI(file);
+      let filebase64 = new Filebase64(base64);
+      window.filebase64 = filebase64;
+      img1.src = filebase64.f_base64;
+      let fileBlob = new FileBlob(file);
+      let url = URL.createObjectURL(fileBlob.f_Blob);
+      // img2.src = url;
+      window.fileBlob = fileBlob;
+    })()
+    class Filebase64 {
+      f_base64;
+      constructor(a) {
+        this.f_base64 = a;
+      }
+    }
+    class FileBlob {
+      f_Blob;
+      constructor(a) {
+        this.f_Blob = a;
+      }
+    }
+    console.log(file);
+
+    file.onchange = async function (e) {
+      let files = Array.from(e.target.files);
+
+    }
+    function fileDateURI(file) {
+      return new Promise((resolve, reject) => {
+        var reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = function (e) {
+          resolve(e.target.result)
+        };
+      })
+    }
+  </script>
+</body>
+
+</html>
