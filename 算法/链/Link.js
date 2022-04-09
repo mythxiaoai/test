@@ -1,7 +1,8 @@
+
 class Node {
-    constructor(node) {
+    constructor(node,next=null) {
         this.value = node;
-        this.next = null;
+        this.next = next;
     }
 }
 
@@ -26,11 +27,34 @@ class LinkList {
         return this.length;
     }
     remove(index){
-        //index
-        let i= 0,cur=this.head,
-        while(index>=i){
-            ++i;
-        }
+      const dummyHead = new Node(0,this.head);
+      let temp = dummyHead;
+      let i =-1;
+      while (temp !== null && i<=index) {
+          if ((i+1)=== index) {
+            let del =  temp.next;
+              temp.next = temp.next?.next || null;
+              this.head = dummyHead.next;
+              --this.length
+              return del;
+          } else {
+              temp = temp.next;
+          }
+          ++i;
+      }
+      return false;
+    }
+    get(index){
+      let i = 0;
+      let cur = this.head;
+      while (i<=index) {
+          if(i===index){
+            return cur;
+          }
+          cur = cur.next;
+          ++i;
+      }
+      return null;
     }
     print() {
         let arr = [];
@@ -49,9 +73,6 @@ let linklist = new LinkList();
 linklist.append(new Node("小艾"))
 linklist.append(new Node("真帅"))
 linklist.append(new Node("666"))
-linklist.print()
-
-console.log(linklist.length);
+linklist.remove(1)
+// console.log(linklist.get(3));
 console.log(linklist.head);
-console.log(linklist.head.next);
-console.log(linklist.head.next.next);
