@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://cdn.bootcdn.net/ajax/libs/ant-design-vue/2.2.0-rc.1/antd.css" rel="stylesheet">
+</head>
+
+<body>
+  <div id="app">
+    <a-checkbox :indeterminate="true" @change="change">
+      选中
+    </a-checkbox>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0/moment.js"></script>
+  <script src="https://cdn.bootcdn.net/ajax/libs/vue/3.1.2/vue.global.js"></script>
+  <script src="https://cdn.bootcdn.net/ajax/libs/ant-design-vue/2.2.0-rc.1/antd-with-locales.min.js"></script>
+  <script>
+    let { ref, onMounted, reactive } = Vue;
+    let vm = Vue.createApp({
+
+      setup() {
+        let a = reactive(null);
+        onMounted(() => {
+          console.log(a);
+          a.value.innerHTML = "cccc"
+        })
+        return {
+          a,
+          activeKey: ref(0),
+          tabs: ['爸爸款 - 白色', '妈妈款 - 白色', '女儿款 - 白色']
+        }
+      },
+      methods: {
+        change(e) {
+          console.log(e.target.checked);
+        },
+        add() {
+          console.log(this.$refs.a0);
+          console.log(this.$refs.a1);
+          console.log(this.$refs.a3);
+        }
+      }
+    })
+
+    vm.use(antd)
+
+    vm.mount('#app')
+
+  </script>
+</body>
+
+</html>
