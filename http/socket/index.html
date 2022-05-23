@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>聊天室</title>
+</head>
+<style>
+  * {
+    padding: 0;
+    margin: 0
+  }
+
+  ul li {
+    list-style: none
+  }
+
+  .dialog {
+    position: fixed
+  }
+
+  .dialog .users {
+    position: fixed;
+    height: 100%;
+    width: 180px;
+    background: #eeeae8
+  }
+
+  .dialog .users li {
+    height: 28px;
+    line-height: 28px;
+    border-bottom: 1px solid #c8c6c6;
+    text-align: left;
+    padding-left: 15px;
+    color: #666;
+    font-size: 14px
+  }
+
+  .dialog .users li:first-child {
+    text-align: center;
+    padding-left: 0;
+    font-size: 1pc
+  }
+
+  .dialog .chat_box {
+    left: 180px;
+    position: fixed;
+    width: calc(100% - 180px);
+    height: 100%;
+    background: blue
+  }
+
+  .dialog .chat_info {
+    height: 80%;
+    overflow: auto
+  }
+
+  .dialog .chat_info,
+  .dialog .chat_send {
+    position: absolute;
+    width: 100%;
+    background: #f5f5f5
+  }
+
+  .dialog .chat_send {
+    height: 20%;
+    bottom: 0
+  }
+
+  .dialog .chat_box .chat_info li {
+    position: relative;
+    margin-top: 15px;
+    clear: both;
+    height: 40px
+  }
+
+  .dialog .chat_box .chat_info li .user {
+    line-height: 40px;
+    height: 40px;
+    padding: 0 5px;
+    float: left;
+    font-size: 14px
+  }
+
+  .dialog .chat_box .chat_info li.self .user {
+    float: right
+  }
+
+  .dialog .chat_box .chat_info li .msg {
+    position: relative;
+    display: inline-block;
+    max-width: 500px;
+    background: #fff;
+    border-radius: 5px;
+    margin-left: 10px;
+    padding: 10px;
+    font-size: 14px;
+    float: left
+  }
+
+  .dialog .chat_box .chat_info li .msg:before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: -20px;
+    display: inline-block;
+    border: 10px solid transparent;
+    border-right: 10px solid #fff;
+    top: 0;
+    bottom: 0;
+    margin: auto 0
+  }
+
+  .dialog .chat_box .chat_info li.self .msg:before {
+    border: 10px solid transparent;
+    border-left: 10px solid #98e165;
+    left: auto;
+    right: -20px;
+    top: 0;
+    bottom: 0;
+    margin: auto 0
+  }
+
+  .dialog .chat_box .chat_info li.self .msg {
+    float: right;
+    text-align: right;
+    display: inline-block;
+    background: #98e165;
+    margin-left: 0;
+    margin-right: 10px
+  }
+
+  .chat_send {
+    border-top: 1px solid #e7e7e7
+  }
+
+  .chat_send textarea {
+    background: #f5f5f5;
+    width: 100%;
+    resize: none;
+    height: 75%;
+    border: none;
+    font-size: 14px;
+    padding: 10px;
+    overflow: auto;
+    box-sizing: border-box
+  }
+
+  .chat_send textarea:focus {
+    outline: 0
+  }
+
+  .chat_send_btn {
+    float: right;
+    margin-right: 15px;
+    font-size: 14px;
+    color: #666;
+    background: #f5f5f5;
+    border: 1px solid #e7e7e7;
+    padding: 3px 15px;
+    text-decoration: none;
+    border-radius: 1px
+  }
+
+  .chat_send_btn:hover {
+    background: #129611;
+    border-color: #129611;
+    color: #fff
+  }
+
+  ::-webkit-scrollbar,
+  ::-webkit-scrollbar-track {
+    background-color: #f5f5f5
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #999
+  }
+
+  ::-moz-scrollbar,
+  ::-moz-scrollbar-track {
+    background-color: #f5f5f5
+  }
+
+  ::-moz-scrollbar {
+    width: 6px
+  }
+
+  ::-moz-scrollbar-thumb {
+    background-color: #999
+  }
+
+  ::-o-scrollbar,
+  ::-o-scrollbar-track {
+    background-color: #f5f5f5
+  }
+
+  ::-o-scrollbar {
+    width: 6px
+  }
+
+  ::-o-scrollbar-thumb {
+    background-color: #999
+  }
+
+  ::-ms-scrollbar,
+  ::-ms-scrollbar-track {
+    background-color: #f5f5f5
+  }
+
+  ::-ms-scrollbar {
+    width: 6px
+  }
+
+  ::-ms-scrollbar-thumb {
+    background-color: #999
+  }
+
+  .sys_msg {
+    display: none;
+    position: fixed;
+    top: 10%;
+    width: 100%;
+    z-index: 200;
+    text-align: center
+  }
+
+  .sys_msg .sys_content {
+    border-radius: 3px;
+    position: absolute;
+    display: inline-block;
+    top: 10%;
+    background: #f56c6c;
+    color: #fff;
+    padding: 5px 50px
+  }
+
+  * {
+    margin: 0;
+    padding: 0
+  }
+
+  ul li {
+    list-style: none
+  }
+
+  .dialog {
+    position: fixed
+  }
+
+  .dialog .users {
+    position: fixed;
+    width: 180px;
+    height: 100%;
+    background: #eeeae8
+  }
+
+  .dialog .users li {
+    padding-left: 15px;
+    height: 28px;
+    border-bottom: 1px solid #c8c6c6;
+    color: #666;
+    text-align: left;
+    font-size: 14px;
+    line-height: 28px
+  }
+
+  .dialog .users li:first-child {
+    padding-left: 0;
+    text-align: center;
+    font-size: 1pc
+  }
+
+  .dialog .chat_box {
+    position: fixed;
+    left: 180px;
+    width: calc(100% - 180px);
+    height: 100%;
+    background: #00f
+  }
+
+  .dialog .chat_info {
+    overflow: auto;
+    height: 80%
+  }
+
+  .dialog .chat_info,
+  .dialog .chat_send {
+    position: absolute;
+    width: 100%;
+    background: #f5f5f5
+  }
+
+  .dialog .chat_send {
+    bottom: 0;
+    height: 20%
+  }
+
+  .dialog .chat_box .chat_info li {
+    position: relative;
+    clear: both;
+    margin-top: 15px;
+    height: 40px
+  }
+
+  .dialog .chat_box .chat_info li .user {
+    float: left;
+    padding: 0 5px;
+    height: 40px;
+    font-size: 14px;
+    line-height: 40px
+  }
+
+  .dialog .chat_box .chat_info li.self .user {
+    float: right
+  }
+
+  .dialog .chat_box .chat_info li .msg {
+    position: relative;
+    float: left;
+    display: inline-block;
+    margin-left: 10px;
+    padding: 10px;
+    max-width: 500px;
+    border-radius: 5px;
+    background: #fff;
+    font-size: 14px
+  }
+
+  .dialog .chat_box .chat_info li .msg:before {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -20px;
+    display: inline-block;
+    margin: auto 0;
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+    border-right: 10px solid #fff;
+    content: ""
+  }
+
+  .dialog .chat_box .chat_info li.self .msg:before {
+    top: 0;
+    right: -20px;
+    bottom: 0;
+    left: auto;
+    margin: auto 0;
+    border: 10px solid transparent;
+    border-left: 10px solid #98e165
+  }
+
+  .dialog .chat_box .chat_info li.self .msg {
+    float: right;
+    display: inline-block;
+    margin-right: 10px;
+    margin-left: 0;
+    background: #98e165;
+    text-align: right
+  }
+
+  /*发送框*/
+  .chat_send {
+    border-top: 1px solid #e7e7e7
+  }
+
+  .chat_send textarea {
+    overflow: auto;
+    box-sizing: border-box;
+    padding: 10px;
+    width: 100%;
+    height: 75%;
+    border: none;
+    background: #f5f5f5;
+    font-size: 14px;
+    resize: none
+  }
+
+  .chat_send textarea:focus {
+    outline: 0
+  }
+
+  .chat_send_btn {
+    float: right;
+    margin-right: 15px;
+    padding: 3px 15px;
+    border: 1px solid #e7e7e7;
+    border-radius: 1px;
+    background: #f5f5f5;
+    color: #666;
+    text-decoration: none;
+    font-size: 14px
+  }
+
+  .chat_send_btn:hover {
+    border-color: #129611;
+    background: #129611;
+    color: #fff
+  }
+
+  /*提示消息*/
+  .sys_msg {
+    position: fixed;
+    top: 10%;
+    z-index: 200;
+    display: none;
+    width: 100%;
+    text-align: center
+  }
+
+  .sys_msg .sys_content {
+    position: absolute;
+    top: 10%;
+    display: inline-block;
+    padding: 5px 50px;
+    border-radius: 3px;
+    background: #f56c6c;
+    color: #fff
+  }
+
+  /*滚动条*/
+  ::-webkit-scrollbar,
+  ::-webkit-scrollbar-track {
+    background-color: #f5f5f5
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #999
+  }
+
+  ::-moz-scrollbar,
+  ::-moz-scrollbar-track {
+    background-color: #f5f5f5
+  }
+
+  ::-moz-scrollbar {
+    width: 6px
+  }
+
+  ::-moz-scrollbar-thumb {
+    background-color: #999
+  }
+
+  ::-o-scrollbar,
+  ::-o-scrollbar-track {
+    background-color: #f5f5f5
+  }
+
+  ::-o-scrollbar {
+    width: 6px
+  }
+
+  ::-o-scrollbar-thumb {
+    background-color: #999
+  }
+
+  ::-ms-scrollbar,
+  ::-ms-scrollbar-track {
+    background-color: #f5f5f5
+  }
+
+  ::-ms-scrollbar {
+    width: 6px
+  }
+
+  ::-ms-scrollbar-thumb {
+    background-color: #999
+  }
+</style>
+
+<body>
+  <div class="sys_msg js_sys_msg">
+    <div class="sys_content">网络异常</div>
+  </div>
+  <div class="dialog">
+    <div class="users">
+      <ul class="js_users">
+        <li>当前在线人数：0 人</li>
+      </ul>
+    </div>
+    <div class="chat_box">
+      <div class="chat_info">
+        <ul class="js_chat_box">
+          <!-- <li><span class="user">小明说:</span><span class="msg">你好吗？</span></li>
+	          <li class="self"><span class="user">:说我</span><span class="msg">不好</span></li>-->
+        </ul>
+      </div>
+      <div class="chat_send js_chatBox">
+        <textarea class="js_msgbox"></textarea>
+        <a class="chat_send_btn js_send" href="javascript:;">发送(Enter)</a>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.bootcss.com/socket.io/2.2.0/socket.io.js"></script>
+  <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+  <script>
+    var chart = {
+      sock: null,
+      connstatus: false,
+      userName: "",
+      init() {
+        this.msgboxF();
+        this.sendmsg();
+        this.sock();
+      },
+      msgboxF() {
+        $(".js_msgbox").on("focus", function () {
+          $(".js_chatBox").css("background", "#fff")
+          $(".js_msgbox").css("background", "#fff")
+        })
+        $(".js_msgbox").on("blur", function () {
+          $(".js_chatBox").css("background", "#F5F5F5")
+          $(".js_msgbox").css("background", "#F5F5F5")
+        })
+      },
+      docCancal() {
+
+      },
+      sendmsg() {
+        $(".js_send").click(() => {
+          this.send($(".js_msgbox").val())
+        });
+        $(".js_msgbox").on("keyup", function (e) {
+          if (e.keyCode == 13) {
+            $(".js_send").trigger("click")
+          }
+        });
+      },
+      createUser(userName) {
+        if (userName) {
+          this.sock.emit("user", userName);
+        } else {
+          this.userName = prompt("必须来个用户名才能加入聊天~，重新创建用户名:");
+          this.createUser(this.userName)
+        }
+      },
+      sock() {
+        try {
+          this.sock = io.connect("https://websocket.shopviewer.com/", {
+            transports: ["websocket"]
+          });
+          console.log(1);
+          this.sock.on("connect", () => {
+            console.log("connect")
+            this.connstatus = true;
+            $(".js_sys_msg").hide()
+            this.userName = prompt("创建用户名:");
+            this.createUser(this.userName);
+          })
+
+          this.sock.on("disconnect", () => {
+            console.log("disconnect")
+            this.connstatus = false;
+            $(".js_sys_msg").show()
+          })
+
+          this.sock.on("msg", (str, userName) => {
+            $(".js_chat_box").append(`<li><span class="user">${userName}说:</span><span class="msg">${str}</span></li>`);
+            $(".chat_info").animate({ "scrollTop": $(".js_chat_box").outerHeight() - $(".chat_info").outerHeight() + 15 }, "fast")
+          });
+
+          this.sock.on("user", str => {
+            if (this.sock.id == str.id && str.data == -1) {
+              this.userName = prompt("创建重复咯,加个特殊点的吧~:");
+              this.createUser(this.userName)
+            }
+          });
+
+          this.sock.on("userall", data => {
+            let html = `<li>当前在线人数：${data.length} 人</li>`;
+            for (let str of data) {
+              html += `<li>${str}</li>`
+            }
+            $(".js_users").html(html);
+          });
+        } catch (e) {
+          console.log(e);
+          $(".js_sys_msg").show()
+        }
+      },
+      send(str) {
+        if (str.trim()) {
+          this.sock.emit("msg", str);
+          if (this.connstatus) {
+            $(".js_chat_box").append(`<li class="self"><span class="user">:说我</span><span class="msg">${str}</span></li>`);
+            $(".chat_info").animate({ "scrollTop": $(".js_chat_box").outerHeight() - $(".chat_info").outerHeight() + 15 }, "fast")
+            $(".js_msgbox").val("")
+          }
+        }
+      }
+    }
+    chart.init();
+  </script>
+</body>
+
+</html>
