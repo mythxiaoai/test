@@ -1,0 +1,23 @@
+[Exposed = Window] interface SharePreferencesApi {
+  constructor();
+  
+  DOMString getString(DOMString key);
+
+  DOMString getString(DOMString key, DOMString default_value);
+
+  void setString(DOMString key, DOMString value);
+
+  boolean getBoolean(DOMString key);
+
+  boolean getBoolean(DOMString key, boolean default_value);
+
+  void setBoolean(DOMString key, boolean value);
+
+  unsigned long getInt(DOMString key);
+
+  unsigned long getInt(DOMString key, unsigned long default_value);
+
+  void setInt(DOMString key, unsigned long value);
+
+  void remove(DOMString key);
+};
