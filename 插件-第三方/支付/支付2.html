@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+
+<body>
+  <div id="app">
+  </div>
+  <!-- client-id后边放你的 -->
+  <script
+    src="https://www.paypal.com/sdk/js?client-id=AbNCiAHKivvcx14ePiJWBgRkiEjf6JKa0-f12lg2lcwJIU5OVi5JZY3Hxrj5miWGF-WbcgAJSkcshO7t"></script>
+  <!-- AcP31iLnpcCZglGPqNeO6gIRZh1qtPCfeyP_vK0lJhcJTgXcAzOrObRmqjtZSwHZlOahAyz6TMaUyw8i -->
+  <script>
+    paypal.Buttons({
+      createOrder: function (data, actions) {
+        // 定义一下要付多少钱
+        return actions.order.create({
+          purchase_units: [{
+            amount: {
+              value: '0.03'
+            }
+          }]
+        });
+      },
+      onApprove: function (data, actions) {
+        // console.log(data,actions)
+
+        return actions.order.capture().then(function (details) {
+          // 付款成功之后的回调
+          alert('Transaction completed by ' + details.payer.name.given_name);
+          // 告诉你自己的服务器订单号,方便后续的查询
+          return fetch('/paypal-transaction-complete', {
+            method: 'post',
+            headers: {
+              'content-type': 'application/json'
+            },
+            body: JSON.stringify({
+              orderID: data.orderID
+            })
+          });
+        });
+      }
+    }).render('#app');
+			// 把付款按钮放id为app的盒子里
+  </script>
+</body>
+
+</html>

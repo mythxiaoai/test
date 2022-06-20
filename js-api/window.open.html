@@ -1,0 +1,39 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+<script>
+  let windowObjectReference = null;
+  windowObjectReference = window.open(`https://www.sandbox.paypal.com/checkoutnow?token=65G493552Y021933X`, "_blank", "top=150,left=300,width=500,height=500");
+  console.log(windowObjectReference);
+
+  let timefn = () => {
+    setTimeout(() => {
+      if (!windowObjectReference.closed) {
+        timefn();
+      } else {
+        console.log("关闭了");
+        windowObjectReference = null;
+      }
+    }, 400)
+  }
+  timefn();
+  window.addEventListener("beforeunload", function () {
+    windowObjectReference.close();
+    console.log("销毁");
+  })
+
+
+
+</script>
+
+</html>
