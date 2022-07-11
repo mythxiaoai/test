@@ -1,53 +1,65 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8" />
-		<title></title>
-		<script type="text/javascript" src="js/jquery-1.11.2.min.js" ></script>
-	</head>
-	<body>
-		<p>
-			
-			<input name="message" id="message" />
-			<input type="button" onclick="sendmsg()" value="发送信息"/>
-			
-		</p>
-		
-		<script>
-		$(function(){
-			
-			
-		})
-			if(!Window.WebSocket){
-				console.log("您的浏览器支持WebSocket");
-			}else{
-				console.log("您的浏览器不支持WebSocket");
-			}
-				var socket = new WebSocket("ws://localhost:8080");
-				socket.onopen=function(e){
-					console.log("服务器连接成功");
-				}
-				
-				socket.onerror=function(e){
-					console.log("服务器连接异常")
-				}
-				
-				socket.onclose=function(e){
-					console.log("服务器连接关闭"+socket.readyState);
-				}
-				//接收服务器消息
-				socket.onmessage=function(e){
-					console.log(e.data);
-				}
-				
-				function sendmsg(){
-					var msg = $("#message").val();
-					if(socket.readyState.OPEN == Window.OPEN){
-						socket.send(msg);
-					}
-				}
-				
-			
-		</script>
-	</body>
+
+<head>
+  <meta charset="utf-8" />
+  <title></title>
+</head>
+
+<body>
+  <p>
+
+    <input name="message" id="message" />
+    <input type="button" onclick="sendmsg()" value="发送信息" />
+
+  </p>
+
+  <script>
+    if (!Window.WebSocket) {
+      console.log("您的浏览器支持WebSocket");
+    } else {
+      console.log("您的浏览器不支持WebSocket");
+    }
+
+    var socket = new WebSocket("ws://172.0.0.1:7000");
+    socket.onopen = function (e) {
+      socket.send("链接成功")
+      console.log("服务器连接成功");
+    }
+
+    socket.onerror = function (e) {
+      console.log("服务器连接异常")
+    }
+
+    socket.onclose = function (e) {
+      console.log("服务器连接关闭" + socket.readyState);
+    }
+    //接收服务器消息
+    socket.onmessage = function (e) {
+      console.log(e);
+      const socketData = JSON.parse(e.data);
+      if (socketData.command === "api_v1_browser_start") {
+        new ShopviewLauncherApi().run(...new Array(4).fill(""), (a, b) => {
+          console.log(a, b);
+          socket.send({
+            "context": 123123,
+            "code": 0,
+            "data": b,
+            "message": "OK"
+          });
+        }, () => { })
+      }
+    }
+
+    function sendmsg() {
+      var msg = message.value;
+      if (socket.readyState.OPEN == Window.OPEN) {
+        socket.send(msg);
+      }
+    }
+
+
+  </script>
+</body>
+
 </html>

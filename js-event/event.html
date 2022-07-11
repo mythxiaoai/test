@@ -1,0 +1,34 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+111
+
+<body>
+  <script>
+    window.addEventListener("cat", function (e) {
+      console.log(e.detail);
+    })
+    // var event = new CustomEvent("cat", { "detail": { "ev": true } })
+    // event.initCustomEvent("cat", true, true, { a: 1 });
+    // window.dispatchEvent(event);
+    // event.initCustomEvent("cat", true, true, { a: 2 });
+    // window.dispatchEvent(event);
+
+    // 创建并分发事件
+    var event = new CustomEvent("cat", { "detail": { "ev": true } })
+    window.dispatchEvent(event);
+
+    var event = new CustomEvent("cat", { "detail": { "aaaa": true } })
+    window.dispatchEvent(event);
+
+
+
+  </script>
+</body>
+
+</html>

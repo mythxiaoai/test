@@ -32,6 +32,7 @@
 
         return actions.order.capture().then(function (details) {
           // 付款成功之后的回调
+          console.log('Transaction completed by ' + JSON.stringify(details));
           alert('Transaction completed by ' + details.payer.name.given_name);
           // 告诉你自己的服务器订单号,方便后续的查询
           return fetch('/paypal-transaction-complete', {
