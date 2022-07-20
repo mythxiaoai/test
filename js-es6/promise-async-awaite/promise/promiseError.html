@@ -36,12 +36,26 @@
     window.addEventListener("unhandledrejection", (e) => {
       console.log("promise 错误");
     })
+      // ; (async () => {
+      //   //结论是  
+      //   //1. 当不写catch错误处理 内部ajax也没有写reject 那么整个异常没办法捕获，情景是 await传递两次只返回reject的数据，会导致错误无法排查
+      //   //2. 当不写catch错误处理 内部ajax有写reject,整个异常会抛向window，下面的语句不会执行(有可能是你需要的情况，错误就不执行)， 那么会进入unhandledrejection事件中，实际过程中需要最里层的请求捕获异常即可
+      //   //3. 如果中间promise有异常捕获，那么最外层就不会抛向window，所以我们业务中应该封装在网络请求层捕获异常即可
+      //   await middlePromise()
+      //   console.log(3);
+
+      // })()
       ; (async () => {
         //结论是  
-        //1. 当不写catch错误处理 内部ajax也没有写reject 那么整个异常没办法捕获，情景是 await传递两次只返回reject的数据，会导致错误无法排查
-        //2. 当不写catch错误处理 内部ajax有写reject,整个异常会抛向window，下面的语句不会执行(有可能是你需要的情况，错误就不执行)， 那么会进入unhandledrejection事件中，实际过程中需要最里层的请求捕获异常即可
-        //3. 如果中间promise有异常捕获，那么最外层就不会抛向window，所以我们业务中应该封装在网络请求层捕获异常即可
-        await middlePromise()
+        //1. 当运行reject有方法，就不会进入catch
+        //2. 当没有就会进入catch
+        ajax("res", false, 2000).then((a) => {
+          console.log("true", a);
+        }, (b) => {
+          console.log("false", b);
+        }).catch(c => {
+          console.log("catch", c);
+        })
         console.log(3);
 
       })()
