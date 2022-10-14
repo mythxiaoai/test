@@ -1,0 +1,121 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0
+    }
+
+    .douyinImg {
+      font-size: 100px;
+    }
+
+    .kuTGKN {
+      height: 2.12em;
+      width: 3.4em;
+      margin: 0.240217em 0.2em;
+      box-sizing: border-box;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .jPkBzC {
+      -webkit-user-drag: none;
+      height: 2.12em;
+      width: 2.12em;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+    }
+
+    .kckaJv {
+      -webkit-user-drag: none;
+      height: 1.3em;
+      width: 1.3em;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="douyinImg">
+    <!-- <div class="sc-jTzLTM kuTGKN"><img draggable="false"
+        src="https://p16-security-va.ibyteimg.com/img/security-captcha-oversea-usa/whirl_97771b2cf672feba0e3f394d36f97bffc0a8fb9f_1.png~tplv-obj.image"
+        class="sc-fjdhpX jPkBzC"
+        style="transform-origin: center center; transform: translate(-50%, -50%) rotateZ(0deg); visibility: visible;">
+      <div class="sc-jzJRlG fUxvtw" style="background: rgba(0, 0, 0, 0.36);"></div><img draggable="false"
+        src="https://p16-security-va.ibyteimg.com/img/security-captcha-oversea-usa/whirl_97771b2cf672feba0e3f394d36f97bffc0a8fb9f_2.png~tplv-obj.image"
+        class="sc-cSHVUG kckaJv"
+        style="transform-origin: center center; transform: translate(-50%, -50%) rotateZ(0deg); visibility: visible;">
+      <div class="sc-kAzzGY bdWtc"></div>
+    </div> -->
+    <div class="sc-jTzLTM kuTGKN">
+      <img draggable="false" src="./imgs/whirl_9d912a5d9177c48b4a4a28cfe76fbe921c296de4_1.png" class="sc-fjdhpX jPkBzC"
+        style="transform-origin: center center; transform: translate(-50%, -50%) rotateZ(0deg); visibility: visible;">
+      <div class="sc-jzJRlG fUxvtw" style="background: rgba(0, 0, 0, 0.36);"></div>
+      <img draggable="false" src="./imgs/whirl_9d912a5d9177c48b4a4a28cfe76fbe921c296de4_2.png" class="sc-cSHVUG kckaJv"
+        style="transform-origin: center center; transform: translate(-50%, -50%) rotateZ(0deg); visibility: visible;">
+      <div class="sc-kAzzGY bdWtc"></div>
+    </div>
+  </div>
+
+  <progress id="progress" style="width:271.014px" max="271.014" value=""></progress>
+  <div></div>
+  Width:<div id="msg"></div>
+</body>
+<script>
+  //178.378    271.014
+  const DEGALL = 178.378;
+  const WIDTHALL = 271.014;
+  let widthValue = 0;
+  console.log(progress);
+  let imgs = document.querySelectorAll("img");
+  console.log(imgs);
+  //transform-origin: center center; transform: translate(-50%, -50%) rotateZ(0deg); visibility: visible;
+  progress.onclick = e => {
+    console.log(e);
+    let w = e.x;
+    changeValue(w);
+  }
+  document.onkeyup = e => {
+    //right 39
+    //left 37
+    if (e.keyCode === 37) {
+      widthValue = widthValue - 1;
+    }
+    if (e.keyCode === 39) {
+      widthValue = widthValue + 1;
+    }
+    if (widthValue < 0) widthValue = 0;
+    changeValue(widthValue);
+  }
+  function changeValue(w) {
+    widthValue = w;
+    progress.value = w;
+    msg.innerHTML = w;
+    let deg = w * DEGALL / WIDTHALL;
+    imgs[0].style = `transform-origin: center center; transform: translate(-50%, -50%) rotateZ(-${deg}deg); visibility: visible;`
+    imgs[1].style = `transform-origin: center center; transform: translate(-50%, -50%) rotateZ(${deg}deg); visibility: visible;`
+  }
+
+  document.addEventListener("readystatechange", e => {
+    if (document.readyState === "interactive") {
+      console.log(Date.now());
+    }
+  })
+
+</script>
+
+</html>

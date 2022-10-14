@@ -1,0 +1,67 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    async function readFile() {
+      // 传入文件绝对路径
+      window.getFileSystemHandler("/Users/liusilan/Downloads/ips-data_center.txt")
+        .then(async (handle) => {
+          console.log(handle);
+          handle
+            .getFile()
+            .then(async (fileData) => {
+              const text = await fileData.text();
+              console.log(text);
+            })
+            .catch((error) => {
+              console.log(error);
+            });
+        });
+    }
+
+    async function writeFile() {
+      // 获取用户目录
+      const userDataDirectoryHandle = await window.getWellKnownDirectory(
+        "userdata"
+      );
+      console.log(userDataDirectoryHandle.name);
+
+      // 创建文件夹
+      userDataDirectoryHandle
+        .getDirectoryHandle("Test", {
+          create: true,
+        })
+        .then(async (handle) => {
+          const dirPath = handle.name;
+          console.log("dirPath:" + dirPath);
+
+          const newFileHandle = await handle.getFileHandle("22.txt", {
+            create: true,
+          });
+
+          const writable = await newFileHandle.createWritable();
+
+          await writable.write("12345");
+
+          await writable.close();
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
+
+    // readFile();
+
+    // writeFile();
+
+  </script>
+</body>
+
+</html>

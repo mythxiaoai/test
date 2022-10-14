@@ -11,13 +11,13 @@
 // console.log(res);
 
 let ts = require("typescript")
+let fs = require("fs")
 
-const source = `
-let test:string = "123";
+const source = fs.readFileSync("/Users/xiaoai/git/test/node/tstojs/test.ts", "utf8");
 
-type menu = {"home":"index"};
-`;
-
+//不会对import解析
 let result = ts.transpileModule(source, { compilerOptions: { module: ts.ModuleKind.CommonJS }});
 
 console.log(JSON.stringify(result));
+
+fs.writeFileSync("/Users/xiaoai/git/test/node/tstojs/result.js",result.outputText)

@@ -1,17 +1,36 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<title></title>
-	</head>
-	<body>
-		我是A界面
-		<iframe src="messageB.html" name="iframeB"></iframe>
-	</body>
-	<script>
-		//我想B页面发送参数
-		let iframeDom = document.getElementsByTagName("iframe")[0].contentWindow;
-		console.log(window.location.origin)
-		iframeDom.postMessage("我是传过来的参数","*");
-	</script>
+
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+
+<body>
+  我是A界面
+  <iframe src="http://172.26.128.223:8081/messageB.html" name="iframeB"></iframe>
+
+  <button onclick="fn()">发送消息</button>
+</body>
+<script>
+  //我想B页面发送参数
+  let iframeDom = document.getElementsByTagName("iframe")[0].contentWindow;
+  console.log(iframeDom);
+
+  function fn() {
+    iframeDom.postMessage(
+      `
+      ()=>{
+        document.querySelector("body").innerHTML = "执行脚本"
+        return "执行成功拉"
+      }
+      `
+      , "*");
+  }
+
+  window.addEventListener("message", e => {
+    console.log(e.data);
+  })
+</script>
+
 </html>

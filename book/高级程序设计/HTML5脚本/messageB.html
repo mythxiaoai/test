@@ -1,17 +1,32 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<title></title>
-	</head>
-	<body>
-		我是B页面
-	</body>
-	<script>
-		window.onmessage=function(e){
-				console.log(e.data);
-				processMessage(e.data);
-				e.source.postMessage("Received!","*");
-		}
-	</script>
+
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+
+<body>
+  我是B页面
+</body>
+<script>
+  window.addEventListener("message", e => {
+    console.log(e);
+    // processMessage(e.data);
+    let result = {
+      code: -2,
+      message: "脚本执行出错",
+      data: null
+    }
+    try {
+      result = eval(e.data);
+      console.log("result", result);
+      result = result();
+    } finally {
+      e.source.postMessage(result, "*");
+    }
+
+  })
+</script>
+
 </html>

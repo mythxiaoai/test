@@ -1,3 +1,7 @@
-let test:string = "123";
+import { a } from "./a";
 
-type menu = {"home":"index"};
+let test: string = "123";
+
+type menu = { "home": "index" };
+
+console.log(a);

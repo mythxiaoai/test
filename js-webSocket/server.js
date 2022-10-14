@@ -1,11 +1,49 @@
-var WebSocketServer = require("ws").Server;
-var wss = new WebSocketServer({port:8080});
+const ws = require("ws");
+let wsock_ = null;
+module.exports =  async function createWSServer(p) {
+  return new Promise((resolve) => {
+    const webSocketServer = new ws.Server({
+      port: p,
+    });
 
-wss.on("connection",function(ws){
-	console.log("有客户端连接上了..."+ws);
-	ws.on("message",function(message){
-		console.log("客户端发送过来的消息是:"+message);
-		ws.send("服务器发送的数据：我不爱你");
-	})
-})
+    webSocketServer.on('listening', () => {
+      console.log('web socket begins listening');
+    });
 
+    webSocketServer.on('connection', (socket, req) => {
+      if (wsock_ != null) {
+        console.log('reset websocket');
+        wsock_.close();
+        wsock_ = null;
+      }
+      wsock_ = socket;
+
+      wsock_.on('message', (data) => {
+        data = JSON.parse(data)
+        if (data.type === 'terminate') {
+          wsock_.close();
+          setTimeout(() => {
+            webSocketServer.close();
+          }, 3000);
+          throw 'script program is terminated';
+        }
+      });
+
+
+      wsock_.on('close', (code, reason) => {
+        console.log('socket is closed:');
+        console.log(code);
+        console.log(reason);
+        wsock_ = null;
+      });
+
+      wsock_.on('error', (error) => {
+        console.log('socket error:');
+        console.log(error);
+      });
+      const ip = req.connection.remoteAddress;
+      console.log(ip + ' is connected');
+      resolve(webSocketServer)
+    });
+  })
+}

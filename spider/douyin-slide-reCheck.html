@@ -1,0 +1,145 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0
+    }
+
+    .zGYIR {
+      font-size: 100px;
+      background: rgb(255, 255, 255);
+      box-sizing: border-box;
+      overflow: hidden;
+      width: 3.8em;
+      border-radius: 6px;
+    }
+
+    .zGYIR .captcha_verify_img--wrapper {
+      margin: 0px 0.2em;
+    }
+
+    .zGYIR .captcha_verify_img--wrapper {
+      width: 3.4em;
+      height: 2.12em;
+    }
+
+    .zGYIR div,
+    .zGYIR a,
+    .zGYIR span,
+    .zGYIR svg,
+    .zGYIR img {
+      font-size: unset;
+    }
+
+    .jzVByM {
+      height: 1.72em;
+      width: 2.76em;
+      cursor: pointer;
+      margin: 0px 0.12em;
+      box-sizing: border-box;
+      position: relative;
+      background: rgb(244, 245, 246);
+      overflow: hidden;
+    }
+
+    .cHbGdz {
+      width: 100%;
+      height: 100%;
+    }
+
+    .captcha_verify_container img {
+      pointer-events: auto;
+      background: transparent;
+    }
+
+    .ggNWOG {
+      position: absolute;
+      width: 0.677536em;
+      height: 0.677536em;
+    }
+  </style>
+</head>
+
+<body>
+  <textarea id="result" rows="5" style="width:400px;"></textarea>
+  <div id="result2">
+
+  </div>
+  <div class="zGYIR">
+    <div class="captcha_verify_img--wrapper sc-gZMcBi jzVByM"><img id="captcha-verify-image" draggable="false"
+        src="https://p16-captcha-sg.ibyteimg.com/tos-alisg-i-ovu2ybn2i4-sg/dea76514ab1643d4b6d6c006717f834b~tplv-ovu2ybn2i4-2.jpeg"
+        alt="" class="sc-gqjmRU cHbGdz sc-ifAKCX itlNmx"><img
+        class="captcha_verify_img_slide react-draggable sc-VigVT ggNWOG" alt=""
+        src="https://p16-captcha-sg.ibyteimg.com/tos-alisg-i-ovu2ybn2i4-sg/482e67341df8408a8f91492aa65d846d~tplv-ovu2ybn2i4-1.png"
+        style="left: 0px; top: 0.936232em; transform: translate(0px, 0px);">
+      <div id="verify-points"></div>
+    </div>
+  </div>
+
+  <progress id="progress" style="width:271.014px" max="271.014" value=""></progress>
+  <div></div>
+  Left:<div id="msg"></div>
+</body>
+<script>
+  //340    271.014 + 67.75 = 338.764
+  //552    
+  //
+  const LEFTALL = 271.014;
+  const RenderedWIDTHALL = 340;
+  const IntrinsicWIDTHALL = 552;
+  const PaddingWidth = 8;
+
+  let widthValue = 0;
+  console.log(progress);
+  let imgs = document.querySelectorAll("img");
+  console.log(imgs);
+  progress.onclick = e => {
+    console.log(e);
+    let w = e.x;
+    changeValue(w);
+  }
+
+  result.onchange = e => {
+    try {
+      let v = e.target.value;
+      v = decodeURIComponent(v);
+      v = JSON.parse(v);
+      result2.innerHTML = JSON.stringify(v);
+      document.querySelectorAll("img")[0].src = v.img1;
+      document.querySelectorAll("img")[1].src = v.img2;
+      changeValue(v.distance)
+    } catch (error) {
+      console.error("数据格式不对");
+    }
+  }
+
+  document.onkeyup = e => {
+    //right 39
+    //left 37
+    if (e.keyCode === 37) {
+      widthValue = widthValue - 1;
+    }
+    if (e.keyCode === 39) {
+      widthValue = widthValue + 1;
+    }
+    if (widthValue < 0) widthValue = 0;
+    changeValue(widthValue);
+  }
+  function changeValue(w) {
+    widthValue = w;
+    progress.value = w;
+    msg.innerHTML = w;
+    //减去左侧的padding透明边框
+    //238
+    //left: 0px; top: 0.936232em; transform: translate(0px, 0px);
+    imgs[1].style.left = `${w}px`
+  }
+</script>
+
+</html>
