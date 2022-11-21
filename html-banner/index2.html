@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>轮播图</title>
+    <link rel="stylesheet" href="css/banner.css">
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    .banner {
+        position: relative;
+        width: 1000px;
+        height: 375px;
+        margin: 50px auto;
+        overflow: hidden;
+    }
+
+    .banner ul {
+        width: 3000px;
+        padding: 0;
+        transition: all 1s;
+    }
+
+    .banner li {
+        list-style: none;
+        width: 1000px;
+        height: 375px;
+        float: left;
+    }
+
+    .circle {
+        position: absolute;
+        bottom: 10px;
+        left: 92px;
+    }
+
+    .circle label {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: lightcoral;
+        margin: 0 10px;
+        position: relative;
+        cursor: pointer;
+    }
+
+    .circle label::after {
+        content: '';
+        width: 30px;
+        height: 30px;
+        background: lightsalmon;
+        border-radius: 50%;
+        position: absolute;
+        top: -5px;
+        left: -5px;
+        opacity: 0;
+    }
+
+    #put1:checked~.circle label:nth-of-type(1)::after,
+    #put2:checked~.circle label:nth-of-type(2)::after,
+    #put3:checked~.circle label:nth-of-type(3)::after {
+        opacity: 1;
+    }
+
+    #put1:checked~ul {
+        margin-left: 0;
+    }
+
+    #put2:checked~ul {
+        margin-left: -1000px;
+    }
+
+    #put3:checked~ul {
+        margin-left: -2000px;
+    }
+
+    .left_arrow label {
+        display: inline-block;
+        width: 24px;
+        height: 44px;
+        top: 50%;
+        left: 0%;
+        margin-top: -22px;
+        position: absolute;
+        background-color: red;
+        cursor: pointer;
+    }
+
+    /* 圆点的put1,put2,put3和箭头的put1,put2,put3是相互联系的，同时受input制约 */
+    #put1:checked~.left_arrow label,
+    #put2:checked~.left_arrow label,
+    #put3:checked~.left_arrow label{
+        display:none;
+    }
+    #put1:checked~.left_arrow label:nth-of-type(3),
+    #put2:checked~.left_arrow label:nth-of-type(1),
+    #put3:checked~.left_arrow label:nth-of-type(2){
+        display: inline-block;
+    }
+
+    .right_arrow label {
+        display: inline-block;
+        width: 24px;
+        height: 44px;
+        top: 50%;
+        right: 0%;
+        margin-top: -22px;
+        position: absolute;
+         background-color: red;
+         cursor: pointer;
+    }
+
+    /* 圆点的put1,put2,put3和箭头的put1,put2,put3是相互联系的，同时受input制约 */
+    #put1:checked~.right_arrow label,
+    #put2:checked~.right_arrow label,
+    #put3:checked~.right_arrow label{
+        display:none;
+    }
+    #put1:checked~.right_arrow label:nth-of-type(2),
+    #put2:checked~.right_arrow label:nth-of-type(3),
+    #put3:checked~.right_arrow label:nth-of-type(1){
+        display: inline-block;
+    }
+</style>
+
+<body>
+    <div class="banner">
+        <input type="radio" id="put1" name="put" hidden checked>
+        <input type="radio" id="put2" name="put" hidden>
+        <input type="radio" id="put3" name="put" hidden>
+        <ul>
+            <li><img alt="小米推荐" height="375" width="1000" src="img/1/1.jpg" /></li>
+            <li><img alt="小米推荐" height="375" width="1000" src="img/1/2.jpg" /></li>
+            <li><img alt="小米推荐" height="375" width="1000" src="img/1/3.jpg" /></li>
+        </ul>
+        <div class="circle">
+            <label for="put1"></label>
+            <label for="put2"></label>
+            <label for="put3"></label>
+        </div>
+        <div class="left_arrow"> 
+            <label for="put1"></label>
+            <label for="put2"></label>
+            <label for="put3"></label>
+        </div>
+        <div class="right_arrow">
+            <label for="put1"></label>
+            <label for="put2"></label>
+            <label for="put3"></label>
+        </div>
+    </div>
+</body>
+
+</html>
