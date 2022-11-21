@@ -1,20 +1,13 @@
-const fs =require("fs");
-const { resolve } = require("path");
+const fs = require("fs");
+const {
+  resolve
+} = require("path");
 const haha = require("./libs/test.js");
 
-function errorFn() { 
+function errorFn() {
   let realConsole = console;
   process.on('uncaughtException', (err, origin) => {
-    realConsole.log("uncaughtException",err);
-    fs.writeSync(
-      process.stderr.fd,
-      `Caught exception: ${err}\n` +
-      `Exception origin: ${origin}`
-    );
-      process.exit();
-  });
-  process.on('unhandledRejection', (err, origin) => {
-    realConsole.log("unhandledRejection",JSON.stringify(err));
+    realConsole.log("uncaughtException", err);
     fs.writeSync(
       process.stderr.fd,
       `Caught exception: ${err}\n` +
@@ -22,7 +15,16 @@ function errorFn() {
     );
     process.exit();
   });
-  
+  process.on('unhandledRejection', (err, origin) => {
+    realConsole.log("unhandledRejection", JSON.stringify(err));
+    fs.writeSync(
+      process.stderr.fd,
+      `Caught exception: ${err}\n` +
+      `Exception origin: ${origin}`
+    );
+    process.exit();
+  });
+
 }
 
 
@@ -30,12 +32,12 @@ function errorFn() {
   errorFn();
   console = consoleDeal(false);
   console.log("aaa")
-   // daemon(null);
-    await new Promise(res=>setTimeout(res,2000))
-    // haha();
-    let aa = {code:0,data:123,message:"msg"};
-    throw aa
-    // throw aa
+  daemon(null);
+  //await new Promise(res=>setTimeout(res,2000))
+  // haha();
+  //let aa = {code:0,data:123,message:"msg"};
+  //throw aa
+  // throw aa
 })();
 
 
@@ -46,7 +48,7 @@ function errorFn() {
 //   });
 // })()
 
-function daemon(driver) { 
+function daemon(driver) {
   console.log("bbb");
   time = setInterval(() => {
     console.log("cccc");
@@ -56,7 +58,7 @@ function daemon(driver) {
       throw "用户关闭浏览器"
     }
   }, 400);
-  return () => { 
+  return () => {
     clearInterval(time);
   }
 }
@@ -70,10 +72,9 @@ function consoleDeal(boo = false) {
         return targt[key].bind(targt);
       } else {
         if (typeof targt[key] === 'function') {
-          return () => { };
+          return () => {};
         }
       }
     }
   });
 }
-

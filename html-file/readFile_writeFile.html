@@ -9,24 +9,18 @@
 
 <body>
   <script>
-    async function readFile() {
+    async function readFile(path) {
       // 传入文件绝对路径
-      window.getFileSystemHandler("/Users/liusilan/Downloads/ips-data_center.txt")
-        .then(async (handle) => {
-          console.log(handle);
-          handle
-            .getFile()
-            .then(async (fileData) => {
-              const text = await fileData.text();
-              console.log(text);
-            })
-            .catch((error) => {
-              console.log(error);
-            });
-        });
+      let handle = await window.getFileSystemHandler(path).catch((error) => {
+        console.error(error);
+      });
+
+      console.log(handle);
+      let fileData = await handle.getFile();
+      let text = await fileData.text();
     }
 
-    async function writeFile() {
+    async function writeFile(path, content) {
       // 获取用户目录
       const userDataDirectoryHandle = await window.getWellKnownDirectory(
         "userdata"
@@ -35,7 +29,7 @@
 
       // 创建文件夹
       userDataDirectoryHandle
-        .getDirectoryHandle("Test", {
+        .getDirectoryHandle("rpa", {
           create: true,
         })
         .then(async (handle) => {
@@ -55,6 +49,12 @@
         .catch((err) => {
           console.log(err);
         });
+    }
+
+    async function getUserPath() {
+      return (await window.getWellKnownDirectory(
+        "userdata"
+      )).name;
     }
 
     // readFile();
