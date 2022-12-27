@@ -1,0 +1,52 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <script>
+    let json = {
+      USERCCC: 111
+    };
+    // const test = () => {
+    //   var undefined = 5;
+    //   console.log(typeof undefined)//輸出number 
+    // }
+    // test();
+    (() => {
+      var undefined = 5;
+      console.log(typeof undefined);
+
+    })();
+    // 實際上，es5後undefined已經被改為read - only屬性了。 但在局部作用域上，是會被修改的！ 如考慮以下函數： const test = () => { var undefined = 5; console.log(typeof undefined)//輸出number } 為了避免無意中被竄改，使用void(0)還是比較好的做法 而且在進行代碼壓縮時，undefined也會被換成void(0), 總是要被替換的，為什麼不一開始就換。
+
+    var fruits = ["Banana", "Orange", "Apple", "Mango"];
+    console.log(fruits.valueOf() === fruits);
+
+
+    var myParse = function (val) {
+      if (val) {
+        var num = val.match("/^\d*\.?\d+/");
+        // var num = val.match("/\.[0-9]+|(?:[1-9]+[0-9]*|0)(?:\.[0-9]*|\.)?(?:[eE][+-]{0,1}[0-9]+)?(?![_$a-zA-Z0-9])/");
+        console.log(num);
+        if (num !== null) {
+          return num[0] - 0;
+        } else {
+          return NaN;
+        }
+      } else {
+        return NaN;
+      }
+    }
+
+    console.log(myParse("4"));
+
+  </script>
+</body>
+
+</html>
