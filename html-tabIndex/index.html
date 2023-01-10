@@ -1,0 +1,27 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>哈哈</h1>
+  <input id="input" value="111"/> 
+  <div id="box" tabindex="-1">
+      我是box内部
+  </div>
+  <div id="box2" tabindex="0">
+      我是box内部
+  </div>
+
+  <main tabindex="-1">main</main>
+  <script>
+      box.addEventListener("focus",()=>{
+        console.log(1);
+      })
+
+      //结论  div加上tabindex会让这个box有focusout事件
+  </script>
+</body>
+</html>
