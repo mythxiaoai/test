@@ -1,0 +1,105 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #box {
+      width: 100px;
+      height: 100px;
+      position: absolute;
+      animation-name:run;
+      animation-iteration-count: infinite;
+      animation-duration: 4s;
+      border: 1px solid #ccc;
+    }
+    .stop{
+      animation-play-state: paused;
+    }
+    .run{
+      animation-play-state: running;
+    }
+
+    @keyframes run {
+      0% {
+        left: 100px;
+        top: 100px;
+      }
+
+      25% {
+        left: 300px;
+        top: 100px;
+      }
+
+      50% {
+        left: 300px;
+        top: 300px;
+      }
+
+      75% {
+        left: 100px;
+        top: 300px;
+      }
+      100% {
+        left: 100px;
+        top: 100px;
+      }
+    }
+    @keyframes runt {
+      0% {
+        transform: translate(100px, 100px);
+      }
+
+      25% {
+        transform: translate(300px, 100px);
+      }
+
+      50% {
+        transform: translate(300px, 300px);
+      }
+
+      75% {
+        transform: translate(100px, 300px);
+      }
+      100% {
+        transform: translate(100px, 100px);
+      }
+    }
+    button{
+      background: #fff;
+      border-color: #ccc;
+      padding: 9px 15px;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <button id="animationDom">stop/run-animation</button>
+    <button id="layout">layout</button>
+    <button id="paint">paint</button>
+    <button id="composite">composite</button>
+  </div>
+  <div id="box" class="stop"></div>
+  <script>
+    animationDom.addEventListener("click",()=>{
+      box.className==="run"?box.className="stop":box.className="run";
+    });
+    layout.addEventListener("click",()=>{
+      let w = box.clientWidth +10;
+      box.style.width = `${w}px`;
+    });
+    paint.addEventListener("click",()=>{
+      box.style.backgroundColor=Math.floor(Math.random()*16777215).toString(16);
+    });
+    let left = 0;
+    composite.addEventListener("click",()=>{
+      left+=5;
+      box.style.transform=`translate(${left}px,0)`
+    });
+  </script>
+</body>
+
+</html>

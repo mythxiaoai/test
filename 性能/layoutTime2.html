@@ -1,0 +1,88 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #box1,
+    #box2,
+    #box3,
+    #box4 {
+      width: 100px;
+      height: 100px;
+      margin: 50px;
+      border: 1px solid #ccc;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      color: #aaa;
+    }
+
+    button {
+      background: #fff;
+      border-color: #ccc;
+      padding: 9px 15px;
+      border-radius: 3px;
+    }
+  </style>
+</head>
+
+<body>
+  <button id="btn1">异步触发</button>
+  <button id="btn2">异步改进</button>
+  <div id="box1">box1</div>
+  <div id="box2">box2</div>
+  <div id="box3">box3</div>
+  <div id="box4">box4</div>
+  <script>
+    box1.addEventListener("click", () => {
+
+      var w1 = box1.clientWidth;
+
+      box1.style.width = `${w1 * 2}px`
+
+    });
+    box2.addEventListener("click", () => {
+
+      var w2 = box2.clientWidth;
+
+      box2.style.width = `${w2 * 2}px`
+
+    });
+
+
+    btn1.addEventListener("click", () => {
+      box1.click();
+      box2.click();
+    });
+
+    //改进
+    box3.addEventListener("click", () => {
+
+      var w3 = box3.clientWidth;
+      requestAnimationFrame(() => {
+        box3.style.width = `${w3 * 2}px`
+      })
+
+    });
+    box4.addEventListener("click", () => {
+
+      var w4 = box4.clientWidth;
+      requestAnimationFrame(() => {
+        box4.style.width = `${w4 * 2}px`
+      })
+
+    });
+
+    btn2.addEventListener("click", () => {
+      box3.click();
+      box4.click();
+    })
+
+  </script>
+</body>
+
+</html>

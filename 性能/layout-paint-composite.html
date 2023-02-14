@@ -1,0 +1,95 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #box {
+      width: 100px;
+      height: 100px;
+      position: absolute;
+      animation-name: run;
+      animation-iteration-count: infinite;
+      animation-duration: 4s;
+      border: 1px solid #ccc;
+    }
+
+    .stop {
+      animation-play-state: paused;
+    }
+
+    .run {
+      animation-play-state: running;
+    }
+
+    @keyframes run {
+      0% {
+        left: 100px;
+        top: 100px;
+      }
+
+      25% {
+        left: 300px;
+        top: 100px;
+      }
+
+      50% {
+        left: 300px;
+        top: 300px;
+      }
+
+      75% {
+        left: 100px;
+        top: 300px;
+      }
+
+      100% {
+        left: 100px;
+        top: 100px;
+      }
+    }
+
+    @keyframes runt {
+      0% {
+        transform: translate(100px, 100px);
+      }
+
+      25% {
+        transform: translate(300px, 100px);
+      }
+
+      50% {
+        transform: translate(300px, 300px);
+      }
+
+      75% {
+        transform: translate(100px, 300px);
+      }
+
+      100% {
+        transform: translate(100px, 100px);
+      }
+    }
+
+    button {
+      background: #fff;
+      border-color: #ccc;
+      padding: 9px 15px;
+      border-radius: 3px;
+    }
+  </style>
+</head>
+
+<body>
+  <button id="animationDom">stop/run-animation</button>
+  <div id="box" class="stop"></div>
+  <script>
+    animationDom.addEventListener("click", () => {
+      box.className === "run" ? box.className = "stop" : box.className = "run";
+    });
+  </script>
+</body>
+
+</html>
