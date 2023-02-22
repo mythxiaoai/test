@@ -1,0 +1,61 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  .box{
+    position: relative;
+    width: 100%;
+  }
+  img{
+    object-fit: cover;
+    display: block;
+    /* max-width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%; */
+  }
+  
+</style>
+<body>
+  <form id="form">
+    <label><input name="padding" checked type="radio" value="1"/>适应</label>
+    <label><input name="padding" type="radio" value="2"/>高</label>
+    <label><input name="padding" type="radio" value="3"/>低</label>
+</form>
+
+  <div class="box">
+    <img
+      src="https://d2n979dmt31clo.cloudfront.net/image/store/3300003667/1655365532151/fashionline-00000017.jpeg?w=920&amp;h=1380"
+      srcset="https://d2n979dmt31clo.cloudfront.net/image/store/3300003667/1655365532151/fashionline-00000017_375x.jpeg?w=920&amp;h=1380 375w, https://d2n979dmt31clo.cloudfront.net/image/store/3300003667/1655365532151/fashionline-00000017_540x.jpeg?w=920&amp;h=1380 540w, https://d2n979dmt31clo.cloudfront.net/image/store/3300003667/1655365532151/fashionline-00000017_720x.jpeg?w=920&amp;h=1380 720w, https://d2n979dmt31clo.cloudfront.net/image/store/3300003667/1655365532151/fashionline-00000017_900x.jpeg?w=920&amp;h=1380 900w, https://d2n979dmt31clo.cloudfront.net/image/store/3300003667/1655365532151/fashionline-00000017_920x.jpeg?w=920&amp;h=1380 920w"
+      width="920" height="1380" sizes="auto" loading="lazy" data-scale="hover-scale" decoding="async"
+      >
+  </div>
+  <script>
+    Array.from(form.elements.padding).forEach(dom=>{
+      console.log(1);
+      dom.addEventListener("change",function(){
+      console.log(this);
+      console.log(this.value);
+      if(this.value ==1){
+        document.querySelector("img").style = "height:1380px"
+      }
+      if(this.value ==2){
+        document.querySelector("img").style = "height:500px"
+      }
+      if(this.value ==3){
+        document.querySelector("img").style = "height:300px"
+      }
+    })
+    })
+   
+  </script>
+</body>
+
+</html>
