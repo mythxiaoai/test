@@ -14,8 +14,8 @@
   img{
     object-fit: cover;
     display: block;
-    /* max-width: 100%;
-    position: absolute;
+    max-width: 100%;
+    /* position: absolute;
     top: 0;
     left: 0;
     height: 100%;
@@ -30,7 +30,7 @@
     <label><input name="padding" type="radio" value="3"/>低</label>
 </form>
 
-  <div class="box">
+  <div class="box" style="width:500px">
     <img
       src="https://d2n979dmt31clo.cloudfront.net/image/store/3300003667/1655365532151/fashionline-00000017.jpeg?w=920&amp;h=1380"
       srcset="https://d2n979dmt31clo.cloudfront.net/image/store/3300003667/1655365532151/fashionline-00000017_375x.jpeg?w=920&amp;h=1380 375w, https://d2n979dmt31clo.cloudfront.net/image/store/3300003667/1655365532151/fashionline-00000017_540x.jpeg?w=920&amp;h=1380 540w, https://d2n979dmt31clo.cloudfront.net/image/store/3300003667/1655365532151/fashionline-00000017_720x.jpeg?w=920&amp;h=1380 720w, https://d2n979dmt31clo.cloudfront.net/image/store/3300003667/1655365532151/fashionline-00000017_900x.jpeg?w=920&amp;h=1380 900w, https://d2n979dmt31clo.cloudfront.net/image/store/3300003667/1655365532151/fashionline-00000017_920x.jpeg?w=920&amp;h=1380 920w"
@@ -44,7 +44,7 @@
       console.log(this);
       console.log(this.value);
       if(this.value ==1){
-        document.querySelector("img").style = "height:1380px"
+        document.querySelector("img").style = "height: auto;"
       }
       if(this.value ==2){
         document.querySelector("img").style = "height:500px"
