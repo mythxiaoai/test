@@ -168,9 +168,41 @@
 
 //中文
 //[\u4e00-\u9fa5]
-let res = "我是中文"
-// let result =/^[\u4e00-\u9fa5]{0,255}$/.test(res)
-// console.log(result);
-let reg = new RegExp(`^[\u4e00-\u9fa5]{0,${res.length}}$`,"img");
+// let res = "我是中文"
+// // let result =/^[\u4e00-\u9fa5]{0,255}$/.test(res)
+// // console.log(result);
+// let reg = new RegExp(`^[\u4e00-\u9fa5]{0,${res.length}}$`,"img");
 
-console.log(reg.test(res));
+// console.log(reg.test(res));
+
+//首字母大写
+// let res = "Atest"
+// console.log(/^[A-Z]+/.test(res));
+let res = `--------------- MR URL 汇总 start ---------------
+--------------- Wink ---------------
+Wink: https://git.duowan.com/webs/shopline-static/layout/themes/Wink/-/merge_requests/1071
+Flash: https://git.duowan.com/webs/shopline-static/layout/themes/Flash/-/merge_requests/159
+Feeling: https://git.duowan.com/webs/shopline-static/layout/themes/Feeling/-/merge_requests/145
+Extent: https://git.duowan.com/webs/shopline-static/layout/themes/Extent/-/merge_requests/238
+Shine: https://git.duowan.com/webs/shopline-static/layout/themes/Shine/-/merge_requests/225
+--------------- Arise ---------------
+Arise: https://git.duowan.com/webs/shopline-static/layout/themes/Arise/-/merge_requests/1761
+--------------- Expect ---------------
+Expect: https://git.duowan.com/webs/shopline-static/layout/themes/Expect/-/merge_requests/2245
+Blouse: https://git.duowan.com/webs/shopline-static/layout/themes/Blouse/-/merge_requests/1575
+Soo: https://git.duowan.com/webs/shopline-static/layout/themes/Soo/-/merge_requests/1833
+Control: https://git.duowan.com/webs/shopline-static/layout/themes/Control/-/merge_requests/1957
+--------------- Edges ---------------
+Edges: https://git.duowan.com/webs/shopline-static/layout/themes/Edges/-/merge_requests/2169
+Barn: https://git.duowan.com/webs/shopline-static/layout/themes/Barn/-/merge_requests/1529
+--------------- BrooklynPro ---------------
+BrooklynPro: https://git.duowan.com/webs/shopline-static/layout/themes/BrooklynPro/-/merge_requests/1728
+--------------- Impress ---------------
+Impress: https://git.duowan.com/webs/shopline-static/layout/themes/impress/-/merge_requests/3395
+Along: https://git.duowan.com/webs/shopline-static/layout/themes/Along/-/merge_requests/1967
+--------------- Solid ---------------
+Solid: https://git.duowan.com/webs/shopline-static/layout/themes/Solid/-/merge_requests/1908?a=1
+--------------- MR URL 汇总 end ---------------`
+
+let result = res.match(/https:\/\/[A-Za-z0-9.-]+\/[A-Za-z0-9-\/%_.?=]+/g);
+console.log(result);//[ 'a', 'a' ]
