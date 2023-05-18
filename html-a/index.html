@@ -1,0 +1,26 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <a class="header__image_button" href>Shop</a>
+  <script>
+document.body.addEventListener(
+  'click',
+  (event) => {
+    const { target } = event;
+    const ancestor = target.closest('a');
+    const isEmptyHref = (ele) => ele.getAttribute('href') === '';
+    if ((target.tagName.toLowerCase() === 'a' && isEmptyHref(target)) || (ancestor && isEmptyHref(ancestor))) {
+      event.preventDefault();
+    }
+  },
+  true,
+);
+
+  </script>
+</body>
+</html>
