@@ -97,11 +97,15 @@
 // console.log(`${RegExp.$1}年${add0(RegExp.$2)}月${add0(RegExp.$3)}日`);//2019年5月1日
 
 //url匹配文件名和文件后缀
-//  let str = "http://image.uczzd.cn/9819/981152196281048560.jpg?id=0&from=export&height=140&width=270";
-//  let fileName = str.replace(/.*[/](?=[^/].*)|\..*/img, '')
-//  console.log(fileName);
-//  str.replace(/.*(?=\.(\w+))/img, '')
-//  console.log(RegExp.$1);
+ let str = "http://image.uczzd.cn/9819/981152196281048560.jpg?id=0&from=export&height=140&width=270";
+ let fileName = str.replace(/.*[/](?=[^/].*)|\..*/img, '')
+ let fileName2 = str.split("/")[str.split("/").length-2]
+ let comName = str.replace(/^(?=^.{3,255}$)[a-zA-Z0-9][-a-zA-Z0-9]{0,62}(\.[a-zA-Z0-9][-a-zA-Z0-9]{0,62})+$/img, '')
+ console.log(fileName);
+ console.log(fileName2);
+ console.log(comName);
+ str.replace(/.*(?=\.(\w+))/img, '')
+ console.log(RegExp.$1);
 
 // var json = `
 // LL21-081A foco led blue spot 12v-80v
@@ -204,5 +208,5 @@ Along: https://git.duowan.com/webs/shopline-static/layout/themes/Along/-/merge_r
 Solid: https://git.duowan.com/webs/shopline-static/layout/themes/Solid/-/merge_requests/1908?a=1
 --------------- MR URL 汇总 end ---------------`
 
-let result = res.match(/https:\/\/[A-Za-z0-9.-]+\/[A-Za-z0-9-\/%_.?=]+/g);
-console.log(result);//[ 'a', 'a' ]
+// let result = res.match(/https:\/\/[A-Za-z0-9.-]+\/[A-Za-z0-9-\/%_.?=]+/g);
+// console.log(result);//[ 'a', 'a' ]

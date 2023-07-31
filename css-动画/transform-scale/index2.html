@@ -1,0 +1,40 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  * {
+    padding: 0;
+    margin: 0;
+  }
+
+  body {
+    text-align: center;
+  }
+
+  .box1 {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    background: blue;
+    transition: all .3s;
+  }
+  .box1:hover{
+    transform: scale(1.5);
+    min-height: 150px;
+  }
+
+  /* transform: scale  不用原始值 */
+</style>
+
+<body>
+
+  <div class="box1"></div>
+
+</body>
+
+</html>

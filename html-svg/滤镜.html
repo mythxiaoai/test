@@ -1,0 +1,48 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <style>
+    .span1 {
+      background-color: #000;
+      height: 11px;
+      -webkit-mask-image: url("https://d2n979dmt31clo.cloudfront.net/image/shopline/5bc5fbea790d4967b6ac681476876959.svg");
+      mask-image: url("https://d2n979dmt31clo.cloudfront.net/image/shopline/5bc5fbea790d4967b6ac681476876959.svg");
+      transition: transform .2s;
+      width: 10px;
+      display: inline-block;
+    }
+
+    .span2 {
+      color: #000;
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      border-bottom: solid 1px currentColor;
+      border-left: solid 1px currentColor;
+      -webkit-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+    }
+    .span2::before {
+      color: #000;
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      border-bottom: solid 1px currentColor;
+      border-left: solid 1px currentColor;
+      -webkit-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+    }
+  </style>
+  <span class="span1"></span>
+  <span class="span2"></span>
+
+</body>
+
+</html>

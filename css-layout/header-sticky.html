@@ -1,0 +1,61 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<style>
+  *{
+    padding: 0;
+    margin: 0;
+  }
+  header{
+    height: 60px;
+    text-align: center;
+    line-height: 60px;
+    background-color: #fff;
+  }
+  .sticky{
+    position: sticky;
+    top:0;
+    animation: moveDawn .4s cubic-bezier(.165,.84,.44,1);
+  }
+
+  .content{
+    background-color: #ccc;
+    height: 9999px;
+  }
+
+  @keyframes moveDawn {
+  0% {
+    transform: translateY(-100%);
+  }
+
+  100% {
+   transform: translateY(0);
+  }
+}
+</style>
+<body>
+
+
+  <header>header</header>
+  
+  <div class="content">body</div>
+
+  <script>
+    document.onscroll=v=>{
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      console.log(scrollTop);
+      if(scrollTop>250){
+        document.querySelector("header").classList.add("sticky");
+      }
+      if(scrollTop==0){
+        document.querySelector("header").classList.remove("sticky");
+      }
+    }
+  </script>
+</body>
+</html>
