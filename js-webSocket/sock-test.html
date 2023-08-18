@@ -1,0 +1,78 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>加载海量点</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+  <style type="text/css">
+    html,body{
+        margin:0;
+        width:100%;
+        height:100%;
+        background:#ffffff;
+    }
+    #map{
+        width:100%;
+        height:100%;
+    }
+    #panel {
+        position: absolute;
+        top:30px;
+        left:10px;
+        z-index: 999;
+        color: #fff;
+    }
+    #login{
+        position:absolute;
+        width:300px;
+        height:40px;
+        left:50%;
+        top:50%;
+        margin:-40px 0 0 -150px;
+    }
+    #login input[type=password]{
+        width:200px;
+        height:30px;
+        padding:3px;
+        line-height:30px;
+        border:1px solid #000;
+    }
+    #login input[type=submit]{
+        width:80px;
+        height:38px;
+        display:inline-block;
+        line-height:38px;
+    }
+  </style>
+</head>
+<body>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/xlsx/0.14.1/xlsx.full.min.js"></script>
+	  <script src="https://cdn.bootcss.com/socket.io/2.2.0/socket.io.js"></script>
+	  <script>
+	    window.onload = function(){
+	      let points = [];
+	       let sock=io.connect('ws://127.0.0.1:8989/ws');
+           sock.on("connect",()=>{
+             points = [];
+            console.log("连接成功~")
+           })
+           sock.on("error",(e)=>{
+             console.log("报错了~"+e.code)
+             console.log(e)
+           })
+           sock.on("disconnect",()=>{
+             console.log("断开连接~")
+           })
+           sock.on("data",(data)=>{
+            console.log("data",data)
+           })
+           sock.on("end",(msg)=>{
+             console.log(msg)
+             addOverlay(points)
+           })
+	    }
+	    
+	  </script>
+	</body>
+</html>
