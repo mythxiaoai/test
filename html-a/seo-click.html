@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="zh-CN"><!--。这将有助于语音合成工具确定其所应该采用的发音，有助于翻译工具确定其翻译时所应遵守的规则等等。-->
+
+<head>
+  <!--声明当前页面的编码集：中文编码（gbk/gb2312）,国际编码（utf-8）-->
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+  <!--页面三要素-->
+  <title>HTML国际化标准模板</title><!--小于等于31 大小写不区分-->
+  <meta name="Keywords" content="关键词,关键词,关键词"><!--<=76个字-->
+  <meta name="description" content="我是来测试seo的超链接的"><!--<=80个字-->
+  <meta name="renderer" content="webkit" /><!--自动切换到 Webkit 内核-->
+  <meta name="force-rendering" content="webkit" /><!--双核浏览器会自动切换到 Webkit 内核-->
+  <meta http-equiv="X-UA-Compatible" content="IE=Edgechrome=1">
+  <!--除非有强烈的特殊需求，否则最好是设置为 edge mode，从而通知 IE 采用其所支持的最新的模式。-->
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!--在手机端的显示设置-->
+  <link rel="shortcut icon" href="img/logo.ico" type="image/x-icon" /><!--设置网页title左边的小图标-->
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    .m-10{
+      margin:10px
+    }
+
+    .alink-content {
+      display: flex;
+    }
+
+    .gap {
+      gap: 8;
+    }
+
+    .alink {
+      display: inline-block;
+      text-align: center;
+    }
+
+    .wh24 {
+      width: 24px;
+      height: 24px;
+      background: yellow;
+    }
+
+    .wh28 {
+      width: 28px;
+      height: 28px;
+      background: red;
+    }
+
+    .wh30 {
+      width: 30px;
+      height: 30px;
+      background: yellow;
+    }
+
+    .wh32 {
+      width: 32px;
+      height: 32px;
+      background: pink;
+    }
+
+    .wh33 {
+      width: 33px;
+      height: 33px;
+      background: green;
+    }
+    .wh34 {
+      width: 34px;
+      height: 34px;
+      background: red;
+    }
+
+    .wh36 {
+      width: 36px;
+      height: 36px;
+      background: yellow;
+    }
+
+    .wh38 {
+      width: 38px;
+      height: 38px;
+      background: blue;
+    }
+
+    .wh40 {
+      width: 40px;
+      height: 40px;
+      background: red;
+    }
+
+    .wh44 {
+      width: 44px;
+      height: 44px;
+      background: pink;
+    }
+
+    .wh48 {
+      width: 48px;
+      height: 48px;
+      background: yellow;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 
+    https://developer.chrome.com/en/docs/lighthouse/seo/tap-targets/
+    https://github.com/GoogleChrome/lighthouse/blob/main/core/audits/seo/tap-targets.js
+  //At least 25% the target area within 48 px of the center of the target overlaps with another target.
+  //目标中心 48 像素范围内至少 25% 的目标区域与另一个目标重叠。
+  //这句话不太好理解，需要看源码  他是算面积的
+  33*33的正方形
+  0.25的面积：   33*33*0.25 = 272.25
+  重叠区域面积：7.5*33=247.5
+  重叠区域面积<0.25的面积   所以seo正常通过
+  32*32的正方形
+  0.25的面积：   32*32*0.25 = 256
+  重叠区域面积：8*32=256
+  刚好相等  凉凉
+  so  建议正方形最低34为好
+  -->
+  <!-- <div class="alink-content gap">
+    <a href="javascript:;" class="alink" style="width:32px;height:47px;background:red">self</a>
+    <a href="javascript:;" class="alink wh24">24</a>
+    <a href="javascript:;" class="alink wh28">28</a>
+    <a href="javascript:;" class="alink wh30">30</a>
+    <a href="javascript:;" class="alink wh32">32</a>
+    <a href="javascript:;" class="alink wh34">34</a>
+    <a href="javascript:;" class="alink wh36">36</a>
+    <a href="javascript:;" class="alink wh40">40</a>
+    <a href="javascript:;" class="alink wh44">44</a>
+    <a href="javascript:;" class="alink wh48">48</a>
+   </div> -->
+  <!-- between button 34可以  33不行-->
+  <!-- <div class="alink-content">
+    <a href="javascript:;" class="alink wh24">24</a>
+    <a href="javascript:;" class="alink wh24">24</a>
+   </div>
+   <div class="alink-content">
+    <a href="javascript:;" class="alink wh28">28</a>
+    <a href="javascript:;" class="alink wh28">28</a>
+   </div>
+   <div class="alink-content">
+    <a href="javascript:;" class="alink wh30">30</a>
+    <a href="javascript:;" class="alink wh30">30</a>
+   </div>
+   <div class="alink-content">
+    <a href="javascript:;" class="alink wh32">32</a>
+    <a href="javascript:;" class="alink wh32">32</a>
+   </div>
+   <div class="alink-content">
+    <a href="javascript:;" class="alink wh33">33</a>
+    <a href="javascript:;" class="alink wh33">33</a>
+   </div>
+   <div class="alink-content">
+    <a href="javascript:;" class="alink wh34">34</a>
+    <a href="javascript:;" class="alink wh34">34</a>
+   </div>
+   <div class="alink-content">
+    <a href="javascript:;" class="alink wh36">36</a>
+    <a href="javascript:;" class="alink wh36">36</a>
+   </div>
+   <div class="alink-content">
+    <a href="javascript:;" class="alink wh38">38</a>
+    <a href="javascript:;" class="alink wh38">38</a>
+   </div> -->
+
+   <!-- 最小正方形测试 -->
+   <!-- <div class="alink-content">
+    <a href="javascript:;" class="alink wh33" style="">33</a>
+    <a href="javascript:;" class="alink wh33">33</a>
+   </div> -->
+    <!-- 其他大小值影响 -->
+   <!-- <div class="alink-content">
+    <a href="javascript:;" class="alink wh32">32</a>
+    <a href="javascript:;" class="alink wh28">28</a>
+   </div> -->
+   <!-- 精度条 -->
+   <div class="alink-content">
+    <a href="javascript:;" class="alink " style="width: 60px;height: 3px; margin-right: 10px; background-color: red;"></a>
+    <a href="javascript:;" class="alink " style="width: 60px;height: 3px;background-color: red;"></a>
+   </div>
+  <!-- in button  34通过 33不行-->
+  <!-- <div class="alink-content">
+    <input href="javascript:;" style="width:200px;height:200px;position:relative;display: inline-block;">
+    <a href="javascript:;" class="alink wh28" style="position:absolute;">28</a>
+    </input>
+  </div>
+  <div class="alink-content">
+    <input href="javascript:;" style="width:200px;height:200px;position:relative;display: inline-block;">
+    <a href="javascript:;" class="alink wh30" style="position:absolute;">30</a>
+    </input>
+  </div>
+  <div class="alink-content">
+    <input href="javascript:;" style="width:200px;height:200px;position:relative;display: inline-block;">
+    <a href="javascript:;" class="alink wh32" style="position:absolute;">32</a>
+    </input>
+  </div>
+  <div class="alink-content">
+    <input style="width:200px;height:200px;position:relative;display: inline-block;">
+    <a href="javascript:;" class="alink wh33" style="position:absolute;">33</a>
+    </input>
+  </div>
+  <div class="alink-content">
+    <input href="javascript:;" style="width:200px;height:200px;position:relative;display: inline-block;">
+    <a href="javascript:;" class="alink wh34" style="position:absolute;">34</a>
+    </input>
+  </div> -->
+
+</body>
+
+</html>
