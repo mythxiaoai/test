@@ -1,0 +1,260 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://cdn.bootcdn.net/ajax/libs/splidejs/4.1.4/css/splide.min.css" rel="stylesheet">
+  <script src="https://cdn.bootcdn.net/ajax/libs/splidejs/4.1.4/js/splide.js"></script>
+</head>
+<style>
+  *{
+    margin:0;
+    padding:0;
+  }
+  .slideshow__control--arrows {
+  bottom: 0;
+  right: 40px;
+  transform: translateY(50%);
+}
+
+.control__arrow-button[name='previous'] {
+  position: absolute;
+  left: 46px;
+  top: 50%;
+  transform: translateY(-50%) rotate(90deg);
+}
+
+ .control__arrow-button[name='next'] {
+  position: absolute;
+  right: 46px;
+  top: 50%;
+  transform: translateY(-50%) rotate(-90deg);
+}
+
+.featured-collection-new .control__dots {
+  justify-content: center;
+}
+
+.featured-collection-new .control__dot {
+  background-color: rgba(1, 1, 1, 0.1);
+}
+
+.featured-collection-new .control__dot.is-active {
+  background: #010101;
+}
+
+.featured-collection-new .control__bars {
+  margin-top: 30px;
+  gap: 0;
+  border-radius: 5px;
+  padding-bottom: 0;
+}
+
+.featured-collection-new .control__bar {
+  background: rgba(0, 0, 0, 0.1);
+  flex: 1;
+  border: none;
+  height: 6px;
+
+  &::after {
+    content: none;
+  }
+
+  &:hover {
+    background: rgba(0, 0, 0, 0.1);
+  }
+}
+
+.featured-collection-new .control__bar.is-active {
+  background: #000;
+  border-radius: 5px;
+}
+
+@media screen and (--tablet) {
+  .featured-collection-new .control__bars {
+    margin-top: 10px;
+  }
+}
+
+  .splide__arrow {
+    -ms-flex-align: center;
+    align-items: center;
+    background: #ccc;
+    border: 0;
+    border-radius: 50%;
+    cursor: pointer;
+    display: -ms-flexbox;
+    display: flex;
+    height: 2em;
+    -ms-flex-pack: center;
+    justify-content: center;
+    opacity: .7;
+    padding: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 2em;
+    z-index: 1
+  }
+
+  .splide__arrow svg {
+    fill: #000;
+    height: 1.2em;
+    width: 1.2em
+  }
+
+  .splide__arrow:hover:not(:disabled) {
+    opacity: .9
+  }
+
+  .splide__arrow:disabled {
+    opacity: .3
+  }
+
+  .splide__arrow:focus-visible {
+    outline: 3px solid #0bf;
+    outline-offset: 3px
+  }
+
+  .splide__arrow--prev {
+    left: 1em
+  }
+
+  .splide__arrow--prev svg {
+    transform: scaleX(-1)
+  }
+
+  .splide__arrow--next {
+    right: 1em
+  }
+
+  .splide.is-focus-in .splide__arrow:focus {
+    outline: 3px solid #0bf;
+    outline-offset: 3px
+  }
+
+
+.control__dot {
+  display: block;
+  padding: 0;
+  width: 6px;
+  height: 6px;
+  border: none;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  transition: background 0.3s;
+  cursor: pointer;
+}
+
+.control__dot.is-active {
+  width: 10px;
+  height: 10px;
+  cursor: default;
+}
+
+.control__dot:hover,
+.control__dot:active,
+.control__dot:target,
+.control__dot.is-active {
+  background-color: #fff;
+}
+
+.control__arrow-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+  background-color: #fff;
+  box-shadow: 0 5px 5px rgb(0 0 0 / 10%);
+  transition: transform 0.3s;
+  border: none;
+}
+
+.control__arrow-button:hover {
+  transform: scale(1.12);
+}
+
+.control__arrow-button[name='previous'] {
+  transform: rotate(90deg);
+  box-shadow: 5px 0 5px rgb(0 0 0 / 10%);
+}
+
+.control__arrow-button[name='previous']:hover {
+  transform: rotate(90deg) scale(1.12);
+}
+
+.control__arrow-button[name='next'] {
+  transform: rotate(-90deg);
+  box-shadow: -5px 0 5px rgb(0 0 0 / 10%);
+}
+
+.control__arrow-button[name='next']:hover {
+  transform: rotate(-90deg) scale(1.12);
+}
+.control__dot{
+  background-color: red;
+}
+</style>
+<body>
+  <div class="splide featured-collection-new " role="group" aria-label="Splide Basic HTML Example">
+    <div class="splide__track" style="position: relative;transition: padding-right 400ms cubic-bezier(0.25, 1, 0.5, 1) 0s;transform-origin: center left;">
+      <ul class="splide__list">
+        <li class="splide__slide" style="background-color: red;">
+        <a href="javascript:;">Slide 01</a></li>
+        <li class="splide__slide" style="background-color: yellow;">Slide 02</li>
+        <li class="splide__slide" style="background-color: red;">Slide 03</li>
+        <li class="splide__slide" style="background-color: yellow;">Slide 04</li>
+        <li class="splide__slide" style="background-color: red;">Slide 05</li>
+      </ul>
+      <div class="splide__arrows control__arrow-buttons slider-buttons ">
+        <button class="splide__arrows splide__arrow--prev control__arrow-button control__arrow-button--prev" name="previous">
+          >
+        </button>
+        <button class="splide__arrows splide__arrow--next control__arrow-button control__arrow-button--next" name="next">
+          >
+        </button>
+      </div>
+      <div class="splide__pagination control__bars">
+            
+      </div>
+  </div>
+  <script>
+    //https://github.com/Splidejs/splide/issues/255
+    let partPerPage = 3.5;
+    //widh 计算
+    const fixedWidth = 100/partPerPage + "%";
+    const splide = new Splide(".splide", {
+      perPage:3,
+      perMove: 1,
+      arrows:true,
+      pagination:true,
+      classes:{
+		    page: 'control__dot', // each button
+      }
+} );
+splide.mount();
+const { Controller } = splide.Components;
+const maxIndex = Controller.getEnd() - Math.floor(partPerPage) + 1;
+let nextBut = document.querySelector(".splide__arrow--next");
+// splide.options = {perPage:4};
+splide.on( 'moved11', function (newIndex) {
+  if(newIndex>=maxIndex){//到达最后一个
+    console.log("nextBut",nextBut);
+    nextBut.disabled = true;
+    // splide.options = {padding:{right:"0%",left:(100/3/2).toFixed(2)+"%"}};
+    // Controller.go(newIndex);
+  }else{
+    // if(splide.options.padding.right!=(100/3/2).toFixed(2)+"%"){
+    //   splide.options = {padding:{left:"0%",right:(100/3/2).toFixed(2)+"%"}};
+    // }
+  }
+} );
+  </script>
+</body>
+</html>

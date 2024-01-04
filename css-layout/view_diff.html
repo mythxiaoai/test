@@ -1,0 +1,100 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .global-parallax-container {
+      width: 100%;
+      height: 100%;
+    }
+
+    .global-parallax-container .global-parallax {
+      position: relative;
+      top: -30% !important;
+      height: 160% !important;
+      transition: none 0s ease 0s !important;
+    }
+  </style>
+</head>
+<body>
+  <div class="height:500px;">sasdasdas</div>
+<div class=".parallax-container">
+
+</div>
+
+  <script>
+    /* 
+  计算视差滚动背景图片移动的距离
+*/
+let parallaxContainers = $('.parallax-container');
+let parallaxListener;
+
+function onScroll() {
+  requestAnimationFrame(scrollHandler.bind(this));
+}
+function scrollHandler() {
+  const viewPortHeight = $(window).height();
+
+  parallaxContainers.each((index, el) => {
+    const parallaxImage = $(el).find('.parallax');
+    const hasClass = $(el).hasClass('large-image-with-text-box--loaded');
+    const isLargeImageText = $(el).hasClass('large-image-with-text-box');
+    if (parallaxImage.length === 0) {
+      if (!isLargeImageText) return;
+      if (!hasClass) $(el).addClass('large-image-with-text-box--loaded');
+      return;
+    }
+
+    /**
+     * 计算逻辑
+     * 可移动距离 = 视窗高度 + dom 高度
+     * 当前距离 = 视窗高度 - 监听元素距离顶部高度
+     * 所占百分比 = ((当前 / 可移动) * speed * maxnum = 38）
+     */
+    const { top, height } = el.getBoundingClientRect();
+    if (top > viewPortHeight || top <= -height) return;
+
+    const speed = 2;
+    const movableDistance = viewPortHeight + height;
+    const currentDistance = viewPortHeight - top;
+    const percent = ((currentDistance / movableDistance) * speed * 38).toFixed(2);
+    const num = 38 - Number(percent);
+    $(parallaxImage).css('transform', `translate3d(0 , ${-num}% , 0)`);
+    if (!isLargeImageText) return;
+    if (!hasClass) {
+      $(el).addClass('large-image-with-text-box--loaded');
+    }
+  });
+}
+function init() {
+  parallaxContainers = $('.parallax-container');
+  if (!parallaxListener) {
+    parallaxListener = $(window).on('scroll', onScroll);
+  }
+  scrollHandler();
+}
+
+window.SL_EventBus.on('parallax', () => {
+  init();
+});
+
+window.document.addEventListener('shopline:section:load', () => {
+  init();
+});
+window.document.addEventListener('shopline:section:reorder', () => {
+  init();
+});
+
+// $(() => {
+//   if (parallaxContainers.length > 0) {
+//     scrollHandler();
+//     parallaxListener = $(window).on('scroll', onScroll);
+//   }
+// });
+
+  </script>
+  
+</body>
+</html>
