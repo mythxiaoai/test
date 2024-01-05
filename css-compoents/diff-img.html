@@ -1,0 +1,118 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    html,body{
+  font-family: -apple-system, "BlinkMacSystemFont", sans-serif;
+  margin: 0;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background: aliceblue;
+}
+.wrap{
+  --size: calc(var(--thumb-size) / 2 - 2px);
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  width: 690px; 
+  max-height: 400px; 
+  /* aspect-ratio: 16 / 9; */
+  resize: both;
+  background-color: #333;
+  container-type: inline-size;
+}
+.con{
+  position: relative;
+  flex: 1;
+  overflow: hidden;
+}
+.bg-1{
+  width: 100%;
+  height: 100%;
+  margin-right: -100%;
+  object-fit: contain;
+}
+
+.resize{
+  position: relative;
+  z-index: 1;
+  height: 20px;
+  overflow: scroll;
+  resize: horizontal;
+  transform: scaleY(100);
+  transform-origin: right;
+  background: rebeccapurple;
+  opacity: 0;
+  min-width: var(--thumb-size);
+  max-width: calc(100% + var(--thumb-size) - 4px);
+  clip-path: inset(0 0 0 calc(100% - var(--thumb-size)));
+  width: 90cqw;
+  margin: 0 calc(var(--size) * -1);
+  animation: slide 1s ease-in;
+}
+::-webkit-scrollbar{
+  width: var(--thumb-size);
+}
+.bg-2{
+  float: right;
+  width: 100cqw;
+  height: 100%;
+  object-fit: contain;  
+}
+.line{
+  display: grid;
+  place-content: center;
+  position: relative;
+  height: 100%;
+  width: 4px;
+  background-color: #fff;
+  pointer-events: none;
+  margin-left: -4px;
+  z-index: 2;
+}
+.line::after{
+  content: '';
+  width: 24px;
+  height: 16px;
+  border: 2px solid #fff;
+  border-radius: 20px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath fill='%23fff' d='M13 21l-5-5 5-5zm6-10l5 5-5 5z'/%3E%3C/svg%3E") center / 100% no-repeat;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  pointer-events: none;
+}
+
+@keyframes slide {
+  0%{
+    width: calc(0cqw + var(--thumb-size));
+  }
+  100% {
+    width: calc(90cqw + var(--thumb-size));
+  }
+}
+.wrap img{
+  background-color: #33333386;
+}
+:checked+.wrap img{
+  object-fit: cover;
+}
+  </style>
+</head>
+<body>
+  cover<input type="checkbox">
+<div class="wrap" style="--thumb-size: 20px">
+  <img class="bg-1" src="https://imgservices-1252317822.image.myqcloud.com/coco/s12232023/dce98f7b.46595f.jpg">
+  <div class="resize"></div>
+  <div class="line"></div>
+  <div class="con">
+    <img class="bg-2" src="https://imgservices-1252317822.image.myqcloud.com/coco/s12232023/259252f3.thz9bp.png">
+  </div>
+</div>
+</body>
+</html>
