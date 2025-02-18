@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>锚链接滚动示例</title>
+  <style>
+    /* 页面样式 */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      scroll-behavior: smooth; /* 平滑滚动效果 */
+    }
+    html{
+      scroll-behavior: smooth;
+    }
+    section {
+      height: 800px; /* 设置高度，模拟滚动页面 */
+      padding: 20px;
+    }
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+      z-index: 1000;
+    }
+    nav a {
+      color: #fff;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    #section1 { background-color: #ffcccb; }
+    #section2 { background-color: #90ee90; }
+    #section3 { background-color: #add8e6; }
+  </style>
+</head>
+<body>
+
+  <!-- 导航栏 -->
+  <nav>
+    <a href="#section1">跳转到部分1</a>
+    <a href="#section2">跳转到部分2</a>
+    <a href="#section3">跳转到部分3</a>
+  </nav>
+
+  <!-- 页面内容 -->
+  <section id="section1">
+    <h2>部分 1</h2>
+    <p>这里是部分1的内容。</p>
+  </section>
+
+  <section id="section2">
+    <h2>部分 2</h2>
+    <p>这里是部分2的内容。</p>
+  </section>
+
+  <section id="section3">
+    <h2>部分 3</h2>
+    <p>这里是部分3的内容。</p>
+  </section>
+
+</body>
+</html>

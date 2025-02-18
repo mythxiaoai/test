@@ -1,0 +1,12 @@
+{
+  "name": "news-parser",
+  "version": "1.0.0",
+  "description": "Parse news data from HTML",
+  "main": "parse.js",
+  "scripts": {
+    "start": "node parse.js"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.12"
+  }
+} 

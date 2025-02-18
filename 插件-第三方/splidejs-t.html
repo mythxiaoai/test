@@ -38,7 +38,7 @@ splide.on( 'move', function (newIndex) {
   const { Controller } = splide.Components;
   let endIndex =Controller.getEnd();
   console.log(newIndex,endIndex);
-  if(newIndex==endIndex){//到达最后一个
+  if(newIndex==endIndex){//到达最后一个 
     console.log("进来",Controller);
     let dom = document.querySelector(".splide__track");
     let slide = document.querySelector(".splide--slide");

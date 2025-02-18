@@ -1,0 +1,62 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    .box{
+      width: 500px;
+      height: 500px;
+      position: relative;
+    }
+    .wrap{
+      background: #cccccc4d;
+      display: block;
+      height: 100%;
+      width: 100%;
+    }
+    .page{
+      position: absolute;
+      display: flex;
+      height: 100%;
+      width: 100%;
+      gap: 8px;
+      left: 0px;
+      top: 0px;
+      justify-content: center;
+      align-items: center;
+      z-index: -1;
+    }
+    .btn{
+      width: 36px;
+      height: 36px;
+      background: #0000004d;
+    }
+    .btn2{
+      width: 10px;
+      height: 10px;
+      background: #0000004d;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <a class="wrap" href="javascript:;"></a>
+    <div class="page">
+      <a class="btn" href="javascript:;"></a>
+      <!-- <button class="btn" data-index="0"></button>
+      <button class="btn" data-index="0"></button>
+      <button class="btn" data-index="0"></button> -->
+      <!-- <a class="btn" href="https://www.baidu.com/" data-index="0"></a> -->
+      <!-- <a class="btn" href="javascript:;"></a>
+      <a class="btn" href="javascript:;"></a>
+      <a class="btn" href="javascript:;"></a> -->
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF 下载和预览</title>
+    <style>
+        .pdf-container {
+            max-width: 800px;
+            margin: 50px auto;
+            text-align: center;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        .btn:hover {
+            background-color: #45a049;
+        }
+        .btn-download {
+            background-color: #008CBA;
+        }
+        .btn-download:hover {
+            background-color: #007399;
+        }
+        .pdf-viewer {
+            width: 100%;
+            height: 600px;
+            border: none;
+            margin-top: 20px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="pdf-container">
+        <h2>PDF 文件操作</h2>
+        <button class="btn" onclick="previewPDF()">预览 PDF</button>
+        <a href="https://esr-faq.s3.us-west-1.amazonaws.com/uploads/93a3dcdc57a415a53c94ce59055df8bb.pdf" 
+           class="btn btn-download" 
+           target="_blank" 
+           download="document.pdf">
+            下载 PDF
+        </a>
+        <iframe id="pdfViewer" class="pdf-viewer"></iframe>
+    </div>
+
+    <script>
+        function previewPDF() {
+            const viewer = document.getElementById('pdfViewer');
+            viewer.style.display = 'block';
+            viewer.src = `https://docs.google.com/viewer?url=https://esr-faq.s3.us-west-1.amazonaws.com/uploads/93a3dcdc57a415a53c94ce59055df8bb.pdf&embedded=true`;
+        }
+    </script>
+</body>
+</html>

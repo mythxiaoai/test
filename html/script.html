@@ -1,0 +1,81 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+
+  <script>
+    //加载方法
+    function loadScriptOnInteraction(scriptUrl) {
+    let scriptLoaded = false;
+    const handleInteraction = function () {
+        if (!scriptLoaded) {
+            const script = document.createElement('script');
+            script.src = scriptUrl;
+            document.body.appendChild(script);
+            scriptLoaded = true;
+            // 移除事件监听器，避免重复触发
+            document.removeEventListener('click', handleInteraction);
+            document.removeEventListener('scroll', handleInteraction);
+        }
+    };
+    window.addEventListener('load', function () {
+        document.addEventListener('click', handleInteraction);
+        document.addEventListener('scroll', handleInteraction);
+    });
+}
+// 使用工具函数，传入要加载的脚本路径
+// loadScriptOnInteraction('your - script.js');
+
+// 创建一个自定义事件
+
+(() => {
+    // 自定义事件名称（采用驼峰命名法）
+    const interactionEventName = 'OnInteractionTriggeredTask';
+    // 创建自定义事件
+    const customEvent = new CustomEvent(interactionEventName);
+    let scriptLoaded = false;
+    const handleInteraction = function () {
+        if (!scriptLoaded) {
+            document.dispatchEvent(customEvent);
+            scriptLoaded = true;
+        }
+    };
+
+    window.addEventListener('load', function () {
+        document.addEventListener('click', handleInteraction);
+        document.addEventListener('scroll', handleInteraction);
+    });
+  })();
+  
+  const interactionEventName = 'OnInteractionTriggeredTask';
+  // 为自定义事件添加监听器
+  document.addEventListener(interactionEventName, function () {
+      console.log('Function executed due to interaction 1');
+      const script = document.createElement('script');
+      script.src = "your-script.js";
+      script.onload = function () {
+          console.log('Script loaded successfully');
+      };
+      script.onerror = function () {
+          console.error('Error loading script');
+      };
+      document.body.appendChild(script);
+  });
+  document.addEventListener(interactionEventName, function () {
+      console.log('Function executed due to interaction 2');
+     
+  });
+  setTimeout(()=>{
+    document.addEventListener(interactionEventName, function () {
+      console.log('Function executed due to interaction 3');
+     
+  });
+  },1000)
+
+  </script>
+</body>
+</html>

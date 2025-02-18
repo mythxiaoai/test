@@ -1,0 +1,60 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://cdn.bootcdn.net/ajax/libs/splidejs/4.1.4/css/splide.min.css" rel="stylesheet">
+  <script src="https://cdn.bootcdn.net/ajax/libs/splidejs/4.1.4/js/splide.js"></script>
+</head>
+<style>
+  *{
+    margin:0;
+    padding:0;
+  }
+  .splide__list{
+    display: flex;
+    flex-wrap: nowrap;
+    >li{
+      width: 200px;
+    }
+  }
+</style>
+<body>
+  <div class="splide" role="group" aria-label="Splide Basic HTML Example">
+    <div class="splide__track" style="transition: padding-right 400ms cubic-bezier(0.25, 1, 0.5, 1) 0s;transform-origin: center left;">
+        <ul class="splide__list">
+          <li class="splide__slide" style="background-color: red;;"> Slide 01</li>
+          <li class="splide__slide" style="background-color: yellow;">Slide 02</li>
+          <li class="splide__slide" style="background-color: red;">Slide 03</li>
+          <li class="splide__slide" style="background-color: yellow;">Slide 04</li>
+          <li class="splide__slide" style="background-color: red;">Slide 05</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <script>
+    //https://github.com/Splidejs/splide/issues/255
+    //widh 计算
+    const splide = new Splide(".splide", {
+      autoWidth:"auto",
+      partPerPage:1,
+      perMove: 1,
+      pagination: false,
+      arrows: false,
+      padding:40,
+} );
+splide.mount();
+let splide__listDom = document.querySelector(".splide__list")
+splide.on("drag",(...all)=>{
+  console.log("触发滚动drag",all);
+})
+splide.on("dragging",(...all)=>{
+  console.log("触发滚动dragging",all);
+})
+splide.on("dragged",(...all)=>{
+  console.log("触发滚动dragged",all);
+})
+  </script>
+</body>
+</html>

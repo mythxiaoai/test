@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OREO ID Customization</title>
+    <link href="https://cdn.jsdelivr.net/npm/antd/dist/antd.min.css" rel="stylesheet">
+    <style>
+        .oreo-customizer {
+            display: flex;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .oreo-customizer__sidebar {
+            width: 400px;
+            margin-right: 40px;
+        }
+
+        .oreo-customizer__preview {
+            flex: 1;
+            background: linear-gradient(to bottom, #0066cc, #004999);
+            border-radius: 8px;
+            padding: 40px;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .oreo-customizer__step {
+            margin-bottom: 16px;
+        }
+
+        .oreo-customizer__step-number {
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            background: #0066cc;
+            color: white;
+            text-align: center;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+
+        .oreo-customizer__step-title {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .accordion-item {
+            border: 1px solid #e8e8e8;
+            margin-bottom: 8px;
+            border-radius: 4px;
+        }
+
+        .accordion-header {
+            padding: 16px;
+            background: #fff;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+        }
+
+        .accordion-header.active {
+            background: #f0f0f0;
+        }
+
+        .accordion-content {
+            padding: 16px;
+            display: none;
+        }
+
+        .accordion-content.active {
+            display: block;
+        }
+
+        .option-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+        }
+
+        .option-item {
+            border: 2px solid #e8e8e8;
+            border-radius: 8px;
+            padding: 12px;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .option-item.selected {
+            border-color: #0066cc;
+            background: #f0f7ff;
+        }
+
+        .option-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            margin-bottom: 8px;
+            border-radius: 4px;
+        }
+
+        .color-picker {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .color-option {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
+
+        .color-option.selected {
+            border-color: #0066cc;
+        }
+
+        .design-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+        }
+
+        .design-item {
+            border: 1px solid #e8e8e8;
+            border-radius: 8px;
+            padding: 8px;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .design-item.selected {
+            border-color: #0066cc;
+            background: #f0f7ff;
+        }
+
+        .design-item img {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-bottom: 8px;
+        }
+
+        .preview-container {
+            width: 400px;
+            height: 400px;
+            position: relative;
+            perspective: 1000px;
+            margin-bottom: 30px;
+        }
+
+        .oreo-preview {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            animation: rotate 20s infinite linear;
+        }
+
+        .oreo-cookie {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .oreo-cookie img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            transition: all 0.3s ease;
+        }
+
+        .preview-info {
+            text-align: center;
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        .preview-steps {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+
+        .preview-step {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .preview-step.active {
+            background: white;
+            color: #0066cc;
+        }
+
+        .preview-step::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background: rgba(255,255,255,0.2);
+            right: -100%;
+            top: 50%;
+        }
+
+        .preview-step:last-child::after {
+            display: none;
+        }
+
+        @keyframes rotate {
+            from { transform: rotateY(0deg); }
+            to { transform: rotateY(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="oreo-customizer">
+        <div class="oreo-customizer__sidebar">
+            <div class="oreo-customizer__accordion">
+                <!-- Step 1: Select creme filling -->
+                <div class="accordion-item">
+                    <div class="accordion-header" data-step="1">
+                        <span class="oreo-customizer__step-number">1</span>
+                        <span class="oreo-customizer__step-title">Select creme filling</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="option-grid">
+                            <div class="option-item" data-value="birthday-cake">
+                                <img src="https://images.unsplash.com/photo-1558301211-0d8c8ddee6ec?w=500" alt="Birthday Cake">
+                                <div>Birthday Cake</div>
+                            </div>
+                            <div class="option-item" data-value="classic">
+                                <img src="https://images.unsplash.com/photo-1519915028121-7d3463d20b13?w=500" alt="Classic">
+                                <div>Classic</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 2: Select fudge -->
+                <div class="accordion-item">
+                    <div class="accordion-header" data-step="2">
+                        <span class="oreo-customizer__step-number">2</span>
+                        <span class="oreo-customizer__step-title">Select fudge</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="option-grid">
+                            <div class="option-item" data-value="milk-chocolate">
+                                <img src="https://images.unsplash.com/photo-1511381939415-e44015466834?w=500" alt="Milk Chocolate">
+                                <div>Milk Chocolate</div>
+                            </div>
+                            <div class="option-item" data-value="white-fudge">
+                                <img src="https://images.unsplash.com/photo-1548907040-4d2be3f515d9?w=500" alt="White Fudge">
+                                <div>White Fudge</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 3: Select sprinkles -->
+                <div class="accordion-item">
+                    <div class="accordion-header" data-step="3">
+                        <span class="oreo-customizer__step-number">3</span>
+                        <span class="oreo-customizer__step-title">Select sprinkles</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="color-picker">
+                            <div class="color-option" style="background-color: #ff0000;" data-color="red"></div>
+                            <div class="color-option" style="background-color: #00ff00;" data-color="green"></div>
+                            <div class="color-option" style="background-color: #0000ff;" data-color="blue"></div>
+                            <div class="color-option" style="background-color: #ffff00;" data-color="yellow"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 4: Design your cookie -->
+                <div class="accordion-item">
+                    <div class="accordion-header" data-step="4">
+                        <span class="oreo-customizer__step-number">4</span>
+                        <span class="oreo-customizer__step-title">Design your cookie</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="design-grid">
+                            <div class="design-item" data-design="hearts">
+                                <img src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?w=500" alt="Hearts">
+                                <div>Hearts</div>
+                            </div>
+                            <div class="design-item" data-design="stars">
+                                <img src="https://images.unsplash.com/photo-1518543214126-f50d7e5216e7?w=500" alt="Stars">
+                                <div>Stars</div>
+                            </div>
+                            <div class="design-item" data-design="flowers">
+                                <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=500" alt="Flowers">
+                                <div>Flowers</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="oreo-customizer__preview">
+            <div class="preview-steps">
+                <div class="preview-step active">1</div>
+                <div class="preview-step">2</div>
+                <div class="preview-step">3</div>
+                <div class="preview-step">4</div>
+            </div>
+            
+            <div class="preview-container">
+                <div class="oreo-preview">
+                    <div class="oreo-cookie">
+                        <img src="" alt="Selected OREO" id="preview-image">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="preview-info">
+                <h2>Your Custom OREO</h2>
+                <p>Cream: <span id="cream-type">Not selected</span></p>
+                <p>Fudge: <span id="fudge-type">Not selected</span></p>
+                <p>Sprinkles: <span id="sprinkles-type">None</span></p>
+                <p>Design: <span id="design-type">Not selected</span></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/antd/dist/antd.min.js"></script>
+    <script>
+        // 配置状态对象
+        const state = {
+            cremeFilling: '',
+            fudge: '',
+            sprinkles: [],
+            design: ''
+        };
+
+        // 初始化手风琴效果
+        document.addEventListener('DOMContentLoaded', () => {
+            const accordionHeaders = document.querySelectorAll('.accordion-header');
+            // 默认打开第一个面板
+            accordionHeaders[0].classList.add('active');
+            accordionHeaders[0].nextElementSibling.classList.add('active');
+            
+            // 添加点击事件监听器
+            accordionHeaders.forEach(header => {
+                header.addEventListener('click', () => {
+                    // 关闭其他所有面板
+                    accordionHeaders.forEach(h => {
+                        if (h !== header) {
+                            h.classList.remove('active');
+                            h.nextElementSibling.classList.remove('active');
+                        }
+                    });
+
+                    // 切换当前面板
+                    header.classList.toggle('active');
+                    header.nextElementSibling.classList.toggle('active');
+                });
+            });
+
+            // 选项点击事件
+            document.querySelectorAll('.option-item').forEach(item => {
+                item.addEventListener('click', function() {
+                    // 移除同级元素的选中状态
+                    this.parentElement.querySelectorAll('.option-item').forEach(el => {
+                        el.classList.remove('selected');
+                    });
+                    // 添加选中状态
+                    this.classList.add('selected');
+                    
+                    // 更新状态
+                    const value = this.dataset.value;
+                    const step = this.closest('.accordion-item').querySelector('.accordion-header').dataset.step;
+                    
+                    if (step === '1') {
+                        state.cremeFilling = value;
+                        // 自动打开下一个面板
+                        const nextAccordion = this.closest('.accordion-item').nextElementSibling;
+                        if (nextAccordion) {
+                            setTimeout(() => {
+                                nextAccordion.querySelector('.accordion-header').click();
+                            }, 500);
+                        }
+                    }
+                    if (step === '2') {
+                        state.fudge = value;
+                        // 自动打开下一个面板
+                        const nextAccordion = this.closest('.accordion-item').nextElementSibling;
+                        if (nextAccordion) {
+                            setTimeout(() => {
+                                nextAccordion.querySelector('.accordion-header').click();
+                            }, 500);
+                        }
+                    }
+                    updatePreview();
+                });
+            });
+
+            // 颜色选择器点击事件
+            document.querySelectorAll('.color-option').forEach(option => {
+                option.addEventListener('click', function() {
+                    this.classList.toggle('selected');
+                    const color = this.dataset.color;
+                    
+                    if (this.classList.contains('selected')) {
+                        state.sprinkles.push(color);
+                    } else {
+                        state.sprinkles = state.sprinkles.filter(c => c !== color);
+                    }
+                    updatePreview();
+                });
+            });
+
+            // 设计选择事件
+            document.querySelectorAll('.design-item').forEach(item => {
+                item.addEventListener('click', function() {
+                    document.querySelectorAll('.design-item').forEach(el => {
+                        el.classList.remove('selected');
+                    });
+                    this.classList.add('selected');
+                    state.design = this.dataset.design;
+                    updatePreview();
+                });
+            });
+
+            // 初始化预览
+            updatePreview();
+        });
+
+        // 添加更新预览的函数
+        function updatePreview() {
+            console.log('Current state:', state);
+            const previewImage = document.getElementById('preview-image');
+            
+            // 根据选择更新预览图片
+            if (state.cremeFilling === 'birthday-cake') {
+                previewImage.src = document.querySelector('[data-value="birthday-cake"] img').src;
+            } else if (state.cremeFilling === 'classic') {
+                previewImage.src = document.querySelector('[data-value="classic"] img').src;
+            }
+
+            // 更新文本信息
+            document.getElementById('cream-type').textContent = state.cremeFilling || 'Not selected';
+            document.getElementById('fudge-type').textContent = state.fudge || 'Not selected';
+            document.getElementById('sprinkles-type').textContent = 
+                state.sprinkles.length ? state.sprinkles.join(', ') : 'None';
+            document.getElementById('design-type').textContent = state.design || 'Not selected';
+
+            // 更新步骤指示器
+            updateStepIndicators();
+        }
+
+        function updateStepIndicators() {
+            const steps = document.querySelectorAll('.preview-step');
+            steps.forEach((step, index) => {
+                step.classList.remove('active');
+                if ((state.cremeFilling && index === 0) ||
+                    (state.fudge && index === 1) ||
+                    (state.sprinkles.length > 0 && index === 2) ||
+                    (state.design && index === 3)) {
+                    step.classList.add('active');
+                }
+            });
+        }
+    </script>
+</body>
+</html>

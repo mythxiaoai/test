@@ -323,10 +323,10 @@ rj.form.get($("#addOrUpdate")[0]);
 				json.type=type || "warning";
 				json.closeOnConfirm=false;
 		  		json.showLoaderOnConfirm=true;
-				swal(json,function(){
+				swal(json,function(){®
 				  setTimeout(function(){
 						if(fn!=null)fn();
-					},200);
+					},200)
 				});
 			}
 			win.xconfirm=this.confirm

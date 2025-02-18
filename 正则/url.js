@@ -3,7 +3,7 @@
 function parseURL(str) {
 
   let url = new URL(str);
-
+  console.log(url);
   // 获取文件名
   const fileName = url.pathname.split('/').pop();
 
@@ -20,7 +20,7 @@ function parseURL(str) {
   };
 }
 
-let str = 'http://image.uczzd.cn/9819/';
+let str = 'http://image.uczzd.cn/9819/xxx.zip';
 
 
 console.log(parseURL(str));

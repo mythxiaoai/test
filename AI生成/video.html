@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Player with Progress Bar</title>
+    <style>
+        .video-container {
+            position: relative;
+            width: 800px;
+            margin: 20px auto;
+        }
+
+        .progress-bar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.3);
+            cursor: pointer;
+            z-index: 10;
+        }
+
+        .progress {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            background: #fff;
+            width: 0%;
+            transition: width 0.1s linear;
+        }
+
+        .progress::after {
+            content: '';
+            position: absolute;
+            right: -6px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 12px;
+            height: 12px;
+            background: #fff;
+            border-radius: 50%;
+            box-shadow: 0 0 5px rgba(0,0,0,0.3);
+        }
+
+        video {
+            width: 100%;
+            display: block;
+            margin-top: 10px;
+        }
+
+        input[type="file"] {
+            display: block;
+            margin: 20px auto;
+        }
+
+        .controls {
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        button {
+            margin: 0 5px;
+            padding: 5px 10px;
+        }
+    </style>
+</head>
+<body>
+    <input type="file" id="video-input" accept="video/*">
+    
+    <div class="video-container">
+        <div class="progress-bar">
+            <div class="progress"></div>
+        </div>
+        <video id="video"></video>
+        <div class="controls">
+            <button id="playPause">播放/暂停</button>
+            <button id="stop">停止</button>
+        </div>
+    </div>
+
+    <script>
+        const videoInput = document.getElementById('video-input');
+        const video = document.getElementById('video');
+        const progressBar = document.querySelector('.progress-bar');
+        const progress = document.querySelector('.progress');
+        const playPauseBtn = document.getElementById('playPause');
+        const stopBtn = document.getElementById('stop');
+
+        // 选择视频文件
+        videoInput.addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            const videoURL = URL.createObjectURL(file);
+            video.src = videoURL;
+        });
+
+        // 播放/暂停按钮
+        playPauseBtn.addEventListener('click', function() {
+            if(video.paused) {
+                video.play();
+            } else {
+                video.pause();
+            }
+        });
+
+        // 停止按钮
+        stopBtn.addEventListener('click', function() {
+            video.pause();
+            video.currentTime = 0;
+            progress.style.width = '0%';
+        });
+
+        // 更新进度条
+        video.addEventListener('timeupdate', function() {
+            const percentage = (video.currentTime / video.duration) * 100;
+            progress.style.width = percentage + '%';
+        });
+
+        // 点击进度条跳转
+        progressBar.addEventListener('click', function(e) {
+            const rect = progressBar.getBoundingClientRect();
+            const pos = (e.clientX - rect.left) / rect.width;
+            video.currentTime = pos * video.duration;
+        });
+
+        // 拖动进度条
+        let isDragging = false;
+
+        progressBar.addEventListener('mousedown', function() {
+            isDragging = true;
+            video.pause();
+        });
+
+        document.addEventListener('mousemove', function(e) {
+            if (isDragging) {
+                const rect = progressBar.getBoundingClientRect();
+                const pos = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
+                video.currentTime = pos * video.duration;
+            }
+        });
+
+        document.addEventListener('mouseup', function() {
+            if(isDragging) {
+                isDragging = false;
+                video.play();
+            }
+        });
+    </script>
+</body>
+</html>

@@ -144,8 +144,8 @@ function formaTime(data, fmt) {
       fmt = fmt
         .replace(
           RegExp.$1,
-          ((RegExp.$1.length > 1) ? (RegExp.$1.length > 2 ? "/u661f/u671f"
-            : "/u5468")
+          ((RegExp.$1.length > 1) ? (RegExp.$1.length > 2 ? "星期"
+            : "周")
             : "")
           + week[this.getDay() + ""]);
     }

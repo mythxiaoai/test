@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>TikTok Style YouTube Player</title>
+    <!-- 引入必要库 -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        html, body {
+            height: 100%;
+            background: #000;
+        }
+
+        #swiper-container {
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .swiper-slide {
+            position: relative;
+            height: 100vh;
+        }
+
+        .video-container {
+            width: 100%;
+            height: 100%;
+            background: #000;
+        }
+
+        #playButton {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 100;
+            padding: 15px 30px;
+            background: #ff0000;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+        }
+
+        /* 添加音量控制按钮样式 */
+        .volume-control {
+            position: fixed;
+            bottom: 30px;
+            right: 20px;
+            z-index: 100;
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: none; /* 初始隐藏 */
+        }
+
+        .volume-control img {
+            width: 24px;
+            height: 24px;
+            filter: invert(1); /* 图标显示为白色 */
+        }
+    </style>
+</head>
+<body>
+    <button id="playButton">开始播放</button>
+    <!-- 添加音量控制按钮 -->
+    <button class="volume-control" id="volumeButton">
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMTYuNSAxMmMwLTEuNzctLjk1LTMuMjktMi4zOC00LjE1djguM2MxLjQzLS44NSAyLjM4LTIuMzcgMi4zOC00LjE1em0tMi4zNS03Ljk5djEuNjZjMi4zOS45OSA0LjA3NSAzLjMxIDQuMDc1IDYuMzNzLTEuNjg1IDUuMzQtNC4wNzUgNi4zM3YxLjY2YzMuMjUtMS4xMiA1LjU3NS00LjE1IDUuNTc1LTcuOTlzLTIuMzI1LTYuODctNS41NzUtNy45OXpNNSAxMnYyaDJ2LTJINXptMy0yaDJ2LTJIOHYyem0wIDR2Mmgydi0ySDh6Ii8+PC9zdmc+" alt="volume" id="volumeIcon">
+    </button>
+    <div class="swiper-container" id="swiper-container">
+        <div class="swiper-wrapper"></div>
+    </div>
+
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script>
+        const videos = [
+            'https://www.youtube.com/shorts/rURnLR6JjVI',
+            'https://www.youtube.com/shorts/uBE-n1YMrEg',
+            'https://www.youtube.com/shorts/sBNsBUNSgEc',
+            'https://www.youtube.com/shorts/xJDjJu6ZIH8'
+        ];
+
+        let players = [];
+        let swiper;
+        let isInitialized = false;
+        let isMuted = true; // 添加静音状态跟踪
+
+        // 提取YouTube视频ID
+        function getVideoId(url) {
+            const regExp = /^.*(youtu.be\/|shorts\/|v\/|e\/|u\/\w+\/|embed\/|v=)([^#\&\?]*).*/;
+            const match = url.match(regExp);
+            return (match && match[2].length === 11) ? match[2] : null;
+        }
+
+        // 初始化播放器
+        function initPlayer(containerId, videoId, index) {
+            return new YT.Player(containerId, {
+                videoId: videoId,
+                playerVars: {
+                    autoplay: 1,
+                    controls: 0,
+                    modestbranding: 1,
+                    rel: 0,
+                    playsinline: 1,
+                    loop: 0,
+                    showinfo: 0,
+                    mute: 1, // 默认静音
+                    enablejsapi: 1
+                },
+                events: {
+                    'onReady': (event) => {
+                        console.log(`Player ${index} ready`);
+                        if (index === 0) {
+                            playVideoWithRetry(event.target);
+                        }
+                    },
+                    'onStateChange': (event) => {
+                        console.log(`Player ${index} state: ${event.data}`);
+                        
+                        if (event.data === YT.PlayerState.ENDED) {
+                            if (index < videos.length - 1) {
+                                swiper.slideNext();
+                            } else {
+                                swiper.slideTo(0);
+                            }
+                        }
+                        
+                        if (event.data === YT.PlayerState.UNSTARTED || 
+                            event.data === YT.PlayerState.PAUSED) {
+                            if (index === swiper.activeIndex) {
+                                playVideoWithRetry(event.target);
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        // 初始化滑动容器
+        function initSwiper() {
+            swiper = new Swiper('#swiper-container', {
+                direction: 'vertical',
+                slidesPerView: 1,
+                spaceBetween: 0,
+                mousewheel: true,
+                touchReleaseOnEdges: true,
+                resistanceRatio: 0,
+                on: {
+                    slideChange: () => {
+                        handleSlideChange();
+                    },
+                    slideChangeTransitionEnd: () => {
+                        // 在转场动画结束后再次尝试播放，确保播放成功
+                        ensureVideoPlaying();
+                    }
+                }
+            });
+        }
+
+        // 添加新的视频播放控制函数
+        function handleSlideChange() {
+            if (players[swiper.previousIndex]) {
+                players[swiper.previousIndex].pauseVideo();
+            }
+            if (players[swiper.activeIndex]) {
+                playVideoWithRetry(players[swiper.activeIndex]);
+            }
+        }
+
+        // 添加播放重试机制
+        function playVideoWithRetry(player, retryCount = 0) {
+            const maxRetries = 3;
+            
+            try {
+                if (!isMuted) {
+                    player.unMute();
+                    player.setVolume(100);
+                } else {
+                    player.mute();
+                }
+                player.playVideo();
+
+                setTimeout(() => {
+                    const state = player.getPlayerState();
+                    if (state !== YT.PlayerState.PLAYING && retryCount < maxRetries) {
+                        console.log(`Retry playing video, attempt ${retryCount + 1}`);
+                        playVideoWithRetry(player, retryCount + 1);
+                    }
+                }, 500);
+            } catch (error) {
+                console.error('Error playing video:', error);
+                if (retryCount < maxRetries) {
+                    setTimeout(() => {
+                        playVideoWithRetry(player, retryCount + 1);
+                    }, 500);
+                }
+            }
+        }
+
+        // 确保当前视频正在播放
+        function ensureVideoPlaying() {
+            const currentPlayer = players[swiper.activeIndex];
+            if (currentPlayer) {
+                const state = currentPlayer.getPlayerState();
+                if (state !== YT.PlayerState.PLAYING) {
+                    playVideoWithRetry(currentPlayer);
+                }
+            }
+        }
+
+        // 添加音量控制功能
+        function initVolumeControl() {
+            const volumeButton = document.getElementById('volumeButton');
+            const volumeIcon = document.getElementById('volumeIcon');
+            
+            // 显示音量按钮
+            volumeButton.style.display = 'block';
+
+            // 更新音量图标
+            function updateVolumeIcon() {
+                volumeIcon.src = isMuted ? 
+                    'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMTYuNSAxMmMwLTEuNzctLjk1LTMuMjktMi4zOC00LjE1djguM2MxLjQzLS44NSAyLjM4LTIuMzcgMi4zOC00LjE1em0tMi4zNS03Ljk5djEuNjZjMi4zOS45OSA0LjA3NSAzLjMxIDQuMDc1IDYuMzNzLTEuNjg1IDUuMzQtNC4wNzUgNi4zM3YxLjY2YzMuMjUtMS4xMiA1LjU3NS00LjE1IDUuNTc1LTcuOTlzLTIuMzI1LTYuODctNS41NzUtNy45OXpNNSAxMnYyaDJ2LTJINXptMy0yaDJ2LTJIOHYyem0wIDR2Mmgydi0ySDh6Ii8+PC9zdmc+' : 
+                    'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMTYuNSAxMmMwLTEuNzctLjk1LTMuMjktMi4zOC00LjE1djguM2MxLjQzLS44NSAyLjM4LTIuMzcgMi4zOC00LjE1em0tMi4zNSA3Ljk5djEuNjZDMTcuNCAxOS45OSAxOSAxNi42NyAxOSAxM3MtMS42LTYuOTktNC44NS04LjY1djEuNjZDMTYuNTMgNy4wMSAxOCA5LjMyIDE4IDEzcy0xLjQ3IDUuOTktMy44NSA3Ljk5eiIvPjwvc3ZnPg==';
+            }
+
+            volumeButton.addEventListener('click', () => {
+                isMuted = !isMuted;
+                const currentPlayer = players[swiper.activeIndex];
+                
+                if (currentPlayer) {
+                    if (isMuted) {
+                        currentPlayer.mute();
+                    } else {
+                        currentPlayer.unMute();
+                        currentPlayer.setVolume(100);
+                    }
+                }
+                
+                updateVolumeIcon();
+            });
+        }
+
+        // 开始播放
+        document.getElementById('playButton').addEventListener('click', () => {
+            if (!isInitialized) {
+                const wrapper = document.querySelector('.swiper-wrapper');
+                
+                videos.forEach((url, index) => {
+                    const videoId = getVideoId(url);
+                    const slide = document.createElement('div');
+                    slide.className = 'swiper-slide';
+                    slide.innerHTML = `
+                        <div class="video-container" 
+                            id="player-${index}"></div>
+                    `;
+                    wrapper.appendChild(slide);
+                    
+                    players[index] = initPlayer(`player-${index}`, videoId, index);
+                });
+
+                initSwiper();
+                initVolumeControl(); // 初始化音量控制
+                isInitialized = true;
+                document.getElementById('playButton').style.display = 'none';
+                
+                setTimeout(() => {
+                    if (players[0]) {
+                        playVideoWithRetry(players[0]);
+                    }
+                }, 1000);
+            }
+        });
+    </script>
+</body>
+</html>

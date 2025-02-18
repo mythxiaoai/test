@@ -1,0 +1,22 @@
+<style>
+  .content {
+     padding-bottom: 20px;
+   }
+ </style>
+ <div class="content">
+   <input type="text" id="input - field">
+ </div>
+ <script>
+   window.addEventListener('resize', function () {
+     var inputField = document.getElementById('input - field');
+     var viewportHeight = window.innerHeight;
+     var keyboardIsVisible = viewportHeight < window.outerHeight;
+     if (keyboardIsVisible) {
+       // 键盘弹出，调整布局，例如添加底部间距
+       inputField.style.paddingBottom = '200px';
+     } else {
+       // 键盘收起，恢复布局
+       inputField.style.paddingBottom = '20px';
+     }
+   });
+ </script>

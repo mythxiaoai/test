@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Track Your Order - ESR</title>
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+      line-height: 1.5;
+      color: #333;
+    }
+
+    /* Logo */
+    .logo {
+      text-align: center;
+      padding: 40px 0 20px;
+    }
+
+    .logo__image {
+      width: 120px;
+      height: auto;
+    }
+
+    /* Track Form */
+    .track {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .track__title {
+      font-size: 24px;
+      font-weight: 500;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .track__form {
+      margin-bottom: 40px;
+    }
+
+    .track__field {
+      margin-bottom: 20px;
+    }
+
+    .track__label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
+
+    .track__label-required {
+      color: #ff0000;
+    }
+
+    .track__label-hint {
+      display: block;
+      font-size: 12px;
+      color: #666;
+      font-weight: normal;
+    }
+
+    .track__input {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+
+    .track__input:focus {
+      outline: none;
+      border-color: #00b8a9;
+    }
+
+    .track__help {
+      font-size: 13px;
+      color: #00b8a9;
+      text-decoration: none;
+    }
+
+    .track__help:hover {
+      text-decoration: underline;
+    }
+
+    .track__button {
+      display: block;
+      width: 100%;
+      padding: 15px;
+      background: #00b8a9;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .track__button:hover {
+      background: #009b8e;
+    }
+
+    /* Links Section */
+    .links {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .links__text {
+      margin-bottom: 10px;
+      color: #666;
+      font-size: 14px;
+    }
+
+    .links__list {
+      margin-bottom: 20px;
+    }
+
+    .links__item {
+      margin-bottom: 5px;
+      font-size: 14px;
+    }
+
+    .links__link {
+      color: #00b8a9;
+      text-decoration: none;
+    }
+
+    .links__link:hover {
+      text-decoration: underline;
+    }
+
+    .links__support {
+      font-size: 14px;
+      color: #666;
+    }
+
+    .links__support-link {
+      color: #00b8a9;
+      text-decoration: none;
+    }
+
+    .links__support-link:hover {
+      text-decoration: underline;
+    }
+
+    /* FAQ Section */
+    .faq {
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 20px;
+      border: 1px solid #eee;
+      border-radius: 8px;
+    }
+
+    .faq__list {
+      list-style: none;
+    }
+
+    .faq__item {
+      margin-bottom: 15px;
+    }
+
+    .faq__question {
+      font-size: 14px;
+      font-weight: 500;
+      color: #333;
+      cursor: pointer;
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 480px) {
+      .track__title {
+        font-size: 20px;
+      }
+
+      .track, .links, .faq {
+        padding: 0 15px;
+      }
+
+      .track__button {
+        padding: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="logo">
+    <img src="https://cdn.shopify.com/s/files/1/0579/5417/5789/files/logo_8c7726cd-0a7c-4a47-b415-5852e37eea00_180x.png" alt="ESR" class="logo__image">
+  </div>
+
+  <div class="track">
+    <h1 class="track__title">Track Your Order</h1>
+    
+    <form class="track__form">
+      <div class="track__field">
+        <label class="track__label">
+          Email Address<span class="track__label-required">*</span>
+          <span class="track__label-hint">Email address used for placing order</span>
+        </label>
+        <input type="email" class="track__input" required>
+      </div>
+
+      <div class="track__field">
+        <label class="track__label">
+          Order Number<span class="track__label-required">*</span>
+        </label>
+        <input type="text" class="track__input" required>
+        <a href="#" class="track__help">How do I find my Order Number?</a>
+      </div>
+
+      <button type="submit" class="track__button">Track</button>
+    </form>
+  </div>
+
+  <div class="links">
+    <p class="links__text">If the shipping details are not listed above, please use the appropriate link below to track your order:</p>
+    <div class="links__list">
+      <div class="links__item">- United States: <a href="https://www.swiship.com/track" class="links__link">https://www.swiship.com/track</a></div>
+      <div class="links__item">- Canada: <a href="https://www.swiship.ca/track" class="links__link">https://www.swiship.ca/track</a></div>
+      <div class="links__item">- Australia: <a href="https://www.swiship.com.au/track" class="links__link">https://www.swiship.com.au/track</a></div>
+      <div class="links__item">- Japan: <a href="https://www.swiship.jp/track" class="links__link">https://www.swiship.jp/track</a></div>
+      <div class="links__item">- All European countries: <a href="https://www.swiship.co.uk/track" class="links__link">https://www.swiship.co.uk/track</a></div>
+    </div>
+    <p class="links__support">
+      If you still can't find your shipping details through the links above or have other questions, please contact our customer support team 
+      <a href="#" class="links__support-link">here</a>.
+    </p>
+  </div>
+
+  <div class="faq">
+    <ul class="faq__list">
+      <li class="faq__item">
+        <div class="faq__question">1. How can I check the status of my order?</div>
+      </li>
+      <li class="faq__item">
+        <div class="faq__question">2. Why are there no tracking details under my tracking number?</div>
+      </li>
+      <li class="faq__item">
+        <div class="faq__question">3. Why is there no carrier assigned to my tracking number and what do I select under "Select Carrier"?</div>
+      </li>
+      <li class="faq__item">
+        <div class="faq__question">4. Why is the tracking information not updated?</div>
+      </li>
+    </ul>
+  </div>
+</body>
+</html>

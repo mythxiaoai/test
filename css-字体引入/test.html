@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>HarmonyOS Sans Font Test</title>
+  <style>
+    @font-face {
+      font-family: 'HarmonyOS Sans';
+      src: url('./os/HarmonyOS_Sans_Thin.ttf') format('truetype');
+      font-weight: 100;
+    }
+
+    @font-face {
+      font-family: 'HarmonyOS Sans';
+      src: url('./os/HarmonyOS_Sans_Light.ttf') format('truetype');
+      font-weight: 300;
+    }
+
+    @font-face {
+      font-family: 'HarmonyOS Sans';
+      src: url('./os/HarmonyOS_Sans_Regular.ttf') format('truetype');
+      font-weight: 400;
+    }
+
+    @font-face {
+      font-family: 'HarmonyOS Sans';
+      src: url('./os/HarmonyOS_Sans_Medium.ttf') format('truetype');
+      font-weight: 500;
+    }
+
+    @font-face {
+      font-family: 'HarmonyOS Sans';
+      src: url('./os/HarmonyOS_Sans_Bold.ttf') format('truetype');
+      font-weight: 700;
+    }
+
+    .font-test {
+      font-family: 'HarmonyOS Sans', sans-serif;
+      margin: 20px;
+    }
+
+    .font-test__section {
+      margin-bottom: 30px;
+    }
+
+    .font-test__title {
+      color: #333;
+      border-bottom: 2px solid #eee;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+    }
+
+    .font-test__weight-item {
+      margin-bottom: 15px;
+    }
+
+    .font-test__language-sample {
+      font-size: 18px;
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+  </style>
+</head>
+<body>
+  <div class="font-test">
+    <div class="font-test__section">
+      <h2 class="font-test__title">字重测试 Font Weight Test</h2>
+      <div class="font-test__weight-item" style="font-weight: 100">
+        100 - The quick brown fox jumps over the lazy dog / 敏捷的棕色狐狸跳过懒狗
+      </div>
+      <div class="font-test__weight-item" style="font-weight: 200">
+        200 - The quick brown fox jumps over the lazy dog / 敏捷的棕色狐狸跳过懒狗
+      </div>
+      <div class="font-test__weight-item" style="font-weight: 300">
+        300 - The quick brown fox jumps over the lazy dog / 敏捷的棕色狐狸跳过懒狗
+      </div>
+      <div class="font-test__weight-item" style="font-weight: 400">
+        400 - The quick brown fox jumps over the lazy dog / 敏捷的棕色狐狸跳过懒狗
+      </div>
+      <div class="font-test__weight-item" style="font-weight: 500">
+        500 - The quick brown fox jumps over the lazy dog / 敏捷的棕色狐狸跳过懒狗
+      </div>
+      <div class="font-test__weight-item" style="font-weight: 600">
+        600 - The quick brown fox jumps over the lazy dog / 敏捷的棕色狐狸跳过懒狗
+      </div>
+      <div class="font-test__weight-item" style="font-weight: 700">
+        700 - The quick brown fox jumps over the lazy dog / 敏捷的棕色狐狸跳过懒狗
+      </div>
+    </div>
+
+    <div class="font-test__section">
+      <h2 class="font-test__title">多语言支持测试 Language Support Test</h2>
+      <div class="font-test__language-sample">
+        <p>英文 English:<br>
+        The quick brown fox jumps over the lazy dog. 0123456789</p>
+      </div>
+      <div class="font-test__language-sample">
+        <p>中文 Chinese:<br>
+        永和九年，岁在癸丑，暮春之初，会于会稽山阴之兰亭，修禊事也。</p>
+      </div>
+      <div class="font-test__language-sample">
+        <p>标点符号 Punctuation:<br>
+        ，。！？；：""''（）【】《》、…―</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

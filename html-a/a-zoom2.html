@@ -1,0 +1,106 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    .box{
+      width: 500px;
+      height: 500px;
+      position: relative;
+    }
+    .wrap{
+      background: #cccccc4d;
+      display: block;
+      height: 100%;
+      width: 100%;
+    }
+    .slideshow-slide__text-wrapper{
+      position: absolute;
+    top: 100px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    }
+    .slideshow-slide__text{
+      position: relative;
+    width: auto;
+    max-width: 54.5rem;
+    text-align: var(--slideshow-pc-text-align, "center");
+    padding: 45px 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: stretch;
+    gap: 8px;
+    text-align: var(--slideshow-mobile-text-align, "center");
+    }
+    .slideshow-slide__buttons {
+    margin-top: 8px;
+}
+.slideshow-slide__button {
+    animation-name: fadeIn;
+}
+.slideshow-slide__button {
+    pointer-events: all;
+    animation-duration: 2s;
+    animation-timing-function: ease;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+    display: inline-flex;
+    font-family: var(--body-font);
+    font-weight: var(--body-bold-font-weight);
+    line-height: var(--body-line-height);
+    letter-spacing: var(--body-letter-spacing);
+    color: rgb(var(--color-button-text));
+    text-align: center;
+    white-space: normal;
+    vertical-align: middle;
+    cursor: pointer;
+    user-select: none;
+    background-color: rgb(var(--color-button-background));
+    transition: opacity 0.15s ease-in-out;
+    padding: calc(var(--btn-border-thickness) + 9px) calc(var(--btn-border-thickness) + 18px);
+    position: relative;
+    border-radius: var(--btn-border-radius-outset);
+    font-size: 14px;
+    border: none;
+    --border-opacity: calc(100% - var(--btn-border-opacity));
+    --alpha-button-background: 1;
+    text-decoration: none;
+    align-items: center;
+    justify-content: center;
+}
+
+  </style>
+</head>
+<body>
+  <div class="box">
+    <a class="wrap" href="javascript:;"></a>
+    <div class="slideshow-slide__text-wrapper">
+      <div class="slideshow-slide__text">
+        <div class="slideshow-slide__text-nobtn">
+            <p class="slideshow-slide__sub-title body3" data-animation="">AA</p>
+            <h2 class="slideshow-slide__title title1" data-animation="">Two Line<br>Title Slide</h2>
+            <p class="slideshow-slide__desc body3" data-animation="">And optional subtext</p>
+        </div>
+        <div class="slideshow-slide__buttons">
+            <a class="button slideshow-slide__button
+                " style="" title="AAAA" href="/products/优惠商品">
+              AAAA
+            </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

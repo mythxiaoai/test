@@ -1,0 +1,28 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <iframe id="myIframe"  allow="true" referrerpolicy="no-referrer"  domain="www.ship24.com" src="https://www.swiship.co.uk/track?id=UK2104473154" frameborder="0" width="100%" height="100%"></iframe>
+</body>
+</html>
+
+<script>
+  const iframe = document.getElementById('myIframe');
+  iframe.onload = function() {
+    console.log("onload");
+      const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+      const targetElement = iframeDoc.querySelector('#app-layout-content-1');
+
+      if (targetElement) {
+          iframe.style.width = targetElement.offsetWidth + 'px';
+          iframe.style.height = targetElement.offsetHeight + 'px';
+          iframe.contentWindow.scrollTo(
+              targetElement.offsetLeft,
+              targetElement.offsetTop
+          );
+      }
+  };
+</script>

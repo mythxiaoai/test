@@ -1,4 +1,11 @@
 {
-    "liveServer.settings.port": 5501,
-    "git.ignoreLimitWarning": true
+    "liveServer.settings.port": 5502,
+    "git.ignoreLimitWarning": true,
+    "i18n-ally.localesPaths": [
+      "插件/上传/文件上传fileinput/fileinput/js/locales",
+      "项目/hplus/js/plugins/bootstrap-table/locale",
+      "项目/hplus/js/plugins/jqgrid/i18n",
+      "项目/INSPINIA-Responsive_Admin_Theme/Static_Full_Version/js/plugins/jqGrid/i18n",
+      "项目/INSPINIA-Responsive_Admin_Theme/Static_Full_Version/js/plugins/jquery-ui/i18n"
+    ]
 }
