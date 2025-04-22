@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/react.js"></script>
+</head>
+<body>
+<script>
+// let view = React.createElement(type,props,children);
+/*
+    type: 类型
+    props: {} 属性
+    chilldren: 元素的内容
+    view: 虚拟DOM - 以纯对象的形式描述我们的 DOM 树
+*/    
+console.log(React.createElement("h1",{id:"title"},"hello react"));
+console.dir(document.createElement("h1"));
+</script>    
+</body>
+</html>

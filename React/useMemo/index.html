@@ -1,0 +1,77 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="mount">1</div>
+  <script src="https://cdn.bootcdn.net/ajax/libs/babel-standalone/7.0.0-beta.3/babel.js"></script>
+  <script
+    src="https://cdn.bootcdn.net/ajax/libs/react/18.0.0-rc.1-next-cb1e7b1c6-20220303/umd/react.development.js"></script>
+  <script
+    src="https://cdn.bootcdn.net/ajax/libs/react-dom/18.0.0-rc.1-next-cb1e7b1c6-20220303/umd/react-dom.development.js"></script>
+  <script src="https://cdn.bootcdn.net/ajax/libs/mobx/6.4.2/mobx.umd.development.js"></script>
+  <script src="https://cdn.bootcdn.net/ajax/libs/mobx-react/7.3.0/mobxreact.umd.development.js"></script>
+  <script type="text/babel">
+    console.log(React)
+    console.log(ReactDOM)
+    let { Component, useState, useCallback, useMemo } = React;
+    let { observer } = mobxReact;
+    let { observable, computed, makeAutoObservable, autorun, action } = mobx;
+
+    const Demo = () => {
+      const [count, setCount] = useState(1);
+      const [nub, setNub] = useState(1);
+      const [val, setVal] = useState("");
+      // const maxVal = () => {
+      //   console.log("run:maxVal")
+      //   return nub > count ? "nub" : "count";
+      // };
+      const maxVal = useMemo(() => {
+        return nub > count ? "nub" : "count";
+      }, [nub, count]);
+      // const maxVal = useMemo(() => {
+      //   return nub > count ? "nub" : "count";
+      // }, [nub, count]);
+      const plusCount = () => {
+        console.log("run plusCount")
+        setCount(count + 1);
+      }
+      // const plusCount = useCallback(() => {
+      //   setCount(count + 1);
+      // }, [count]);
+      const miusCount = useCallback(() => {
+        setCount(count - 1);
+      }, [count]);
+      const plusNub = useCallback(() => {
+        setNub(nub + 1);
+      }, [nub]);
+      const miusNub = useCallback(() => {
+        setNub(nub - 1);
+      }, [nub]);
+      const changeVal = ({ target }) => {
+        setVal(target.value);
+      }
+      console.log("render")
+      // const changeVal = useCallback(({ target }) => {
+      //   setVal(target.value);
+      // }, [val]);
+
+      return (<div>
+        <p>count:<button onClick={plusCount}>+</button> {count} <button onClick={miusCount}>-</button></p>
+        <p>nub:<button onClick={plusNub}>+</button> {nub} <button onClick={miusNub}>-</button></p>
+        <p>当前比较大的是:{maxVal}</p>
+        <input type="text" value={val} onChange={changeVal} />
+        <p>{val}</p>
+      </div>)
+    }
+
+    ReactDOM.render(<Demo></Demo>, document.getElementById('mount'));
+  </script>
+</body>
+
+</html>

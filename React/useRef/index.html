@@ -1,0 +1,70 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">-</div>
+  <script src="https://cdn.bootcdn.net/ajax/libs/babel-standalone/7.0.0-beta.3/babel.js"></script>
+  <script
+    src="https://cdn.bootcdn.net/ajax/libs/react/18.0.0-rc.1-next-cb1e7b1c6-20220303/umd/react.development.js"></script>
+  <script
+    src="https://cdn.bootcdn.net/ajax/libs/react-dom/18.0.0-rc.1-next-cb1e7b1c6-20220303/umd/react-dom.development.js"></script>
+  <script src="https://cdn.bootcdn.net/ajax/libs/mobx/6.4.2/mobx.umd.development.js"></script>
+  <script src="https://cdn.bootcdn.net/ajax/libs/mobx-react/7.3.0/mobxreact.umd.development.js"></script>
+  <script type="text/babel">
+    let { Component, useState, useRef, useEffect } = React;
+    let { observer } = mobxReact;
+    let { observable, computed, makeAutoObservable, autorun, action } = mobx;
+    //更新前的操作
+    //useRef的作用
+    //1. 关联节点实例
+    //2. 传递组件更新前的一些数据，当useRef种存储的市某项数据时，该数据并不会随着组建的更新而自动更新
+    //3. 保存dom的快照
+    const DemoEffect = () => {
+      let [count, setCount] = useState(0);
+
+      let ref = useRef();
+      let preCount = useRef(count);
+      let preValue = useRef();
+
+      //不能设置为非useRef是因为每次会重新执行整个函数，但是用useRef包裹会脱离当前作用域
+      let isMount = useRef(false);
+
+      /* 模拟事件监听处理函数 */
+      const handleResize = () => { }
+      useEffect(() => {
+
+        //保存更新前的信息
+        console.log(preCount)
+        preCount.current = count;
+        console.log(count, preValue);
+        preValue.current = ref.current.innerHTML;
+
+        //只是更新完成做某件事情
+        console.log(isMount)
+        if (isMount.current) {
+          console.log("更新完做某件事情")
+        } else {
+          isMount.current = true;
+        }
+      })
+
+      return (<div  >
+        <p ref={ref}>{count}</p>
+        <button onClick={() => setCount(count + 1)}  >点击</button>
+      </div>)
+    }
+
+
+
+    ReactDOM.render(<DemoEffect ></DemoEffect >, document.getElementById('app'));
+
+  </script>
+</body>
+
+</html>

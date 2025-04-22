@@ -1,0 +1,56 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">-</div>
+  <script src="https://cdn.bootcdn.net/ajax/libs/babel-standalone/7.0.0-beta.3/babel.js"></script>
+  <script
+    src="https://cdn.bootcdn.net/ajax/libs/react/18.0.0-rc.1-next-cb1e7b1c6-20220303/umd/react.development.js"></script>
+  <script
+    src="https://cdn.bootcdn.net/ajax/libs/react-dom/18.0.0-rc.1-next-cb1e7b1c6-20220303/umd/react-dom.development.js"></script>
+  <script src="https://cdn.bootcdn.net/ajax/libs/mobx/6.4.2/mobx.umd.development.js"></script>
+  <script src="https://cdn.bootcdn.net/ajax/libs/mobx-react/7.3.0/mobxreact.umd.development.js"></script>
+  <script type="text/babel">
+    let { Component, useState, useRef, useEffect } = React;
+    let { observer } = mobxReact;
+    let { observable, computed, makeAutoObservable, autorun, action } = mobx;
+    //[]  挂载运行
+    //三个生命周期的结合体
+    //是弥补函数式声明周期的hooks
+    /* 模拟数据交互 */
+    const DemoEffect = () => {
+      let [count, setCount] = useState(0);
+      /* 模拟事件监听处理函数 */
+      const handleResize = () => { }
+      useEffect(() => {
+        /* 定时器 延时器等 */
+        const timer = setInterval(() => console.log(666), 1000)
+        /* 事件监听 */
+        window.addEventListener('resize', handleResize)
+        /* 此函数用于清除副作用 */
+        console.log("effect")
+        return function () {
+          console.log("clearup")
+          clearInterval(timer)
+          window.removeEventListener('resize', handleResize)
+        }
+      }, [])
+      return (<div  >
+        <button onClick={() => setCount(count + 1)}  >点击</button>
+      </div>)
+    }
+
+
+
+    ReactDOM.render(<DemoEffect ></DemoEffect >, document.getElementById('app'));
+
+  </script>
+</body>
+
+</html>

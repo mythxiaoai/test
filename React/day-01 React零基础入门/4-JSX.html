@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="js/react.js"></script>
+  <script src="js/react-dom.js"></script>
+  <script src="https://cdn.bootcdn.net/ajax/libs/babel-standalone/7.0.0-beta.3/babel.js"></script>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="text/babel">
+    /*
+        JSX: JavaScript + XML 给JS添加XML的语法扩展。
+    */
+
+
+    // let h1 = React.createElement("h1",{id:"title"},"hello react");
+    // let p = React.createElement("p",null,"React 的第一节课");
+    // let a  = React.createElement("a",{href:""},"链接1");
+    // let a2  = React.createElement("a",{href:""},"链接2");
+    // let nav = React.createElement("nav",null,a,a2);
+    // let header = React.createElement("header",{id:"header"},h1,p,nav);
+
+    let header = <header id="header">
+      <h1 id="title">hello react</h1>
+      <p>React 的第一节课</p>
+      <nav>
+        <a href="">链接1</a>
+        <a href="">链接2</a>
+      </nav>
+    </header>;
+    ReactDOM.render(
+      header,
+      document.querySelector("#root")
+    )
+  </script>
+</body>
+
+</html>

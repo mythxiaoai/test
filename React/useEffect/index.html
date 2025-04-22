@@ -1,0 +1,70 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">-</div>
+  <script src="https://cdn.bootcdn.net/ajax/libs/babel-standalone/7.0.0-beta.3/babel.js"></script>
+  <script
+    src="https://cdn.bootcdn.net/ajax/libs/react/18.0.0-rc.1-next-cb1e7b1c6-20220303/umd/react.development.js"></script>
+  <script
+    src="https://cdn.bootcdn.net/ajax/libs/react-dom/18.0.0-rc.1-next-cb1e7b1c6-20220303/umd/react-dom.development.js"></script>
+  <script src="https://cdn.bootcdn.net/ajax/libs/mobx/6.4.2/mobx.umd.development.js"></script>
+  <script src="https://cdn.bootcdn.net/ajax/libs/mobx-react/7.3.0/mobxreact.umd.development.js"></script>
+  <script type="text/babel">
+    let { Component, useState, useRef, useEffect } = React;
+    let { observer } = mobxReact;
+    let { observable, computed, makeAutoObservable, autorun, action } = mobx;
+    //三个生命周期的结合体
+    //是弥补函数式声明周期的hooks
+    /* 模拟数据交互 */
+    function getUserInfo(a) {
+      return new Promise((resolve) => {
+        setTimeout(() => {
+          resolve({
+            name: a,
+            age: 16,
+          })
+        }, 500)
+      })
+    }
+    const DemoEffect = ({ a }) => {
+      const [userMessage, setUserMessage] = useState({})
+      const div = useRef()
+      const [number, setNumber] = useState(0)
+      /* 模拟事件监听处理函数 */
+      const handleResize = () => { }
+      /* useEffect使用 ，这里如果不加限制 ，会是函数重复执行，陷入死循环*/
+      useEffect(() => {
+        /* 请求数据 */
+        getUserInfo(a).then(res => {
+          setUserMessage(res)
+        })
+        /* 操作dom  */
+        console.log(div.current) /* div */
+        /* 事件监听等 */
+        window.addEventListener('resize', handleResize)
+        /* 只有当props->a和state->number改变的时候 ,useEffect副作用函数重新执行 ，如果此时数组为空[]，证明函数只有在初始化的时候执行一次相当于componentDidMount */
+        return () => {
+          console.log("销毁运行");
+        }
+      }, [a, number])
+      return (<div ref={div} >
+        <span>{userMessage.name}</span>
+        <span>{userMessage.age}</span>
+        <div onClick={() => setNumber(1)} >{number}</div>
+      </div>)
+    }
+
+
+    ReactDOM.render(<DemoEffect a="A" ></DemoEffect >, document.getElementById('app'));
+
+  </script>
+</body>
+
+</html>

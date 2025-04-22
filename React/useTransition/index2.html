@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React 18 - 使用 startTransition</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        .list-item {
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+        }
+        .list-item:last-child {
+            border-bottom: none;
+        }
+        .slow-flag {
+            color: red;
+            font-size: 14px;
+            margin-left: 10px;
+        }
+        .fps-counter {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background: black;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+        .description {
+            background-color: #f0f0f0;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .status {
+            padding: 5px 10px;
+            margin-left: 10px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        .pending {
+            background-color: #ffcc80;
+            color: #e65100;
+        }
+    </style>
+</head>
+<body>
+    <div class="fps-counter" id="fps-counter">FPS: 0</div>
+    <h1 class="header">React 18 - 使用 startTransition</h1>
+    
+    <div class="container">
+        <div class="description">
+            <p>这个示例<strong>使用</strong> startTransition API。当您在搜索框中输入文字时，应用会区分关键更新（输入文本）和
+            非紧急更新（渲染列表），确保输入响应保持流畅，即使后台正在处理大量数据。</p>
+            <p>尝试快速输入文字，观察输入响应性和FPS计数器的变化。您会注意到输入保持流畅，而列表更新被标记为"过渡"状态。</p>
+        </div>
+        
+        <div id="app"></div>
+    </div>
+
+    <!-- 加载React, React DOM以及Babel通过CDN -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+        // 创建一个带有FPS计数器的组件
+        function FPSCounter() {
+            const [fps, setFPS] = React.useState(0);
+            
+            React.useEffect(() => {
+                let frameCount = 0;
+                let lastTime = performance.now();
+                
+                const countFrames = (time) => {
+                    frameCount++;
+                    
+                    if (time - lastTime > 1000) {
+                        setFPS(Math.round(frameCount * 1000 / (time - lastTime)));
+                        frameCount = 0;
+                        lastTime = time;
+                    }
+                    
+                    requestAnimationFrame(countFrames);
+                };
+                
+                const frameId = requestAnimationFrame(countFrames);
+                return () => cancelAnimationFrame(frameId);
+            }, []);
+            
+            React.useEffect(() => {
+                document.getElementById('fps-counter').textContent = `FPS: ${fps}`;
+            }, [fps]);
+            
+            return null;
+        }
+
+        // 创建一个耗时的组件来模拟复杂的渲染过程
+        function SlowListItem({ text, index }) {
+            const now = performance.now();
+            while (performance.now() - now < 0.1) {
+                // 人为添加一些延迟，模拟复杂计算
+            }
+            
+            const isSlowToRender = index % 10 === 0;
+            
+            return (
+                <div className="list-item">
+                    {text} - 项目 #{index + 1}
+                    {isSlowToRender && <span className="slow-flag">（耗时渲染）</span>}
+                </div>
+            );
+        }
+
+        // 主应用组件
+        function App() {
+            const [searchTerm, setSearchTerm] = React.useState('');
+            const [items, setItems] = React.useState([]);
+            // 使用React.useTransition钩子
+            const [isPending, startTransition] = React.useTransition();
+            
+            const handleSearch = (e) => {
+                const value = e.target.value;
+                
+                // 立即更新输入值（高优先级更新）
+                setSearchTerm(value);
+                
+                // 使用startTransition将列表更新标记为低优先级
+                startTransition(() => {
+                    const newItems = [];
+                    // 根据搜索词生成列表项（这是一个可中断的非紧急更新）
+                    if (value) {
+                        for (let i = 0; i < 2000; i++) {
+                            if (i.toString().includes(value) || 
+                                `项目 ${i}`.includes(value)) {
+                                newItems.push(`匹配 "${value}"`);
+                            }
+                        }
+                    }
+                    setItems(newItems);
+                });
+            };
+            
+            return (
+                <div>
+                    <FPSCounter />
+                    
+                    <h2>搜索示例</h2>
+                    <div style={{ display: 'flex', alignItems: 'center' }}>
+                        <input
+                            type="text"
+                            placeholder="输入数字进行搜索（例如: 1, 2, 3...）"
+                            value={searchTerm}
+                            onChange={handleSearch}
+                            style={{ marginBottom: 0 }}
+                        />
+                        {isPending && <span className="status pending">更新中...</span>}
+                    </div>
+                    
+                    <div style={{ marginTop: '20px' }}>
+                        <h3>搜索结果: {items.length} 个项目</h3>
+                        {items.map((item, index) => (
+                            <SlowListItem key={index} text={item} index={index} />
+                        ))}
+                    </div>
+                </div>
+            );
+        }
+
+        // 渲染应用
+        const root = ReactDOM.createRoot(document.getElementById('app'));
+        root.render(<App />);
+    </script>
+</body>
+</html>

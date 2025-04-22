@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script>
+    let state = [];
+    let index = 0;
+    function useState(init) {
+      let nowIndex = index++;
+      if (state[nowIndex] === undefined) {
+        state[nowIndex] = init;
+      }
+      return [state[nowIndex], (newState) => {
+        console.log(nowIndex, newState);
+        state[nowIndex] = newState;
+        render();
+      }];
+    }
+    function render() {
+      index = 0;
+      let root = document.querySelector("#root");
+      let p = document.createElement("p");
+      let btn = document.createElement("button");
+      let [count, setCount] = useState(10);
+      p.innerHTML = "count:" + count;
+      btn.innerHTML = "递增";
+      btn.onclick = () => {
+        setCount(count + 1);
+      }
+      let p2 = document.createElement("p");
+      let btn2 = document.createElement("button");
+      let [nub, setNub] = useState(5);
+      p2.innerHTML = "nub:" + nub;
+      btn2.innerHTML = "递增";
+      btn2.onclick = () => {
+        setNub(nub + 1);
+      }
+      root.innerHTML = "";
+      root.appendChild(p);
+      root.appendChild(btn);
+      root.appendChild(p2);
+      root.appendChild(btn2);
+    }
+    render();
+  </script>
+</body>
+
+</html>

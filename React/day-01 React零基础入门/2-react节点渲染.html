@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/react.js"></script>
+    <script src="js/react-dom.js"></script>
+</head>
+<body>
+<div id="root"></div>
+<script>
+/*
+- ReactDOM 提供了与浏览器交互的 DOM 功能，如：dom 渲染
+  - ReactDOM.render(Vnode, container[, callback])
+    - element：要渲染的内容
+    - container：要渲染的内容存放容器
+    - callback：渲染后的回调函数 
+*/
+let h1 = React.createElement("h1",{id:"title"},"hello react");
+ReactDOM.render(
+    h1,
+    document.querySelector("#root"),
+    ()=>{
+        console.log("渲染完成");
+    }
+)
+</script>    
+</body>
+</html>

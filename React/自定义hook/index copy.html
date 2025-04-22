@@ -1,0 +1,91 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="mount">1</div>
+  <script src="https://cdn.bootcdn.net/ajax/libs/babel-standalone/7.0.0-beta.3/babel.js"></script>
+  <script
+    src="https://cdn.bootcdn.net/ajax/libs/react/18.0.0-rc.1-next-cb1e7b1c6-20220303/umd/react.development.js"></script>
+  <script
+    src="https://cdn.bootcdn.net/ajax/libs/react-dom/18.0.0-rc.1-next-cb1e7b1c6-20220303/umd/react-dom.development.js"></script>
+  <script src="https://cdn.bootcdn.net/ajax/libs/mobx/6.4.2/mobx.umd.development.js"></script>
+  <script src="https://cdn.bootcdn.net/ajax/libs/mobx-react/7.3.0/mobxreact.umd.development.js"></script>
+  <style>
+    #wrap {
+      height: 800px;
+      overflow: auto;
+      scroll-behavior: smooth;
+    }
+
+    #wrap div {
+      width: 200px;
+      height: 200px;
+      border: 2px solid #000;
+      font-size: 40px;
+    }
+
+    .info {
+      position: fixed;
+      left: 0;
+      top: calc(50% - 20px);
+      width: 100px;
+      font: 20px/40px "宋体";
+      height: 40px;
+      background: red;
+      color: #fff;
+      text-align: center;
+    }
+  </style>
+  <script type="text/babel">
+    console.log(React)
+    console.log(ReactDOM)
+    let { Component, useState, useEffect, useCallback, useMemo } = React;
+    let { observer } = mobxReact;
+    let { observable, computed, makeAutoObservable, autorun, action } = mobx;
+    /*
+        自定义 hook
+        1. 一般解决与状态相关的逻辑复用问题
+        2. 自定义 hook 就是一个普通函数，但该函数必须以 use 开始命名    
+    */
+    function scrollBottom() {
+      let dom = document.getElementById("wrap");
+      dom.scrollTop = dom.scrollHeight;
+      // animateScrollTop(dom, dom.scrollTop, dom.scrollHeight)
+      // //顺滑触底
+      // function animateScrollTop(dom, start, target) {
+      //   let arr = [];
+      //   let timer = setInterval(() => {
+      //     start = start + 10;
+      //     if (start >= target) {
+      //       start = target;
+      //       clearInterval(timer);
+      //     }
+      //     console.log("start", start);
+      //     dom.scrollTop = start;
+      //   }, 0)
+      // }
+    }
+
+    const Demo = () => {
+      return <div>
+        <span className="info"
+          onClick={() => {
+            scrollBottom();
+          }}>{scrollY}</span>
+        <div id="wrap">
+          {[...(".".repeat(30))].map((item, index) => <div key={index}>这是第{index}个div</div>)}
+        </div>
+      </div>
+    }
+
+    ReactDOM.render(<Demo></Demo>, document.getElementById('mount'));
+  </script>
+</body>
+
+</html>

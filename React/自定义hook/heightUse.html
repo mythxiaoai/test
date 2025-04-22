@@ -1,0 +1,63 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="mount">1</div>
+  <script src="https://cdn.bootcdn.net/ajax/libs/babel-standalone/7.0.0-beta.3/babel.js"></script>
+  <script
+    src="https://cdn.bootcdn.net/ajax/libs/react/18.0.0-rc.1-next-cb1e7b1c6-20220303/umd/react.development.js"></script>
+  <script
+    src="https://cdn.bootcdn.net/ajax/libs/react-dom/18.0.0-rc.1-next-cb1e7b1c6-20220303/umd/react-dom.development.js"></script>
+  <script src="https://cdn.bootcdn.net/ajax/libs/mobx/6.4.2/mobx.umd.development.js"></script>
+  <script src="https://cdn.bootcdn.net/ajax/libs/mobx-react/7.3.0/mobxreact.umd.development.js"></script>
+  <script type="text/babel">
+    let { Component, useState, useEffect, useCallback, useMemo } = React;
+    let { observer } = mobxReact;
+    let { observable, computed, makeAutoObservable, autorun, action } = mobx;
+    /*
+        自定义 hook
+        1. 一般解决与状态相关的逻辑复用问题
+        2. 自定义 hook 就是一个普通函数，但该函数必须以 use 开始命名    
+    */
+    function useWinHeight() {
+      const [H, setH] = useState(0);
+      const innerHeight = useCallback(() => {
+        setH(window.innerHeight);
+      }, [])
+
+      useEffect(() => {
+        innerHeight();
+        window.addEventListener("resize", innerHeight);
+        return () => {
+          window.removeEventListener("resize", innerHeight);
+        }
+      }, []);
+      return [H, (newY) => {
+        setH(newY);
+      }];
+    }
+
+    const Demo = () => {
+      const [winHeight, setWinHeight] = useWinHeight();
+      return <div>
+        <style>
+
+        </style>
+
+        <div id="wrap">
+          {winHeight}
+        </div>
+      </div>
+    }
+
+    ReactDOM.render(<Demo></Demo>, document.getElementById('mount'));
+  </script>
+</body>
+
+</html>

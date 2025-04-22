@@ -1,0 +1,34 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="counter">-</div>
+  <button id="button">Increment</button>
+  <script src="https://cdn.bootcdn.net/ajax/libs/mobx/6.4.2/mobx.umd.development.js"></script>
+  <script>
+    // JavaScript
+    var store = mobx.observable({
+      counter: 0
+    })
+
+    function render(state) {
+      document.getElementById('counter').textContent = state.counter;
+    }
+
+    document.getElementById('button').addEventListener('click', function () {
+      store.counter = store.counter + 1
+    })
+
+    mobx.observe(store, function () {
+      render(store)
+    })
+  </script>
+</body>
+
+</html>

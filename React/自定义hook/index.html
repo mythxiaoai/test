@@ -1,0 +1,86 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="mount">1</div>
+  <script src="https://cdn.bootcdn.net/ajax/libs/babel-standalone/7.0.0-beta.3/babel.js"></script>
+  <script
+    src="https://cdn.bootcdn.net/ajax/libs/react/18.0.0-rc.1-next-cb1e7b1c6-20220303/umd/react.development.js"></script>
+  <script
+    src="https://cdn.bootcdn.net/ajax/libs/react-dom/18.0.0-rc.1-next-cb1e7b1c6-20220303/umd/react-dom.development.js"></script>
+  <script src="https://cdn.bootcdn.net/ajax/libs/mobx/6.4.2/mobx.umd.development.js"></script>
+  <script src="https://cdn.bootcdn.net/ajax/libs/mobx-react/7.3.0/mobxreact.umd.development.js"></script>
+  <script type="text/babel">
+    console.log(React)
+    console.log(ReactDOM)
+    let { Component, useState, useEffect, useCallback, useMemo } = React;
+    let { observer } = mobxReact;
+    let { observable, computed, makeAutoObservable, autorun, action } = mobx;
+    /*
+        自定义 hook
+        1. 一般解决与状态相关的逻辑复用问题
+        2. 自定义 hook 就是一个普通函数，但该函数必须以 use 开始命名    
+    */
+    function useScrollY() {
+      const [Y, setY] = useState(0);
+      const setScrollY = useCallback(() => {
+        setY(window.scrollY);
+      }, [])
+
+      useEffect(() => {
+        setScrollY();
+        window.addEventListener("scroll", setScrollY);
+        return () => {
+          window.removeEventListener("scroll", setScrollY);
+        }
+      }, []);
+      return [Y, (newY) => {
+        window.scrollTo(window.scrollX, newY);
+        setY(newY);
+      }];
+    }
+
+    const Demo = () => {
+      const [scrollY, setScrollY] = useScrollY();
+      return <div>
+        <style>
+          {`
+                #wrap div {
+                    width: 200px;
+                    height: 200px; 
+                    border: 2px solid #000;
+                    font-size: 40px;   
+                }
+                .info {
+                    position: fixed;
+                    left: 0;
+                    top: calc(50% - 20px);
+                    width: 100px;
+                    font: 20px/40px "宋体";
+                    height: 40px;
+                    background: red;
+                    color: #fff;
+                    text-align: center;
+                }
+            `}
+        </style>
+        <span className="info" onClick={() => {
+          setScrollY(0);
+        }}>{scrollY}</span>
+        <div id="wrap">
+          {[...(".".repeat(30))].map((item, index) => <div key={index}>这是第{index}个div</div>)}
+        </div>
+      </div>
+    }
+
+    ReactDOM.render(<Demo></Demo>, document.getElementById('mount'));
+  </script>
+</body>
+
+</html>

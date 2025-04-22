@@ -1,0 +1,35 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app"></div>
+  <script src="https://cdn.bootcdn.net/ajax/libs/babel-standalone/7.0.0-beta.3/babel.js"></script>
+  <script src="https://cdn.bootcdn.net/ajax/libs/react/18.1.0/umd/react.development.js"></script>
+  <script src="https://cdn.bootcdn.net/ajax/libs/react-dom/18.1.0/umd/react-dom.development.js"></script>
+  <script type="text/babel">
+
+
+    const App = () => {
+      let { useState } = React;
+      let p = React.createElement("p", null, "React 的第一节课");
+      console.log("p", p, p.name);
+      const [text, setText] = useState("文本");
+
+      return <div>
+        <textarea value={text} onChange={e => setText(e.target.value)} cols="30" rows="10"></textarea>
+      </div>
+    }
+    console.log(ReactDOM);
+    console.log(document.getElementById('app'));
+    ReactDOM.render(<App />, document.getElementById('app'))
+
+  </script>
+</body>
+
+</html>

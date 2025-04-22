@@ -1,0 +1,60 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="mount">-</div>
+  <button id="button">Increment</button>
+  <script src="https://cdn.bootcdn.net/ajax/libs/babel-standalone/7.0.0-beta.3/babel.js"></script>
+  <script
+    src="https://cdn.bootcdn.net/ajax/libs/react/18.0.0-rc.1-next-cb1e7b1c6-20220303/umd/react.development.js"></script>
+  <script
+    src="https://cdn.bootcdn.net/ajax/libs/react-dom/18.0.0-rc.1-next-cb1e7b1c6-20220303/umd/react-dom.development.js"></script>
+  <script src="https://cdn.bootcdn.net/ajax/libs/mobx/6.4.2/mobx.umd.development.js"></script>
+  <script src="https://cdn.bootcdn.net/ajax/libs/mobx-react-lite/3.3.0/mobxreactlite.umd.development.js"></script>
+  <script src="https://cdn.bootcdn.net/ajax/libs/mobx-react/7.3.0/mobxreact.umd.development.js"></script>
+  <script type="text/babel">
+    let { Component } = React;
+    let { observer } = mobxReact;
+    let { observable, computed, makeAutoObservable, autorun } = mobx;
+    // Model the application state.
+    class Timer {
+      secondsPassed = 0
+
+      constructor() {
+        makeAutoObservable(this)
+      }
+
+      increase() {
+        this.secondsPassed += 1
+      }
+
+      reset() {
+        this.secondsPassed = 0
+      }
+    }
+
+    const myTimer = new Timer()
+    autorun(() => {
+      console.log(myTimer.secondsPassed)
+    })
+    // Build a "user interface" that uses the observable state.
+    const TimerView = observer(({ timer }) => (
+      <button onClick={() => timer.reset()}>Seconds passed: {timer.secondsPassed}</button>
+    ))
+
+    ReactDOM.render(<TimerView timer={myTimer} />, mount)
+
+    // Update the 'Seconds passed: X' text every second.
+    setInterval(() => {
+      myTimer.increase()
+    }, 1000)
+  </script>
+</body>
+
+</html>
