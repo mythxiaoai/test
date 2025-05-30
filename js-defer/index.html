@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>defer示例</title>
+    <!-- 使用defer属性的脚本 -->
+    <script defer src="./defer1.js"></script>
+    <script defer src="./defer2.js"></script>
+    
+    <!-- 普通脚本 -->
+    <script src="./normal.js"></script>
+    
+    <script>
+      // 页面解析时就会执行
+      console.log('页面解析中...');
+    </script>
+  </head>
+  <body>
+    <h1>defer属性演示</h1>
+    <p>defer的作用:</p>
+    <ul>
+      <li>defer的脚本会异步加载</li>  
+      <li>不会阻塞页面解析</li>
+      <li>会按照顺序执行</li>
+      <li>在DOMContentLoaded事件之前执行</li>
+    </ul>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        console.log('DOMContentLoaded事件触发');
+      });
+    </script>
+  </body>
+</html>
+
+<!-- defer1.js 内容:
+console.log('defer1.js执行');
+-->
+
+<!-- defer2.js 内容:
+console.log('defer2.js执行'); 
+-->
+
+<!-- normal.js 内容:
+console.log('普通脚本执行');
+-->
+
+<!-- 
+控制台输出顺序会是:
+1. 页面解析中...
+2. 普通脚本执行
+3. defer1.js执行
+4. defer2.js执行 
+5. DOMContentLoaded事件触发
+-->

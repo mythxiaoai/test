@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Cookie多彩文字定制</title>
+  <style>
+    /*
+    需要考虑兼容性95%的浏览器
+    */
+    .container {
+      position: relative;
+      width: 800px;
+      height: 800px;
+      margin: 50px auto;
+    }
+    
+    .cookie-img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+    
+    .text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 48px;
+      font-weight: bold;
+      color: transparent;
+      mix-blend-mode: color-burn;
+      text-shadow: -1px -1px 0 #fff,
+1px 1px 1px #666,
+1px -1px 1px #666,
+1px 0px 1px #666,
+-1px 1px 1px #666,
+-1px -1px 1px #666,
+-1px 0px 1px #666,
+0px 1px 1px #666,
+0px -1px 1px #666;    
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="https://cdn.shopify.com/s/files/1/0672/0706/9882/files/cookie.png?v=1746591852" alt="cookie" width="500" height="500" class="cookie-img">
+    <div class="text">fufu</div>
+  </div>
+</body>
+</html>

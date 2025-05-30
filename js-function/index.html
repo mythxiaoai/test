@@ -1,0 +1,32 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+    let AAAA = 2;
+
+    function fn(){
+        return AAAA;
+    }
+
+    class CCC{
+        constructor(){
+            this.AAAA = AAAA;
+        }
+
+        fnBBB(){
+            return this.AAAA;
+        }
+        
+        
+    }
+    console.log(fn());
+    console.log(new CCC().fnBBB());
+    </script>
+</body>
+</html>

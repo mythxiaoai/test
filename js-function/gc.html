@@ -1,0 +1,117 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeakMap GC 演示</title>
+</head>
+<body>
+    <h1>WeakMap 垃圾回收演示</h1>
+    <button id="createBtn">创建对象</button>
+    <button id="deleteBtn">删除对象</button>
+    <button id="forceGC">强制垃圾回收</button>
+    <div id="output"></div>
+
+    <script>
+    // 创建一个 WeakMap 用于存储数据
+    const cache = new WeakMap();
+    
+    // 创建一个 Map 作为对比
+    const normalMap = new Map();
+    
+    // 用于保存对象引用的变量
+    let objectReference = null;
+    
+    // 使用 FinalizationRegistry 来跟踪对象的垃圾回收
+    const registry = new FinalizationRegistry((id) => {
+        document.getElementById('output').innerHTML += 
+            `<p style="color:red">🗑️ ID为 ${id} 的对象已被垃圾回收!</p>`;
+    });
+    
+    // 创建用于保存内存使用情况的变量
+    let memoryBefore, memoryAfter;
+    
+    // 输出区域
+    const output = document.getElementById('output');
+    
+    // 创建对象并存入 WeakMap 和 Map
+    document.getElementById('createBtn').addEventListener('click', () => {
+        const id = Date.now();
+        
+        // 创建新对象作为 key
+        objectReference = {
+            id: id,
+            data: '这是一个大约占用 ' + (Math.random() * 1000).toFixed(0) + 'KB 的数据'
+        };
+        
+        // 将对象同时存入 WeakMap 和 Map
+        cache.set(objectReference, '这个对象关联的数据 (WeakMap)');
+        normalMap.set(objectReference, '这个对象关联的数据 (Map)');
+        
+        // 注册对象以便跟踪其垃圾回收
+        registry.register(objectReference, id);
+        
+        output.innerHTML += `<p>已创建 ID为 ${id} 的对象并同时存入 WeakMap 和 Map</p>`;
+        
+        if (performance && performance.memory) {
+            memoryBefore = performance.memory.usedJSHeapSize;
+            output.innerHTML += `<p>当前内存使用: ${Math.round(memoryBefore / 1024 / 1024)}MB</p>`;
+        }
+    });
+    
+    // 删除对象引用
+    document.getElementById('deleteBtn').addEventListener('click', () => {
+        if (!objectReference) {
+            output.innerHTML += '<p>没有对象可删除</p>';
+            return;
+        }
+        
+        const id = objectReference.id;
+        output.innerHTML += `<p>删除 ID为 ${id} 的对象引用，触发垃圾回收条件</p>`;
+        
+        // 查看删除前的情况
+        output.innerHTML += `<p>删除前:</p>`;
+        output.innerHTML += `<p>- WeakMap 中有值: ${cache.has(objectReference) ? '是' : '否'}</p>`;
+        output.innerHTML += `<p>- Map 中有值: ${normalMap.has(objectReference) ? '是' : '否'}</p>`;
+        output.innerHTML += `<p>- Map 大小: ${normalMap.size}</p>`;
+        
+        // 删除引用
+        objectReference = null;
+        
+        // 尝试触发垃圾回收（注意：这只是建议，不保证立即执行）
+        if (window.gc) {
+            window.gc();
+        }
+        
+        output.innerHTML += `<p>对象引用已释放，WeakMap 中的数据会在垃圾回收时被自动清除</p>`;
+        output.innerHTML += `<p>但 Map 中的引用会继续保持对象存活</p>`;
+    });
+    
+    // 强制垃圾回收（注意：需要在支持的浏览器中启用相关标志）
+    document.getElementById('forceGC').addEventListener('click', () => {
+        output.innerHTML += '<p>尝试强制垃圾回收...</p>';
+        
+        // 创建大量对象以增加垃圾回收的几率
+        for (let i = 0; i < 10000; i++) {
+            const obj = { data: new Array(10000).fill('x') };
+        }
+        
+        if (window.gc) {
+            window.gc();
+            output.innerHTML += '<p>已调用 gc() 方法</p>';
+        } else {
+            output.innerHTML += '<p>浏览器不支持手动触发垃圾回收，需要在Chrome中以 --js-flags="--expose-gc" 启动</p>';
+        }
+        
+        // 检查内存使用情况
+        if (performance && performance.memory) {
+            memoryAfter = performance.memory.usedJSHeapSize;
+            const diff = memoryBefore - memoryAfter;
+            output.innerHTML += `<p>当前内存使用: ${Math.round(memoryAfter / 1024 / 1024)}MB</p>`;
+            output.innerHTML += `<p>变化: ${diff > 0 ? '减少' : '增加'} ${Math.abs(Math.round(diff / 1024 / 1024))}MB</p>`;
+        }
+        
+        output.innerHTML += `<p>Map 大小仍然为: ${normalMap.size}</p>`;
+    });
+    </script>
+</body>
+</html>

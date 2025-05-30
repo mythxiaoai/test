@@ -1,0 +1,1 @@
+console.log('defer1.js执行');
